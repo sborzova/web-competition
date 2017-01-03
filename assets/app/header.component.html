@@ -1,0 +1,22 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav  navbar-left" style="margin-left: 15%">
+            <li routerLinkActive="active"><a [routerLink]="['home']">Home</a></li>
+            <li routerLinkActive="active" *ngIf="isAdmin()"><a [routerLink]="['usersmanagement']">Users management</a></li>
+            <li routerLinkActive="active"><a [routerLink]="['files']">Files management</a></li>
+        </ul>
+        <ul class="nav navbar-nav  navbar-right" style="margin-right: 5%">
+            <li class="dropdown pull-right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user grey"></span><b class="caret grey"></b></a>
+                <ul class="dropdown-menu">
+                    <li routerLinkActive="active" *ngIf="!isLoggedIn()"><a [routerLink]="['signup']">Sign up</a></li>
+                    <li routerLinkActive="active" *ngIf="!isLoggedIn()"><a [routerLink]="['signin']">Log in</a></li>
+                    <li routerLinkActive="active" *ngIf="isLoggedIn()"><a [routerLink]="['profile/info']">My profile</a></li>
+                    <li *ngIf="isLoggedIn()"><a (click)="onLogout()" style="cursor: pointer;">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

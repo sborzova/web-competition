@@ -1,0 +1,9 @@
+.idea
+
+# Dependency directories
+/node_modules
+
+# Log
+npm-debug.log
+
+/public/js
