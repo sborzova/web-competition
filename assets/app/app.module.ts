@@ -15,7 +15,7 @@ import { ProfileEditComponent } from "./profile/profileEdit.component";
 import { ProfileEditpassComponent } from "./profile/profileEditpass.component";
 import { UsersManagementComponent } from "./usersManagement/usersManagement.component";
 import { FilesComponent } from "./files/files.component";
-import { FileSelectDirective } from "ng2-file-upload";
+import { FileUploadModule} from "ng2-file-upload";
 
 @NgModule({
     declarations: [
@@ -28,15 +28,15 @@ import { FileSelectDirective } from "ng2-file-upload";
         ProfileEditComponent,
         ProfileEditpassComponent,
         UsersManagementComponent,
-        FilesComponent,
-        FileSelectDirective
+        FilesComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        routing
+        routing,
+        FileUploadModule
     ],
     providers: [AuthService],
     bootstrap: [AppComponent]
