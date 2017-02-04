@@ -14,21 +14,22 @@ import * as import6 from '@angular/core/src/di/injector';
 import * as import7 from '@angular/core/src/linker/view_type';
 import * as import8 from '@angular/core/src/change_detection/change_detection';
 import * as import9 from '@angular/http/src/http';
-import * as import10 from '@angular/core/src/metadata/view';
-import * as import11 from '@angular/core/src/linker/component_factory';
-import * as import12 from '@angular/forms/src/directives/ng_form';
-import * as import13 from '@angular/forms/src/directives/ng_control_status';
-import * as import14 from 'ng2-file-upload/file-upload/file-select.directive';
-import * as import15 from '@angular/common/src/directives/ng_for';
-import * as import16 from '@angular/common/src/directives/ng_style';
-import * as import17 from '@angular/common/src/pipes/number_pipe';
-import * as import18 from '@angular/core/src/linker/element_ref';
-import * as import19 from '@angular/core/src/linker/template_ref';
-import * as import20 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import21 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import22 from '@angular/core/src/i18n/tokens';
-import * as import23 from '@angular/forms/src/directives/control_container';
-import * as import24 from '@angular/common/src/directives/ng_if';
+import * as import10 from '../messages/errors/error.service';
+import * as import11 from '@angular/core/src/metadata/view';
+import * as import12 from '@angular/core/src/linker/component_factory';
+import * as import13 from '@angular/forms/src/directives/ng_form';
+import * as import14 from '@angular/forms/src/directives/ng_control_status';
+import * as import15 from 'ng2-file-upload/file-upload/file-select.directive';
+import * as import16 from '@angular/common/src/directives/ng_for';
+import * as import17 from '@angular/common/src/directives/ng_style';
+import * as import18 from '@angular/common/src/pipes/number_pipe';
+import * as import19 from '@angular/core/src/linker/element_ref';
+import * as import20 from '@angular/core/src/linker/template_ref';
+import * as import21 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import22 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import23 from '@angular/core/src/i18n/tokens';
+import * as import24 from '@angular/forms/src/directives/control_container';
+import * as import25 from '@angular/common/src/directives/ng_if';
 var renderType_FilesComponent_Host:import0.RenderComponentType = (null as any);
 class _View_FilesComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -46,7 +47,7 @@ class _View_FilesComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-files',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_FilesComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._FilesComponent_0_4 = new import3.FilesComponent();
+    this._FilesComponent_0_4 = new import3.FilesComponent(this.parentInjector.get(import10.ErrorService));
     this._appEl_0.initComponent(this._FilesComponent_0_4,[],compView_0);
     compView_0.create(this._FilesComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -59,10 +60,10 @@ class _View_FilesComponent_Host0 extends import1.AppView<any> {
   }
 }
 function viewFactory_FilesComponent_Host0(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_FilesComponent_Host === (null as any))) { (renderType_FilesComponent_Host = viewUtils.createRenderComponentType('',0,import10.ViewEncapsulation.None,[],{})); }
+  if ((renderType_FilesComponent_Host === (null as any))) { (renderType_FilesComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
   return new _View_FilesComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const FilesComponentNgFactory:import11.ComponentFactory<import3.FilesComponent> = new import11.ComponentFactory<import3.FilesComponent>('app-files',viewFactory_FilesComponent_Host0,import3.FilesComponent);
+export const FilesComponentNgFactory:import12.ComponentFactory<import3.FilesComponent> = new import12.ComponentFactory<import3.FilesComponent>('app-files',viewFactory_FilesComponent_Host0,import3.FilesComponent);
 const styles_FilesComponent:any[] = [];
 var renderType_FilesComponent:import0.RenderComponentType = (null as any);
 class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
@@ -71,9 +72,9 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
   _el_2:any;
   _text_3:any;
   _el_4:any;
-  _NgForm_4_3:import12.NgForm;
+  _NgForm_4_3:import13.NgForm;
   _ControlContainer_4_4:any;
-  _NgControlStatusGroup_4_5:import13.NgControlStatusGroup;
+  _NgControlStatusGroup_4_5:import14.NgControlStatusGroup;
   _text_5:any;
   _el_6:any;
   _text_7:any;
@@ -81,7 +82,7 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
   _text_9:any;
   _text_10:any;
   _el_11:any;
-  _FileSelectDirective_11_3:import14.FileSelectDirective;
+  _FileSelectDirective_11_3:import15.FileSelectDirective;
   _text_12:any;
   _text_13:any;
   _el_14:any;
@@ -90,7 +91,7 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
   _text_17:any;
   _text_18:any;
   _el_19:any;
-  _FileSelectDirective_19_3:import14.FileSelectDirective;
+  _FileSelectDirective_19_3:import15.FileSelectDirective;
   _text_20:any;
   _text_21:any;
   _text_22:any;
@@ -125,7 +126,7 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
   _anchor_51:any;
   /*private*/ _appEl_51:import2.AppElement;
   _TemplateRef_51_5:any;
-  _NgFor_51_6:import15.NgFor;
+  _NgFor_51_6:import16.NgFor;
   _text_52:any;
   _text_53:any;
   _text_54:any;
@@ -136,7 +137,7 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
   _el_59:any;
   _text_60:any;
   _el_61:any;
-  _NgStyle_61_3:import16.NgStyle;
+  _NgStyle_61_3:import17.NgStyle;
   _text_62:any;
   _text_63:any;
   _text_64:any;
@@ -167,7 +168,7 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
   /*private*/ _expr_11:any;
   /*private*/ _expr_12:any;
   /*private*/ _expr_13:any;
-  _pipe_number_0:import17.DecimalPipe;
+  _pipe_number_0:import18.DecimalPipe;
   _map_0:any;
   /*private*/ _expr_14:any;
   /*private*/ _expr_16:any;
@@ -185,9 +186,9 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
     this.renderer.setElementAttribute(this._el_2,'class','col-md-4');
     this._text_3 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._el_4 = this.renderer.createElement(this._el_2,'form',(null as any));
-    this._NgForm_4_3 = new import12.NgForm((null as any),(null as any));
+    this._NgForm_4_3 = new import13.NgForm((null as any),(null as any));
     this._ControlContainer_4_4 = this._NgForm_4_3;
-    this._NgControlStatusGroup_4_5 = new import13.NgControlStatusGroup(this._ControlContainer_4_4);
+    this._NgControlStatusGroup_4_5 = new import14.NgControlStatusGroup(this._ControlContainer_4_4);
     this._text_5 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._el_6 = this.renderer.createElement(this._el_4,'div',(null as any));
     this.renderer.setElementAttribute(this._el_6,'class','form-group');
@@ -202,7 +203,7 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
     this.renderer.setElementAttribute(this._el_11,'name','multiple');
     this.renderer.setElementAttribute(this._el_11,'ng2FileSelect','');
     this.renderer.setElementAttribute(this._el_11,'type','file');
-    this._FileSelectDirective_11_3 = new import14.FileSelectDirective(new import18.ElementRef(this._el_11));
+    this._FileSelectDirective_11_3 = new import15.FileSelectDirective(new import19.ElementRef(this._el_11));
     this._text_12 = this.renderer.createText(this._el_6,'\n            ',(null as any));
     this._text_13 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._el_14 = this.renderer.createElement(this._el_4,'div',(null as any));
@@ -217,7 +218,7 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
     this.renderer.setElementAttribute(this._el_19,'name','single');
     this.renderer.setElementAttribute(this._el_19,'ng2FileSelect','');
     this.renderer.setElementAttribute(this._el_19,'type','file');
-    this._FileSelectDirective_19_3 = new import14.FileSelectDirective(new import18.ElementRef(this._el_19));
+    this._FileSelectDirective_19_3 = new import15.FileSelectDirective(new import19.ElementRef(this._el_19));
     this._text_20 = this.renderer.createText(this._el_14,'\n            ',(null as any));
     this._text_21 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._text_22 = this.renderer.createText(this._el_2,'\n    ',(null as any));
@@ -254,8 +255,8 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
     this._text_50 = this.renderer.createText(this._el_49,'\n            ',(null as any));
     this._anchor_51 = this.renderer.createTemplateAnchor(this._el_49,(null as any));
     this._appEl_51 = new import2.AppElement(51,49,this,this._anchor_51);
-    this._TemplateRef_51_5 = new import19.TemplateRef_(this._appEl_51,viewFactory_FilesComponent1);
-    this._NgFor_51_6 = new import15.NgFor(this._appEl_51.vcRef,this._TemplateRef_51_5,this.parentInjector.get(import20.IterableDiffers),this.ref);
+    this._TemplateRef_51_5 = new import20.TemplateRef_(this._appEl_51,viewFactory_FilesComponent1);
+    this._NgFor_51_6 = new import16.NgFor(this._appEl_51.vcRef,this._TemplateRef_51_5,this.parentInjector.get(import21.IterableDiffers),this.ref);
     this._text_52 = this.renderer.createText(this._el_49,'\n            ',(null as any));
     this._text_53 = this.renderer.createText(this._el_26,'\n        ',(null as any));
     this._text_54 = this.renderer.createText(this._el_24,'\n\n        ',(null as any));
@@ -270,7 +271,7 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
     this._el_61 = this.renderer.createElement(this._el_59,'div',(null as any));
     this.renderer.setElementAttribute(this._el_61,'class','progress-bar');
     this.renderer.setElementAttribute(this._el_61,'role','progressbar');
-    this._NgStyle_61_3 = new import16.NgStyle(this.parentInjector.get(import21.KeyValueDiffers),new import18.ElementRef(this._el_61),this.renderer);
+    this._NgStyle_61_3 = new import17.NgStyle(this.parentInjector.get(import22.KeyValueDiffers),new import19.ElementRef(this._el_61),this.renderer);
     this._text_62 = this.renderer.createText(this._el_59,'\n                ',(null as any));
     this._text_63 = this.renderer.createText(this._el_57,'\n            ',(null as any));
     this._text_64 = this.renderer.createText(this._el_55,'\n            ',(null as any));
@@ -314,7 +315,7 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
     this._expr_11 = import8.UNINITIALIZED;
     this._expr_12 = import8.UNINITIALIZED;
     this._expr_13 = import8.UNINITIALIZED;
-    this._pipe_number_0 = new import17.DecimalPipe(this.parentInjector.get(import22.LOCALE_ID));
+    this._pipe_number_0 = new import18.DecimalPipe(this.parentInjector.get(import23.LOCALE_ID));
     this._map_0 = import5.pureProxy1((p0:any):{[key: string]:any} => {
       return {width: p0};
     });
@@ -422,14 +423,14 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import14.FileSelectDirective) && (11 === requestNodeIndex))) { return this._FileSelectDirective_11_3; }
-    if (((token === import14.FileSelectDirective) && (19 === requestNodeIndex))) { return this._FileSelectDirective_19_3; }
-    if (((token === import12.NgForm) && ((4 <= requestNodeIndex) && (requestNodeIndex <= 21)))) { return this._NgForm_4_3; }
-    if (((token === import23.ControlContainer) && ((4 <= requestNodeIndex) && (requestNodeIndex <= 21)))) { return this._ControlContainer_4_4; }
-    if (((token === import13.NgControlStatusGroup) && ((4 <= requestNodeIndex) && (requestNodeIndex <= 21)))) { return this._NgControlStatusGroup_4_5; }
-    if (((token === import19.TemplateRef) && (51 === requestNodeIndex))) { return this._TemplateRef_51_5; }
-    if (((token === import15.NgFor) && (51 === requestNodeIndex))) { return this._NgFor_51_6; }
-    if (((token === import16.NgStyle) && (61 === requestNodeIndex))) { return this._NgStyle_61_3; }
+    if (((token === import15.FileSelectDirective) && (11 === requestNodeIndex))) { return this._FileSelectDirective_11_3; }
+    if (((token === import15.FileSelectDirective) && (19 === requestNodeIndex))) { return this._FileSelectDirective_19_3; }
+    if (((token === import13.NgForm) && ((4 <= requestNodeIndex) && (requestNodeIndex <= 21)))) { return this._NgForm_4_3; }
+    if (((token === import24.ControlContainer) && ((4 <= requestNodeIndex) && (requestNodeIndex <= 21)))) { return this._ControlContainer_4_4; }
+    if (((token === import14.NgControlStatusGroup) && ((4 <= requestNodeIndex) && (requestNodeIndex <= 21)))) { return this._NgControlStatusGroup_4_5; }
+    if (((token === import20.TemplateRef) && (51 === requestNodeIndex))) { return this._TemplateRef_51_5; }
+    if (((token === import16.NgFor) && (51 === requestNodeIndex))) { return this._NgFor_51_6; }
+    if (((token === import17.NgStyle) && (61 === requestNodeIndex))) { return this._NgStyle_61_3; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -550,7 +551,7 @@ class _View_FilesComponent0 extends import1.AppView<import3.FilesComponent> {
   }
 }
 export function viewFactory_FilesComponent0(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<import3.FilesComponent> {
-  if ((renderType_FilesComponent === (null as any))) { (renderType_FilesComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/files/files.component.html',0,import10.ViewEncapsulation.None,styles_FilesComponent,{})); }
+  if ((renderType_FilesComponent === (null as any))) { (renderType_FilesComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/files/files.component.html',0,import11.ViewEncapsulation.None,styles_FilesComponent,{})); }
   return new _View_FilesComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_FilesComponent1 extends import1.AppView<any> {
@@ -568,7 +569,7 @@ class _View_FilesComponent1 extends import1.AppView<any> {
   _el_11:any;
   _text_12:any;
   _el_13:any;
-  _NgStyle_13_3:import16.NgStyle;
+  _NgStyle_13_3:import17.NgStyle;
   _text_14:any;
   _text_15:any;
   _text_16:any;
@@ -577,17 +578,17 @@ class _View_FilesComponent1 extends import1.AppView<any> {
   _anchor_19:any;
   /*private*/ _appEl_19:import2.AppElement;
   _TemplateRef_19_5:any;
-  _NgIf_19_6:import24.NgIf;
+  _NgIf_19_6:import25.NgIf;
   _text_20:any;
   _anchor_21:any;
   /*private*/ _appEl_21:import2.AppElement;
   _TemplateRef_21_5:any;
-  _NgIf_21_6:import24.NgIf;
+  _NgIf_21_6:import25.NgIf;
   _text_22:any;
   _anchor_23:any;
   /*private*/ _appEl_23:import2.AppElement;
   _TemplateRef_23_5:any;
-  _NgIf_23_6:import24.NgIf;
+  _NgIf_23_6:import25.NgIf;
   _text_24:any;
   _text_25:any;
   _el_26:any;
@@ -641,7 +642,7 @@ class _View_FilesComponent1 extends import1.AppView<any> {
     this._el_13 = this.renderer.createElement(this._el_11,'div',(null as any));
     this.renderer.setElementAttribute(this._el_13,'class','progress-bar');
     this.renderer.setElementAttribute(this._el_13,'role','progressbar');
-    this._NgStyle_13_3 = new import16.NgStyle(this.parent.parentInjector.get(import21.KeyValueDiffers),new import18.ElementRef(this._el_13),this.renderer);
+    this._NgStyle_13_3 = new import17.NgStyle(this.parent.parentInjector.get(import22.KeyValueDiffers),new import19.ElementRef(this._el_13),this.renderer);
     this._text_14 = this.renderer.createText(this._el_11,'\n                    ',(null as any));
     this._text_15 = this.renderer.createText(this._el_9,'\n                ',(null as any));
     this._text_16 = this.renderer.createText(this._el_0,'\n                ',(null as any));
@@ -650,18 +651,18 @@ class _View_FilesComponent1 extends import1.AppView<any> {
     this._text_18 = this.renderer.createText(this._el_17,'\n                    ',(null as any));
     this._anchor_19 = this.renderer.createTemplateAnchor(this._el_17,(null as any));
     this._appEl_19 = new import2.AppElement(19,17,this,this._anchor_19);
-    this._TemplateRef_19_5 = new import19.TemplateRef_(this._appEl_19,viewFactory_FilesComponent2);
-    this._NgIf_19_6 = new import24.NgIf(this._appEl_19.vcRef,this._TemplateRef_19_5);
+    this._TemplateRef_19_5 = new import20.TemplateRef_(this._appEl_19,viewFactory_FilesComponent2);
+    this._NgIf_19_6 = new import25.NgIf(this._appEl_19.vcRef,this._TemplateRef_19_5);
     this._text_20 = this.renderer.createText(this._el_17,'\n                    ',(null as any));
     this._anchor_21 = this.renderer.createTemplateAnchor(this._el_17,(null as any));
     this._appEl_21 = new import2.AppElement(21,17,this,this._anchor_21);
-    this._TemplateRef_21_5 = new import19.TemplateRef_(this._appEl_21,viewFactory_FilesComponent3);
-    this._NgIf_21_6 = new import24.NgIf(this._appEl_21.vcRef,this._TemplateRef_21_5);
+    this._TemplateRef_21_5 = new import20.TemplateRef_(this._appEl_21,viewFactory_FilesComponent3);
+    this._NgIf_21_6 = new import25.NgIf(this._appEl_21.vcRef,this._TemplateRef_21_5);
     this._text_22 = this.renderer.createText(this._el_17,'\n                    ',(null as any));
     this._anchor_23 = this.renderer.createTemplateAnchor(this._el_17,(null as any));
     this._appEl_23 = new import2.AppElement(23,17,this,this._anchor_23);
-    this._TemplateRef_23_5 = new import19.TemplateRef_(this._appEl_23,viewFactory_FilesComponent4);
-    this._NgIf_23_6 = new import24.NgIf(this._appEl_23.vcRef,this._TemplateRef_23_5);
+    this._TemplateRef_23_5 = new import20.TemplateRef_(this._appEl_23,viewFactory_FilesComponent4);
+    this._NgIf_23_6 = new import25.NgIf(this._appEl_23.vcRef,this._TemplateRef_23_5);
     this._text_24 = this.renderer.createText(this._el_17,'\n                ',(null as any));
     this._text_25 = this.renderer.createText(this._el_0,'\n                ',(null as any));
     this._el_26 = this.renderer.createElement(this._el_0,'td',(null as any));
@@ -762,13 +763,13 @@ class _View_FilesComponent1 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import16.NgStyle) && (13 === requestNodeIndex))) { return this._NgStyle_13_3; }
-    if (((token === import19.TemplateRef) && (19 === requestNodeIndex))) { return this._TemplateRef_19_5; }
-    if (((token === import24.NgIf) && (19 === requestNodeIndex))) { return this._NgIf_19_6; }
-    if (((token === import19.TemplateRef) && (21 === requestNodeIndex))) { return this._TemplateRef_21_5; }
-    if (((token === import24.NgIf) && (21 === requestNodeIndex))) { return this._NgIf_21_6; }
-    if (((token === import19.TemplateRef) && (23 === requestNodeIndex))) { return this._TemplateRef_23_5; }
-    if (((token === import24.NgIf) && (23 === requestNodeIndex))) { return this._NgIf_23_6; }
+    if (((token === import17.NgStyle) && (13 === requestNodeIndex))) { return this._NgStyle_13_3; }
+    if (((token === import20.TemplateRef) && (19 === requestNodeIndex))) { return this._TemplateRef_19_5; }
+    if (((token === import25.NgIf) && (19 === requestNodeIndex))) { return this._NgIf_19_6; }
+    if (((token === import20.TemplateRef) && (21 === requestNodeIndex))) { return this._TemplateRef_21_5; }
+    if (((token === import25.NgIf) && (21 === requestNodeIndex))) { return this._NgIf_21_6; }
+    if (((token === import20.TemplateRef) && (23 === requestNodeIndex))) { return this._TemplateRef_23_5; }
+    if (((token === import25.NgIf) && (23 === requestNodeIndex))) { return this._NgIf_23_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {

@@ -13,17 +13,18 @@ import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from '../auth/auth.service';
-import * as import9 from '@angular/core/src/metadata/view';
-import * as import10 from '@angular/core/src/linker/component_factory';
-import * as import11 from '@angular/common/src/directives/ng_if';
-import * as import12 from '@angular/core/src/linker/template_ref';
-import * as import13 from '@angular/router/src/directives/router_outlet';
-import * as import14 from '@angular/router/src/directives/router_link';
-import * as import15 from '@angular/router/src/router_outlet_map';
-import * as import16 from '@angular/core/src/linker/component_factory_resolver';
-import * as import17 from '@angular/router/src/router';
-import * as import18 from '@angular/router/src/router_state';
-import * as import19 from '@angular/common/src/location/location_strategy';
+import * as import9 from '../messages/errors/error.service';
+import * as import10 from '@angular/core/src/metadata/view';
+import * as import11 from '@angular/core/src/linker/component_factory';
+import * as import12 from '@angular/common/src/directives/ng_if';
+import * as import13 from '@angular/core/src/linker/template_ref';
+import * as import14 from '@angular/router/src/directives/router_outlet';
+import * as import15 from '@angular/router/src/directives/router_link';
+import * as import16 from '@angular/router/src/router_outlet_map';
+import * as import17 from '@angular/core/src/linker/component_factory_resolver';
+import * as import18 from '@angular/router/src/router';
+import * as import19 from '@angular/router/src/router_state';
+import * as import20 from '@angular/common/src/location/location_strategy';
 var renderType_ProfileComponent_Host:import0.RenderComponentType = (null as any);
 class _View_ProfileComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -36,7 +37,7 @@ class _View_ProfileComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-profile',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_ProfileComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._ProfileComponent_0_4 = new import3.ProfileComponent(this.parentInjector.get(import8.AuthService));
+    this._ProfileComponent_0_4 = new import3.ProfileComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.ErrorService));
     this._appEl_0.initComponent(this._ProfileComponent_0_4,[],compView_0);
     compView_0.create(this._ProfileComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -53,17 +54,17 @@ class _View_ProfileComponent_Host0 extends import1.AppView<any> {
   }
 }
 function viewFactory_ProfileComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_ProfileComponent_Host === (null as any))) { (renderType_ProfileComponent_Host = viewUtils.createRenderComponentType('',0,import9.ViewEncapsulation.None,[],{})); }
+  if ((renderType_ProfileComponent_Host === (null as any))) { (renderType_ProfileComponent_Host = viewUtils.createRenderComponentType('',0,import10.ViewEncapsulation.None,[],{})); }
   return new _View_ProfileComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const ProfileComponentNgFactory:import10.ComponentFactory<import3.ProfileComponent> = new import10.ComponentFactory<import3.ProfileComponent>('app-profile',viewFactory_ProfileComponent_Host0,import3.ProfileComponent);
+export const ProfileComponentNgFactory:import11.ComponentFactory<import3.ProfileComponent> = new import11.ComponentFactory<import3.ProfileComponent>('app-profile',viewFactory_ProfileComponent_Host0,import3.ProfileComponent);
 const styles_ProfileComponent:any[] = [];
 var renderType_ProfileComponent:import0.RenderComponentType = (null as any);
 class _View_ProfileComponent0 extends import1.AppView<import3.ProfileComponent> {
   _anchor_0:any;
   /*private*/ _appEl_0:import2.AppElement;
   _TemplateRef_0_5:any;
-  _NgIf_0_6:import11.NgIf;
+  _NgIf_0_6:import12.NgIf;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_ProfileComponent0,renderType_ProfileComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
@@ -72,15 +73,15 @@ class _View_ProfileComponent0 extends import1.AppView<import3.ProfileComponent> 
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
     this._anchor_0 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._anchor_0);
-    this._TemplateRef_0_5 = new import12.TemplateRef_(this._appEl_0,viewFactory_ProfileComponent1);
-    this._NgIf_0_6 = new import11.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
+    this._TemplateRef_0_5 = new import13.TemplateRef_(this._appEl_0,viewFactory_ProfileComponent1);
+    this._NgIf_0_6 = new import12.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
     this._expr_0 = import7.UNINITIALIZED;
     this.init([],[this._anchor_0],[],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import12.TemplateRef) && (0 === requestNodeIndex))) { return this._TemplateRef_0_5; }
-    if (((token === import11.NgIf) && (0 === requestNodeIndex))) { return this._NgIf_0_6; }
+    if (((token === import13.TemplateRef) && (0 === requestNodeIndex))) { return this._TemplateRef_0_5; }
+    if (((token === import12.NgIf) && (0 === requestNodeIndex))) { return this._NgIf_0_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -94,7 +95,7 @@ class _View_ProfileComponent0 extends import1.AppView<import3.ProfileComponent> 
   }
 }
 export function viewFactory_ProfileComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileComponent> {
-  if ((renderType_ProfileComponent === (null as any))) { (renderType_ProfileComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile.component.html',0,import9.ViewEncapsulation.None,styles_ProfileComponent,{})); }
+  if ((renderType_ProfileComponent === (null as any))) { (renderType_ProfileComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile.component.html',0,import10.ViewEncapsulation.None,styles_ProfileComponent,{})); }
   return new _View_ProfileComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_ProfileComponent1 extends import1.AppView<any> {
@@ -102,7 +103,7 @@ class _View_ProfileComponent1 extends import1.AppView<any> {
   _text_1:any;
   _el_2:any;
   /*private*/ _appEl_2:import2.AppElement;
-  _RouterOutlet_2_5:import13.RouterOutlet;
+  _RouterOutlet_2_5:import14.RouterOutlet;
   _text_3:any;
   _el_4:any;
   _text_5:any;
@@ -135,11 +136,11 @@ class _View_ProfileComponent1 extends import1.AppView<any> {
   _text_32:any;
   _text_33:any;
   _el_34:any;
-  _RouterLink_34_3:import14.RouterLink;
+  _RouterLink_34_3:import15.RouterLink;
   _text_35:any;
   _text_36:any;
   _el_37:any;
-  _RouterLink_37_3:import14.RouterLink;
+  _RouterLink_37_3:import15.RouterLink;
   _text_38:any;
   _text_39:any;
   /*private*/ _expr_0:any;
@@ -158,7 +159,7 @@ class _View_ProfileComponent1 extends import1.AppView<any> {
     this._text_1 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'router-outlet',(null as any));
     this._appEl_2 = new import2.AppElement(2,0,this,this._el_2);
-    this._RouterOutlet_2_5 = new import13.RouterOutlet(this.parentInjector.get(import15.RouterOutletMap),this._appEl_2.vcRef,this.parentInjector.get(import16.ComponentFactoryResolver),(null as any));
+    this._RouterOutlet_2_5 = new import14.RouterOutlet(this.parentInjector.get(import16.RouterOutletMap),this._appEl_2.vcRef,this.parentInjector.get(import17.ComponentFactoryResolver),(null as any));
     this._text_3 = this.renderer.createText(this._el_0,'\n\n    ',(null as any));
     this._el_4 = this.renderer.createElement(this._el_0,'article',(null as any));
     this.renderer.setElementAttribute(this._el_4,'class','panel panel-default');
@@ -189,7 +190,7 @@ class _View_ProfileComponent1 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_24,'class','panel-body');
     this._text_25 = this.renderer.createText(this._el_24,'\n            ',(null as any));
     this._el_26 = this.renderer.createElement(this._el_24,'b',(null as any));
-    this._text_27 = this.renderer.createText(this._el_26,'Mail',(null as any));
+    this._text_27 = this.renderer.createText(this._el_26,'Email address',(null as any));
     this._text_28 = this.renderer.createText(this._el_24,'\n        ',(null as any));
     this._text_29 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._el_30 = this.renderer.createElement(this._el_4,'footer',(null as any));
@@ -199,12 +200,12 @@ class _View_ProfileComponent1 extends import1.AppView<any> {
     this._text_33 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._el_34 = this.renderer.createElement(this._el_0,'button',(null as any));
     this.renderer.setElementAttribute(this._el_34,'class','btn btn-info');
-    this._RouterLink_34_3 = new import14.RouterLink(this.parentInjector.get(import17.Router),this.parentInjector.get(import18.ActivatedRoute),this.parentInjector.get(import19.LocationStrategy));
+    this._RouterLink_34_3 = new import15.RouterLink(this.parentInjector.get(import18.Router),this.parentInjector.get(import19.ActivatedRoute),this.parentInjector.get(import20.LocationStrategy));
     this._text_35 = this.renderer.createText(this._el_34,'Edit profile',(null as any));
     this._text_36 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._el_37 = this.renderer.createElement(this._el_0,'button',(null as any));
     this.renderer.setElementAttribute(this._el_37,'class','btn btn-danger');
-    this._RouterLink_37_3 = new import14.RouterLink(this.parentInjector.get(import17.Router),this.parentInjector.get(import18.ActivatedRoute),this.parentInjector.get(import19.LocationStrategy));
+    this._RouterLink_37_3 = new import15.RouterLink(this.parentInjector.get(import18.Router),this.parentInjector.get(import19.ActivatedRoute),this.parentInjector.get(import20.LocationStrategy));
     this._text_38 = this.renderer.createText(this._el_37,'Change password',(null as any));
     this._text_39 = this.renderer.createText(this._el_0,'\n',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
@@ -270,9 +271,9 @@ class _View_ProfileComponent1 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import13.RouterOutlet) && (2 === requestNodeIndex))) { return this._RouterOutlet_2_5; }
-    if (((token === import14.RouterLink) && ((34 <= requestNodeIndex) && (requestNodeIndex <= 35)))) { return this._RouterLink_34_3; }
-    if (((token === import14.RouterLink) && ((37 <= requestNodeIndex) && (requestNodeIndex <= 38)))) { return this._RouterLink_37_3; }
+    if (((token === import14.RouterOutlet) && (2 === requestNodeIndex))) { return this._RouterOutlet_2_5; }
+    if (((token === import15.RouterLink) && ((34 <= requestNodeIndex) && (requestNodeIndex <= 35)))) { return this._RouterLink_34_3; }
+    if (((token === import15.RouterLink) && ((37 <= requestNodeIndex) && (requestNodeIndex <= 38)))) { return this._RouterLink_37_3; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {

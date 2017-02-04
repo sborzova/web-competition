@@ -425,7 +425,7 @@ class _View_HeaderComponent0 extends import1.AppView<import3.HeaderComponent> {
   }
 }
 export function viewFactory_HeaderComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.HeaderComponent> {
-  if ((renderType_HeaderComponent === (null as any))) { (renderType_HeaderComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/header.component.html',0,import10.ViewEncapsulation.None,styles_HeaderComponent,{})); }
+  if ((renderType_HeaderComponent === (null as any))) { (renderType_HeaderComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/header/header.component.html',0,import10.ViewEncapsulation.None,styles_HeaderComponent,{})); }
   return new _View_HeaderComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_HeaderComponent1 extends import1.AppView<any> {
@@ -831,7 +831,7 @@ class _View_HeaderComponent5 extends import1.AppView<any> {
     this._el_0 = this.renderer.createElement((null as any),'li',(null as any));
     this._el_1 = this.renderer.createElement(this._el_0,'a',(null as any));
     this.renderer.setElementAttribute(this._el_1,'style','cursor: pointer;');
-    this._text_2 = this.renderer.createText(this._el_1,'Logout',(null as any));
+    this._text_2 = this.renderer.createText(this._el_1,'Log out',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_1,'click',this.eventHandler(this._handle_click_1_0.bind(this)));
     this.init([].concat([this._el_0]),[
       this._el_0,
