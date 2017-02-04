@@ -31,9 +31,7 @@ router.post('/upload', function(req, res) {
             message: 'File uploaded'
             // obj: req.file
         });
-        // console.log(req.file);
         // res.end('Your File Uploaded');
-        // console.log('Photo Uploaded');
     })
 });
 
