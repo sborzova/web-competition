@@ -18,7 +18,7 @@ mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc'
 
 //save admin if does not exist
 var User = require('./models/user');
-var emailAdmin = 'hanka@mail.muni.cz';
+var emailAdmin = 'hanka@fi.muni.cz';
 
 var user = new User({
     firstName: 'Hana',

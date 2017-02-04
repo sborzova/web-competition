@@ -41,10 +41,10 @@ import * as import33 from '@angular/core/src/di/injector';
 import * as import34 from './home/home.component.ngfactory';
 import * as import35 from './auth/signin.component.ngfactory';
 import * as import36 from './auth/signup.component.ngfactory';
-import * as import37 from './usersManagement/usersManagement.component.ngfactory';
+import * as import37 from './users-management/users-management.component.ngfactory';
 import * as import38 from './files/files.component.ngfactory';
-import * as import39 from './profile/profileEdit.component.ngfactory';
-import * as import40 from './profile/profileEditpass.component.ngfactory';
+import * as import39 from './profile/profile-edit.component.ngfactory';
+import * as import40 from './profile/profile-edit-password.component.ngfactory';
 import * as import41 from './profile/profile.component.ngfactory';
 import * as import42 from './app.component.ngfactory';
 import * as import43 from '@angular/core/src/application_tokens';
@@ -57,10 +57,10 @@ import * as import49 from '@angular/common/src/location/location_strategy';
 import * as import50 from './home/home.component';
 import * as import51 from './auth/signin.component';
 import * as import52 from './auth/signup.component';
-import * as import53 from './usersManagement/usersManagement.component';
+import * as import53 from './users-management/users-management.component';
 import * as import54 from './files/files.component';
-import * as import55 from './profile/profileEdit.component';
-import * as import56 from './profile/profileEditpass.component';
+import * as import55 from './profile/profile-edit.component';
+import * as import56 from './profile/profile-edit-password.component';
 import * as import57 from './profile/profile.component';
 import * as import58 from '@angular/router/src/router';
 import * as import59 from '@angular/core/src/console';
@@ -336,7 +336,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
             ,
             {
               path: 'editpass',
-              component: import56.ProfileEditpassComponent
+              component: import56.ProfileEditPasswordComponent
             }
             ,
             {

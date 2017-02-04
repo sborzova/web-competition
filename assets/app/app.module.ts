@@ -4,18 +4,21 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
-import { HeaderComponent } from "./header.component";
+import { HeaderComponent } from "./header/header.component";
 import { AuthService } from "./auth/auth.service";
 import { SigninComponent } from "./auth/signin.component";
 import { SignupComponent } from "./auth/signup.component";
 import { routing } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
 import { ProfileComponent } from "./profile/profile.component";
-import { ProfileEditComponent } from "./profile/profileEdit.component";
-import { ProfileEditpassComponent } from "./profile/profileEditpass.component";
-import { UsersManagementComponent } from "./usersManagement/usersManagement.component";
+import { ProfileEditComponent } from "./profile/profile-edit.component";
+import { ProfileEditPasswordComponent } from "./profile/profile-edit-password.component";
+import { UsersManagementComponent } from "./users-management/users-management.component";
 import { FilesComponent } from "./files/files.component";
 import { FileUploadModule} from "ng2-file-upload";
+import { EqualValidator } from "./auth/validator-equal.directive";
+import { ErrorComponent } from "./messages/errors/error.component";
+import { ErrorService } from "./messages/errors/error.service";
 
 @NgModule({
     declarations: [
@@ -26,9 +29,11 @@ import { FileUploadModule} from "ng2-file-upload";
         SignupComponent,
         ProfileComponent,
         ProfileEditComponent,
-        ProfileEditpassComponent,
+        ProfileEditPasswordComponent,
         UsersManagementComponent,
-        FilesComponent
+        FilesComponent,
+        EqualValidator,
+        ErrorComponent
     ],
     imports: [
         BrowserModule,
@@ -36,9 +41,12 @@ import { FileUploadModule} from "ng2-file-upload";
         ReactiveFormsModule,
         HttpModule,
         routing,
-        FileUploadModule
+        FileUploadModule,
     ],
-    providers: [AuthService],
+    providers: [
+        AuthService,
+        ErrorService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

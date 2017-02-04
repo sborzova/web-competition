@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 
 import { User } from "./user.model";
 import { AuthService } from "./auth.service";
+import { ErrorService } from "../messages/errors/error.service";
 
 @Component({
     selector: 'app-signin',
@@ -12,7 +13,9 @@ import { AuthService } from "./auth.service";
 export class SigninComponent {
     myForm: FormGroup;
 
-    constructor(private authService: AuthService, private router: Router) {}
+    constructor(private authService: AuthService,
+                private router: Router,
+                private errorService: ErrorService) {}
 
     onSubmit() {
         const user = new User(this.myForm.value.email, this.myForm.value.password);
@@ -21,15 +24,18 @@ export class SigninComponent {
                 data => {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('userId', data.userId);
-                    console.log(data.isAdmin);
+
                     if (data.isAdmin === 'true'){
                         localStorage.setItem('isAdmin', 'true');
                     }
+
+                    this.errorService.deleteError();
                     this.router.navigateByUrl('/home');
                 },
-                error => console.error(error)
+                error => {
+                    console.error(error);
+                }
             );
-        this.myForm.reset();
     }
 
     ngOnInit() {

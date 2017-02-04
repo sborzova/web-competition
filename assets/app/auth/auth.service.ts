@@ -4,32 +4,52 @@ import 'rxjs/Rx';
 import { Observable } from "rxjs";
 
 import { User } from "./user.model";
+import { ErrorService } from "../messages/errors/error.service";
+import { Password } from "../profile/password.model";
 
 @Injectable()
-export class AuthService {
-    constructor(private http: Http) {}
+export class AuthService{
+    private hostUrl: string;
+
+    constructor(private http: Http,
+                private errorService: ErrorService) {
+
+        const routeModule = require("../app.routing");
+        this.hostUrl = routeModule.hostUrl;
+    }
 
     signup(user: User) {
+        this.errorService.deleteError();
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post('https://bakalar.herokuapp.com/', body, {headers: headers})
+        return this.http.post(this.hostUrl, body, {headers: headers})
             .map((response: Response) => response.json())
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => {
+                if (error.status === 422){
+                    this.errorService.handleError(error.json());
+                }
+                    return Observable.throw(error.json())
+
+            });
     }
 
     signin(user: User) {
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post('https://bakalar.herokuapp.com/signin', body, {headers: headers})
+
+        return this.http.post(this.hostUrl.concat('signin'), body, {headers: headers})
             .map((response: Response) => response.json())
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => {
+                this.errorService.handleError(error.json());
+                return Observable.throw(error.json())
+            });
     }
 
     getUser() {
         const token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.get('https://bakalar.herokuapp.com/user' + token)
+        return this.http.get(this.hostUrl.concat('user') + token)
             .map((response: Response) => {
                 return response.json().obj;
             })
@@ -42,9 +62,26 @@ export class AuthService {
             ? '?token=' + localStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch('https://bakalar.herokuapp.com/user' + token, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('user') + token, body, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => Observable.throw(error.json()));
+    }
+
+    updatePassword(user: User){
+        const body = JSON.stringify(user);
+        const token = localStorage.getItem('token')
+            ? '?token=' + localStorage.getItem('token')
+            : '';
+        const headers = new Headers({'Content-Type': 'application/json'});
+        return this.http.patch(this.hostUrl.concat('password') + token, body, {headers: headers})
+            .map((response: Response) => response.json())
+            .catch((error: Response) => {
+                if (error.status === 412){
+                    this.errorService.handleError(error.json());
+                }
+                return Observable.throw(error.json())
+            })
+
     }
 
     logout() {
@@ -58,18 +95,5 @@ export class AuthService {
     isAdmin(){
         return localStorage.getItem('isAdmin') !== null;
     }
-
-    // isAdmin(){
-    //     const token = localStorage.getItem('token')
-    //         ? '?token=' + localStorage.getItem('token')
-    //         : '';
-    //     const headers = new Headers({'Content-Type': 'application/json'});
-    //     return this.http.get('http://localhost:3000/isAdmin' + token, {headers: headers})
-    //         .map((response: Response) => {
-    //             return response.json().obj;
-    //         })
-    //         .catch((error: Response) => Observable.throw(error.json()));
-    // }
-
 
 }
