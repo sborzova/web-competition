@@ -7,8 +7,8 @@
 import * as import0 from '@angular/core/src/render/api';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import2 from '@angular/core/src/linker/element';
-import * as import3 from './files.component';
-import * as import4 from './files.service';
+import * as import3 from './instances.component';
+import * as import4 from './instances.service';
 import * as import5 from '@angular/core/src/linker/view_utils';
 import * as import6 from '@angular/core/src/di/injector';
 import * as import7 from '@angular/core/src/linker/view_type';

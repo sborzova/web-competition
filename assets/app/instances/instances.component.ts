@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 
-import { FilesService } from "./files.service";
+import { InstancesService } from "./instances.service";
 import { FileUploader } from "ng2-file-upload";
 import {ErrorService} from "../messages/errors/error.service";
 
 @Component({
-    selector: 'app-files',
-    templateUrl: 'files.component.html',
-    providers: [FilesService]
+    selector: 'app-instances',
+    templateUrl: 'instances.component.html',
+    providers: [InstancesService]
 })
-export class FilesComponent {
+export class InstancesComponent {
     private hostUrl: string;
     public uploader: FileUploader;
 

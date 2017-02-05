@@ -14,11 +14,11 @@ import { ProfileComponent } from "./profile/profile.component";
 import { ProfileEditComponent } from "./profile/profile-edit.component";
 import { ProfileEditPasswordComponent } from "./profile/profile-edit-password.component";
 import { UsersManagementComponent } from "./users-management/users-management.component";
-import { FilesComponent } from "./files/files.component";
 import { FileUploadModule} from "ng2-file-upload";
 import { EqualValidator } from "./auth/validator-equal.directive";
 import { ErrorComponent } from "./messages/errors/error.component";
 import { ErrorService } from "./messages/errors/error.service";
+import {InstancesComponent} from "./instances/instances.component";
 
 @NgModule({
     declarations: [
@@ -31,7 +31,7 @@ import { ErrorService } from "./messages/errors/error.service";
         ProfileEditComponent,
         ProfileEditPasswordComponent,
         UsersManagementComponent,
-        FilesComponent,
+        InstancesComponent,
         EqualValidator,
         ErrorComponent
     ],

@@ -20,6 +20,7 @@ var upload = multer({
 }).single('file');
 
 router.post('/upload', function(req, res) {
+    console.log(req.files);
     upload(req, res, function(err) {
         if (err) {
             return res.status(500).json({
