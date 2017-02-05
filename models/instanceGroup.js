@@ -3,9 +3,9 @@ var Schema = mongoose.Schema;
 var mongooseUniqueValidator = require('mongoose-unique-validator');
 
 var schema = new Schema({
-    content: {type: Schema.Mixed, required: true}
+    name: {type: String, required: true}
 });
 
 schema.plugin(mongooseUniqueValidator);
 
-module.exports = mongoose.model('Instance', schema);
+module.exports = mongoose.model('InstanceGroup', schema);

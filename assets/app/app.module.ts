@@ -19,6 +19,7 @@ import { EqualValidator } from "./auth/validator-equal.directive";
 import { ErrorComponent } from "./messages/errors/error.component";
 import { ErrorService } from "./messages/errors/error.service";
 import {InstancesComponent} from "./instances/instances.component";
+import {InstanceGroupNewComponent} from "./instance-group-new/instance-group-new.component";
 
 @NgModule({
     declarations: [
@@ -32,8 +33,9 @@ import {InstancesComponent} from "./instances/instances.component";
         ProfileEditPasswordComponent,
         UsersManagementComponent,
         InstancesComponent,
+        ErrorComponent,
+        InstanceGroupNewComponent,
         EqualValidator,
-        ErrorComponent
     ],
     imports: [
         BrowserModule,

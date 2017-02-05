@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { InstancesService } from "./instances.service";
 import { FileUploader } from "ng2-file-upload";
-import {ErrorService} from "../messages/errors/error.service";
+import { ErrorService } from "../messages/errors/error.service";
 
 @Component({
     selector: 'app-instances',
