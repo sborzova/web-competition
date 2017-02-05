@@ -2,13 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { AuthService } from "./auth.service";
-import { User } from "./user.model";
-import { ErrorService } from "../messages/errors/error.service";
+import { AuthService } from "../auth.service";
+import { User } from "../user.model";
+import { ErrorService } from "../../messages/errors/error.service";
 
 @Component({
     selector: 'app-signup',
-    templateUrl: './signup.component.html'
+    templateUrl: 'signup.component.html'
 })
 export class SignupComponent implements OnInit {
     myForm: FormGroup;

@@ -13,7 +13,7 @@
                 <ul class="dropdown-menu">
                     <li routerLinkActive="active" *ngIf="!isLoggedIn()"><a [routerLink]="['signup']">Sign up</a></li>
                     <li routerLinkActive="active" *ngIf="!isLoggedIn()"><a [routerLink]="['signin']">Log in</a></li>
-                    <li routerLinkActive="active" *ngIf="isLoggedIn()"><a [routerLink]="['profile/info']">My profile</a></li>
+                    <li routerLinkActive="active" *ngIf="isLoggedIn()"><a [routerLink]="['profile/info']">My account</a></li>
                     <li *ngIf="isLoggedIn()"><a (click)="onLogout()" style="cursor: pointer;">Log out</a></li>
                 </ul>
             </li>

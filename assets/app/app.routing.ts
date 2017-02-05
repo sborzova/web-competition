@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from "@angular/router";
 
-import { SigninComponent } from "./auth/signin.component";
-import { SignupComponent } from "./auth/signup.component";
+import { SigninComponent } from "./auth/signin/signin.component";
+import { SignupComponent } from "./auth/signup/signup.component";
 import { HomeComponent } from "./home/home.component";
 import { PROFILE_ROUTES } from "./profile/profile.routes";
 import { UsersManagementComponent } from "./users-management/users-management.component";

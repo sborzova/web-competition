@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { User } from "./user.model";
-import { AuthService } from "./auth.service";
-import { ErrorService } from "../messages/errors/error.service";
+import { User } from "../user.model";
+import { AuthService } from "../auth.service";
+import { ErrorService } from "../../messages/errors/error.service";
 
 @Component({
     selector: 'app-signin',
-    templateUrl: './signin.component.html'
+    templateUrl: 'signin.component.html'
 })
 export class SigninComponent {
     myForm: FormGroup;

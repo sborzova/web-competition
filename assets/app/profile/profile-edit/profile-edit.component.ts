@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, NgForm} from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { AuthService } from "../auth/auth.service";
-import { User } from "../auth/user.model";
+import { AuthService } from "../../auth/auth.service";
+import { User } from "../user.model";
 
 @Component({
     selector: 'app-profile-edit',
-    templateUrl: './profile-edit.component.html'
+    templateUrl: 'profile-edit.component.html'
 })
 export class ProfileEditComponent implements OnInit {
     myForm: FormGroup;

@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import { FormGroup, NgForm, Validators, FormControl } from "@angular/forms";
-import { Password } from "./password.model";
-import { AuthService } from "../auth/auth.service";
 import { Router } from "@angular/router";
-import { User } from "./user.model";
+
+import { Password } from "../password.model";
+import { User } from "../user.model";
+import { AuthService } from "../../auth/auth.service";
 
 @Component({
     selector: 'app-profile-edit-pass',
-    templateUrl: './profile-edit-password.component.html'
+    templateUrl: 'profile-edit-password.component.html'
 })
 export class ProfileEditPasswordComponent implements OnInit{
     myForm: FormGroup;
