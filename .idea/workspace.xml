@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/instance-group-new/instance-group.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/instance-group/instance-group.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/instance-group/instance-group.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.routing.ts" afterPath="$PROJECT_DIR$/assets/app/app.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/auth.service.ts" afterPath="$PROJECT_DIR$/assets/app/auth/auth.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/header/header.component.html" afterPath="$PROJECT_DIR$/assets/app/header/header.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instance-group-new/instance-group-new.component.html" afterPath="$PROJECT_DIR$/assets/app/instance-group-new/instance-group-new.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instance-group-new/instance-group-new.component.ts" afterPath="$PROJECT_DIR$/assets/app/instance-group-new/instance-group-new.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instance-group-new/instance-group.model.ts" afterPath="$PROJECT_DIR$/assets/app/instance-group-new/instance-group.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instances.component.html" afterPath="$PROJECT_DIR$/assets/app/instances/instances.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instances.component.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instances.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instances.service.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instances.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js" afterPath="$PROJECT_DIR$/public/js/app/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/instance-group.js" afterPath="$PROJECT_DIR$/routes/instance-group.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,7 +22,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="instance-group.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="instance-group.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/instance-group.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1190">
@@ -107,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -216,7 +203,6 @@
         <option value="$PROJECT_DIR$/assets/app/profile/profile.routes.ts" />
         <option value="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/assets/app/header/header.component.html" />
         <option value="$PROJECT_DIR$/assets/app/instances/instances.component.html" />
         <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
@@ -230,6 +216,7 @@
         <option value="$PROJECT_DIR$/assets/app/instance-group/instance-group.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/instances/instances.service.ts" />
         <option value="$PROJECT_DIR$/routes/instance-group.js" />
+        <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
       </list>
     </option>
   </component>
@@ -275,6 +262,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -389,7 +394,7 @@
       <workItem from="1486212081761" duration="8449000" />
       <workItem from="1486309165733" duration="1170000" />
       <workItem from="1486333234605" duration="444000" />
-      <workItem from="1486368822229" duration="17943000" />
+      <workItem from="1486368822229" duration="18254000" />
     </task>
     <task id="LOCAL-00001" summary="field-error class">
       <created>1486310085349</created>
@@ -447,11 +452,18 @@
       <option name="project" value="LOCAL" />
       <updated>1486369292780</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="instance group create, delete, get">
+      <created>1486387519278</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1486387519278</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250434000" />
+    <option name="totallyTimeSpent" value="250745000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -539,7 +551,8 @@
     <MESSAGE value="instance-group  not finished" />
     <MESSAGE value="hosturl" />
     <MESSAGE value="delete .idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete .idea" />
+    <MESSAGE value="instance group create, delete, get" />
+    <option name="LAST_COMMIT_MESSAGE" value="instance group create, delete, get" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -935,14 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/auth/signin/signin.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -955,6 +960,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
           <caret line="70" column="9" lean-forward="true" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
           <folding />
         </state>
       </provider>
