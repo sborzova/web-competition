@@ -24,6 +24,7 @@ import { InstanceGroupComponent } from "./instance-group/instance-group.componen
 import { UserComponent } from "./users-management/user/user.component";
 import { SuccessComponent } from "./messages/successes/success.component";
 import { SuccessService } from "./messages/successes/success.service";
+import { InstanceGroupEditComponent } from "./instance-group-edit/instance-group-edit.component";
 
 @NgModule({
     declarations: [
@@ -41,6 +42,7 @@ import { SuccessService } from "./messages/successes/success.service";
         InstancesComponent,
         InstanceGroupNewComponent,
         InstanceGroupComponent,
+        InstanceGroupEditComponent,
         UserComponent,
         EqualValidator
     ],

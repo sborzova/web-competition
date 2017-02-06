@@ -15,14 +15,16 @@ export class InstanceGroupComponent {
     constructor(private instanceService: InstancesService,
                 private authService: AuthService) {}
 
-    onEdit() {
-        this.instanceService.editInstanceGroup(this.instanceGroup);
-    }
+    // onEdit() {
+    //     this.instanceService.editInstanceGroup(this.instanceGroup);
+    // }
 
     onDelete() {
         this.instanceService.deleteInstanceGroup(this.instanceGroup)
             .subscribe(
-                result => console.log(result)
+                result => {
+                    console.log(result);
+                }
             );
     }
 

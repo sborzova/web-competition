@@ -1,0 +1,19 @@
+<div *ngIf="isAdmin()" class = "row" [ngStyle]="{'display': display}">
+    <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="row" style="padding: 20px">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <input
+                            type="text"
+                            id="name"
+                            class="form-control"
+                            formControlName="name"
+                            placeholder="Name">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Change name</button>
+            </div>
+        </div>
+    </form>
+</div>

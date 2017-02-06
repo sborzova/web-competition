@@ -28,7 +28,7 @@ router.post('/instanceGroup', function (req, res) {
         // user.save();
         res.status(201).json({
             message: 'Saved instance group',
-            obj: {message: 'Instance group ' + result.name + 'was created.'}
+            obj: {message: 'Instance group ' + result.name + ' was created.'}
         });
     });
 });

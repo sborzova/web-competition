@@ -26,4 +26,7 @@ export class InstanceGroupService{
             .catch((error: Response) => Observable.throw(error.json()));
     }
 
+    showEditComponent(){
+        return null;
+    }
 }
