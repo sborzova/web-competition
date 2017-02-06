@@ -18,12 +18,14 @@ import { FileUploadModule} from "ng2-file-upload";
 import { EqualValidator } from "./auth/validator-equal.directive";
 import { ErrorComponent } from "./messages/errors/error.component";
 import { ErrorService } from "./messages/errors/error.service";
-import {InstancesComponent} from "./instances/instances.component";
-import {InstanceGroupNewComponent} from "./instance-group-new/instance-group-new.component";
+import { InstancesComponent } from "./instances/instances.component";
+import { InstanceGroupNewComponent } from "./instance-group-new/instance-group-new.component";
+import { InstanceGroupComponent } from "./instance-group/instance-group.component";
 
 @NgModule({
     declarations: [
         AppComponent,
+        ErrorComponent,
         HeaderComponent,
         HomeComponent,
         SigninComponent,
@@ -33,9 +35,9 @@ import {InstanceGroupNewComponent} from "./instance-group-new/instance-group-new
         ProfileEditPasswordComponent,
         UsersManagementComponent,
         InstancesComponent,
-        ErrorComponent,
         InstanceGroupNewComponent,
-        EqualValidator,
+        InstanceGroupComponent,
+        EqualValidator
     ],
     imports: [
         BrowserModule,
