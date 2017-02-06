@@ -1,0 +1,14 @@
+<table class="table">
+    <tbody>
+    <tr>
+        <td>{{ i + 1 }} </td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <button class="btn btn-danger btn-s" (click)="onDelete()">
+            <span class="glyphicon glyphicon-trash"></span>
+            Delete
+        </button>
+    </tr>
+    </tbody>
+</table>

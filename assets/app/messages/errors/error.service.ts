@@ -1,5 +1,5 @@
-import {EventEmitter, Injectable} from "@angular/core";
-import {Subject} from "rxjs";
+import { EventEmitter, Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 
 import { Error } from "./error.model";
 

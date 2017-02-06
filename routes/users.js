@@ -26,4 +26,34 @@ router.get('/users', function(req, res, next) {
     });
 });
 
+router.delete('/user/:id', function (req, res, next) {
+    //var decoded = jwt.decode(req.query.token);
+    User.findById(req.params.id, function (err, user) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!user) {
+            return res.status(500).json({
+                title: 'No User Found!',
+                error: {message: 'User not found'}
+            });
+        }
+        user.remove(function (err, result) {
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+            res.status(200).json({
+                message: 'Deleted user',
+                obj: {message: 'User ' + user.email + ' was deleted.'}
+            });
+        });
+    });
+});
+
 module.exports = router;

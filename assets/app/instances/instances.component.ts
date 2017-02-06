@@ -4,6 +4,7 @@ import { InstancesService } from "./instances.service";
 import { FileUploader } from "ng2-file-upload";
 import { ErrorService } from "../messages/errors/error.service";
 import { InstanceGroup } from "../instance-group-new/instance-group.model";
+import {SuccessService} from "../messages/successes/success.service";
 
 @Component({
     selector: 'app-instances',
@@ -16,9 +17,12 @@ export class InstancesComponent implements OnInit {
     public uploader: FileUploader;
 
     constructor(private errorService: ErrorService,
+                private successService: SuccessService,
                 private instancesService: InstancesService){
 
         this.errorService.deleteError();
+        this.successService.deleteSuccess();
+
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
         this.uploader = new FileUploader({url:this.hostUrl.concat('upload')});

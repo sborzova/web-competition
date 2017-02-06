@@ -21,11 +21,15 @@ import { ErrorService } from "./messages/errors/error.service";
 import { InstancesComponent } from "./instances/instances.component";
 import { InstanceGroupNewComponent } from "./instance-group-new/instance-group-new.component";
 import { InstanceGroupComponent } from "./instance-group/instance-group.component";
+import { UserComponent } from "./users-management/user/user.component";
+import { SuccessComponent } from "./messages/successes/success.component";
+import { SuccessService } from "./messages/successes/success.service";
 
 @NgModule({
     declarations: [
         AppComponent,
         ErrorComponent,
+        SuccessComponent,
         HeaderComponent,
         HomeComponent,
         SigninComponent,
@@ -37,6 +41,7 @@ import { InstanceGroupComponent } from "./instance-group/instance-group.componen
         InstancesComponent,
         InstanceGroupNewComponent,
         InstanceGroupComponent,
+        UserComponent,
         EqualValidator
     ],
     imports: [
@@ -49,7 +54,8 @@ import { InstanceGroupComponent } from "./instance-group/instance-group.componen
     ],
     providers: [
         AuthService,
-        ErrorService
+        ErrorService,
+        SuccessService
     ],
     bootstrap: [AppComponent]
 })

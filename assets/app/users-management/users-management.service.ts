@@ -2,13 +2,16 @@ import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs";
 import { User } from "./user.model";
+import { SuccessService } from "../messages/successes/success.service";
+import { Success } from "../messages/successes/success.model";
 
 @Injectable()
 export class UsersManagementService {
     private users: User[] = [];
     private hostUrl: string;
 
-    constructor(private http: Http) {
+    constructor(private http: Http,
+                private successService: SuccessService) {
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
@@ -22,12 +25,30 @@ export class UsersManagementService {
                     transformedUsers.push(new User(
                         user.email,
                         user.firstName,
-                        user.lastName,)
+                        user.lastName,
+                        user._id)
                     );
                 }
                 this.users = transformedUsers;
                 return transformedUsers;
             })
             .catch((error: Response) => Observable.throw(error.json()));
+    }
+
+    deleteUser(user: User){
+        this.users.splice(this.users.indexOf(user), 1);
+        const token = localStorage.getItem('token')
+            ? '?token=' + localStorage.getItem('token')
+            : '';
+        return this.http.delete(
+            this.hostUrl.concat('user/') + user.userId + token)
+            .map((response: Response) => {
+                this.successService.handleSuccess(response.json());
+                return response.json();
+            })
+            .catch((error: Response) => {
+                //this.errorService.handleError(error.json());
+                return Observable.throw(error.json());
+            });
     }
 }

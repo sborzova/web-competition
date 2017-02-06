@@ -5,6 +5,7 @@ import { Router } from "@angular/router";
 import { AuthService } from "../auth.service";
 import { User } from "../user.model";
 import { ErrorService } from "../../messages/errors/error.service";
+import {SuccessService} from "../../messages/successes/success.service";
 
 @Component({
     selector: 'app-signup',
@@ -16,9 +17,11 @@ export class SignupComponent implements OnInit {
 
     constructor(private authService: AuthService,
                 private router: Router,
-                private errorService: ErrorService) {
+                private errorService: ErrorService,
+                private successService: SuccessService) {
 
         this.errorService.deleteError();
+        this.successService.deleteSuccess();
     }
 
     onSubmit() {
