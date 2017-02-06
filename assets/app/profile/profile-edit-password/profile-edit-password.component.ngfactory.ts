@@ -12,7 +12,7 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../auth/auth.service';
+import * as import8 from '../../auth/auth.service';
 import * as import9 from '@angular/router/src/router';
 import * as import10 from '@angular/core/src/metadata/view';
 import * as import11 from '@angular/core/src/linker/component_factory';
@@ -23,7 +23,7 @@ import * as import15 from '@angular/forms/src/directives/ng_control_status';
 import * as import16 from '@angular/common/src/directives/ng_class';
 import * as import17 from '@angular/forms/src/directives/default_value_accessor';
 import * as import18 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
-import * as import19 from '../auth/validator-equal.directive';
+import * as import19 from '../../auth/validator-equal.directive';
 import * as import20 from '@angular/core/src/change_detection/differs/iterable_differs';
 import * as import21 from '@angular/core/src/change_detection/differs/keyvalue_differs';
 import * as import22 from '@angular/core/src/linker/element_ref';
@@ -153,7 +153,7 @@ class _View_ProfileEditPasswordComponent0 extends import1.AppView<import3.Profil
   }
 }
 export function viewFactory_ProfileEditPasswordComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileEditPasswordComponent> {
-  if ((renderType_ProfileEditPasswordComponent === (null as any))) { (renderType_ProfileEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-edit-password.component.html',0,import10.ViewEncapsulation.None,styles_ProfileEditPasswordComponent,{})); }
+  if ((renderType_ProfileEditPasswordComponent === (null as any))) { (renderType_ProfileEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-edit-password/profile-edit-password.component.html',0,import10.ViewEncapsulation.None,styles_ProfileEditPasswordComponent,{})); }
   return new _View_ProfileEditPasswordComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
@@ -885,7 +885,7 @@ class _View_ProfileEditPasswordComponent2 extends import1.AppView<any> {
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
-    this.renderer.setElementAttribute(this._el_0,'class','alert alert-danger');
+    this.renderer.setElementAttribute(this._el_0,'class','field-error');
     this._text_1 = this.renderer.createText(this._el_0,'\n                                Current password is required.\n                            ',(null as any));
     this.init([].concat([this._el_0]),[
       this._el_0,
@@ -906,7 +906,7 @@ class _View_ProfileEditPasswordComponent3 extends import1.AppView<any> {
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
-    this.renderer.setElementAttribute(this._el_0,'class','alert alert-danger');
+    this.renderer.setElementAttribute(this._el_0,'class','field-error');
     this._text_1 = this.renderer.createText(this._el_0,'\n                                Password is required.\n                            ',(null as any));
     this.init([].concat([this._el_0]),[
       this._el_0,
@@ -927,7 +927,7 @@ class _View_ProfileEditPasswordComponent4 extends import1.AppView<any> {
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
-    this.renderer.setElementAttribute(this._el_0,'class','alert alert-danger');
+    this.renderer.setElementAttribute(this._el_0,'class','field-error');
     this._text_1 = this.renderer.createText(this._el_0,'\n                                Password can have min 4 characters.\n                            ',(null as any));
     this.init([].concat([this._el_0]),[
       this._el_0,
@@ -948,7 +948,7 @@ class _View_ProfileEditPasswordComponent5 extends import1.AppView<any> {
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
-    this.renderer.setElementAttribute(this._el_0,'class','alert alert-danger');
+    this.renderer.setElementAttribute(this._el_0,'class','field-error');
     this._text_1 = this.renderer.createText(this._el_0,'\n                                Password can have max 100 characters.\n                            ',(null as any));
     this.init([].concat([this._el_0]),[
       this._el_0,
@@ -969,7 +969,7 @@ class _View_ProfileEditPasswordComponent6 extends import1.AppView<any> {
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
-    this.renderer.setElementAttribute(this._el_0,'class','alert alert-danger');
+    this.renderer.setElementAttribute(this._el_0,'class','field-error');
     this._text_1 = this.renderer.createText(this._el_0,'\n                                These passwords don\'t match.\n                            ',(null as any));
     this.init([].concat([this._el_0]),[
       this._el_0,

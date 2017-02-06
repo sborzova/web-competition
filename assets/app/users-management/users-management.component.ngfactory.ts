@@ -14,13 +14,16 @@ import * as import6 from '@angular/core/src/di/injector';
 import * as import7 from '@angular/core/src/linker/view_type';
 import * as import8 from '@angular/core/src/change_detection/change_detection';
 import * as import9 from '@angular/http/src/http';
-import * as import10 from '@angular/router/src/router';
-import * as import11 from '@angular/core/src/metadata/view';
-import * as import12 from '@angular/core/src/linker/component_factory';
-import * as import13 from '@angular/common/src/directives/ng_if';
-import * as import14 from '@angular/core/src/linker/template_ref';
-import * as import15 from '@angular/common/src/directives/ng_for';
-import * as import16 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import10 from '../messages/successes/success.service';
+import * as import11 from '../messages/errors/error.service';
+import * as import12 from '@angular/core/src/metadata/view';
+import * as import13 from '@angular/core/src/linker/component_factory';
+import * as import14 from '@angular/common/src/directives/ng_if';
+import * as import15 from '@angular/core/src/linker/template_ref';
+import * as import16 from '@angular/common/src/directives/ng_for';
+import * as import17 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import18 from './user/user.component';
+import * as import19 from './user/user.component.ngfactory';
 var renderType_UsersManagementComponent_Host:import0.RenderComponentType = (null as any);
 class _View_UsersManagementComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -34,8 +37,8 @@ class _View_UsersManagementComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-usersmanagement',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_UsersManagementComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._UsersManagementService_0_4 = new import3.UsersManagementService(this.parentInjector.get(import9.Http));
-    this._UsersManagementComponent_0_5 = new import4.UsersManagementComponent(this._UsersManagementService_0_4,this.parentInjector.get(import10.Router));
+    this._UsersManagementService_0_4 = new import3.UsersManagementService(this.parentInjector.get(import9.Http),this.parentInjector.get(import10.SuccessService));
+    this._UsersManagementComponent_0_5 = new import4.UsersManagementComponent(this._UsersManagementService_0_4,this.parentInjector.get(import10.SuccessService),this.parentInjector.get(import11.ErrorService));
     this._appEl_0.initComponent(this._UsersManagementComponent_0_5,[],compView_0);
     compView_0.create(this._UsersManagementComponent_0_5,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -53,17 +56,17 @@ class _View_UsersManagementComponent_Host0 extends import1.AppView<any> {
   }
 }
 function viewFactory_UsersManagementComponent_Host0(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_UsersManagementComponent_Host === (null as any))) { (renderType_UsersManagementComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
+  if ((renderType_UsersManagementComponent_Host === (null as any))) { (renderType_UsersManagementComponent_Host = viewUtils.createRenderComponentType('',0,import12.ViewEncapsulation.None,[],{})); }
   return new _View_UsersManagementComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const UsersManagementComponentNgFactory:import12.ComponentFactory<import4.UsersManagementComponent> = new import12.ComponentFactory<import4.UsersManagementComponent>('app-usersmanagement',viewFactory_UsersManagementComponent_Host0,import4.UsersManagementComponent);
+export const UsersManagementComponentNgFactory:import13.ComponentFactory<import4.UsersManagementComponent> = new import13.ComponentFactory<import4.UsersManagementComponent>('app-usersmanagement',viewFactory_UsersManagementComponent_Host0,import4.UsersManagementComponent);
 const styles_UsersManagementComponent:any[] = [];
 var renderType_UsersManagementComponent:import0.RenderComponentType = (null as any);
 class _View_UsersManagementComponent0 extends import1.AppView<import4.UsersManagementComponent> {
   _anchor_0:any;
   /*private*/ _appEl_0:import2.AppElement;
   _TemplateRef_0_5:any;
-  _NgIf_0_6:import13.NgIf;
+  _NgIf_0_6:import14.NgIf;
   _text_1:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement) {
@@ -73,8 +76,8 @@ class _View_UsersManagementComponent0 extends import1.AppView<import4.UsersManag
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
     this._anchor_0 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._anchor_0);
-    this._TemplateRef_0_5 = new import14.TemplateRef_(this._appEl_0,viewFactory_UsersManagementComponent1);
-    this._NgIf_0_6 = new import13.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
+    this._TemplateRef_0_5 = new import15.TemplateRef_(this._appEl_0,viewFactory_UsersManagementComponent1);
+    this._NgIf_0_6 = new import14.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
     this._text_1 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this._expr_0 = import8.UNINITIALIZED;
     this.init([],[
@@ -85,8 +88,8 @@ class _View_UsersManagementComponent0 extends import1.AppView<import4.UsersManag
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import14.TemplateRef) && (0 === requestNodeIndex))) { return this._TemplateRef_0_5; }
-    if (((token === import13.NgIf) && (0 === requestNodeIndex))) { return this._NgIf_0_6; }
+    if (((token === import15.TemplateRef) && (0 === requestNodeIndex))) { return this._TemplateRef_0_5; }
+    if (((token === import14.NgIf) && (0 === requestNodeIndex))) { return this._NgIf_0_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -100,7 +103,7 @@ class _View_UsersManagementComponent0 extends import1.AppView<import4.UsersManag
   }
 }
 export function viewFactory_UsersManagementComponent0(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<import4.UsersManagementComponent> {
-  if ((renderType_UsersManagementComponent === (null as any))) { (renderType_UsersManagementComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/users-management/users-management.component.html',0,import11.ViewEncapsulation.None,styles_UsersManagementComponent,{})); }
+  if ((renderType_UsersManagementComponent === (null as any))) { (renderType_UsersManagementComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/users-management/users-management.component.html',0,import12.ViewEncapsulation.None,styles_UsersManagementComponent,{})); }
   return new _View_UsersManagementComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_UsersManagementComponent1 extends import1.AppView<any> {
@@ -125,15 +128,12 @@ class _View_UsersManagementComponent1 extends import1.AppView<any> {
   _text_18:any;
   _text_19:any;
   _text_20:any;
-  _el_21:any;
-  _text_22:any;
-  _anchor_23:any;
-  /*private*/ _appEl_23:import2.AppElement;
-  _TemplateRef_23_5:any;
-  _NgFor_23_6:import15.NgFor;
-  _text_24:any;
-  _text_25:any;
-  _text_26:any;
+  _text_21:any;
+  _anchor_22:any;
+  /*private*/ _appEl_22:import2.AppElement;
+  _TemplateRef_22_5:any;
+  _NgFor_22_6:import16.NgFor;
+  _text_23:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement) {
     super(_View_UsersManagementComponent1,renderType_UsersManagementComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
@@ -158,19 +158,16 @@ class _View_UsersManagementComponent1 extends import1.AppView<any> {
     this._text_14 = this.renderer.createText(this._el_13,'Last name',(null as any));
     this._text_15 = this.renderer.createText(this._el_6,'\n            ',(null as any));
     this._el_16 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_17 = this.renderer.createText(this._el_16,'Mail',(null as any));
+    this._text_17 = this.renderer.createText(this._el_16,'Email address',(null as any));
     this._text_18 = this.renderer.createText(this._el_6,'\n        ',(null as any));
     this._text_19 = this.renderer.createText(this._el_4,'\n        ',(null as any));
-    this._text_20 = this.renderer.createText(this._el_2,'\n        ',(null as any));
-    this._el_21 = this.renderer.createElement(this._el_2,'tbody',(null as any));
-    this._text_22 = this.renderer.createText(this._el_21,'\n            ',(null as any));
-    this._anchor_23 = this.renderer.createTemplateAnchor(this._el_21,(null as any));
-    this._appEl_23 = new import2.AppElement(23,21,this,this._anchor_23);
-    this._TemplateRef_23_5 = new import14.TemplateRef_(this._appEl_23,viewFactory_UsersManagementComponent2);
-    this._NgFor_23_6 = new import15.NgFor(this._appEl_23.vcRef,this._TemplateRef_23_5,this.parentInjector.get(import16.IterableDiffers),this.parent.ref);
-    this._text_24 = this.renderer.createText(this._el_21,'\n        ',(null as any));
-    this._text_25 = this.renderer.createText(this._el_2,'\n    ',(null as any));
-    this._text_26 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_20 = this.renderer.createText(this._el_2,'\n    ',(null as any));
+    this._text_21 = this.renderer.createText(this._el_0,'\n        ',(null as any));
+    this._anchor_22 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
+    this._appEl_22 = new import2.AppElement(22,0,this,this._anchor_22);
+    this._TemplateRef_22_5 = new import15.TemplateRef_(this._appEl_22,viewFactory_UsersManagementComponent2);
+    this._NgFor_22_6 = new import16.NgFor(this._appEl_22.vcRef,this._TemplateRef_22_5,this.parentInjector.get(import17.IterableDiffers),this.parent.ref);
+    this._text_23 = this.renderer.createText(this._el_0,'\n',(null as any));
     this._expr_0 = import8.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
@@ -194,19 +191,16 @@ class _View_UsersManagementComponent1 extends import1.AppView<any> {
       this._text_18,
       this._text_19,
       this._text_20,
-      this._el_21,
-      this._text_22,
-      this._anchor_23,
-      this._text_24,
-      this._text_25,
-      this._text_26
+      this._text_21,
+      this._anchor_22,
+      this._text_23
     ]
     ,[],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import14.TemplateRef) && (23 === requestNodeIndex))) { return this._TemplateRef_23_5; }
-    if (((token === import15.NgFor) && (23 === requestNodeIndex))) { return this._NgFor_23_6; }
+    if (((token === import15.TemplateRef) && (22 === requestNodeIndex))) { return this._TemplateRef_22_5; }
+    if (((token === import16.NgFor) && (22 === requestNodeIndex))) { return this._NgFor_22_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -214,13 +208,13 @@ class _View_UsersManagementComponent1 extends import1.AppView<any> {
     changes = (null as any);
     const currVal_0:any = this.parent.context.users;
     if (import5.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this._NgFor_23_6.ngForOf = currVal_0;
+      this._NgFor_22_6.ngForOf = currVal_0;
       if ((changes === (null as any))) { (changes = {}); }
       changes['ngForOf'] = new import8.SimpleChange(this._expr_0,currVal_0);
       this._expr_0 = currVal_0;
     }
-    if ((changes !== (null as any))) { this._NgFor_23_6.ngOnChanges(changes); }
-    if (!throwOnChange) { this._NgFor_23_6.ngDoCheck(); }
+    if ((changes !== (null as any))) { this._NgFor_22_6.ngOnChanges(changes); }
+    if (!throwOnChange) { this._NgFor_22_6.ngDoCheck(); }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
@@ -230,86 +224,44 @@ function viewFactory_UsersManagementComponent1(viewUtils:import5.ViewUtils,paren
 }
 class _View_UsersManagementComponent2 extends import1.AppView<any> {
   _el_0:any;
-  _text_1:any;
-  _el_2:any;
-  _text_3:any;
-  _text_4:any;
-  _el_5:any;
-  _text_6:any;
-  _text_7:any;
-  _el_8:any;
-  _text_9:any;
-  _text_10:any;
-  _el_11:any;
-  _text_12:any;
-  _text_13:any;
+  /*private*/ _appEl_0:import2.AppElement;
+  _UsersManagementService_0_4:import3.UsersManagementService;
+  _UserComponent_0_5:import18.UserComponent;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
-  /*private*/ _expr_2:any;
-  /*private*/ _expr_3:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement) {
     super(_View_UsersManagementComponent2,renderType_UsersManagementComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
-    this._el_0 = this.renderer.createElement((null as any),'tr',(null as any));
-    this._text_1 = this.renderer.createText(this._el_0,'\n                ',(null as any));
-    this._el_2 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this._text_3 = this.renderer.createText(this._el_2,'',(null as any));
-    this._text_4 = this.renderer.createText(this._el_0,'\n                ',(null as any));
-    this._el_5 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this._text_6 = this.renderer.createText(this._el_5,'',(null as any));
-    this._text_7 = this.renderer.createText(this._el_0,'\n                ',(null as any));
-    this._el_8 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this._text_9 = this.renderer.createText(this._el_8,'',(null as any));
-    this._text_10 = this.renderer.createText(this._el_0,'\n                ',(null as any));
-    this._el_11 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this._text_12 = this.renderer.createText(this._el_11,'',(null as any));
-    this._text_13 = this.renderer.createText(this._el_0,'\n            ',(null as any));
+    this._el_0 = this.renderer.createElement((null as any),'app-user',(null as any));
+    this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
+    var compView_0:any = import19.viewFactory_UserComponent0(this.viewUtils,this.injector(0),this._appEl_0);
+    this._UsersManagementService_0_4 = new import3.UsersManagementService(this.parent.parentInjector.get(import9.Http),this.parent.parentInjector.get(import10.SuccessService));
+    this._UserComponent_0_5 = new import18.UserComponent(this._UsersManagementService_0_4);
+    this._appEl_0.initComponent(this._UserComponent_0_5,[],compView_0);
+    compView_0.create(this._UserComponent_0_5,[],(null as any));
     this._expr_0 = import8.UNINITIALIZED;
     this._expr_1 = import8.UNINITIALIZED;
-    this._expr_2 = import8.UNINITIALIZED;
-    this._expr_3 = import8.UNINITIALIZED;
-    this.init([].concat([this._el_0]),[
-      this._el_0,
-      this._text_1,
-      this._el_2,
-      this._text_3,
-      this._text_4,
-      this._el_5,
-      this._text_6,
-      this._text_7,
-      this._el_8,
-      this._text_9,
-      this._text_10,
-      this._el_11,
-      this._text_12,
-      this._text_13
-    ]
-    ,[],[]);
+    this.init([].concat([this._el_0]),[this._el_0],[],[]);
     return (null as any);
   }
+  injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
+    if (((token === import3.UsersManagementService) && (0 === requestNodeIndex))) { return this._UsersManagementService_0_4; }
+    if (((token === import18.UserComponent) && (0 === requestNodeIndex))) { return this._UserComponent_0_5; }
+    return notFoundResult;
+  }
   detectChangesInternal(throwOnChange:boolean):void {
-    this.detectContentChildrenChanges(throwOnChange);
-    const currVal_0:any = import5.interpolate(1,'',(this.context.index + 1),'');
+    const currVal_0:any = this.context.$implicit;
     if (import5.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this.renderer.setText(this._text_3,currVal_0);
+      this._UserComponent_0_5.user = currVal_0;
       this._expr_0 = currVal_0;
     }
-    const currVal_1:any = import5.interpolate(1,'',this.context.$implicit.firstName,'');
+    const currVal_1:any = this.context.index;
     if (import5.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
-      this.renderer.setText(this._text_6,currVal_1);
+      this._UserComponent_0_5.i = currVal_1;
       this._expr_1 = currVal_1;
     }
-    const currVal_2:any = import5.interpolate(1,'',this.context.$implicit.lastName,'');
-    if (import5.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
-      this.renderer.setText(this._text_9,currVal_2);
-      this._expr_2 = currVal_2;
-    }
-    const currVal_3:any = import5.interpolate(1,'',this.context.$implicit.email,'');
-    if (import5.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
-      this.renderer.setText(this._text_12,currVal_3);
-      this._expr_3 = currVal_3;
-    }
+    this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
 }

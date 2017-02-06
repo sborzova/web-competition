@@ -12,7 +12,7 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../auth/auth.service';
+import * as import8 from '../../auth/auth.service';
 import * as import9 from '@angular/router/src/router';
 import * as import10 from '@angular/core/src/metadata/view';
 import * as import11 from '@angular/core/src/linker/component_factory';
@@ -150,7 +150,7 @@ class _View_ProfileEditComponent0 extends import1.AppView<import3.ProfileEditCom
   }
 }
 export function viewFactory_ProfileEditComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileEditComponent> {
-  if ((renderType_ProfileEditComponent === (null as any))) { (renderType_ProfileEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-edit.component.html',0,import10.ViewEncapsulation.None,styles_ProfileEditComponent,{})); }
+  if ((renderType_ProfileEditComponent === (null as any))) { (renderType_ProfileEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-edit/profile-edit.component.html',0,import10.ViewEncapsulation.None,styles_ProfileEditComponent,{})); }
   return new _View_ProfileEditComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_ProfileEditComponent1 extends import1.AppView<any> {

@@ -2,13 +2,15 @@ import { Injectable } from "@angular/core";
 import {Http, Response, Headers} from "@angular/http";
 import {InstanceGroup} from "../instance-group-new/instance-group.model";
 import {Observable} from "rxjs";
+import {SuccessService} from "../messages/successes/success.service";
 
 @Injectable()
 export class InstancesService {
     private instanceGroups: InstanceGroup[] = [];
     private hostUrl: string;
 
-    constructor(private http: Http) {
+    constructor(private http: Http,
+                private successService: SuccessService) {
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
@@ -37,7 +39,10 @@ export class InstancesService {
             : '';
         return this.http.delete(
             this.hostUrl.concat('instanceGroup/') + instanceGroup.instanceGroupId + token)
-            .map((response: Response) => response.json())
+            .map((response: Response) => {
+                this.successService.handleSuccess(response.json());
+                return response.json();
+            })
             .catch((error: Response) => {
                 //this.errorService.handleError(error.json());
                 return Observable.throw(error.json());

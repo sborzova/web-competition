@@ -15,16 +15,17 @@ import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from '../auth.service';
 import * as import9 from '@angular/router/src/router';
 import * as import10 from '../../messages/errors/error.service';
-import * as import11 from '@angular/core/src/metadata/view';
-import * as import12 from '@angular/core/src/linker/component_factory';
-import * as import13 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
-import * as import14 from '@angular/forms/src/directives/ng_control_status';
-import * as import15 from '@angular/forms/src/directives/default_value_accessor';
-import * as import16 from '@angular/forms/src/directives/reactive_directives/form_control_name';
-import * as import17 from '@angular/core/src/linker/element_ref';
-import * as import18 from '@angular/forms/src/directives/control_value_accessor';
-import * as import19 from '@angular/forms/src/directives/ng_control';
-import * as import20 from '@angular/forms/src/directives/control_container';
+import * as import11 from '../../messages/successes/success.service';
+import * as import12 from '@angular/core/src/metadata/view';
+import * as import13 from '@angular/core/src/linker/component_factory';
+import * as import14 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
+import * as import15 from '@angular/forms/src/directives/ng_control_status';
+import * as import16 from '@angular/forms/src/directives/default_value_accessor';
+import * as import17 from '@angular/forms/src/directives/reactive_directives/form_control_name';
+import * as import18 from '@angular/core/src/linker/element_ref';
+import * as import19 from '@angular/forms/src/directives/control_value_accessor';
+import * as import20 from '@angular/forms/src/directives/ng_control';
+import * as import21 from '@angular/forms/src/directives/control_container';
 var renderType_SigninComponent_Host:import0.RenderComponentType = (null as any);
 class _View_SigninComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -37,7 +38,7 @@ class _View_SigninComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-signin',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_SigninComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._SigninComponent_0_4 = new import3.SigninComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.Router),this.parentInjector.get(import10.ErrorService));
+    this._SigninComponent_0_4 = new import3.SigninComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.Router),this.parentInjector.get(import10.ErrorService),this.parentInjector.get(import11.SuccessService));
     this._appEl_0.initComponent(this._SigninComponent_0_4,[],compView_0);
     compView_0.create(this._SigninComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -54,10 +55,10 @@ class _View_SigninComponent_Host0 extends import1.AppView<any> {
   }
 }
 function viewFactory_SigninComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_SigninComponent_Host === (null as any))) { (renderType_SigninComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
+  if ((renderType_SigninComponent_Host === (null as any))) { (renderType_SigninComponent_Host = viewUtils.createRenderComponentType('',0,import12.ViewEncapsulation.None,[],{})); }
   return new _View_SigninComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const SigninComponentNgFactory:import12.ComponentFactory<import3.SigninComponent> = new import12.ComponentFactory<import3.SigninComponent>('app-signin',viewFactory_SigninComponent_Host0,import3.SigninComponent);
+export const SigninComponentNgFactory:import13.ComponentFactory<import3.SigninComponent> = new import13.ComponentFactory<import3.SigninComponent>('app-signin',viewFactory_SigninComponent_Host0,import3.SigninComponent);
 const styles_SigninComponent:any[] = [];
 var renderType_SigninComponent:import0.RenderComponentType = (null as any);
 class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
@@ -74,9 +75,9 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
   _text_10:any;
   _text_11:any;
   _el_12:any;
-  _FormGroupDirective_12_3:import13.FormGroupDirective;
+  _FormGroupDirective_12_3:import14.FormGroupDirective;
   _ControlContainer_12_4:any;
-  _NgControlStatusGroup_12_5:import14.NgControlStatusGroup;
+  _NgControlStatusGroup_12_5:import15.NgControlStatusGroup;
   _text_13:any;
   _el_14:any;
   _text_15:any;
@@ -84,11 +85,11 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
   _text_17:any;
   _text_18:any;
   _el_19:any;
-  _DefaultValueAccessor_19_3:import15.DefaultValueAccessor;
+  _DefaultValueAccessor_19_3:import16.DefaultValueAccessor;
   _NG_VALUE_ACCESSOR_19_4:any[];
-  _FormControlName_19_5:import16.FormControlName;
+  _FormControlName_19_5:import17.FormControlName;
   _NgControl_19_6:any;
-  _NgControlStatus_19_7:import14.NgControlStatus;
+  _NgControlStatus_19_7:import15.NgControlStatus;
   _text_20:any;
   _text_21:any;
   _el_22:any;
@@ -97,11 +98,11 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
   _text_25:any;
   _text_26:any;
   _el_27:any;
-  _DefaultValueAccessor_27_3:import15.DefaultValueAccessor;
+  _DefaultValueAccessor_27_3:import16.DefaultValueAccessor;
   _NG_VALUE_ACCESSOR_27_4:any[];
-  _FormControlName_27_5:import16.FormControlName;
+  _FormControlName_27_5:import17.FormControlName;
   _NgControl_27_6:any;
-  _NgControlStatus_27_7:import14.NgControlStatus;
+  _NgControlStatus_27_7:import15.NgControlStatus;
   _text_28:any;
   _text_29:any;
   _el_30:any;
@@ -162,9 +163,9 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
     this._text_10 = this.renderer.createText(this._el_6,'\n            ',(null as any));
     this._text_11 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._el_12 = this.renderer.createElement(this._el_4,'form',(null as any));
-    this._FormGroupDirective_12_3 = new import13.FormGroupDirective((null as any),(null as any));
+    this._FormGroupDirective_12_3 = new import14.FormGroupDirective((null as any),(null as any));
     this._ControlContainer_12_4 = this._FormGroupDirective_12_3;
-    this._NgControlStatusGroup_12_5 = new import14.NgControlStatusGroup(this._ControlContainer_12_4);
+    this._NgControlStatusGroup_12_5 = new import15.NgControlStatusGroup(this._ControlContainer_12_4);
     this._text_13 = this.renderer.createText(this._el_12,'\n                ',(null as any));
     this._el_14 = this.renderer.createElement(this._el_12,'div',(null as any));
     this.renderer.setElementAttribute(this._el_14,'class','form-group');
@@ -178,11 +179,11 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
     this.renderer.setElementAttribute(this._el_19,'formControlName','email');
     this.renderer.setElementAttribute(this._el_19,'id','email');
     this.renderer.setElementAttribute(this._el_19,'type','email');
-    this._DefaultValueAccessor_19_3 = new import15.DefaultValueAccessor(this.renderer,new import17.ElementRef(this._el_19));
+    this._DefaultValueAccessor_19_3 = new import16.DefaultValueAccessor(this.renderer,new import18.ElementRef(this._el_19));
     this._NG_VALUE_ACCESSOR_19_4 = [this._DefaultValueAccessor_19_3];
-    this._FormControlName_19_5 = new import16.FormControlName(this._ControlContainer_12_4,(null as any),(null as any),this._NG_VALUE_ACCESSOR_19_4);
+    this._FormControlName_19_5 = new import17.FormControlName(this._ControlContainer_12_4,(null as any),(null as any),this._NG_VALUE_ACCESSOR_19_4);
     this._NgControl_19_6 = this._FormControlName_19_5;
-    this._NgControlStatus_19_7 = new import14.NgControlStatus(this._NgControl_19_6);
+    this._NgControlStatus_19_7 = new import15.NgControlStatus(this._NgControl_19_6);
     this._text_20 = this.renderer.createText(this._el_14,'\n                ',(null as any));
     this._text_21 = this.renderer.createText(this._el_12,'\n                ',(null as any));
     this._el_22 = this.renderer.createElement(this._el_12,'div',(null as any));
@@ -197,11 +198,11 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
     this.renderer.setElementAttribute(this._el_27,'formControlName','password');
     this.renderer.setElementAttribute(this._el_27,'id','password');
     this.renderer.setElementAttribute(this._el_27,'type','password');
-    this._DefaultValueAccessor_27_3 = new import15.DefaultValueAccessor(this.renderer,new import17.ElementRef(this._el_27));
+    this._DefaultValueAccessor_27_3 = new import16.DefaultValueAccessor(this.renderer,new import18.ElementRef(this._el_27));
     this._NG_VALUE_ACCESSOR_27_4 = [this._DefaultValueAccessor_27_3];
-    this._FormControlName_27_5 = new import16.FormControlName(this._ControlContainer_12_4,(null as any),(null as any),this._NG_VALUE_ACCESSOR_27_4);
+    this._FormControlName_27_5 = new import17.FormControlName(this._ControlContainer_12_4,(null as any),(null as any),this._NG_VALUE_ACCESSOR_27_4);
     this._NgControl_27_6 = this._FormControlName_27_5;
-    this._NgControlStatus_27_7 = new import14.NgControlStatus(this._NgControl_27_6);
+    this._NgControlStatus_27_7 = new import15.NgControlStatus(this._NgControl_27_6);
     this._text_28 = this.renderer.createText(this._el_22,'\n                ',(null as any));
     this._text_29 = this.renderer.createText(this._el_12,'\n                ',(null as any));
     this._el_30 = this.renderer.createElement(this._el_12,'div',(null as any));
@@ -311,19 +312,19 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import15.DefaultValueAccessor) && (19 === requestNodeIndex))) { return this._DefaultValueAccessor_19_3; }
-    if (((token === import18.NG_VALUE_ACCESSOR) && (19 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_19_4; }
-    if (((token === import16.FormControlName) && (19 === requestNodeIndex))) { return this._FormControlName_19_5; }
-    if (((token === import19.NgControl) && (19 === requestNodeIndex))) { return this._NgControl_19_6; }
-    if (((token === import14.NgControlStatus) && (19 === requestNodeIndex))) { return this._NgControlStatus_19_7; }
-    if (((token === import15.DefaultValueAccessor) && (27 === requestNodeIndex))) { return this._DefaultValueAccessor_27_3; }
-    if (((token === import18.NG_VALUE_ACCESSOR) && (27 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_27_4; }
-    if (((token === import16.FormControlName) && (27 === requestNodeIndex))) { return this._FormControlName_27_5; }
-    if (((token === import19.NgControl) && (27 === requestNodeIndex))) { return this._NgControl_27_6; }
-    if (((token === import14.NgControlStatus) && (27 === requestNodeIndex))) { return this._NgControlStatus_27_7; }
-    if (((token === import13.FormGroupDirective) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 35)))) { return this._FormGroupDirective_12_3; }
-    if (((token === import20.ControlContainer) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 35)))) { return this._ControlContainer_12_4; }
-    if (((token === import14.NgControlStatusGroup) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 35)))) { return this._NgControlStatusGroup_12_5; }
+    if (((token === import16.DefaultValueAccessor) && (19 === requestNodeIndex))) { return this._DefaultValueAccessor_19_3; }
+    if (((token === import19.NG_VALUE_ACCESSOR) && (19 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_19_4; }
+    if (((token === import17.FormControlName) && (19 === requestNodeIndex))) { return this._FormControlName_19_5; }
+    if (((token === import20.NgControl) && (19 === requestNodeIndex))) { return this._NgControl_19_6; }
+    if (((token === import15.NgControlStatus) && (19 === requestNodeIndex))) { return this._NgControlStatus_19_7; }
+    if (((token === import16.DefaultValueAccessor) && (27 === requestNodeIndex))) { return this._DefaultValueAccessor_27_3; }
+    if (((token === import19.NG_VALUE_ACCESSOR) && (27 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_27_4; }
+    if (((token === import17.FormControlName) && (27 === requestNodeIndex))) { return this._FormControlName_27_5; }
+    if (((token === import20.NgControl) && (27 === requestNodeIndex))) { return this._NgControl_27_6; }
+    if (((token === import15.NgControlStatus) && (27 === requestNodeIndex))) { return this._NgControlStatus_27_7; }
+    if (((token === import14.FormGroupDirective) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 35)))) { return this._FormGroupDirective_12_3; }
+    if (((token === import21.ControlContainer) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 35)))) { return this._ControlContainer_12_4; }
+    if (((token === import15.NgControlStatusGroup) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 35)))) { return this._NgControlStatusGroup_12_5; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -489,6 +490,6 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
   }
 }
 export function viewFactory_SigninComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.SigninComponent> {
-  if ((renderType_SigninComponent === (null as any))) { (renderType_SigninComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/signin.component.html',0,import11.ViewEncapsulation.None,styles_SigninComponent,{})); }
+  if ((renderType_SigninComponent === (null as any))) { (renderType_SigninComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/signin/signin.component.html',0,import12.ViewEncapsulation.None,styles_SigninComponent,{})); }
   return new _View_SigninComponent0(viewUtils,parentInjector,declarationEl);
 }

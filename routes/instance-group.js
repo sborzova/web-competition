@@ -28,7 +28,7 @@ router.post('/instanceGroup', function (req, res) {
         // user.save();
         res.status(201).json({
             message: 'Saved instance group',
-            obj: result
+            obj: {message: 'Instance group ' + result.name + 'was created.'}
         });
     });
 });
@@ -110,7 +110,7 @@ router.delete('/instanceGroup/:id', function (req, res, next) {
             }
             res.status(200).json({
                 message: 'Deleted instance group',
-                obj: result
+                obj: {message: 'Instance group ' + instanceGroup.name + ' was deleted.'}
             });
         });
     });
