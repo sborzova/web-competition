@@ -1,7 +1,11 @@
 <div >
     <h3>{{ instanceGroup.name }}</h3>
     <div *ngIf="isAdmin()">
-        <a (click)="onEdit()">Edit</a>
-        <a (click)="onDelete()">Delete</a>
+        <button
+                class="btn btn-primary btn-s"
+                (click)="onEdit()">Edit</button>
+        <button
+                class="btn btn-danger btn btn-s"
+                (click)="onDelete()">Delete</button>
     </div>
 </div>
