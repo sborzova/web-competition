@@ -4,7 +4,7 @@ import { InstancesService } from "./instances.service";
 import { FileUploader } from "ng2-file-upload";
 import { ErrorService } from "../messages/errors/error.service";
 import { InstanceGroup } from "../instance-group-new/instance-group.model";
-import {SuccessService} from "../messages/successes/success.service";
+import { SuccessService } from "../messages/successes/success.service";
 
 @Component({
     selector: 'app-instances',

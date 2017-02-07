@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
-import {Http, Headers, Response} from "@angular/http";
+import { Http, Headers, Response } from "@angular/http";
 import { InstanceGroup } from "./instance-group.model";
-import {Observable} from "rxjs";
-import {SuccessService} from "../messages/successes/success.service";
+import { Observable } from "rxjs";
+import { SuccessService } from "../messages/successes/success.service";
 
 @Injectable()
 export class InstanceGroupService{
