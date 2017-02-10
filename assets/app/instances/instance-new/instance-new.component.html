@@ -25,133 +25,31 @@
                 </div>
                 <div class="form-group"
                      [ngClass]="{'has-error':
-                        (!myForm.controls['courses'].valid ) &&
-                        (myForm.controls['courses'].touched || isSubmitted())}">
-                    <label for="courses">
-                        Courses
+                        (!myForm.controls['description'].valid ) &&
+                        (myForm.controls['description'].touched || isSubmitted())}">
+                    <label for="name">
+                        Description
                     </label>
                     <input
-                            type="number"
-                            id="courses"
+                            type="text"
+                            id="description"
                             class="form-control"
-                            [formControl]="myForm.controls['courses']">
+                            [formControl]="myForm.controls['description']">
                     <div class="field-error"
-                         *ngIf="(myForm.controls['courses'].hasError('required')) &&
-                            (myForm.controls['courses'].touched || isSubmitted())">
-                        Field is required.
-                    </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
-                        (!myForm.controls['rooms'].valid ) &&
-                        (myForm.controls['rooms'].touched || isSubmitted())}">
-                    <label for="rooms">
-                        Rooms
-                    </label>
-                    <input
-                            type="number"
-                            id="rooms"
-                            class="form-control"
-                            [formControl]="myForm.controls['rooms']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['rooms'].hasError('required')) &&
-                            (myForm.controls['rooms'].touched || isSubmitted())">
-                        Field is required.
-                    </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
-                        (!myForm.controls['periodsPerDay'].valid ) &&
-                        (myForm.controls['periodsPerDay'].touched || isSubmitted())}">
-                    <label for="periodsPerDay">
-                        Periods per day
-                    </label>
-                    <input
-                            type="number"
-                            id="periodsPerDay"
-                            class="form-control"
-                            [formControl]="myForm.controls['periodsPerDay']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['periodsPerDay'].hasError('required')) &&
-                            (myForm.controls['periodsPerDay'].touched || isSubmitted())">
-                        Field is required.
-                    </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
-                        (!myForm.controls['days'].valid ) &&
-                        (myForm.controls['days'].touched || isSubmitted())}">
-                    <label for="days">
-                        Days
-                    </label>
-                    <input
-                            type="number"
-                            id="days"
-                            class="form-control"
-                            [formControl]="myForm.controls['days']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['days'].hasError('required')) &&
-                            (myForm.controls['days'].touched || isSubmitted())">
-                        Field is required.
-                    </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
-                        (!myForm.controls['curricula'].valid ) &&
-                        (myForm.controls['curricula'].touched || isSubmitted())}">
-                    <label for="curricula">
-                        Curricula
-                    </label>
-                    <input
-                            type="number"
-                            id="curricula"
-                            class="form-control"
-                            [formControl]="myForm.controls['curricula']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['curricula'].hasError('required')) &&
-                            (myForm.controls['curricula'].touched || isSubmitted())">
-                        Field is required.
-                    </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
-                        (!myForm.controls['dailyMin'].valid ) &&
-                        (myForm.controls['dailyMin'].touched || isSubmitted())}">
-                    <label for="dailyMin">
-                        Minimum daily lectures
-                    </label>
-                    <input
-                            type="number"
-                            id="dailyMin"
-                            class="form-control"
-                            [formControl]="myForm.controls['dailyMin']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['dailyMin'].hasError('required')) &&
-                            (myForm.controls['dailyMin'].touched || isSubmitted())">
-                        Field is required.
-                    </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
-                        (!myForm.controls['dailyMax'].valid ) &&
-                        (myForm.controls['dailyMax'].touched || isSubmitted())}">
-                    <label for="dailyMax">
-                        Maximum daily lectures
-                    </label>
-                    <input
-                            type="number"
-                            id="dailyMax"
-                            class="form-control"
-                            [formControl]="myForm.controls['dailyMax']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['dailyMax'].hasError('required')) &&
-                            (myForm.controls['dailyMax'].touched || isSubmitted())">
+                         *ngIf="(myForm.controls['description'].hasError('required')) &&
+                            (myForm.controls['description'].touched || isSubmitted())">
                         Field is required.
                     </div>
                 </div>
                 <div>
-                    <label for="file">
-                        File
+                    <label for="stats">
+                        Stats
+                    </label>
+                    <input type="file">
+                </div>
+                <div>
+                    <label for="data">
+                        Data
                     </label>
                     <input type="file">
                 </div>

@@ -25,7 +25,7 @@ router.post('/', function (req, res, next) {
         if (err) {
             return res.status(422).json({
                 title: 'An error occurred',
-                error: {message: 'Email address is already taken.'}
+                error: {message: 'Email address is already taken'}
             });
         }
         res.status(201).json({

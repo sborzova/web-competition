@@ -5,8 +5,10 @@
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav  navbar-left" style="margin-left: 15%">
             <li routerLinkActive="active"><a [routerLink]="['home']">Home</a></li>
-            <li routerLinkActive="active" *ngIf="isAdmin()"><a [routerLink]="['usersmanagement']">Users management</a></li>
             <li routerLinkActive="active"><a [routerLink]="['instances']">Instances</a></li>
+            <li routerLinkActive="active"><a [routerLink]="['results']">Results</a></li>
+            <li routerLinkActive="active"><a [routerLink]="['validator']">Validate & insert solution</a></li>
+            <li routerLinkActive="active" *ngIf="isAdmin()"><a [routerLink]="['usersmanagement']">Users management</a></li>
         </ul>
         <ul class="nav navbar-nav  navbar-right" style="margin-right: 5%">
             <li class="dropdown pull-right">

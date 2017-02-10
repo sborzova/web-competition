@@ -5,22 +5,20 @@ import { SignupComponent } from "./auth/signup/signup.component";
 import { HomeComponent } from "./home/home.component";
 import { PROFILE_ROUTES } from "./profile/profile.routes";
 import { UsersManagementComponent } from "./users-management/users-management.component";
-import { InstancesComponent } from "./instances/instances.component";
-import { InstanceCreateComponent } from "./instances/instance-new/instance-new.component";
-import { InstanceEditComponent } from "./instances/instance-edit/instance-edit.component";
+import { INSTANCE_ROUTES } from "./instances/instances.routes";
 
 const APP_ROUTES: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full'},
     { path: 'home', component: HomeComponent },
     { path: 'usersmanagement', component: UsersManagementComponent },
-    { path: 'instances', component: InstancesComponent },
-    { path: 'instances/create', component: InstanceCreateComponent },
-    { path: 'instances/edit', component: InstanceEditComponent },
+    { path: 'results', component: HomeComponent },
+    { path: 'validator', component: HomeComponent },
     { path: 'signin', component: SigninComponent },
     { path: 'signup', component: SignupComponent },
+    { path: 'instances', children: INSTANCE_ROUTES },
     { path: 'profile', children: PROFILE_ROUTES },
 ];
-// export const hostUrl = 'http://localhost:3000/';
-export const hostUrl = 'https://bakalar.herokuapp.com/';
+export const hostUrl = 'http://localhost:3000/';
+// export const hostUrl = 'https://bakalar.herokuapp.com/';
 
 export const routing = RouterModule.forRoot(APP_ROUTES);

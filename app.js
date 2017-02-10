@@ -11,7 +11,10 @@ var multer = require("multer");
 var appRoutes = require('./routes/app');
 var userRoutes = require('./routes/user');
 var usersRoutes = require('./routes/users');
-var instancesRoutes = require('./routes/instance-group');
+var instanceRoutes = require('./routes/instance');
+var paperRoutes = require('./routes/paper');
+var solutionRoutes = require('./routes/solution');
+var techniqueRoutes = require('./routes/technique');
 
 var app = express();
 mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc');
@@ -63,7 +66,10 @@ app.use(function(req, res, next) {
 app.use('/', appRoutes);
 app.use('/', userRoutes);
 app.use('/', usersRoutes);
-app.use('/', instancesRoutes);
+app.use('/', instanceRoutes);
+app.use('/', paperRoutes);
+app.use('/', solutionRoutes);
+app.use('/', techniqueRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -19,8 +19,8 @@ router.post('/instance', function (req, res) {
     }
     instance.save(function (err, result) {
         if (err) {
-            return res.status(500).json({
-                title: 'An error occurred',
+            return res.status(422).json({
+                title: 'Name is already taken',
                 error: err
             });
         }

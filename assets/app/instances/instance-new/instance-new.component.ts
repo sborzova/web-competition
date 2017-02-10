@@ -20,6 +20,7 @@ export class InstanceCreateComponent implements OnInit {
 
     constructor(private authService: AuthService,
                 private router: Router,
+                private instancesService: InstancesService,
                 private successService: SuccessService,
                 private errorService: ErrorService) {
 
@@ -30,13 +31,9 @@ export class InstanceCreateComponent implements OnInit {
     ngOnInit(): void {
         this.myForm = new FormGroup({
             name: new FormControl(null, Validators.required),
-            courses: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]+$")]),
-            rooms: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]+$")]),
-            periodsPerDay: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]+$")]),
-            days: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]+$")]),
-            curricula: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]+$")]),
-            dailyMin: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]+$")]),
-            dailyMax: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]+$")]),
+            description: new FormControl(null, Validators.required),
+            stats: new FormControl(null, Validators.required),
+            data: new FormControl(null, Validators.required)
         });
     }
 
@@ -45,21 +42,17 @@ export class InstanceCreateComponent implements OnInit {
         if (this.myForm.valid){
             const instance = new Instance(
                 this.myForm.value.name,
-                this.myForm.value.courses,
-                this.myForm.value.rooms,
-                this.myForm.value.periodsPerDay,
-                this.myForm.value.days,
-                this.myForm.value.curricula,
-                this.myForm.value.dailyMin,
-                this.myForm.value.dailyMax,
+                this.myForm.value.description,
+                this.myForm.value.stats,
+                this.myForm.value.data
             );
-            // this.instanceGroupService.save(instanceGroup)
-            //     .subscribe(
-            //         data => console.log(data),
-            //         error => console.error(error)
-            //     );
-            this.router.navigateByUrl('instances');
-            this.myForm.reset();
+            this.instancesService.saveInstance(instance)
+                .subscribe(
+                    data => console.log(data),
+                    error => console.error(error)
+                );
+            this.router.navigateByUrl('instances/all');
+            //this.myForm.reset();
         }
     }
 

@@ -3,8 +3,8 @@ import {Component, Input, OnInit, OnChanges} from '@angular/core';
 import { InstancesService } from "./instances.service";
 import { FileUploader } from "ng2-file-upload";
 import { ErrorService } from "../messages/errors/error.service";
-import { InstanceGroup } from "../instance-group-new/instance-group.model";
 import { SuccessService } from "../messages/successes/success.service";
+import { Instance } from "./instance.model";
 
 @Component({
     selector: 'app-instances',
@@ -12,9 +12,9 @@ import { SuccessService } from "../messages/successes/success.service";
     providers: [InstancesService]
 })
 export class InstancesComponent implements OnInit {
-    @Input() instanceGroups : InstanceGroup[];
+    @Input() instances : Instance[];
     private hostUrl: string;
-    public uploader: FileUploader;
+    //public uploader: FileUploader;
 
     constructor(private errorService: ErrorService,
                 private successService: SuccessService,
@@ -25,14 +25,14 @@ export class InstancesComponent implements OnInit {
 
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
-        this.uploader = new FileUploader({url:this.hostUrl.concat('upload')});
+        //this.uploader = new FileUploader({url:this.hostUrl.concat('upload')});
     }
 
     ngOnInit(){
-        this.instancesService.getInstanceGroups()
+        this.instancesService.getInstances()
             .subscribe(
-                (instanceGroups: InstanceGroup[] ) =>{
-                    this.instanceGroups = instanceGroups;
+                (instances: Instance[] ) =>{
+                    this.instances = instances;
                 }
             );
     }
