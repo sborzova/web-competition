@@ -7,7 +7,7 @@ var schema = new Schema({
     data: {type: Buffer},
     instance: {type: Schema.Types.ObjectId, ref: 'Instance'},
     user: {type: Schema.Types.ObjectId, ref: 'User'},
-    technology: {type: Schema.Types.ObjectId, ref: 'Technique'},
+    technique: {type: Schema.Types.ObjectId, ref: 'Technique'},
     paper: {type: Schema.Types.ObjectId, ref: 'Paper'}
 });
 
