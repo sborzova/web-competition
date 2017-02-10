@@ -9,6 +9,7 @@
             <li routerLinkActive="active"><a [routerLink]="['results']">Results</a></li>
             <li routerLinkActive="active"><a [routerLink]="['validator']">Validate & insert solution</a></li>
             <li routerLinkActive="active" *ngIf="isAdmin()"><a [routerLink]="['usersmanagement']">Users management</a></li>
+            <li routerLinkActive="active" *ngIf="isAdmin()"><a [routerLink]="['techniques']">Techniques management</a></li>
         </ul>
         <ul class="nav navbar-nav  navbar-right" style="margin-right: 5%">
             <li class="dropdown pull-right">

@@ -4,7 +4,7 @@ import { InstanceGroup } from "../instance-group-new/instance-group.model";
 import { Observable } from "rxjs";
 import { SuccessService } from "../messages/successes/success.service";
 import { Instance } from "./instance.model";
-import {ErrorService} from "../messages/errors/error.service";
+import { ErrorService } from "../messages/errors/error.service";
 
 @Injectable()
 export class InstancesService {

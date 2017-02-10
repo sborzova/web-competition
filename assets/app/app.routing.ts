@@ -6,6 +6,7 @@ import { HomeComponent } from "./home/home.component";
 import { PROFILE_ROUTES } from "./profile/profile.routes";
 import { UsersManagementComponent } from "./users-management/users-management.component";
 import { INSTANCE_ROUTES } from "./instances/instances.routes";
+import {TechniqueComponent} from "./techniques/technique.component";
 
 const APP_ROUTES: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const APP_ROUTES: Routes = [
     { path: 'validator', component: HomeComponent },
     { path: 'signin', component: SigninComponent },
     { path: 'signup', component: SignupComponent },
+    { path: 'techniques', component: TechniqueComponent },
     { path: 'instances', children: INSTANCE_ROUTES },
     { path: 'profile', children: PROFILE_ROUTES },
 ];

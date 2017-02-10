@@ -19,7 +19,6 @@ import { EqualValidator } from "./auth/validator-equal.directive";
 import { ErrorComponent } from "./messages/errors/error.component";
 import { ErrorService } from "./messages/errors/error.service";
 import { InstancesComponent } from "./instances/instances.component";
-import { InstanceGroupNewComponent } from "./instance-group-new/instance-group-new.component";
 import { InstanceGroupComponent } from "./instance-group/instance-group.component";
 import { UserComponent } from "./users-management/user/user.component";
 import { SuccessComponent } from "./messages/successes/success.component";
@@ -27,6 +26,7 @@ import { SuccessService } from "./messages/successes/success.service";
 import { InstanceGroupEditComponent } from "./instance-group-edit/instance-group-edit.component";
 import { InstanceCreateComponent } from "./instances/instance-new/instance-new.component";
 import { InstanceEditComponent } from "./instances/instance-edit/instance-edit.component";
+import { TechniqueComponent } from "./techniques/technique.component";
 
 @NgModule({
     declarations: [
@@ -42,12 +42,12 @@ import { InstanceEditComponent } from "./instances/instance-edit/instance-edit.c
         ProfileEditPasswordComponent,
         UsersManagementComponent,
         InstancesComponent,
-        InstanceGroupNewComponent,
         InstanceGroupComponent,
         InstanceGroupEditComponent,
         InstanceCreateComponent,
         InstanceEditComponent,
         UserComponent,
+        TechniqueComponent,
         EqualValidator
     ],
     imports: [
@@ -63,7 +63,7 @@ import { InstanceEditComponent } from "./instances/instance-edit/instance-edit.c
         ErrorService,
         SuccessService
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [ AppComponent ]
 })
 export class AppModule {
 
