@@ -3,61 +3,32 @@ var router = express.Router();
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
-var User = require('../models/user');
 var Instance = require('../models/instance');
-var InstanceGroup = require('../models/instanceGroup');
 
-router.post('/instance/:id', function (req, res, next) {
-    InstanceGroup.findById(req.params.id, function (err, instanceGroup) {
+router.post('/instance', function (req, res) {
+    try{
+        var instance = new Instance({
+            resource: req.body.resource,
+            url: req.body.url
+        });
+    } catch (err){
+        return res.status(500).json({
+            title: 'An error occurred',
+            error: err
+        });
+    }
+    instance.save(function (err, result) {
         if (err) {
             return res.status(500).json({
                 title: 'An error occurred',
                 error: err
             });
         }
-        var instance = new Instance({
-            name: req.body.content,
-            courses: req.body.courses,
-            rooms: req.body.rooms,
-            periodsPerDay: req.body.periodsPerDay,
-            days: req.body.days,
-            curricula: req.body.curricula,
-            dailyMin: req.body.dailyMin,
-            dailyMax: req.body.dailyMax,
-            instanceGroup: instanceGroup
-        });
-        instance.save(function (err, result) {
-            if (err) {
-                return res.status(500).json({
-                    title: 'An error occurred',
-                    error: err
-                });
-            }
-            instanceGroup.instances.push(result);
-            instanceGroup.save();
-            res.status(201).json({
-                message: 'Saved message',
-                obj: result
-            });
+        res.status(201).json({
+            message: 'Saved instance',
+            obj: {message: 'Instance was created'}
         });
     });
-});
-
-router.get('/instance', function (req, res, next) {
-    Instance.find()
-        //.populate('user', 'firstName')
-        .exec(function (err, instances) {
-            if (err) {
-                return res.status(500).json({
-                    title: 'An error occurred',
-                    error: err
-                });
-            }
-            res.status(200).json({
-                message: 'Success',
-                obj: instances
-            });
-        });
 });
 
 router.patch('/instance/:id', function (req, res, next) {
@@ -76,13 +47,10 @@ router.patch('/instance/:id', function (req, res, next) {
         }
 
         instance.name = req.body.name;
-        instance.courses = req.body.courses;
-        instance.rooms = req.body.rooms;
-        instance.periodsPerDay = req.body.periodsPerDay;
-        instance.days = req.body.days;
-        instance.curricula = req.body.curricula;
-        instance.dailyMin = req.body.dailyMin;
-        instance.dailyMax = req.body.dailyMax;
+        instance.description = req.body.description;
+        instance.stats = req.body.stats;
+        instance.data = req.body.data;
+        instance.isOn = req.body.isOn;
 
         instance.save(function (err, result) {
             if (err) {
@@ -95,6 +63,48 @@ router.patch('/instance/:id', function (req, res, next) {
                 message: 'Updated instance',
                 obj: result
             });
+        });
+    });
+});
+
+router.get('/instance/:id', function(req, res, next) {
+    Instance.findById(req.params.id, function(err, instance) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!instance) {
+            return res.status(500).json({
+                title: 'No Instance Found!',
+                error: {message: 'Instance not found'}
+            });
+        }
+        res.status(200).json({
+            message: 'Success',
+            obj: instance
+        });
+    });
+});
+
+router.get('/instances', function(req, res, next) {
+    Instance.find(function(err, instances) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!instances) {
+            return res.status(500).json({
+                title: 'No Instances Found!',
+                error: {message: 'Instance not found'}
+            });
+        }
+        res.status(200).json({
+            message: 'Success',
+            obj: instances
         });
     });
 });
@@ -122,7 +132,7 @@ router.delete('/instance/:id', function (req, res, next) {
             }
             res.status(200).json({
                 message: 'Deleted instance',
-                obj: result
+                obj: {message: 'Instance was deleted'}
             });
         });
     });
