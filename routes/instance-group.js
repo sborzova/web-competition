@@ -4,8 +4,6 @@ var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 var multer = require('multer');
 
-var InstanceGroup = require('../models/instanceGroup');
-
 router.post('/instanceGroup', function (req, res) {
     try{
         var instanceGroup = new InstanceGroup({
