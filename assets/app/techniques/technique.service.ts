@@ -41,7 +41,8 @@ export class TechniqueService {
                 let transformedTechniques: Technique[] = [];
                 for (let technique of techniques) {
                     transformedTechniques.push(new Technique(
-                        technique.name)
+                        technique.name,
+                        technique._id)
                     );
                 }
                 this.techniques = techniques;
@@ -68,7 +69,7 @@ export class TechniqueService {
         const body = JSON.stringify(technique);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(
-            this.hostUrl.concat('technique/') + technique.techniqueId + body, {headers: headers})
+            this.hostUrl.concat('technique/') + technique.techniqueId, body, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => {
                 this.errorService.handleError(error.json());

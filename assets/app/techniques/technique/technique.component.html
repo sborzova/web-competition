@@ -1,0 +1,11 @@
+<article class="panel panel-default">
+    <div class="panel-body">
+        {{ technique.name}}
+    </div>
+    <footer class="panel-footer">
+            <a (click)="onDelete()">Delete</a>
+    </footer>
+    <div>
+        <app-technique-update [technique]="technique"></app-technique-update>
+    </div>
+</article>

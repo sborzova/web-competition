@@ -26,8 +26,11 @@ import { SuccessService } from "./messages/successes/success.service";
 import { InstanceGroupEditComponent } from "./instance-group-edit/instance-group-edit.component";
 import { InstanceCreateComponent } from "./instances/instance-new/instance-new.component";
 import { InstanceEditComponent } from "./instances/instance-edit/instance-edit.component";
-import { TechniqueComponent } from "./techniques/technique.component";
+import { TechniquesComponent } from "./techniques/techniques.component";
 import { TechniqueCreateComponent } from "./techniques/technique-new/technique-new.component";
+import { TechniqueComponent } from "./techniques/technique/technique.component";
+import { TechniqueListComponent } from "./techniques/technique-list/technique-list.component";
+import { TechniqueUpdateComponent } from "./techniques/technique-update/technique-update.component";
 
 @NgModule({
     declarations: [
@@ -48,8 +51,11 @@ import { TechniqueCreateComponent } from "./techniques/technique-new/technique-n
         InstanceCreateComponent,
         InstanceEditComponent,
         UserComponent,
-        TechniqueComponent,
+        TechniquesComponent,
         TechniqueCreateComponent,
+        TechniqueUpdateComponent,
+        TechniqueComponent,
+        TechniqueListComponent,
         EqualValidator
     ],
     imports: [
