@@ -1,35 +1,5 @@
 <button
         class="btn btn-success btn-s"
-        [routerLink]="['/instances/create']">Add instance</button>
+        [routerLink]="['/#instances/create']">Add instance</button>
 
-<div *ngIf="instances" class="col-md-8 col-md-offset-2">
-    <table class="table table-hover table-reflow">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Stats</th>
-            <th>Post date</th>
-            <th>Data</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let instance of instances; let i = index">
-            <td>{{ i + 1 }}</td>
-            <td>{{ instance.name }}</td>
-            <td>{{ instance.description }}</td>
-            <td>{{ instance.stats }}</td>
-            <td>{{ instance.postDate }}</td>
-            <td>{{ instance.data }}</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
-    <!--<div *ngFor="let instance of instances; let i = index" [instance]="instance" [i]="i"></div>-->
-<!--<div *ngIf="instances" class="col-md-8 col-md-offset-1">-->
-    <!--<app-instance-group-->
-            <!--[instanceGroup]="instanceGroup"-->
-            <!--*ngFor="let instanceGroup of instanceGroups"></app-instance-group>-->
-<!--</div>-->
+<app-instance-list></app-instance-list>

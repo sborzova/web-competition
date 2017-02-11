@@ -4,5 +4,6 @@ export class Instance {
                 public stats: Buffer,
                 public data: Buffer,
                 public postDate?: Date,
-                public isOn?: boolean){}
+                public isOn?: boolean,
+                public instanceId?: string){}
 }

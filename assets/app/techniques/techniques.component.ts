@@ -11,23 +11,5 @@ import { Technique } from "./technique.model";
     providers: [ TechniqueService ]
 })
 export class TechniquesComponent {
-    // @Input() techniques: Technique[];
-    //
-    // constructor(private techniqueService: TechniqueService,
-    //             private errorService: ErrorService,
-    //             private successService: SuccessService){
-    //
-    //     this.errorService.deleteError();
-    //     this.successService.deleteSuccess();
-    // }
-    //
-    // ngOnInit(){
-    //     this.techniqueService.getTechniques()
-    //         .subscribe(
-    //             (techniques: Technique[] ) =>{
-    //                 this.techniques = techniques;
-    //             }
-    //         );
-    // }
 
 }

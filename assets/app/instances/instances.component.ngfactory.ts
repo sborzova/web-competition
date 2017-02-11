@@ -7,7 +7,7 @@
 import * as import0 from '@angular/core/src/render/api';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import2 from '@angular/core/src/linker/element';
-import * as import3 from './instances.service';
+import * as import3 from './instance.service';
 import * as import4 from './instances.component';
 import * as import5 from '@angular/core/src/linker/view_utils';
 import * as import6 from '@angular/core/src/di/injector';
@@ -33,7 +33,7 @@ var renderType_InstancesComponent_Host:import0.RenderComponentType = (null as an
 class _View_InstancesComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import2.AppElement;
-  _InstancesService_0_4:import3.InstancesService;
+  _InstancesService_0_4:import3.InstanceService;
   _InstancesComponent_0_5:import4.InstancesComponent;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement) {
     super(_View_InstancesComponent_Host0,renderType_InstancesComponent_Host,import7.ViewType.HOST,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
@@ -42,7 +42,7 @@ class _View_InstancesComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-instances',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_InstancesComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._InstancesService_0_4 = new import3.InstancesService(this.parentInjector.get(import9.Http),this.parentInjector.get(import10.SuccessService));
+    this._InstancesService_0_4 = new import3.InstanceService(this.parentInjector.get(import9.Http),this.parentInjector.get(import10.SuccessService));
     this._InstancesComponent_0_5 = new import4.InstancesComponent(this.parentInjector.get(import11.ErrorService),this.parentInjector.get(import10.SuccessService),this._InstancesService_0_4);
     this._appEl_0.initComponent(this._InstancesComponent_0_5,[],compView_0);
     compView_0.create(this._InstancesComponent_0_5,this.projectableNodes,(null as any));
@@ -50,7 +50,7 @@ class _View_InstancesComponent_Host0 extends import1.AppView<any> {
     return this._appEl_0;
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import3.InstancesService) && (0 === requestNodeIndex))) { return this._InstancesService_0_4; }
+    if (((token === import3.InstanceService) && (0 === requestNodeIndex))) { return this._InstancesService_0_4; }
     if (((token === import4.InstancesComponent) && (0 === requestNodeIndex))) { return this._InstancesComponent_0_5; }
     return notFoundResult;
   }
@@ -418,7 +418,7 @@ function viewFactory_InstancesComponent1(viewUtils:import5.ViewUtils,parentInjec
 class _View_InstancesComponent2 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import2.AppElement;
-  _InstancesService_0_4:import3.InstancesService;
+  _InstancesService_0_4:import3.InstanceService;
   _InstanceGroupComponent_0_5:import23.InstanceGroupComponent;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement) {
@@ -428,7 +428,7 @@ class _View_InstancesComponent2 extends import1.AppView<any> {
     this._el_0 = this.renderer.createElement((null as any),'app-instance-group',(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = import24.viewFactory_InstanceGroupComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._InstancesService_0_4 = new import3.InstancesService(this.parent.parentInjector.get(import9.Http),this.parent.parentInjector.get(import10.SuccessService));
+    this._InstancesService_0_4 = new import3.InstanceService(this.parent.parentInjector.get(import9.Http),this.parent.parentInjector.get(import10.SuccessService));
     this._InstanceGroupComponent_0_5 = new import23.InstanceGroupComponent(this._InstancesService_0_4,this.parent.parentInjector.get(import18.AuthService));
     this._appEl_0.initComponent(this._InstanceGroupComponent_0_5,[],compView_0);
     compView_0.create(this._InstanceGroupComponent_0_5,[],(null as any));
@@ -437,7 +437,7 @@ class _View_InstancesComponent2 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import3.InstancesService) && (0 === requestNodeIndex))) { return this._InstancesService_0_4; }
+    if (((token === import3.InstanceService) && (0 === requestNodeIndex))) { return this._InstancesService_0_4; }
     if (((token === import23.InstanceGroupComponent) && (0 === requestNodeIndex))) { return this._InstanceGroupComponent_0_5; }
     return notFoundResult;
   }

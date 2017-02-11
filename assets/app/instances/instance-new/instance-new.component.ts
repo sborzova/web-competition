@@ -4,14 +4,14 @@ import { Router } from "@angular/router";
 
 import { AuthService } from "../../auth/auth.service";
 import { ErrorService } from "../../messages/errors/error.service";
-import { InstancesService } from "../instances.service";
+import { InstanceService } from "../instance.service";
 import { Instance } from "../instance.model";
 import { SuccessService } from "../../messages/successes/success.service";
 
 @Component({
     selector: 'app-instance-new',
     templateUrl: 'instance-new.component.html',
-    providers: [InstancesService]
+    providers: [InstanceService]
 })
 export class InstanceCreateComponent implements OnInit {
     myForm: FormGroup;
@@ -19,7 +19,7 @@ export class InstanceCreateComponent implements OnInit {
 
     constructor(private authService: AuthService,
                 private router: Router,
-                private instancesService: InstancesService,
+                private instancesService: InstanceService,
                 private successService: SuccessService,
                 private errorService: ErrorService) {
 
@@ -31,8 +31,8 @@ export class InstanceCreateComponent implements OnInit {
         this.myForm = new FormGroup({
             name: new FormControl(null, Validators.required),
             description: new FormControl(null, Validators.required),
-            stats: new FormControl(null, Validators.required),
-            data: new FormControl(null, Validators.required)
+            // stats: new FormControl(null, Validators.required),
+            // data: new FormControl(null, Validators.required)
         });
     }
 

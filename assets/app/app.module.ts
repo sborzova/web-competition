@@ -23,12 +23,14 @@ import { UserComponent } from "./users-management/user/user.component";
 import { SuccessComponent } from "./messages/successes/success.component";
 import { SuccessService } from "./messages/successes/success.service";
 import { InstanceCreateComponent } from "./instances/instance-new/instance-new.component";
-import { InstanceEditComponent } from "./instances/instance-edit/instance-edit.component";
+import { InstanceEditComponent } from "./instances/instance-update/instance-update.component";
 import { TechniquesComponent } from "./techniques/techniques.component";
 import { TechniqueCreateComponent } from "./techniques/technique-new/technique-new.component";
 import { TechniqueComponent } from "./techniques/technique/technique.component";
 import { TechniqueListComponent } from "./techniques/technique-list/technique-list.component";
 import { TechniqueUpdateComponent } from "./techniques/technique-update/technique-update.component";
+import {InstanceComponent} from "./instances/instance/instance.component";
+import {InstanceListComponent} from "./instances/instance-list/instance-list.component";
 
 @NgModule({
     declarations: [
@@ -44,6 +46,8 @@ import { TechniqueUpdateComponent } from "./techniques/technique-update/techniqu
         ProfileEditPasswordComponent,
         UsersManagementComponent,
         InstancesComponent,
+        InstanceComponent,
+        InstanceListComponent,
         InstanceCreateComponent,
         InstanceEditComponent,
         UserComponent,

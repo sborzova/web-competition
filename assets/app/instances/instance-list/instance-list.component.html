@@ -1,0 +1,17 @@
+<div *ngIf="instances" class="col-md-8 col-md-offset-2">
+    <table class="table table-hover table-reflow">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Stats</th>
+            <th>Post date</th>
+            <th>Data</th>
+        </tr>
+        </thead>
+        <tbody>
+        <app-instance *ngFor="let instance of instances" [instance]="instance"></app-instance>
+        </tbody>
+    </table>
+</div>

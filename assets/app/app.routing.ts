@@ -5,7 +5,7 @@ import { SignupComponent } from "./auth/signup/signup.component";
 import { HomeComponent } from "./home/home.component";
 import { PROFILE_ROUTES } from "./profile/profile.routes";
 import { UsersManagementComponent } from "./users-management/users-management.component";
-import { INSTANCE_ROUTES } from "./instances/instances.routes";
+import { INSTANCE_ROUTES } from "./instances/instance.routes";
 import {TechniquesComponent} from "./techniques/techniques.component";
 
 const APP_ROUTES: Routes = [
