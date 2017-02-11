@@ -38,20 +38,20 @@ export class InstanceCreateComponent implements OnInit {
 
     onSubmit(){
         this.submitted = true;
-        if (this.myForm.valid){
-            const instance = new Instance(
-                this.myForm.value.name,
-                this.myForm.value.description,
-                this.myForm.value.stats,
-                this.myForm.value.data
-            );
-            this.instancesService.saveInstance(instance)
-                .subscribe(
-                    data => console.log(data),
-                    error => console.error(error)
-                );
-            this.router.navigateByUrl('#instances/all');
-        }
+        // if (this.myForm.valid){
+        //     const instance = new Instance(
+        //         this.myForm.value.name,
+        //         this.myForm.value.description,
+        //         this.myForm.value.stats,
+        //         this.myForm.value.data
+        //     );
+        //     this.instancesService.saveInstance(instance)
+        //         .subscribe(
+        //             data => console.log(data),
+        //             error => console.error(error)
+        //         );
+        //     this.router.navigate(['/#instances']);
+        // }
     }
 
     isSubmitted(){

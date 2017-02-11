@@ -1,9 +1,13 @@
-<tr>
-    <td>{{ instance.name }}</td>
-    <td>{{ instance.description }}</td>
-    <td>{{ instance.stats }}</td>
-    <td>{{ instance.postDate }}</td>
-    <td>{{ instance.data }}</td>
-    <td><button class="btn btn-info" [routerLink]="['/#instances/edit']">Edit</button></td>
-    <td><button class="btn btn-danger" (click)="onDelete()">Delete</button></td>
-</tr>
+<table class="table">
+    <tbody>
+        <tr>
+            <td>{{ instance.name }}</td>
+            <td>{{ instance.description }}</td>
+            <td>{{ instance.stats }}</td>
+            <td>{{ instance.postDate }}</td>
+            <td>{{ instance.data }}</td>
+            <td><button class="btn btn-info" [routerLink]="['/#instances/edit']">Edit</button></td>
+            <td><button class="btn btn-danger" (click)="onDelete()">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
