@@ -18,9 +18,9 @@ router.post('/technique', function (req, res) {
     }
     technique.save(function (err, result) {
         if (err) {
-            return res.status(500).json({
+            return res.status(422).json({
                 title: 'An error occurred',
-                error: err
+                error: {message: 'Technique with this name is already in use'}
             });
         }
         res.status(201).json({

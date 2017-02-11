@@ -26,7 +26,7 @@ export class ProfileEditComponent implements OnInit {
             .subscribe(
                 result => {
                     console.log(result);
-                    this.router.navigateByUrl('/profile/info');
+                    this.router.navigateByUrl('/#profile/info');
                 },
                 error => console.error(error)
             );
@@ -52,6 +52,6 @@ export class ProfileEditComponent implements OnInit {
     }
 
     private navigateBack() {
-        this.router.navigate(['/profile/info']);
+        this.router.navigate(['/#profile/info']);
     }
 }

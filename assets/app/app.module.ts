@@ -27,6 +27,7 @@ import { InstanceGroupEditComponent } from "./instance-group-edit/instance-group
 import { InstanceCreateComponent } from "./instances/instance-new/instance-new.component";
 import { InstanceEditComponent } from "./instances/instance-edit/instance-edit.component";
 import { TechniqueComponent } from "./techniques/technique.component";
+import { TechniqueCreateComponent } from "./techniques/technique-new/technique-new.component";
 
 @NgModule({
     declarations: [
@@ -48,6 +49,7 @@ import { TechniqueComponent } from "./techniques/technique.component";
         InstanceEditComponent,
         UserComponent,
         TechniqueComponent,
+        TechniqueCreateComponent,
         EqualValidator
     ],
     imports: [

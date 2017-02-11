@@ -9,16 +9,16 @@ import { INSTANCE_ROUTES } from "./instances/instances.routes";
 import {TechniqueComponent} from "./techniques/technique.component";
 
 const APP_ROUTES: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full'},
-    { path: 'home', component: HomeComponent },
-    { path: 'usersmanagement', component: UsersManagementComponent },
-    { path: 'results', component: HomeComponent },
-    { path: 'validator', component: HomeComponent },
-    { path: 'signin', component: SigninComponent },
-    { path: 'signup', component: SignupComponent },
-    { path: 'techniques', component: TechniqueComponent },
-    { path: 'instances', children: INSTANCE_ROUTES },
-    { path: 'profile', children: PROFILE_ROUTES },
+    { path: '', redirectTo: '#home', pathMatch: 'full'},
+    { path: '#home', component: HomeComponent },
+    { path: '#usersmanagement', component: UsersManagementComponent },
+    { path: '#results', component: HomeComponent },
+    { path: '#validator', component: HomeComponent },
+    { path: '#signin', component: SigninComponent },
+    { path: '#signup', component: SignupComponent },
+    { path: '#techniques', component: TechniqueComponent },
+    { path: '#instances', children: INSTANCE_ROUTES },
+    { path: '#profile', children: PROFILE_ROUTES },
 ];
 export const hostUrl = 'http://localhost:3000/';
 // export const hostUrl = 'https://bakalar.herokuapp.com/';

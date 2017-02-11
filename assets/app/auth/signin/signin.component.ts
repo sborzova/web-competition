@@ -36,7 +36,7 @@ export class SigninComponent {
                     }
 
                     this.errorService.deleteError();
-                    this.router.navigateByUrl('/home');
+                    this.router.navigateByUrl('/#home');
                 },
                 error => {
                     console.error(error);
