@@ -19,11 +19,9 @@ import { EqualValidator } from "./auth/validator-equal.directive";
 import { ErrorComponent } from "./messages/errors/error.component";
 import { ErrorService } from "./messages/errors/error.service";
 import { InstancesComponent } from "./instances/instances.component";
-import { InstanceGroupComponent } from "./instance-group/instance-group.component";
 import { UserComponent } from "./users-management/user/user.component";
 import { SuccessComponent } from "./messages/successes/success.component";
 import { SuccessService } from "./messages/successes/success.service";
-import { InstanceGroupEditComponent } from "./instance-group-edit/instance-group-edit.component";
 import { InstanceCreateComponent } from "./instances/instance-new/instance-new.component";
 import { InstanceEditComponent } from "./instances/instance-edit/instance-edit.component";
 import { TechniquesComponent } from "./techniques/techniques.component";
@@ -46,8 +44,6 @@ import { TechniqueUpdateComponent } from "./techniques/technique-update/techniqu
         ProfileEditPasswordComponent,
         UsersManagementComponent,
         InstancesComponent,
-        InstanceGroupComponent,
-        InstanceGroupEditComponent,
         InstanceCreateComponent,
         InstanceEditComponent,
         UserComponent,

@@ -1,13 +1,12 @@
-import { Component, OnInit} from "@angular/core";
-import {FormGroup, FormControl, Validators} from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { AuthService } from "../../auth/auth.service";
-import { InstanceGroupService } from "../../instance-group-new/instance-group.service";
 import { ErrorService } from "../../messages/errors/error.service";
 import { InstancesService } from "../instances.service";
-import {Instance} from "../instance.model";
-import {SuccessService} from "../../messages/successes/success.service";
+import { Instance } from "../instance.model";
+import { SuccessService } from "../../messages/successes/success.service";
 
 @Component({
     selector: 'app-instance-new',
@@ -51,8 +50,7 @@ export class InstanceCreateComponent implements OnInit {
                     data => console.log(data),
                     error => console.error(error)
                 );
-            this.router.navigateByUrl('instances/all');
-            //this.myForm.reset();
+            this.router.navigateByUrl('#instances/all');
         }
     }
 
