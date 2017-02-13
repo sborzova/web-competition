@@ -59,6 +59,26 @@ export class InstanceService {
         });
     }
 
+    getInstance(id: string){
+        return this.http.get(this.hostUrl.concat('instance/' + id))
+            .map((response: Response) => {
+                const instance = response.json().obj;
+                return new Instance(
+                    instance.name,
+                    instance.description,
+                    instance.stats,
+                    instance.data,
+                    instance.postDate,
+                    instance.isOn,
+                    instance._id
+                );
+            })
+            .catch((error: Response) => {
+                this.errorService.handleError(error.json());
+                return Observable.throw(error.json())
+            });
+    }
+
     getInstances(){
         return this.http.get(this.hostUrl.concat('instances'))
             .map((response: Response) => {
@@ -69,10 +89,8 @@ export class InstanceService {
                         frequency: 1,       // in milliseconds.
                         chunkSize: 2048     // in bytes.
                     });
-
-                    // With a buffer
                     myReadableStreamBuffer.put(instance.stats);
-                    console.log(instance.stats);
+                    //console.log(instance.stats);
                     transformedInstances.push(new Instance(
                         instance.name,
                         instance.description,

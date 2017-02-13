@@ -29,8 +29,10 @@ import { TechniqueCreateComponent } from "./techniques/technique-new/technique-n
 import { TechniqueComponent } from "./techniques/technique/technique.component";
 import { TechniqueListComponent } from "./techniques/technique-list/technique-list.component";
 import { TechniqueUpdateComponent } from "./techniques/technique-update/technique-update.component";
-import {InstanceComponent} from "./instances/instance/instance.component";
-import {InstanceListComponent} from "./instances/instance-list/instance-list.component";
+import { InstanceComponent } from "./instances/instance/instance.component";
+import { InstanceListComponent } from "./instances/instance-list/instance-list.component";
+import { InstanceStatsComponent } from "./instances/instance-stats/instance-stats.component";
+import { EscapeHtmlPipe } from "./instances/escapeHtml.pipe";
 
 @NgModule({
     declarations: [
@@ -50,13 +52,15 @@ import {InstanceListComponent} from "./instances/instance-list/instance-list.com
         InstanceListComponent,
         InstanceCreateComponent,
         InstanceEditComponent,
+        InstanceStatsComponent,
         UserComponent,
         TechniquesComponent,
         TechniqueCreateComponent,
         TechniqueUpdateComponent,
         TechniqueComponent,
         TechniqueListComponent,
-        EqualValidator
+        EqualValidator,
+        EscapeHtmlPipe
     ],
     imports: [
         BrowserModule,
