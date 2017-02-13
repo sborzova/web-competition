@@ -91,7 +91,7 @@ export class AuthService{
         return localStorage.getItem('token') !== null;
     }
 
-    isAdmin() : boolean{
+    isAdmin(){
         return localStorage.getItem('isAdmin') !== null;
     }
 

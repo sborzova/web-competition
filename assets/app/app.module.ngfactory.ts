@@ -41,16 +41,16 @@ import * as import33 from './auth/auth.service';
 import * as import34 from './messages/successes/success.service';
 import * as import35 from '@angular/core/src/di/injector';
 import * as import36 from './home/home.component.ngfactory';
-import * as import37 from './users-management/users-management.component.ngfactory';
+import * as import37 from './users/users.component.ngfactory';
 import * as import38 from './auth/signin/signin.component.ngfactory';
 import * as import39 from './auth/signup/signup.component.ngfactory';
 import * as import40 from './techniques/techniques.component.ngfactory';
 import * as import41 from './instances/instances.component.ngfactory';
 import * as import42 from './instances/instance-new/instance-new.component.ngfactory';
 import * as import43 from './instances/instance-update/instance-update.component.ngfactory';
-import * as import44 from './profile/profile-edit/profile-edit.component.ngfactory';
-import * as import45 from './profile/profile-edit-password/profile-edit-password.component.ngfactory';
-import * as import46 from './profile/profile.component.ngfactory';
+import * as import44 from './auth/user-edit/user-edit.component.ngfactory';
+import * as import45 from './auth/user-edit-password/user-edit-password.component.ngfactory';
+import * as import46 from './auth/user/user.component.ngfactory';
 import * as import47 from './app.component.ngfactory';
 import * as import48 from '@angular/core/src/application_tokens';
 import * as import49 from '@angular/platform-browser/src/dom/events/dom_events';
@@ -60,16 +60,16 @@ import * as import52 from '@angular/platform-browser/src/dom/debug/ng_probe';
 import * as import53 from '@angular/common/src/location/platform_location';
 import * as import54 from '@angular/common/src/location/location_strategy';
 import * as import55 from './home/home.component';
-import * as import56 from './users-management/users-management.component';
+import * as import56 from './users/users.component';
 import * as import57 from './auth/signin/signin.component';
 import * as import58 from './auth/signup/signup.component';
 import * as import59 from './techniques/techniques.component';
 import * as import60 from './instances/instances.component';
 import * as import61 from './instances/instance-new/instance-new.component';
 import * as import62 from './instances/instance-update/instance-update.component';
-import * as import63 from './profile/profile-edit/profile-edit.component';
-import * as import64 from './profile/profile-edit-password/profile-edit-password.component';
-import * as import65 from './profile/profile.component';
+import * as import63 from './auth/user-edit/user-edit.component';
+import * as import64 from './auth/user-edit-password/user-edit-password.component';
+import * as import65 from './auth/user/user.component';
 import * as import66 from '@angular/router/src/router';
 import * as import67 from '@angular/core/src/console';
 import * as import68 from '@angular/core/src/i18n/tokens';
@@ -145,7 +145,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
   constructor(parent:import35.Injector) {
     super(parent,[
       import36.HomeComponentNgFactory,
-      import37.UsersManagementComponentNgFactory,
+      import37.UsersComponentNgFactory,
       import36.HomeComponentNgFactory,
       import36.HomeComponentNgFactory,
       import38.SigninComponentNgFactory,
@@ -154,9 +154,9 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
       import41.InstancesComponentNgFactory,
       import42.InstanceCreateComponentNgFactory,
       import43.InstanceEditComponentNgFactory,
-      import44.ProfileEditComponentNgFactory,
-      import45.ProfileEditPasswordComponentNgFactory,
-      import46.ProfileComponentNgFactory,
+      import44.UserEditComponentNgFactory,
+      import45.UserEditPasswordComponentNgFactory,
+      import46.UserProfileComponentNgFactory,
       import47.AppComponentNgFactory
     ]
     ,[import47.AppComponentNgFactory]);
@@ -317,7 +317,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
         ,
         {
           path: '#usersmanagement',
-          component: import56.UsersManagementComponent
+          component: import56.UsersComponent
         }
         ,
         {
@@ -384,17 +384,17 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
             ,
             {
               path: 'edit',
-              component: import63.ProfileEditComponent
+              component: import63.UserEditComponent
             }
             ,
             {
               path: 'editpass',
-              component: import64.ProfileEditPasswordComponent
+              component: import64.UserEditPasswordComponent
             }
             ,
             {
               path: 'info',
-              component: import65.ProfileComponent
+              component: import65.UserProfileComponent
             }
 
           ]

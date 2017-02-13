@@ -7,8 +7,8 @@
 import * as import0 from '@angular/core/src/render/api';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import2 from '@angular/core/src/linker/element';
-import * as import3 from './users-management.service';
-import * as import4 from './users-management.component';
+import * as import3 from './user.service';
+import * as import4 from './users.component';
 import * as import5 from '@angular/core/src/linker/view_utils';
 import * as import6 from '@angular/core/src/di/injector';
 import * as import7 from '@angular/core/src/linker/view_type';
@@ -24,45 +24,45 @@ import * as import16 from '@angular/common/src/directives/ng_for';
 import * as import17 from '@angular/core/src/change_detection/differs/iterable_differs';
 import * as import18 from './user/user.component';
 import * as import19 from './user/user.component.ngfactory';
-var renderType_UsersManagementComponent_Host:import0.RenderComponentType = (null as any);
-class _View_UsersManagementComponent_Host0 extends import1.AppView<any> {
+var renderType_UsersComponent_Host:import0.RenderComponentType = (null as any);
+class _View_UsersComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import2.AppElement;
-  _UsersManagementService_0_4:import3.UsersManagementService;
-  _UsersManagementComponent_0_5:import4.UsersManagementComponent;
+  _UsersService_0_4:import3.UsersService;
+  _UsersComponent_0_5:import4.UsersComponent;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement) {
-    super(_View_UsersManagementComponent_Host0,renderType_UsersManagementComponent_Host,import7.ViewType.HOST,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
+    super(_View_UsersComponent_Host0,renderType_UsersComponent_Host,import7.ViewType.HOST,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
-    this._el_0 = this.selectOrCreateHostElement('app-usersmanagement',rootSelector,(null as any));
+    this._el_0 = this.selectOrCreateHostElement('app-users',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
-    var compView_0:any = viewFactory_UsersManagementComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._UsersManagementService_0_4 = new import3.UsersManagementService(this.parentInjector.get(import9.Http),this.parentInjector.get(import10.SuccessService));
-    this._UsersManagementComponent_0_5 = new import4.UsersManagementComponent(this._UsersManagementService_0_4,this.parentInjector.get(import10.SuccessService),this.parentInjector.get(import11.ErrorService));
-    this._appEl_0.initComponent(this._UsersManagementComponent_0_5,[],compView_0);
-    compView_0.create(this._UsersManagementComponent_0_5,this.projectableNodes,(null as any));
+    var compView_0:any = viewFactory_UsersComponent0(this.viewUtils,this.injector(0),this._appEl_0);
+    this._UsersService_0_4 = new import3.UsersService(this.parentInjector.get(import9.Http),this.parentInjector.get(import10.SuccessService));
+    this._UsersComponent_0_5 = new import4.UsersComponent(this._UsersService_0_4,this.parentInjector.get(import10.SuccessService),this.parentInjector.get(import11.ErrorService));
+    this._appEl_0.initComponent(this._UsersComponent_0_5,[],compView_0);
+    compView_0.create(this._UsersComponent_0_5,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
     return this._appEl_0;
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import3.UsersManagementService) && (0 === requestNodeIndex))) { return this._UsersManagementService_0_4; }
-    if (((token === import4.UsersManagementComponent) && (0 === requestNodeIndex))) { return this._UsersManagementComponent_0_5; }
+    if (((token === import3.UsersService) && (0 === requestNodeIndex))) { return this._UsersService_0_4; }
+    if (((token === import4.UsersComponent) && (0 === requestNodeIndex))) { return this._UsersComponent_0_5; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._UsersManagementComponent_0_5.ngOnInit(); }
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._UsersComponent_0_5.ngOnInit(); }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-function viewFactory_UsersManagementComponent_Host0(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_UsersManagementComponent_Host === (null as any))) { (renderType_UsersManagementComponent_Host = viewUtils.createRenderComponentType('',0,import12.ViewEncapsulation.None,[],{})); }
-  return new _View_UsersManagementComponent_Host0(viewUtils,parentInjector,declarationEl);
+function viewFactory_UsersComponent_Host0(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  if ((renderType_UsersComponent_Host === (null as any))) { (renderType_UsersComponent_Host = viewUtils.createRenderComponentType('',0,import12.ViewEncapsulation.None,[],{})); }
+  return new _View_UsersComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const UsersManagementComponentNgFactory:import13.ComponentFactory<import4.UsersManagementComponent> = new import13.ComponentFactory<import4.UsersManagementComponent>('app-usersmanagement',viewFactory_UsersManagementComponent_Host0,import4.UsersManagementComponent);
-const styles_UsersManagementComponent:any[] = [];
-var renderType_UsersManagementComponent:import0.RenderComponentType = (null as any);
-class _View_UsersManagementComponent0 extends import1.AppView<import4.UsersManagementComponent> {
+export const UsersComponentNgFactory:import13.ComponentFactory<import4.UsersComponent> = new import13.ComponentFactory<import4.UsersComponent>('app-users',viewFactory_UsersComponent_Host0,import4.UsersComponent);
+const styles_UsersComponent:any[] = [];
+var renderType_UsersComponent:import0.RenderComponentType = (null as any);
+class _View_UsersComponent0 extends import1.AppView<import4.UsersComponent> {
   _anchor_0:any;
   /*private*/ _appEl_0:import2.AppElement;
   _TemplateRef_0_5:any;
@@ -70,13 +70,13 @@ class _View_UsersManagementComponent0 extends import1.AppView<import4.UsersManag
   _text_1:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement) {
-    super(_View_UsersManagementComponent0,renderType_UsersManagementComponent,import7.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
+    super(_View_UsersComponent0,renderType_UsersComponent,import7.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
     this._anchor_0 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._anchor_0);
-    this._TemplateRef_0_5 = new import15.TemplateRef_(this._appEl_0,viewFactory_UsersManagementComponent1);
+    this._TemplateRef_0_5 = new import15.TemplateRef_(this._appEl_0,viewFactory_UsersComponent1);
     this._NgIf_0_6 = new import14.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
     this._text_1 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this._expr_0 = import8.UNINITIALIZED;
@@ -102,11 +102,11 @@ class _View_UsersManagementComponent0 extends import1.AppView<import4.UsersManag
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-export function viewFactory_UsersManagementComponent0(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<import4.UsersManagementComponent> {
-  if ((renderType_UsersManagementComponent === (null as any))) { (renderType_UsersManagementComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/users-management/users-management.component.html',0,import12.ViewEncapsulation.None,styles_UsersManagementComponent,{})); }
-  return new _View_UsersManagementComponent0(viewUtils,parentInjector,declarationEl);
+export function viewFactory_UsersComponent0(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<import4.UsersComponent> {
+  if ((renderType_UsersComponent === (null as any))) { (renderType_UsersComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/users/users.component.html',0,import12.ViewEncapsulation.None,styles_UsersComponent,{})); }
+  return new _View_UsersComponent0(viewUtils,parentInjector,declarationEl);
 }
-class _View_UsersManagementComponent1 extends import1.AppView<any> {
+class _View_UsersComponent1 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
@@ -136,7 +136,7 @@ class _View_UsersManagementComponent1 extends import1.AppView<any> {
   _text_23:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement) {
-    super(_View_UsersManagementComponent1,renderType_UsersManagementComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
+    super(_View_UsersComponent1,renderType_UsersComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
@@ -165,7 +165,7 @@ class _View_UsersManagementComponent1 extends import1.AppView<any> {
     this._text_21 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._anchor_22 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
     this._appEl_22 = new import2.AppElement(22,0,this,this._anchor_22);
-    this._TemplateRef_22_5 = new import15.TemplateRef_(this._appEl_22,viewFactory_UsersManagementComponent2);
+    this._TemplateRef_22_5 = new import15.TemplateRef_(this._appEl_22,viewFactory_UsersComponent2);
     this._NgFor_22_6 = new import16.NgFor(this._appEl_22.vcRef,this._TemplateRef_22_5,this.parentInjector.get(import17.IterableDiffers),this.parent.ref);
     this._text_23 = this.renderer.createText(this._el_0,'\n',(null as any));
     this._expr_0 = import8.UNINITIALIZED;
@@ -219,25 +219,25 @@ class _View_UsersManagementComponent1 extends import1.AppView<any> {
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-function viewFactory_UsersManagementComponent1(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_UsersManagementComponent1(viewUtils,parentInjector,declarationEl);
+function viewFactory_UsersComponent1(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UsersComponent1(viewUtils,parentInjector,declarationEl);
 }
-class _View_UsersManagementComponent2 extends import1.AppView<any> {
+class _View_UsersComponent2 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import2.AppElement;
-  _UsersManagementService_0_4:import3.UsersManagementService;
+  _UsersService_0_4:import3.UsersService;
   _UserComponent_0_5:import18.UserComponent;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   constructor(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement) {
-    super(_View_UsersManagementComponent2,renderType_UsersManagementComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
+    super(_View_UsersComponent2,renderType_UsersComponent,import7.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import8.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'app-user',(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = import19.viewFactory_UserComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._UsersManagementService_0_4 = new import3.UsersManagementService(this.parent.parentInjector.get(import9.Http),this.parent.parentInjector.get(import10.SuccessService));
-    this._UserComponent_0_5 = new import18.UserComponent(this._UsersManagementService_0_4);
+    this._UsersService_0_4 = new import3.UsersService(this.parent.parentInjector.get(import9.Http),this.parent.parentInjector.get(import10.SuccessService));
+    this._UserComponent_0_5 = new import18.UserComponent(this._UsersService_0_4);
     this._appEl_0.initComponent(this._UserComponent_0_5,[],compView_0);
     compView_0.create(this._UserComponent_0_5,[],(null as any));
     this._expr_0 = import8.UNINITIALIZED;
@@ -246,7 +246,7 @@ class _View_UsersManagementComponent2 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import3.UsersManagementService) && (0 === requestNodeIndex))) { return this._UsersManagementService_0_4; }
+    if (((token === import3.UsersService) && (0 === requestNodeIndex))) { return this._UsersService_0_4; }
     if (((token === import18.UserComponent) && (0 === requestNodeIndex))) { return this._UserComponent_0_5; }
     return notFoundResult;
   }
@@ -265,6 +265,6 @@ class _View_UsersManagementComponent2 extends import1.AppView<any> {
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-function viewFactory_UsersManagementComponent2(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_UsersManagementComponent2(viewUtils,parentInjector,declarationEl);
+function viewFactory_UsersComponent2(viewUtils:import5.ViewUtils,parentInjector:import6.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UsersComponent2(viewUtils,parentInjector,declarationEl);
 }

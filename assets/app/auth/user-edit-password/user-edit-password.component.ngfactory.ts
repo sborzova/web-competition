@@ -7,12 +7,12 @@
 import * as import0 from '@angular/core/src/render/api';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import2 from '@angular/core/src/linker/element';
-import * as import3 from './profile-edit-password.component';
+import * as import3 from './user-edit-password.component';
 import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../../auth/auth.service';
+import * as import8 from '../auth.service';
 import * as import9 from '@angular/router/src/router';
 import * as import10 from '@angular/core/src/metadata/view';
 import * as import11 from '@angular/core/src/linker/component_factory';
@@ -23,7 +23,7 @@ import * as import15 from '@angular/forms/src/directives/ng_control_status';
 import * as import16 from '@angular/common/src/directives/ng_class';
 import * as import17 from '@angular/forms/src/directives/default_value_accessor';
 import * as import18 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
-import * as import19 from '../../auth/validator-equal.directive';
+import * as import19 from '../validator-equal.directive';
 import * as import20 from '@angular/core/src/change_detection/differs/iterable_differs';
 import * as import21 from '@angular/core/src/change_detection/differs/keyvalue_differs';
 import * as import22 from '@angular/core/src/linker/element_ref';
@@ -31,42 +31,42 @@ import * as import23 from '@angular/forms/src/directives/control_value_accessor'
 import * as import24 from '@angular/forms/src/directives/ng_control';
 import * as import25 from '@angular/forms/src/validators';
 import * as import26 from '@angular/forms/src/directives/control_container';
-var renderType_ProfileEditPasswordComponent_Host:import0.RenderComponentType = (null as any);
-class _View_ProfileEditPasswordComponent_Host0 extends import1.AppView<any> {
+var renderType_UserEditPasswordComponent_Host:import0.RenderComponentType = (null as any);
+class _View_UserEditPasswordComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import2.AppElement;
-  _ProfileEditPasswordComponent_0_4:import3.ProfileEditPasswordComponent;
+  _UserEditPasswordComponent_0_4:import3.UserEditPasswordComponent;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ProfileEditPasswordComponent_Host0,renderType_ProfileEditPasswordComponent_Host,import6.ViewType.HOST,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserEditPasswordComponent_Host0,renderType_UserEditPasswordComponent_Host,import6.ViewType.HOST,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.selectOrCreateHostElement('app-profile-edit-pass',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
-    var compView_0:any = viewFactory_ProfileEditPasswordComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._ProfileEditPasswordComponent_0_4 = new import3.ProfileEditPasswordComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.Router));
-    this._appEl_0.initComponent(this._ProfileEditPasswordComponent_0_4,[],compView_0);
-    compView_0.create(this._ProfileEditPasswordComponent_0_4,this.projectableNodes,(null as any));
+    var compView_0:any = viewFactory_UserEditPasswordComponent0(this.viewUtils,this.injector(0),this._appEl_0);
+    this._UserEditPasswordComponent_0_4 = new import3.UserEditPasswordComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.Router));
+    this._appEl_0.initComponent(this._UserEditPasswordComponent_0_4,[],compView_0);
+    compView_0.create(this._UserEditPasswordComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
     return this._appEl_0;
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import3.ProfileEditPasswordComponent) && (0 === requestNodeIndex))) { return this._ProfileEditPasswordComponent_0_4; }
+    if (((token === import3.UserEditPasswordComponent) && (0 === requestNodeIndex))) { return this._UserEditPasswordComponent_0_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._ProfileEditPasswordComponent_0_4.ngOnInit(); }
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._UserEditPasswordComponent_0_4.ngOnInit(); }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-function viewFactory_ProfileEditPasswordComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_ProfileEditPasswordComponent_Host === (null as any))) { (renderType_ProfileEditPasswordComponent_Host = viewUtils.createRenderComponentType('',0,import10.ViewEncapsulation.None,[],{})); }
-  return new _View_ProfileEditPasswordComponent_Host0(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserEditPasswordComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  if ((renderType_UserEditPasswordComponent_Host === (null as any))) { (renderType_UserEditPasswordComponent_Host = viewUtils.createRenderComponentType('',0,import10.ViewEncapsulation.None,[],{})); }
+  return new _View_UserEditPasswordComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const ProfileEditPasswordComponentNgFactory:import11.ComponentFactory<import3.ProfileEditPasswordComponent> = new import11.ComponentFactory<import3.ProfileEditPasswordComponent>('app-profile-edit-pass',viewFactory_ProfileEditPasswordComponent_Host0,import3.ProfileEditPasswordComponent);
-const styles_ProfileEditPasswordComponent:any[] = [];
-var renderType_ProfileEditPasswordComponent:import0.RenderComponentType = (null as any);
-class _View_ProfileEditPasswordComponent0 extends import1.AppView<import3.ProfileEditPasswordComponent> {
+export const UserEditPasswordComponentNgFactory:import11.ComponentFactory<import3.UserEditPasswordComponent> = new import11.ComponentFactory<import3.UserEditPasswordComponent>('app-profile-edit-pass',viewFactory_UserEditPasswordComponent_Host0,import3.UserEditPasswordComponent);
+const styles_UserEditPasswordComponent:any[] = [];
+var renderType_UserEditPasswordComponent:import0.RenderComponentType = (null as any);
+class _View_UserEditPasswordComponent0 extends import1.AppView<import3.UserEditPasswordComponent> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
@@ -88,7 +88,7 @@ class _View_ProfileEditPasswordComponent0 extends import1.AppView<import3.Profil
   _text_15:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ProfileEditPasswordComponent0,renderType_ProfileEditPasswordComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserEditPasswordComponent0,renderType_UserEditPasswordComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
@@ -110,7 +110,7 @@ class _View_ProfileEditPasswordComponent0 extends import1.AppView<import3.Profil
     this._text_11 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._anchor_12 = this.renderer.createTemplateAnchor(this._el_4,(null as any));
     this._appEl_12 = new import2.AppElement(12,4,this,this._anchor_12);
-    this._TemplateRef_12_5 = new import13.TemplateRef_(this._appEl_12,viewFactory_ProfileEditPasswordComponent1);
+    this._TemplateRef_12_5 = new import13.TemplateRef_(this._appEl_12,viewFactory_UserEditPasswordComponent1);
     this._NgIf_12_6 = new import12.NgIf(this._appEl_12.vcRef,this._TemplateRef_12_5);
     this._text_13 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._text_14 = this.renderer.createText(this._el_2,'\n    ',(null as any));
@@ -152,11 +152,11 @@ class _View_ProfileEditPasswordComponent0 extends import1.AppView<import3.Profil
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-export function viewFactory_ProfileEditPasswordComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileEditPasswordComponent> {
-  if ((renderType_ProfileEditPasswordComponent === (null as any))) { (renderType_ProfileEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-edit-password/profile-edit-password.component.html',0,import10.ViewEncapsulation.None,styles_ProfileEditPasswordComponent,{})); }
-  return new _View_ProfileEditPasswordComponent0(viewUtils,parentInjector,declarationEl);
+export function viewFactory_UserEditPasswordComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UserEditPasswordComponent> {
+  if ((renderType_UserEditPasswordComponent === (null as any))) { (renderType_UserEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/user-edit-password/user-edit-password.component.html',0,import10.ViewEncapsulation.None,styles_UserEditPasswordComponent,{})); }
+  return new _View_UserEditPasswordComponent0(viewUtils,parentInjector,declarationEl);
 }
-class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
+class _View_UserEditPasswordComponent1 extends import1.AppView<any> {
   _el_0:any;
   _FormGroupDirective_0_3:import14.FormGroupDirective;
   _ControlContainer_0_4:any;
@@ -300,7 +300,7 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
   /*private*/ _expr_46:any;
   /*private*/ _expr_47:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ProfileEditPasswordComponent1,renderType_ProfileEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserEditPasswordComponent1,renderType_UserEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'form',(null as any));
@@ -334,7 +334,7 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
     this._text_12 = this.renderer.createText(this._el_6,'\n                            ',(null as any));
     this._anchor_13 = this.renderer.createTemplateAnchor(this._el_6,(null as any));
     this._appEl_13 = new import2.AppElement(13,6,this,this._anchor_13);
-    this._TemplateRef_13_5 = new import13.TemplateRef_(this._appEl_13,viewFactory_ProfileEditPasswordComponent2);
+    this._TemplateRef_13_5 = new import13.TemplateRef_(this._appEl_13,viewFactory_UserEditPasswordComponent2);
     this._NgIf_13_6 = new import12.NgIf(this._appEl_13.vcRef,this._TemplateRef_13_5);
     this._text_14 = this.renderer.createText(this._el_6,'\n                        ',(null as any));
     this._text_15 = this.renderer.createText(this._el_4,'\n                    ',(null as any));
@@ -366,17 +366,17 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
     this._text_25 = this.renderer.createText(this._el_19,'\n                            ',(null as any));
     this._anchor_26 = this.renderer.createTemplateAnchor(this._el_19,(null as any));
     this._appEl_26 = new import2.AppElement(26,19,this,this._anchor_26);
-    this._TemplateRef_26_5 = new import13.TemplateRef_(this._appEl_26,viewFactory_ProfileEditPasswordComponent3);
+    this._TemplateRef_26_5 = new import13.TemplateRef_(this._appEl_26,viewFactory_UserEditPasswordComponent3);
     this._NgIf_26_6 = new import12.NgIf(this._appEl_26.vcRef,this._TemplateRef_26_5);
     this._text_27 = this.renderer.createText(this._el_19,'\n                            ',(null as any));
     this._anchor_28 = this.renderer.createTemplateAnchor(this._el_19,(null as any));
     this._appEl_28 = new import2.AppElement(28,19,this,this._anchor_28);
-    this._TemplateRef_28_5 = new import13.TemplateRef_(this._appEl_28,viewFactory_ProfileEditPasswordComponent4);
+    this._TemplateRef_28_5 = new import13.TemplateRef_(this._appEl_28,viewFactory_UserEditPasswordComponent4);
     this._NgIf_28_6 = new import12.NgIf(this._appEl_28.vcRef,this._TemplateRef_28_5);
     this._text_29 = this.renderer.createText(this._el_19,'\n                            ',(null as any));
     this._anchor_30 = this.renderer.createTemplateAnchor(this._el_19,(null as any));
     this._appEl_30 = new import2.AppElement(30,19,this,this._anchor_30);
-    this._TemplateRef_30_5 = new import13.TemplateRef_(this._appEl_30,viewFactory_ProfileEditPasswordComponent5);
+    this._TemplateRef_30_5 = new import13.TemplateRef_(this._appEl_30,viewFactory_UserEditPasswordComponent5);
     this._NgIf_30_6 = new import12.NgIf(this._appEl_30.vcRef,this._TemplateRef_30_5);
     this._text_31 = this.renderer.createText(this._el_19,'\n                        ',(null as any));
     this._text_32 = this.renderer.createText(this._el_17,'\n                    ',(null as any));
@@ -407,7 +407,7 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
     this._text_42 = this.renderer.createText(this._el_36,'\n                            ',(null as any));
     this._anchor_43 = this.renderer.createTemplateAnchor(this._el_36,(null as any));
     this._appEl_43 = new import2.AppElement(43,36,this,this._anchor_43);
-    this._TemplateRef_43_5 = new import13.TemplateRef_(this._appEl_43,viewFactory_ProfileEditPasswordComponent6);
+    this._TemplateRef_43_5 = new import13.TemplateRef_(this._appEl_43,viewFactory_UserEditPasswordComponent6);
     this._NgIf_43_6 = new import12.NgIf(this._appEl_43.vcRef,this._TemplateRef_43_5);
     this._text_44 = this.renderer.createText(this._el_36,'\n                        ',(null as any));
     this._text_45 = this.renderer.createText(this._el_34,'\n                    ',(null as any));
@@ -874,14 +874,14 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
     return (true && pd_0);
   }
 }
-function viewFactory_ProfileEditPasswordComponent1(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ProfileEditPasswordComponent1(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserEditPasswordComponent1(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserEditPasswordComponent1(viewUtils,parentInjector,declarationEl);
 }
-class _View_ProfileEditPasswordComponent2 extends import1.AppView<any> {
+class _View_UserEditPasswordComponent2 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ProfileEditPasswordComponent2,renderType_ProfileEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserEditPasswordComponent2,renderType_UserEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
@@ -895,14 +895,14 @@ class _View_ProfileEditPasswordComponent2 extends import1.AppView<any> {
     return (null as any);
   }
 }
-function viewFactory_ProfileEditPasswordComponent2(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ProfileEditPasswordComponent2(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserEditPasswordComponent2(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserEditPasswordComponent2(viewUtils,parentInjector,declarationEl);
 }
-class _View_ProfileEditPasswordComponent3 extends import1.AppView<any> {
+class _View_UserEditPasswordComponent3 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ProfileEditPasswordComponent3,renderType_ProfileEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserEditPasswordComponent3,renderType_UserEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
@@ -916,14 +916,14 @@ class _View_ProfileEditPasswordComponent3 extends import1.AppView<any> {
     return (null as any);
   }
 }
-function viewFactory_ProfileEditPasswordComponent3(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ProfileEditPasswordComponent3(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserEditPasswordComponent3(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserEditPasswordComponent3(viewUtils,parentInjector,declarationEl);
 }
-class _View_ProfileEditPasswordComponent4 extends import1.AppView<any> {
+class _View_UserEditPasswordComponent4 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ProfileEditPasswordComponent4,renderType_ProfileEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserEditPasswordComponent4,renderType_UserEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
@@ -937,14 +937,14 @@ class _View_ProfileEditPasswordComponent4 extends import1.AppView<any> {
     return (null as any);
   }
 }
-function viewFactory_ProfileEditPasswordComponent4(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ProfileEditPasswordComponent4(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserEditPasswordComponent4(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserEditPasswordComponent4(viewUtils,parentInjector,declarationEl);
 }
-class _View_ProfileEditPasswordComponent5 extends import1.AppView<any> {
+class _View_UserEditPasswordComponent5 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ProfileEditPasswordComponent5,renderType_ProfileEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserEditPasswordComponent5,renderType_UserEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
@@ -958,14 +958,14 @@ class _View_ProfileEditPasswordComponent5 extends import1.AppView<any> {
     return (null as any);
   }
 }
-function viewFactory_ProfileEditPasswordComponent5(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ProfileEditPasswordComponent5(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserEditPasswordComponent5(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserEditPasswordComponent5(viewUtils,parentInjector,declarationEl);
 }
-class _View_ProfileEditPasswordComponent6 extends import1.AppView<any> {
+class _View_UserEditPasswordComponent6 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ProfileEditPasswordComponent6,renderType_ProfileEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserEditPasswordComponent6,renderType_UserEditPasswordComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
@@ -979,6 +979,6 @@ class _View_ProfileEditPasswordComponent6 extends import1.AppView<any> {
     return (null as any);
   }
 }
-function viewFactory_ProfileEditPasswordComponent6(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ProfileEditPasswordComponent6(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserEditPasswordComponent6(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserEditPasswordComponent6(viewUtils,parentInjector,declarationEl);
 }

@@ -1,18 +1,18 @@
-import {Component, Input} from "@angular/core";
+import { Component, Input } from "@angular/core";
 
-import { UsersManagementService } from "../users-management.service";
-import {User} from "../user.model";
+import { UsersService } from "../user.service";
+import { User } from "../user.model";
 
 @Component({
     selector: 'app-user',
     templateUrl: './user.component.html',
-    providers: [UsersManagementService]
+    providers: [ UsersService ]
 })
 export class UserComponent{
     @Input() user: User;
     @Input() i: number;
 
-    constructor(private usersManagementService: UsersManagementService) {}
+    constructor(private usersManagementService: UsersService) {}
 
     onDelete() {
         this.usersManagementService.deleteUser(this.user)
@@ -20,5 +20,4 @@ export class UserComponent{
                 result => console.log(result)
             );
     }
-
 }

@@ -1,16 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm, Validators, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { Password } from "../password.model";
 import { User } from "../user.model";
-import { AuthService } from "../../auth/auth.service";
+import { AuthService } from "../auth.service";
 
 @Component({
     selector: 'app-profile-edit-pass',
-    templateUrl: 'profile-edit-password.component.html'
+    templateUrl: 'user-edit-password.component.html'
 })
-export class ProfileEditPasswordComponent implements OnInit{
+export class UserEditPasswordComponent implements OnInit{
     myForm: FormGroup;
     private password : Password;
     private user: User;
@@ -28,7 +28,7 @@ export class ProfileEditPasswordComponent implements OnInit{
                 .subscribe(
                     result => {
                         console.log(result);
-                        this.router.navigateByUrl('/#profile/info');
+                        this.navigateBack();
                     },
                     error => console.error(error)
                 );

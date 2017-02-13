@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 import { User } from "../user.model";
 import { AuthService } from "../auth.service";
 import { ErrorService } from "../../messages/errors/error.service";
-import {SuccessService} from "../../messages/successes/success.service";
+import { SuccessService } from "../../messages/successes/success.service";
 
 @Component({
     selector: 'app-signin',
@@ -36,7 +36,7 @@ export class SigninComponent {
                     }
 
                     this.errorService.deleteError();
-                    this.router.navigateByUrl('/#home');
+                    this.router.navigate(['/#home']);
                 },
                 error => {
                     console.error(error);

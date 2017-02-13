@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 import { AuthService } from "../auth.service";
 import { User } from "../user.model";
 import { ErrorService } from "../../messages/errors/error.service";
-import {SuccessService} from "../../messages/successes/success.service";
+import { SuccessService } from "../../messages/successes/success.service";
 
 @Component({
     selector: 'app-signup',

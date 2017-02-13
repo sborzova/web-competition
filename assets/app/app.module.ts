@@ -10,16 +10,16 @@ import { SigninComponent } from "./auth/signin/signin.component";
 import { SignupComponent } from "./auth/signup/signup.component";
 import { routing } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
-import { ProfileComponent } from "./profile/profile.component";
-import { ProfileEditComponent } from "./profile/profile-edit/profile-edit.component";
-import { ProfileEditPasswordComponent } from "./profile/profile-edit-password/profile-edit-password.component";
-import { UsersManagementComponent } from "./users-management/users-management.component";
+import { UserProfileComponent } from "./auth/user/user.component";
+import { UserEditComponent } from "./auth/user-edit/user-edit.component";
+import { UserEditPasswordComponent } from "./auth/user-edit-password/user-edit-password.component";
+import { UsersComponent } from "./users/users.component";
 import { FileUploadModule} from "ng2-file-upload";
 import { EqualValidator } from "./auth/validator-equal.directive";
 import { ErrorComponent } from "./messages/errors/error.component";
 import { ErrorService } from "./messages/errors/error.service";
 import { InstancesComponent } from "./instances/instances.component";
-import { UserComponent } from "./users-management/user/user.component";
+import { UserComponent } from "./users/user/user.component";
 import { SuccessComponent } from "./messages/successes/success.component";
 import { SuccessService } from "./messages/successes/success.service";
 import { InstanceCreateComponent } from "./instances/instance-new/instance-new.component";
@@ -41,10 +41,10 @@ import {InstanceListComponent} from "./instances/instance-list/instance-list.com
         HomeComponent,
         SigninComponent,
         SignupComponent,
-        ProfileComponent,
-        ProfileEditComponent,
-        ProfileEditPasswordComponent,
-        UsersManagementComponent,
+        UserProfileComponent,
+        UserEditComponent,
+        UserEditPasswordComponent,
+        UsersComponent,
         InstancesComponent,
         InstanceComponent,
         InstanceListComponent,

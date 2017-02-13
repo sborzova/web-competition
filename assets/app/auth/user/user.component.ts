@@ -1,15 +1,16 @@
-import {Component, Input, OnInit, OnChanges} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { User } from "../auth/user.model";
-import { AuthService } from "../auth/auth.service";
-import {ErrorService} from "../messages/errors/error.service";
-import {SuccessService} from "../messages/successes/success.service";
+import { User } from "../user.model";
+import { AuthService } from "../auth.service";
+import { ErrorService } from "../../messages/errors/error.service";
+import { SuccessService } from "../../messages/successes/success.service";
+
 
 @Component({
     selector: 'app-profile',
-    templateUrl: './profile.component.html'
+    templateUrl: 'user.component.html'
 })
-export class ProfileComponent implements OnInit {
+export class UserProfileComponent implements OnInit {
     @Input() user: User;
 
     constructor(private authService: AuthService,
@@ -28,5 +29,4 @@ export class ProfileComponent implements OnInit {
                 }
             );
     }
-
 }

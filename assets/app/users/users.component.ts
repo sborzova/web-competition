@@ -1,19 +1,19 @@
-import {Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { UsersManagementService } from "./users-management.service";
+import { UsersService } from "./user.service";
 import { User } from "./user.model";
 import { SuccessService } from "../messages/successes/success.service";
 import { ErrorService } from "../messages/errors/error.service";
 
 @Component({
-    selector: 'app-usersmanagement',
-    templateUrl: './users-management.component.html',
-    providers: [UsersManagementService]
+    selector: 'app-users',
+    templateUrl: 'users.component.html',
+    providers: [ UsersService ]
 })
-export class UsersManagementComponent implements OnInit {
+export class UsersComponent implements OnInit {
     @Input() users : User[];
 
-    constructor(private usersManagementService: UsersManagementService,
+    constructor(private usersManagementService: UsersService,
                 private successService: SuccessService,
                 private errorService: ErrorService){
 

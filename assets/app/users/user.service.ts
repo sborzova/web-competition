@@ -3,15 +3,15 @@ import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs";
 import { User } from "./user.model";
 import { SuccessService } from "../messages/successes/success.service";
-import { Success } from "../messages/successes/success.model";
 
 @Injectable()
-export class UsersManagementService {
+export class UsersService {
     private users: User[] = [];
     private hostUrl: string;
 
     constructor(private http: Http,
                 private successService: SuccessService) {
+
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
