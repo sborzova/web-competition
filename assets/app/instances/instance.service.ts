@@ -13,7 +13,6 @@ export class InstanceService {
     private hostUrl: string;
     private XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     private xmlHttp;
-    private streamBuffers = require('stream-buffers');
 
     constructor(private http: Http,
                 private successService: SuccessService,
@@ -85,17 +84,11 @@ export class InstanceService {
                 const instances = response.json().obj;
                 let transformedInstances: Instance[] = [];
                 for (let instance of instances) {
-                    let myReadableStreamBuffer = new this.streamBuffers.ReadableStreamBuffer({
-                        frequency: 1,       // in milliseconds.
-                        chunkSize: 2048     // in bytes.
-                    });
-                    myReadableStreamBuffer.put(instance.stats);
-                    //console.log(instance.stats);
                     transformedInstances.push(new Instance(
                         instance.name,
                         instance.description,
-                        myReadableStreamBuffer,
-                        instance.data,
+                        null,
+                        null,
                         instance.postDate,
                         instance.isOn,
                         instance._id)

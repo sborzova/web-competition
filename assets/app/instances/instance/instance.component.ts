@@ -2,6 +2,7 @@ import { Component, Input } from "@angular/core";
 
 import { Instance } from "../instance.model";
 import { InstanceService } from "../instance.service";
+import {Response} from "@angular/http";
 
 @Component({
     selector: 'app-instance',
@@ -19,5 +20,16 @@ export class InstanceComponent {
             );
     }
 
-    onDownload(){}
+    onDownload(){
+        this.instanceService.getInstance(this.instance.instanceId)
+                .subscribe(
+                    data => this.downloadFile(data.data),
+                    error => console.log("Error downloading the file."))
+    }
+
+    downloadFile(data: Response){
+        const blob = new Blob([data], {type: 'text/csv'});
+        const url = window.URL.createObjectURL(blob);
+        window.open(url);
+    }
 }
