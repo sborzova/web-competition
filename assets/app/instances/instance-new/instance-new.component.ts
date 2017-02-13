@@ -48,24 +48,27 @@ export class InstanceCreateComponent implements OnInit {
                 this.myForm.value.name,
                 this.myForm.value.description
             );
-            let id: string;
+
             this.instancesService.saveInstance(instance)
                 .subscribe(
                     data => {
                         console.log(data);
-                        id = data._id},
+                        let id = data.obj.data._id;
+                        let fd = new FormData();
+                        fd.append('stats', statsInput.files[0], statsInput.files[0].name);
+                        fd.append('data', dataInput.files[0], dataInput.files[0].name);
 
+                        this.instancesService.saveFiles(fd, id)
+                            .subscribe(
+                                data => console.log(data),
+                                error => console.error(error)
+                            );
+                    },
                     error => console.error(error)
                 );
 
-            let fd = new FormData();
-            fd.append('stats', statsInput.files[0], statsInput.files[0].name);
-            fd.append('data', dataInput.files[1], dataInput.files[1].name);
-            this.instancesService.saveFiles(fd);
-
             this.router.navigate(['/#instances']);
         }
-
     }
 
     isSubmitted(){

@@ -37,27 +37,26 @@ export class InstanceService {
             });
     }
 
-    saveFiles(fd: FormData){
-        // console.log(fd);
-        const headers = new Headers({'Content-Type': 'multipart/form-data'});
+    saveFiles(fd: FormData, id: string){
+        return Observable.create(observer => {
+            const headers = new Headers({'Content-Type': 'multipart/form-data'});
 
-        // this.xmlHttp.onreadystatechange = () => {
-        //     if (this.xmlHttp.readyState === 4) {
-        //         if (this.xmlHttp.status === 200) {
-        //             observer.next(JSON.parse(this.xmlHttp.response));
-        //             observer.complete();
-        //         } else {
-        //             observer.error(this.xmlHttp.response);
-        //         }
-        //     }
-        // };
+            this.xmlHttp.onreadystatechange = () => {
+                if (this.xmlHttp.readyState === 4) {
+                    if (this.xmlHttp.status === 200) {
+                        // observer.next(JSON.parse(this.xmlHttp.response));
+                        observer.next(this.xmlHttp.response);
+                        observer.complete();
+                    } else {
+                        observer.error(this.xmlHttp.response);
+                    }
+                }
+            };
 
-        this.xmlHttp.open("POST", this.hostUrl.concat('stats'));
-        this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
-        this.xmlHttp.send(fd);
-
-            // .map((response: Response) => response.json())
-            // .catch((error: Response)=> Observable.throw(error.json()));
+            this.xmlHttp.open("POST", this.hostUrl.concat('files/') + id);
+            this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
+            this.xmlHttp.send(fd);
+        });
     }
 
     getInstances(){

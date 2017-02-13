@@ -10,7 +10,7 @@ import {User} from "../user.model";
 })
 export class UserComponent{
     @Input() user: User;
-    @Input() i: Number;
+    @Input() i: number;
 
     constructor(private usersManagementService: UsersManagementService) {}
 

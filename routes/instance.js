@@ -3,8 +3,11 @@ var router = express.Router();
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 var multer = require('multer');
+
 var storage = multer.memoryStorage();
+// var upload = multer({ storage: storage }).single('stats');
 var upload = multer({ storage: storage });
+var fileUpload = upload.fields([{ name: 'stats', maxCount: 1 }, { name: 'data', maxCount: 1 }]);
 
 var Instance = require('../models/instance');
 
@@ -30,48 +33,12 @@ router.post('/instance', function (req, res) {
         }
         res.status(201).json({
             message: 'Saved instance',
-            obj: {message: 'Instance was created'}
+            obj: {message: 'Instance was created', data: result}
         });
     });
 });
 
-router.post('/stats', upload.single('stats'), function (req, res, next) {
-    // req.file is the `avatar` file
-    // req.body will hold the text fields, if there were any
-    Instance.findById('589f62e891255431302db9c8', function (err, instance) {
-        if (err) {
-            return res.status(500).json({
-                title: 'An error occurred',
-                error: err
-            });
-        }
-        if (!instance) {
-            return res.status(500).json({
-                title: 'No Instance Found!',
-                error: {message: 'Instance not found'}
-            });
-        }
-        console.log(req.file);
-        instance.stats = req.file.buffer;
-
-        instance.save(function (err, result) {
-            if (err) {
-                return res.status(500).json({
-                    title: 'An error occurred',
-                    error: err
-                });
-            }
-            res.status(200).json({
-                message: 'Updated instance',
-                obj: result
-            });
-        });
-    });
-});
-
-router.post('/data/:id', upload.single('data'), function (req, res, next) {
-    // req.file is the `avatar` file
-    // req.body will hold the text fields, if there were any
+router.post('/files/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
         if (err) {
             return res.status(500).json({
@@ -85,19 +52,28 @@ router.post('/data/:id', upload.single('data'), function (req, res, next) {
                 error: {message: 'Instance not found'}
             });
         }
-
-        instance.data = req.file;
-
-        instance.save(function (err, result) {
+        fileUpload(req, res, function(err) {
             if (err) {
                 return res.status(500).json({
                     title: 'An error occurred',
                     error: err
                 });
             }
-            res.status(200).json({
-                message: 'Updated instance',
-                obj: result
+
+            instance.stats = req.files['stats'][0].buffer.toString();
+            instance.data = req.files['data'][0].buffer.toString();
+
+            instance.save(function (err, result) {
+                if (err) {
+                    return res.status(500).json({
+                        title: 'An error occurred',
+                        error: err
+                    });
+                }
+                res.status(200).json({
+                    message: 'Files saved',
+                    obj: result
+                });
             });
         });
     });
@@ -209,35 +185,3 @@ router.delete('/instance/:id', function (req, res, next) {
 });
 
 module.exports = router;
-
-// var storage = multer.diskStorage({
-//     destination: function (req, file, callback) {
-//         console.log(file);
-//         callback(null, './uploads');
-//     },
-//     filename: function (req, file, callback) {
-//         console.log(file);
-//         callback(null, file.originalname)
-//     }
-// });
-//
-// var upload = multer({
-//     storage: storage
-// }).single('file');
-//
-// router.post('/upload', function(req, res) {
-//     console.log(req.files);
-//     upload(req, res, function(err) {
-//         if (err) {
-//             return res.status(500).json({
-//                 title: 'An error occurred',
-//                 error: err
-//             });
-//         }
-//         res.status(200).json({
-//             message: 'File uploaded'
-//             // obj: req.file
-//         });
-//         // res.end('Your File Uploaded');
-//     })
-// });

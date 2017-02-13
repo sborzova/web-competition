@@ -278,12 +278,12 @@ class _View_ProfileComponent1 extends import1.AppView<any> {
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_4:any = this._arr_0('/profile/edit');
+    const currVal_4:any = this._arr_0('/#profile/edit');
     if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
       this._RouterLink_34_3.routerLink = currVal_4;
       this._expr_4 = currVal_4;
     }
-    const currVal_6:any = this._arr_1('/profile/editpass');
+    const currVal_6:any = this._arr_1('/#profile/editpass');
     if (import4.checkBinding(throwOnChange,this._expr_6,currVal_6)) {
       this._RouterLink_37_3.routerLink = currVal_6;
       this._expr_6 = currVal_6;
