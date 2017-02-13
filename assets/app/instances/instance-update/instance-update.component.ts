@@ -54,7 +54,7 @@ export class InstanceEditComponent implements OnInit {
     }
 
     private navigateBack() {
-        this.router.navigate(['/instances']);
+        this.router.navigate(['/#instances']);
     }
 
     isSubmitted(){

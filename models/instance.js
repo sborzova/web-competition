@@ -6,7 +6,7 @@ var schema = new Schema({
     name: {type: String, unique: true, required: true},
     description: {type: String, required: true},
     postDate: {type: Date, default: Date.now, required: true},
-    stats: {type: Binary},
+    stats: {type: Buffer},
     data: {type: Buffer},
     isOn: {type: Boolean, default: false, required: true}
 });

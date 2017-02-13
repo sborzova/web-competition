@@ -35,10 +35,10 @@ router.post('/instance', function (req, res) {
     });
 });
 
-router.post('/stats/:id', upload.single('stats'), function (req, res, next) {
+router.post('/stats', upload.single('stats'), function (req, res, next) {
     // req.file is the `avatar` file
     // req.body will hold the text fields, if there were any
-    Instance.findById(req.params.id, function (err, instance) {
+    Instance.findById('589f62e891255431302db9c8', function (err, instance) {
         if (err) {
             return res.status(500).json({
                 title: 'An error occurred',
@@ -51,8 +51,8 @@ router.post('/stats/:id', upload.single('stats'), function (req, res, next) {
                 error: {message: 'Instance not found'}
             });
         }
-
-        instance.stats = req.file;
+        console.log(req.file);
+        instance.stats = req.file.buffer;
 
         instance.save(function (err, result) {
             if (err) {

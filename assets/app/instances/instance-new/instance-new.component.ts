@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnInit, ViewChild} from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -16,6 +16,8 @@ import { SuccessService } from "../../messages/successes/success.service";
 export class InstanceCreateComponent implements OnInit {
     myForm: FormGroup;
     private submitted: boolean = false;
+    @ViewChild('stats') statsElem;
+    @ViewChild('data') dataElem;
 
     constructor(private authService: AuthService,
                 private router: Router,
@@ -30,28 +32,40 @@ export class InstanceCreateComponent implements OnInit {
     ngOnInit(): void {
         this.myForm = new FormGroup({
             name: new FormControl(null, Validators.required),
-            description: new FormControl(null, Validators.required),
-            // stats: new FormControl(null, Validators.required),
-            // data: new FormControl(null, Validators.required)
+            description: new FormControl(null, Validators.required)
         });
     }
 
     onSubmit(){
         this.submitted = true;
-        // if (this.myForm.valid){
-        //     const instance = new Instance(
-        //         this.myForm.value.name,
-        //         this.myForm.value.description,
-        //         this.myForm.value.stats,
-        //         this.myForm.value.data
-        //     );
-        //     this.instancesService.saveInstance(instance)
-        //         .subscribe(
-        //             data => console.log(data),
-        //             error => console.error(error)
-        //         );
-        //     this.router.navigate(['/#instances']);
-        // }
+        let statsInput = this.statsElem.nativeElement;
+        let dataInput = this.dataElem.nativeElement;
+
+        if (this.myForm.valid && statsInput.files && statsInput.files[0] &&
+            dataInput.files && dataInput.files[0]){
+
+            const instance = new Instance(
+                this.myForm.value.name,
+                this.myForm.value.description
+            );
+            let id: string;
+            this.instancesService.saveInstance(instance)
+                .subscribe(
+                    data => {
+                        console.log(data);
+                        id = data._id},
+
+                    error => console.error(error)
+                );
+
+            let fd = new FormData();
+            fd.append('stats', statsInput.files[0], statsInput.files[0].name);
+            fd.append('data', dataInput.files[1], dataInput.files[1].name);
+            this.instancesService.saveFiles(fd);
+
+            this.router.navigate(['/#instances']);
+        }
+
     }
 
     isSubmitted(){

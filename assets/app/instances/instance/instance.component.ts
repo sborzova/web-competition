@@ -19,4 +19,7 @@ export class InstanceComponent {
             );
     }
 
+    onView(){}
+
+    onDownload(){}
 }
