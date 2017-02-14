@@ -5,7 +5,6 @@ var jwt = require('jsonwebtoken');
 var multer = require('multer');
 
 var storage = multer.memoryStorage();
-// var upload = multer({ storage: storage }).single('stats');
 var upload = multer({ storage: storage });
 var fileUpload = upload.fields([{ name: 'stats', maxCount: 1 }, { name: 'data', maxCount: 1 }]);
 
@@ -60,8 +59,12 @@ router.post('/files/:id', function (req, res, next) {
                 });
             }
 
-            instance.stats = req.files['stats'][0].buffer.toString();
-            instance.data = req.files['data'][0].buffer.toString();
+            if (req.files['stats'] && req.files['stats'][0]){
+                instance.stats = req.files['stats'][0].buffer.toString();
+            }
+            if (req.files['data'] && req.files['data'][0]){
+                instance.data = req.files['data'][0].buffer.toString();
+            }
 
             instance.save(function (err, result) {
                 if (err) {
@@ -79,7 +82,7 @@ router.post('/files/:id', function (req, res, next) {
     });
 });
 
-router.patch('/instance/:id', function (req, res, next) {
+router.patch('/instanceTextFields/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
         if (err) {
             return res.status(500).json({
@@ -96,7 +99,6 @@ router.patch('/instance/:id', function (req, res, next) {
 
         instance.name = req.body.name;
         instance.description = req.body.description;
-        instance.isOn = req.body.isOn;
 
         instance.save(function (err, result) {
             if (err) {

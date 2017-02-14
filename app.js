@@ -10,7 +10,6 @@ var multer = require("multer");
 
 var appRoutes = require('./routes/app');
 var userRoutes = require('./routes/user');
-var usersRoutes = require('./routes/users');
 var instanceRoutes = require('./routes/instance');
 var paperRoutes = require('./routes/paper');
 var solutionRoutes = require('./routes/solution');
@@ -65,7 +64,6 @@ app.use(function(req, res, next) {
 
 app.use('/', appRoutes);
 app.use('/', userRoutes);
-app.use('/', usersRoutes);
 app.use('/', instanceRoutes);
 app.use('/', paperRoutes);
 app.use('/', solutionRoutes);

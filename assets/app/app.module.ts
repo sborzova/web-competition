@@ -14,7 +14,6 @@ import { UserProfileComponent } from "./auth/user/user.component";
 import { UserEditComponent } from "./auth/user-edit/user-edit.component";
 import { UserEditPasswordComponent } from "./auth/user-edit-password/user-edit-password.component";
 import { UsersComponent } from "./users/users.component";
-import { FileUploadModule} from "ng2-file-upload";
 import { EqualValidator } from "./auth/validator-equal.directive";
 import { ErrorComponent } from "./messages/errors/error.component";
 import { ErrorService } from "./messages/errors/error.service";
@@ -32,7 +31,7 @@ import { TechniqueUpdateComponent } from "./techniques/technique-update/techniqu
 import { InstanceComponent } from "./instances/instance/instance.component";
 import { InstanceListComponent } from "./instances/instance-list/instance-list.component";
 import { InstanceStatsComponent } from "./instances/instance-stats/instance-stats.component";
-import { EscapeHtmlPipe } from "./instances/escapeHtml.pipe";
+import { EscapeHtmlPipe } from "./instances/escape-html.pipe";
 
 @NgModule({
     declarations: [
@@ -67,8 +66,7 @@ import { EscapeHtmlPipe } from "./instances/escapeHtml.pipe";
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        routing,
-        FileUploadModule,
+        routing
     ],
     providers: [
         AuthService,

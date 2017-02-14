@@ -78,6 +78,18 @@ export class InstanceService {
             });
     }
 
+    updateInstanceTextFields(instance: Instance){
+        const body = JSON.stringify(instance);
+        const headers = new Headers({'Content-Type': 'application/json'});
+        return this.http.patch(
+            this.hostUrl.concat('instanceTextFields/') + instance.instanceId, body, {headers: headers})
+            .map((response: Response) => response.json())
+            .catch((error: Response) => {
+                this.errorService.handleError(error.json());
+                return Observable.throw(error.json());
+            });
+    }
+
     getInstances(){
         return this.http.get(this.hostUrl.concat('instances'))
             .map((response: Response) => {
