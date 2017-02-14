@@ -5,17 +5,16 @@ import { User } from "../user.model";
 
 @Component({
     selector: 'app-user',
-    templateUrl: './user.component.html',
-    providers: [ UsersService ]
+    templateUrl: './user.component.html'
 })
 export class UserComponent{
     @Input() user: User;
     @Input() i: number;
 
-    constructor(private usersManagementService: UsersService) {}
+    constructor(private usersService: UsersService) {}
 
     onDelete() {
-        this.usersManagementService.deleteUser(this.user)
+        this.usersService.deleteUser(this.user)
             .subscribe(
                 result => console.log(result)
             );

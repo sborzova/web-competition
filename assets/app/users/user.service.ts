@@ -6,8 +6,8 @@ import { SuccessService } from "../messages/successes/success.service";
 
 @Injectable()
 export class UsersService {
-    private users: User[] = [];
     private hostUrl: string;
+    private users: User[] = [];
 
     constructor(private http: Http,
                 private successService: SuccessService) {
@@ -36,7 +36,9 @@ export class UsersService {
     }
 
     deleteUser(user: User){
+        console.log(this.users);
         this.users.splice(this.users.indexOf(user), 1);
+        console.log(this.users);
         const token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';

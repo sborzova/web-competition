@@ -7,8 +7,7 @@ import { ErrorService } from "../messages/errors/error.service";
 
 @Component({
     selector: 'app-users',
-    templateUrl: 'users.component.html',
-    providers: [ UsersService ]
+    templateUrl: 'users.component.html'
 })
 export class UsersComponent implements OnInit {
     @Input() users : User[];
