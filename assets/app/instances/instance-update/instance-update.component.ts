@@ -9,8 +9,7 @@ import { Instance } from "../instance.model";
 
 @Component({
     selector: 'app-instance-edit',
-    templateUrl: 'instance-update.component.html',
-    providers: [InstanceService]
+    templateUrl: 'instance-update.component.html'
 })
 export class InstanceEditComponent implements OnInit {
     myForm: FormGroup;

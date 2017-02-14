@@ -27,7 +27,19 @@ export class InstanceService {
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('instance'), body, {headers: headers})
-            .map((response: Response) => response.json())
+            .map((response: Response) => {
+                const result = response.json().obj.data;
+                const instance = new Instance(
+                    result.name,
+                    result.description,
+                    null,
+                    null,
+                    result.postDate,
+                    result.isOn,
+                    result._id);
+                this.instances.push(instance);
+                return response.json();
+            })
             .catch((error: Response) => {
                 if (error.status === 422){
                     this.errorService.handleError(error.json());
@@ -106,7 +118,7 @@ export class InstanceService {
                         instance._id)
                     );
                 }
-                this.instances = instances;
+                this.instances = transformedInstances;
                 return transformedInstances;
             })
             .catch((error: Response) => Observable.throw(error.json()));

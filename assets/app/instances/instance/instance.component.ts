@@ -2,7 +2,6 @@ import { Component, Input } from "@angular/core";
 
 import { Instance } from "../instance.model";
 import { InstanceService } from "../instance.service";
-import { Response } from "@angular/http";
 
 @Component({
     selector: 'app-instance',
@@ -23,12 +22,12 @@ export class InstanceComponent {
 
     onDownload(){
         this.instanceService.getInstance(this.instance.instanceId)
-                .subscribe(
-                    data => {
-                        let filename = data.name;
-                        let file = new File([data.data], filename.concat('.xml'), {type: "text/xml;charset=utf-8"});
-                        this.fileSaver.saveAs(file);
-                    },
-                    error => console.log("Error downloading the file."))
+            .subscribe(
+                data => {
+                    let filename = data.name;
+                    let file = new File([data.data], filename.concat('.xml'), {type: "text/xml;charset=utf-8"});
+                    this.fileSaver.saveAs(file);
+                },
+                error => console.log("Error downloading the file."))
     }
 }

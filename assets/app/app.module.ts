@@ -34,6 +34,7 @@ import { InstanceStatsComponent } from "./instances/instance-stats/instance-stat
 import { EscapeHtmlPipe } from "./instances/escape-html.pipe";
 import { TechniqueService } from "./techniques/technique.service";
 import { UsersService } from "./users/user.service";
+import { InstanceService } from "./instances/instance.service";
 
 @NgModule({
     declarations: [
@@ -75,7 +76,8 @@ import { UsersService } from "./users/user.service";
         ErrorService,
         SuccessService,
         TechniqueService,
-        UsersService
+        UsersService,
+        InstanceService
     ],
     bootstrap: [ AppComponent ]
 })

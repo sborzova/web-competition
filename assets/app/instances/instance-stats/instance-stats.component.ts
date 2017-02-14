@@ -6,8 +6,7 @@ import { InstanceService } from "../instance.service";
 
 @Component({
     selector: 'app-instance-stats',
-    templateUrl: './instance-stats.component.html',
-    providers: [ InstanceService ],
+    templateUrl: './instance-stats.component.html'
 })
 export class InstanceStatsComponent implements OnInit {
     instance: Instance;

@@ -10,8 +10,7 @@ import { SuccessService } from "../../messages/successes/success.service";
 
 @Component({
     selector: 'app-instance-new',
-    templateUrl: 'instance-new.component.html',
-    providers: [InstanceService]
+    templateUrl: 'instance-new.component.html'
 })
 export class InstanceCreateComponent implements OnInit {
     myForm: FormGroup;
@@ -60,7 +59,7 @@ export class InstanceCreateComponent implements OnInit {
 
                         this.instancesService.saveFiles(fd, id)
                             .subscribe(
-                                data => console.log(data),
+                                data => console.log("Data saved"),
                                 error => console.error(error)
                             );
                     },
