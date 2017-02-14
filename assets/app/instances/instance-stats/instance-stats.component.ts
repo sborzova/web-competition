@@ -9,7 +9,7 @@ import { InstanceService } from "../instance.service";
     templateUrl: './instance-stats.component.html',
     providers: [ InstanceService ],
 })
-export class InstanceStatsComponent implements OnInit, OnDestroy {
+export class InstanceStatsComponent implements OnInit {
     instance: Instance;
 
     constructor(private instanceService: InstanceService,
@@ -24,9 +24,5 @@ export class InstanceStatsComponent implements OnInit, OnDestroy {
                         this.instance = instance;
                 });
         });
-    }
-
-    ngOnDestroy(){
-        //TODO unsubscribe
     }
 }

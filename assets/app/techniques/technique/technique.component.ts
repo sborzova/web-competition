@@ -12,10 +12,6 @@ export class TechniqueComponent {
 
     constructor(private techniqueService: TechniqueService) {}
 
-    onEdit() {
-
-    }
-
     onDelete() {
         this.techniqueService.deleteTechnique(this.technique)
             .subscribe(

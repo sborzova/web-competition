@@ -25,7 +25,7 @@ router.post('/technique', function (req, res) {
         }
         res.status(201).json({
             message: 'Saved technique',
-            obj: {message: 'Technique was created'}
+            obj: {message: 'Technique was created', data: result}
         });
     });
 });

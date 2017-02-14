@@ -5,19 +5,14 @@ import { Success } from "./success.model";
 @Injectable()
 export class SuccessService {
     successOccurred = new EventEmitter<Success>();
+    private successDeleteSource = new Subject();
+    successDelete$ = this.successDeleteSource.asObservable();
 
     handleSuccess(success: any) {
         const successData = new Success("", success.obj.message);
         this.successOccurred.emit(successData);
     }
 
-    // Observable string sources
-    private successDeleteSource = new Subject();
-
-    // Observable string streams
-    successDelete$ = this.successDeleteSource.asObservable();
-
-    // Service message commands
     deleteSuccess() {
         this.successDeleteSource.next();
     }

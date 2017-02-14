@@ -12,7 +12,7 @@ import { Instance } from "../instance.model";
     templateUrl: 'instance-update.component.html',
     providers: [InstanceService]
 })
-export class InstanceEditComponent implements OnInit, OnDestroy {
+export class InstanceEditComponent implements OnInit {
     myForm: FormGroup;
     private instance: Instance;
     private submitted: boolean = false;
@@ -64,10 +64,6 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
 
             this.navigateBack();
         }
-    }
-
-    ngOnDestroy(){
-        //TODO unsubscribe
     }
 
     saveFiles(){

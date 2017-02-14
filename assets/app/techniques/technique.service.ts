@@ -23,8 +23,13 @@ export class TechniqueService {
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('technique'), body, {headers: headers})
             .map((response: Response) => {
+                const result = response.json();
+                const technique = new Technique(
+                    result.obj.data.name,
+                    result.obj.data._id);
+                this.techniques.push(technique);
                 this.successService.handleSuccess(response.json());
-                return response.json();
+                return technique;
             })
             .catch((error: Response) => {
                 if (error.status === 422){
@@ -45,7 +50,7 @@ export class TechniqueService {
                         technique._id)
                     );
                 }
-                this.techniques = techniques;
+                this.techniques = transformedTechniques;
                 return transformedTechniques;
             })
             .catch((error: Response) => Observable.throw(error.json()));

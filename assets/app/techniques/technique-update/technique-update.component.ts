@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
+
 import { Technique } from "../technique.model";
 import { TechniqueService } from "../technique.service";
+
 @Component({
     selector: 'app-technique-update',
     templateUrl: 'technique-update.component.html'
