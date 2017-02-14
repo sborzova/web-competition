@@ -30,26 +30,23 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(){
-        this.activatedRoute.queryParams.subscribe((params: Params) => {
-            let instanceId = params['instanceId'];
-            this.instanceService.getInstance(instanceId)
-                .subscribe(
-                    (instance: Instance) => {
-                        this.instance = instance;
-                        this.myForm = new FormGroup({
-                            name: new FormControl(this.instance.name, Validators.required),
-                            description: new FormControl(this.instance.description, Validators.required)
+        this.activatedRoute.queryParams
+            .subscribe((params: Params) => {
+                let instanceId = params['instanceId'];
+                this.instanceService.getInstance(instanceId)
+                    .subscribe(
+                        (instance: Instance) => {
+                            this.instance = instance;
+                            this.myForm = new FormGroup({
+                                name: new FormControl(this.instance.name, Validators.required),
+                                description: new FormControl(this.instance.description, Validators.required)
+                            });
                         });
-                    });
         });
     }
 
     onSubmit(form: NgForm){
         this.submitted = true;
-        let statsInput = this.statsElem.nativeElement;
-        let dataInput = this.dataElem.nativeElement;
-        let fd = new FormData();
-        let updateFiles : boolean = false;
 
         if (form.valid){
             this.instance.name = form.value.name;
@@ -63,34 +60,43 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
                     },
                     error => console.error(error)
                 );
+            this.saveFiles();
 
-            if (statsInput.files && statsInput.files[0]){
-                fd.append('stats', statsInput.files[0], statsInput.files[0].name);
-                updateFiles = true;
-            }else {
-                fd.append('stats', null);
-            }
-
-            if (dataInput.files && dataInput.files[0]){
-                fd.append('data', dataInput.files[0], dataInput.files[0].name);
-                updateFiles = true;
-            }else {
-                fd.append('data', null);
-            }
-
-            if (updateFiles){
-                this.instanceService.saveFiles(fd, this.instance.instanceId)
-                    .subscribe(
-                        data => console.log(data),
-                        error => console.error(error)
-                    );
-            }
             this.navigateBack();
         }
     }
 
     ngOnDestroy(){
         //TODO unsubscribe
+    }
+
+    saveFiles(){
+        let statsInput = this.statsElem.nativeElement;
+        let dataInput = this.dataElem.nativeElement;
+        let fd = new FormData();
+        let updateFiles : boolean = false;
+
+        if (statsInput.files && statsInput.files[0]){
+            fd.append('stats', statsInput.files[0], statsInput.files[0].name);
+            updateFiles = true;
+        }else {
+            fd.append('stats', null);
+        }
+
+        if (dataInput.files && dataInput.files[0]){
+            fd.append('data', dataInput.files[0], dataInput.files[0].name);
+            updateFiles = true;
+        }else {
+            fd.append('data', null);
+        }
+
+        if (updateFiles){
+            this.instanceService.saveFiles(fd, this.instance.instanceId)
+                .subscribe(
+                    data => console.log(data),
+                    error => console.error(error)
+                );
+        }
     }
 
     onCancel() {

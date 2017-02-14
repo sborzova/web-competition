@@ -1,11 +1,7 @@
-<article class="panel panel-default">
-    <div class="panel-body">
-        {{ technique.name}}
-    </div>
-    <footer class="panel-footer">
-            <a (click)="onDelete()">Delete</a>
-    </footer>
+<div class="row">
+    {{ technique.name}}
+        <button class="btn btn-danger btn-s" (click)="onDelete()">Delete</button>
     <div>
         <app-technique-update [technique]="technique"></app-technique-update>
     </div>
-</article>
+</div>

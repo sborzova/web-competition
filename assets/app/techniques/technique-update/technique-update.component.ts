@@ -1,7 +1,7 @@
-import {Component, OnInit, Input} from "@angular/core";
-import {FormGroup, FormControl, Validators, NgForm} from "@angular/forms";
-import {Technique} from "../technique.model";
-import {TechniqueService} from "../technique.service";
+import { Component, OnInit, Input } from "@angular/core";
+import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
+import { Technique } from "../technique.model";
+import { TechniqueService } from "../technique.service";
 @Component({
     selector: 'app-technique-update',
     templateUrl: 'technique-update.component.html'
@@ -14,8 +14,7 @@ export class TechniqueUpdateComponent implements OnInit {
 
     ngOnInit(){
         this.myForm = new FormGroup({
-            name: new FormControl(this.technique.name, Validators.required)});
-
+            name: new FormControl(null, Validators.required)});
     }
 
     onSubmit(form: NgForm){
@@ -25,5 +24,6 @@ export class TechniqueUpdateComponent implements OnInit {
                 data => console.log(data),
                 error => console.log(error)
             );
+        this.myForm.reset();
     }
 }
