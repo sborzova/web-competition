@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 
 import { Instance } from "../instance.model";
 import { InstanceService } from "../instance.service";
-import {Response} from "@angular/http";
+import { Response } from "@angular/http";
 
 @Component({
     selector: 'app-instance',
@@ -10,6 +10,7 @@ import {Response} from "@angular/http";
 })
 export class InstanceComponent {
     @Input() instance: Instance;
+    fileSaver = require('file-saver');
 
     constructor(private instanceService: InstanceService) {}
 
@@ -23,13 +24,11 @@ export class InstanceComponent {
     onDownload(){
         this.instanceService.getInstance(this.instance.instanceId)
                 .subscribe(
-                    data => this.downloadFile(data.data),
+                    data => {
+                        let filename = data.name;
+                        let file = new File([data.data], filename.concat('.xml'), {type: "text/xml;charset=utf-8"});
+                        this.fileSaver.saveAs(file);
+                    },
                     error => console.log("Error downloading the file."))
-    }
-
-    downloadFile(data: Response){
-        const blob = new Blob([data], {type: 'text/csv'});
-        const url = window.URL.createObjectURL(blob);
-        window.open(url);
     }
 }
