@@ -41,6 +41,12 @@ router.post('/solution', function (req, res, next) {
                     }
                     try{
                         var solution = new Solution({
+                            value: req.body.value,
+                            sc: req.body.sc,
+                            time: req.body.time,
+                            room: req.body.room,
+                            distr: req.body.distr,
+                            info: req.body.info,
                             data: req.body.data,
                             instance: instance,
                             user: user,
