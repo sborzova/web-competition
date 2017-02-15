@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, ViewChild, Input, Output} from "@angular/core";
+import { Component, OnInit, OnDestroy, ViewChild, Input } from "@angular/core";
 import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 
@@ -6,17 +6,19 @@ import { InstanceService } from "../instance.service";
 import { ErrorService } from "../../messages/errors/error.service";
 import { SuccessService } from "../../messages/successes/success.service";
 import { Instance } from "../instance.model";
+import { Subscription } from "rxjs";
 
 @Component({
     selector: 'app-instance-edit',
     templateUrl: 'instance-update.component.html'
 })
-export class InstanceEditComponent implements OnInit {
+export class InstanceEditComponent implements OnInit, OnDestroy {
     myForm: FormGroup;
     @Input() instance: Instance;
     private submitted: boolean = false;
     @ViewChild('stats') statsElem;
     @ViewChild('data') dataElem;
+    private subscription: Subscription;
 
     constructor(private router: Router,
                 private errorService: ErrorService,
@@ -29,7 +31,7 @@ export class InstanceEditComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.activatedRoute.queryParams
+        this.subscription = this.activatedRoute.queryParams
             .subscribe((params: Params) => {
                 let instanceId = params['instanceId'];
                 this.instanceService.getInstance(instanceId)
@@ -42,6 +44,10 @@ export class InstanceEditComponent implements OnInit {
                             });
                         });
         });
+    }
+
+    ngOnDestroy(){
+        this.subscription.unsubscribe();
     }
 
     onSubmit(form: NgForm){

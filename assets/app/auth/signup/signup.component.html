@@ -4,7 +4,7 @@
             <div class="text-center">
                 <h2>Create account</h2>
             </div>
-            <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
                 <div class="form-group"
                      [ngClass]="{'has-error':
                         (!myForm.controls['firstName'].valid ) &&
