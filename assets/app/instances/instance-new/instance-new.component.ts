@@ -15,6 +15,8 @@ import { SuccessService } from "../../messages/successes/success.service";
 export class InstanceCreateComponent implements OnInit {
     myForm: FormGroup;
     private submitted: boolean = false;
+    private statsInvalid: boolean = false;
+    private dataInvalid: boolean = false;
     @ViewChild('stats') statsElem;
     @ViewChild('data') dataElem;
 
@@ -40,9 +42,17 @@ export class InstanceCreateComponent implements OnInit {
         let statsInput = this.statsElem.nativeElement;
         let dataInput = this.dataElem.nativeElement;
 
-        if (this.myForm.valid && statsInput.files && statsInput.files[0] &&
-            dataInput.files && dataInput.files[0]){
-
+        if (!(statsInput.files && statsInput.files[0])){
+            this.statsInvalid = true;
+        }else {
+            this.statsInvalid = false;
+        }
+        if (!(dataInput.files && dataInput.files[0])){
+            return this.dataInvalid = true;
+        }else {
+            this.dataInvalid = false;
+        }
+        if (this.myForm.valid){
             const instance = new Instance(
                 this.myForm.value.name,
                 this.myForm.value.description
@@ -66,10 +76,19 @@ export class InstanceCreateComponent implements OnInit {
                     },
                     error => console.error(error)
                 );
+
         }
     }
 
     isSubmitted(){
         return this.submitted;
+    }
+
+    isStatsInvalid(){
+        return this.statsInvalid;
+    }
+
+    isDataInvalid(){
+        return this.dataInvalid;
     }
 }

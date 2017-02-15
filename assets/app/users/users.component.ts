@@ -12,7 +12,7 @@ import { ErrorService } from "../messages/errors/error.service";
 export class UsersComponent implements OnInit {
     @Input() users : User[];
 
-    constructor(private usersManagementService: UsersService,
+    constructor(private usersService: UsersService,
                 private successService: SuccessService,
                 private errorService: ErrorService){
 
@@ -21,7 +21,7 @@ export class UsersComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.usersManagementService.getUsers()
+        this.usersService.getUsers()
             .subscribe(
                 (users: User[] ) => {
                     this.users = users;

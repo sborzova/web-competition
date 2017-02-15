@@ -13,6 +13,7 @@ import { SuccessService } from "../../messages/successes/success.service";
 })
 export class SigninComponent {
     myForm: FormGroup;
+    private submitted: boolean = false;
 
     constructor(private authService: AuthService,
                 private router: Router,
@@ -24,24 +25,29 @@ export class SigninComponent {
     }
 
     onSubmit() {
-        const user = new User(this.myForm.value.email, this.myForm.value.password);
-        this.authService.signin(user)
-            .subscribe(
-                data => {
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('userId', data.userId);
+        this.submitted = true;
+        if (this.myForm.valid){
+            const user = new User(
+                this.myForm.value.email,
+                this.myForm.value.password);
+            this.authService.signin(user)
+                .subscribe(
+                    data => {
+                        localStorage.setItem('token', data.token);
+                        localStorage.setItem('userId', data.userId);
 
-                    if (data.isAdmin === 'true'){
-                        localStorage.setItem('isAdmin', 'true');
+                        if (data.isAdmin === 'true'){
+                            localStorage.setItem('isAdmin', 'true');
+                        }
+
+                        this.errorService.deleteError();
+                        this.router.navigate(['/#home']);
+                    },
+                    error => {
+                        console.error(error);
                     }
-
-                    this.errorService.deleteError();
-                    this.router.navigate(['/#home']);
-                },
-                error => {
-                    console.error(error);
-                }
-            );
+                );
+        }
     }
 
     ngOnInit() {
@@ -52,5 +58,9 @@ export class SigninComponent {
             ]),
             password: new FormControl(null, Validators.required)
         });
+    }
+
+    isSubmitted(){
+        return this.submitted;
     }
 }

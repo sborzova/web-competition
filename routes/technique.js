@@ -25,7 +25,7 @@ router.post('/technique', function (req, res) {
         }
         res.status(201).json({
             message: 'Saved technique',
-            obj: {message: 'Technique was created', data: result}
+            obj: {message: 'Technique ' + result.name + ' was created', data: result}
         });
     });
 });
@@ -56,7 +56,7 @@ router.patch('/technique/:id', function (req, res, next) {
             }
             res.status(200).json({
                 message: 'Updated technique',
-                obj: result
+                obj: {message: 'Technique was updated', data: result}
             });
         });
     });
@@ -127,7 +127,7 @@ router.delete('/technique/:id', function (req, res, next) {
             }
             res.status(200).json({
                 message: 'Deleted technique',
-                obj: {message: 'Technique was deleted'}
+                obj: {message: 'Technique ' + result.name + ' was deleted'}
             });
         });
     });

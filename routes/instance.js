@@ -26,8 +26,7 @@ router.post('/instance', function (req, res) {
         if (err) {
             return res.status(422).json({
                 title: 'An error occurred',
-                error: err
-                // error: {message: 'Instance with this name is already in use'}
+                error: {message: 'Instance with this name is already in use', error: err}
             });
         }
         res.status(201).json({
@@ -109,7 +108,7 @@ router.patch('/instanceTextFields/:id', function (req, res, next) {
             }
             res.status(200).json({
                 message: 'Updated instance',
-                obj: result
+                obj: {message: 'Instance was updated', data: result}
             });
         });
     });
@@ -180,7 +179,7 @@ router.delete('/instance/:id', function (req, res, next) {
             }
             res.status(200).json({
                 message: 'Deleted instance',
-                obj: {message: 'Instance was deleted'}
+                obj: {message: 'Instance was deleted', data: result}
             });
         });
     });

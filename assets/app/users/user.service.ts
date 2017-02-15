@@ -1,8 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs";
+
 import { User } from "./user.model";
 import { SuccessService } from "../messages/successes/success.service";
+import { ErrorService } from "../messages/errors/error.service";
 
 @Injectable()
 export class UsersService {
@@ -10,7 +12,8 @@ export class UsersService {
     private users: User[] = [];
 
     constructor(private http: Http,
-                private successService: SuccessService) {
+                private successService: SuccessService,
+                private errorService: ErrorService) {
 
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
@@ -47,7 +50,7 @@ export class UsersService {
                 return response.json();
             })
             .catch((error: Response) => {
-                //this.errorService.handleError(error.json());
+                this.errorService.handleError(error.json());
                 return Observable.throw(error.json());
             });
     }

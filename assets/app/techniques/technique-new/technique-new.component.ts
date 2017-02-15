@@ -20,8 +20,6 @@ export class TechniqueCreateComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.errorService.deleteError();
-        this.successService.deleteSuccess();
         this.myForm = new FormGroup({
             name: new FormControl(null, Validators.required)
         });

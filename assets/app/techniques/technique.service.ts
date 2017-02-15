@@ -19,6 +19,8 @@ export class TechniqueService {
     }
 
     saveTechnique(technique: Technique){
+        this.errorService.deleteError();
+        this.successService.deleteSuccess();
         const body = JSON.stringify(technique);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('technique'), body, {headers: headers})
@@ -57,6 +59,8 @@ export class TechniqueService {
     }
 
     deleteTechnique(technique: Technique){
+        this.errorService.deleteError();
+        this.successService.deleteSuccess();
         this.techniques.splice(this.techniques.indexOf(technique), 1);
         return this.http.delete(
             this.hostUrl.concat('technique/') + technique.techniqueId)
@@ -71,11 +75,16 @@ export class TechniqueService {
     }
 
     updateTechnique(technique: Technique){
+        this.errorService.deleteError();
+        this.successService.deleteSuccess();
         const body = JSON.stringify(technique);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(
             this.hostUrl.concat('technique/') + technique.techniqueId, body, {headers: headers})
-            .map((response: Response) => response.json())
+            .map((response: Response) => {
+                this.successService.handleSuccess(response.json());
+                return response.json();
+            })
             .catch((error: Response) => {
                 this.errorService.handleError(error.json());
                 return Observable.throw(error.json());

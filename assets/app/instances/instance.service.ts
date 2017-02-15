@@ -24,6 +24,8 @@ export class InstanceService {
     }
 
     saveInstance(instance: Instance){
+        this.successService.deleteSuccess();
+        this.errorService.deleteError();
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('instance'), body, {headers: headers})
@@ -38,6 +40,7 @@ export class InstanceService {
                     result.isOn,
                     result._id);
                 this.instances.push(instance);
+                this.successService.handleSuccess(response.json());
                 return instance;
             })
             .catch((error: Response) => {
@@ -55,7 +58,6 @@ export class InstanceService {
             this.xmlHttp.onreadystatechange = () => {
                 if (this.xmlHttp.readyState === 4) {
                     if (this.xmlHttp.status === 200) {
-                        // observer.next(JSON.parse(this.xmlHttp.response));
                         observer.next(this.xmlHttp.response);
                         observer.complete();
                     } else {
@@ -91,11 +93,16 @@ export class InstanceService {
     }
 
     updateInstanceTextFields(instance: Instance){
+        this.successService.deleteSuccess();
+        this.errorService.deleteError();
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(
             this.hostUrl.concat('instanceTextFields/') + instance.instanceId, body, {headers: headers})
-            .map((response: Response) => response.json())
+            .map((response: Response) => {
+                this.successService.handleSuccess(response.json());
+                return response.json();
+            })
             .catch((error: Response) => {
                 this.errorService.handleError(error.json());
                 return Observable.throw(error.json());
@@ -125,6 +132,8 @@ export class InstanceService {
     }
 
     deleteInstance(instance: Instance){
+        this.successService.deleteSuccess();
+        this.errorService.deleteError();
         this.instances.splice(this.instances.indexOf(instance), 1);
         return this.http.delete(
             this.hostUrl.concat('instance/') + instance.instanceId)

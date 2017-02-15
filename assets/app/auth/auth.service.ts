@@ -5,13 +5,15 @@ import { Observable } from "rxjs";
 
 import { User } from "./user.model";
 import { ErrorService } from "../messages/errors/error.service";
+import { SuccessService } from "../messages/successes/success.service";
 
 @Injectable()
 export class AuthService{
     private hostUrl: string;
 
     constructor(private http: Http,
-                private errorService: ErrorService) {
+                private errorService: ErrorService,
+                private successService: SuccessService) {
 
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
@@ -62,7 +64,10 @@ export class AuthService{
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(this.hostUrl.concat('user') + token, body, {headers: headers})
-            .map((response: Response) => response.json())
+            .map((response: Response) => {
+                // this.successService.handleSuccess(response.json());
+                return response.json();
+            })
             .catch((error: Response) => Observable.throw(error.json()));
     }
 
@@ -73,7 +78,10 @@ export class AuthService{
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(this.hostUrl.concat('password') + token, body, {headers: headers})
-            .map((response: Response) => response.json())
+            .map((response: Response) => {
+                // this.successService.handleSuccess(response.json());
+                return response.json();
+            })
             .catch((error: Response) => {
                 if (error.status === 412){
                     this.errorService.handleError(error.json());

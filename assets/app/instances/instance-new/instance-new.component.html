@@ -41,7 +41,8 @@
                         Field is required.
                     </div>
                 </div>
-                <div>
+                <div class="form-group"
+                     [ngClass]="{'has-error': isStatsInvalid()}">
                     <label for="stats">
                         Stats
                     </label>
@@ -49,8 +50,12 @@
                             #stats
                             type="file"
                             id="stats">
+                    <div class="field-error" *ngIf="isStatsInvalid()">
+                        Field is required.
+                    </div>
                 </div>
-                <div>
+                <div class="form-group"
+                     [ngClass]="{'has-error': isDataInvalid()}">
                     <label for="data">
                         Data
                     </label>
@@ -58,6 +63,9 @@
                             #data
                             type="file"
                             id="data">
+                    <div class="field-error" *ngIf="isDataInvalid()">
+                        Field is required.
+                    </div>
                 </div>
                 <div align="right">
                     <button

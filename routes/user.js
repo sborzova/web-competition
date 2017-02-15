@@ -43,7 +43,7 @@ router.post('/signin', function(req, res, next) {
                 error: err
             });
         }
-        if (!user) {
+        if (!user || (user.password == null)) {
             return res.status(401).json({
                 title: 'Login failed',
                 error: {message: 'Invalid login credentials'}
@@ -135,12 +135,12 @@ router.delete('/user/:id', function (req, res, next) {
             if (err) {
                 return res.status(500).json({
                     title: 'An error occurred',
-                    error: err
+                    error: {message: "User can not be deleted", error: err}
                 });
             }
             res.status(200).json({
                 message: 'Deleted user',
-                obj: {message: 'User ' + user.email + ' was deleted.'}
+                obj: {message: 'User ' + user.email + ' was deleted'}
             });
         });
     });
@@ -176,7 +176,7 @@ router.patch('/user', function (req, res, next) {
             }
             res.status(200).json({
                 message: 'Updated user',
-                obj: result
+                obj: {message: 'User was updated', data: result}
             });
         });
     });
@@ -201,7 +201,7 @@ router.patch('/password', function (req, res, next) {
         if (!bcrypt.compareSync(req.body.confirmPassword, user.password)) {
             return res.status(412).json({
                 title: 'An error occured!',
-                error: {message: 'Current password is incorrect.'}
+                error: {message: 'Current password is incorrect'}
             });
         }
         user.password = bcrypt.hashSync(req.body.newPassword, 10);
@@ -215,7 +215,7 @@ router.patch('/password', function (req, res, next) {
             }
             res.status(200).json({
                 message: 'Updated user',
-                obj: result
+                obj: {message: 'Password was updated', data: result}
             });
         });
     });
