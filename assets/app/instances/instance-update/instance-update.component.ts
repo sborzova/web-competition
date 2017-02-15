@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild } from "@angular/core";
+import {Component, OnInit, OnDestroy, ViewChild, Input, Output} from "@angular/core";
 import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 
@@ -13,7 +13,7 @@ import { Instance } from "../instance.model";
 })
 export class InstanceEditComponent implements OnInit {
     myForm: FormGroup;
-    private instance: Instance;
+    @Input() instance: Instance;
     private submitted: boolean = false;
     @ViewChild('stats') statsElem;
     @ViewChild('data') dataElem;
@@ -53,15 +53,13 @@ export class InstanceEditComponent implements OnInit {
 
             this.instanceService.updateInstanceTextFields(this.instance)
                 .subscribe(
-                    result => {
-                        console.log(result);
+                    data => {
+                        console.log(data);
                         this.navigateBack();
+                        this.saveFiles();
                     },
                     error => console.error(error)
                 );
-            this.saveFiles();
-
-            this.navigateBack();
         }
     }
 

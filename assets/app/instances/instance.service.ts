@@ -38,7 +38,7 @@ export class InstanceService {
                     result.isOn,
                     result._id);
                 this.instances.push(instance);
-                return response.json();
+                return instance;
             })
             .catch((error: Response) => {
                 if (error.status === 422){

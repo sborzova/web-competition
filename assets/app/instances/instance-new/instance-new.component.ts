@@ -52,7 +52,7 @@ export class InstanceCreateComponent implements OnInit {
                 .subscribe(
                     data => {
                         console.log(data);
-                        let id = data.obj.data._id;
+                        let id = data.instanceId;
                         let fd = new FormData();
                         fd.append('stats', statsInput.files[0], statsInput.files[0].name);
                         fd.append('data', dataInput.files[0], dataInput.files[0].name);
@@ -62,11 +62,10 @@ export class InstanceCreateComponent implements OnInit {
                                 data => console.log("Data saved"),
                                 error => console.error(error)
                             );
+                        this.router.navigate(['/#instances']);
                     },
                     error => console.error(error)
                 );
-
-            this.router.navigate(['/#instances']);
         }
     }
 

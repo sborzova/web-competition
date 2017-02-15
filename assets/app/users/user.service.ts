@@ -36,9 +36,7 @@ export class UsersService {
     }
 
     deleteUser(user: User){
-        console.log(this.users);
         this.users.splice(this.users.indexOf(user), 1);
-        console.log(this.users);
         const token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnInit, OnChanges} from "@angular/core";
 
 import { Instance } from "../instance.model";
 import { InstanceService } from "../instance.service";
@@ -10,7 +10,9 @@ import { InstanceService } from "../instance.service";
 export class InstanceListComponent implements OnInit {
     instances: Instance[];
 
-    constructor(private instanceService: InstanceService) {}
+    constructor(private instanceService: InstanceService) {
+
+    }
 
     ngOnInit() {
         this.instanceService.getInstances()
