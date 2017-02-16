@@ -302,7 +302,6 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
     this._text_10 = this.renderer.createText(this._el_6,'\n            ',(null as any));
     this._text_11 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._el_12 = this.renderer.createElement(this._el_4,'form',(null as any));
-    this.renderer.setElementAttribute(this._el_12,'novalidate','');
     this._FormGroupDirective_12_3 = new import14.FormGroupDirective((null as any),(null as any));
     this._ControlContainer_12_4 = this._FormGroupDirective_12_3;
     this._NgControlStatusGroup_12_5 = new import15.NgControlStatusGroup(this._ControlContainer_12_4);

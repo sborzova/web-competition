@@ -67,12 +67,12 @@ export class InstanceCreateComponent implements OnInit {
                         fd.append('stats', statsInput.files[0], statsInput.files[0].name);
                         fd.append('data', dataInput.files[0], dataInput.files[0].name);
 
+                        this.router.navigate(['/#instances']);
                         this.instancesService.saveFiles(fd, id)
                             .subscribe(
                                 data => console.log("Data saved"),
                                 error => console.error(error)
                             );
-                        this.router.navigate(['/#instances']);
                     },
                     error => console.error(error)
                 );

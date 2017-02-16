@@ -35,7 +35,7 @@ import { EscapeHtmlPipe } from "./instances/escape-html.pipe";
 import { TechniqueService } from "./techniques/technique.service";
 import { UsersService } from "./users/user.service";
 import { InstanceService } from "./instances/instance.service";
-import { ValidationComponent } from "./validation/validation";
+import { ValidationComponent } from "./validation/validation.component";
 import { ValidationService } from "./validation/validation.service";
 
 @NgModule({
