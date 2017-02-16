@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class ValidationService {
-    private url = 'http://demo.unitime.org/SolverValidatorMockup/test';
+    private url = 'https://demo.unitime.org/SolverValidatorMockup/test';
     private username = 'validator';
     private password = 'solver';
 
