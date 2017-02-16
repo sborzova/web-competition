@@ -11,14 +11,15 @@ export class ValidationComponent {
     constructor(private validationService: ValidationService){}
 
     onValidate(){
-        let solutionInput= this.solutionElem.nativeElement;
-
-        if (solutionInput.files && solutionInput.files[0]){
-            this.validationService.validate(solutionInput.files[0])
-                .subscribe(
-                    data => console.log(data),
-                    error => console.log(error)
-                )
-        }
+        //
+        // let solutionInput= this.solutionElem.nativeElement;
+        //
+        // if (solutionInput.files && solutionInput.files[0]){
+        //     this.validationService.validate(solutionInput.files[0])
+        //         .subscribe(
+        //             data => console.log(data),
+        //             error => console.log(error)
+        //         )
+        // }
     }
 }
