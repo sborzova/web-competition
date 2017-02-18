@@ -35,8 +35,8 @@ export class SignupComponent implements OnInit {
                 );
                 this.authService.signup(user)
                     .subscribe(
-                        data => {
-                            console.log(data);
+                        user => {
+                            console.log(user);
                             this.router.navigateByUrl('#home');
                         } ,
                         error => console.error(error)
@@ -50,7 +50,8 @@ export class SignupComponent implements OnInit {
             lastName: new FormControl(null, [Validators.required, Validators.maxLength(100)]),
             email: new FormControl(null, [
                 Validators.required,
-                Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
+                Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@" +
+                    "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
             ]),
             password: new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(100)]),
             confirmPassword: new FormControl(null, Validators.required)

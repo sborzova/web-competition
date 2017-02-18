@@ -1,4 +1,4 @@
-import {Component, OnInit, OnChanges} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { Instance } from "../instance.model";
 import { InstanceService } from "../instance.service";

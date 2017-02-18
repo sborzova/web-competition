@@ -26,8 +26,8 @@ export class UserEditPasswordComponent implements OnInit{
             this.user.newPassword = form.value.newPassword;
             this.authService.updatePassword(this.user)
                 .subscribe(
-                    result => {
-                        console.log(result);
+                    user => {
+                        console.log(user);
                         this.navigateBack();
                     },
                     error => console.error(error)

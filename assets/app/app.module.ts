@@ -10,7 +10,7 @@ import { SigninComponent } from "./auth/signin/signin.component";
 import { SignupComponent } from "./auth/signup/signup.component";
 import { routing } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
-import { UserProfileComponent } from "./auth/user/user.component";
+import { UserInfoComponent } from "./auth/user/user.component";
 import { UserEditComponent } from "./auth/user-edit/user-edit.component";
 import { UserEditPasswordComponent } from "./auth/user-edit-password/user-edit-password.component";
 import { UsersComponent } from "./users/users.component";
@@ -36,7 +36,9 @@ import { TechniqueService } from "./techniques/technique.service";
 import { UsersService } from "./users/user.service";
 import { InstanceService } from "./instances/instance.service";
 import { ValidationComponent } from "./validation/validation.component";
-import { ValidationService } from "./validation/validation.service";
+import { SolutionService } from "./validation/solution.service";
+import { ProfileComponent } from "./auth/profile/profile.component";
+import { UserSolutionsComponent } from "./auth/user-solutions/user-solutions.component";
 
 @NgModule({
     declarations: [
@@ -47,7 +49,9 @@ import { ValidationService } from "./validation/validation.service";
         HomeComponent,
         SigninComponent,
         SignupComponent,
-        UserProfileComponent,
+        ProfileComponent,
+        UserSolutionsComponent,
+        UserInfoComponent,
         UserEditComponent,
         UserEditPasswordComponent,
         UsersComponent,
@@ -81,7 +85,7 @@ import { ValidationService } from "./validation/validation.service";
         TechniqueService,
         UsersService,
         InstanceService,
-        ValidationService
+        SolutionService
     ],
     bootstrap: [ AppComponent ]
 })

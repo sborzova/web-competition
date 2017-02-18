@@ -24,8 +24,8 @@ export class UserEditComponent implements OnInit {
 
         this.authService.updateUser(this.user)
             .subscribe(
-                result => {
-                    console.log(result);
+                user => {
+                    console.log(user);
                     this.navigateBack();
                 },
                 error => console.error(error)

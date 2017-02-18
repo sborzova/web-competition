@@ -7,10 +7,10 @@ import { SuccessService } from "../../messages/successes/success.service";
 
 
 @Component({
-    selector: 'app-profile',
+    selector: 'app-user-info',
     templateUrl: 'user.component.html'
 })
-export class UserProfileComponent implements OnInit {
+export class UserInfoComponent implements OnInit {
     @Input() user: User;
 
     constructor(private authService: AuthService,

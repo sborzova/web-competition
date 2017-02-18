@@ -1,0 +1,8 @@
+<div class="col-md-6 col-md-offset-2">
+    <h4>My solutions</h4>
+    <div *ngIf="solutions">
+        <div *ngFor="let solution of solutions; let i = index">
+            {{ i + 1 }} {{ solution.technique.name }} {{ solution.postDate | date}}
+        </div>
+    </div>
+</div>
