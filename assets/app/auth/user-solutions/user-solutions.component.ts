@@ -18,4 +18,24 @@ export class UserSolutionsComponent implements OnInit{
                 error => console.error(error)
             )
     }
+
+    onAddPaper(){
+
+    }
+
+    onRemovePaper(){
+        const solutions = this.selectedSolutions;
+        for (let solution of solutions){
+            this.solutionService.deletePaperFromSolution(solution)
+                .subscribe(
+                    solution => console.log(solution),
+                    error => console.error(error)
+                )
+        }
+    }
+
+    get selectedSolutions() {
+        return this.solutions
+            .filter(s => s.isChecked);
+    }
 }

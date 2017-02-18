@@ -78,10 +78,35 @@ router.post('/solution', function (req, res, next) {
     // });
 });
 
-router.patch('/solution/:id', function (req, res, next) {
-    return res.status(500).json({
-        title: 'Not implemented',
-        error: err
+router.patch('/solutionRemovePaper/:id', function (req, res, next) {
+    Solution.findById(req.params.id, function (err, solution) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!solution) {
+            return res.status(500).json({
+                title: 'No Solution Found!',
+                error: {message: 'Solution not found'}
+            });
+        }
+
+        solution.paper = null;
+
+        solution.save(function (err, result) {
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+            res.status(200).json({
+                message: 'Updated solution',
+                obj: {message: 'Solution was updated - paper deleted', data: result}
+            });
+        });
     });
 });
 

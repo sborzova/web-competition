@@ -2,7 +2,12 @@
     <h4>My solutions</h4>
     <div *ngIf="solutions">
         <div *ngFor="let solution of solutions; let i = index">
+            <input type="checkbox" [(ngModel)]="solution.isChecked">
             {{ i + 1 }} {{ solution.technique.name }} {{ solution.postDate | date}}
         </div>
+    </div>
+    <div>
+        <button class="btn btn-success"(click)="onAddPaper()">Add paper</button>
+        <button class="btn btn-danger" (click)="onRemovePaper()">Remove paper</button>
     </div>
 </div>

@@ -15,6 +15,7 @@ export class Solution {
                 public instance?: Instance,
                 public technique?: Technique,
                 public paper?: Paper,
-                public solutionId?: string) {}
+                public solutionId?: string,
+                public isChecked?: boolean) {}
 
 }

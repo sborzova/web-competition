@@ -68,10 +68,21 @@ export class SolutionService {
                         solution.instance,
                         solution.technique,
                         solution.paper,
-                        solution._id)
+                        solution._id,
+                        false)
                     );
                 }
                 return transformedSolutions;
+            })
+            .catch((error: Response) => Observable.throw(error.json()));
+    }
+
+    deletePaperFromSolution(solution: Solution){
+        const headers = new Headers({'Content-Type': 'application/json'});
+        return this.http.patch(this.hostUrl.concat('solutionRemovePaper/') + solution.solutionId, {headers: headers})
+            .map((response: Response) => {
+                // this.successService.handleSuccess(response.json());
+                return response.json();
             })
             .catch((error: Response) => Observable.throw(error.json()));
     }
