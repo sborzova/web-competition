@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 var mongooseUniqueValidator = require('mongoose-unique-validator');
 
 var schema = new Schema({
-    resource: {type: String, required: true},
+    reference: {type: String, required: true},
     url: {type: String}
 });
 

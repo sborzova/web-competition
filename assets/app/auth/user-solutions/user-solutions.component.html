@@ -10,4 +10,58 @@
         <button class="btn btn-success"(click)="onAddPaper()">Add paper</button>
         <button class="btn btn-danger" (click)="onRemovePaper()">Remove paper</button>
     </div>
+    <div *ngIf="isShowPaperForm()">
+        <h4>Select</h4>
+        <ul>
+            <li *ngFor="let paper of papers">
+                <input type="radio" name="paper" (click)="getValue(paper.paperId)"
+                       [checked]="paper.paperId == selectedPaper.paperId"
+                       value= {{paper.paperId}}>{{paper.reference}}
+                        <a href="{{paper.url}}">link</a>
+            </li>
+        </ul>
+        <h4>Create new paper</h4>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="form-group"
+                 [ngClass]="{'has-error':
+                        !myForm.controls['reference'].valid && myForm.controls['reference'].touched}">
+                <label for="reference">
+                    Reference
+                </label>
+                <input
+                        type="text"
+                        id="reference"
+                        class="form-control"
+                        [formControl]="myForm.controls['reference']">
+                <div class="field-error"
+                     *ngIf="myForm.controls['reference'].hasError('required') && myForm.controls['reference'].touched">
+                    Field is required.
+                </div>
+            </div>
+            <div class="form-group"
+                 [ngClass]="{'has-error':
+                        !myForm.controls['url'].valid && myForm.controls['url'].touched}">
+                <label for="url">
+                    Url
+                </label>
+                <input
+                        type="url"
+                        id="url"
+                        class="form-control"
+                        [formControl]="myForm.controls['url']">
+                <div class="field-error"
+                     *ngIf="myForm.controls['url'].hasError('required') && myForm.controls['url'].touched">
+                    Field is required.
+                </div>
+            </div>
+            <div align="right">
+                <button
+                        class="btn btn-primary align-right"
+                        type="submit"
+                        [disabled]="!myForm.valid">
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
 </div>

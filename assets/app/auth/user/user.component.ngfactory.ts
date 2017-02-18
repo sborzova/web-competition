@@ -26,55 +26,55 @@ import * as import18 from '@angular/core/src/linker/component_factory_resolver';
 import * as import19 from '@angular/router/src/router';
 import * as import20 from '@angular/router/src/router_state';
 import * as import21 from '@angular/common/src/location/location_strategy';
-var renderType_UserProfileComponent_Host:import0.RenderComponentType = (null as any);
-class _View_UserProfileComponent_Host0 extends import1.AppView<any> {
+var renderType_UserInfoComponent_Host:import0.RenderComponentType = (null as any);
+class _View_UserInfoComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import2.AppElement;
-  _UserProfileComponent_0_4:import3.UserInfoComponent;
+  _UserInfoComponent_0_4:import3.UserInfoComponent;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_UserProfileComponent_Host0,renderType_UserProfileComponent_Host,import6.ViewType.HOST,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserInfoComponent_Host0,renderType_UserInfoComponent_Host,import6.ViewType.HOST,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
-    this._el_0 = this.selectOrCreateHostElement('app-profile',rootSelector,(null as any));
+    this._el_0 = this.selectOrCreateHostElement('app-user-info',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
-    var compView_0:any = viewFactory_UserProfileComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._UserProfileComponent_0_4 = new import3.UserInfoComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.ErrorService),this.parentInjector.get(import10.SuccessService));
-    this._appEl_0.initComponent(this._UserProfileComponent_0_4,[],compView_0);
-    compView_0.create(this._UserProfileComponent_0_4,this.projectableNodes,(null as any));
+    var compView_0:any = viewFactory_UserInfoComponent0(this.viewUtils,this.injector(0),this._appEl_0);
+    this._UserInfoComponent_0_4 = new import3.UserInfoComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.ErrorService),this.parentInjector.get(import10.SuccessService));
+    this._appEl_0.initComponent(this._UserInfoComponent_0_4,[],compView_0);
+    compView_0.create(this._UserInfoComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
     return this._appEl_0;
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import3.UserInfoComponent) && (0 === requestNodeIndex))) { return this._UserProfileComponent_0_4; }
+    if (((token === import3.UserInfoComponent) && (0 === requestNodeIndex))) { return this._UserInfoComponent_0_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._UserProfileComponent_0_4.ngOnInit(); }
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._UserInfoComponent_0_4.ngOnInit(); }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-function viewFactory_UserProfileComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_UserProfileComponent_Host === (null as any))) { (renderType_UserProfileComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
-  return new _View_UserProfileComponent_Host0(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserInfoComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  if ((renderType_UserInfoComponent_Host === (null as any))) { (renderType_UserInfoComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
+  return new _View_UserInfoComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const UserProfileComponentNgFactory:import12.ComponentFactory<import3.UserInfoComponent> = new import12.ComponentFactory<import3.UserInfoComponent>('app-profile',viewFactory_UserProfileComponent_Host0,import3.UserInfoComponent);
-const styles_UserProfileComponent:any[] = [];
-var renderType_UserProfileComponent:import0.RenderComponentType = (null as any);
-class _View_UserProfileComponent0 extends import1.AppView<import3.UserInfoComponent> {
+export const UserInfoComponentNgFactory:import12.ComponentFactory<import3.UserInfoComponent> = new import12.ComponentFactory<import3.UserInfoComponent>('app-user-info',viewFactory_UserInfoComponent_Host0,import3.UserInfoComponent);
+const styles_UserInfoComponent:any[] = [];
+var renderType_UserInfoComponent:import0.RenderComponentType = (null as any);
+class _View_UserInfoComponent0 extends import1.AppView<import3.UserInfoComponent> {
   _anchor_0:any;
   /*private*/ _appEl_0:import2.AppElement;
   _TemplateRef_0_5:any;
   _NgIf_0_6:import13.NgIf;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_UserProfileComponent0,renderType_UserProfileComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserInfoComponent0,renderType_UserInfoComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
     this._anchor_0 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._anchor_0);
-    this._TemplateRef_0_5 = new import14.TemplateRef_(this._appEl_0,viewFactory_UserProfileComponent1);
+    this._TemplateRef_0_5 = new import14.TemplateRef_(this._appEl_0,viewFactory_UserInfoComponent1);
     this._NgIf_0_6 = new import13.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
     this._expr_0 = import7.UNINITIALIZED;
     this.init([],[this._anchor_0],[],[]);
@@ -95,11 +95,11 @@ class _View_UserProfileComponent0 extends import1.AppView<import3.UserInfoCompon
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-export function viewFactory_UserProfileComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UserInfoComponent> {
-  if ((renderType_UserProfileComponent === (null as any))) { (renderType_UserProfileComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/user/user.component.html',0,import11.ViewEncapsulation.None,styles_UserProfileComponent,{})); }
-  return new _View_UserProfileComponent0(viewUtils,parentInjector,declarationEl);
+export function viewFactory_UserInfoComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UserInfoComponent> {
+  if ((renderType_UserInfoComponent === (null as any))) { (renderType_UserInfoComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/user/user.component.html',0,import11.ViewEncapsulation.None,styles_UserInfoComponent,{})); }
+  return new _View_UserInfoComponent0(viewUtils,parentInjector,declarationEl);
 }
-class _View_UserProfileComponent1 extends import1.AppView<any> {
+class _View_UserInfoComponent1 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
@@ -152,7 +152,7 @@ class _View_UserProfileComponent1 extends import1.AppView<any> {
   _arr_1:any;
   /*private*/ _expr_6:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_UserProfileComponent1,renderType_UserProfileComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserInfoComponent1,renderType_UserInfoComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
@@ -320,6 +320,6 @@ class _View_UserProfileComponent1 extends import1.AppView<any> {
     return (true && pd_0);
   }
 }
-function viewFactory_UserProfileComponent1(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_UserProfileComponent1(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserInfoComponent1(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserInfoComponent1(viewUtils,parentInjector,declarationEl);
 }

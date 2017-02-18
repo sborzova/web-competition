@@ -8,7 +8,7 @@ var Paper = require('../models/paper');
 router.post('/paper', function (req, res) {
     try{
         var paper = new Paper({
-            resource: req.body.resource,
+            reference: req.body.reference,
             url: req.body.url
         });
     } catch (err){
@@ -26,7 +26,7 @@ router.post('/paper', function (req, res) {
         }
         res.status(201).json({
             message: 'Saved paper',
-            obj: {message: 'Paper was created'}
+            obj: {message: 'Paper was created', data: result}
         });
     });
 });
@@ -46,7 +46,7 @@ router.patch('/paper/:id', function (req, res, next) {
             });
         }
 
-        paper.resource = req.body.resource;
+        paper.reference = req.body.reference;
         paper.url = req.body.url;
 
         paper.save(function (err, result) {
@@ -86,6 +86,41 @@ router.get('/paper/:id', function(req, res, next) {
 });
 
 router.get('/papers', function(req, res, next) {
+    Paper.find(function(err, papers) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!papers) {
+            return res.status(500).json({
+                title: 'No Papers Found!',
+                error: {message: 'Paper not found'}
+            });
+        }
+        res.status(200).json({
+            message: 'Success',
+            obj: papers
+        });
+    });
+});
+
+router.get('/papersByLoggedUser', function(req, res, next) {
+    var decoded = jwt.decode(req.query.token);
+    User.findOne({email: decoded.user.email}, function(err, user) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!user) {
+            return res.status(500).json({
+                title: 'No User Found!',
+                error: {message: 'User not found'}
+            });
+        }});
     Paper.find(function(err, papers) {
         if (err) {
             return res.status(500).json({

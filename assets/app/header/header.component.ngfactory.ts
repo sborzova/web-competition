@@ -477,32 +477,32 @@ class _View_HeaderComponent0 extends import1.AppView<import3.HeaderComponent> {
       this._expr_14 = currVal_14;
     }
     if ((changes !== (null as any))) { this._RouterLinkWithHref_24_3.ngOnChanges(changes); }
-    const currVal_16:any = HeaderComponent.isAdmin();
+    const currVal_16:any = this.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_16,currVal_16)) {
       this._NgIf_27_6.ngIf = currVal_16;
       this._expr_16 = currVal_16;
     }
-    const currVal_17:any = HeaderComponent.isAdmin();
+    const currVal_17:any = this.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_17,currVal_17)) {
       this._NgIf_29_6.ngIf = currVal_17;
       this._expr_17 = currVal_17;
     }
-    const currVal_18:boolean = !HeaderComponent.isLoggedIn();
+    const currVal_18:boolean = !this.context.isLoggedIn();
     if (import4.checkBinding(throwOnChange,this._expr_18,currVal_18)) {
       this._NgIf_42_6.ngIf = currVal_18;
       this._expr_18 = currVal_18;
     }
-    const currVal_19:boolean = !HeaderComponent.isLoggedIn();
+    const currVal_19:boolean = !this.context.isLoggedIn();
     if (import4.checkBinding(throwOnChange,this._expr_19,currVal_19)) {
       this._NgIf_44_6.ngIf = currVal_19;
       this._expr_19 = currVal_19;
     }
-    const currVal_20:any = HeaderComponent.isLoggedIn();
+    const currVal_20:any = this.context.isLoggedIn();
     if (import4.checkBinding(throwOnChange,this._expr_20,currVal_20)) {
       this._NgIf_46_6.ngIf = currVal_20;
       this._expr_20 = currVal_20;
     }
-    const currVal_21:any = HeaderComponent.isLoggedIn();
+    const currVal_21:any = this.context.isLoggedIn();
     if (import4.checkBinding(throwOnChange,this._expr_21,currVal_21)) {
       this._NgIf_48_6.ngIf = currVal_21;
       this._expr_21 = currVal_21;

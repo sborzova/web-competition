@@ -39,6 +39,7 @@ import { ValidationComponent } from "./validation/validation.component";
 import { SolutionService } from "./validation/solution.service";
 import { ProfileComponent } from "./auth/profile/profile.component";
 import { UserSolutionsComponent } from "./auth/user-solutions/user-solutions.component";
+import { PaperService } from "./auth/paper.service";
 
 @NgModule({
     declarations: [
@@ -85,7 +86,8 @@ import { UserSolutionsComponent } from "./auth/user-solutions/user-solutions.com
         TechniqueService,
         UsersService,
         InstanceService,
-        SolutionService
+        SolutionService,
+        PaperService
     ],
     bootstrap: [ AppComponent ]
 })
