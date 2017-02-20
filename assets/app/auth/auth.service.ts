@@ -102,4 +102,8 @@ export class AuthService{
         return localStorage.getItem('isAdmin') !== null;
     }
 
+    getEmailLoggedIn(){
+        return localStorage.getItem('email');
+    }
+
 }

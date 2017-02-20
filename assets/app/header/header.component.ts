@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../auth/auth.service";
 import { Router } from "@angular/router";
 
@@ -8,7 +8,8 @@ import { Router } from "@angular/router";
 })
 export class HeaderComponent{
 
-    constructor(private authService: AuthService, private router: Router) {}
+    constructor(private authService: AuthService, private router: Router) {
+    }
 
     isLoggedIn() {
         return this.authService.isLoggedIn();
@@ -21,5 +22,9 @@ export class HeaderComponent{
 
     isAdmin(){
         return this.authService.isAdmin();
+    }
+
+    getEmailLoggedIn(){
+        return this.authService.getEmailLoggedIn();
     }
 }

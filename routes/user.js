@@ -62,14 +62,16 @@ router.post('/signin', function(req, res, next) {
                 message: 'Successfully logged in',
                 token: token,
                 userId: user._id,
-                isAdmin: 'true'
+                isAdmin: 'true',
+                email: req.body.email
             });
         }
         res.status(200).json({
             message: 'Successfully logged in',
             token: token,
             userId: user._id,
-            isAdmin: 'false'
+            isAdmin: 'false',
+            email: req.body.email
         });
     });
 });
