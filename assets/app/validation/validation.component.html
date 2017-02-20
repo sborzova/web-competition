@@ -1,17 +1,8 @@
 <div class="col-sm-6 aol-sm-offset-3">
-    <p>
-        not working
-    </p>
     <input #solution type="file">
     <button class="btn btn-primary" (click)="onValidate()" >Validate</button>
 
-    <ul>
-        <li *ngFor="let technique of techniques">
-            <input type="radio" name="technique" (click)="getValue(technique.techniqueId)"
-                   [checked]="technique.techniqueId == selectedTechnique.techniqueId"
-                   value= {{technique.techniqueId}}>{{technique.name}}
-        </li>
-    </ul>
-
-    <button class="btn btn-primary" (click)="onUpload()" >Upload</button>
+    <div>
+        <button class="btn btn-primary" (click)="onUpload()" >Upload</button>
+    </div>
 </div>

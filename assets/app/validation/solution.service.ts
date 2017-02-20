@@ -3,7 +3,6 @@ import { Headers, Http, Response } from "@angular/http";
 import { Observable } from "rxjs";
 import {SolutionCreate} from "./solution-create.model";
 import {Solution} from "../auth/solution.model";
-import {Technique} from "./technique.model";
 
 @Injectable()
 export class SolutionService {
@@ -62,11 +61,11 @@ export class SolutionService {
                         solution.time,
                         solution.room,
                         solution.distr,
+                        solution.technique,
                         solution.info,
                         solution.postDate,
                         solution.data,
                         solution.instance,
-                        solution.technique,
                         solution.paper,
                         solution._id,
                         false)

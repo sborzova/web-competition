@@ -6,7 +6,6 @@ var jwt = require('jsonwebtoken');
 var Solution = require('../models/solution');
 var Instance = require('../models/instance');
 var User = require('../models/user');
-var Technique = require('../models/technique');
 var Paper = require('../models/paper');
 
 router.post('/solution', function (req, res, next) {
@@ -25,13 +24,6 @@ router.post('/solution', function (req, res, next) {
                     error: err
                 });
             }
-            Technique.findById(req.body.techniqueId, function (err, technique) {
-                if (err) {
-                    return res.status(500).json({
-                        title: 'An error occurred',
-                        error: err
-                    });
-                }
                 // Paper.findById(decoded.paper._id, function (err, paper) {
                 //     if (err) {
                 //         return res.status(500).json({
@@ -47,11 +39,11 @@ router.post('/solution', function (req, res, next) {
                             time: req.body.time,
                             room: req.body.room,
                             distr: req.body.distr,
+                            technique: req.body.technique,
                             info: req.body.info,
                             // data: req.body.data,
                             // instance: instance,
                             user: user,
-                            technique: technique,
                             // paper: paper
                         });
                     } catch (err){
@@ -73,7 +65,6 @@ router.post('/solution', function (req, res, next) {
                         });
                     });
                 });
-            });
         // });
     // });
 });
@@ -113,7 +104,6 @@ router.patch('/solutionRemovePaper/:id', function (req, res, next) {
 router.get('/solutions', function (req, res, next) {
     Solution.find()
         .populate('user')
-        .populate('technique')
         .populate('instance')
         .populate('paper')
         .exec(function (err, solutions) {
@@ -139,7 +129,6 @@ router.get('/solutions', function (req, res, next) {
 router.get('/solution/:id', function (req, res, next) {
     Solution.findById()
         .populate('user')
-        .populate('technique')
         .populate('instance')
         .populate('paper')
         .exec(req.params.id, function (err, solution) {
@@ -165,7 +154,6 @@ router.get('/solution/:id', function (req, res, next) {
 router.get('/solutionsByLoggedUser', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
     Solution.find()
-        .populate('technique')
         .populate('instance')
         .populate('paper')
         .exec({user: decoded.user}, function (err, solutions) {

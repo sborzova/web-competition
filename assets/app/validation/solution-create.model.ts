@@ -5,13 +5,9 @@ export class SolutionCreate {
                 public time?: number,
                 public room?: number,
                 public distr?: number,
+                public technique?: string,
                 public info?: string,
                 public data?: String,
                 public instanceId?: string,
-                public techniqueId?: string,
                 public paperId?: string) {}
-
-    setTechnique(techniqueId: string){
-        this.techniqueId = techniqueId;
-    }
 }

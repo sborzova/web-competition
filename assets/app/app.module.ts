@@ -23,16 +23,10 @@ import { SuccessComponent } from "./messages/successes/success.component";
 import { SuccessService } from "./messages/successes/success.service";
 import { InstanceCreateComponent } from "./instances/instance-new/instance-new.component";
 import { InstanceEditComponent } from "./instances/instance-update/instance-update.component";
-import { TechniquesComponent } from "./techniques/techniques.component";
-import { TechniqueCreateComponent } from "./techniques/technique-new/technique-new.component";
-import { TechniqueComponent } from "./techniques/technique/technique.component";
-import { TechniqueListComponent } from "./techniques/technique-list/technique-list.component";
-import { TechniqueUpdateComponent } from "./techniques/technique-update/technique-update.component";
 import { InstanceComponent } from "./instances/instance/instance.component";
 import { InstanceListComponent } from "./instances/instance-list/instance-list.component";
 import { InstanceStatsComponent } from "./instances/instance-stats/instance-stats.component";
 import { EscapeHtmlPipe } from "./instances/escape-html.pipe";
-import { TechniqueService } from "./techniques/technique.service";
 import { UsersService } from "./users/user.service";
 import { InstanceService } from "./instances/instance.service";
 import { ValidationComponent } from "./validation/validation.component";
@@ -63,11 +57,6 @@ import { PaperService } from "./auth/paper.service";
         InstanceEditComponent,
         InstanceStatsComponent,
         UserComponent,
-        TechniquesComponent,
-        TechniqueCreateComponent,
-        TechniqueUpdateComponent,
-        TechniqueComponent,
-        TechniqueListComponent,
         ValidationComponent,
         EqualValidator,
         EscapeHtmlPipe
@@ -83,7 +72,6 @@ import { PaperService } from "./auth/paper.service";
         AuthService,
         ErrorService,
         SuccessService,
-        TechniqueService,
         UsersService,
         InstanceService,
         SolutionService,
