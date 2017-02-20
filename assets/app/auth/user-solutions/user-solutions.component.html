@@ -3,7 +3,7 @@
     <div *ngIf="solutions">
         <div *ngFor="let solution of solutions; let i = index">
             <input type="checkbox" [(ngModel)]="solution.isChecked">
-            {{ i + 1 }} {{ solution.technique.name }} {{ solution.postDate | date}}
+            {{ i + 1 }} {{ solution.postDate | date}}
         </div>
     </div>
     <div>
@@ -16,7 +16,7 @@
             <li *ngFor="let paper of papers">
                 <input type="radio" name="paper" (click)="getValue(paper.paperId)"
                        [checked]="paper.paperId == selectedPaper.paperId"
-                       value= {{paper.paperId}}>{{paper.reference}}
+                       value= {{paper.paperId}}>{{paper.citation}}
                         <a href="{{paper.url}}">link</a>
             </li>
         </ul>
@@ -24,17 +24,17 @@
         <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
             <div class="form-group"
                  [ngClass]="{'has-error':
-                        !myForm.controls['reference'].valid && myForm.controls['reference'].touched}">
-                <label for="reference">
-                    Reference
+                        !myForm.controls['citation'].valid && myForm.controls['citation'].touched}">
+                <label for="citation">
+                    Citation
                 </label>
-                <input
+                <textarea
                         type="text"
-                        id="reference"
+                        id="citation"
                         class="form-control"
-                        [formControl]="myForm.controls['reference']">
+                        [formControl]="myForm.controls['citation']"></textarea>
                 <div class="field-error"
-                     *ngIf="myForm.controls['reference'].hasError('required') && myForm.controls['reference'].touched">
+                     *ngIf="myForm.controls['citation'].hasError('required') && myForm.controls['citation'].touched">
                     Field is required.
                 </div>
             </div>

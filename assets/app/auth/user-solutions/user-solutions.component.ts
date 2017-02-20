@@ -30,7 +30,7 @@ export class UserSolutionsComponent implements OnInit{
 
     onAddPaper(){
         this.myForm = new FormGroup({
-            reference: new FormControl(null, Validators.required),
+            citation: new FormControl(null, Validators.required),
             url: new FormControl(null, Validators.required)
         });
         // let papers: Paper[] = [];
@@ -65,7 +65,7 @@ export class UserSolutionsComponent implements OnInit{
 
     onSubmit(){
         const paper = new Paper(
-            this.myForm.value.reference,
+            this.myForm.value.citation,
             this.myForm.value.url
         );
         this.paperService.savePaper(paper)

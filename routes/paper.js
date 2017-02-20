@@ -8,7 +8,7 @@ var Paper = require('../models/paper');
 router.post('/paper', function (req, res) {
     try{
         var paper = new Paper({
-            reference: req.body.reference,
+            citation: req.body.citation,
             url: req.body.url
         });
     } catch (err){
@@ -46,7 +46,7 @@ router.patch('/paper/:id', function (req, res, next) {
             });
         }
 
-        paper.reference = req.body.reference;
+        paper.citation = req.body.citation;
         paper.url = req.body.url;
 
         paper.save(function (err, result) {

@@ -22,7 +22,7 @@ export class PaperService {
             .map((response: Response) => {
                 const result = response.json().obj;
                 const paper = new Paper(
-                    result.data.reference,
+                    result.data.citation,
                     result.data.url);
                 return paper;
             })
@@ -36,7 +36,7 @@ export class PaperService {
             .map((response: Response) => {
                 const paper = response.json().obj;
                 return new Paper(
-                    paper.reference,
+                    paper.citation,
                     paper.url,
                     paper._id)
             })
