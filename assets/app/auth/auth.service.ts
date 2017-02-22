@@ -46,8 +46,8 @@ export class AuthService{
     }
 
     getUser() {
-        const token = localStorage.getItem('token')
-            ? '?token=' + localStorage.getItem('token')
+        const token = sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
             : '';
         return this.http.get(this.hostUrl.concat('user') + token)
             .map((response: Response) => {
@@ -58,8 +58,8 @@ export class AuthService{
 
     updateUser(user: User){
         const body = JSON.stringify(user);
-        const token = localStorage.getItem('token')
-            ? '?token=' + localStorage.getItem('token')
+        const token = sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(this.hostUrl.concat('user') + token, body, {headers: headers})
@@ -72,8 +72,8 @@ export class AuthService{
 
     updatePassword(user: User){
         const body = JSON.stringify(user);
-        const token = localStorage.getItem('token')
-            ? '?token=' + localStorage.getItem('token')
+        const token = sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(this.hostUrl.concat('password') + token, body, {headers: headers})
@@ -91,19 +91,19 @@ export class AuthService{
     }
 
     logout() {
-        localStorage.clear();
+        sessionStorage.clear();
     }
 
     isLoggedIn() {
-        return localStorage.getItem('token') !== null;
+        return sessionStorage.getItem('token') !== null;
     }
 
     isAdmin(){
-        return localStorage.getItem('isAdmin') !== null;
+        return sessionStorage.getItem('isAdmin') !== null;
     }
 
     getEmailLoggedIn(){
-        return localStorage.getItem('email');
+        return sessionStorage.getItem('email');
     }
 
 }

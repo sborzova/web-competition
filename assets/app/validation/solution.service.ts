@@ -32,8 +32,8 @@ export class SolutionService {
 
     saveSolution(solution: SolutionCreate){
         const body = JSON.stringify(solution);
-        const token = localStorage.getItem('token')
-            ? '?token=' + localStorage.getItem('token')
+        const token = sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('solution') + token, body, {headers: headers})
@@ -45,8 +45,8 @@ export class SolutionService {
     }
 
     getSolutionsByLoggedUser(){
-        const token = localStorage.getItem('token')
-            ? '?token=' + localStorage.getItem('token')
+        const token = sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.get(this.hostUrl.concat('solutionsByLoggedUser') + token, {headers: headers})

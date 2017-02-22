@@ -40,8 +40,8 @@ export class UsersService {
 
     deleteUser(user: User){
         this.users.splice(this.users.indexOf(user), 1);
-        const token = localStorage.getItem('token')
-            ? '?token=' + localStorage.getItem('token')
+        const token = sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
             : '';
         return this.http.delete(
             this.hostUrl.concat('user/') + user.userId + token)

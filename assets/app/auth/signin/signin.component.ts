@@ -33,12 +33,12 @@ export class SigninComponent {
             this.authService.signin(user)
                 .subscribe(
                     data => {
-                        localStorage.setItem('token', data.token);
-                        localStorage.setItem('userId', data.userId);
-                        localStorage.setItem('email', data.email);
+                        sessionStorage.setItem('token', data.token);
+                        sessionStorage.setItem('userId', data.userId);
+                        sessionStorage.setItem('email', data.email);
 
                         if (data.isAdmin === 'true'){
-                            localStorage.setItem('isAdmin', 'true');
+                            sessionStorage.setItem('isAdmin', 'true');
                         }
 
                         this.errorService.deleteError();
