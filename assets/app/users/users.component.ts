@@ -29,4 +29,10 @@ export class UsersComponent implements OnInit {
             );
     }
 
+    onDelete(user: User) {
+        this.usersService.deleteUser(user)
+            .subscribe(
+                result => console.log(result)
+            );
+    }
 }

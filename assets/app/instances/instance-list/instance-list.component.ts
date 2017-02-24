@@ -9,6 +9,7 @@ import { InstanceService } from "../instance.service";
 })
 export class InstanceListComponent implements OnInit {
     instances: Instance[];
+    fileSaver = require('file-saver');
 
     constructor(private instanceService: InstanceService) {
 
@@ -21,5 +22,23 @@ export class InstanceListComponent implements OnInit {
                     this.instances = instances;
                 }
             );
+    }
+
+    onDelete(instance: Instance) {
+        this.instanceService.deleteInstance(instance)
+            .subscribe(
+                result => console.log(result)
+            );
+    }
+
+    onDownload(instance: Instance){
+        this.instanceService.getInstance(instance.instanceId)
+            .subscribe(
+                data => {
+                    let filename = data.name;
+                    let file = new File([data.data], filename.concat('.xml'), {type: "text/xml;charset=utf-8"});
+                    this.fileSaver.saveAs(file);
+                },
+                error => console.log("Error downloading the file."))
     }
 }

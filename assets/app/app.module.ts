@@ -18,12 +18,10 @@ import { EqualValidator } from "./auth/validator-equal.directive";
 import { ErrorComponent } from "./messages/errors/error.component";
 import { ErrorService } from "./messages/errors/error.service";
 import { InstancesComponent } from "./instances/instances.component";
-import { UserComponent } from "./users/user/user.component";
 import { SuccessComponent } from "./messages/successes/success.component";
 import { SuccessService } from "./messages/successes/success.service";
 import { InstanceCreateComponent } from "./instances/instance-new/instance-new.component";
 import { InstanceEditComponent } from "./instances/instance-update/instance-update.component";
-import { InstanceComponent } from "./instances/instance/instance.component";
 import { InstanceListComponent } from "./instances/instance-list/instance-list.component";
 import { InstanceStatsComponent } from "./instances/instance-stats/instance-stats.component";
 import { EscapeHtmlPipe } from "./instances/escape-html.pipe";
@@ -51,12 +49,10 @@ import { PaperService } from "./auth/paper.service";
         UserEditPasswordComponent,
         UsersComponent,
         InstancesComponent,
-        InstanceComponent,
         InstanceListComponent,
         InstanceCreateComponent,
         InstanceEditComponent,
         InstanceStatsComponent,
-        UserComponent,
         ValidationComponent,
         EqualValidator,
         EscapeHtmlPipe

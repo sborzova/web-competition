@@ -8,6 +8,16 @@
             <th>Email address</th>
         </tr>
         </thead>
+        <tbody>
+        <tr *ngFor="let user of users; let i = index">
+            <td>{{ i + 1 }} </td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <button class="btn btn-danger btn-xs" (click)="onDelete(user)">
+                Delete
+            </button>
+        </tr>
+        </tbody>
     </table>
-        <app-user *ngFor="let user of users; let i = index" [user]="user" [i]="i"></app-user>
 </div>
