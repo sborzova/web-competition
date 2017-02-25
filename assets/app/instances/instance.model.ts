@@ -1,5 +1,6 @@
 export class Instance {
-    constructor(public name: string,
+    constructor(public order: number,
+                public name: string,
                 public description: string,
                 public stats?: String,
                 public data?: String,

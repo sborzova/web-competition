@@ -1,4 +1,4 @@
-<div class="row">
+<div *ngIf="isAdmin()" class="row">
     <button
             class="btn btn-success btn-s"
             [routerLink]="['/#instances/create']">Add instance</button>

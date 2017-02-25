@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { Instance } from "../instance.model";
 import { InstanceService } from "../instance.service";
+import { AuthService } from "../../auth/auth.service";
 
 @Component({
     selector: 'app-instance-list',
@@ -9,9 +10,11 @@ import { InstanceService } from "../instance.service";
 })
 export class InstanceListComponent implements OnInit {
     instances: Instance[];
+    defaultOrder: number;
     fileSaver = require('file-saver');
 
-    constructor(private instanceService: InstanceService) {
+    constructor(private instanceService: InstanceService,
+                private authService: AuthService) {
 
     }
 
@@ -20,6 +23,13 @@ export class InstanceListComponent implements OnInit {
             .subscribe(
                 (instances: Instance[]) => {
                     this.instances = instances;
+                    let max = 0;
+                    for (let instance of instances){
+                        if (instance.order > max){
+                            max = instance.order;
+                        }
+                    }
+                    this.defaultOrder = max + 1;
                 }
             );
     }
@@ -40,5 +50,9 @@ export class InstanceListComponent implements OnInit {
                     this.fileSaver.saveAs(file);
                 },
                 error => console.log("Error downloading the file."))
+    }
+
+    isAdmin(){
+        return this.authService.isAdmin();
     }
 }

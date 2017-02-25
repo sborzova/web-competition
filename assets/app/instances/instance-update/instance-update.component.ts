@@ -7,6 +7,7 @@ import { ErrorService } from "../../messages/errors/error.service";
 import { SuccessService } from "../../messages/successes/success.service";
 import { Instance } from "../instance.model";
 import { Subscription } from "rxjs";
+import {minValue} from "../min-value.validator";
 
 @Component({
     selector: 'app-instance-edit',
@@ -39,6 +40,7 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
                         (instance: Instance) => {
                             this.instance = instance;
                             this.myForm = new FormGroup({
+                                order: new FormControl(this.instance.order, [Validators.required, minValue(0)]),
                                 name: new FormControl(this.instance.name, Validators.required),
                                 description: new FormControl(this.instance.description, Validators.required)
                             });
@@ -54,6 +56,7 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
         this.submitted = true;
 
         if (form.valid){
+            this.instance.order = form.value.order;
             this.instance.name = form.value.name;
             this.instance.description = form.value.description;
 

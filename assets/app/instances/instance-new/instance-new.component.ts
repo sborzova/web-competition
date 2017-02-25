@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -7,6 +7,7 @@ import { ErrorService } from "../../messages/errors/error.service";
 import { InstanceService } from "../instance.service";
 import { Instance } from "../instance.model";
 import { SuccessService } from "../../messages/successes/success.service";
+import { minValue } from "../min-value.validator";
 
 @Component({
     selector: 'app-instance-new',
@@ -14,6 +15,7 @@ import { SuccessService } from "../../messages/successes/success.service";
 })
 export class InstanceCreateComponent implements OnInit {
     myForm: FormGroup;
+    defaultOrder: number;
     private submitted: boolean = false;
     private statsInvalid: boolean = false;
     private dataInvalid: boolean = false;
@@ -31,10 +33,21 @@ export class InstanceCreateComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.myForm = new FormGroup({
-            name: new FormControl(null, Validators.required),
-            description: new FormControl(null, Validators.required)
-        });
+        this.instancesService.getInstances()
+            .subscribe(
+                (instances: Instance[]) => {
+                    let max = 0;
+                    for (let instance of instances){
+                        if (instance.order > max){
+                            max = instance.order;
+                        }
+                    }
+                    this.defaultOrder = max + 1;
+                    this.setForm();
+                },
+                error => console.error(error)
+            );
+        this.setForm();
     }
 
     onSubmit(){
@@ -54,6 +67,7 @@ export class InstanceCreateComponent implements OnInit {
         }
         if (this.myForm.valid){
             const instance = new Instance(
+                this.myForm.value.order,
                 this.myForm.value.name,
                 this.myForm.value.description
             );
@@ -80,6 +94,14 @@ export class InstanceCreateComponent implements OnInit {
         }
     }
 
+    setForm(){
+        this.myForm = new FormGroup({
+            order: new FormControl(this.defaultOrder, [Validators.required, minValue(1)]),
+            name: new FormControl(null, Validators.required),
+            description: new FormControl(null, Validators.required)
+        });
+    }
+
     isSubmitted(){
         return this.submitted;
     }
@@ -91,4 +113,5 @@ export class InstanceCreateComponent implements OnInit {
     isDataInvalid(){
         return this.dataInvalid;
     }
+
 }

@@ -32,6 +32,7 @@ import { SolutionService } from "./validation/solution.service";
 import { ProfileComponent } from "./auth/profile/profile.component";
 import { UserSolutionsComponent } from "./auth/user-solutions/user-solutions.component";
 import { PaperService } from "./auth/paper.service";
+import { SortPipe } from "./instances/sort.pipe";
 
 @NgModule({
     declarations: [
@@ -55,7 +56,8 @@ import { PaperService } from "./auth/paper.service";
         InstanceStatsComponent,
         ValidationComponent,
         EqualValidator,
-        EscapeHtmlPipe
+        EscapeHtmlPipe,
+        SortPipe
     ],
     imports: [
         BrowserModule,

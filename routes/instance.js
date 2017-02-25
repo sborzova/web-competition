@@ -13,6 +13,7 @@ var Instance = require('../models/instance');
 router.post('/instance', function (req, res) {
     try{
         var instance = new Instance({
+            order: req.body.order,
             name: req.body.name,
             description: req.body.description
         });
@@ -96,6 +97,7 @@ router.patch('/instanceTextFields/:id', function (req, res, next) {
             });
         }
 
+        instance.order = req.body.order;
         instance.name = req.body.name;
         instance.description = req.body.description;
 

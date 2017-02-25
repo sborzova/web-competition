@@ -38,7 +38,7 @@
     "rxjs": "^5.0.0-rc.1",
     "serve-favicon": "~2.3.0",
     "xmlhttprequest": "^1.8.0",
-    "zone.js": "^0.6.25"
+    "zone.js": "^0.6.8"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.34",

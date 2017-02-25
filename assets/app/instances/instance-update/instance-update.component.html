@@ -7,6 +7,24 @@
             <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <div class="form-group"
                      [ngClass]="{'has-error':
+                        (!myForm.controls['order'].valid ) &&
+                        (myForm.controls['order'].touched || isSubmitted())}">
+                    <label for="order">
+                        Order
+                    </label>
+                    <input
+                            type="number"
+                            id="order"
+                            class="form-control"
+                            [formControl]="myForm.controls['order']">
+                    <div class="field-error"
+                         *ngIf="!myForm.controls['order'].valid &&
+                            (myForm.controls['order'].touched || isSubmitted())">
+                        Minimum value is 1.
+                    </div>
+                </div>
+                <div class="form-group"
+                     [ngClass]="{'has-error':
                         (!myForm.controls['name'].valid ) &&
                         (myForm.controls['name'].touched || isSubmitted())}">
                     <label for="name">

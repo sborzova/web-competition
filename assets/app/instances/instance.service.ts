@@ -32,6 +32,7 @@ export class InstanceService {
             .map((response: Response) => {
                 const result = response.json().obj.data;
                 const instance = new Instance(
+                    result.order,
                     result.name,
                     result.description,
                     null,
@@ -77,6 +78,7 @@ export class InstanceService {
             .map((response: Response) => {
                 const instance = response.json().obj;
                 return new Instance(
+                    instance.order,
                     instance.name,
                     instance.description,
                     instance.stats,
@@ -116,6 +118,7 @@ export class InstanceService {
                 let transformedInstances: Instance[] = [];
                 for (let instance of instances) {
                     transformedInstances.push(new Instance(
+                        instance.order,
                         instance.name,
                         instance.description,
                         null,
