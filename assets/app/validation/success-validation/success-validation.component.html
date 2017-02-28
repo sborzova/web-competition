@@ -1,0 +1,85 @@
+<div *ngIf="validation" [ngStyle]="{'display': display}">
+    <div>
+        <table class="table">
+            <tr>
+                <th>Unassigned Variables</th>
+                <td>{{ validation.unassigned }}&nbsp;%</td>
+            </tr>
+            <tr>
+                <th>Total Cost</th>
+                <td>{{ validation.total }}</td>
+            </tr>
+            <tr>
+                <th>Student Conflicts</th>
+                <td>{{ validation.sc }}&nbsp;%</td>
+            </tr>
+            <tr>
+                <th>Time Preferences</th>
+                <td>{{ validation.time }}&nbsp;%</td>
+            </tr>
+            <tr>
+                <th>Room Preferences</th>
+                <td>{{ validation.room }}&nbsp;%</td>
+            </tr>
+            <tr>
+                <th>Distribution Preferences</th>
+                <td>{{ validation.distr }}&nbsp;%</td>
+            </tr>
+            <tr>
+                <th>Info</th>
+                <td>{{ validation.info }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h2>Upload solution</h2>
+        <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="form-group"
+                 [ngClass]="{'has-error':
+                        (!myForm.controls['technique'].valid ) &&
+                        (myForm.controls['technique'].touched || isSubmitted())}">
+                <label for="technique">
+                    Technique
+                </label>
+                <input
+                        type="text"
+                        id="technique"
+                        class="form-control"
+                        [formControl]="myForm.controls['technique']">
+                <div class="field-error"
+                     *ngIf="(myForm.controls['technique'].hasError('required')) &&
+                            (myForm.controls['technique'].touched || isSubmitted())">
+                    Field is required.
+                </div>
+            </div>
+            <h4>Highly recommended adding paper</h4>
+            <div class="form-group">
+                <label for="citation">
+                    Citation
+                </label>
+                <textarea
+                        id="citation"
+                        class="form-control"
+                        [formControl]="myForm.controls['citation']"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="url">
+                    Url
+                </label>
+                <input
+                        type="url"
+                        id="url"
+                        class="form-control"
+                        [formControl]="myForm.controls['url']">
+            </div>
+            <div align="right">
+                <button
+                        class="btn btn-primary align-right"
+                        type="submit">
+                    Upload
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

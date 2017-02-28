@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import { ErrorService } from "../messages/errors/error.service";
 import { SuccessService } from "../messages/successes/success.service";
@@ -8,7 +8,8 @@ import { AuthService } from "../auth/auth.service";
     selector: 'app-instances',
     templateUrl: 'instances.component.html'
 })
-export class InstancesComponent {
+export class InstancesComponent implements OnInit{
+    display = 'none';
 
     constructor(private successService: SuccessService,
                 private errorService: ErrorService,
@@ -20,5 +21,11 @@ export class InstancesComponent {
 
     isAdmin(){
        return this.authService.isAdmin();
+    }
+
+    ngOnInit(){
+        if (!this.authService.isLoggedIn()){
+            this.display = 'block';
+        }
     }
 }

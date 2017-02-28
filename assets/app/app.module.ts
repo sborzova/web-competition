@@ -28,11 +28,12 @@ import { EscapeHtmlPipe } from "./instances/escape-html.pipe";
 import { UsersService } from "./users/user.service";
 import { InstanceService } from "./instances/instance.service";
 import { ValidationComponent } from "./validation/validation.component";
-import { SolutionService } from "./validation/solution.service";
+import { ValidationService } from "./validation/validation.service";
 import { ProfileComponent } from "./auth/profile/profile.component";
 import { UserSolutionsComponent } from "./auth/user-solutions/user-solutions.component";
 import { PaperService } from "./auth/paper.service";
 import { SortPipe } from "./instances/sort.pipe";
+import { SuccessValidationComponent } from "./validation/success-validation/success-validation.component";
 
 @NgModule({
     declarations: [
@@ -55,6 +56,7 @@ import { SortPipe } from "./instances/sort.pipe";
         InstanceEditComponent,
         InstanceStatsComponent,
         ValidationComponent,
+        SuccessValidationComponent,
         EqualValidator,
         EscapeHtmlPipe,
         SortPipe
@@ -72,7 +74,7 @@ import { SortPipe } from "./instances/sort.pipe";
         SuccessService,
         UsersService,
         InstanceService,
-        SolutionService,
+        ValidationService,
         PaperService
     ],
     bootstrap: [ AppComponent ]

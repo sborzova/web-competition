@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
-import { SolutionService } from "../../validation/solution.service";
+import { ValidationService } from "../../validation/validation.service";
 import { Solution } from "../solution.model";
 import { Paper } from "../paper.model";
 import { PaperService } from "../paper.service";
@@ -17,7 +17,7 @@ export class UserSolutionsComponent implements OnInit{
     myForm: FormGroup;
     showPaperForm: boolean = false;
 
-    constructor(private solutionService: SolutionService,
+    constructor(private solutionService: ValidationService,
                 private paperService: PaperService){}
 
     ngOnInit(){

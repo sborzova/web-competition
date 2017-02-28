@@ -1,8 +1,20 @@
-<div class="col-sm-6 aol-sm-offset-3">
+<div class="backdrop" [ngStyle]="{'display': display}"></div>
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display': display}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h6>You must be registered and logged in to validate and insert your solutions</h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" [routerLink]="['/#signin']">Log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="col-sm-12">
     <input #solution type="file">
-    <button class="btn btn-primary" (click)="onValidate()" >Validate</button>
-
-    <div>
-        <button class="btn btn-primary" (click)="onUpload()" >Upload</button>
+    <button class="btn btn-primary btn-s" (click)="onValidate()" >Validate</button>
+    <div class="">
+        <app-success-validation></app-success-validation>
     </div>
 </div>

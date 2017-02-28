@@ -2,7 +2,7 @@
     <div class="col-sm-6 col-sm-offset-3">
         <div class="jumbotron">
             <div class="text-center">
-                <h2>Login</h2>
+                <h2>Log in</h2>
             </div>
             <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
                 <div class="form-group"
@@ -46,6 +46,7 @@
                 </div>
             </form>
             <div>
+                <a [routerLink]="['/#signup']">Create account</a>
                 <a>Forgot your password?</a>
             </div>
         </div>

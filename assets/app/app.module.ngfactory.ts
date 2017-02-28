@@ -41,7 +41,7 @@ import * as import33 from './auth/auth.service';
 import * as import34 from './techniques/technique.service';
 import * as import35 from './users/user.service';
 import * as import36 from './instances/instance.service';
-import * as import37 from './validation/solution.service';
+import * as import37 from './validation/validation.service';
 import * as import38 from './auth/paper.service';
 import * as import39 from '@angular/core/src/di/injector';
 import * as import40 from './home/home.component.ngfactory';
@@ -152,7 +152,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
   __TechniqueService_55:import34.TechniqueService;
   __UsersService_56:import35.UsersService;
   __InstanceService_57:import36.InstanceService;
-  __SolutionService_58:import37.SolutionService;
+  __SolutionService_58:import37.ValidationService;
   __PaperService_59:import38.PaperService;
   constructor(parent:import39.Injector) {
     super(parent,[
@@ -459,8 +459,8 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     if ((this.__InstanceService_57 == (null as any))) { (this.__InstanceService_57 = new import36.InstanceService(this._Http_41,this._SuccessService_53,this._ErrorService_52)); }
     return this.__InstanceService_57;
   }
-  get _SolutionService_58():import37.SolutionService {
-    if ((this.__SolutionService_58 == (null as any))) { (this.__SolutionService_58 = new import37.SolutionService(this._Http_41)); }
+  get _SolutionService_58():import37.ValidationService {
+    if ((this.__SolutionService_58 == (null as any))) { (this.__SolutionService_58 = new import37.ValidationService(this._Http_41)); }
     return this.__SolutionService_58;
   }
   get _PaperService_59():import38.PaperService {
@@ -543,7 +543,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     if ((token === import34.TechniqueService)) { return this._TechniqueService_55; }
     if ((token === import35.UsersService)) { return this._UsersService_56; }
     if ((token === import36.InstanceService)) { return this._InstanceService_57; }
-    if ((token === import37.SolutionService)) { return this._SolutionService_58; }
+    if ((token === import37.ValidationService)) { return this._SolutionService_58; }
     if ((token === import38.PaperService)) { return this._PaperService_59; }
     return notFoundResult;
   }

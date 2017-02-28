@@ -11,7 +11,6 @@ import { ErrorService } from "../messages/errors/error.service";
 export class InstanceService {
     private instances: Instance[] = [];
     private hostUrl: string;
-    private XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     private xmlHttp;
 
     constructor(private http: Http,
@@ -20,7 +19,6 @@ export class InstanceService {
 
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
-        this.xmlHttp = new XMLHttpRequest();
     }
 
     saveInstance(instance: Instance){
@@ -53,6 +51,8 @@ export class InstanceService {
     }
 
     saveFiles(fd: FormData, id: string){
+        this.xmlHttp = new XMLHttpRequest();
+
         return Observable.create(observer => {
             const headers = new Headers({'Content-Type': 'multipart/form-data'});
 
