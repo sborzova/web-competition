@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { Instance } from "../instance.model";
 import { InstanceService } from "../instance.service";
 import { AuthService } from "../../auth/auth.service";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
     selector: 'app-instance-list',
@@ -14,7 +15,8 @@ export class InstanceListComponent implements OnInit {
     fileSaver = require('file-saver');
 
     constructor(private instanceService: InstanceService,
-                private authService: AuthService) {
+                private authService: AuthService,
+                private flashMessagesService: FlashMessagesService) {
 
     }
 
@@ -37,7 +39,11 @@ export class InstanceListComponent implements OnInit {
     onDelete(instance: Instance) {
         this.instanceService.deleteInstance(instance)
             .subscribe(
-                result => console.log(result)
+                result => {
+                    this.flashMessagesService.grayOut(true);
+                    this.flashMessagesService.show('Instance was deleted', { cssClass: 'alert-success', timeout:1700 } );
+                },
+                error => console.error(error)
             );
     }
 

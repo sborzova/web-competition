@@ -2,9 +2,8 @@ import { Injectable } from "@angular/core";
 import { Http, Response, Headers } from "@angular/http";
 import { Observable } from "rxjs";
 
-import { SuccessService } from "../messages/successes/success.service";
 import { Instance } from "./instance.model";
-import { ErrorService } from "../messages/errors/error.service";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 
 @Injectable()
@@ -14,16 +13,13 @@ export class InstanceService {
     private xmlHttp;
 
     constructor(private http: Http,
-                private successService: SuccessService,
-                private errorService: ErrorService) {
+                private flashMessagesService: FlashMessagesService) {
 
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
 
     saveInstance(instance: Instance){
-        this.successService.deleteSuccess();
-        this.errorService.deleteError();
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('instance'), body, {headers: headers})
@@ -39,12 +35,12 @@ export class InstanceService {
                     result.isOn,
                     result._id);
                 this.instances.push(instance);
-                this.successService.handleSuccess(response.json());
                 return instance;
             })
             .catch((error: Response) => {
                 if (error.status === 422){
-                    this.errorService.handleError(error.json());
+                    this.flashMessagesService.grayOut(true);
+                    this.flashMessagesService.show('The name is already in use.', { cssClass: 'alert-danger', timeout:1700 } );
                 }
                 return Observable.throw(error.json())
             });
@@ -89,24 +85,23 @@ export class InstanceService {
                 );
             })
             .catch((error: Response) => {
-                this.errorService.handleError(error.json());
                 return Observable.throw(error.json())
             });
     }
 
     updateInstanceTextFields(instance: Instance){
-        this.successService.deleteSuccess();
-        this.errorService.deleteError();
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(
             this.hostUrl.concat('instanceTextFields/') + instance.instanceId, body, {headers: headers})
             .map((response: Response) => {
-                this.successService.handleSuccess(response.json());
                 return response.json();
             })
             .catch((error: Response) => {
-                this.errorService.handleError(error.json());
+                if (error.status === 422){
+                    this.flashMessagesService.grayOut(true);
+                    this.flashMessagesService.show('The name is already in use.', { cssClass: 'alert-danger', timeout:1700 } );
+                }
                 return Observable.throw(error.json());
             });
     }
@@ -135,17 +130,13 @@ export class InstanceService {
     }
 
     deleteInstance(instance: Instance){
-        this.successService.deleteSuccess();
-        this.errorService.deleteError();
         this.instances.splice(this.instances.indexOf(instance), 1);
         return this.http.delete(
             this.hostUrl.concat('instance/') + instance.instanceId)
             .map((response: Response) => {
-                this.successService.handleSuccess(response.json());
                 return response.json();
             })
             .catch((error: Response) => {
-                this.errorService.handleError(error.json());
                 return Observable.throw(error.json());
             });
     }

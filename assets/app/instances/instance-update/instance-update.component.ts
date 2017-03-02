@@ -3,11 +3,10 @@ import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 
 import { InstanceService } from "../instance.service";
-import { ErrorService } from "../../messages/errors/error.service";
-import { SuccessService } from "../../messages/successes/success.service";
 import { Instance } from "../instance.model";
 import { Subscription } from "rxjs";
-import {minValue} from "../min-value.validator";
+import { minValue } from "../min-value.validator";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
     selector: 'app-instance-edit',
@@ -22,13 +21,10 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
     private subscription: Subscription;
 
     constructor(private router: Router,
-                private errorService: ErrorService,
-                private successService: SuccessService,
                 private instanceService: InstanceService,
-                private activatedRoute: ActivatedRoute){
+                private activatedRoute: ActivatedRoute,
+                private flashMessagesService: FlashMessagesService){
 
-        this.errorService.deleteError();
-        this.successService.deleteSuccess();
     }
 
     ngOnInit(){
@@ -63,8 +59,9 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
             this.instanceService.updateInstanceTextFields(this.instance)
                 .subscribe(
                     data => {
-                        console.log(data);
                         this.navigateBack();
+                        this.flashMessagesService.grayOut(true);
+                        this.flashMessagesService.show('Instance was updated', { cssClass: 'alert-success', timeout:1700 } );
                         this.saveFiles();
                     },
                     error => console.error(error)
@@ -95,7 +92,7 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
         if (updateFiles){
             this.instanceService.saveFiles(fd, this.instance.instanceId)
                 .subscribe(
-                    data => console.log(data),
+                    () => console.log("Data was saved"),
                     error => console.error(error)
                 );
         }

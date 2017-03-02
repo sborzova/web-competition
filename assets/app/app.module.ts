@@ -15,11 +15,7 @@ import { UserEditComponent } from "./auth/user-edit/user-edit.component";
 import { UserEditPasswordComponent } from "./auth/user-edit-password/user-edit-password.component";
 import { UsersComponent } from "./users/users.component";
 import { EqualValidator } from "./auth/validator-equal.directive";
-import { ErrorComponent } from "./messages/errors/error.component";
-import { ErrorService } from "./messages/errors/error.service";
 import { InstancesComponent } from "./instances/instances.component";
-import { SuccessComponent } from "./messages/successes/success.component";
-import { SuccessService } from "./messages/successes/success.service";
 import { InstanceCreateComponent } from "./instances/instance-new/instance-new.component";
 import { InstanceEditComponent } from "./instances/instance-update/instance-update.component";
 import { InstanceListComponent } from "./instances/instance-list/instance-list.component";
@@ -28,18 +24,17 @@ import { EscapeHtmlPipe } from "./instances/escape-html.pipe";
 import { UsersService } from "./users/user.service";
 import { InstanceService } from "./instances/instance.service";
 import { ValidationComponent } from "./validation/validation.component";
-import { ValidationService } from "./validation/validation.service";
+import { SolutionService } from "./validation/solution.service";
 import { ProfileComponent } from "./auth/profile/profile.component";
 import { UserSolutionsComponent } from "./auth/user-solutions/user-solutions.component";
 import { PaperService } from "./auth/paper.service";
 import { SortPipe } from "./instances/sort.pipe";
 import { SuccessValidationComponent } from "./validation/success-validation/success-validation.component";
+import { FlashMessagesModule } from "angular2-flash-messages";
 
 @NgModule({
     declarations: [
         AppComponent,
-        ErrorComponent,
-        SuccessComponent,
         HeaderComponent,
         HomeComponent,
         SigninComponent,
@@ -66,15 +61,14 @@ import { SuccessValidationComponent } from "./validation/success-validation/succ
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
+        FlashMessagesModule,
         routing
     ],
     providers: [
         AuthService,
-        ErrorService,
-        SuccessService,
         UsersService,
         InstanceService,
-        ValidationService,
+        SolutionService,
         PaperService
     ],
     bootstrap: [ AppComponent ]

@@ -2,9 +2,10 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Subscription} from "rxjs";
 
-import { ValidationService } from "../validation.service";
+import { SolutionService } from "../solution.service";
 import { Validation } from "../validation.model";
-import {SolutionCreate} from "../solution-create.model";
+import { SolutionCreate } from "../solution-create.model";
+import { SolutionFindBetter } from "../solution-find-better.model";
 
 @Component({
     selector: 'app-success-validation',
@@ -17,8 +18,8 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     myForm: FormGroup;
     private submitted: boolean = false;
 
-    constructor(private validationService: ValidationService) {
-        this.subscription = validationService.successValidationDelete$
+    constructor(private solutionService: SolutionService) {
+        this.subscription = solutionService.successValidationDelete$
             .subscribe(
                 () => {
                     this.display = 'none';
@@ -29,23 +30,35 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     ngOnInit(){
         this.myForm = new FormGroup({
             technique: new FormControl(null, Validators.required),
-            citation: new FormControl(null, Validators.minLength(0)),
+            citation: new FormControl(null),
             url: new FormControl(null)
         });
-        this.validationService.successValidation
+        this.solutionService.successValidation
             .subscribe(
                 (validation: Validation) => {
                     this.validation = validation;
                     this.display = 'block';
                 }
             );
-
     }
 
     onSubmit(){
         this.submitted = true;
         if (this.myForm.valid){
-            this.validationService.saveSolution(
+            this.solutionService.getBetterSolutionWithTechnique(
+                new SolutionFindBetter(
+                    this.validation.unassigned,
+                    this.validation.total,
+                    this.myForm.value.technique,
+                    this.validation.instanceName)
+                ).subscribe(
+                    data => {
+
+                    },
+                    error => console.log(error)
+            );
+
+            this.solutionService.saveSolution(
                 new SolutionCreate(
                     this.validation.unassigned,
                     this.validation.total,
@@ -55,17 +68,16 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
                     this.validation.distr,
                     this.validation.info,
                     this.myForm.value.technique,
-                    this.myForm.value.instanceName),
+                    this.validation.instanceName),
                 this.myForm.value.citation,
                 this.myForm.value.url,
                 );
-            this.ngOnDestroy();
         }
     }
 
     ngOnDestroy(){
         this.subscription.unsubscribe();
-        this.validationService.setSolutionFile(null);
+        this.solutionService.setSolutionFile(null);
     }
 
     isSubmitted(){

@@ -4,8 +4,7 @@ import { Router } from "@angular/router";
 
 import { AuthService } from "../auth.service";
 import { User } from "../user.model";
-import { ErrorService } from "../../messages/errors/error.service";
-import { SuccessService } from "../../messages/successes/success.service";
+import { FlashMessagesService } from "angular2-flash-messages";
 
 @Component({
     selector: 'app-signup',
@@ -17,11 +16,7 @@ export class SignupComponent implements OnInit {
 
     constructor(private authService: AuthService,
                 private router: Router,
-                private errorService: ErrorService,
-                private successService: SuccessService) {
-
-        this.errorService.deleteError();
-        this.successService.deleteSuccess();
+                private flashMessagesService: FlashMessagesService) {
     }
 
     onSubmit() {
@@ -36,7 +31,8 @@ export class SignupComponent implements OnInit {
                 this.authService.signup(user)
                     .subscribe(
                         user => {
-                            console.log(user);
+                            this.flashMessagesService.grayOut(true);
+                            this.flashMessagesService.show('Account created.', { cssClass: 'alert-success', timeout:1700 } );
                             this.router.navigateByUrl('#home');
                         } ,
                         error => console.error(error)

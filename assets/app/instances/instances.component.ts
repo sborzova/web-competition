@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 
-import { ErrorService } from "../messages/errors/error.service";
-import { SuccessService } from "../messages/successes/success.service";
 import { AuthService } from "../auth/auth.service";
 
 @Component({
@@ -11,12 +9,7 @@ import { AuthService } from "../auth/auth.service";
 export class InstancesComponent implements OnInit{
     display = 'none';
 
-    constructor(private successService: SuccessService,
-                private errorService: ErrorService,
-                private authService: AuthService){
-
-        this.errorService.deleteError();
-        this.successService.deleteSuccess();
+    constructor(private authService: AuthService){
     }
 
     isAdmin(){

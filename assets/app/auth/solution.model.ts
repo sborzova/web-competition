@@ -11,7 +11,7 @@ export class Solution {
                 public technique?: string,
                 public info?: string,
                 public postDate?: Date,
-                public data?: String,
+                public data?: string,
                 public instance?: Instance,
                 public paper?: Paper,
                 public solutionId?: string,

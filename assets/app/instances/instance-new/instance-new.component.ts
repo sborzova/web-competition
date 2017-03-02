@@ -2,12 +2,10 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { AuthService } from "../../auth/auth.service";
-import { ErrorService } from "../../messages/errors/error.service";
 import { InstanceService } from "../instance.service";
 import { Instance } from "../instance.model";
-import { SuccessService } from "../../messages/successes/success.service";
 import { minValue } from "../min-value.validator";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
     selector: 'app-instance-new',
@@ -22,14 +20,10 @@ export class InstanceCreateComponent implements OnInit {
     @ViewChild('stats') statsElem;
     @ViewChild('data') dataElem;
 
-    constructor(private authService: AuthService,
-                private router: Router,
-                private instancesService: InstanceService,
-                private successService: SuccessService,
-                private errorService: ErrorService) {
+    constructor(private router: Router,
+                private flashMessagesService: FlashMessagesService,
+                private instancesService: InstanceService) {
 
-        this.errorService.deleteError();
-        this.successService.deleteSuccess();
     }
 
     ngOnInit(): void {
@@ -84,8 +78,13 @@ export class InstanceCreateComponent implements OnInit {
                         this.router.navigate(['/#instances']);
                         this.instancesService.saveFiles(fd, id)
                             .subscribe(
-                                data => console.log("Data saved"),
-                                error => console.error(error)
+                                () => {
+                                    this.flashMessagesService.grayOut(true);
+                                    this.flashMessagesService.show('Instance was created.', { cssClass: 'alert-success', timeout:1700 } );
+                                },
+                                error => {
+                                    console.error(error);
+                                }
                             );
                     },
                     error => console.error(error)

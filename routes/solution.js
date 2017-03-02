@@ -200,6 +200,47 @@ router.patch('/solutionRemovePaper/:id', function (req, res, next) {
     });
 });
 
+router.patch('/solutionAddPaper/:id', function (req, res, next) {
+    Solution.findById(req.params.id, function (err, solution) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!solution) {
+            return res.status(500).json({
+                title: 'No Solution Found!',
+                error: {message: 'Solution not found'}
+            });
+        }
+
+        Paper.findById(req.body.paperId, function (err, paper) {
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+
+            solution.paper = paper;
+
+            solution.save(function (err, result) {
+                if (err) {
+                    return res.status(500).json({
+                        title: 'An error occurred',
+                        error: err
+                    });
+                }
+                res.status(200).json({
+                    message: 'Updated solution',
+                    obj: {message: 'Solution was updated - paper deleted', data: result}
+                });
+            });
+        });
+    });
+});
+
 router.get('/solutions', function (req, res, next) {
     Solution.find()
         .populate('user')
@@ -255,7 +296,8 @@ router.get('/solutionsByLoggedUser', function (req, res, next) {
     Solution.find()
         .populate('instance')
         .populate('paper')
-        .exec({user: decoded.user}, function (err, solutions) {
+        .where('user').equals(decoded.user._id)
+        .exec(function (err, solutions) {
             if (err) {
                 return res.status(500).json({
                     title: 'An error occurred',
@@ -273,6 +315,40 @@ router.get('/solutionsByLoggedUser', function (req, res, next) {
                 obj: solutions
             });
         });
+});
+
+router.post('/betterSolutions', function (req, res, next) {
+    var decoded = jwt.decode(req.query.token);
+    Instance.findOne({name: req.body.instanceName}, function (err, instance) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        Solution.find()
+            .where('user').equals(decoded.user._id)
+            .where('instance').equals(instance._id)
+            .where('technique').equals(req.body.technique)
+            .exec(function (err, solutions) {
+                if (err) {
+                    return res.status(500).json({
+                        title: 'An error occurred',
+                        error: err
+                    });
+                }
+                if (!solutions) {
+                    return res.status(500).json({
+                        title: 'No Solution Found!',
+                        error: {message: 'Solution not found'}
+                    });
+                }
+                res.status(200).json({
+                    message: 'Success',
+                    obj: solutions
+                });
+            });
+    });
 });
 
 router.delete('/solution/:id', function (req, res, next) {

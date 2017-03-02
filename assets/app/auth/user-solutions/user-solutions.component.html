@@ -1,46 +1,23 @@
-<div class="col-md-6 col-md-offset-2">
-    <h4>My solutions</h4>
-    <div *ngIf="solutions">
-        <div *ngFor="let solution of solutions; let i = index">
-            <input type="checkbox" [(ngModel)]="solution.isChecked">
-            {{ i + 1 }} {{ solution.postDate | date}}
-        </div>
-    </div>
+<div class="col-md-12">
+    <h2>My solutions</h2>
     <div>
-        <button class="btn btn-success"(click)="onAddPaper()">Add paper</button>
-        <button class="btn btn-danger" (click)="onRemovePaper()">Remove paper</button>
+        <button *ngIf="!isShowPapers()" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
+        <button *ngIf="isShowPapers()" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
+        <button class="btn btn-success btn-xs" (click)="onAddPaper()">Add paper</button>
+        <button class="btn btn-danger btn-xs" (click)="onRemovePaper()">Remove paper</button>
     </div>
     <div *ngIf="isShowPaperForm()">
-        <h4>Select</h4>
-        <ul>
-            <li *ngFor="let paper of papers">
-                <input type="radio" name="paper" (click)="getValue(paper.paperId)"
-                       [checked]="paper.paperId == selectedPaper.paperId"
-                       value= {{paper.paperId}}>{{paper.citation}}
-                        <a href="{{paper.url}}">link</a>
-            </li>
-        </ul>
-        <h4>Create new paper</h4>
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-            <div class="form-group"
-                 [ngClass]="{'has-error':
-                        !myForm.controls['citation'].valid && myForm.controls['citation'].touched}">
+        <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
                 <label for="citation">
                     Citation
                 </label>
                 <textarea
-                        type="text"
                         id="citation"
                         class="form-control"
                         [formControl]="myForm.controls['citation']"></textarea>
-                <div class="field-error"
-                     *ngIf="myForm.controls['citation'].hasError('required') && myForm.controls['citation'].touched">
-                    Field is required.
-                </div>
             </div>
-            <div class="form-group"
-                 [ngClass]="{'has-error':
-                        !myForm.controls['url'].valid && myForm.controls['url'].touched}">
+            <div class="form-group">
                 <label for="url">
                     Url
                 </label>
@@ -49,19 +26,67 @@
                         id="url"
                         class="form-control"
                         [formControl]="myForm.controls['url']">
-                <div class="field-error"
-                     *ngIf="myForm.controls['url'].hasError('required') && myForm.controls['url'].touched">
-                    Field is required.
-                </div>
             </div>
             <div align="right">
-                <button
-                        class="btn btn-primary align-right"
-                        type="submit"
-                        [disabled]="!myForm.valid">
-                    Save
-                </button>
+                <div align="right">
+                    <button
+                            class="btn btn-default align-right"
+                            (click)="onHidePaperForm()">
+                        Cancel
+                    </button>
+                    <button
+                            class="btn btn-primary align-right"
+                            type="submit">
+                        Save
+                    </button>
+                </div>
             </div>
         </form>
+    </div>
+    <div *ngIf="solutions" class="solutions">
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Instance</th>
+                <th>Unassigned Variables</th>
+                <th>Total Cost</th>
+                <th>Student Conflicts</th>
+                <th>Time Preferences</th>
+                <th>Room Preferences</th>
+                <th>Distribution Preferences</th>
+                <th>Download</th>
+                <th>Technique</th>
+                <th>Submission time</th>
+                <th>Validator Info</th>
+            </tr>
+            </thead>
+            <tbody *ngFor="let solution of solutions">
+            <tr>
+                <td><input type="checkbox" [(ngModel)]="solution.isChecked"></td>
+                <td>{{ solution.instance.name }}</td>
+                <td>{{ solution.unassigned }}&nbsp;%</td>
+                <td>{{ solution.total }}</td>
+                <td>{{ solution.sc }}&nbsp;%</td>
+                <td>{{ solution.time }}&nbsp;%</td>
+                <td>{{ solution.room }}&nbsp;%</td>
+                <td>{{ solution.distr }}&nbsp;%</td>
+                <td><a (click)="onDownload(solution)">download</a></td>
+                <td>{{ solution.technique }}</td>
+                <td>{{ solution.postDate | date }}</td>
+                <td>{{ solution.info }}</td>
+            </tr>
+            <tr *ngIf="isShowPapers()">
+                <td></td>
+                <td><strong>Citation: </strong></td>
+                <td colspan="10" id="paper">{{ solution.paper?.citation}}</td>
+            </tr>
+            <tr *ngIf="isShowPapers()">
+                <td></td>
+                <td><strong>Url: </strong></td>
+                <td colspan="10" id="paper"><a href="{{solution.paper?.url}}">{{ solution.paper?.url}}</a></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>

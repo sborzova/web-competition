@@ -1,69 +1,82 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormGroup, FormControl } from "@angular/forms";
 
-import { ValidationService } from "../../validation/validation.service";
+import { SolutionService } from "../../validation/solution.service";
 import { Solution } from "../solution.model";
 import { Paper } from "../paper.model";
 import { PaperService } from "../paper.service";
+import { FlashMessagesService } from "angular2-flash-messages";
+import { SolutionPaper } from "../solution-paper.model";
 
 @Component({
     selector: 'app-user-solutions',
-    templateUrl: 'user-solutions.component.html'
+    templateUrl: 'user-solutions.component.html',
+    styleUrls: ['user-solutions.component.css']
 })
 export class UserSolutionsComponent implements OnInit{
+    fileSaver = require('file-saver');
     solutions: Solution[];
     papers: Paper[];
     selectedPaper: Paper;
     myForm: FormGroup;
     showPaperForm: boolean = false;
+    showPapers: boolean = false;
 
-    constructor(private solutionService: ValidationService,
-                private paperService: PaperService){}
+    constructor(private solutionService: SolutionService,
+                private paperService: PaperService,
+                private flashMessagesService: FlashMessagesService){}
 
     ngOnInit(){
         this.solutionService.getSolutionsByLoggedUser()
             .subscribe(
-                solutions => this.solutions = solutions,
+                solutions => {
+                    this.solutions = solutions;
+                },
                 error => console.error(error)
             )
     }
 
+    onDownload(solution: Solution){
+        let file = new File([solution.data], 'solution.xml', {type: "text/xml;charset=utf-8"});
+        this.fileSaver.saveAs(file);
+    }
+
     onAddPaper(){
+        if (!this.checkIfSelected())
+            return;
+        if (!this.checkOnlyWithNoPaper())
+            return;
+        const solutions = this.selectedSolutions;
         this.myForm = new FormGroup({
-            citation: new FormControl(null, Validators.required),
-            url: new FormControl(null, Validators.required)
+            citation: new FormControl(null),
+            url: new FormControl(null)
         });
-        // let papers: Paper[] = [];
-        // for (let solution of this.solutions){
-        //     if (typeof solution.paper != null){
-        //         papers.push(solution.paper);
-        //     }
-        // }
-        // for (let paper of papers){
-        //     this.paperService.getPaper(paper)
-        //         .subscribe(
-        //             paper => this.papers.push(paper),
-        //             error => console.error(error)
-        //         )
-        // }
-        // if (this.papers && this.papers[0]){
-        //     this.selectedPaper = this.papers[0];
-        // }
+
         this.showPaperForm = true;
     }
 
     onRemovePaper(){
-        const solutions = this.selectedSolutions;
-        for (let solution of solutions){
+        this.checkIfSelected();
+        for (let solution of this.selectedSolutions){
+            solution.paper = null;
             this.solutionService.deletePaperFromSolution(solution)
                 .subscribe(
-                    solution => console.log(solution),
+                    solution => {
+                        this.flashMessagesService.grayOut(true);
+                        this.flashMessagesService.show('Papers was deleted.', { cssClass: 'alert-success', timeout:1700 } );
+                        this.uncheckSelected();
+                    },
                     error => console.error(error)
                 )
         }
     }
 
     onSubmit(){
+        if (!(this.myForm.value.citation || this.myForm.value.url)){
+            this.flashMessagesService.grayOut(true);
+            this.flashMessagesService.show('Fill in at least one field.', { cssClass: 'alert-danger', timeout:1700 } );
+            return;
+        }
         const paper = new Paper(
             this.myForm.value.citation,
             this.myForm.value.url
@@ -71,11 +84,26 @@ export class UserSolutionsComponent implements OnInit{
         this.paperService.savePaper(paper)
             .subscribe(
                 paper => {
-                    console.log(paper);
-                    this.showPaperForm = false;
+                    this.setPaperToSolutions(paper);
                 } ,
                 error => console.error(error)
             );
+    }
+
+    private setPaperToSolutions(paper: Paper) {
+        console.log(paper);
+        for (let s of this.selectedSolutions){
+            this.solutionService.updateSolutionPaper(new SolutionPaper(s.solutionId, paper.paperId))
+                .subscribe(
+                    result =>console.log(result),
+                    error => console.error(error)
+                );
+            s.paper = paper;
+        }
+        this.flashMessagesService.grayOut(true);
+        this.flashMessagesService.show('Paper was saved.', { cssClass: 'alert-success', timeout:1700 } );
+        this.uncheckSelected();
+        this.showPaperForm = false;
     }
 
     get selectedSolutions() {
@@ -89,5 +117,48 @@ export class UserSolutionsComponent implements OnInit{
 
     isShowPaperForm(){
         return this.showPaperForm;
+    }
+
+    isShowPapers(){
+        return this.showPapers;
+    }
+
+    onShowPapers(){
+        this.showPapers = true;
+    }
+
+    onHidePapers(){
+        this.showPapers = false;
+    }
+
+    onHidePaperForm(){
+        this.uncheckSelected();
+        this.showPaperForm = false;
+    }
+
+    private checkIfSelected() {
+        if (this.selectedSolutions.length == 0){
+            this.flashMessagesService.grayOut(true);
+            this.flashMessagesService.show('Select solutions.', { cssClass: 'alert-info', timeout:1700 } );
+            return false;
+        }
+        return true;
+    }
+
+    private uncheckSelected() {
+        for (let s of this.selectedSolutions){
+            s.isChecked = false;
+        }
+    }
+
+    private checkOnlyWithNoPaper() {
+        for (let s of this.selectedSolutions){
+            if (s.paper != null){
+                this.flashMessagesService.grayOut(true);
+                this.flashMessagesService.show('Select only solutions with no papers.', { cssClass: 'alert-danger', timeout:1700 } );
+                return false;
+            }
+        }
+        return true;
     }
 }

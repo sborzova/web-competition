@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 
 import { AuthService } from "../auth.service";
 import { User } from "../user.model";
+import { FlashMessagesService } from "angular2-flash-messages";
 
 @Component({
     selector: 'app-profile-edit',
@@ -14,6 +15,7 @@ export class UserEditComponent implements OnInit {
     private user : User;
 
     constructor(private authService: AuthService,
+                private flashMessagesService: FlashMessagesService,
                 private router: Router) {}
 
     onSubmit(form: NgForm){
@@ -25,7 +27,8 @@ export class UserEditComponent implements OnInit {
         this.authService.updateUser(this.user)
             .subscribe(
                 user => {
-                    console.log(user);
+                    this.flashMessagesService.grayOut(true);
+                    this.flashMessagesService.show('Profile was updated.', { cssClass: 'alert-success', timeout:1700 } );
                     this.navigateBack();
                 },
                 error => console.error(error)

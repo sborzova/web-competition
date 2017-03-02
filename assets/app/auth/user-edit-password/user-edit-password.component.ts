@@ -5,6 +5,7 @@ import { Router } from "@angular/router";
 import { Password } from "../password.model";
 import { User } from "../user.model";
 import { AuthService } from "../auth.service";
+import { FlashMessagesService } from "angular2-flash-messages";
 
 @Component({
     selector: 'app-profile-edit-pass',
@@ -17,6 +18,7 @@ export class UserEditPasswordComponent implements OnInit{
     private submitted: boolean = false;
 
     constructor(private authService: AuthService,
+                private flashMessagesService: FlashMessagesService,
                 private router: Router) {}
 
     onSubmit(form: NgForm){
@@ -27,7 +29,8 @@ export class UserEditPasswordComponent implements OnInit{
             this.authService.updatePassword(this.user)
                 .subscribe(
                     user => {
-                        console.log(user);
+                        this.flashMessagesService.grayOut(true);
+                        this.flashMessagesService.show('Password was updated.', { cssClass: 'alert-success', timeout:1700 } );
                         this.navigateBack();
                     },
                     error => console.error(error)

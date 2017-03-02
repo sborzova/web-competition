@@ -10,7 +10,6 @@ export class PaperService {
     private hostUrl: string;
 
     constructor(private http: Http) {
-
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
@@ -23,7 +22,8 @@ export class PaperService {
                 const result = response.json().obj;
                 const paper = new Paper(
                     result.data.citation,
-                    result.data.url);
+                    result.data.url,
+                    result.data._id);
                 return paper;
             })
             .catch((error: Response) => {

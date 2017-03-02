@@ -2,8 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { User } from "../user.model";
 import { AuthService } from "../auth.service";
-import { ErrorService } from "../../messages/errors/error.service";
-import { SuccessService } from "../../messages/successes/success.service";
 
 
 @Component({
@@ -13,12 +11,7 @@ import { SuccessService } from "../../messages/successes/success.service";
 export class UserInfoComponent implements OnInit {
     @Input() user: User;
 
-    constructor(private authService: AuthService,
-                private errorService: ErrorService,
-                private successService: SuccessService) {
-
-        this.errorService.deleteError();
-        this.successService.deleteSuccess();
+    constructor(private authService: AuthService) {
     }
 
     ngOnInit(){

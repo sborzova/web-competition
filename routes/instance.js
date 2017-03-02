@@ -3,6 +3,7 @@ var router = express.Router();
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 var multer = require('multer');
+var flash = require('flash')();
 
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
@@ -30,6 +31,7 @@ router.post('/instance', function (req, res) {
                 error: {message: 'Instance with this name is already in use', error: err}
             });
         }
+
         res.status(201).json({
             message: 'Saved instance',
             obj: {message: 'Instance was created', data: result}
@@ -103,11 +105,12 @@ router.patch('/instanceTextFields/:id', function (req, res, next) {
 
         instance.save(function (err, result) {
             if (err) {
-                return res.status(500).json({
+                return res.status(422).json({
                     title: 'An error occurred',
-                    error: err
+                    error: {message: 'Instance with this name is already in use', error: err}
                 });
             }
+
             res.status(200).json({
                 message: 'Updated instance',
                 obj: {message: 'Instance was updated', data: result}

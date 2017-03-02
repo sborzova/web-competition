@@ -4,30 +4,28 @@ import 'rxjs/Rx';
 import { Observable } from "rxjs";
 
 import { User } from "./user.model";
-import { ErrorService } from "../messages/errors/error.service";
-import { SuccessService } from "../messages/successes/success.service";
+import { FlashMessagesService } from "angular2-flash-messages";
 
 @Injectable()
 export class AuthService{
     private hostUrl: string;
 
     constructor(private http: Http,
-                private errorService: ErrorService,
-                private successService: SuccessService) {
+                private flashMessagesService: FlashMessagesService) {
 
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
 
     signup(user: User) {
-        this.errorService.deleteError();
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl, body, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => {
                 if (error.status === 422){
-                    this.errorService.handleError(error.json());
+                    this.flashMessagesService.grayOut(true);
+                    this.flashMessagesService.show('Email address is already in use.', { cssClass: 'alert-danger', timeout: 1700 } );
                 }
                     return Observable.throw(error.json())
 
@@ -40,7 +38,8 @@ export class AuthService{
         return this.http.post(this.hostUrl.concat('signin'), body, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => {
-                this.errorService.handleError(error.json());
+                this.flashMessagesService.grayOut(true);
+                this.flashMessagesService.show('Invalid login credentials.', { cssClass: 'alert-danger', timeout: 1700 } );
                 return Observable.throw(error.json())
             });
     }
@@ -64,7 +63,6 @@ export class AuthService{
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(this.hostUrl.concat('user') + token, body, {headers: headers})
             .map((response: Response) => {
-                // this.successService.handleSuccess(response.json());
                 return response.json();
             })
             .catch((error: Response) => Observable.throw(error.json()));
@@ -78,12 +76,12 @@ export class AuthService{
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(this.hostUrl.concat('password') + token, body, {headers: headers})
             .map((response: Response) => {
-                // this.successService.handleSuccess(response.json());
                 return response.json();
             })
             .catch((error: Response) => {
                 if (error.status === 412){
-                    this.errorService.handleError(error.json());
+                    this.flashMessagesService.grayOut(true);
+                    this.flashMessagesService.show('Current password is incorrect.', { cssClass: 'alert-danger', timeout: 1700 } );
                 }
                 return Observable.throw(error.json())
             })
