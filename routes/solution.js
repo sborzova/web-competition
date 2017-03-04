@@ -317,7 +317,7 @@ router.get('/solutionsByLoggedUser', function (req, res, next) {
         });
 });
 
-router.post('/betterSolutions', function (req, res, next) {
+router.post('/worseSolutions', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
     Instance.findOne({name: req.body.instanceName}, function (err, instance) {
         if (err) {
@@ -330,6 +330,7 @@ router.post('/betterSolutions', function (req, res, next) {
             .where('user').equals(decoded.user._id)
             .where('instance').equals(instance._id)
             .where('technique').equals(req.body.technique)
+            .where('unassigned').gte(req.body.unassigned)
             .exec(function (err, solutions) {
                 if (err) {
                     return res.status(500).json({

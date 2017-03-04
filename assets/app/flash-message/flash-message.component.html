@@ -1,0 +1,7 @@
+<div [ngStyle]="{'display': display}">
+    <!--<div id="grayOutDiv" *ngIf='_grayOut && messages.length'></div>-->
+    <div class="grayOutDiv"></div>
+    <div class="alert flash-message {{message?.cssClass}}">
+        <p>{{message?.text}}</p>
+    </div>
+</div>

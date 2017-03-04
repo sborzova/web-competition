@@ -3,7 +3,7 @@ import { Http, Response, Headers } from "@angular/http";
 import { Observable } from "rxjs";
 
 import { Instance } from "./instance.model";
-import {FlashMessagesService} from "angular2-flash-messages";
+import { FlashMessageService } from "../flash-message/flash-messages.service";
 
 
 @Injectable()
@@ -13,7 +13,7 @@ export class InstanceService {
     private xmlHttp;
 
     constructor(private http: Http,
-                private flashMessagesService: FlashMessagesService) {
+                private flashMessageService: FlashMessageService) {
 
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
@@ -39,8 +39,7 @@ export class InstanceService {
             })
             .catch((error: Response) => {
                 if (error.status === 422){
-                    this.flashMessagesService.grayOut(true);
-                    this.flashMessagesService.show('The name is already in use.', { cssClass: 'alert-danger', timeout:1700 } );
+                    this.flashMessageService.showMessage('The name is already in use.', 'alert-danger' );
                 }
                 return Observable.throw(error.json())
             });
@@ -99,8 +98,7 @@ export class InstanceService {
             })
             .catch((error: Response) => {
                 if (error.status === 422){
-                    this.flashMessagesService.grayOut(true);
-                    this.flashMessagesService.show('The name is already in use.', { cssClass: 'alert-danger', timeout:1700 } );
+                    this.flashMessageService.showMessage('The name is already in use.', 'alert-danger' );
                 }
                 return Observable.throw(error.json());
             });

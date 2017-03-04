@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 import { InstanceService } from "../instance.service";
 import { Instance } from "../instance.model";
 import { minValue } from "../min-value.validator";
-import {FlashMessagesService} from "angular2-flash-messages";
+import { FlashMessageService } from "../../flash-message/flash-messages.service";
 
 @Component({
     selector: 'app-instance-new',
@@ -21,7 +21,7 @@ export class InstanceCreateComponent implements OnInit {
     @ViewChild('data') dataElem;
 
     constructor(private router: Router,
-                private flashMessagesService: FlashMessagesService,
+                private flashMessageService: FlashMessageService,
                 private instancesService: InstanceService) {
 
     }
@@ -79,8 +79,7 @@ export class InstanceCreateComponent implements OnInit {
                         this.instancesService.saveFiles(fd, id)
                             .subscribe(
                                 () => {
-                                    this.flashMessagesService.grayOut(true);
-                                    this.flashMessagesService.show('Instance was created.', { cssClass: 'alert-success', timeout:1700 } );
+                                    this.flashMessageService.showMessage('Instance was created.', 'alert-success' );
                                 },
                                 error => {
                                     console.error(error);

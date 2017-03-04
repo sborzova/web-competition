@@ -1,4 +1,4 @@
-export class SolutionFindBetter {
+export class SolutionFindWorse {
     constructor(public unassigned: number,
                 public total: number,
                 public technique: string,

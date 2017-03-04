@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { UsersService } from "./user.service";
 import { User } from "./user.model";
-import {FlashMessagesService} from "angular2-flash-messages";
+import { FlashMessageService } from "../flash-message/flash-messages.service";
 
 @Component({
     selector: 'app-users',
@@ -12,7 +12,7 @@ export class UsersComponent implements OnInit {
     @Input() users : User[];
 
     constructor(private usersService: UsersService,
-                private flashMessagesService: FlashMessagesService){
+                private flashMessageService: FlashMessageService){
     }
 
     ngOnInit() {
@@ -28,8 +28,7 @@ export class UsersComponent implements OnInit {
         this.usersService.deleteUser(user)
             .subscribe(
                 result => {
-                    this.flashMessagesService.grayOut(true);
-                    this.flashMessagesService.show('User was deleted.', { cssClass: 'alert-success', timeout:1700 } );
+                    this.flashMessageService.showMessage('User was deleted.', 'alert-success' );
                 },
                 error => console.error(error)
             );

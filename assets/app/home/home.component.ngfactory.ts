@@ -12,10 +12,8 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../messages/errors/error.service';
-import * as import9 from '../messages/successes/success.service';
-import * as import10 from '@angular/core/src/metadata/view';
-import * as import11 from '@angular/core/src/linker/component_factory';
+import * as import8 from '@angular/core/src/metadata/view';
+import * as import9 from '@angular/core/src/linker/component_factory';
 var renderType_HomeComponent_Host:import0.RenderComponentType = (null as any);
 class _View_HomeComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -28,7 +26,7 @@ class _View_HomeComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-home',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_HomeComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._HomeComponent_0_4 = new import3.HomeComponent(this.parentInjector.get(import8.ErrorService),this.parentInjector.get(import9.SuccessService));
+    this._HomeComponent_0_4 = new import3.HomeComponent();
     this._appEl_0.initComponent(this._HomeComponent_0_4,[],compView_0);
     compView_0.create(this._HomeComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -40,34 +38,31 @@ class _View_HomeComponent_Host0 extends import1.AppView<any> {
   }
 }
 function viewFactory_HomeComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_HomeComponent_Host === (null as any))) { (renderType_HomeComponent_Host = viewUtils.createRenderComponentType('',0,import10.ViewEncapsulation.None,[],{})); }
+  if ((renderType_HomeComponent_Host === (null as any))) { (renderType_HomeComponent_Host = viewUtils.createRenderComponentType('',0,import8.ViewEncapsulation.None,[],{})); }
   return new _View_HomeComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const HomeComponentNgFactory:import11.ComponentFactory<import3.HomeComponent> = new import11.ComponentFactory<import3.HomeComponent>('app-home',viewFactory_HomeComponent_Host0,import3.HomeComponent);
+export const HomeComponentNgFactory:import9.ComponentFactory<import3.HomeComponent> = new import9.ComponentFactory<import3.HomeComponent>('app-home',viewFactory_HomeComponent_Host0,import3.HomeComponent);
 const styles_HomeComponent:any[] = [];
 var renderType_HomeComponent:import0.RenderComponentType = (null as any);
 class _View_HomeComponent0 extends import1.AppView<import3.HomeComponent> {
   _el_0:any;
-  _el_1:any;
-  _text_2:any;
+  _text_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_HomeComponent0,renderType_HomeComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
     this._el_0 = this.renderer.createElement(parentRenderNode,'h1',(null as any));
-    this._el_1 = this.renderer.createElement(this._el_0,'em',(null as any));
-    this._text_2 = this.renderer.createText(this._el_1,'HOME',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'Course Time Tabling Competition',(null as any));
     this.init([],[
       this._el_0,
-      this._el_1,
-      this._text_2
+      this._text_1
     ]
     ,[],[]);
     return (null as any);
   }
 }
 export function viewFactory_HomeComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.HomeComponent> {
-  if ((renderType_HomeComponent === (null as any))) { (renderType_HomeComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/home/home.component.html',0,import10.ViewEncapsulation.None,styles_HomeComponent,{})); }
+  if ((renderType_HomeComponent === (null as any))) { (renderType_HomeComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/home/home.component.html',0,import8.ViewEncapsulation.None,styles_HomeComponent,{})); }
   return new _View_HomeComponent0(viewUtils,parentInjector,declarationEl);
 }

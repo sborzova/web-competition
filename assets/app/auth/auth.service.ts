@@ -4,14 +4,14 @@ import 'rxjs/Rx';
 import { Observable } from "rxjs";
 
 import { User } from "./user.model";
-import { FlashMessagesService } from "angular2-flash-messages";
+import { FlashMessageService } from "../flash-message/flash-messages.service";
 
 @Injectable()
 export class AuthService{
     private hostUrl: string;
 
     constructor(private http: Http,
-                private flashMessagesService: FlashMessagesService) {
+                private flashMessageService: FlashMessageService) {
 
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
@@ -24,8 +24,7 @@ export class AuthService{
             .map((response: Response) => response.json())
             .catch((error: Response) => {
                 if (error.status === 422){
-                    this.flashMessagesService.grayOut(true);
-                    this.flashMessagesService.show('Email address is already in use.', { cssClass: 'alert-danger', timeout: 1700 } );
+                    this.flashMessageService.showMessage('Email address is already in use.', 'alert-danger' );
                 }
                     return Observable.throw(error.json())
 
@@ -38,8 +37,7 @@ export class AuthService{
         return this.http.post(this.hostUrl.concat('signin'), body, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => {
-                this.flashMessagesService.grayOut(true);
-                this.flashMessagesService.show('Invalid login credentials.', { cssClass: 'alert-danger', timeout: 1700 } );
+                this.flashMessageService.showMessage('Invalid login credentials.', 'alert-danger' );
                 return Observable.throw(error.json())
             });
     }
@@ -80,8 +78,7 @@ export class AuthService{
             })
             .catch((error: Response) => {
                 if (error.status === 412){
-                    this.flashMessagesService.grayOut(true);
-                    this.flashMessagesService.show('Current password is incorrect.', { cssClass: 'alert-danger', timeout: 1700 } );
+                    this.flashMessageService.showMessage('Current password is incorrect.', 'alert-danger' );
                 }
                 return Observable.throw(error.json())
             })

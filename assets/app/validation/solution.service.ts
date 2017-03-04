@@ -6,9 +6,9 @@ import { SolutionCreate } from "./solution-create.model";
 import { Solution } from "../auth/solution.model";
 import { Validation } from "./validation.model";
 import { Paper } from "./paper.model";
-import { FlashMessagesService } from "angular2-flash-messages";
 import { SolutionPaper } from "../auth/solution-paper.model";
-import { SolutionFindBetter } from "./solution-find-better.model";
+import { SolutionFindWorse } from "./solution-find-worse.model";
+import { FlashMessageService } from "../flash-message/flash-messages.service";
 
 @Injectable()
 export class SolutionService {
@@ -16,11 +16,14 @@ export class SolutionService {
     private xmlHttp;
     private solutionFile;
     successValidation = new EventEmitter<Validation>();
+    worseSolutions = new EventEmitter<Solution []>();
     private successValidationDeleteSource = new Subject();
+    private worseSolutionsDeleteSource = new Subject();
     successValidationDelete$ = this.successValidationDeleteSource.asObservable();
+    worseSolutionsDeleteSource$ = this.worseSolutionsDeleteSource.asObservable();
 
     constructor(private http: Http,
-                private flashMessagesService: FlashMessagesService){
+                private flashMessageService: FlashMessageService){
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
@@ -62,8 +65,7 @@ export class SolutionService {
                                     this.saveFileSolution(solutionId)
                                         .subscribe(
                                             () => {
-                                                this.flashMessagesService.grayOut(true);
-                                                this.flashMessagesService.show('Solution was uploaded.', { cssClass: 'alert-success', timeout:1700 } );
+                                                this.flashMessageService.showMessage('Solution was uploaded.', 'alert-success' );
                                                 this.successValidationHideResult();
                                             },
                                             error => console.error(JSON.parse(error))
@@ -80,8 +82,7 @@ export class SolutionService {
                         this.saveFileSolution(solutionId)
                             .subscribe(
                                 () => {
-                                    this.flashMessagesService.grayOut(true);
-                                    this.flashMessagesService.show('Solution was uploaded.', { cssClass: 'alert-success', timeout:1700 } );
+                                    this.flashMessageService.showMessage('Solution was uploaded.', 'alert-success' );
                                     this.successValidationHideResult();
                                 },
                                 error => console.error(JSON.parse(error))
@@ -92,15 +93,35 @@ export class SolutionService {
         }
     }
 
-    getBetterSolutionWithTechnique(solution: SolutionFindBetter){
+    getWorseSolutions(solution: SolutionFindWorse){
         const body = JSON.stringify(solution);
         const token = sessionStorage.getItem('token')
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.hostUrl.concat('betterSolutions') + token, body, {headers: headers})
+        return this.http.post(this.hostUrl.concat('worseSolutions') + token, body, {headers: headers})
             .map((response: Response) => {
-                return response.json().obj;
+                const solutions = response.json().obj;
+                let transformedSolutions: Solution[] = [];
+                for (let solution of solutions) {
+                    transformedSolutions.push(new Solution(
+                        solution.unassigned,
+                        solution.total,
+                        solution.sc,
+                        solution.time,
+                        solution.room,
+                        solution.distr,
+                        solution.technique,
+                        solution.info,
+                        solution.postDate,
+                        solution.data,
+                        solution.instance,
+                        solution.paper,
+                        solution._id,
+                        false)
+                    );
+                }
+                return transformedSolutions;
             })
             .catch((error: Response) => Observable.throw(error.json()));
     }
@@ -178,6 +199,14 @@ export class SolutionService {
         this.successValidationDeleteSource.next();
     }
 
+    worseSolutionsShow(solutions: Solution[]){
+        this.worseSolutions.emit(solutions);
+    }
+
+    worseSolutionsHide(){
+        this.worseSolutionsDeleteSource.next();
+    }
+
     setSolutionFile(file: any){
         this.solutionFile = file;
     }
@@ -218,5 +247,28 @@ export class SolutionService {
                 return response.json();
             })
             .catch((error: Response) => Observable.throw(error.json()));
+    }
+
+    deleteSolution(solution: Solution){
+        return this.http.delete(
+            this.hostUrl.concat('solution/') + solution.solutionId)
+            .map((response: Response) => {
+                return response.json();
+            })
+            .catch((error: Response) => {
+                return Observable.throw(error.json());
+            });
+    }
+
+    deleteSolutions(solutions: Solution[]) {
+        for (let s of solutions){
+            this.deleteSolution(s)
+                .subscribe(() => {}, error => console.error(error))
+        }
+        if (solutions.length = 1){
+            this.flashMessageService.showMessage('Solution was deleted.', 'alert-success');
+        }else {
+            this.flashMessageService.showMessage('Solutions were deleted.', 'alert-success');
+        }
     }
 }

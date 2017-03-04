@@ -4,8 +4,9 @@ import { Subscription} from "rxjs";
 
 import { SolutionService } from "../solution.service";
 import { Validation } from "../validation.model";
+import { SolutionFindWorse } from "../solution-find-worse.model";
+import { Solution } from "../../auth/solution.model";
 import { SolutionCreate } from "../solution-create.model";
-import { SolutionFindBetter } from "../solution-find-better.model";
 
 @Component({
     selector: 'app-success-validation',
@@ -23,6 +24,8 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
             .subscribe(
                 () => {
                     this.display = 'none';
+                    this.myForm.reset();
+                    this.submitted = false;
                 }
             );
     }
@@ -45,15 +48,39 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     onSubmit(){
         this.submitted = true;
         if (this.myForm.valid){
-            this.solutionService.getBetterSolutionWithTechnique(
-                new SolutionFindBetter(
+            this.solutionService.getWorseSolutions(
+                new SolutionFindWorse(
                     this.validation.unassigned,
                     this.validation.total,
                     this.myForm.value.technique,
                     this.validation.instanceName)
                 ).subscribe(
-                    data => {
+                (solutions: Solution[]) => {
+                        solutions.push(new Solution(
+                            this.validation.unassigned,
+                            this.validation.total,
+                        ));
+                        solutions.sort(function (a, b) {
+                            let aUnassigned = a.unassigned;
+                            let bUnassigned = b.unassigned;
+                            let aTotal = a.total;
+                            let bTotal = b.total;
 
+                            if (aUnassigned == bUnassigned){
+                                return (aTotal < bTotal) ? -1 : (aTotal >= bTotal) ? 1 : 0;
+                            }else {
+                                return (aUnassigned > bUnassigned) ? -1 : 1;
+                            }
+                        });
+                        let worseSolutions: Solution [] = [];
+                        let i : number = 0;
+                        while(i < solutions.length && solutions[i].solutionId){
+                            worseSolutions.push(solutions[i]);
+                            i++;
+                        }
+                        if (worseSolutions.length > 0){
+                            this.solutionService.worseSolutionsShow(worseSolutions);
+                        }
                     },
                     error => console.log(error)
             );

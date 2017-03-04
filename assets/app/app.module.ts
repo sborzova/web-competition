@@ -30,11 +30,14 @@ import { UserSolutionsComponent } from "./auth/user-solutions/user-solutions.com
 import { PaperService } from "./auth/paper.service";
 import { SortPipe } from "./instances/sort.pipe";
 import { SuccessValidationComponent } from "./validation/success-validation/success-validation.component";
-import { FlashMessagesModule } from "angular2-flash-messages";
+import { FlashMessageComponent } from "./flash-message/flash-message.component";
+import { FlashMessageService} from "./flash-message/flash-messages.service";
+import { WorseSolutionsComponent } from "./validation/worse-solutions/worse-solutions.component";
 
 @NgModule({
     declarations: [
         AppComponent,
+        FlashMessageComponent,
         HeaderComponent,
         HomeComponent,
         SigninComponent,
@@ -52,6 +55,7 @@ import { FlashMessagesModule } from "angular2-flash-messages";
         InstanceStatsComponent,
         ValidationComponent,
         SuccessValidationComponent,
+        WorseSolutionsComponent,
         EqualValidator,
         EscapeHtmlPipe,
         SortPipe
@@ -61,7 +65,6 @@ import { FlashMessagesModule } from "angular2-flash-messages";
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        FlashMessagesModule,
         routing
     ],
     providers: [
@@ -69,7 +72,8 @@ import { FlashMessagesModule } from "angular2-flash-messages";
         UsersService,
         InstanceService,
         SolutionService,
-        PaperService
+        PaperService,
+        FlashMessageService
     ],
     bootstrap: [ AppComponent ]
 })

@@ -4,7 +4,7 @@ import { SolutionService } from "./solution.service";
 import { SolutionCreate } from "./solution-create.model";
 import { Validation } from "./validation.model";
 import { AuthService } from "../auth/auth.service";
-import {FlashMessagesService} from "angular2-flash-messages";
+import { FlashMessageService } from "../flash-message/flash-messages.service";
 
 @Component({
     selector: 'app-validation',
@@ -17,7 +17,7 @@ export class ValidationComponent implements OnInit {
 
     constructor(private validationService: SolutionService,
                 private authService: AuthService,
-                private flashMessagesService: FlashMessagesService){}
+                private flashMessageService: FlashMessageService){}
 
     ngOnInit(){
         if (!this.authService.isLoggedIn()){
@@ -37,8 +37,7 @@ export class ValidationComponent implements OnInit {
                     data => {
                         let result = JSON.parse(data);
                         if (result.status == 400){
-                                this.flashMessagesService.grayOut(true);
-                                this.flashMessagesService.show('Invalid XML format.', { cssClass: 'alert-danger', timeout:1700 } );
+                                this.flashMessageService.showMessage('Invalid XML format.', 'alert-danger' );
                         }else {
                             let info = "";
                             let logs : string[] = result.obj.log;
@@ -81,14 +80,14 @@ export class ValidationComponent implements OnInit {
                                 instanceName
                             );
                             this.validationService.successValidationShowResult(validation, solutionInput.files[0]);
+                            this.solutionElem.nativeElement.value = "";
                         }
                     },
                     error => console.error(error)
                 )
         }
         else {
-            this.flashMessagesService.grayOut(true);
-            this.flashMessagesService.show('Insert file.', { cssClass: 'alert-info', timeout:1700 } );
+            this.flashMessageService.showMessage('Insert file.', 'alert-info' );
         }
     }
 

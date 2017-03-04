@@ -6,7 +6,7 @@ import { InstanceService } from "../instance.service";
 import { Instance } from "../instance.model";
 import { Subscription } from "rxjs";
 import { minValue } from "../min-value.validator";
-import {FlashMessagesService} from "angular2-flash-messages";
+import { FlashMessageService } from "../../flash-message/flash-messages.service";
 
 @Component({
     selector: 'app-instance-edit',
@@ -23,7 +23,7 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
     constructor(private router: Router,
                 private instanceService: InstanceService,
                 private activatedRoute: ActivatedRoute,
-                private flashMessagesService: FlashMessagesService){
+                private flashMessageService: FlashMessageService){
 
     }
 
@@ -60,8 +60,7 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
                 .subscribe(
                     data => {
                         this.navigateBack();
-                        this.flashMessagesService.grayOut(true);
-                        this.flashMessagesService.show('Instance was updated', { cssClass: 'alert-success', timeout:1700 } );
+                        this.flashMessageService.showMessage('Instance was updated', 'alert-success' );
                         this.saveFiles();
                     },
                     error => console.error(error)

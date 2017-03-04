@@ -5,8 +5,8 @@ import { SolutionService } from "../../validation/solution.service";
 import { Solution } from "../solution.model";
 import { Paper } from "../paper.model";
 import { PaperService } from "../paper.service";
-import { FlashMessagesService } from "angular2-flash-messages";
 import { SolutionPaper } from "../solution-paper.model";
+import { FlashMessageService } from "../../flash-message/flash-messages.service";
 
 @Component({
     selector: 'app-user-solutions',
@@ -24,7 +24,7 @@ export class UserSolutionsComponent implements OnInit{
 
     constructor(private solutionService: SolutionService,
                 private paperService: PaperService,
-                private flashMessagesService: FlashMessagesService){}
+                private flashMessageService: FlashMessageService){}
 
     ngOnInit(){
         this.solutionService.getSolutionsByLoggedUser()
@@ -62,8 +62,7 @@ export class UserSolutionsComponent implements OnInit{
             this.solutionService.deletePaperFromSolution(solution)
                 .subscribe(
                     solution => {
-                        this.flashMessagesService.grayOut(true);
-                        this.flashMessagesService.show('Papers was deleted.', { cssClass: 'alert-success', timeout:1700 } );
+                        this.flashMessageService.showMessage('Papers was deleted.', 'alert-success' );
                         this.uncheckSelected();
                     },
                     error => console.error(error)
@@ -73,8 +72,7 @@ export class UserSolutionsComponent implements OnInit{
 
     onSubmit(){
         if (!(this.myForm.value.citation || this.myForm.value.url)){
-            this.flashMessagesService.grayOut(true);
-            this.flashMessagesService.show('Fill in at least one field.', { cssClass: 'alert-danger', timeout:1700 } );
+            this.flashMessageService.showMessage('Fill in at least one field.', 'alert-danger' );
             return;
         }
         const paper = new Paper(
@@ -100,15 +98,13 @@ export class UserSolutionsComponent implements OnInit{
                 );
             s.paper = paper;
         }
-        this.flashMessagesService.grayOut(true);
-        this.flashMessagesService.show('Paper was saved.', { cssClass: 'alert-success', timeout:1700 } );
+        this.flashMessageService.showMessage('Paper was saved.', 'alert-success' );
         this.uncheckSelected();
         this.showPaperForm = false;
     }
 
     get selectedSolutions() {
-        return this.solutions
-            .filter(s => s.isChecked);
+        return this.solutions.filter(s => s.isChecked);
     }
 
     getValue(paperId: string) {
@@ -138,8 +134,7 @@ export class UserSolutionsComponent implements OnInit{
 
     private checkIfSelected() {
         if (this.selectedSolutions.length == 0){
-            this.flashMessagesService.grayOut(true);
-            this.flashMessagesService.show('Select solutions.', { cssClass: 'alert-info', timeout:1700 } );
+            this.flashMessageService.showMessage('Select solutions.', 'alert-info' );
             return false;
         }
         return true;
@@ -154,8 +149,7 @@ export class UserSolutionsComponent implements OnInit{
     private checkOnlyWithNoPaper() {
         for (let s of this.selectedSolutions){
             if (s.paper != null){
-                this.flashMessagesService.grayOut(true);
-                this.flashMessagesService.show('Select only solutions with no papers.', { cssClass: 'alert-danger', timeout:1700 } );
+                this.flashMessageService.showMessage('Select only solutions with no papers.', 'alert-danger' );
                 return false;
             }
         }
