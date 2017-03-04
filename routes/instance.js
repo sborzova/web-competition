@@ -3,7 +3,6 @@ var router = express.Router();
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 var multer = require('multer');
-var flash = require('flash')();
 
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
