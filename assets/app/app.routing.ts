@@ -19,7 +19,7 @@ const APP_ROUTES: Routes = [
     { path: '#instances', children: INSTANCE_ROUTES },
     { path: '#profile', children: PROFILE_ROUTES },
 ];
-export const hostUrl = 'http://localhost:3000/';
-// export const hostUrl = 'https://bakalar.herokuapp.com/';
+// export const hostUrl = 'http://localhost:3000/';
+export const hostUrl = 'https://bakalar.herokuapp.com/';
 
 export const routing = RouterModule.forRoot(APP_ROUTES);
