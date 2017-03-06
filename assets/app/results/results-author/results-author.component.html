@@ -1,0 +1,51 @@
+<div *ngIf="solutions" [ngStyle]="{'display': display}" class="results">
+    <h2>Solutions of <strong>{{ solutions[0].author.name}}</strong></h2>
+    <button *ngIf="!isShowPapers()" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
+    <button *ngIf="isShowPapers()" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Instance</th>
+            <th>Unassigned Variables</th>
+            <th>Total Cost</th>
+            <th>Student Conflicts</th>
+            <th>Time Preferences</th>
+            <th>Room Preferences</th>
+            <th>Distribution Preferences</th>
+            <th>Download</th>
+            <th>Technique</th>
+            <th>Submission time</th>
+            <th>Validator Info</th>
+        </tr>
+        </thead>
+        <tbody  *ngFor="let solution of solutions">
+        <tr>
+            <td>{{ solution.instance.name }}</td>
+            <td *ngIf="solution.unassigned">{{ solution.unassigned }}&nbsp;%</td>
+            <td *ngIf="!solution.unassigned"></td>
+            <td>{{ solution.total }}</td>
+            <td *ngIf="solution.sc">{{ solution.sc }}&nbsp;%</td>
+            <td *ngIf="!solution.sc"></td>
+            <td *ngIf="solution.time">{{ solution.time }}&nbsp;%</td>
+            <td *ngIf="!solution.time"></td>
+            <td *ngIf="solution.room">{{ solution.room }}&nbsp;%</td>
+            <td *ngIf="!solution.room"></td>
+            <td *ngIf="solution.distr">{{ solution.distr }}&nbsp;%</td>
+            <td *ngIf="!solution.distr"></td>
+            <td *ngIf="solution.unassigned"><a (click)="onDownload(solution)">download</a></td>
+            <td *ngIf="!solution.unassigned"></td>
+            <td><a (click)="onTechnique(solution.technique)">{{ solution.technique }}</a></td>
+            <td>{{ solution.postDate | date }}</td>
+            <td>{{ solution.info }}</td>
+        </tr>
+        <tr *ngIf="isShowPapers()">
+            <td><strong>Citation: </strong></td>
+            <td colspan="10" id="paper">{{ solution.paper?.citation}}</td>
+        </tr>
+        <tr *ngIf="isShowPapers()">
+            <td><strong>Url: </strong></td>
+            <td colspan="10" id="paper"><a href="{{solution.paper?.url}}">{{ solution.paper?.url}}</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

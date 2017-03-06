@@ -5,7 +5,7 @@
         <ul class="nav navbar-nav  navbar-left" style="margin-left: 15%">
             <li routerLinkActive="active"><a [routerLink]="['#home']">Home</a></li>
             <li routerLinkActive="active"><a [routerLink]="['#instances']">Instances</a></li>
-            <li routerLinkActive="active"><a [routerLink]="['#results']">Results</a></li>
+            <li routerLinkActive="active" *ngIf="isAdmin()"><a [routerLink]="['#results']">Results</a></li>
             <li routerLinkActive="active"><a [routerLink]="['#validator']">Validate & insert solution</a></li>
             <li routerLinkActive="active" *ngIf="isAdmin()"><a [routerLink]="['#usersmanagement']">User management</a></li>
         </ul>

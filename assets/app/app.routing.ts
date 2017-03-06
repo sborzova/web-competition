@@ -7,12 +7,13 @@ import { PROFILE_ROUTES } from "./auth/user.routes";
 import { UsersComponent } from "./users/users.component";
 import { INSTANCE_ROUTES } from "./instances/instance.routes";
 import { ValidationComponent } from "./validation/validation.component";
+import { ResultsComponent } from "./results/results.component";
 
 const APP_ROUTES: Routes = [
     { path: '', redirectTo: '#home', pathMatch: 'full'},
     { path: '#home', component: HomeComponent },
     { path: '#usersmanagement', component: UsersComponent },
-    { path: '#results', component: HomeComponent },
+    { path: '#results', component: ResultsComponent },
     { path: '#validator', component: ValidationComponent },
     { path: '#signin', component: SigninComponent },
     { path: '#signup', component: SignupComponent },

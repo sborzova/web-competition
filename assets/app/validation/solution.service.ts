@@ -9,6 +9,9 @@ import { Paper } from "./paper.model";
 import { SolutionPaper } from "../auth/solution-paper.model";
 import { SolutionFindWorse } from "./solution-find-worse.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
+import { SolutionResult } from "../results/solution-result.model";
+import { Author } from "../results/author.model";
+import { Instance } from "../results/instance.model";
 
 @Injectable()
 export class SolutionService {
@@ -17,6 +20,9 @@ export class SolutionService {
     private solutionFile;
     successValidation = new EventEmitter<Validation>();
     worseSolutions = new EventEmitter<Solution []>();
+    resultsInstance = new EventEmitter<string>();
+    resultsAuthor = new EventEmitter<string>();
+    resultsAuthorTechnique = new EventEmitter<SolutionResult []>();
     private successValidationDeleteSource = new Subject();
     private worseSolutionsDeleteSource = new Subject();
     successValidationDelete$ = this.successValidationDeleteSource.asObservable();
@@ -181,6 +187,72 @@ export class SolutionService {
             .catch((error: Response) => Observable.throw(error.json()));
     }
 
+    getSolutionsByInstance(instanceId: string){
+        return this.http.get(this.hostUrl.concat('solutionsByInstance/') + instanceId)
+            .map((response: Response) => {
+                const solutions = response.json().obj;
+                let transformedSolutions: SolutionResult[] = [];
+                for (let solution of solutions) {
+                    transformedSolutions.push(new SolutionResult(
+                        new Instance(
+                            solution.instance.name,
+                            solution.instance._id,
+                            solution.instance.order),
+                        solution.unassigned,
+                        solution.total,
+                        solution.sc,
+                        solution.time,
+                        solution.room,
+                        solution.distr,
+                        solution.technique,
+                        solution.info,
+                        solution.postDate,
+                        solution.data,
+                        solution.paper,
+                        new Author(
+                            solution.user.firstName.concat(" ").concat(solution.user.lastName),
+                            solution.user._id),
+                        solution._id)
+                    );
+                }
+                return transformedSolutions;
+            })
+            .catch((error: Response) => Observable.throw(error.json()));
+    }
+
+    getSolutionsByUser(userId: string){
+        return this.http.get(this.hostUrl.concat('solutionsByUser/') + userId)
+            .map((response: Response) => {
+                const solutions = response.json().obj;
+                let transformedSolutions: SolutionResult[] = [];
+                for (let solution of solutions) {
+                    transformedSolutions.push(new SolutionResult(
+                        new Instance(
+                            solution.instance.name,
+                            solution.instance._id,
+                            solution.instance.order),
+                        solution.unassigned,
+                        solution.total,
+                        solution.sc,
+                        solution.time,
+                        solution.room,
+                        solution.distr,
+                        solution.technique,
+                        solution.info,
+                        solution.postDate,
+                        solution.data,
+                        solution.paper,
+                        new Author(
+                            solution.user.firstName.concat(" ").concat(solution.user.lastName),
+                            solution.user._id),
+                        solution._id)
+                    );
+                }
+                return transformedSolutions;
+            })
+            .catch((error: Response) => Observable.throw(error.json()));
+    }
+
     deletePaperFromSolution(solution: Solution){
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(this.hostUrl.concat('solutionRemovePaper/') + solution.solutionId, {headers: headers})
@@ -205,6 +277,18 @@ export class SolutionService {
 
     worseSolutionsHide(){
         this.worseSolutionsDeleteSource.next();
+    }
+
+    resultsInstanceShow(instanceId: string){
+        this.resultsInstance.emit(instanceId);
+    }
+
+    resultsAuthorShow(authorId: string){
+        this.resultsAuthor.emit(authorId);
+    }
+
+    resultsAuthorTechniqueShow(solutions: SolutionResult[]){
+        this.resultsAuthorTechnique.emit(solutions);
     }
 
     setSolutionFile(file: any){

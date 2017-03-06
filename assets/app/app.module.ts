@@ -33,6 +33,12 @@ import { SuccessValidationComponent } from "./validation/success-validation/succ
 import { FlashMessageComponent } from "./flash-message/flash-message.component";
 import { FlashMessageService} from "./flash-message/flash-messages.service";
 import { WorseSolutionsComponent } from "./validation/worse-solutions/worse-solutions.component";
+import { ResultsComponent } from "./results/results.component";
+import { ResultsBestComponent } from "./results/results-best/results-best.component";
+import { ResultsInstanceComponent } from "./results/results-instance/results-instance.component";
+import { ResultsAuthorComponent } from "./results/results-author/results-author.component";
+import { ResultsAuthorTechniqueComponent } from "./results/results-author-technique/results-author-technique.component";
+import { SortObjectPipe } from "./results/sort-object";
 
 @NgModule({
     declarations: [
@@ -56,9 +62,15 @@ import { WorseSolutionsComponent } from "./validation/worse-solutions/worse-solu
         ValidationComponent,
         SuccessValidationComponent,
         WorseSolutionsComponent,
+        ResultsComponent,
+        ResultsBestComponent,
+        ResultsInstanceComponent,
+        ResultsAuthorComponent,
+        ResultsAuthorTechniqueComponent,
         EqualValidator,
         EscapeHtmlPipe,
-        SortPipe
+        SortPipe,
+        SortObjectPipe
     ],
     imports: [
         BrowserModule,

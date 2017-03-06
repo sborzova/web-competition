@@ -291,6 +291,58 @@ router.get('/solution/:id', function (req, res, next) {
         });
 });
 
+router.get('/solutionsByInstance/:id', function (req, res, next) {
+    Solution.find()
+        .populate('instance')
+        .populate('paper')
+        .populate('user')
+        .where('instance').equals(req.params.id)
+        .exec(function (err, solutions) {
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+            if (!solutions) {
+                return res.status(500).json({
+                    title: 'No Solution Found!',
+                    error: {message: 'Solution not found'}
+                });
+            }
+            res.status(200).json({
+                message: 'Success',
+                obj: solutions
+            });
+        });
+});
+
+router.get('/solutionsByUser/:id', function (req, res, next) {
+    Solution.find()
+        .populate('instance')
+        .populate('paper')
+        .populate('user')
+        .where('user').equals(req.params.id)
+        .exec(function (err, solutions) {
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+            if (!solutions) {
+                return res.status(500).json({
+                    title: 'No Solution Found!',
+                    error: {message: 'Solution not found'}
+                });
+            }
+            res.status(200).json({
+                message: 'Success',
+                obj: solutions
+            });
+        });
+});
+
 router.get('/solutionsByLoggedUser', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
     Solution.find()
@@ -316,6 +368,7 @@ router.get('/solutionsByLoggedUser', function (req, res, next) {
             });
         });
 });
+
 
 router.post('/worseSolutions', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);

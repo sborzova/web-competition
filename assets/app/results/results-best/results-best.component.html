@@ -1,0 +1,46 @@
+<div *ngIf="solutions" class="results">
+    <h2>Best solutions</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Instance</th>
+            <th>Unassigned Variables</th>
+            <th>Total Cost</th>
+            <th>Student Conflicts</th>
+            <th>Time Preferences</th>
+            <th>Room Preferences</th>
+            <th>Distribution Preferences</th>
+            <th>Download</th>
+            <th>Author</th>
+            <th>Technique</th>
+            <th>Submission time</th>
+            <th>View all</th>
+            <th>Validator Info</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let solution of solutions | sortByObject : 'instance.order' ">
+            <td>{{ solution.instance.name }}</td>
+            <td *ngIf="solution.unassigned">{{ solution.unassigned }}&nbsp;%</td>
+            <td *ngIf="!solution.unassigned"></td>
+            <td>{{ solution.total }}</td>
+            <td *ngIf="solution.sc">{{ solution.sc }}&nbsp;%</td>
+            <td *ngIf="!solution.sc"></td>
+            <td *ngIf="solution.time">{{ solution.time }}&nbsp;%</td>
+            <td *ngIf="!solution.time"></td>
+            <td *ngIf="solution.room">{{ solution.room }}&nbsp;%</td>
+            <td *ngIf="!solution.room"></td>
+            <td *ngIf="solution.distr">{{ solution.distr }}&nbsp;%</td>
+            <td *ngIf="!solution.distr"></td>
+            <td *ngIf="solution.unassigned"><a (click)="onDownload(solution)">download</a></td>
+            <td *ngIf="!solution.unassigned"></td>
+            <td>{{ solution.author?.name }}</td>
+            <td>{{ solution.technique }}</td>
+            <td>{{ solution.postDate | date }}</td>
+            <td *ngIf="solution.unassigned"><a (click)="onViewAll(solution.instance.instanceId)">view</a></td>
+            <td *ngIf="!solution.unassigned"></td>
+            <td>{{ solution.info }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
