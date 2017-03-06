@@ -19,7 +19,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let solution of solutions | sortByObject : 'instance.order' ">
+        <tr *ngFor="let solution of solutions | sortBy : 'instance.order' ">
             <td>{{ solution.instance.name }}</td>
             <td *ngIf="solution.unassigned">{{ solution.unassigned }}&nbsp;%</td>
             <td *ngIf="!solution.unassigned"></td>
@@ -34,7 +34,7 @@
             <td *ngIf="!solution.distr"></td>
             <td *ngIf="solution.unassigned"><a (click)="onDownload(solution)">download</a></td>
             <td *ngIf="!solution.unassigned"></td>
-            <td>{{ solution.author?.name }}</td>
+            <td><a (click)="onAuthor(solution.author.authorId)">{{ solution.author?.name }}</a></td>
             <td>{{ solution.technique }}</td>
             <td>{{ solution.postDate | date }}</td>
             <td *ngIf="solution.unassigned"><a (click)="onViewAll(solution.instance.instanceId)">view</a></td>

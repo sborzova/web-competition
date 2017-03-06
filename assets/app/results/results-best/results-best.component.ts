@@ -56,6 +56,10 @@ export class ResultsBestComponent implements OnInit {
         this.fileSaver.saveAs(file);
     }
 
+    onAuthor(authorId: string){
+        this.solutionService.resultsAuthorShow(authorId);
+    }
+
     onViewAll(instanceId: string){
         this.solutionService.resultsInstanceShow(instanceId);
     }

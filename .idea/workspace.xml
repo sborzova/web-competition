@@ -2,31 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/author.model.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/instance.model.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/paper.model.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/results.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/results.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/solution-result.model.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/sort-object.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.routing.ts" afterPath="$PROJECT_DIR$/assets/app/app.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/header/header.component.html" afterPath="$PROJECT_DIR$/assets/app/header/header.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/header/header.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/header/header.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/solution.service.ts" afterPath="$PROJECT_DIR$/assets/app/validation/solution.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html" afterPath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js" afterPath="$PROJECT_DIR$/public/js/app/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/solution.js" afterPath="$PROJECT_DIR$/routes/solution.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,11 +26,61 @@
       <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
+            <state relative-caret-position="163">
               <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results-best.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="36" column="100" lean-forward="false" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results-instance.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="40" column="5" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results-instance.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="35" column="100" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="100" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sort.pipe.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/instances/sort.pipe.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results-best.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,8 +191,6 @@
         <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
         <option value="$PROJECT_DIR$/assets/app/results/sort-object.ts" />
         <option value="$PROJECT_DIR$/assets/app/results/instance.model.ts" />
-        <option value="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html" />
         <option value="$PROJECT_DIR$/assets/app/auth/user-solutions/user-solutions.component.html" />
         <option value="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts" />
         <option value="$PROJECT_DIR$/routes/solution.js" />
@@ -174,6 +201,8 @@
         <option value="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.html" />
         <option value="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
       </list>
     </option>
@@ -240,6 +269,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="results" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -386,14 +459,7 @@
       <workItem from="1488683641534" duration="5625000" />
       <workItem from="1488730102329" duration="8987000" />
       <workItem from="1488790898363" duration="5745000" />
-      <workItem from="1488797598561" duration="11662000" />
-    </task>
-    <task id="LOCAL-00016" summary="instance create">
-      <created>1486425716595</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1486425716595</updated>
+      <workItem from="1488797598561" duration="12750000" />
     </task>
     <task id="LOCAL-00017" summary="InstanceEditComponent">
       <created>1486427854752</created>
@@ -731,11 +797,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488694525382</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="result done without ordering">
+      <created>1488809444180</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1488809444180</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="766025000" />
+    <option name="totallyTimeSpent" value="767113000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -759,7 +832,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2454955" sideWeight="0.24722221" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24851191" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50084037" sideWeight="0.48511904" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43361345" sideWeight="0.48511904" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -817,7 +890,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bug fixed: instant auto update instances list" />
     <MESSAGE value="subsription unsubscribe" />
     <MESSAGE value="handle success/error, html form" />
     <MESSAGE value="ValidationComponent skeleton" />
@@ -842,7 +914,8 @@
     <MESSAGE value="delete" />
     <MESSAGE value="error resolved" />
     <MESSAGE value="node_modules" />
-    <option name="LAST_COMMIT_MESSAGE" value="node_modules" />
+    <MESSAGE value="result done without ordering" />
+    <option name="LAST_COMMIT_MESSAGE" value="result done without ordering" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1027,6 +1100,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-239">
           <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1042,14 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="42" column="97" lean-forward="false" selection-start-line="42" selection-start-column="97" selection-end-line="42" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/instances/sort.pipe.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1084,14 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1162,32 +1220,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/auth/user-solutions/user-solutions.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -1242,9 +1274,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/instances/sort.pipe.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="35" column="100" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="36" column="100" lean-forward="false" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="40" column="5" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
+        <state relative-caret-position="163">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
