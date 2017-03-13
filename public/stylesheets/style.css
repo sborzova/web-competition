@@ -8,7 +8,7 @@ a {
 }
 
 .field-error {
-  color: red;
+  color: #c9183f;
   font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
   padding: 3px;
 }
@@ -42,4 +42,9 @@ a {
   left: 50%;
   z-index: 10000;
   position: fixed;
+}
+
+.table-borderless td,
+.table-borderless th {
+  border:none !important
 }

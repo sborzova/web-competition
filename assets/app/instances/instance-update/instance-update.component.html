@@ -2,7 +2,7 @@
     <div class="col-sm-6 col-sm-offset-3">
         <div class="jumbotron">
             <div class="text-center">
-                <h2>Change instance</h2>
+                <h2>Modify instance</h2>
             </div>
             <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <div class="form-group"
@@ -59,10 +59,10 @@
                         Field is required.
                     </div>
                 </div>
-                <p>Insert in case you want to update stats/data</p>
+                <p>Insert in case you want to update status/data</p>
                 <div>
                     <label for="stats">
-                        Stats
+                        Status
                     </label>
                     <input
                             #stats

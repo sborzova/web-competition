@@ -10,9 +10,9 @@ import { SigninComponent } from "./auth/signin/signin.component";
 import { SignupComponent } from "./auth/signup/signup.component";
 import { routing } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
-import { UserInfoComponent } from "./auth/user/user.component";
-import { UserEditComponent } from "./auth/user-edit/user-edit.component";
-import { UserEditPasswordComponent } from "./auth/user-edit-password/user-edit-password.component";
+import { ProfileInfoComponent } from "./profile/profile-info/profile-info.component";
+import { ProfileEditComponent } from "./profile/profile-edit/profile-edit.component";
+import { ProfileEditPasswordComponent } from "./profile/profile-edit-password/profile-edit-password.component";
 import { UsersComponent } from "./users/users.component";
 import { EqualValidator } from "./auth/validator-equal.directive";
 import { InstancesComponent } from "./instances/instances.component";
@@ -25,10 +25,8 @@ import { UsersService } from "./users/user.service";
 import { InstanceService } from "./instances/instance.service";
 import { ValidationComponent } from "./validation/validation.component";
 import { SolutionService } from "./validation/solution.service";
-import { ProfileComponent } from "./auth/profile/profile.component";
-import { UserSolutionsComponent } from "./auth/user-solutions/user-solutions.component";
-import { PaperService } from "./auth/paper.service";
-import { SortPipe } from "./instances/sort.pipe";
+import { UserSolutionsComponent } from "./user-solutions/user-solutions.component";
+import { PaperService } from "./user-solutions/paper.service";
 import { SuccessValidationComponent } from "./validation/success-validation/success-validation.component";
 import { FlashMessageComponent } from "./flash-message/flash-message.component";
 import { FlashMessageService} from "./flash-message/flash-messages.service";
@@ -38,7 +36,11 @@ import { ResultsBestComponent } from "./results/results-best/results-best.compon
 import { ResultsInstanceComponent } from "./results/results-instance/results-instance.component";
 import { ResultsAuthorComponent } from "./results/results-author/results-author.component";
 import { ResultsAuthorTechniqueComponent } from "./results/results-author-technique/results-author-technique.component";
-import { SortObjectPipe } from "./results/sort-object";
+import { OrderByPipe } from "./results/order-by.pipe";
+import { ValidatorInfoComponent } from "./user-solutions/validator-info/validator-info.component";
+import { UserEditComponent } from "./users/user-edit/user-edit.component";
+import { UserEditPasswordComponent } from "./users/user-edit-password/user-edit-password.component";
+import { PreferenceComponent } from "./preference/preference.component";
 
 @NgModule({
     declarations: [
@@ -48,11 +50,10 @@ import { SortObjectPipe } from "./results/sort-object";
         HomeComponent,
         SigninComponent,
         SignupComponent,
-        ProfileComponent,
         UserSolutionsComponent,
-        UserInfoComponent,
-        UserEditComponent,
-        UserEditPasswordComponent,
+        ProfileInfoComponent,
+        ProfileEditComponent,
+        ProfileEditPasswordComponent,
         UsersComponent,
         InstancesComponent,
         InstanceListComponent,
@@ -67,10 +68,13 @@ import { SortObjectPipe } from "./results/sort-object";
         ResultsInstanceComponent,
         ResultsAuthorComponent,
         ResultsAuthorTechniqueComponent,
+        ValidatorInfoComponent,
+        UserEditComponent,
+        UserEditPasswordComponent,
+        PreferenceComponent,
         EqualValidator,
         EscapeHtmlPipe,
-        SortPipe,
-        SortObjectPipe
+        OrderByPipe
     ],
     imports: [
         BrowserModule,

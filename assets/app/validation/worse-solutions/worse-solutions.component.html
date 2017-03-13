@@ -15,7 +15,6 @@
                 <th>Room Preferences</th>
                 <th>Distribution Preferences</th>
                 <th>Submission time</th>
-                <th>Validator Info</th>
             </tr>
             </thead>
             <tbody *ngFor="let solution of solutions">
@@ -28,18 +27,17 @@
                 <td>{{ solution.room }}&nbsp;%</td>
                 <td>{{ solution.distr }}&nbsp;%</td>
                 <td>{{ solution.postDate | date }}</td>
-                <td>{{ solution.info }}</td>
             </tr>
             </tbody>
         </table>
         <div align="right">
             <button
-                    class="btn btn-danger align-right"
+                    class="btn btn-danger"
                     (click)="onDeleteSelected()">
                 Delete selected
             </button>
             <button
-                    class="btn btn-danger align-right"
+                    class="btn btn-default"
                     (click)="onDeleteNone()">
                 Delete none
             </button>

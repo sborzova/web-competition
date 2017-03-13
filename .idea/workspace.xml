@@ -2,10 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/preference/preference.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/preference/preference.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/profile/user.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/results/order-by.pipe.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.routes.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/user-solutions/validator-info/validator-info.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/user-solutions/validator-info/validator-info.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/users/users.routes.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/preference.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/preference.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/auth/profile/profile.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/auth/profile/profile.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/auth/user-edit/user-edit.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/auth/user-solutions/user-solutions.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/auth/user/user.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/instances/sort.pipe.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/results/sort-object.ts" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/paper.model.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/paper.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/paper.service.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/paper.service.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/password.model.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/password.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/solution-paper.model.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/solution-paper.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/solution.model.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/solution.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/user-edit-password/user-edit-password.component.html" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/user-edit-password/user-edit-password.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ngfactory.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/user-edit-password/user-edit-password.component.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/user-edit/user-edit.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ngfactory.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/user-edit/user-edit.component.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/user-solutions/user-solutions.component.css" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/user-solutions/user-solutions.component.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/user/user.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.ngfactory.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/auth/user/user.component.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.component.html" afterPath="$PROJECT_DIR$/assets/app/app.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ngfactory.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.routing.ts" afterPath="$PROJECT_DIR$/assets/app/app.routing.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/auth.service.ts" afterPath="$PROJECT_DIR$/assets/app/auth/auth.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signin/signin.component.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signin/signin.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signup/signup.component.html" afterPath="$PROJECT_DIR$/assets/app/auth/signup/signup.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/user.model.ts" afterPath="$PROJECT_DIR$/assets/app/auth/user.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/user.routes.ts" afterPath="$PROJECT_DIR$/assets/app/auth/user.routes.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/header/header.component.html" afterPath="$PROJECT_DIR$/assets/app/header/header.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/header/header.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/header/header.component.ngfactory.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/home/home.component.html" afterPath="$PROJECT_DIR$/assets/app/home/home.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/home/home.component.ts" afterPath="$PROJECT_DIR$/assets/app/home/home.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-list/instance-list.component.html" afterPath="$PROJECT_DIR$/assets/app/instances/instance-list/instance-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-new/instance-new.component.html" afterPath="$PROJECT_DIR$/assets/app/instances/instance-new/instance-new.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-update/instance-update.component.html" afterPath="$PROJECT_DIR$/assets/app/instances/instance-update/instance-update.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance.model.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance.service.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instances.component.html" afterPath="$PROJECT_DIR$/assets/app/instances/instances.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instances.component.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instances.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html" afterPath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/user.model.ts" afterPath="$PROJECT_DIR$/assets/app/users/user.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/user.service.ts" afterPath="$PROJECT_DIR$/assets/app/users/user.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.component.html" afterPath="$PROJECT_DIR$/assets/app/users/users.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.component.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/solution.service.ts" afterPath="$PROJECT_DIR$/assets/app/validation/solution.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.html" afterPath="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ts" afterPath="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.component.html" afterPath="$PROJECT_DIR$/assets/app/validation/validation.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.component.ts" afterPath="$PROJECT_DIR$/assets/app/validation/validation.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/worse-solutions/worse-solutions.component.html" afterPath="$PROJECT_DIR$/assets/app/validation/worse-solutions/worse-solutions.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/worse-solutions/worse-solutions.component.ts" afterPath="$PROJECT_DIR$/assets/app/validation/worse-solutions/worse-solutions.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/instance.js" afterPath="$PROJECT_DIR$/models/instance.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/user.js" afterPath="$PROJECT_DIR$/models/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/iconv-lite/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/iconv-lite/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/iconv-lite/Changelog.md" afterPath="$PROJECT_DIR$/node_modules/iconv-lite/Changelog.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/iconv-lite/README.md" afterPath="$PROJECT_DIR$/node_modules/iconv-lite/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/iconv-lite/encodings/dbcs-data.js" afterPath="$PROJECT_DIR$/node_modules/iconv-lite/encodings/dbcs-data.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/iconv-lite/encodings/utf16.js" afterPath="$PROJECT_DIR$/node_modules/iconv-lite/encodings/utf16.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/iconv-lite/package.json" afterPath="$PROJECT_DIR$/node_modules/iconv-lite/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js" afterPath="$PROJECT_DIR$/public/js/app/bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/instance.js" afterPath="$PROJECT_DIR$/routes/instance.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/paper.js" afterPath="$PROJECT_DIR$/routes/paper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/solution.js" afterPath="$PROJECT_DIR$/routes/solution.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/user.js" afterPath="$PROJECT_DIR$/routes/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.common.js" afterPath="$PROJECT_DIR$/webpack.config.common.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,64 +107,42 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
+    <leaf>
+      <file leaf-file-name="preference.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/preference.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="results-best.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="36" column="100" lean-forward="false" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
+            <state relative-caret-position="187">
+              <caret line="11" column="54" lean-forward="true" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="results-instance.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts">
+      <file leaf-file-name="instance.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/instance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="40" column="5" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="255">
+              <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="results-instance.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.html">
+      <file leaf-file-name="solution.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/solution.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="35" column="100" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="100" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sort.pipe.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/instances/sort.pipe.ts">
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="results-best.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+            <state relative-caret-position="153">
+              <caret line="9" column="48" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -96,18 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>paper</find>
-      <find>message</find>
-      <find>technique</find>
-      <find>unsubscribe</find>
-      <find>stream-buffers</find>
-      <find>strea</find>
-      <find>novalidate</find>
-      <find>header</find>
-      <find>Solution</find>
-      <find>techni</find>
-      <find>reference</find>
-      <find>vali</find>
       <find>localstorage</find>
       <find>for</find>
       <find>EscapeHtmlPipe</find>
@@ -118,7 +169,6 @@
       <find>fla</find>
       <find>ErrorMessage</find>
       <find>successservice</find>
-      <find>patch</find>
       <find>add</find>
       <find>flashMessage</find>
       <find>showMessage</find>
@@ -126,10 +176,25 @@
       <find>flash</find>
       <find>byin</find>
       <find>filter</find>
+      <find>isOn</find>
+      <find>roles</find>
+      <find>length</find>
+      <find>file-saver</find>
+      <find>patch</find>
+      <find>paper.servi</find>
+      <find>null</find>
+      <find>deleteP</find>
+      <find>onedi</find>
+      <find>verify</find>
+      <find>jwt</find>
+      <find>selectedPaper</find>
+      <find>citation</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\instances</dir>
+      <dir>C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\validation</dir>
       <dir>C:\Users\Silvia\OneDrive\Bakalárka\Project</dir>
+      <dir>C:\Users\Silvia\OneDrive\Bakalárka\Project\routes</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -153,57 +218,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/app/app.component.html" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/assets/app/flash-message/flash-message.model.ts" />
-        <option value="$PROJECT_DIR$/assets/app/flash-message/flash-messages.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/flash-message/flash-message.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/flash-message/flash-message.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/auth/auth.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/auth/signup/signup.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/auth/user-edit/user-edit.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/auth/user-edit-password/user-edit-password.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/instances/instance-list/instance-list.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/instances/instance-new/instance-new.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/instances/instance-update/instance-update.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/users/users.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/validation/validation.module.ts" />
-        <option value="$PROJECT_DIR$/assets/app/validation/validation.component.ts" />
-        <option value="$PROJECT_DIR$/models/solution.js" />
-        <option value="$PROJECT_DIR$/assets/app/validation/validation.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/validation/worse-solutions/worse-solutions.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/auth/user-solutions/user-solutions.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/validation/worse-solutions/worse-solutions.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/validation/solution.module.ts" />
-        <option value="$PROJECT_DIR$/assets/app/instances/instance.service.ts" />
-        <option value="$PROJECT_DIR$/routes/instance.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/assets/app/resultes/resultes.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/results/results.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/header/header.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/results/results.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/results/author.model.ts" />
-        <option value="$PROJECT_DIR$/assets/app/results/result-model.ts" />
-        <option value="$PROJECT_DIR$/assets/app/results/solution.model.ts" />
-        <option value="$PROJECT_DIR$/assets/app/results/solution-result.model.ts" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
         <option value="$PROJECT_DIR$/assets/app/results/sort-object.ts" />
-        <option value="$PROJECT_DIR$/assets/app/results/instance.model.ts" />
-        <option value="$PROJECT_DIR$/assets/app/auth/user-solutions/user-solutions.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts" />
-        <option value="$PROJECT_DIR$/routes/solution.js" />
-        <option value="$PROJECT_DIR$/assets/app/results/paper.model.ts" />
-        <option value="$PROJECT_DIR$/assets/app/validation/solution.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/results/order-by.pipe.ts" />
         <option value="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/auth/signup/signup.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/profile/user-edit-password/user-edit-password.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/profile/user-edit/user-edit.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/auth/signin/signin.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/profile/user-edit/user-edit.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/instances/instance-stats/instance-stats.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.routes.ts" />
+        <option value="$PROJECT_DIR$/assets/app/user-solutions/validator-info/validator-info.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/user-solutions/validator-info/validator-info.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/validation/worse-solutions/worse-solutions.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/instances/instance.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/auth/auth.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/users/user.model.ts" />
+        <option value="$PROJECT_DIR$/assets/app/profile/profile-edit/user-edit.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/users/users.routes.ts" />
+        <option value="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.ts" />
+        <option value="$PROJECT_DIR$/routes/user.js" />
+        <option value="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/users/user.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/users/users.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/users/users.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/instances/instance-list/instance-list.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/user-solutions/paper.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts" />
+        <option value="$PROJECT_DIR$/routes/instance.js" />
+        <option value="$PROJECT_DIR$/routes/paper.js" />
+        <option value="$PROJECT_DIR$/routes/solution.js" />
+        <option value="$PROJECT_DIR$/routes/preference.js" />
+        <option value="$PROJECT_DIR$/assets/app/home/home.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/preference/preference.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/preference/preference.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/assets/app/header/header.component.html" />
         <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/assets/app/user-solutions/paper.model.ts" />
+        <option value="$PROJECT_DIR$/assets/app/validation/solution.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" />
+        <option value="$PROJECT_DIR$/models/preference.js" />
       </list>
     </option>
   </component>
@@ -221,7 +286,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
+    <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -242,6 +307,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -254,71 +320,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="results" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -332,12 +335,15 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\validation\worse-solutions" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\auth" />
-      <recent name="C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\auth\signin" />
-      <recent name="C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\instance-group-new" />
-      <recent name="C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\auth\signup" />
+      <recent name="C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\profile\user-edit-password" />
+      <recent name="C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\user-solutions" />
+      <recent name="C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app" />
       <recent name="C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\profile" />
+      <recent name="C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\auth" />
     </key>
   </component>
   <component name="RunManager">
@@ -459,14 +465,19 @@
       <workItem from="1488683641534" duration="5625000" />
       <workItem from="1488730102329" duration="8987000" />
       <workItem from="1488790898363" duration="5745000" />
-      <workItem from="1488797598561" duration="12750000" />
-    </task>
-    <task id="LOCAL-00017" summary="InstanceEditComponent">
-      <created>1486427854752</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1486427854752</updated>
+      <workItem from="1488797598561" duration="13279000" />
+      <workItem from="1488823710236" duration="1023000" />
+      <workItem from="1488900624992" duration="613000" />
+      <workItem from="1488902353985" duration="8959000" />
+      <workItem from="1488961563613" duration="25392000" />
+      <workItem from="1489088687449" duration="12622000" />
+      <workItem from="1489130986140" duration="5112000" />
+      <workItem from="1489171503830" duration="631000" />
+      <workItem from="1489225470404" duration="31871000" />
+      <workItem from="1489311466561" duration="11549000" />
+      <workItem from="1489352098354" duration="4017000" />
+      <workItem from="1489400126448" duration="10818000" />
+      <workItem from="1489426466032" duration="1575000" />
     </task>
     <task id="LOCAL-00018" summary="DB schema">
       <created>1486737776792</created>
@@ -804,11 +815,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488809444180</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="result added author link">
+      <created>1488810509347</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1488810509347</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="767113000" />
+    <option name="totallyTimeSpent" value="881824000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -820,50 +838,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5058824" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29925373" sideWeight="0.75277776" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27083334" sideWeight="0.75277776" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15393655" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5277311" sideWeight="0.51488096" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2672269" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5042017" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2454955" sideWeight="0.24722221" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24851191" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43361345" sideWeight="0.48511904" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3815126" sideWeight="0.48511904" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15462185" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5277311" sideWeight="0.51488096" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5042017" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2454955" sideWeight="0.24722221" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25042018" sideWeight="0.48511904" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5058824" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2313988" sideWeight="0.75277776" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41512606" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24851191" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36302522" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -890,7 +887,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="subsription unsubscribe" />
     <MESSAGE value="handle success/error, html form" />
     <MESSAGE value="ValidationComponent skeleton" />
     <MESSAGE value="issue open: connect to web validator" />
@@ -915,153 +911,244 @@
     <MESSAGE value="error resolved" />
     <MESSAGE value="node_modules" />
     <MESSAGE value="result done without ordering" />
-    <option name="LAST_COMMIT_MESSAGE" value="result done without ordering" />
+    <MESSAGE value="result added author link" />
+    <option name="LAST_COMMIT_MESSAGE" value="result added author link" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/app/users/user.model.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/profile/profile-edit-password/password.model.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/instances/instances.component.html">
+    <entry file="file://$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1530">
+          <caret line="90" column="6" lean-forward="false" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="70" column="18" lean-forward="false" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="91" column="5" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="91" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="80" column="5" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="80" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/users/user.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="39" column="30" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="142">
+          <caret line="74" column="74" lean-forward="false" selection-start-line="74" selection-start-column="74" selection-end-line="74" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/home/home.component.ngfactory.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/signup/signup.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="99" column="22" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="99" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/instances/instance-list/instance-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/validation/validation.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/assets/app/users/users.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+        <state relative-caret-position="102">
+          <caret line="18" column="103" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="103" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/users/users.component.ngfactory.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/users/users.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="39" column="51" lean-forward="false" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="83" column="26" lean-forward="true" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="81" lean-forward="false" selection-start-line="10" selection-start-column="81" selection-end-line="10" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="45" column="30" lean-forward="false" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/solution-paper.model.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/instances/instances.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/instances/instance.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="43" column="53" lean-forward="false" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-          <folding />
+        <state relative-caret-position="153">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/header/header.component.html">
+    <entry file="file://$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="89" lean-forward="false" selection-start-line="7" selection-start-column="89" selection-end-line="7" selection-end-column="89" />
+        <state relative-caret-position="170">
+          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="27" lean-forward="true" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/validation.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="190">
+          <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/results/results.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/solution.module.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="-805">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/solution-create.model.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-448">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-635">
+          <caret line="3" column="68" lean-forward="true" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/validation/paper.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/solution.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/paper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/paper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/solution.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5151">
+          <caret line="303" column="9" lean-forward="false" selection-start-line="303" selection-start-column="9" selection-end-line="303" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/instance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/npm-debug.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/solution.model.ts">
+    <entry file="file://$PROJECT_DIR$/routes/preference.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="19" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/result-model.ts" />
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/instance.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="true" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/solution-find-worse.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        <state relative-caret-position="442">
+          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1072,7 +1159,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/paper.js">
+    <entry file="file://$PROJECT_DIR$/assets/app/home/home.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="24" column="59" lean-forward="false" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/header/header.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/preference/preference.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-497">
+          <caret line="42" column="29" lean-forward="false" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/preference/preference.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/validation/solution.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="208" column="50" lean-forward="false" selection-start-line="208" selection-start-column="50" selection-end-line="208" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="109" column="43" lean-forward="true" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="96" column="36" lean-forward="false" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/paper.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/paper.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/instances/instance-update/instance-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-366">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/instance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/solution.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1080,247 +1267,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/validation.component.ts">
+    <entry file="file://$PROJECT_DIR$/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-752">
-          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        <state relative-caret-position="153">
+          <caret line="9" column="48" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="60" column="50" lean-forward="false" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-239">
-          <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/author.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="42" lean-forward="false" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/instances/instance-list/instance-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="42" column="97" lean-forward="false" selection-start-line="42" selection-start-column="97" selection-end-line="42" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/instance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/sort-object.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/worse-solutions/worse-solutions.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/instances/instance-list/instance-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/worse-solutions/worse-solutions.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/instance.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/paper.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/user-solutions/user-solutions.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="17" lean-forward="false" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/solution-result.model.ts">
+    <entry file="file://$PROJECT_DIR$/models/preference.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/paper.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <caret line="11" column="54" lean-forward="true" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/solution.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="323" column="25" lean-forward="false" selection-start-line="323" selection-start-column="25" selection-end-line="323" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/user-solutions/user-solutions.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="106" column="30" lean-forward="false" selection-start-line="106" selection-start-column="30" selection-end-line="106" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/solution.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="52" column="65" lean-forward="false" selection-start-line="52" selection-start-column="65" selection-end-line="52" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-author/results-author.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="36" column="89" lean-forward="false" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/instances/sort.pipe.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="35" column="100" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="36" column="100" lean-forward="false" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="5" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

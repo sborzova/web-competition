@@ -40,7 +40,7 @@ import * as import32 from './auth/auth.service';
 import * as import33 from './users/user.service';
 import * as import34 from './instances/instance.service';
 import * as import35 from './validation/solution.service';
-import * as import36 from './auth/paper.service';
+import * as import36 from './user-solutions/paper.service';
 import * as import37 from '@angular/core/src/di/injector';
 import * as import38 from './home/home.component.ngfactory';
 import * as import39 from './users/users.component.ngfactory';
@@ -52,8 +52,8 @@ import * as import44 from './instances/instances.component.ngfactory';
 import * as import45 from './instances/instance-new/instance-new.component.ngfactory';
 import * as import46 from './instances/instance-update/instance-update.component.ngfactory';
 import * as import47 from './instances/instance-stats/instance-stats.component.ngfactory';
-import * as import48 from './auth/user-edit/user-edit.component.ngfactory';
-import * as import49 from './auth/user-edit-password/user-edit-password.component.ngfactory';
+import * as import48 from './profile/profile-edit/profile-edit.component.ngfactory';
+import * as import49 from './profile/profile-edit-password/profile-edit-password.component.ngfactory';
 import * as import50 from './auth/profile/profile.component.ngfactory';
 import * as import51 from './app.component.ngfactory';
 import * as import52 from '@angular/core/src/application_tokens';
@@ -73,8 +73,8 @@ import * as import65 from './instances/instances.component';
 import * as import66 from './instances/instance-new/instance-new.component';
 import * as import67 from './instances/instance-update/instance-update.component';
 import * as import68 from './instances/instance-stats/instance-stats.component';
-import * as import69 from './auth/user-edit/user-edit.component';
-import * as import70 from './auth/user-edit-password/user-edit-password.component';
+import * as import69 from './profile/profile-edit/profile-edit.component';
+import * as import70 from './profile/profile-edit-password/profile-edit-password.component';
 import * as import71 from './auth/profile/profile.component';
 import * as import72 from '@angular/router/src/router';
 import * as import73 from '@angular/core/src/console';
@@ -392,12 +392,12 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
             ,
             {
               path: 'edit',
-              component: import69.UserEditComponent
+              component: import69.ProfileEditComponent
             }
             ,
             {
               path: 'editpass',
-              component: import70.UserEditPasswordComponent
+              component: import70.ProfileEditPasswordComponent
             }
             ,
             {

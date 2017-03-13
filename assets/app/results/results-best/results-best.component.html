@@ -19,7 +19,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let solution of solutions | sortBy : 'instance.order' ">
+        <tr *ngFor="let solution of solutions | orderBy : 'instance.order' ">
             <td>{{ solution.instance.name }}</td>
             <td *ngIf="solution.unassigned">{{ solution.unassigned }}&nbsp;%</td>
             <td *ngIf="!solution.unassigned"></td>

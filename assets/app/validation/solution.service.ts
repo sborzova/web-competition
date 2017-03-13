@@ -3,10 +3,10 @@ import { Headers, Http, Response } from "@angular/http";
 import { Observable, Subject } from "rxjs";
 
 import { SolutionCreate } from "./solution-create.model";
-import { Solution } from "../auth/solution.model";
+import { Solution } from "../user-solutions/solution.model";
 import { Validation } from "./validation.model";
 import { Paper } from "./paper.model";
-import { SolutionPaper } from "../auth/solution-paper.model";
+import { SolutionPaper } from "../user-solutions/solution-paper.model";
 import { SolutionFindWorse } from "./solution-find-worse.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SolutionResult } from "../results/solution-result.model";
@@ -155,6 +155,32 @@ export class SolutionService {
             .catch((error: Response) => Observable.throw(error.json()));
     }
 
+    getSolution(solutionId: string){
+        return this.http.get(this.hostUrl.concat('solution/' + solutionId))
+            .map((response: Response) => {
+                const solution = response.json().obj;
+                return new Solution(
+                    solution.unassigned,
+                    solution.total,
+                    solution.sc,
+                    solution.time,
+                    solution.room,
+                    solution.distr,
+                    solution.technique,
+                    solution.info,
+                    solution.postDate,
+                    solution.data,
+                    solution.instance,
+                    solution.paper,
+                    solution._id,
+                    false
+                );
+            })
+            .catch((error: Response) => {
+                return Observable.throw(error);
+            });
+    }
+
     getSolutionsByLoggedUser(){
         const token = sessionStorage.getItem('token')
             ? '?token=' + sessionStorage.getItem('token')
@@ -177,14 +203,18 @@ export class SolutionService {
                         solution.postDate,
                         solution.data,
                         solution.instance,
-                        solution.paper,
+                        solution.paper ? new Paper(
+                                solution.paper.citation,
+                                solution.paper.url,
+                                solution.paper._id
+                                        ) : null,
                         solution._id,
                         false)
                     );
                 }
                 return transformedSolutions;
             })
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => Observable.throw(error));
     }
 
     getSolutionsByInstance(instanceId: string){
@@ -217,7 +247,7 @@ export class SolutionService {
                 }
                 return transformedSolutions;
             })
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => Observable.throw(error));
     }
 
     getSolutionsByUser(userId: string){
@@ -250,7 +280,7 @@ export class SolutionService {
                 }
                 return transformedSolutions;
             })
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => Observable.throw(error));
     }
 
     deletePaperFromSolution(solution: Solution){
@@ -259,7 +289,7 @@ export class SolutionService {
             .map((response: Response) => {
                 return response.json();
             })
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => Observable.throw(error));
     }
 
     successValidationShowResult(validation: Validation, file: any){
@@ -330,7 +360,7 @@ export class SolutionService {
             .map((response: Response) => {
                 return response.json();
             })
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => Observable.throw(error));
     }
 
     deleteSolution(solution: Solution){
@@ -347,7 +377,9 @@ export class SolutionService {
     deleteSolutions(solutions: Solution[]) {
         for (let s of solutions){
             this.deleteSolution(s)
-                .subscribe(() => {}, error => console.error(error))
+                .subscribe(
+                    () => {},
+                    error => console.error(error))
         }
         if (solutions.length = 1){
             this.flashMessageService.showMessage('Solution was deleted.', 'alert-success');

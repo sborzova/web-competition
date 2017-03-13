@@ -7,7 +7,7 @@
 import * as import0 from '@angular/core/src/render/api';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import2 from '@angular/core/src/linker/element';
-import * as import3 from './user.component';
+import * as import3 from './profile-info.component';
 import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
@@ -28,7 +28,7 @@ var renderType_UserInfoComponent_Host:import0.RenderComponentType = (null as any
 class _View_UserInfoComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import2.AppElement;
-  _UserInfoComponent_0_4:import3.UserInfoComponent;
+  _UserInfoComponent_0_4:import3.ProfileInfoComponent;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_UserInfoComponent_Host0,renderType_UserInfoComponent_Host,import6.ViewType.HOST,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -36,14 +36,14 @@ class _View_UserInfoComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-user-info',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_UserInfoComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._UserInfoComponent_0_4 = new import3.UserInfoComponent(this.parentInjector.get(import8.AuthService));
+    this._UserInfoComponent_0_4 = new import3.ProfileInfoComponent(this.parentInjector.get(import8.AuthService));
     this._appEl_0.initComponent(this._UserInfoComponent_0_4,[],compView_0);
     compView_0.create(this._UserInfoComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
     return this._appEl_0;
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import3.UserInfoComponent) && (0 === requestNodeIndex))) { return this._UserInfoComponent_0_4; }
+    if (((token === import3.ProfileInfoComponent) && (0 === requestNodeIndex))) { return this._UserInfoComponent_0_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -56,10 +56,10 @@ function viewFactory_UserInfoComponent_Host0(viewUtils:import4.ViewUtils,parentI
   if ((renderType_UserInfoComponent_Host === (null as any))) { (renderType_UserInfoComponent_Host = viewUtils.createRenderComponentType('',0,import9.ViewEncapsulation.None,[],{})); }
   return new _View_UserInfoComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const UserInfoComponentNgFactory:import10.ComponentFactory<import3.UserInfoComponent> = new import10.ComponentFactory<import3.UserInfoComponent>('app-user-info',viewFactory_UserInfoComponent_Host0,import3.UserInfoComponent);
+export const UserInfoComponentNgFactory:import10.ComponentFactory<import3.ProfileInfoComponent> = new import10.ComponentFactory<import3.ProfileInfoComponent>('app-user-info',viewFactory_UserInfoComponent_Host0,import3.ProfileInfoComponent);
 const styles_UserInfoComponent:any[] = [];
 var renderType_UserInfoComponent:import0.RenderComponentType = (null as any);
-class _View_UserInfoComponent0 extends import1.AppView<import3.UserInfoComponent> {
+class _View_UserInfoComponent0 extends import1.AppView<import3.ProfileInfoComponent> {
   _anchor_0:any;
   /*private*/ _appEl_0:import2.AppElement;
   _TemplateRef_0_5:any;
@@ -93,8 +93,8 @@ class _View_UserInfoComponent0 extends import1.AppView<import3.UserInfoComponent
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-export function viewFactory_UserInfoComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UserInfoComponent> {
-  if ((renderType_UserInfoComponent === (null as any))) { (renderType_UserInfoComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/user/user.component.html',0,import9.ViewEncapsulation.None,styles_UserInfoComponent,{})); }
+export function viewFactory_UserInfoComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileInfoComponent> {
+  if ((renderType_UserInfoComponent === (null as any))) { (renderType_UserInfoComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/profile-info/profile-info.component.html',0,import9.ViewEncapsulation.None,styles_UserInfoComponent,{})); }
   return new _View_UserInfoComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_UserInfoComponent1 extends import1.AppView<any> {

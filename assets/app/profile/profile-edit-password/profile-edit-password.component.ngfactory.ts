@@ -7,7 +7,7 @@
 import * as import0 from '@angular/core/src/render/api';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import2 from '@angular/core/src/linker/element';
-import * as import3 from './user-edit-password.component';
+import * as import3 from './profile-edit-password.component';
 import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
@@ -36,7 +36,7 @@ var renderType_UserEditPasswordComponent_Host:import0.RenderComponentType = (nul
 class _View_UserEditPasswordComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import2.AppElement;
-  _UserEditPasswordComponent_0_4:import3.UserEditPasswordComponent;
+  _UserEditPasswordComponent_0_4:import3.ProfileEditPasswordComponent;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_UserEditPasswordComponent_Host0,renderType_UserEditPasswordComponent_Host,import6.ViewType.HOST,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -44,14 +44,14 @@ class _View_UserEditPasswordComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-profile-edit-pass',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_UserEditPasswordComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._UserEditPasswordComponent_0_4 = new import3.UserEditPasswordComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.FlashMessageService),this.parentInjector.get(import10.Router));
+    this._UserEditPasswordComponent_0_4 = new import3.ProfileEditPasswordComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.FlashMessageService),this.parentInjector.get(import10.Router));
     this._appEl_0.initComponent(this._UserEditPasswordComponent_0_4,[],compView_0);
     compView_0.create(this._UserEditPasswordComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
     return this._appEl_0;
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import3.UserEditPasswordComponent) && (0 === requestNodeIndex))) { return this._UserEditPasswordComponent_0_4; }
+    if (((token === import3.ProfileEditPasswordComponent) && (0 === requestNodeIndex))) { return this._UserEditPasswordComponent_0_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -64,10 +64,10 @@ function viewFactory_UserEditPasswordComponent_Host0(viewUtils:import4.ViewUtils
   if ((renderType_UserEditPasswordComponent_Host === (null as any))) { (renderType_UserEditPasswordComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
   return new _View_UserEditPasswordComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const UserEditPasswordComponentNgFactory:import12.ComponentFactory<import3.UserEditPasswordComponent> = new import12.ComponentFactory<import3.UserEditPasswordComponent>('app-profile-edit-pass',viewFactory_UserEditPasswordComponent_Host0,import3.UserEditPasswordComponent);
+export const UserEditPasswordComponentNgFactory:import12.ComponentFactory<import3.ProfileEditPasswordComponent> = new import12.ComponentFactory<import3.ProfileEditPasswordComponent>('app-profile-edit-pass',viewFactory_UserEditPasswordComponent_Host0,import3.ProfileEditPasswordComponent);
 const styles_UserEditPasswordComponent:any[] = [];
 var renderType_UserEditPasswordComponent:import0.RenderComponentType = (null as any);
-class _View_UserEditPasswordComponent0 extends import1.AppView<import3.UserEditPasswordComponent> {
+class _View_UserEditPasswordComponent0 extends import1.AppView<import3.ProfileEditPasswordComponent> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
@@ -153,8 +153,8 @@ class _View_UserEditPasswordComponent0 extends import1.AppView<import3.UserEditP
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-export function viewFactory_UserEditPasswordComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UserEditPasswordComponent> {
-  if ((renderType_UserEditPasswordComponent === (null as any))) { (renderType_UserEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/user-edit-password/user-edit-password.component.html',0,import11.ViewEncapsulation.None,styles_UserEditPasswordComponent,{})); }
+export function viewFactory_UserEditPasswordComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileEditPasswordComponent> {
+  if ((renderType_UserEditPasswordComponent === (null as any))) { (renderType_UserEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/profile-info-edit-password/profile-info-edit-password.component.html',0,import11.ViewEncapsulation.None,styles_UserEditPasswordComponent,{})); }
   return new _View_UserEditPasswordComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_UserEditPasswordComponent1 extends import1.AppView<any> {

@@ -1,4 +1,4 @@
-<div *ngIf="instances" class="col-md-8 col-md-offset-2">
+<div *ngIf="instances" class="col-md-12">
         <table class="table">
                 <thead>
                 <tr>
@@ -11,7 +11,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let instance of instances | sortBy : 'order' ">
+                <tr *ngFor="let instance of instances | orderBy : 'order' ">
                         <td><div *ngIf="isAdmin()">{{ instance.order }}</div></td>
                         <td>{{ instance.name }}</td>
                         <td>{{ instance.description }}</td>
@@ -20,15 +20,21 @@
                                 [queryParams]="{instanceId: instance.instanceId}">view</a></td>
                         <td>{{ instance.postDate | date}}</td>
                         <td><a (click)="onDownload(instance)">download</a></td>
-                        <td><button
-                                *ngIf="isAdmin()"
-                                class="btn btn-info btn-xs"
-                                [routerLink]="['/#instances/edit']"
-                                [queryParams]="{instanceId: instance.instanceId}">Edit</button></td>
-                        <td><button
-                                *ngIf="isAdmin()"
-                                class="btn btn-danger btn-xs"
-                                (click)="onDelete(instance)">Delete</button></td>
+                        <td class="btn-group" style="vertical-align: middle; border: none">
+                                <button
+                                        *ngIf="isAdmin()"
+                                        class="btn btn-info btn-xs"
+                                        [routerLink]="['/#instances/edit']"
+                                        [queryParams]="{instanceId: instance.instanceId}">
+                                        Edit
+                                </button>
+                                <button
+                                        *ngIf="isAdmin()"
+                                        class="btn btn-danger btn-xs"
+                                        (click)="onDelete(instance)">
+                                        Delete
+                                </button>
+                        </td>
                 </tr>
                 </tbody>
         </table>

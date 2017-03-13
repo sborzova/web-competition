@@ -7,7 +7,7 @@
 import * as import0 from '@angular/core/src/render/api';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import2 from '@angular/core/src/linker/element';
-import * as import3 from './user-edit.component';
+import * as import3 from './profile-edit.component';
 import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
@@ -33,7 +33,7 @@ var renderType_UserEditComponent_Host:import0.RenderComponentType = (null as any
 class _View_UserEditComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import2.AppElement;
-  _UserEditComponent_0_4:import3.UserEditComponent;
+  _UserEditComponent_0_4:import3.ProfileEditComponent;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_UserEditComponent_Host0,renderType_UserEditComponent_Host,import6.ViewType.HOST,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -41,14 +41,14 @@ class _View_UserEditComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-profile-edit',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_UserEditComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._UserEditComponent_0_4 = new import3.UserEditComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.FlashMessageService),this.parentInjector.get(import10.Router));
+    this._UserEditComponent_0_4 = new import3.ProfileEditComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.FlashMessageService),this.parentInjector.get(import10.Router));
     this._appEl_0.initComponent(this._UserEditComponent_0_4,[],compView_0);
     compView_0.create(this._UserEditComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
     return this._appEl_0;
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import3.UserEditComponent) && (0 === requestNodeIndex))) { return this._UserEditComponent_0_4; }
+    if (((token === import3.ProfileEditComponent) && (0 === requestNodeIndex))) { return this._UserEditComponent_0_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -61,10 +61,10 @@ function viewFactory_UserEditComponent_Host0(viewUtils:import4.ViewUtils,parentI
   if ((renderType_UserEditComponent_Host === (null as any))) { (renderType_UserEditComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
   return new _View_UserEditComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const UserEditComponentNgFactory:import12.ComponentFactory<import3.UserEditComponent> = new import12.ComponentFactory<import3.UserEditComponent>('app-profile-edit',viewFactory_UserEditComponent_Host0,import3.UserEditComponent);
+export const UserEditComponentNgFactory:import12.ComponentFactory<import3.ProfileEditComponent> = new import12.ComponentFactory<import3.ProfileEditComponent>('app-profile-edit',viewFactory_UserEditComponent_Host0,import3.ProfileEditComponent);
 const styles_UserEditComponent:any[] = [];
 var renderType_UserEditComponent:import0.RenderComponentType = (null as any);
-class _View_UserEditComponent0 extends import1.AppView<import3.UserEditComponent> {
+class _View_UserEditComponent0 extends import1.AppView<import3.ProfileEditComponent> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
@@ -150,8 +150,8 @@ class _View_UserEditComponent0 extends import1.AppView<import3.UserEditComponent
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-export function viewFactory_UserEditComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UserEditComponent> {
-  if ((renderType_UserEditComponent === (null as any))) { (renderType_UserEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/user-edit/user-edit.component.html',0,import11.ViewEncapsulation.None,styles_UserEditComponent,{})); }
+export function viewFactory_UserEditComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileEditComponent> {
+  if ((renderType_UserEditComponent === (null as any))) { (renderType_UserEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/profile-info-edit/profile-info-edit.component.html',0,import11.ViewEncapsulation.None,styles_UserEditComponent,{})); }
   return new _View_UserEditComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_UserEditComponent1 extends import1.AppView<any> {

@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 var multer = require('multer');
 var https = require('https');
 var http = require('http');
+var iconv = require('iconv-lite');
 
 var storage = multer.memoryStorage();
 var fileUpload = multer({ storage: storage }).single('solution');
@@ -34,7 +34,7 @@ router.post('/validator', function (req, res, next) {
             }
         };
 
-        var request = http.request(options, (response) => {
+        var request = https.request(options, (response) => {
             var body = "";
             response.on('data', (chunk) => {
                 body += chunk;
@@ -44,7 +44,7 @@ router.post('/validator', function (req, res, next) {
                 if (response.statusCode === 400){
                     return res.status(200).json({
                         status: '400',
-                        message: 'Wrong xml format'
+                        message: 'Wrong xml format',
                     });
                 }
                 return res.status(200).json({
@@ -61,7 +61,8 @@ router.post('/validator', function (req, res, next) {
             });
         });
 
-        request.write(req.file.buffer.toString());
+        let notBom = iconv.decode(req.file.buffer, 'utf-8', {addBom : false});
+        request.write(notBom);
         request.end();
     });
 });
@@ -267,11 +268,12 @@ router.get('/solutions', function (req, res, next) {
 });
 
 router.get('/solution/:id', function (req, res, next) {
-    Solution.findById()
+    console.log(req.params.id);
+    Solution.findById(req.params.id)
         .populate('user')
         .populate('instance')
         .populate('paper')
-        .exec(req.params.id, function (err, solution) {
+        .exec(function (err, solution) {
             if (err) {
                 return res.status(500).json({
                     title: 'An error occurred',

@@ -26,14 +26,7 @@ export class SigninComponent {
             this.authService.signin(user)
                 .subscribe(
                     data => {
-                        sessionStorage.setItem('token', data.token);
-                        sessionStorage.setItem('userId', data.userId);
-                        sessionStorage.setItem('email', data.email);
-
-                        if (data.isAdmin === 'true'){
-                            sessionStorage.setItem('isAdmin', 'true');
-                        }
-
+                        this.authService.setSessionStorage(data);
                         this.router.navigate(['/#home']);
                     },
                     error => {
@@ -47,7 +40,9 @@ export class SigninComponent {
         this.myForm = new FormGroup({
             email: new FormControl(null, [
                 Validators.required,
-                Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
+                Validators.pattern(
+                    "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@" +
+                    "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
             ]),
             password: new FormControl(null, Validators.required)
         });

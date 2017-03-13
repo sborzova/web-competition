@@ -12,13 +12,18 @@ export class InstancesComponent implements OnInit{
     constructor(private authService: AuthService){
     }
 
+
+    ngOnInit(){
+        if (!this.isLoggedIn()){
+            this.display = 'block';
+        }
+    }
+
     isAdmin(){
        return this.authService.isAdmin();
     }
 
-    ngOnInit(){
-        if (!this.authService.isLoggedIn()){
-            this.display = 'block';
-        }
+    isLoggedIn(){
+        return this.authService.isLoggedIn();
     }
 }

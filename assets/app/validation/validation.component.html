@@ -12,10 +12,14 @@
         </div>
     </div>
 <div class="col-sm-12">
-    <h2>Validate Your Solution</h2>
-    <div>
-        <input #solution type="file">
-        <button class="btn btn-primary btn-s" (click)="onValidate()" >Validate</button>
+    <h2>Validate your solution</h2>
+    <div class="row" style="padding: 5% 0%">
+        <div class="col-sm-2">
+            <input #solution type="file">
+        </div>
+        <div class="col-sm-3 col-sm-offset-2">
+            <button class="btn btn-primary btn-xs" (click)="onValidate()" >Validate</button>
+        </div>
     </div>
     <div>
         <app-success-validation></app-success-validation>

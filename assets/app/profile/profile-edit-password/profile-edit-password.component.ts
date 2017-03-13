@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm, Validators, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { Password } from "../password.model";
 import { User } from "../user.model";
-import { AuthService } from "../auth.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import { Password } from "./password.model";
+import { AuthService } from "../../auth/auth.service";
 
 @Component({
-    selector: 'app-profile-edit-pass',
-    templateUrl: 'user-edit-password.component.html'
+    selector: 'app-profile-edit-password',
+    templateUrl: 'profile-edit-password.component.html'
 })
-export class UserEditPasswordComponent implements OnInit{
+export class ProfileEditPasswordComponent implements OnInit{
     myForm: FormGroup;
     private password : Password;
     private user: User;

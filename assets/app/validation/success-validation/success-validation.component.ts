@@ -5,7 +5,7 @@ import { Subscription} from "rxjs";
 import { SolutionService } from "../solution.service";
 import { Validation } from "../validation.model";
 import { SolutionFindWorse } from "../solution-find-worse.model";
-import { Solution } from "../../auth/solution.model";
+import { Solution } from "../../user-solutions/solution.model";
 import { SolutionCreate } from "../solution-create.model";
 
 @Component({
@@ -18,6 +18,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     subscription: Subscription;
     myForm: FormGroup;
     private submitted: boolean = false;
+    private citationMissing: boolean = false;
 
     constructor(private solutionService: SolutionService) {
         this.subscription = solutionService.successValidationDelete$
@@ -26,6 +27,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
                     this.display = 'none';
                     this.myForm.reset();
                     this.submitted = false;
+                    this.citationMissing = false;
                 }
             );
     }
@@ -47,6 +49,10 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
 
     onSubmit(){
         this.submitted = true;
+        if (this.myForm.value.url && !this.myForm.value.citation){
+            this.citationMissing = true;
+            return;
+        }
         if (this.myForm.valid){
             this.solutionService.getWorseSolutions(
                 new SolutionFindWorse(
@@ -109,5 +115,9 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
 
     isSubmitted(){
         return this.submitted;
+    }
+
+    isCitationMissing(){
+        return this.citationMissing;
     }
 }

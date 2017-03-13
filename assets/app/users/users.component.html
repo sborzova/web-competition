@@ -1,4 +1,4 @@
-<div *ngIf="users" class="col-md-8 col-md-offset-2">
+<div *ngIf="users" class="col-md-12">
     <table class="table">
         <thead>
         <tr>
@@ -6,18 +6,36 @@
             <th>First name</th>
             <th>Last name</th>
             <th>Email address</th>
+            <th>Role</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let user of users; let i = index">
-            <td>{{ i + 1 }} </td>
-            <td>{{ user.firstName }}</td>
-            <td>{{ user.lastName }}</td>
-            <td>{{ user.email }}</td>
-            <button class="btn btn-danger btn-xs" (click)="onDelete(user)">
-                Delete
-            </button>
-        </tr>
+            <tr *ngFor="let user of users | orderBy : ['lastName', 'firstName']; let i = index">
+                <td>{{ i + 1 }} </td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+                <td *ngIf="!isMe(user)" class="btn-group" style="vertical-align: middle; border: none">
+                    <button
+                            class="btn btn-info btn-xs"
+                            [routerLink]="['/#users/edit']"
+                            [queryParams]="{userId: user.userId}">
+                        Edit
+                    </button>
+                    <button
+                            class="btn btn-primary btn-xs"
+                            [routerLink]="['/#users/editpass']"
+                            [queryParams]="{userId: user.userId}">
+                        Change password
+                    </button>
+                    <button
+                            class="btn btn-danger btn-xs"
+                            (click)="onDelete(user)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

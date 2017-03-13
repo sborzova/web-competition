@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken');
 var multer = require('multer');
 
 var storage = multer.memoryStorage();

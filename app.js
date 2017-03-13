@@ -8,12 +8,12 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 var multer = require("multer");
 
-
 var appRoutes = require('./routes/app');
 var userRoutes = require('./routes/user');
 var instanceRoutes = require('./routes/instance');
 var paperRoutes = require('./routes/paper');
 var solutionRoutes = require('./routes/solution');
+var preferenceRoutes = require('./routes/preference');
 
 var app = express();
 mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc');
@@ -21,13 +21,12 @@ mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc'
 //save admin if does not exist
 var User = require('./models/user');
 var emailAdmin = 'hanka@fi.muni.cz';
-
 var user = new User({
     firstName: 'Hana',
     lastName: 'Rudová',
     password: bcrypt.hashSync('1234', 10),
     email: emailAdmin,
-    roles: ['admin']
+    role: 'admin'
 });
 
 User.findOne({email: emailAdmin}, function(err, admin) {
@@ -35,6 +34,27 @@ User.findOne({email: emailAdmin}, function(err, admin) {
       console.error(err);
     if (!admin){
         user.save(function(err, result) {
+            if (err) {
+                console.error(err);
+            }
+            console.log(result);
+        });
+    }
+});
+
+//set preference competition is not running
+var Preference = require('./models/preference');
+var preferenceName = 'competitionIsOn';
+var preferenceDefault = new Preference({
+    name: preferenceName,
+    state: false
+});
+
+Preference.findOne({name: preferenceName}, function (err, preference) {
+    if (err)
+        console.error(err);
+    if (!preference){
+        preferenceDefault.save(function(err, result) {
             if (err) {
                 console.error(err);
             }

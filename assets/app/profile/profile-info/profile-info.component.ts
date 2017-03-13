@@ -1,14 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { AuthService } from "../../auth/auth.service";
 import { User } from "../user.model";
-import { AuthService } from "../auth.service";
 
 
 @Component({
-    selector: 'app-user-info',
-    templateUrl: 'user.component.html'
+    selector: 'app-profile-info',
+    templateUrl: 'profile-info.component.html'
 })
-export class UserInfoComponent implements OnInit {
+export class ProfileInfoComponent implements OnInit {
     @Input() user: User;
 
     constructor(private authService: AuthService) {
@@ -19,7 +19,8 @@ export class UserInfoComponent implements OnInit {
             .subscribe(
                 (user: User ) => {
                     this.user = user;
-                }
+                },
+                error => console.error(error)
             );
     }
 }

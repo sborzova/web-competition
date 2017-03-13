@@ -1,6 +1,7 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+
 import { SolutionResult } from "../solution-result.model";
-import {SolutionService} from "../../validation/solution.service";
+import { SolutionService } from "../../validation/solution.service";
 
 @Component({
     selector: 'app-results-author',

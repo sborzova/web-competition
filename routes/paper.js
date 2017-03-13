@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken');
 
 var Paper = require('../models/paper');
 
@@ -106,40 +104,40 @@ router.get('/papers', function(req, res, next) {
     });
 });
 
-router.get('/papersByLoggedUser', function(req, res, next) {
-    var decoded = jwt.decode(req.query.token);
-    User.findOne({email: decoded.user.email}, function(err, user) {
-        if (err) {
-            return res.status(500).json({
-                title: 'An error occurred',
-                error: err
-            });
-        }
-        if (!user) {
-            return res.status(500).json({
-                title: 'No User Found!',
-                error: {message: 'User not found'}
-            });
-        }});
-    Paper.find(function(err, papers) {
-        if (err) {
-            return res.status(500).json({
-                title: 'An error occurred',
-                error: err
-            });
-        }
-        if (!papers) {
-            return res.status(500).json({
-                title: 'No Papers Found!',
-                error: {message: 'Paper not found'}
-            });
-        }
-        res.status(200).json({
-            message: 'Success',
-            obj: papers
-        });
-    });
-});
+// router.get('/papersByLoggedUser', function(req, res, next) {
+//     var decoded = jwt.decode(req.query.token);
+//     User.findOne({email: decoded.user.email}, function(err, user) {
+//         if (err) {
+//             return res.status(500).json({
+//                 title: 'An error occurred',
+//                 error: err
+//             });
+//         }
+//         if (!user) {
+//             return res.status(500).json({
+//                 title: 'No User Found!',
+//                 error: {message: 'User not found'}
+//             });
+//         }});
+//     Paper.find(function(err, papers) {
+//         if (err) {
+//             return res.status(500).json({
+//                 title: 'An error occurred',
+//                 error: err
+//             });
+//         }
+//         if (!papers) {
+//             return res.status(500).json({
+//                 title: 'No Papers Found!',
+//                 error: {message: 'Paper not found'}
+//             });
+//         }
+//         res.status(200).json({
+//             message: 'Success',
+//             obj: papers
+//         });
+//     });
+// });
 
 router.delete('/paper/:id', function (req, res, next) {
     Paper.findById(req.params.id, function (err, paper) {

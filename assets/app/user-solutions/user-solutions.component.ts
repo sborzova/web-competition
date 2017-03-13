@@ -1,0 +1,250 @@
+import {Component, OnInit, Input, OnDestroy} from "@angular/core";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Solution } from "./solution.model";
+import { Paper } from "./paper.model";
+import { SolutionService } from "../validation/solution.service";
+import { PaperService } from "./paper.service";
+import { FlashMessageService } from "../flash-message/flash-messages.service";
+import { SolutionPaper } from "./solution-paper.model";
+
+@Component({
+    selector: 'app-user-solutions',
+    templateUrl: 'user-solutions.component.html',
+    styleUrls: ['user-solutions.component.css']
+})
+export class UserSolutionsComponent implements OnInit, OnDestroy {
+    fileSaver = require('file-saver');
+    solutions: Solution[];
+    papers: Paper[];
+    editedPaper: Paper;
+    myForm: FormGroup;
+    showPaperForm: boolean = false;
+    showPapers: boolean = false;
+    submitted: boolean = false;
+    isEdited: boolean = false;
+
+    constructor(private solutionService: SolutionService,
+                private paperService: PaperService,
+                private flashMessageService: FlashMessageService){}
+
+    ngOnInit(){
+        this.solutionService.getSolutionsByLoggedUser()
+            .subscribe(
+                solutions => {
+                    this.solutions = solutions;
+                },
+                error => console.error(error)
+            )
+    }
+
+    ngOnDestroy(){
+        this.showPaperForm = false;
+        this.submitted = false;
+        this.isEdited = false;
+        this.showPapers = false;
+        this.editedPaper = null;
+    }
+
+    onDownload(solution: Solution){
+        let file = new File([solution.data], 'solution.xml', {type: "text/xml;charset=utf-8"});
+        this.fileSaver.saveAs(file);
+    }
+
+    onAddPaper(){
+        if (!this.checkIfSelected())
+            return;
+        if (!this.checkOnlyWithNoPaper())
+            return;
+        const solutions = this.selectedSolutions;
+        this.myForm = new FormGroup({
+            citation: new FormControl(null, Validators.required),
+            url: new FormControl(null)
+        });
+
+        this.submitted = false;
+        this.showPaperForm = true;
+    }
+
+    onRemovePaper(){
+        this.checkIfSelected();
+        let paperIds = new Set<string>();
+        for (let solution of this.selectedSolutions){
+            if (solution.paper){
+                paperIds.add(solution.paper.paperId);
+                solution.paper = null;
+            }
+            this.solutionService.deletePaperFromSolution(solution)
+                .subscribe(
+                    solution => {
+                        this.flashMessageService.showMessage('Papers were deleted.', 'alert-success' );
+                        this.uncheckSelected();
+                    },
+                    error => console.error(error)
+                )
+        }
+        this.removePaperFromDatabase(paperIds);
+    }
+
+    onEditPaper(){
+        if (this.checkIfSelected()){
+            //TODO do setu dat cely paper?
+            let paperIds = new Set<string>();
+            for (let solution of this.selectedSolutions){
+                this.editedPaper = solution.paper;
+                if (solution.paper){
+                    paperIds.add(solution.paper.paperId);
+                } else {
+                    this.flashMessageService.showMessage('It is not possible to modify not existing paper.', 'alert-danger');
+                    return;
+                }
+            }
+            if (paperIds.size != 1){
+                this.flashMessageService.showMessage('It is not possible to modify two different citations at a time. ' +
+                    'Please select the same citations only.', 'alert-danger');
+            }
+            let paperId : string = Array.from(paperIds)[0];
+            let showMessage = false;
+            for (let solution of this.solutions){
+                if (solution.paper && solution.paper.paperId == paperId){
+                    if (!solution.isChecked){
+                        showMessage = true;
+                        solution.isChecked = true;
+                    }
+                }
+            }
+            if (showMessage){
+                this.flashMessageService.showMessage('The same citation is also used for other solutions, ' +
+                    'all of them are modified now', 'alert-info');
+            }
+            this.isEdited = true;
+            this.submitted = false;
+            this.myForm = new FormGroup({
+                citation: new FormControl(this.editedPaper.citation, Validators.required),
+                url: new FormControl(this.editedPaper.url)
+            });
+            this.showPaperForm = true;
+        }
+    }
+
+    onSubmit(){
+        this.submitted = true;
+        if (this.myForm.valid){
+            if (this.isEdited){
+                this.editedPaper.citation = this.myForm.value.citation;
+                this.editedPaper.url = this.myForm.value.url;
+                this.paperService.updatePaper(this.editedPaper)
+                    .subscribe(
+                        () => {
+                            this.selectedSolutions.forEach(s => s.paper = this.editedPaper);
+                            this.isEdited = false;
+                            this.editedPaper = null;
+                            this.uncheckSelected();
+                            this.showPaperForm = false;
+                            this.flashMessageService.showMessage('Paper was updated', 'alert-success');
+                        },
+                        error => console.error(error),
+                    )
+            }else {
+                const paper = new Paper(
+                    this.myForm.value.citation,
+                    this.myForm.value.url
+                );
+                this.paperService.savePaper(paper)
+                    .subscribe(
+                        (paper: Paper) => {
+                            this.setPaperToSolutions(paper);
+                        } ,
+                        error => console.error(error)
+                    );
+            }
+        }
+    }
+
+    private setPaperToSolutions(paper: Paper) {
+        for (let s of this.selectedSolutions){
+            this.solutionService.updateSolutionPaper(new SolutionPaper(s.solutionId, paper.paperId))
+                .subscribe(
+                    result => {},
+                    error => console.error(error)
+                );
+            s.paper = paper;
+        }
+        this.flashMessageService.showMessage('Paper was saved.', 'alert-success' );
+        this.uncheckSelected();
+        this.showPaperForm = false;
+    }
+
+    get selectedSolutions() {
+        return this.solutions.filter(s => s.isChecked);
+    }
+
+
+    isShowPaperForm(){
+        return this.showPaperForm;
+    }
+
+    isShowPapers(){
+        return this.showPapers;
+    }
+
+    onShowPapers(){
+        this.showPapers = true;
+    }
+
+    onHidePapers(){
+        this.showPapers = false;
+    }
+
+    onHidePaperForm(){
+        this.uncheckSelected();
+        this.showPaperForm = false;
+    }
+
+    isSubmitted(){
+        return this.submitted;
+    }
+
+    private checkIfSelected() {
+        if (this.selectedSolutions.length == 0){
+            this.flashMessageService.showMessage('Select solutions.', 'alert-info' );
+            return false;
+        }
+        return true;
+    }
+
+    private uncheckSelected() {
+        for (let s of this.selectedSolutions){
+            s.isChecked = false;
+        }
+    }
+
+    private checkOnlyWithNoPaper() {
+        for (let s of this.selectedSolutions){
+            if (s.paper != null){
+                this.flashMessageService.showMessage('Select only solutions with no papers.', 'alert-danger' );
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private removePaperFromDatabase(paperIds: Set<string>) {
+        for (let solution of this.solutions){
+            if (solution.paper){
+                if (paperIds.has(solution.paper.paperId)){
+                    paperIds.delete(solution.paper.paperId);
+                }
+            }
+        }
+        let paperIdsArray = Array.from(paperIds);
+        for (let paperId of paperIdsArray){
+            this.paperService.deletePaper(paperId)
+                .subscribe(
+                    solution => {},
+                    error => console.error(error)
+                )
+        }
+    }
+
+
+}

@@ -32,17 +32,19 @@ export class ValidationComponent implements OnInit {
         if (solutionInput.files && solutionInput.files[0]){
             let fd = new FormData();
             fd.append('solution', solutionInput.files[0], solutionInput.files[0].name);
+            console.log(solutionInput.files[0]);
             this.validationService.validate(fd)
                 .subscribe(
                     data => {
                         let result = JSON.parse(data);
+                        console.log(result);
                         if (result.status == 400){
                                 this.flashMessageService.showMessage('Invalid XML format.', 'alert-danger' );
                         }else {
                             let info = "";
                             let logs : string[] = result.obj.log;
                             for (let log of logs){
-                                info += log + " ";
+                                info += log + "\n";
                             }
                             let instanceName = result.obj.instance;
                             let property = result.obj.property;

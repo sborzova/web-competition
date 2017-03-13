@@ -32,7 +32,6 @@ export class InstanceService {
                     null,
                     null,
                     result.postDate,
-                    result.isOn,
                     result._id);
                 this.instances.push(instance);
                 return instance;
@@ -41,7 +40,7 @@ export class InstanceService {
                 if (error.status === 422){
                     this.flashMessageService.showMessage('The name is already in use.', 'alert-danger' );
                 }
-                return Observable.throw(error.json())
+                return Observable.throw(error);
             });
     }
 
@@ -79,12 +78,11 @@ export class InstanceService {
                     instance.stats,
                     instance.data,
                     instance.postDate,
-                    instance.isOn,
                     instance._id
                 );
             })
             .catch((error: Response) => {
-                return Observable.throw(error.json())
+                return Observable.throw(error);
             });
     }
 
@@ -100,7 +98,7 @@ export class InstanceService {
                 if (error.status === 422){
                     this.flashMessageService.showMessage('The name is already in use.', 'alert-danger' );
                 }
-                return Observable.throw(error.json());
+                return Observable.throw(error);
             });
     }
 
@@ -117,14 +115,13 @@ export class InstanceService {
                         null,
                         null,
                         instance.postDate,
-                        instance.isOn,
                         instance._id)
                     );
                 }
                 this.instances = transformedInstances;
                 return transformedInstances;
             })
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => Observable.throw(error));
     }
 
     deleteInstance(instance: Instance){
@@ -135,7 +132,7 @@ export class InstanceService {
                 return response.json();
             })
             .catch((error: Response) => {
-                return Observable.throw(error.json());
+                return Observable.throw(error);
             });
     }
 }

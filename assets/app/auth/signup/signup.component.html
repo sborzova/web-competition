@@ -20,12 +20,12 @@
                     <div class="field-error"
                          *ngIf="(myForm.controls['firstName'].hasError('required')) &&
                             (myForm.controls['firstName'].touched || isSubmitted())">
-                        First name is required.
+                        Field is required.
                     </div>
                     <div class="field-error"
                          *ngIf="(myForm.controls['firstName'].hasError('maxlength')) &&
                             (myForm.controls['firstName'].touched || isSubmitted())">
-                        First name can have max 100 characters.
+                        Field can have max 100 characters.
                     </div>
                 </div>
                 <div class="form-group"
@@ -43,12 +43,12 @@
                     <div class="field-error"
                          *ngIf="(myForm.controls['lastName'].hasError('required')) &&
                             (myForm.controls['lastName'].touched || isSubmitted())">
-                        Last name is required.
+                        Field is required.
                     </div>
                     <div class="field-error"
                          *ngIf="(myForm.controls['lastName'].hasError('maxlength')) &&
                             (myForm.controls['lastName'].touched || isSubmitted())">
-                        Last name can have max 100 characters.
+                        Field can have max 100 characters.
                     </div>
                 </div>
                 <div class="form-group"
@@ -85,17 +85,17 @@
                     <div class="field-error"
                          *ngIf="myForm.controls['password'].hasError('required') &&
                             (myForm.controls['password'].touched || isSubmitted())">
-                        Password is required.
+                        Field is required.
                     </div>
                     <div class="field-error"
                          *ngIf="myForm.controls['password'].hasError('minlength') &&
                             (myForm.controls['password'].touched || isSubmitted())">
-                        Password can have min 4 characters.
+                        Field can have min 4 characters.
                     </div>
                     <div class="field-error"
                          *ngIf="myForm.controls['password'].hasError('maxlength') &&
                             (myForm.controls['password'].touched || isSubmitted())">
-                        Password can have max 100 characters.
+                        Field can have max 100 characters.
                     </div>
                 </div>
                 <div class="form-group"

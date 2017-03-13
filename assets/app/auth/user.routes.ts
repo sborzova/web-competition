@@ -1,12 +1,12 @@
 import { Routes } from "@angular/router";
 
-import { UserEditComponent } from "./user-edit/user-edit.component";
-import { UserEditPasswordComponent } from "./user-edit-password/user-edit-password.component";
-import { ProfileComponent } from "./profile/profile.component";
+import { ProfileEditComponent } from "../profile/profile-edit/profile-edit.component";
+import { ProfileEditPasswordComponent } from "../profile/profile-edit-password/profile-edit-password.component";
+import { ProfileInfoComponent } from "../profile/profile-info/profile-info.component";
 
 export const PROFILE_ROUTES: Routes = [
     { path: '', redirectTo: 'info', pathMatch: 'full' },
-    { path: 'edit', component: UserEditComponent },
-    { path: 'editpass', component: UserEditPasswordComponent },
-    { path: 'info', component: ProfileComponent },
+    { path: 'edit', component: ProfileEditComponent },
+    { path: 'editpass', component: ProfileEditPasswordComponent },
+    { path: 'info', component: ProfileInfoComponent },
 ];

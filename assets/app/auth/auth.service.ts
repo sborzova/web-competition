@@ -26,7 +26,7 @@ export class AuthService{
                 if (error.status === 422){
                     this.flashMessageService.showMessage('Email address is already in use.', 'alert-danger' );
                 }
-                    return Observable.throw(error.json())
+                return Observable.throw(error);
 
             });
     }
@@ -38,7 +38,7 @@ export class AuthService{
             .map((response: Response) => response.json())
             .catch((error: Response) => {
                 this.flashMessageService.showMessage('Invalid login credentials.', 'alert-danger' );
-                return Observable.throw(error.json())
+                return Observable.throw(error);
             });
     }
 
@@ -50,7 +50,7 @@ export class AuthService{
             .map((response: Response) => {
                 return response.json().obj;
             })
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => Observable.throw(error));
     }
 
     updateUser(user: User){
@@ -63,7 +63,13 @@ export class AuthService{
             .map((response: Response) => {
                 return response.json();
             })
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => {
+                if (error.status === 422){
+                    this.flashMessageService.showMessage('Email address is already in use.', 'alert-danger' );
+                }
+                return Observable.throw(error);
+
+            });
     }
 
     updatePassword(user: User){
@@ -80,7 +86,7 @@ export class AuthService{
                 if (error.status === 412){
                     this.flashMessageService.showMessage('Current password is incorrect.', 'alert-danger' );
                 }
-                return Observable.throw(error.json())
+                return Observable.throw(error);
             })
 
     }
@@ -99,6 +105,16 @@ export class AuthService{
 
     getEmailLoggedIn(){
         return sessionStorage.getItem('email');
+    }
+
+    setSessionStorage(data : any){
+        sessionStorage.setItem('token', data.token);
+        sessionStorage.setItem('userId', data.userId);
+        sessionStorage.setItem('email', data.email);
+
+        if (data.isAdmin === 'true'){
+            sessionStorage.setItem('isAdmin', 'true');
+        }
     }
 
 }

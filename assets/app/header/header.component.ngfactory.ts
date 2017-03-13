@@ -225,7 +225,7 @@ class _View_HeaderComponent0 extends import1.AppView<import3.HeaderComponent> {
     this.renderer.setElementAttribute(this._el_30,'href','#');
     this._text_31 = this.renderer.createText(this._el_30,'',(null as any));
     this._el_32 = this.renderer.createElement(this._el_30,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_32,'class','glyphicon glyphicon-user grey');
+    this.renderer.setElementAttribute(this._el_32,'class','glyphicon glyphicon-profile-info grey');
     this._el_33 = this.renderer.createElement(this._el_30,'b',(null as any));
     this.renderer.setElementAttribute(this._el_33,'class','caret grey');
     this._text_34 = this.renderer.createText(this._el_28,'\n                ',(null as any));
