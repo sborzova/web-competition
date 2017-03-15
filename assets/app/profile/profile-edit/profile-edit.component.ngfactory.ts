@@ -12,7 +12,7 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../auth.service';
+import * as import8 from '../../auth/auth.service';
 import * as import9 from '../../flash-message/flash-messages.service';
 import * as import10 from '@angular/router/src/router';
 import * as import11 from '@angular/core/src/metadata/view';
@@ -21,50 +21,51 @@ import * as import13 from '@angular/common/src/directives/ng_if';
 import * as import14 from '@angular/core/src/linker/template_ref';
 import * as import15 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
 import * as import16 from '@angular/forms/src/directives/ng_control_status';
-import * as import17 from '@angular/forms/src/directives/default_value_accessor';
-import * as import18 from '@angular/forms/src/directives/validators';
-import * as import19 from '@angular/forms/src/directives/reactive_directives/form_control_name';
-import * as import20 from '@angular/core/src/linker/element_ref';
-import * as import21 from '@angular/forms/src/validators';
-import * as import22 from '@angular/forms/src/directives/control_value_accessor';
-import * as import23 from '@angular/forms/src/directives/ng_control';
-import * as import24 from '@angular/forms/src/directives/control_container';
-var renderType_UserEditComponent_Host:import0.RenderComponentType = (null as any);
-class _View_UserEditComponent_Host0 extends import1.AppView<any> {
+import * as import17 from '@angular/common/src/directives/ng_class';
+import * as import18 from '@angular/forms/src/directives/default_value_accessor';
+import * as import19 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
+import * as import20 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import21 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import22 from '@angular/core/src/linker/element_ref';
+import * as import23 from '@angular/forms/src/directives/control_value_accessor';
+import * as import24 from '@angular/forms/src/directives/ng_control';
+import * as import25 from '@angular/forms/src/directives/control_container';
+var renderType_ProfileEditComponent_Host:import0.RenderComponentType = (null as any);
+class _View_ProfileEditComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
   /*private*/ _appEl_0:import2.AppElement;
-  _UserEditComponent_0_4:import3.ProfileEditComponent;
+  _ProfileEditComponent_0_4:import3.ProfileEditComponent;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_UserEditComponent_Host0,renderType_UserEditComponent_Host,import6.ViewType.HOST,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_ProfileEditComponent_Host0,renderType_ProfileEditComponent_Host,import6.ViewType.HOST,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.selectOrCreateHostElement('app-profile-edit',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
-    var compView_0:any = viewFactory_UserEditComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._UserEditComponent_0_4 = new import3.ProfileEditComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.FlashMessageService),this.parentInjector.get(import10.Router));
-    this._appEl_0.initComponent(this._UserEditComponent_0_4,[],compView_0);
-    compView_0.create(this._UserEditComponent_0_4,this.projectableNodes,(null as any));
+    var compView_0:any = viewFactory_ProfileEditComponent0(this.viewUtils,this.injector(0),this._appEl_0);
+    this._ProfileEditComponent_0_4 = new import3.ProfileEditComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.FlashMessageService),this.parentInjector.get(import10.Router));
+    this._appEl_0.initComponent(this._ProfileEditComponent_0_4,[],compView_0);
+    compView_0.create(this._ProfileEditComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
     return this._appEl_0;
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import3.ProfileEditComponent) && (0 === requestNodeIndex))) { return this._UserEditComponent_0_4; }
+    if (((token === import3.ProfileEditComponent) && (0 === requestNodeIndex))) { return this._ProfileEditComponent_0_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._UserEditComponent_0_4.ngOnInit(); }
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._ProfileEditComponent_0_4.ngOnInit(); }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-function viewFactory_UserEditComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_UserEditComponent_Host === (null as any))) { (renderType_UserEditComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
-  return new _View_UserEditComponent_Host0(viewUtils,parentInjector,declarationEl);
+function viewFactory_ProfileEditComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  if ((renderType_ProfileEditComponent_Host === (null as any))) { (renderType_ProfileEditComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
+  return new _View_ProfileEditComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const UserEditComponentNgFactory:import12.ComponentFactory<import3.ProfileEditComponent> = new import12.ComponentFactory<import3.ProfileEditComponent>('app-profile-edit',viewFactory_UserEditComponent_Host0,import3.ProfileEditComponent);
-const styles_UserEditComponent:any[] = [];
-var renderType_UserEditComponent:import0.RenderComponentType = (null as any);
-class _View_UserEditComponent0 extends import1.AppView<import3.ProfileEditComponent> {
+export const ProfileEditComponentNgFactory:import12.ComponentFactory<import3.ProfileEditComponent> = new import12.ComponentFactory<import3.ProfileEditComponent>('app-profile-edit',viewFactory_ProfileEditComponent_Host0,import3.ProfileEditComponent);
+const styles_ProfileEditComponent:any[] = [];
+var renderType_ProfileEditComponent:import0.RenderComponentType = (null as any);
+class _View_ProfileEditComponent0 extends import1.AppView<import3.ProfileEditComponent> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
@@ -86,7 +87,7 @@ class _View_UserEditComponent0 extends import1.AppView<import3.ProfileEditCompon
   _text_15:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_UserEditComponent0,renderType_UserEditComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_ProfileEditComponent0,renderType_ProfileEditComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
@@ -103,12 +104,12 @@ class _View_UserEditComponent0 extends import1.AppView<import3.ProfileEditCompon
     this.renderer.setElementAttribute(this._el_6,'class','text-center');
     this._text_7 = this.renderer.createText(this._el_6,'\n                ',(null as any));
     this._el_8 = this.renderer.createElement(this._el_6,'h2',(null as any));
-    this._text_9 = this.renderer.createText(this._el_8,'Change profile',(null as any));
+    this._text_9 = this.renderer.createText(this._el_8,'Edit profile',(null as any));
     this._text_10 = this.renderer.createText(this._el_6,'\n            ',(null as any));
     this._text_11 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._anchor_12 = this.renderer.createTemplateAnchor(this._el_4,(null as any));
     this._appEl_12 = new import2.AppElement(12,4,this,this._anchor_12);
-    this._TemplateRef_12_5 = new import14.TemplateRef_(this._appEl_12,viewFactory_UserEditComponent1);
+    this._TemplateRef_12_5 = new import14.TemplateRef_(this._appEl_12,viewFactory_ProfileEditComponent1);
     this._NgIf_12_6 = new import13.NgIf(this._appEl_12.vcRef,this._TemplateRef_12_5);
     this._text_13 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._text_14 = this.renderer.createText(this._el_2,'\n    ',(null as any));
@@ -150,67 +151,92 @@ class _View_UserEditComponent0 extends import1.AppView<import3.ProfileEditCompon
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-export function viewFactory_UserEditComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileEditComponent> {
-  if ((renderType_UserEditComponent === (null as any))) { (renderType_UserEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/profile-info-edit/profile-info-edit.component.html',0,import11.ViewEncapsulation.None,styles_UserEditComponent,{})); }
-  return new _View_UserEditComponent0(viewUtils,parentInjector,declarationEl);
+export function viewFactory_ProfileEditComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileEditComponent> {
+  if ((renderType_ProfileEditComponent === (null as any))) { (renderType_ProfileEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-edit/profile-edit.component.html',0,import11.ViewEncapsulation.None,styles_ProfileEditComponent,{})); }
+  return new _View_ProfileEditComponent0(viewUtils,parentInjector,declarationEl);
 }
-class _View_UserEditComponent1 extends import1.AppView<any> {
+class _View_ProfileEditComponent1 extends import1.AppView<any> {
   _el_0:any;
   _FormGroupDirective_0_3:import15.FormGroupDirective;
   _ControlContainer_0_4:any;
   _NgControlStatusGroup_0_5:import16.NgControlStatusGroup;
   _text_1:any;
   _el_2:any;
+  _NgClass_2_3:import17.NgClass;
   _text_3:any;
   _el_4:any;
   _text_5:any;
-  _el_6:any;
-  _text_7:any;
-  _el_8:any;
-  _text_9:any;
+  _text_6:any;
+  _el_7:any;
+  _DefaultValueAccessor_7_3:import18.DefaultValueAccessor;
+  _NG_VALUE_ACCESSOR_7_4:any[];
+  _FormControlDirective_7_5:import19.FormControlDirective;
+  _NgControl_7_6:any;
+  _NgControlStatus_7_7:import16.NgControlStatus;
+  _text_8:any;
+  _anchor_9:any;
+  /*private*/ _appEl_9:import2.AppElement;
+  _TemplateRef_9_5:any;
+  _NgIf_9_6:import13.NgIf;
   _text_10:any;
-  _el_11:any;
-  _DefaultValueAccessor_11_3:import17.DefaultValueAccessor;
-  _RequiredValidator_11_4:import18.RequiredValidator;
-  _NG_VALIDATORS_11_5:any[];
-  _NG_VALUE_ACCESSOR_11_6:any[];
-  _FormControlName_11_7:import19.FormControlName;
-  _NgControl_11_8:any;
-  _NgControlStatus_11_9:import16.NgControlStatus;
+  _anchor_11:any;
+  /*private*/ _appEl_11:import2.AppElement;
+  _TemplateRef_11_5:any;
+  _NgIf_11_6:import13.NgIf;
   _text_12:any;
   _text_13:any;
-  _text_14:any;
-  _el_15:any;
-  _text_16:any;
-  _el_17:any;
+  _el_14:any;
+  _NgClass_14_3:import17.NgClass;
+  _text_15:any;
+  _el_16:any;
+  _text_17:any;
   _text_18:any;
   _el_19:any;
+  _DefaultValueAccessor_19_3:import18.DefaultValueAccessor;
+  _NG_VALUE_ACCESSOR_19_4:any[];
+  _FormControlDirective_19_5:import19.FormControlDirective;
+  _NgControl_19_6:any;
+  _NgControlStatus_19_7:import16.NgControlStatus;
   _text_20:any;
-  _text_21:any;
-  _el_22:any;
-  _DefaultValueAccessor_22_3:import17.DefaultValueAccessor;
-  _RequiredValidator_22_4:import18.RequiredValidator;
-  _NG_VALIDATORS_22_5:any[];
-  _NG_VALUE_ACCESSOR_22_6:any[];
-  _FormControlName_22_7:import19.FormControlName;
-  _NgControl_22_8:any;
-  _NgControlStatus_22_9:import16.NgControlStatus;
-  _text_23:any;
+  _anchor_21:any;
+  /*private*/ _appEl_21:import2.AppElement;
+  _TemplateRef_21_5:any;
+  _NgIf_21_6:import13.NgIf;
+  _text_22:any;
+  _anchor_23:any;
+  /*private*/ _appEl_23:import2.AppElement;
+  _TemplateRef_23_5:any;
+  _NgIf_23_6:import13.NgIf;
   _text_24:any;
   _text_25:any;
-  _text_26:any;
-  _el_27:any;
-  _text_28:any;
-  _el_29:any;
+  _el_26:any;
+  _NgClass_26_3:import17.NgClass;
+  _text_27:any;
+  _el_28:any;
+  _text_29:any;
   _text_30:any;
   _el_31:any;
+  _DefaultValueAccessor_31_3:import18.DefaultValueAccessor;
+  _NG_VALUE_ACCESSOR_31_4:any[];
+  _FormControlDirective_31_5:import19.FormControlDirective;
+  _NgControl_31_6:any;
+  _NgControlStatus_31_7:import16.NgControlStatus;
   _text_32:any;
-  _text_33:any;
-  _el_34:any;
+  _anchor_33:any;
+  /*private*/ _appEl_33:import2.AppElement;
+  _TemplateRef_33_5:any;
+  _NgIf_33_6:import13.NgIf;
+  _text_34:any;
   _text_35:any;
-  _text_36:any;
+  _el_36:any;
   _text_37:any;
-  _text_38:any;
+  _el_38:any;
+  _text_39:any;
+  _text_40:any;
+  _el_41:any;
+  _text_42:any;
+  _text_43:any;
+  _text_44:any;
   /*private*/ _expr_3:any;
   /*private*/ _expr_4:any;
   /*private*/ _expr_5:any;
@@ -218,8 +244,9 @@ class _View_UserEditComponent1 extends import1.AppView<any> {
   /*private*/ _expr_7:any;
   /*private*/ _expr_8:any;
   /*private*/ _expr_9:any;
-  /*private*/ _expr_12:any;
-  /*private*/ _expr_13:any;
+  /*private*/ _expr_10:any;
+  _map_0:any;
+  /*private*/ _expr_11:any;
   /*private*/ _expr_14:any;
   /*private*/ _expr_15:any;
   /*private*/ _expr_16:any;
@@ -227,18 +254,33 @@ class _View_UserEditComponent1 extends import1.AppView<any> {
   /*private*/ _expr_18:any;
   /*private*/ _expr_19:any;
   /*private*/ _expr_20:any;
+  /*private*/ _expr_21:any;
+  /*private*/ _expr_22:any;
   /*private*/ _expr_23:any;
+  _map_1:any;
   /*private*/ _expr_24:any;
-  /*private*/ _expr_25:any;
-  /*private*/ _expr_26:any;
   /*private*/ _expr_27:any;
   /*private*/ _expr_28:any;
   /*private*/ _expr_29:any;
   /*private*/ _expr_30:any;
   /*private*/ _expr_31:any;
   /*private*/ _expr_32:any;
+  /*private*/ _expr_33:any;
+  /*private*/ _expr_34:any;
+  /*private*/ _expr_35:any;
+  /*private*/ _expr_36:any;
+  _map_2:any;
+  /*private*/ _expr_37:any;
+  /*private*/ _expr_40:any;
+  /*private*/ _expr_41:any;
+  /*private*/ _expr_42:any;
+  /*private*/ _expr_43:any;
+  /*private*/ _expr_44:any;
+  /*private*/ _expr_45:any;
+  /*private*/ _expr_46:any;
+  /*private*/ _expr_47:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_UserEditComponent1,renderType_UserEditComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_ProfileEditComponent1,renderType_ProfileEditComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'form',(null as any));
@@ -247,78 +289,100 @@ class _View_UserEditComponent1 extends import1.AppView<any> {
     this._NgControlStatusGroup_0_5 = new import16.NgControlStatusGroup(this._ControlContainer_0_4);
     this._text_1 = this.renderer.createText(this._el_0,'\n                ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_2,'class','row');
+    this.renderer.setElementAttribute(this._el_2,'class','form-group');
+    this._NgClass_2_3 = new import17.NgClass(this.parent.parentInjector.get(import20.IterableDiffers),this.parent.parentInjector.get(import21.KeyValueDiffers),new import22.ElementRef(this._el_2),this.renderer);
     this._text_3 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
-    this._el_4 = this.renderer.createElement(this._el_2,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_4,'class','col-xs-12');
-    this._text_5 = this.renderer.createText(this._el_4,'\n                        ',(null as any));
-    this._el_6 = this.renderer.createElement(this._el_4,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_6,'class','form-group');
-    this._text_7 = this.renderer.createText(this._el_6,'\n                            ',(null as any));
-    this._el_8 = this.renderer.createElement(this._el_6,'label',(null as any));
-    this.renderer.setElementAttribute(this._el_8,'for','firstName');
-    this._text_9 = this.renderer.createText(this._el_8,'First name',(null as any));
-    this._text_10 = this.renderer.createText(this._el_6,'\n                            ',(null as any));
-    this._el_11 = this.renderer.createElement(this._el_6,'input',(null as any));
-    this.renderer.setElementAttribute(this._el_11,'class','form-control');
-    this.renderer.setElementAttribute(this._el_11,'formControlName','firstName');
-    this.renderer.setElementAttribute(this._el_11,'id','firstName');
-    this.renderer.setElementAttribute(this._el_11,'required','');
-    this.renderer.setElementAttribute(this._el_11,'type','text');
-    this._DefaultValueAccessor_11_3 = new import17.DefaultValueAccessor(this.renderer,new import20.ElementRef(this._el_11));
-    this._RequiredValidator_11_4 = new import18.RequiredValidator();
-    this._NG_VALIDATORS_11_5 = [this._RequiredValidator_11_4];
-    this._NG_VALUE_ACCESSOR_11_6 = [this._DefaultValueAccessor_11_3];
-    this._FormControlName_11_7 = new import19.FormControlName(this._ControlContainer_0_4,this._NG_VALIDATORS_11_5,(null as any),this._NG_VALUE_ACCESSOR_11_6);
-    this._NgControl_11_8 = this._FormControlName_11_7;
-    this._NgControlStatus_11_9 = new import16.NgControlStatus(this._NgControl_11_8);
-    this._text_12 = this.renderer.createText(this._el_6,'\n                        ',(null as any));
-    this._text_13 = this.renderer.createText(this._el_4,'\n                    ',(null as any));
-    this._text_14 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
-    this._el_15 = this.renderer.createElement(this._el_2,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_15,'class','col-xs-12');
-    this._text_16 = this.renderer.createText(this._el_15,'\n                        ',(null as any));
-    this._el_17 = this.renderer.createElement(this._el_15,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_17,'class','form-group');
-    this._text_18 = this.renderer.createText(this._el_17,'\n                            ',(null as any));
-    this._el_19 = this.renderer.createElement(this._el_17,'label',(null as any));
-    this.renderer.setElementAttribute(this._el_19,'for','lastName');
-    this._text_20 = this.renderer.createText(this._el_19,'Last name',(null as any));
-    this._text_21 = this.renderer.createText(this._el_17,'\n                            ',(null as any));
-    this._el_22 = this.renderer.createElement(this._el_17,'input',(null as any));
-    this.renderer.setElementAttribute(this._el_22,'class','form-control');
-    this.renderer.setElementAttribute(this._el_22,'formControlName','lastName');
-    this.renderer.setElementAttribute(this._el_22,'id','lastName');
-    this.renderer.setElementAttribute(this._el_22,'required','');
-    this.renderer.setElementAttribute(this._el_22,'type','text');
-    this._DefaultValueAccessor_22_3 = new import17.DefaultValueAccessor(this.renderer,new import20.ElementRef(this._el_22));
-    this._RequiredValidator_22_4 = new import18.RequiredValidator();
-    this._NG_VALIDATORS_22_5 = [this._RequiredValidator_22_4];
-    this._NG_VALUE_ACCESSOR_22_6 = [this._DefaultValueAccessor_22_3];
-    this._FormControlName_22_7 = new import19.FormControlName(this._ControlContainer_0_4,this._NG_VALIDATORS_22_5,(null as any),this._NG_VALUE_ACCESSOR_22_6);
-    this._NgControl_22_8 = this._FormControlName_22_7;
-    this._NgControlStatus_22_9 = new import16.NgControlStatus(this._NgControl_22_8);
-    this._text_23 = this.renderer.createText(this._el_17,'\n                        ',(null as any));
-    this._text_24 = this.renderer.createText(this._el_15,'\n                    ',(null as any));
-    this._text_25 = this.renderer.createText(this._el_2,'\n                ',(null as any));
-    this._text_26 = this.renderer.createText(this._el_0,'\n                ',(null as any));
-    this._el_27 = this.renderer.createElement(this._el_0,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_27,'class','row');
-    this._text_28 = this.renderer.createText(this._el_27,'\n                    ',(null as any));
-    this._el_29 = this.renderer.createElement(this._el_27,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_29,'class','col-xs-12');
-    this._text_30 = this.renderer.createText(this._el_29,'\n                        ',(null as any));
-    this._el_31 = this.renderer.createElement(this._el_29,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_31,'class','btn btn-primary');
-    this.renderer.setElementAttribute(this._el_31,'type','submit');
-    this._text_32 = this.renderer.createText(this._el_31,'Save',(null as any));
-    this._text_33 = this.renderer.createText(this._el_29,'\n                        ',(null as any));
-    this._el_34 = this.renderer.createElement(this._el_29,'a',(null as any));
-    this.renderer.setElementAttribute(this._el_34,'class','btn btn-danger');
-    this._text_35 = this.renderer.createText(this._el_34,'Cancel',(null as any));
-    this._text_36 = this.renderer.createText(this._el_29,'\n                    ',(null as any));
-    this._text_37 = this.renderer.createText(this._el_27,'\n                ',(null as any));
-    this._text_38 = this.renderer.createText(this._el_0,'\n            ',(null as any));
+    this._el_4 = this.renderer.createElement(this._el_2,'label',(null as any));
+    this.renderer.setElementAttribute(this._el_4,'for','firstName');
+    this._text_5 = this.renderer.createText(this._el_4,'\n                        First name\n                    ',(null as any));
+    this._text_6 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
+    this._el_7 = this.renderer.createElement(this._el_2,'input',(null as any));
+    this.renderer.setElementAttribute(this._el_7,'class','form-control');
+    this.renderer.setElementAttribute(this._el_7,'id','firstName');
+    this.renderer.setElementAttribute(this._el_7,'type','text');
+    this._DefaultValueAccessor_7_3 = new import18.DefaultValueAccessor(this.renderer,new import22.ElementRef(this._el_7));
+    this._NG_VALUE_ACCESSOR_7_4 = [this._DefaultValueAccessor_7_3];
+    this._FormControlDirective_7_5 = new import19.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_7_4);
+    this._NgControl_7_6 = this._FormControlDirective_7_5;
+    this._NgControlStatus_7_7 = new import16.NgControlStatus(this._NgControl_7_6);
+    this._text_8 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
+    this._anchor_9 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
+    this._appEl_9 = new import2.AppElement(9,2,this,this._anchor_9);
+    this._TemplateRef_9_5 = new import14.TemplateRef_(this._appEl_9,viewFactory_ProfileEditComponent2);
+    this._NgIf_9_6 = new import13.NgIf(this._appEl_9.vcRef,this._TemplateRef_9_5);
+    this._text_10 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
+    this._anchor_11 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
+    this._appEl_11 = new import2.AppElement(11,2,this,this._anchor_11);
+    this._TemplateRef_11_5 = new import14.TemplateRef_(this._appEl_11,viewFactory_ProfileEditComponent3);
+    this._NgIf_11_6 = new import13.NgIf(this._appEl_11.vcRef,this._TemplateRef_11_5);
+    this._text_12 = this.renderer.createText(this._el_2,'\n                ',(null as any));
+    this._text_13 = this.renderer.createText(this._el_0,'\n                ',(null as any));
+    this._el_14 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_14,'class','form-group');
+    this._NgClass_14_3 = new import17.NgClass(this.parent.parentInjector.get(import20.IterableDiffers),this.parent.parentInjector.get(import21.KeyValueDiffers),new import22.ElementRef(this._el_14),this.renderer);
+    this._text_15 = this.renderer.createText(this._el_14,'\n                    ',(null as any));
+    this._el_16 = this.renderer.createElement(this._el_14,'label',(null as any));
+    this.renderer.setElementAttribute(this._el_16,'for','lastName');
+    this._text_17 = this.renderer.createText(this._el_16,'\n                        Last name\n                    ',(null as any));
+    this._text_18 = this.renderer.createText(this._el_14,'\n                    ',(null as any));
+    this._el_19 = this.renderer.createElement(this._el_14,'input',(null as any));
+    this.renderer.setElementAttribute(this._el_19,'class','form-control');
+    this.renderer.setElementAttribute(this._el_19,'id','lastName');
+    this.renderer.setElementAttribute(this._el_19,'type','text');
+    this._DefaultValueAccessor_19_3 = new import18.DefaultValueAccessor(this.renderer,new import22.ElementRef(this._el_19));
+    this._NG_VALUE_ACCESSOR_19_4 = [this._DefaultValueAccessor_19_3];
+    this._FormControlDirective_19_5 = new import19.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_19_4);
+    this._NgControl_19_6 = this._FormControlDirective_19_5;
+    this._NgControlStatus_19_7 = new import16.NgControlStatus(this._NgControl_19_6);
+    this._text_20 = this.renderer.createText(this._el_14,'\n                    ',(null as any));
+    this._anchor_21 = this.renderer.createTemplateAnchor(this._el_14,(null as any));
+    this._appEl_21 = new import2.AppElement(21,14,this,this._anchor_21);
+    this._TemplateRef_21_5 = new import14.TemplateRef_(this._appEl_21,viewFactory_ProfileEditComponent4);
+    this._NgIf_21_6 = new import13.NgIf(this._appEl_21.vcRef,this._TemplateRef_21_5);
+    this._text_22 = this.renderer.createText(this._el_14,'\n                    ',(null as any));
+    this._anchor_23 = this.renderer.createTemplateAnchor(this._el_14,(null as any));
+    this._appEl_23 = new import2.AppElement(23,14,this,this._anchor_23);
+    this._TemplateRef_23_5 = new import14.TemplateRef_(this._appEl_23,viewFactory_ProfileEditComponent5);
+    this._NgIf_23_6 = new import13.NgIf(this._appEl_23.vcRef,this._TemplateRef_23_5);
+    this._text_24 = this.renderer.createText(this._el_14,'\n                ',(null as any));
+    this._text_25 = this.renderer.createText(this._el_0,'\n            ',(null as any));
+    this._el_26 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_26,'class','form-group');
+    this._NgClass_26_3 = new import17.NgClass(this.parent.parentInjector.get(import20.IterableDiffers),this.parent.parentInjector.get(import21.KeyValueDiffers),new import22.ElementRef(this._el_26),this.renderer);
+    this._text_27 = this.renderer.createText(this._el_26,'\n                ',(null as any));
+    this._el_28 = this.renderer.createElement(this._el_26,'label',(null as any));
+    this.renderer.setElementAttribute(this._el_28,'for','email');
+    this._text_29 = this.renderer.createText(this._el_28,'\n                    Email address\n                ',(null as any));
+    this._text_30 = this.renderer.createText(this._el_26,'\n                ',(null as any));
+    this._el_31 = this.renderer.createElement(this._el_26,'input',(null as any));
+    this.renderer.setElementAttribute(this._el_31,'class','form-control');
+    this.renderer.setElementAttribute(this._el_31,'id','email');
+    this.renderer.setElementAttribute(this._el_31,'type','email');
+    this._DefaultValueAccessor_31_3 = new import18.DefaultValueAccessor(this.renderer,new import22.ElementRef(this._el_31));
+    this._NG_VALUE_ACCESSOR_31_4 = [this._DefaultValueAccessor_31_3];
+    this._FormControlDirective_31_5 = new import19.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_31_4);
+    this._NgControl_31_6 = this._FormControlDirective_31_5;
+    this._NgControlStatus_31_7 = new import16.NgControlStatus(this._NgControl_31_6);
+    this._text_32 = this.renderer.createText(this._el_26,'\n                ',(null as any));
+    this._anchor_33 = this.renderer.createTemplateAnchor(this._el_26,(null as any));
+    this._appEl_33 = new import2.AppElement(33,26,this,this._anchor_33);
+    this._TemplateRef_33_5 = new import14.TemplateRef_(this._appEl_33,viewFactory_ProfileEditComponent6);
+    this._NgIf_33_6 = new import13.NgIf(this._appEl_33.vcRef,this._TemplateRef_33_5);
+    this._text_34 = this.renderer.createText(this._el_26,'\n            ',(null as any));
+    this._text_35 = this.renderer.createText(this._el_0,'\n            ',(null as any));
+    this._el_36 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_36,'align','right');
+    this._text_37 = this.renderer.createText(this._el_36,'\n                ',(null as any));
+    this._el_38 = this.renderer.createElement(this._el_36,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_38,'class','btn btn-primary');
+    this.renderer.setElementAttribute(this._el_38,'type','submit');
+    this._text_39 = this.renderer.createText(this._el_38,'\n                    Save\n                ',(null as any));
+    this._text_40 = this.renderer.createText(this._el_36,'\n                ',(null as any));
+    this._el_41 = this.renderer.createElement(this._el_36,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_41,'class','btn btn-default');
+    this._text_42 = this.renderer.createText(this._el_41,'\n                    Cancel\n                ',(null as any));
+    this._text_43 = this.renderer.createText(this._el_36,'\n            ',(null as any));
+    this._text_44 = this.renderer.createText(this._el_0,'\n            ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_0,'ngSubmit',this.eventHandler(this._handle_ngSubmit_0_0.bind(this)));
     var disposable_1:Function = this.renderer.listen(this._el_0,'submit',this.eventHandler(this._handle_submit_0_1.bind(this)));
     var disposable_2:Function = this.renderer.listen(this._el_0,'reset',this.eventHandler(this._handle_reset_0_2.bind(this)));
@@ -330,10 +394,13 @@ class _View_UserEditComponent1 extends import1.AppView<any> {
     this._expr_7 = import7.UNINITIALIZED;
     this._expr_8 = import7.UNINITIALIZED;
     this._expr_9 = import7.UNINITIALIZED;
-    var disposable_3:Function = this.renderer.listen(this._el_11,'input',this.eventHandler(this._handle_input_11_0.bind(this)));
-    var disposable_4:Function = this.renderer.listen(this._el_11,'blur',this.eventHandler(this._handle_blur_11_1.bind(this)));
-    this._expr_12 = import7.UNINITIALIZED;
-    this._expr_13 = import7.UNINITIALIZED;
+    this._expr_10 = import7.UNINITIALIZED;
+    this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
+      return {'has-error': p0};
+    });
+    this._expr_11 = import7.UNINITIALIZED;
+    var disposable_3:Function = this.renderer.listen(this._el_7,'input',this.eventHandler(this._handle_input_7_0.bind(this)));
+    var disposable_4:Function = this.renderer.listen(this._el_7,'blur',this.eventHandler(this._handle_blur_7_1.bind(this)));
     this._expr_14 = import7.UNINITIALIZED;
     this._expr_15 = import7.UNINITIALIZED;
     this._expr_16 = import7.UNINITIALIZED;
@@ -341,19 +408,40 @@ class _View_UserEditComponent1 extends import1.AppView<any> {
     this._expr_18 = import7.UNINITIALIZED;
     this._expr_19 = import7.UNINITIALIZED;
     this._expr_20 = import7.UNINITIALIZED;
-    var disposable_5:Function = this.renderer.listen(this._el_22,'input',this.eventHandler(this._handle_input_22_0.bind(this)));
-    var disposable_6:Function = this.renderer.listen(this._el_22,'blur',this.eventHandler(this._handle_blur_22_1.bind(this)));
+    this._expr_21 = import7.UNINITIALIZED;
+    this._expr_22 = import7.UNINITIALIZED;
     this._expr_23 = import7.UNINITIALIZED;
+    this._map_1 = import4.pureProxy1((p0:any):{[key: string]:any} => {
+      return {'has-error': p0};
+    });
     this._expr_24 = import7.UNINITIALIZED;
-    this._expr_25 = import7.UNINITIALIZED;
-    this._expr_26 = import7.UNINITIALIZED;
+    var disposable_5:Function = this.renderer.listen(this._el_19,'input',this.eventHandler(this._handle_input_19_0.bind(this)));
+    var disposable_6:Function = this.renderer.listen(this._el_19,'blur',this.eventHandler(this._handle_blur_19_1.bind(this)));
     this._expr_27 = import7.UNINITIALIZED;
     this._expr_28 = import7.UNINITIALIZED;
     this._expr_29 = import7.UNINITIALIZED;
     this._expr_30 = import7.UNINITIALIZED;
     this._expr_31 = import7.UNINITIALIZED;
     this._expr_32 = import7.UNINITIALIZED;
-    var disposable_7:Function = this.renderer.listen(this._el_34,'click',this.eventHandler(this._handle_click_34_0.bind(this)));
+    this._expr_33 = import7.UNINITIALIZED;
+    this._expr_34 = import7.UNINITIALIZED;
+    this._expr_35 = import7.UNINITIALIZED;
+    this._expr_36 = import7.UNINITIALIZED;
+    this._map_2 = import4.pureProxy1((p0:any):{[key: string]:any} => {
+      return {'has-error': p0};
+    });
+    this._expr_37 = import7.UNINITIALIZED;
+    var disposable_7:Function = this.renderer.listen(this._el_31,'input',this.eventHandler(this._handle_input_31_0.bind(this)));
+    var disposable_8:Function = this.renderer.listen(this._el_31,'blur',this.eventHandler(this._handle_blur_31_1.bind(this)));
+    this._expr_40 = import7.UNINITIALIZED;
+    this._expr_41 = import7.UNINITIALIZED;
+    this._expr_42 = import7.UNINITIALIZED;
+    this._expr_43 = import7.UNINITIALIZED;
+    this._expr_44 = import7.UNINITIALIZED;
+    this._expr_45 = import7.UNINITIALIZED;
+    this._expr_46 = import7.UNINITIALIZED;
+    this._expr_47 = import7.UNINITIALIZED;
+    var disposable_9:Function = this.renderer.listen(this._el_41,'click',this.eventHandler(this._handle_click_41_0.bind(this)));
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -361,39 +449,45 @@ class _View_UserEditComponent1 extends import1.AppView<any> {
       this._text_3,
       this._el_4,
       this._text_5,
-      this._el_6,
-      this._text_7,
-      this._el_8,
-      this._text_9,
+      this._text_6,
+      this._el_7,
+      this._text_8,
+      this._anchor_9,
       this._text_10,
-      this._el_11,
+      this._anchor_11,
       this._text_12,
       this._text_13,
-      this._text_14,
-      this._el_15,
-      this._text_16,
-      this._el_17,
+      this._el_14,
+      this._text_15,
+      this._el_16,
+      this._text_17,
       this._text_18,
       this._el_19,
       this._text_20,
-      this._text_21,
-      this._el_22,
-      this._text_23,
+      this._anchor_21,
+      this._text_22,
+      this._anchor_23,
       this._text_24,
       this._text_25,
-      this._text_26,
-      this._el_27,
-      this._text_28,
-      this._el_29,
+      this._el_26,
+      this._text_27,
+      this._el_28,
+      this._text_29,
       this._text_30,
       this._el_31,
       this._text_32,
-      this._text_33,
-      this._el_34,
+      this._anchor_33,
+      this._text_34,
       this._text_35,
-      this._text_36,
+      this._el_36,
       this._text_37,
-      this._text_38
+      this._el_38,
+      this._text_39,
+      this._text_40,
+      this._el_41,
+      this._text_42,
+      this._text_43,
+      this._text_44
     ]
     ,[
       disposable_0,
@@ -403,29 +497,45 @@ class _View_UserEditComponent1 extends import1.AppView<any> {
       disposable_4,
       disposable_5,
       disposable_6,
-      disposable_7
+      disposable_7,
+      disposable_8,
+      disposable_9
     ]
     ,[subscription_0]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import17.DefaultValueAccessor) && (11 === requestNodeIndex))) { return this._DefaultValueAccessor_11_3; }
-    if (((token === import18.RequiredValidator) && (11 === requestNodeIndex))) { return this._RequiredValidator_11_4; }
-    if (((token === import21.NG_VALIDATORS) && (11 === requestNodeIndex))) { return this._NG_VALIDATORS_11_5; }
-    if (((token === import22.NG_VALUE_ACCESSOR) && (11 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_11_6; }
-    if (((token === import19.FormControlName) && (11 === requestNodeIndex))) { return this._FormControlName_11_7; }
-    if (((token === import23.NgControl) && (11 === requestNodeIndex))) { return this._NgControl_11_8; }
-    if (((token === import16.NgControlStatus) && (11 === requestNodeIndex))) { return this._NgControlStatus_11_9; }
-    if (((token === import17.DefaultValueAccessor) && (22 === requestNodeIndex))) { return this._DefaultValueAccessor_22_3; }
-    if (((token === import18.RequiredValidator) && (22 === requestNodeIndex))) { return this._RequiredValidator_22_4; }
-    if (((token === import21.NG_VALIDATORS) && (22 === requestNodeIndex))) { return this._NG_VALIDATORS_22_5; }
-    if (((token === import22.NG_VALUE_ACCESSOR) && (22 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_22_6; }
-    if (((token === import19.FormControlName) && (22 === requestNodeIndex))) { return this._FormControlName_22_7; }
-    if (((token === import23.NgControl) && (22 === requestNodeIndex))) { return this._NgControl_22_8; }
-    if (((token === import16.NgControlStatus) && (22 === requestNodeIndex))) { return this._NgControlStatus_22_9; }
-    if (((token === import15.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 38)))) { return this._FormGroupDirective_0_3; }
-    if (((token === import24.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 38)))) { return this._ControlContainer_0_4; }
-    if (((token === import16.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 38)))) { return this._NgControlStatusGroup_0_5; }
+    if (((token === import18.DefaultValueAccessor) && (7 === requestNodeIndex))) { return this._DefaultValueAccessor_7_3; }
+    if (((token === import23.NG_VALUE_ACCESSOR) && (7 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_7_4; }
+    if (((token === import19.FormControlDirective) && (7 === requestNodeIndex))) { return this._FormControlDirective_7_5; }
+    if (((token === import24.NgControl) && (7 === requestNodeIndex))) { return this._NgControl_7_6; }
+    if (((token === import16.NgControlStatus) && (7 === requestNodeIndex))) { return this._NgControlStatus_7_7; }
+    if (((token === import14.TemplateRef) && (9 === requestNodeIndex))) { return this._TemplateRef_9_5; }
+    if (((token === import13.NgIf) && (9 === requestNodeIndex))) { return this._NgIf_9_6; }
+    if (((token === import14.TemplateRef) && (11 === requestNodeIndex))) { return this._TemplateRef_11_5; }
+    if (((token === import13.NgIf) && (11 === requestNodeIndex))) { return this._NgIf_11_6; }
+    if (((token === import17.NgClass) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 12)))) { return this._NgClass_2_3; }
+    if (((token === import18.DefaultValueAccessor) && (19 === requestNodeIndex))) { return this._DefaultValueAccessor_19_3; }
+    if (((token === import23.NG_VALUE_ACCESSOR) && (19 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_19_4; }
+    if (((token === import19.FormControlDirective) && (19 === requestNodeIndex))) { return this._FormControlDirective_19_5; }
+    if (((token === import24.NgControl) && (19 === requestNodeIndex))) { return this._NgControl_19_6; }
+    if (((token === import16.NgControlStatus) && (19 === requestNodeIndex))) { return this._NgControlStatus_19_7; }
+    if (((token === import14.TemplateRef) && (21 === requestNodeIndex))) { return this._TemplateRef_21_5; }
+    if (((token === import13.NgIf) && (21 === requestNodeIndex))) { return this._NgIf_21_6; }
+    if (((token === import14.TemplateRef) && (23 === requestNodeIndex))) { return this._TemplateRef_23_5; }
+    if (((token === import13.NgIf) && (23 === requestNodeIndex))) { return this._NgIf_23_6; }
+    if (((token === import17.NgClass) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 24)))) { return this._NgClass_14_3; }
+    if (((token === import18.DefaultValueAccessor) && (31 === requestNodeIndex))) { return this._DefaultValueAccessor_31_3; }
+    if (((token === import23.NG_VALUE_ACCESSOR) && (31 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_31_4; }
+    if (((token === import19.FormControlDirective) && (31 === requestNodeIndex))) { return this._FormControlDirective_31_5; }
+    if (((token === import24.NgControl) && (31 === requestNodeIndex))) { return this._NgControl_31_6; }
+    if (((token === import16.NgControlStatus) && (31 === requestNodeIndex))) { return this._NgControlStatus_31_7; }
+    if (((token === import14.TemplateRef) && (33 === requestNodeIndex))) { return this._TemplateRef_33_5; }
+    if (((token === import13.NgIf) && (33 === requestNodeIndex))) { return this._NgIf_33_6; }
+    if (((token === import17.NgClass) && ((26 <= requestNodeIndex) && (requestNodeIndex <= 34)))) { return this._NgClass_26_3; }
+    if (((token === import15.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._FormGroupDirective_0_3; }
+    if (((token === import25.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._ControlContainer_0_4; }
+    if (((token === import16.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._NgControlStatusGroup_0_5; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -439,34 +549,91 @@ class _View_UserEditComponent1 extends import1.AppView<any> {
       this._expr_3 = currVal_3;
     }
     if ((changes !== (null as any))) { this._FormGroupDirective_0_3.ngOnChanges(changes); }
-    const currVal_12:any = '';
-    if (import4.checkBinding(throwOnChange,this._expr_12,currVal_12)) {
-      this._RequiredValidator_11_4.required = currVal_12;
-      this._expr_12 = currVal_12;
+    const currVal_10:any = 'form-group';
+    if (import4.checkBinding(throwOnChange,this._expr_10,currVal_10)) {
+      this._NgClass_2_3.klass = currVal_10;
+      this._expr_10 = currVal_10;
     }
+    const currVal_11:any = this._map_0((!this.parent.context.myForm.controls['firstName'].valid && (this.parent.context.myForm.controls['firstName'].touched || this.parent.context.isSubmitted())));
+    if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
+      this._NgClass_2_3.ngClass = currVal_11;
+      this._expr_11 = currVal_11;
+    }
+    if (!throwOnChange) { this._NgClass_2_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_14:any = 'firstName';
+    const currVal_14:any = this.parent.context.myForm.controls['firstName'];
     if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
-      this._FormControlName_11_7.name = currVal_14;
+      this._FormControlDirective_7_5.form = currVal_14;
       if ((changes === (null as any))) { (changes = {}); }
-      changes['name'] = new import7.SimpleChange(this._expr_14,currVal_14);
+      changes['form'] = new import7.SimpleChange(this._expr_14,currVal_14);
       this._expr_14 = currVal_14;
     }
-    if ((changes !== (null as any))) { this._FormControlName_11_7.ngOnChanges(changes); }
-    const currVal_23:any = '';
+    if ((changes !== (null as any))) { this._FormControlDirective_7_5.ngOnChanges(changes); }
+    const currVal_21:any = (this.parent.context.myForm.controls['firstName'].hasError('required') && (this.parent.context.myForm.controls['firstName'].touched || this.parent.context.isSubmitted()));
+    if (import4.checkBinding(throwOnChange,this._expr_21,currVal_21)) {
+      this._NgIf_9_6.ngIf = currVal_21;
+      this._expr_21 = currVal_21;
+    }
+    const currVal_22:any = (this.parent.context.myForm.controls['firstName'].hasError('maxlength') && (this.parent.context.myForm.controls['firstName'].touched || this.parent.context.isSubmitted()));
+    if (import4.checkBinding(throwOnChange,this._expr_22,currVal_22)) {
+      this._NgIf_11_6.ngIf = currVal_22;
+      this._expr_22 = currVal_22;
+    }
+    const currVal_23:any = 'form-group';
     if (import4.checkBinding(throwOnChange,this._expr_23,currVal_23)) {
-      this._RequiredValidator_22_4.required = currVal_23;
+      this._NgClass_14_3.klass = currVal_23;
       this._expr_23 = currVal_23;
     }
-    changes = (null as any);
-    const currVal_25:any = 'lastName';
-    if (import4.checkBinding(throwOnChange,this._expr_25,currVal_25)) {
-      this._FormControlName_22_7.name = currVal_25;
-      if ((changes === (null as any))) { (changes = {}); }
-      changes['name'] = new import7.SimpleChange(this._expr_25,currVal_25);
-      this._expr_25 = currVal_25;
+    const currVal_24:any = this._map_1((!this.parent.context.myForm.controls['lastName'].valid && (this.parent.context.myForm.controls['lastName'].touched || this.parent.context.isSubmitted())));
+    if (import4.checkBinding(throwOnChange,this._expr_24,currVal_24)) {
+      this._NgClass_14_3.ngClass = currVal_24;
+      this._expr_24 = currVal_24;
     }
-    if ((changes !== (null as any))) { this._FormControlName_22_7.ngOnChanges(changes); }
+    if (!throwOnChange) { this._NgClass_14_3.ngDoCheck(); }
+    changes = (null as any);
+    const currVal_27:any = this.parent.context.myForm.controls['lastName'];
+    if (import4.checkBinding(throwOnChange,this._expr_27,currVal_27)) {
+      this._FormControlDirective_19_5.form = currVal_27;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['form'] = new import7.SimpleChange(this._expr_27,currVal_27);
+      this._expr_27 = currVal_27;
+    }
+    if ((changes !== (null as any))) { this._FormControlDirective_19_5.ngOnChanges(changes); }
+    const currVal_34:any = (this.parent.context.myForm.controls['lastName'].hasError('required') && (this.parent.context.myForm.controls['lastName'].touched || this.parent.context.isSubmitted()));
+    if (import4.checkBinding(throwOnChange,this._expr_34,currVal_34)) {
+      this._NgIf_21_6.ngIf = currVal_34;
+      this._expr_34 = currVal_34;
+    }
+    const currVal_35:any = (this.parent.context.myForm.controls['lastName'].hasError('maxlength') && (this.parent.context.myForm.controls['lastName'].touched || this.parent.context.isSubmitted()));
+    if (import4.checkBinding(throwOnChange,this._expr_35,currVal_35)) {
+      this._NgIf_23_6.ngIf = currVal_35;
+      this._expr_35 = currVal_35;
+    }
+    const currVal_36:any = 'form-group';
+    if (import4.checkBinding(throwOnChange,this._expr_36,currVal_36)) {
+      this._NgClass_26_3.klass = currVal_36;
+      this._expr_36 = currVal_36;
+    }
+    const currVal_37:any = this._map_2((!this.parent.context.myForm.controls['email'].valid && (this.parent.context.myForm.controls['email'].touched || this.parent.context.isSubmitted())));
+    if (import4.checkBinding(throwOnChange,this._expr_37,currVal_37)) {
+      this._NgClass_26_3.ngClass = currVal_37;
+      this._expr_37 = currVal_37;
+    }
+    if (!throwOnChange) { this._NgClass_26_3.ngDoCheck(); }
+    changes = (null as any);
+    const currVal_40:any = this.parent.context.myForm.controls['email'];
+    if (import4.checkBinding(throwOnChange,this._expr_40,currVal_40)) {
+      this._FormControlDirective_31_5.form = currVal_40;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['form'] = new import7.SimpleChange(this._expr_40,currVal_40);
+      this._expr_40 = currVal_40;
+    }
+    if ((changes !== (null as any))) { this._FormControlDirective_31_5.ngOnChanges(changes); }
+    const currVal_47:boolean = (!this.parent.context.myForm.controls['email'].valid && (this.parent.context.myForm.controls['email'].touched || this.parent.context.isSubmitted()));
+    if (import4.checkBinding(throwOnChange,this._expr_47,currVal_47)) {
+      this._NgIf_33_6.ngIf = currVal_47;
+      this._expr_47 = currVal_47;
+    }
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_4:any = this._NgControlStatusGroup_0_5.ngClassUntouched;
     if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
@@ -498,90 +665,101 @@ class _View_UserEditComponent1 extends import1.AppView<any> {
       this.renderer.setElementClass(this._el_0,'ng-invalid',currVal_9);
       this._expr_9 = currVal_9;
     }
-    const currVal_13:any = (this._RequiredValidator_11_4.required? '': (null as any));
-    if (import4.checkBinding(throwOnChange,this._expr_13,currVal_13)) {
-      this.renderer.setElementAttribute(this._el_11,'required',((currVal_13 == (null as any))? (null as any): currVal_13.toString()));
-      this._expr_13 = currVal_13;
-    }
-    const currVal_15:any = this._NgControlStatus_11_9.ngClassUntouched;
+    const currVal_15:any = this._NgControlStatus_7_7.ngClassUntouched;
     if (import4.checkBinding(throwOnChange,this._expr_15,currVal_15)) {
-      this.renderer.setElementClass(this._el_11,'ng-untouched',currVal_15);
+      this.renderer.setElementClass(this._el_7,'ng-untouched',currVal_15);
       this._expr_15 = currVal_15;
     }
-    const currVal_16:any = this._NgControlStatus_11_9.ngClassTouched;
+    const currVal_16:any = this._NgControlStatus_7_7.ngClassTouched;
     if (import4.checkBinding(throwOnChange,this._expr_16,currVal_16)) {
-      this.renderer.setElementClass(this._el_11,'ng-touched',currVal_16);
+      this.renderer.setElementClass(this._el_7,'ng-touched',currVal_16);
       this._expr_16 = currVal_16;
     }
-    const currVal_17:any = this._NgControlStatus_11_9.ngClassPristine;
+    const currVal_17:any = this._NgControlStatus_7_7.ngClassPristine;
     if (import4.checkBinding(throwOnChange,this._expr_17,currVal_17)) {
-      this.renderer.setElementClass(this._el_11,'ng-pristine',currVal_17);
+      this.renderer.setElementClass(this._el_7,'ng-pristine',currVal_17);
       this._expr_17 = currVal_17;
     }
-    const currVal_18:any = this._NgControlStatus_11_9.ngClassDirty;
+    const currVal_18:any = this._NgControlStatus_7_7.ngClassDirty;
     if (import4.checkBinding(throwOnChange,this._expr_18,currVal_18)) {
-      this.renderer.setElementClass(this._el_11,'ng-dirty',currVal_18);
+      this.renderer.setElementClass(this._el_7,'ng-dirty',currVal_18);
       this._expr_18 = currVal_18;
     }
-    const currVal_19:any = this._NgControlStatus_11_9.ngClassValid;
+    const currVal_19:any = this._NgControlStatus_7_7.ngClassValid;
     if (import4.checkBinding(throwOnChange,this._expr_19,currVal_19)) {
-      this.renderer.setElementClass(this._el_11,'ng-valid',currVal_19);
+      this.renderer.setElementClass(this._el_7,'ng-valid',currVal_19);
       this._expr_19 = currVal_19;
     }
-    const currVal_20:any = this._NgControlStatus_11_9.ngClassInvalid;
+    const currVal_20:any = this._NgControlStatus_7_7.ngClassInvalid;
     if (import4.checkBinding(throwOnChange,this._expr_20,currVal_20)) {
-      this.renderer.setElementClass(this._el_11,'ng-invalid',currVal_20);
+      this.renderer.setElementClass(this._el_7,'ng-invalid',currVal_20);
       this._expr_20 = currVal_20;
     }
-    const currVal_24:any = (this._RequiredValidator_22_4.required? '': (null as any));
-    if (import4.checkBinding(throwOnChange,this._expr_24,currVal_24)) {
-      this.renderer.setElementAttribute(this._el_22,'required',((currVal_24 == (null as any))? (null as any): currVal_24.toString()));
-      this._expr_24 = currVal_24;
-    }
-    const currVal_26:any = this._NgControlStatus_22_9.ngClassUntouched;
-    if (import4.checkBinding(throwOnChange,this._expr_26,currVal_26)) {
-      this.renderer.setElementClass(this._el_22,'ng-untouched',currVal_26);
-      this._expr_26 = currVal_26;
-    }
-    const currVal_27:any = this._NgControlStatus_22_9.ngClassTouched;
-    if (import4.checkBinding(throwOnChange,this._expr_27,currVal_27)) {
-      this.renderer.setElementClass(this._el_22,'ng-touched',currVal_27);
-      this._expr_27 = currVal_27;
-    }
-    const currVal_28:any = this._NgControlStatus_22_9.ngClassPristine;
+    const currVal_28:any = this._NgControlStatus_19_7.ngClassUntouched;
     if (import4.checkBinding(throwOnChange,this._expr_28,currVal_28)) {
-      this.renderer.setElementClass(this._el_22,'ng-pristine',currVal_28);
+      this.renderer.setElementClass(this._el_19,'ng-untouched',currVal_28);
       this._expr_28 = currVal_28;
     }
-    const currVal_29:any = this._NgControlStatus_22_9.ngClassDirty;
+    const currVal_29:any = this._NgControlStatus_19_7.ngClassTouched;
     if (import4.checkBinding(throwOnChange,this._expr_29,currVal_29)) {
-      this.renderer.setElementClass(this._el_22,'ng-dirty',currVal_29);
+      this.renderer.setElementClass(this._el_19,'ng-touched',currVal_29);
       this._expr_29 = currVal_29;
     }
-    const currVal_30:any = this._NgControlStatus_22_9.ngClassValid;
+    const currVal_30:any = this._NgControlStatus_19_7.ngClassPristine;
     if (import4.checkBinding(throwOnChange,this._expr_30,currVal_30)) {
-      this.renderer.setElementClass(this._el_22,'ng-valid',currVal_30);
+      this.renderer.setElementClass(this._el_19,'ng-pristine',currVal_30);
       this._expr_30 = currVal_30;
     }
-    const currVal_31:any = this._NgControlStatus_22_9.ngClassInvalid;
+    const currVal_31:any = this._NgControlStatus_19_7.ngClassDirty;
     if (import4.checkBinding(throwOnChange,this._expr_31,currVal_31)) {
-      this.renderer.setElementClass(this._el_22,'ng-invalid',currVal_31);
+      this.renderer.setElementClass(this._el_19,'ng-dirty',currVal_31);
       this._expr_31 = currVal_31;
     }
-    const currVal_32:boolean = !this.parent.context.myForm.valid;
+    const currVal_32:any = this._NgControlStatus_19_7.ngClassValid;
     if (import4.checkBinding(throwOnChange,this._expr_32,currVal_32)) {
-      this.renderer.setElementProperty(this._el_31,'disabled',currVal_32);
+      this.renderer.setElementClass(this._el_19,'ng-valid',currVal_32);
       this._expr_32 = currVal_32;
+    }
+    const currVal_33:any = this._NgControlStatus_19_7.ngClassInvalid;
+    if (import4.checkBinding(throwOnChange,this._expr_33,currVal_33)) {
+      this.renderer.setElementClass(this._el_19,'ng-invalid',currVal_33);
+      this._expr_33 = currVal_33;
+    }
+    const currVal_41:any = this._NgControlStatus_31_7.ngClassUntouched;
+    if (import4.checkBinding(throwOnChange,this._expr_41,currVal_41)) {
+      this.renderer.setElementClass(this._el_31,'ng-untouched',currVal_41);
+      this._expr_41 = currVal_41;
+    }
+    const currVal_42:any = this._NgControlStatus_31_7.ngClassTouched;
+    if (import4.checkBinding(throwOnChange,this._expr_42,currVal_42)) {
+      this.renderer.setElementClass(this._el_31,'ng-touched',currVal_42);
+      this._expr_42 = currVal_42;
+    }
+    const currVal_43:any = this._NgControlStatus_31_7.ngClassPristine;
+    if (import4.checkBinding(throwOnChange,this._expr_43,currVal_43)) {
+      this.renderer.setElementClass(this._el_31,'ng-pristine',currVal_43);
+      this._expr_43 = currVal_43;
+    }
+    const currVal_44:any = this._NgControlStatus_31_7.ngClassDirty;
+    if (import4.checkBinding(throwOnChange,this._expr_44,currVal_44)) {
+      this.renderer.setElementClass(this._el_31,'ng-dirty',currVal_44);
+      this._expr_44 = currVal_44;
+    }
+    const currVal_45:any = this._NgControlStatus_31_7.ngClassValid;
+    if (import4.checkBinding(throwOnChange,this._expr_45,currVal_45)) {
+      this.renderer.setElementClass(this._el_31,'ng-valid',currVal_45);
+      this._expr_45 = currVal_45;
+    }
+    const currVal_46:any = this._NgControlStatus_31_7.ngClassInvalid;
+    if (import4.checkBinding(throwOnChange,this._expr_46,currVal_46)) {
+      this.renderer.setElementClass(this._el_31,'ng-invalid',currVal_46);
+      this._expr_46 = currVal_46;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }
-  destroyInternal():void {
-    this._FormControlName_11_7.ngOnDestroy();
-    this._FormControlName_22_7.ngOnDestroy();
-  }
   private _handle_ngSubmit_0_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.parent.context.onSubmit(this._FormGroupDirective_0_3)) !== false);
+    const pd_0:any = ((<any>this.parent.context.onSubmit()) !== false);
     return (true && pd_0);
   }
   private _handle_submit_0_1($event:any):boolean {
@@ -594,32 +772,147 @@ class _View_UserEditComponent1 extends import1.AppView<any> {
     const pd_0:any = ((<any>this._FormGroupDirective_0_3.onReset()) !== false);
     return (true && pd_0);
   }
-  private _handle_input_11_0($event:any):boolean {
+  private _handle_input_7_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this._DefaultValueAccessor_11_3.onChange($event.target.value)) !== false);
+    const pd_0:any = ((<any>this._DefaultValueAccessor_7_3.onChange($event.target.value)) !== false);
     return (true && pd_0);
   }
-  private _handle_blur_11_1($event:any):boolean {
+  private _handle_blur_7_1($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this._DefaultValueAccessor_11_3.onTouched()) !== false);
+    const pd_0:any = ((<any>this._DefaultValueAccessor_7_3.onTouched()) !== false);
     return (true && pd_0);
   }
-  private _handle_input_22_0($event:any):boolean {
+  private _handle_input_19_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this._DefaultValueAccessor_22_3.onChange($event.target.value)) !== false);
+    const pd_0:any = ((<any>this._DefaultValueAccessor_19_3.onChange($event.target.value)) !== false);
     return (true && pd_0);
   }
-  private _handle_blur_22_1($event:any):boolean {
+  private _handle_blur_19_1($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this._DefaultValueAccessor_22_3.onTouched()) !== false);
+    const pd_0:any = ((<any>this._DefaultValueAccessor_19_3.onTouched()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_34_0($event:any):boolean {
+  private _handle_input_31_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this._DefaultValueAccessor_31_3.onChange($event.target.value)) !== false);
+    return (true && pd_0);
+  }
+  private _handle_blur_31_1($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this._DefaultValueAccessor_31_3.onTouched()) !== false);
+    return (true && pd_0);
+  }
+  private _handle_click_41_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onCancel()) !== false);
     return (true && pd_0);
   }
 }
-function viewFactory_UserEditComponent1(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_UserEditComponent1(viewUtils,parentInjector,declarationEl);
+function viewFactory_ProfileEditComponent1(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ProfileEditComponent1(viewUtils,parentInjector,declarationEl);
+}
+class _View_ProfileEditComponent2 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_ProfileEditComponent2,renderType_ProfileEditComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','field-error');
+    this._text_1 = this.renderer.createText(this._el_0,'\n                        First name is required.\n                    ',(null as any));
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1
+    ]
+    ,[],[]);
+    return (null as any);
+  }
+}
+function viewFactory_ProfileEditComponent2(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ProfileEditComponent2(viewUtils,parentInjector,declarationEl);
+}
+class _View_ProfileEditComponent3 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_ProfileEditComponent3,renderType_ProfileEditComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','field-error');
+    this._text_1 = this.renderer.createText(this._el_0,'\n                        First name can have max 100 characters.\n                    ',(null as any));
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1
+    ]
+    ,[],[]);
+    return (null as any);
+  }
+}
+function viewFactory_ProfileEditComponent3(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ProfileEditComponent3(viewUtils,parentInjector,declarationEl);
+}
+class _View_ProfileEditComponent4 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_ProfileEditComponent4,renderType_ProfileEditComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','field-error');
+    this._text_1 = this.renderer.createText(this._el_0,'\n                        Last name is required.\n                    ',(null as any));
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1
+    ]
+    ,[],[]);
+    return (null as any);
+  }
+}
+function viewFactory_ProfileEditComponent4(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ProfileEditComponent4(viewUtils,parentInjector,declarationEl);
+}
+class _View_ProfileEditComponent5 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_ProfileEditComponent5,renderType_ProfileEditComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','field-error');
+    this._text_1 = this.renderer.createText(this._el_0,'\n                        Last name can have max 100 characters.\n                    ',(null as any));
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1
+    ]
+    ,[],[]);
+    return (null as any);
+  }
+}
+function viewFactory_ProfileEditComponent5(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ProfileEditComponent5(viewUtils,parentInjector,declarationEl);
+}
+class _View_ProfileEditComponent6 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_ProfileEditComponent6,renderType_ProfileEditComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','field-error');
+    this._text_1 = this.renderer.createText(this._el_0,'\n                    Email has to be valid e.g. john@gmail.com.\n                ',(null as any));
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1
+    ]
+    ,[],[]);
+    return (null as any);
+  }
+}
+function viewFactory_ProfileEditComponent6(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ProfileEditComponent6(viewUtils,parentInjector,declarationEl);
 }

@@ -53,7 +53,7 @@ class _View_HomeComponent0 extends import1.AppView<import3.HomeComponent> {
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
     this._el_0 = this.renderer.createElement(parentRenderNode,'h1',(null as any));
-    this._text_1 = this.renderer.createText(this._el_0,'Course Time Tabling Competition',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'Course timetabling competition',(null as any));
     this.init([],[
       this._el_0,
       this._text_1
