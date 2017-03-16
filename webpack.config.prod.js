@@ -12,7 +12,6 @@ module.exports = webpackMerge.smart(commonConfig, {
         filename: 'bundle.js',
         publicPath: '/js/app/',
         chunkFilename: '[id].[hash].chunk.js'
-        // chunkFilename: '[id].chunk.js'
     },
 
     module: {
@@ -22,8 +21,7 @@ module.exports = webpackMerge.smart(commonConfig, {
                 loaders: [
                     'awesome-typescript-loader',
                     'angular2-template-loader',
-                    // 'angular2-router-loader?aot=true&genDir=public/js/app'
-                    'angular2-router-loader'
+                    'angular2-router-loader?aot=true&genDir=public/js/app'
                 ]
             }
         ]

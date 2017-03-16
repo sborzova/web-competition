@@ -10,7 +10,7 @@ export class PaperService {
     private hostUrl: string;
 
     constructor(private http: Http) {
-        const routeModule = require("../app.routing.ts");
+        const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
 

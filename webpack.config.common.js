@@ -9,11 +9,6 @@ module.exports = {
         extensions: ['.js', '.ts']
     },
 
-    // aliasFields: [ 'browser' ],
-    // alias: {
-    //     jquery: '.public/js/app'.resolve('browser', "vendor/jquery-2.0.0.js")
-    // },
-
     module: {
         loaders: [
             {

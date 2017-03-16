@@ -5,7 +5,7 @@ import { Paper } from "../user-solutions/paper.model";
 export var PaperService = (function () {
     function PaperService(http) {
         this.http = http;
-        var routeModule = require("../app.routing.ts");
+        var routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
     PaperService.prototype.savePaper = function (paper) {
