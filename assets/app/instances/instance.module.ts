@@ -9,6 +9,7 @@ import {InstanceEditComponent} from "./instance-update/instance-update.component
 import {InstanceStatsComponent} from "./instance-stats/instance-stats.component";
 import {OrderByModule} from "../order-by.module";
 import {EscapeHtmlModule} from "../escape-html.module";
+import {InstanceService} from "./instance.service";
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import {EscapeHtmlModule} from "../escape-html.module";
         OrderByModule,
         EscapeHtmlModule,
         instanceRouting
-    ]
+    ],
+    providers: [InstanceService]
 })
 export class InstanceModule {}

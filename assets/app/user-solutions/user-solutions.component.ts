@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Solution } from "./solution.model";
 import { Paper } from "./paper.model";
 import { SolutionService } from "../validation/solution.service";
-import { PaperService } from "./paper.service";
+import { PaperService } from "../shared/paper.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SolutionPaper } from "./solution-paper.model";
 

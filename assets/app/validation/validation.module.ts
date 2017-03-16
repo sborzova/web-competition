@@ -7,6 +7,8 @@ import {ValidationComponent} from "./validation.component";
 import {SuccessValidationComponent} from "./success-validation/success-validation.component";
 import {WorseSolutionsComponent} from "./worse-solutions/worse-solutions.component";
 import {EscapeHtmlModule} from "../escape-html.module";
+import {PaperService} from "../shared/paper.service";
+import {SolutionService} from "./solution.service";
 
 @NgModule({
     declarations: [
@@ -20,6 +22,7 @@ import {EscapeHtmlModule} from "../escape-html.module";
         CommonModule,
         EscapeHtmlModule,
         validationRouting
-    ]
+    ],
+    providers: [PaperService, SolutionService]
 })
 export class ValidationModule {}

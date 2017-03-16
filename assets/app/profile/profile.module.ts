@@ -5,6 +5,7 @@ import {ProfileInfoComponent} from "./profile-info/profile-info.component";
 import {ProfileEditComponent} from "./profile-edit/profile-edit.component";
 import {ProfileEditPasswordComponent} from "./profile-edit-password/profile-edit-password.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {UserService} from "../shared/user.service";
 
 @NgModule({
     declarations: [
@@ -12,6 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
         ProfileEditComponent,
         ProfileEditPasswordComponent,
     ],
-    imports: [ReactiveFormsModule, CommonModule, profileRouting]
+    imports: [ReactiveFormsModule, CommonModule, profileRouting],
+    providers: [UserService]
 })
 export class ProfileModule {}

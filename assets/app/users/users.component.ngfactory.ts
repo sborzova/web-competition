@@ -12,7 +12,7 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from './user.service';
+import * as import8 from './users.service';
 import * as import9 from '../auth/auth.service';
 import * as import10 from '../flash-message/flash-messages.service';
 import * as import11 from '@angular/core/src/metadata/view';

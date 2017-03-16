@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 
 import { User } from "../user.model";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import { UserService } from "../../shared/user.service";
 import { AuthService } from "../../auth/auth.service";
 
 @Component({
@@ -15,7 +16,8 @@ export class ProfileEditComponent implements OnInit {
     private user : User;
     private submitted: boolean = false;
 
-    constructor(private authService: AuthService,
+    constructor(private userService: UserService,
+                private authService: AuthService,
                 private flashMessageService: FlashMessageService,
                 private router: Router) {}
 
@@ -26,7 +28,7 @@ export class ProfileEditComponent implements OnInit {
             this.user.lastName = this.myForm.value.lastName;
             this.user.email = this.myForm.value.email;
 
-            this.authService.updateUser(this.user)
+            this.userService.updateUser(this.user)
                 .subscribe(
                     (data) => {
                         this.authService.setSessionStorage(data);
@@ -39,7 +41,7 @@ export class ProfileEditComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.authService.getUser()
+        this.userService.getUser()
             .subscribe(
                 (user: User ) => {
                     this.user = user;

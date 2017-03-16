@@ -3,7 +3,7 @@ import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {User} from "../user.model";
 import {Subscription} from "rxjs";
 import {Router, ActivatedRoute, Params} from "@angular/router";
-import {UsersService} from "../user.service";
+import {UsersService} from "../users.service";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
 @Component({

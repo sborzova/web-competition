@@ -8,6 +8,9 @@ import {ResultsAuthorComponent} from "./results-author/results-author.component"
 import {ResultsAuthorTechniqueComponent} from "./results-author-technique/results-author-technique.component";
 import {resultsRouting} from "./results.routing";
 import {OrderByModule} from "../order-by.module";
+import {PaperService} from "../shared/paper.service";
+import {InstanceService} from "../instances/instance.service";
+import {SolutionService} from "../validation/solution.service";
 
 @NgModule({
     declarations: [
@@ -21,6 +24,7 @@ import {OrderByModule} from "../order-by.module";
         CommonModule,
         OrderByModule,
         resultsRouting
-    ]
+    ],
+    providers: [PaperService, InstanceService, SolutionService]
 })
 export class ResultsModule {}

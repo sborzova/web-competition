@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { AuthService } from "../../auth/auth.service";
 import { User } from "../user.model";
+import { UserService } from "../../shared/user.service";
 
 
 @Component({
@@ -11,11 +11,11 @@ import { User } from "../user.model";
 export class ProfileInfoComponent implements OnInit {
     @Input() user: User;
 
-    constructor(private authService: AuthService) {
+    constructor(private userService: UserService) {
     }
 
     ngOnInit(){
-        this.authService.getUser()
+        this.userService.getUser()
             .subscribe(
                 (user: User ) => {
                     this.user = user;

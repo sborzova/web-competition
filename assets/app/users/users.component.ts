@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { UsersService } from "./user.service";
+import { UsersService } from "./users.service";
 import { User } from "./user.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { AuthService } from "../auth/auth.service";

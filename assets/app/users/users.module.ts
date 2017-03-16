@@ -7,6 +7,7 @@ import {UsersComponent} from "./users.component";
 import {UserEditPasswordComponent} from "./user-edit-password/user-edit-password.component";
 import {UserEditComponent} from "./user-edit/user-edit.component";
 import {OrderByModule} from "../order-by.module";
+import {UsersService} from "./users.service";
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import {OrderByModule} from "../order-by.module";
         CommonModule,
         OrderByModule,
         usersRouting
-    ]
+    ],
+    providers: [UsersService]
 })
 export class UsersModule {}

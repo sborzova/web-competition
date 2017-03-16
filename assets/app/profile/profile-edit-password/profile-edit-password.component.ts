@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 import { User } from "../user.model";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { Password } from "./password.model";
-import { AuthService } from "../../auth/auth.service";
+import { UserService } from "../../shared/user.service";
 
 @Component({
     selector: 'app-profile-edit-password',
@@ -17,7 +17,7 @@ export class ProfileEditPasswordComponent implements OnInit{
     private user: User;
     private submitted: boolean = false;
 
-    constructor(private authService: AuthService,
+    constructor(private userService: UserService,
                 private flashMessageService: FlashMessageService,
                 private router: Router) {}
 
@@ -26,7 +26,7 @@ export class ProfileEditPasswordComponent implements OnInit{
         if (form.valid){
             this.user.confirmPassword = form.value.current;
             this.user.newPassword = form.value.newPassword;
-            this.authService.updatePassword(this.user)
+            this.userService.updatePassword(this.user)
                 .subscribe(
                     () => {
                         this.flashMessageService.showMessage('Password was updated.', 'alert-success' );
@@ -38,7 +38,7 @@ export class ProfileEditPasswordComponent implements OnInit{
     }
 
     ngOnInit(){
-        this.authService.getUser()
+        this.userService.getUser()
             .subscribe(
                 (user: User ) => {
                     this.user = user;
