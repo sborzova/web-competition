@@ -1,23 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="providers services">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/0.111993b568110824d92f.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/1.111993b568110824d92f.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/2.111993b568110824d92f.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/3.111993b568110824d92f.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/4.111993b568110824d92f.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/5.111993b568110824d92f.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/6.111993b568110824d92f.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/7.111993b568110824d92f.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/8.111993b568110824d92f.chunk.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/app.module.ngfactory.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ngfactory.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ngfactory.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.ngfactory.ts" afterPath="" />
+    <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/app.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/app.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/app.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/app.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/app.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/auth.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/signin.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/signin.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/signin.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/signin.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/signin.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/user.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/validator-equal.directive.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/escape-html.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/escape-html.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/flash-message/flash-message.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/flash-message/flash-message.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/flash-message/flash-message.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/flash-message/flash-messages.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/header/header.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/header/header.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/home/home.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/home/home.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/escape-html.pipe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-list/instance-list.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-list/instance-list.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-new/instance-new.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-new/instance-new.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-stats/instance-stats.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-stats/instance-stats.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-update/instance-update.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-update/instance-update.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instance.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instances.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/instances.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/instances/min-value.validator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/main.aot.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/order-by.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/order-by.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/polyfills.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit-password/password.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit-password/profile-edit-password.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit-password/profile-edit-password.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit/profile-edit.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit/profile-edit.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-info/profile-info.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-info/profile-info.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/profile.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/profile.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/profile.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/profile/user.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/author.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/instance.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/order-by.pipe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/paper.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-technique/results-author-technique.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-technique/results-author-technique.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results-author/results-author.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results-author/results-author.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results-best/results-best.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results-best/results-best.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results-instance/results-instance.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results-instance/results-instance.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/results.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/results/solution-result.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/paper.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/user.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/user.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/paper.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/solution-paper.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/solution.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.css.shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/validator-info/validator-info.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/validator-info/validator-info.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/user-edit-password/user-edit-password.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/user-edit-password/user-edit-password.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/user-edit/user-edit.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/user-edit/user-edit.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/user.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/users.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/users.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/users.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/users.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/users.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/users/users.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/instance.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/paper.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/solution-create.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/solution-find-worse.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/solution.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/solution.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/solution.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/success-validation/success-validation.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/success-validation/success-validation.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.component.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.module.ngfactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/worse-solutions/worse-solutions.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/validation/worse-solutions/worse-solutions.component.ngfactory.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js" afterPath="$PROJECT_DIR$/public/js/app/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.prod.js" afterPath="$PROJECT_DIR$/webpack.config.prod.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -77,11 +188,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.config.prod.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="webpack.config.prod.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webpack.config.prod.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.component.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/app/app.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -293,42 +414,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -489,14 +574,7 @@
       <workItem from="1489400126448" duration="10818000" />
       <workItem from="1489426466032" duration="4345000" />
       <workItem from="1489575417351" duration="22337000" />
-      <workItem from="1489655460220" duration="9532000" />
-    </task>
-    <task id="LOCAL-00022" summary="CRD Solution">
-      <created>1486745418016</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1486745418016</updated>
+      <workItem from="1489655460220" duration="10110000" />
     </task>
     <task id="LOCAL-00023" summary="routing instances changed, instance name unique, header changed">
       <created>1486750960624</created>
@@ -834,11 +912,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489669796547</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="run build:prod without error, added chunks to git">
+      <created>1489671525398</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1489671525398</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="916463000" />
+    <option name="totallyTimeSpent" value="917041000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -899,8 +984,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="attempt: authorize access to validator" />
-    <MESSAGE value="web service http to https" />
     <MESSAGE value="web service url https to http" />
     <MESSAGE value="ProfileComponent, UserSolutionsComponent, SolutionCreate&#10;save solution  with logged user, technique&#10;get solutions by logged user" />
     <MESSAGE value="multi checked box, remove paper from solutions" />
@@ -924,7 +1007,9 @@
     <MESSAGE value="modules, lazy loading" />
     <MESSAGE value="addited webconfigprod" />
     <MESSAGE value="providers services" />
-    <option name="LAST_COMMIT_MESSAGE" value="providers services" />
+    <MESSAGE value="run build:prod without error, added chunks to git" />
+    <MESSAGE value="added public/js/app all files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added public/js/app all files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -933,16 +1018,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/app/validation/validation.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="72" lean-forward="false" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#53#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/users/users.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1345,6 +1420,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app/app.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
