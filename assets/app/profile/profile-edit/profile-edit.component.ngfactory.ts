@@ -12,24 +12,25 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../../auth/auth.service';
-import * as import9 from '../../flash-message/flash-messages.service';
-import * as import10 from '@angular/router/src/router';
-import * as import11 from '@angular/core/src/metadata/view';
-import * as import12 from '@angular/core/src/linker/component_factory';
-import * as import13 from '@angular/common/src/directives/ng_if';
-import * as import14 from '@angular/core/src/linker/template_ref';
-import * as import15 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
-import * as import16 from '@angular/forms/src/directives/ng_control_status';
-import * as import17 from '@angular/common/src/directives/ng_class';
-import * as import18 from '@angular/forms/src/directives/default_value_accessor';
-import * as import19 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
-import * as import20 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import21 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import22 from '@angular/core/src/linker/element_ref';
-import * as import23 from '@angular/forms/src/directives/control_value_accessor';
-import * as import24 from '@angular/forms/src/directives/ng_control';
-import * as import25 from '@angular/forms/src/directives/control_container';
+import * as import8 from '../../shared/user.service';
+import * as import9 from '../../auth/auth.service';
+import * as import10 from '../../flash-message/flash-messages.service';
+import * as import11 from '@angular/router/src/router';
+import * as import12 from '@angular/core/src/metadata/view';
+import * as import13 from '@angular/core/src/linker/component_factory';
+import * as import14 from '@angular/common/src/directives/ng_if';
+import * as import15 from '@angular/core/src/linker/template_ref';
+import * as import16 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
+import * as import17 from '@angular/forms/src/directives/ng_control_status';
+import * as import18 from '@angular/common/src/directives/ng_class';
+import * as import19 from '@angular/forms/src/directives/default_value_accessor';
+import * as import20 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
+import * as import21 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import22 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import23 from '@angular/core/src/linker/element_ref';
+import * as import24 from '@angular/forms/src/directives/control_value_accessor';
+import * as import25 from '@angular/forms/src/directives/ng_control';
+import * as import26 from '@angular/forms/src/directives/control_container';
 var renderType_ProfileEditComponent_Host:import0.RenderComponentType = (null as any);
 class _View_ProfileEditComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -42,7 +43,7 @@ class _View_ProfileEditComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-profile-edit',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_ProfileEditComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._ProfileEditComponent_0_4 = new import3.ProfileEditComponent(this.parentInjector.get(import8.AuthService),this.parentInjector.get(import9.FlashMessageService),this.parentInjector.get(import10.Router));
+    this._ProfileEditComponent_0_4 = new import3.ProfileEditComponent(this.parentInjector.get(import8.UserService),this.parentInjector.get(import9.AuthService),this.parentInjector.get(import10.FlashMessageService),this.parentInjector.get(import11.Router));
     this._appEl_0.initComponent(this._ProfileEditComponent_0_4,[],compView_0);
     compView_0.create(this._ProfileEditComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -59,10 +60,10 @@ class _View_ProfileEditComponent_Host0 extends import1.AppView<any> {
   }
 }
 function viewFactory_ProfileEditComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_ProfileEditComponent_Host === (null as any))) { (renderType_ProfileEditComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
+  if ((renderType_ProfileEditComponent_Host === (null as any))) { (renderType_ProfileEditComponent_Host = viewUtils.createRenderComponentType('',0,import12.ViewEncapsulation.None,[],{})); }
   return new _View_ProfileEditComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const ProfileEditComponentNgFactory:import12.ComponentFactory<import3.ProfileEditComponent> = new import12.ComponentFactory<import3.ProfileEditComponent>('app-profile-edit',viewFactory_ProfileEditComponent_Host0,import3.ProfileEditComponent);
+export const ProfileEditComponentNgFactory:import13.ComponentFactory<import3.ProfileEditComponent> = new import13.ComponentFactory<import3.ProfileEditComponent>('app-profile-edit',viewFactory_ProfileEditComponent_Host0,import3.ProfileEditComponent);
 const styles_ProfileEditComponent:any[] = [];
 var renderType_ProfileEditComponent:import0.RenderComponentType = (null as any);
 class _View_ProfileEditComponent0 extends import1.AppView<import3.ProfileEditComponent> {
@@ -81,7 +82,7 @@ class _View_ProfileEditComponent0 extends import1.AppView<import3.ProfileEditCom
   _anchor_12:any;
   /*private*/ _appEl_12:import2.AppElement;
   _TemplateRef_12_5:any;
-  _NgIf_12_6:import13.NgIf;
+  _NgIf_12_6:import14.NgIf;
   _text_13:any;
   _text_14:any;
   _text_15:any;
@@ -109,8 +110,8 @@ class _View_ProfileEditComponent0 extends import1.AppView<import3.ProfileEditCom
     this._text_11 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._anchor_12 = this.renderer.createTemplateAnchor(this._el_4,(null as any));
     this._appEl_12 = new import2.AppElement(12,4,this,this._anchor_12);
-    this._TemplateRef_12_5 = new import14.TemplateRef_(this._appEl_12,viewFactory_ProfileEditComponent1);
-    this._NgIf_12_6 = new import13.NgIf(this._appEl_12.vcRef,this._TemplateRef_12_5);
+    this._TemplateRef_12_5 = new import15.TemplateRef_(this._appEl_12,viewFactory_ProfileEditComponent1);
+    this._NgIf_12_6 = new import14.NgIf(this._appEl_12.vcRef,this._TemplateRef_12_5);
     this._text_13 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._text_14 = this.renderer.createText(this._el_2,'\n    ',(null as any));
     this._text_15 = this.renderer.createText(this._el_0,'\n',(null as any));
@@ -137,8 +138,8 @@ class _View_ProfileEditComponent0 extends import1.AppView<import3.ProfileEditCom
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import14.TemplateRef) && (12 === requestNodeIndex))) { return this._TemplateRef_12_5; }
-    if (((token === import13.NgIf) && (12 === requestNodeIndex))) { return this._NgIf_12_6; }
+    if (((token === import15.TemplateRef) && (12 === requestNodeIndex))) { return this._TemplateRef_12_5; }
+    if (((token === import14.NgIf) && (12 === requestNodeIndex))) { return this._NgIf_12_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -152,80 +153,80 @@ class _View_ProfileEditComponent0 extends import1.AppView<import3.ProfileEditCom
   }
 }
 export function viewFactory_ProfileEditComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileEditComponent> {
-  if ((renderType_ProfileEditComponent === (null as any))) { (renderType_ProfileEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-edit/profile-edit.component.html',0,import11.ViewEncapsulation.None,styles_ProfileEditComponent,{})); }
+  if ((renderType_ProfileEditComponent === (null as any))) { (renderType_ProfileEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-edit/profile-edit.component.html',0,import12.ViewEncapsulation.None,styles_ProfileEditComponent,{})); }
   return new _View_ProfileEditComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_ProfileEditComponent1 extends import1.AppView<any> {
   _el_0:any;
-  _FormGroupDirective_0_3:import15.FormGroupDirective;
+  _FormGroupDirective_0_3:import16.FormGroupDirective;
   _ControlContainer_0_4:any;
-  _NgControlStatusGroup_0_5:import16.NgControlStatusGroup;
+  _NgControlStatusGroup_0_5:import17.NgControlStatusGroup;
   _text_1:any;
   _el_2:any;
-  _NgClass_2_3:import17.NgClass;
+  _NgClass_2_3:import18.NgClass;
   _text_3:any;
   _el_4:any;
   _text_5:any;
   _text_6:any;
   _el_7:any;
-  _DefaultValueAccessor_7_3:import18.DefaultValueAccessor;
+  _DefaultValueAccessor_7_3:import19.DefaultValueAccessor;
   _NG_VALUE_ACCESSOR_7_4:any[];
-  _FormControlDirective_7_5:import19.FormControlDirective;
+  _FormControlDirective_7_5:import20.FormControlDirective;
   _NgControl_7_6:any;
-  _NgControlStatus_7_7:import16.NgControlStatus;
+  _NgControlStatus_7_7:import17.NgControlStatus;
   _text_8:any;
   _anchor_9:any;
   /*private*/ _appEl_9:import2.AppElement;
   _TemplateRef_9_5:any;
-  _NgIf_9_6:import13.NgIf;
+  _NgIf_9_6:import14.NgIf;
   _text_10:any;
   _anchor_11:any;
   /*private*/ _appEl_11:import2.AppElement;
   _TemplateRef_11_5:any;
-  _NgIf_11_6:import13.NgIf;
+  _NgIf_11_6:import14.NgIf;
   _text_12:any;
   _text_13:any;
   _el_14:any;
-  _NgClass_14_3:import17.NgClass;
+  _NgClass_14_3:import18.NgClass;
   _text_15:any;
   _el_16:any;
   _text_17:any;
   _text_18:any;
   _el_19:any;
-  _DefaultValueAccessor_19_3:import18.DefaultValueAccessor;
+  _DefaultValueAccessor_19_3:import19.DefaultValueAccessor;
   _NG_VALUE_ACCESSOR_19_4:any[];
-  _FormControlDirective_19_5:import19.FormControlDirective;
+  _FormControlDirective_19_5:import20.FormControlDirective;
   _NgControl_19_6:any;
-  _NgControlStatus_19_7:import16.NgControlStatus;
+  _NgControlStatus_19_7:import17.NgControlStatus;
   _text_20:any;
   _anchor_21:any;
   /*private*/ _appEl_21:import2.AppElement;
   _TemplateRef_21_5:any;
-  _NgIf_21_6:import13.NgIf;
+  _NgIf_21_6:import14.NgIf;
   _text_22:any;
   _anchor_23:any;
   /*private*/ _appEl_23:import2.AppElement;
   _TemplateRef_23_5:any;
-  _NgIf_23_6:import13.NgIf;
+  _NgIf_23_6:import14.NgIf;
   _text_24:any;
   _text_25:any;
   _el_26:any;
-  _NgClass_26_3:import17.NgClass;
+  _NgClass_26_3:import18.NgClass;
   _text_27:any;
   _el_28:any;
   _text_29:any;
   _text_30:any;
   _el_31:any;
-  _DefaultValueAccessor_31_3:import18.DefaultValueAccessor;
+  _DefaultValueAccessor_31_3:import19.DefaultValueAccessor;
   _NG_VALUE_ACCESSOR_31_4:any[];
-  _FormControlDirective_31_5:import19.FormControlDirective;
+  _FormControlDirective_31_5:import20.FormControlDirective;
   _NgControl_31_6:any;
-  _NgControlStatus_31_7:import16.NgControlStatus;
+  _NgControlStatus_31_7:import17.NgControlStatus;
   _text_32:any;
   _anchor_33:any;
   /*private*/ _appEl_33:import2.AppElement;
   _TemplateRef_33_5:any;
-  _NgIf_33_6:import13.NgIf;
+  _NgIf_33_6:import14.NgIf;
   _text_34:any;
   _text_35:any;
   _el_36:any;
@@ -284,13 +285,13 @@ class _View_ProfileEditComponent1 extends import1.AppView<any> {
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'form',(null as any));
-    this._FormGroupDirective_0_3 = new import15.FormGroupDirective((null as any),(null as any));
+    this._FormGroupDirective_0_3 = new import16.FormGroupDirective((null as any),(null as any));
     this._ControlContainer_0_4 = this._FormGroupDirective_0_3;
-    this._NgControlStatusGroup_0_5 = new import16.NgControlStatusGroup(this._ControlContainer_0_4);
+    this._NgControlStatusGroup_0_5 = new import17.NgControlStatusGroup(this._ControlContainer_0_4);
     this._text_1 = this.renderer.createText(this._el_0,'\n                ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
     this.renderer.setElementAttribute(this._el_2,'class','form-group');
-    this._NgClass_2_3 = new import17.NgClass(this.parent.parentInjector.get(import20.IterableDiffers),this.parent.parentInjector.get(import21.KeyValueDiffers),new import22.ElementRef(this._el_2),this.renderer);
+    this._NgClass_2_3 = new import18.NgClass(this.parent.parentInjector.get(import21.IterableDiffers),this.parent.parentInjector.get(import22.KeyValueDiffers),new import23.ElementRef(this._el_2),this.renderer);
     this._text_3 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
     this._el_4 = this.renderer.createElement(this._el_2,'label',(null as any));
     this.renderer.setElementAttribute(this._el_4,'for','firstName');
@@ -300,26 +301,26 @@ class _View_ProfileEditComponent1 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_7,'class','form-control');
     this.renderer.setElementAttribute(this._el_7,'id','firstName');
     this.renderer.setElementAttribute(this._el_7,'type','text');
-    this._DefaultValueAccessor_7_3 = new import18.DefaultValueAccessor(this.renderer,new import22.ElementRef(this._el_7));
+    this._DefaultValueAccessor_7_3 = new import19.DefaultValueAccessor(this.renderer,new import23.ElementRef(this._el_7));
     this._NG_VALUE_ACCESSOR_7_4 = [this._DefaultValueAccessor_7_3];
-    this._FormControlDirective_7_5 = new import19.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_7_4);
+    this._FormControlDirective_7_5 = new import20.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_7_4);
     this._NgControl_7_6 = this._FormControlDirective_7_5;
-    this._NgControlStatus_7_7 = new import16.NgControlStatus(this._NgControl_7_6);
+    this._NgControlStatus_7_7 = new import17.NgControlStatus(this._NgControl_7_6);
     this._text_8 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
     this._anchor_9 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
     this._appEl_9 = new import2.AppElement(9,2,this,this._anchor_9);
-    this._TemplateRef_9_5 = new import14.TemplateRef_(this._appEl_9,viewFactory_ProfileEditComponent2);
-    this._NgIf_9_6 = new import13.NgIf(this._appEl_9.vcRef,this._TemplateRef_9_5);
+    this._TemplateRef_9_5 = new import15.TemplateRef_(this._appEl_9,viewFactory_ProfileEditComponent2);
+    this._NgIf_9_6 = new import14.NgIf(this._appEl_9.vcRef,this._TemplateRef_9_5);
     this._text_10 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
     this._anchor_11 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
     this._appEl_11 = new import2.AppElement(11,2,this,this._anchor_11);
-    this._TemplateRef_11_5 = new import14.TemplateRef_(this._appEl_11,viewFactory_ProfileEditComponent3);
-    this._NgIf_11_6 = new import13.NgIf(this._appEl_11.vcRef,this._TemplateRef_11_5);
+    this._TemplateRef_11_5 = new import15.TemplateRef_(this._appEl_11,viewFactory_ProfileEditComponent3);
+    this._NgIf_11_6 = new import14.NgIf(this._appEl_11.vcRef,this._TemplateRef_11_5);
     this._text_12 = this.renderer.createText(this._el_2,'\n                ',(null as any));
     this._text_13 = this.renderer.createText(this._el_0,'\n                ',(null as any));
     this._el_14 = this.renderer.createElement(this._el_0,'div',(null as any));
     this.renderer.setElementAttribute(this._el_14,'class','form-group');
-    this._NgClass_14_3 = new import17.NgClass(this.parent.parentInjector.get(import20.IterableDiffers),this.parent.parentInjector.get(import21.KeyValueDiffers),new import22.ElementRef(this._el_14),this.renderer);
+    this._NgClass_14_3 = new import18.NgClass(this.parent.parentInjector.get(import21.IterableDiffers),this.parent.parentInjector.get(import22.KeyValueDiffers),new import23.ElementRef(this._el_14),this.renderer);
     this._text_15 = this.renderer.createText(this._el_14,'\n                    ',(null as any));
     this._el_16 = this.renderer.createElement(this._el_14,'label',(null as any));
     this.renderer.setElementAttribute(this._el_16,'for','lastName');
@@ -329,26 +330,26 @@ class _View_ProfileEditComponent1 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_19,'class','form-control');
     this.renderer.setElementAttribute(this._el_19,'id','lastName');
     this.renderer.setElementAttribute(this._el_19,'type','text');
-    this._DefaultValueAccessor_19_3 = new import18.DefaultValueAccessor(this.renderer,new import22.ElementRef(this._el_19));
+    this._DefaultValueAccessor_19_3 = new import19.DefaultValueAccessor(this.renderer,new import23.ElementRef(this._el_19));
     this._NG_VALUE_ACCESSOR_19_4 = [this._DefaultValueAccessor_19_3];
-    this._FormControlDirective_19_5 = new import19.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_19_4);
+    this._FormControlDirective_19_5 = new import20.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_19_4);
     this._NgControl_19_6 = this._FormControlDirective_19_5;
-    this._NgControlStatus_19_7 = new import16.NgControlStatus(this._NgControl_19_6);
+    this._NgControlStatus_19_7 = new import17.NgControlStatus(this._NgControl_19_6);
     this._text_20 = this.renderer.createText(this._el_14,'\n                    ',(null as any));
     this._anchor_21 = this.renderer.createTemplateAnchor(this._el_14,(null as any));
     this._appEl_21 = new import2.AppElement(21,14,this,this._anchor_21);
-    this._TemplateRef_21_5 = new import14.TemplateRef_(this._appEl_21,viewFactory_ProfileEditComponent4);
-    this._NgIf_21_6 = new import13.NgIf(this._appEl_21.vcRef,this._TemplateRef_21_5);
+    this._TemplateRef_21_5 = new import15.TemplateRef_(this._appEl_21,viewFactory_ProfileEditComponent4);
+    this._NgIf_21_6 = new import14.NgIf(this._appEl_21.vcRef,this._TemplateRef_21_5);
     this._text_22 = this.renderer.createText(this._el_14,'\n                    ',(null as any));
     this._anchor_23 = this.renderer.createTemplateAnchor(this._el_14,(null as any));
     this._appEl_23 = new import2.AppElement(23,14,this,this._anchor_23);
-    this._TemplateRef_23_5 = new import14.TemplateRef_(this._appEl_23,viewFactory_ProfileEditComponent5);
-    this._NgIf_23_6 = new import13.NgIf(this._appEl_23.vcRef,this._TemplateRef_23_5);
+    this._TemplateRef_23_5 = new import15.TemplateRef_(this._appEl_23,viewFactory_ProfileEditComponent5);
+    this._NgIf_23_6 = new import14.NgIf(this._appEl_23.vcRef,this._TemplateRef_23_5);
     this._text_24 = this.renderer.createText(this._el_14,'\n                ',(null as any));
     this._text_25 = this.renderer.createText(this._el_0,'\n            ',(null as any));
     this._el_26 = this.renderer.createElement(this._el_0,'div',(null as any));
     this.renderer.setElementAttribute(this._el_26,'class','form-group');
-    this._NgClass_26_3 = new import17.NgClass(this.parent.parentInjector.get(import20.IterableDiffers),this.parent.parentInjector.get(import21.KeyValueDiffers),new import22.ElementRef(this._el_26),this.renderer);
+    this._NgClass_26_3 = new import18.NgClass(this.parent.parentInjector.get(import21.IterableDiffers),this.parent.parentInjector.get(import22.KeyValueDiffers),new import23.ElementRef(this._el_26),this.renderer);
     this._text_27 = this.renderer.createText(this._el_26,'\n                ',(null as any));
     this._el_28 = this.renderer.createElement(this._el_26,'label',(null as any));
     this.renderer.setElementAttribute(this._el_28,'for','email');
@@ -358,16 +359,16 @@ class _View_ProfileEditComponent1 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_31,'class','form-control');
     this.renderer.setElementAttribute(this._el_31,'id','email');
     this.renderer.setElementAttribute(this._el_31,'type','email');
-    this._DefaultValueAccessor_31_3 = new import18.DefaultValueAccessor(this.renderer,new import22.ElementRef(this._el_31));
+    this._DefaultValueAccessor_31_3 = new import19.DefaultValueAccessor(this.renderer,new import23.ElementRef(this._el_31));
     this._NG_VALUE_ACCESSOR_31_4 = [this._DefaultValueAccessor_31_3];
-    this._FormControlDirective_31_5 = new import19.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_31_4);
+    this._FormControlDirective_31_5 = new import20.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_31_4);
     this._NgControl_31_6 = this._FormControlDirective_31_5;
-    this._NgControlStatus_31_7 = new import16.NgControlStatus(this._NgControl_31_6);
+    this._NgControlStatus_31_7 = new import17.NgControlStatus(this._NgControl_31_6);
     this._text_32 = this.renderer.createText(this._el_26,'\n                ',(null as any));
     this._anchor_33 = this.renderer.createTemplateAnchor(this._el_26,(null as any));
     this._appEl_33 = new import2.AppElement(33,26,this,this._anchor_33);
-    this._TemplateRef_33_5 = new import14.TemplateRef_(this._appEl_33,viewFactory_ProfileEditComponent6);
-    this._NgIf_33_6 = new import13.NgIf(this._appEl_33.vcRef,this._TemplateRef_33_5);
+    this._TemplateRef_33_5 = new import15.TemplateRef_(this._appEl_33,viewFactory_ProfileEditComponent6);
+    this._NgIf_33_6 = new import14.NgIf(this._appEl_33.vcRef,this._TemplateRef_33_5);
     this._text_34 = this.renderer.createText(this._el_26,'\n            ',(null as any));
     this._text_35 = this.renderer.createText(this._el_0,'\n            ',(null as any));
     this._el_36 = this.renderer.createElement(this._el_0,'div',(null as any));
@@ -505,37 +506,37 @@ class _View_ProfileEditComponent1 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import18.DefaultValueAccessor) && (7 === requestNodeIndex))) { return this._DefaultValueAccessor_7_3; }
-    if (((token === import23.NG_VALUE_ACCESSOR) && (7 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_7_4; }
-    if (((token === import19.FormControlDirective) && (7 === requestNodeIndex))) { return this._FormControlDirective_7_5; }
-    if (((token === import24.NgControl) && (7 === requestNodeIndex))) { return this._NgControl_7_6; }
-    if (((token === import16.NgControlStatus) && (7 === requestNodeIndex))) { return this._NgControlStatus_7_7; }
-    if (((token === import14.TemplateRef) && (9 === requestNodeIndex))) { return this._TemplateRef_9_5; }
-    if (((token === import13.NgIf) && (9 === requestNodeIndex))) { return this._NgIf_9_6; }
-    if (((token === import14.TemplateRef) && (11 === requestNodeIndex))) { return this._TemplateRef_11_5; }
-    if (((token === import13.NgIf) && (11 === requestNodeIndex))) { return this._NgIf_11_6; }
-    if (((token === import17.NgClass) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 12)))) { return this._NgClass_2_3; }
-    if (((token === import18.DefaultValueAccessor) && (19 === requestNodeIndex))) { return this._DefaultValueAccessor_19_3; }
-    if (((token === import23.NG_VALUE_ACCESSOR) && (19 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_19_4; }
-    if (((token === import19.FormControlDirective) && (19 === requestNodeIndex))) { return this._FormControlDirective_19_5; }
-    if (((token === import24.NgControl) && (19 === requestNodeIndex))) { return this._NgControl_19_6; }
-    if (((token === import16.NgControlStatus) && (19 === requestNodeIndex))) { return this._NgControlStatus_19_7; }
-    if (((token === import14.TemplateRef) && (21 === requestNodeIndex))) { return this._TemplateRef_21_5; }
-    if (((token === import13.NgIf) && (21 === requestNodeIndex))) { return this._NgIf_21_6; }
-    if (((token === import14.TemplateRef) && (23 === requestNodeIndex))) { return this._TemplateRef_23_5; }
-    if (((token === import13.NgIf) && (23 === requestNodeIndex))) { return this._NgIf_23_6; }
-    if (((token === import17.NgClass) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 24)))) { return this._NgClass_14_3; }
-    if (((token === import18.DefaultValueAccessor) && (31 === requestNodeIndex))) { return this._DefaultValueAccessor_31_3; }
-    if (((token === import23.NG_VALUE_ACCESSOR) && (31 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_31_4; }
-    if (((token === import19.FormControlDirective) && (31 === requestNodeIndex))) { return this._FormControlDirective_31_5; }
-    if (((token === import24.NgControl) && (31 === requestNodeIndex))) { return this._NgControl_31_6; }
-    if (((token === import16.NgControlStatus) && (31 === requestNodeIndex))) { return this._NgControlStatus_31_7; }
-    if (((token === import14.TemplateRef) && (33 === requestNodeIndex))) { return this._TemplateRef_33_5; }
-    if (((token === import13.NgIf) && (33 === requestNodeIndex))) { return this._NgIf_33_6; }
-    if (((token === import17.NgClass) && ((26 <= requestNodeIndex) && (requestNodeIndex <= 34)))) { return this._NgClass_26_3; }
-    if (((token === import15.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._FormGroupDirective_0_3; }
-    if (((token === import25.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._ControlContainer_0_4; }
-    if (((token === import16.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._NgControlStatusGroup_0_5; }
+    if (((token === import19.DefaultValueAccessor) && (7 === requestNodeIndex))) { return this._DefaultValueAccessor_7_3; }
+    if (((token === import24.NG_VALUE_ACCESSOR) && (7 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_7_4; }
+    if (((token === import20.FormControlDirective) && (7 === requestNodeIndex))) { return this._FormControlDirective_7_5; }
+    if (((token === import25.NgControl) && (7 === requestNodeIndex))) { return this._NgControl_7_6; }
+    if (((token === import17.NgControlStatus) && (7 === requestNodeIndex))) { return this._NgControlStatus_7_7; }
+    if (((token === import15.TemplateRef) && (9 === requestNodeIndex))) { return this._TemplateRef_9_5; }
+    if (((token === import14.NgIf) && (9 === requestNodeIndex))) { return this._NgIf_9_6; }
+    if (((token === import15.TemplateRef) && (11 === requestNodeIndex))) { return this._TemplateRef_11_5; }
+    if (((token === import14.NgIf) && (11 === requestNodeIndex))) { return this._NgIf_11_6; }
+    if (((token === import18.NgClass) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 12)))) { return this._NgClass_2_3; }
+    if (((token === import19.DefaultValueAccessor) && (19 === requestNodeIndex))) { return this._DefaultValueAccessor_19_3; }
+    if (((token === import24.NG_VALUE_ACCESSOR) && (19 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_19_4; }
+    if (((token === import20.FormControlDirective) && (19 === requestNodeIndex))) { return this._FormControlDirective_19_5; }
+    if (((token === import25.NgControl) && (19 === requestNodeIndex))) { return this._NgControl_19_6; }
+    if (((token === import17.NgControlStatus) && (19 === requestNodeIndex))) { return this._NgControlStatus_19_7; }
+    if (((token === import15.TemplateRef) && (21 === requestNodeIndex))) { return this._TemplateRef_21_5; }
+    if (((token === import14.NgIf) && (21 === requestNodeIndex))) { return this._NgIf_21_6; }
+    if (((token === import15.TemplateRef) && (23 === requestNodeIndex))) { return this._TemplateRef_23_5; }
+    if (((token === import14.NgIf) && (23 === requestNodeIndex))) { return this._NgIf_23_6; }
+    if (((token === import18.NgClass) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 24)))) { return this._NgClass_14_3; }
+    if (((token === import19.DefaultValueAccessor) && (31 === requestNodeIndex))) { return this._DefaultValueAccessor_31_3; }
+    if (((token === import24.NG_VALUE_ACCESSOR) && (31 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_31_4; }
+    if (((token === import20.FormControlDirective) && (31 === requestNodeIndex))) { return this._FormControlDirective_31_5; }
+    if (((token === import25.NgControl) && (31 === requestNodeIndex))) { return this._NgControl_31_6; }
+    if (((token === import17.NgControlStatus) && (31 === requestNodeIndex))) { return this._NgControlStatus_31_7; }
+    if (((token === import15.TemplateRef) && (33 === requestNodeIndex))) { return this._TemplateRef_33_5; }
+    if (((token === import14.NgIf) && (33 === requestNodeIndex))) { return this._NgIf_33_6; }
+    if (((token === import18.NgClass) && ((26 <= requestNodeIndex) && (requestNodeIndex <= 34)))) { return this._NgClass_26_3; }
+    if (((token === import16.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._FormGroupDirective_0_3; }
+    if (((token === import26.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._ControlContainer_0_4; }
+    if (((token === import17.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._NgControlStatusGroup_0_5; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {

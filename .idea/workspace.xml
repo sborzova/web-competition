@@ -1,47 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/shared/user.model.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/shared/user.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/user-solutions/paper.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/paper.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/users/user.service.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.service.ts" />
+    <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="providers services">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/0.111993b568110824d92f.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/1.111993b568110824d92f.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/2.111993b568110824d92f.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/3.111993b568110824d92f.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/4.111993b568110824d92f.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/5.111993b568110824d92f.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/6.111993b568110824d92f.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/7.111993b568110824d92f.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/8.111993b568110824d92f.chunk.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/app.module.ngfactory.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ngfactory.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ngfactory.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.ngfactory.ts" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/auth.service.ts" afterPath="$PROJECT_DIR$/assets/app/auth/auth.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance.module.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile.module.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results.module.ts" afterPath="$PROJECT_DIR$/assets/app/results/results.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.ts" afterPath="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.ts" afterPath="$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.component.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.module.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.module.ts" afterPath="$PROJECT_DIR$/assets/app/validation/validation.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/parse-asn1/asn1.js" afterPath="$PROJECT_DIR$/node_modules/parse-asn1/asn1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/parse-asn1/fixProc.js" afterPath="$PROJECT_DIR$/node_modules/parse-asn1/fixProc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/parse-asn1/index.js" afterPath="$PROJECT_DIR$/node_modules/parse-asn1/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/parse-asn1/package.json" afterPath="$PROJECT_DIR$/node_modules/parse-asn1/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/parse-asn1/test/index.js" afterPath="$PROJECT_DIR$/node_modules/parse-asn1/test/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/README.md" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/CachedSource.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/CachedSource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/ConcatSource.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/ConcatSource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/LineToLineMappedSource.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/LineToLineMappedSource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/OriginalSource.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/OriginalSource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/PrefixSource.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/PrefixSource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/RawSource.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/RawSource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/ReplaceSource.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/ReplaceSource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/Source.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/Source.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/SourceAndMapMixin.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/SourceAndMapMixin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/SourceMapSource.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/SourceMapSource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/lib/index.js" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/webpack-sources/package.json" afterPath="$PROJECT_DIR$/node_modules/webpack-sources/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js" afterPath="$PROJECT_DIR$/public/js/app/bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.prod.js" afterPath="$PROJECT_DIR$/webpack.config.prod.js" />
     </list>
@@ -61,46 +35,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+              <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/shared/user.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.model.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/shared/user.model.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="instance.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/instances/instance.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-              <folding>
-                <marker date="1489668658184" expanded="true" signature="1136:1138" ph="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -110,6 +50,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="47">
               <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.config.dev.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.config.dev.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -127,10 +77,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user-solutions.module.ngfactory.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ngfactory.ts">
+      <file leaf-file-name="webpack.config.prod.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webpack.config.prod.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="323">
+              <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results-author-technique.component.ngfactory.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ngfactory.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-867">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -151,25 +111,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="results.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/results/results.module.ts">
+      <file leaf-file-name="webpack.config.common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.config.common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="27" column="62" lean-forward="false" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+            <state relative-caret-position="-211">
+              <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/users/users.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <marker date="1489668554457" expanded="true" signature="794:796" ph="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -281,7 +228,6 @@
         <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/webpack.config.common.js" />
         <option value="$PROJECT_DIR$/webpack.config.dev.js" />
-        <option value="$PROJECT_DIR$/webpack.config.prod.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/assets/app/auth/auth.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/user.service.ts" />
@@ -295,6 +241,7 @@
         <option value="$PROJECT_DIR$/assets/app/results/results.module.ts" />
         <option value="$PROJECT_DIR$/assets/app/validation/validation.module.ts" />
         <option value="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ts" />
+        <option value="$PROJECT_DIR$/webpack.config.prod.js" />
       </list>
     </option>
   </component>
@@ -356,7 +303,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -524,14 +489,7 @@
       <workItem from="1489400126448" duration="10818000" />
       <workItem from="1489426466032" duration="4345000" />
       <workItem from="1489575417351" duration="22337000" />
-      <workItem from="1489655460220" duration="7948000" />
-    </task>
-    <task id="LOCAL-00021" summary="CRUD Instance">
-      <created>1486741162150</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1486741162150</updated>
+      <workItem from="1489655460220" duration="9532000" />
     </task>
     <task id="LOCAL-00022" summary="CRD Solution">
       <created>1486745418016</created>
@@ -869,11 +827,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489601108791</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="providers services">
+      <created>1489669796546</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1489669796547</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="914879000" />
+    <option name="totallyTimeSpent" value="916463000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -890,14 +855,14 @@
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5058824" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23883928" sideWeight="0.75277776" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15393655" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4420168" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5277311" sideWeight="0.51488096" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4605042" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5042017" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2454955" sideWeight="0.24722221" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24851191" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.48511904" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54453784" sideWeight="0.48511904" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -968,23 +933,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#55#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="96" column="36" lean-forward="false" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/validation/validation.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1067,13 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/npm-debug.log.1832014224">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/preference/preference.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1129,22 +1070,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.dev.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1238,14 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.prod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-238">
@@ -1283,7 +1200,7 @@
         <state relative-caret-position="289">
           <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding>
-            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#0#57#0" expanded="false" />
             <marker date="1489662498588" expanded="true" signature="305:627" ph="{...}" />
           </folding>
         </state>
@@ -1294,7 +1211,7 @@
         <state relative-caret-position="344">
           <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
             <marker date="1489668554457" expanded="true" signature="794:796" ph="{...}" />
           </folding>
         </state>
@@ -1323,7 +1240,7 @@
         <state relative-caret-position="645">
           <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1346,16 +1263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ngfactory.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1374,10 +1281,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ngfactory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ngfactory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-867">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/npm-debug.log.1832014224">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/npm-debug.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding />
         </state>
       </provider>
