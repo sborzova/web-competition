@@ -12,11 +12,15 @@
     </div>
 </div>
 
-<div *ngIf="isAdmin()" class="row">
-    <button
-            class="btn btn-success btn-xs"
-            [routerLink]="['/#instances/create']">Add instance</button>
-</div>
-<div *ngIf="isLoggedIn()" class="row">
-    <app-instance-list></app-instance-list>
+<div class="container" style="margin-top: 3%">
+    <div class="row">
+        <div *ngIf="isAdmin()">
+            <button
+                    class="btn btn-success btn-xs"
+                    [routerLink]="['/#instances/create']">Add instance</button>
+        </div>
+        <div *ngIf="showInstances()">
+            <app-instance-list></app-instance-list>
+        </div>
+    </div>
 </div>

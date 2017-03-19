@@ -5,6 +5,7 @@ import { SolutionCreate } from "./solution-create.model";
 import { Validation } from "./validation.model";
 import { AuthService } from "../auth/auth.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
+import {SessionStorageService} from "../shared/session-storage.service";
 
 @Component({
     selector: 'app-validation',
@@ -16,13 +17,20 @@ export class ValidationComponent implements OnInit {
     display = 'none';
 
     constructor(private validationService: SolutionService,
-                private authService: AuthService,
+                private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService){}
 
     ngOnInit(){
-        if (!this.authService.isLoggedIn()){
+        if (!this.showValidator()){
             this.display = 'block';
         }
+    }
+
+    showValidator(){
+        let loggedIn = this.sessionStorageService.isLoggedIn();
+        let competitionIsOn = this.sessionStorageService.getCompetitionIsOn();
+        let isAdmin = this.sessionStorageService.isAdmin();
+        return !(!loggedIn && competitionIsOn) || isAdmin;
     }
 
     onValidate(){
@@ -32,12 +40,10 @@ export class ValidationComponent implements OnInit {
         if (solutionInput.files && solutionInput.files[0]){
             let fd = new FormData();
             fd.append('solution', solutionInput.files[0], solutionInput.files[0].name);
-            console.log(solutionInput.files[0]);
             this.validationService.validate(fd)
                 .subscribe(
                     data => {
                         let result = JSON.parse(data);
-                        console.log(result);
                         if (result.status == 400){
                                 this.flashMessageService.showMessage('Invalid XML format.', 'alert-danger' );
                         }else {

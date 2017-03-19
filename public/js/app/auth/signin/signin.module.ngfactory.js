@@ -17,14 +17,18 @@ import * as import5 from '@angular/router/src/router_module';
 import * as import6 from '@angular/forms/src/form_builder';
 import * as import7 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import8 from '@angular/common/src/localization';
-import * as import10 from './signin.component.ngfactory';
-import * as import11 from '@angular/core/src/i18n/tokens';
-import * as import12 from './signin.component';
-import * as import13 from '@angular/router/src/router_config_loader';
+import * as import9 from '../auth.service';
+import * as import11 from './signin.component.ngfactory';
+import * as import12 from '@angular/core/src/i18n/tokens';
+import * as import13 from './signin.component';
+import * as import14 from '@angular/http/src/http';
+import * as import15 from '../../flash-message/flash-messages.service';
+import * as import16 from '../../preference/preference.service';
+import * as import17 from '@angular/router/src/router_config_loader';
 var SigninModuleInjector = (function (_super) {
     __extends(SigninModuleInjector, _super);
     function SigninModuleInjector(parent) {
-        _super.call(this, parent, [import10.SigninComponentNgFactory], []);
+        _super.call(this, parent, [import11.SigninComponentNgFactory], []);
     }
     Object.defineProperty(SigninModuleInjector.prototype, "_FormBuilder_5", {
         get: function () {
@@ -49,7 +53,7 @@ var SigninModuleInjector = (function (_super) {
     Object.defineProperty(SigninModuleInjector.prototype, "_NgLocalization_7", {
         get: function () {
             if ((this.__NgLocalization_7 == null)) {
-                (this.__NgLocalization_7 = new import8.NgLocaleLocalization(this.parent.get(import11.LOCALE_ID)));
+                (this.__NgLocalization_7 = new import8.NgLocaleLocalization(this.parent.get(import12.LOCALE_ID)));
             }
             return this.__NgLocalization_7;
         },
@@ -63,13 +67,23 @@ var SigninModuleInjector = (function (_super) {
                             path: '',
                             children: [{
                                     path: '',
-                                    component: import12.SigninComponent
+                                    component: import13.SigninComponent
                                 }
                             ]
                         }
                     ]]);
             }
             return this.__ROUTES_8;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SigninModuleInjector.prototype, "_AuthService_9", {
+        get: function () {
+            if ((this.__AuthService_9 == null)) {
+                (this.__AuthService_9 = new import9.AuthService(this.parent.get(import14.Http), this.parent.get(import15.FlashMessageService), this.parent.get(import16.PreferenceService)));
+            }
+            return this.__AuthService_9;
         },
         enumerable: true,
         configurable: true
@@ -107,8 +121,11 @@ var SigninModuleInjector = (function (_super) {
         if ((token === import8.NgLocalization)) {
             return this._NgLocalization_7;
         }
-        if ((token === import13.ROUTES)) {
+        if ((token === import17.ROUTES)) {
             return this._ROUTES_8;
+        }
+        if ((token === import9.AuthService)) {
+            return this._AuthService_9;
         }
         return notFoundResult;
     };

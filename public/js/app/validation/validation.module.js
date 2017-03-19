@@ -23,9 +23,12 @@ export var ValidationModule = (function () {
                         FormsModule,
                         CommonModule,
                         EscapeHtmlModule,
-                        validationRouting
+                        validationRouting,
                     ],
-                    providers: [PaperService, SolutionService]
+                    providers: [
+                        PaperService,
+                        SolutionService,
+                    ]
                 },] },
     ];
     /** @nocollapse */

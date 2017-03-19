@@ -9,6 +9,8 @@ import {WorseSolutionsComponent} from "./worse-solutions/worse-solutions.compone
 import {EscapeHtmlModule} from "../escape-html.module";
 import {PaperService} from "../shared/paper.service";
 import {SolutionService} from "./solution.service";
+import {FlashMessageComponent} from "../flash-message/flash-message.component";
+import {FlashMessageService} from "../flash-message/flash-messages.service";
 
 @NgModule({
     declarations: [
@@ -21,8 +23,11 @@ import {SolutionService} from "./solution.service";
         FormsModule,
         CommonModule,
         EscapeHtmlModule,
-        validationRouting
+        validationRouting,
     ],
-    providers: [PaperService, SolutionService]
+    providers: [
+        PaperService,
+        SolutionService,
+    ]
 })
 export class ValidationModule {}

@@ -15,22 +15,24 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from './solution.service';
-import * as import9 from '../auth/auth.service';
+import * as import9 from '../shared/session-storage.service';
 import * as import10 from '../flash-message/flash-messages.service';
 import * as import11 from '@angular/core/src/metadata/view';
 import * as import12 from '@angular/core/src/linker/component_factory';
 import * as import13 from '@angular/core/src/linker/query_list';
 import * as import14 from '@angular/common/src/directives/ng_style';
 import * as import15 from '@angular/router/src/directives/router_link';
-import * as import16 from './success-validation/success-validation.component';
-import * as import17 from './worse-solutions/worse-solutions.component';
-import * as import18 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import19 from '@angular/core/src/linker/element_ref';
-import * as import20 from '@angular/router/src/router';
-import * as import21 from '@angular/router/src/router_state';
-import * as import22 from '@angular/common/src/location/location_strategy';
-import * as import23 from './success-validation/success-validation.component.ngfactory';
-import * as import24 from './worse-solutions/worse-solutions.component.ngfactory';
+import * as import16 from '@angular/common/src/directives/ng_if';
+import * as import17 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import18 from '@angular/core/src/linker/element_ref';
+import * as import19 from '@angular/router/src/router';
+import * as import20 from '@angular/router/src/router_state';
+import * as import21 from '@angular/common/src/location/location_strategy';
+import * as import22 from '@angular/core/src/linker/template_ref';
+import * as import23 from './success-validation/success-validation.component';
+import * as import24 from './worse-solutions/worse-solutions.component';
+import * as import25 from './success-validation/success-validation.component.ngfactory';
+import * as import26 from './worse-solutions/worse-solutions.component.ngfactory';
 var renderType_ValidationComponent_Host = null;
 var _View_ValidationComponent_Host0 = (function (_super) {
     __extends(_View_ValidationComponent_Host0, _super);
@@ -41,7 +43,7 @@ var _View_ValidationComponent_Host0 = (function (_super) {
         this._el_0 = this.selectOrCreateHostElement('app-validation', rootSelector, null);
         this._appEl_0 = new import2.AppElement(0, null, this, this._el_0);
         var compView_0 = viewFactory_ValidationComponent0(this.viewUtils, this.injector(0), this._appEl_0);
-        this._ValidationComponent_0_4 = new import3.ValidationComponent(this.parentInjector.get(import8.SolutionService), this.parentInjector.get(import9.AuthService), this.parentInjector.get(import10.FlashMessageService));
+        this._ValidationComponent_0_4 = new import3.ValidationComponent(this.parentInjector.get(import8.SolutionService), this.parentInjector.get(import9.SessionStorageService), this.parentInjector.get(import10.FlashMessageService));
         this._appEl_0.initComponent(this._ValidationComponent_0_4, [], compView_0);
         compView_0.create(this._ValidationComponent_0_4, this.projectableNodes, null);
         this.init([].concat([this._el_0]), [this._el_0], [], []);
@@ -81,84 +83,54 @@ var _View_ValidationComponent0 = (function (_super) {
         this._viewQuery_solution_0 = new import13.QueryList();
         this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'backdrop');
-        this._NgStyle_0_3 = new import14.NgStyle(this.parentInjector.get(import18.KeyValueDiffers), new import19.ElementRef(this._el_0), this.renderer);
-        this._text_1 = this.renderer.createText(parentRenderNode, '\n    ', null);
+        this._NgStyle_0_3 = new import14.NgStyle(this.parentInjector.get(import17.KeyValueDiffers), new import18.ElementRef(this._el_0), this.renderer);
+        this._text_1 = this.renderer.createText(parentRenderNode, '\n', null);
         this._el_2 = this.renderer.createElement(parentRenderNode, 'div', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'modal');
         this.renderer.setElementAttribute(this._el_2, 'role', 'dialog');
         this.renderer.setElementAttribute(this._el_2, 'tabindex', '-1');
-        this._NgStyle_2_3 = new import14.NgStyle(this.parentInjector.get(import18.KeyValueDiffers), new import19.ElementRef(this._el_2), this.renderer);
-        this._text_3 = this.renderer.createText(this._el_2, '\n        ', null);
+        this._NgStyle_2_3 = new import14.NgStyle(this.parentInjector.get(import17.KeyValueDiffers), new import18.ElementRef(this._el_2), this.renderer);
+        this._text_3 = this.renderer.createText(this._el_2, '\n    ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
         this.renderer.setElementAttribute(this._el_4, 'class', 'modal-dialog');
         this.renderer.setElementAttribute(this._el_4, 'role', 'document');
-        this._text_5 = this.renderer.createText(this._el_4, '\n            ', null);
+        this._text_5 = this.renderer.createText(this._el_4, '\n        ', null);
         this._el_6 = this.renderer.createElement(this._el_4, 'div', null);
         this.renderer.setElementAttribute(this._el_6, 'class', 'modal-content');
-        this._text_7 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_7 = this.renderer.createText(this._el_6, '\n            ', null);
         this._el_8 = this.renderer.createElement(this._el_6, 'div', null);
         this.renderer.setElementAttribute(this._el_8, 'class', 'modal-body');
-        this._text_9 = this.renderer.createText(this._el_8, '\n                    ', null);
+        this._text_9 = this.renderer.createText(this._el_8, '\n                ', null);
         this._el_10 = this.renderer.createElement(this._el_8, 'h6', null);
         this._text_11 = this.renderer.createText(this._el_10, 'You must be registered and logged in to validate and insert your solutions', null);
-        this._text_12 = this.renderer.createText(this._el_8, '\n                ', null);
-        this._text_13 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_12 = this.renderer.createText(this._el_8, '\n            ', null);
+        this._text_13 = this.renderer.createText(this._el_6, '\n            ', null);
         this._el_14 = this.renderer.createElement(this._el_6, 'div', null);
         this.renderer.setElementAttribute(this._el_14, 'class', 'modal-footer');
-        this._text_15 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._text_15 = this.renderer.createText(this._el_14, '\n                ', null);
         this._el_16 = this.renderer.createElement(this._el_14, 'button', null);
         this.renderer.setElementAttribute(this._el_16, 'class', 'btn btn-default');
         this.renderer.setElementAttribute(this._el_16, 'type', 'button');
-        this._RouterLink_16_3 = new import15.RouterLink(this.parentInjector.get(import20.Router), this.parentInjector.get(import21.ActivatedRoute), this.parentInjector.get(import22.LocationStrategy));
+        this._RouterLink_16_3 = new import15.RouterLink(this.parentInjector.get(import19.Router), this.parentInjector.get(import20.ActivatedRoute), this.parentInjector.get(import21.LocationStrategy));
         this._text_17 = this.renderer.createText(this._el_16, 'Log in', null);
-        this._text_18 = this.renderer.createText(this._el_14, '\n                ', null);
-        this._text_19 = this.renderer.createText(this._el_6, '\n            ', null);
-        this._text_20 = this.renderer.createText(this._el_4, '\n        ', null);
-        this._text_21 = this.renderer.createText(this._el_2, '\n    ', null);
+        this._text_18 = this.renderer.createText(this._el_14, '\n            ', null);
+        this._text_19 = this.renderer.createText(this._el_6, '\n        ', null);
+        this._text_20 = this.renderer.createText(this._el_4, '\n    ', null);
+        this._text_21 = this.renderer.createText(this._el_2, '\n', null);
         this._text_22 = this.renderer.createText(parentRenderNode, '\n', null);
         this._el_23 = this.renderer.createElement(parentRenderNode, 'div', null);
-        this.renderer.setElementAttribute(this._el_23, 'class', 'col-sm-12');
+        this.renderer.setElementAttribute(this._el_23, 'class', 'container');
+        this.renderer.setElementAttribute(this._el_23, 'style', 'margin-top: 3%');
         this._text_24 = this.renderer.createText(this._el_23, '\n    ', null);
-        this._el_25 = this.renderer.createElement(this._el_23, 'h2', null);
-        this._text_26 = this.renderer.createText(this._el_25, 'Validate your solution', null);
-        this._text_27 = this.renderer.createText(this._el_23, '\n    ', null);
-        this._el_28 = this.renderer.createElement(this._el_23, 'div', null);
-        this.renderer.setElementAttribute(this._el_28, 'class', 'row');
-        this.renderer.setElementAttribute(this._el_28, 'style', 'padding: 5% 0%');
-        this._text_29 = this.renderer.createText(this._el_28, '\n        ', null);
-        this._el_30 = this.renderer.createElement(this._el_28, 'div', null);
-        this.renderer.setElementAttribute(this._el_30, 'class', 'col-sm-2');
-        this._text_31 = this.renderer.createText(this._el_30, '\n            ', null);
-        this._el_32 = this.renderer.createElement(this._el_30, 'input', null);
-        this.renderer.setElementAttribute(this._el_32, 'type', 'file');
-        this._text_33 = this.renderer.createText(this._el_30, '\n        ', null);
-        this._text_34 = this.renderer.createText(this._el_28, '\n        ', null);
-        this._el_35 = this.renderer.createElement(this._el_28, 'div', null);
-        this.renderer.setElementAttribute(this._el_35, 'class', 'col-sm-3 col-sm-offset-2');
-        this._text_36 = this.renderer.createText(this._el_35, '\n            ', null);
-        this._el_37 = this.renderer.createElement(this._el_35, 'button', null);
-        this.renderer.setElementAttribute(this._el_37, 'class', 'btn btn-primary btn-xs');
-        this._text_38 = this.renderer.createText(this._el_37, 'Validate', null);
-        this._text_39 = this.renderer.createText(this._el_35, '\n        ', null);
-        this._text_40 = this.renderer.createText(this._el_28, '\n    ', null);
-        this._text_41 = this.renderer.createText(this._el_23, '\n    ', null);
-        this._el_42 = this.renderer.createElement(this._el_23, 'div', null);
-        this._text_43 = this.renderer.createText(this._el_42, '\n        ', null);
-        this._el_44 = this.renderer.createElement(this._el_42, 'app-success-validation', null);
-        this._appEl_44 = new import2.AppElement(44, 42, this, this._el_44);
-        var compView_44 = import23.viewFactory_SuccessValidationComponent0(this.viewUtils, this.injector(44), this._appEl_44);
-        this._SuccessValidationComponent_44_4 = new import16.SuccessValidationComponent(this.parentInjector.get(import8.SolutionService));
-        this._appEl_44.initComponent(this._SuccessValidationComponent_44_4, [], compView_44);
-        compView_44.create(this._SuccessValidationComponent_44_4, [], null);
-        this._text_45 = this.renderer.createText(this._el_42, '\n        ', null);
-        this._el_46 = this.renderer.createElement(this._el_42, 'app-worse-solutions', null);
-        this._appEl_46 = new import2.AppElement(46, 42, this, this._el_46);
-        var compView_46 = import24.viewFactory_WorseSolutionsComponent0(this.viewUtils, this.injector(46), this._appEl_46);
-        this._WorseSolutionsComponent_46_4 = new import17.WorseSolutionsComponent(this.parentInjector.get(import8.SolutionService));
-        this._appEl_46.initComponent(this._WorseSolutionsComponent_46_4, [], compView_46);
-        compView_46.create(this._WorseSolutionsComponent_46_4, [], null);
-        this._text_47 = this.renderer.createText(this._el_42, '\n    ', null);
-        this._text_48 = this.renderer.createText(this._el_23, '\n', null);
+        this._el_25 = this.renderer.createElement(this._el_23, 'div', null);
+        this.renderer.setElementAttribute(this._el_25, 'class', 'row');
+        this._text_26 = this.renderer.createText(this._el_25, '\n        ', null);
+        this._anchor_27 = this.renderer.createTemplateAnchor(this._el_25, null);
+        this._appEl_27 = new import2.AppElement(27, 25, this, this._anchor_27);
+        this._TemplateRef_27_5 = new import22.TemplateRef_(this._appEl_27, viewFactory_ValidationComponent1);
+        this._NgIf_27_6 = new import16.NgIf(this._appEl_27.vcRef, this._TemplateRef_27_5);
+        this._text_28 = this.renderer.createText(this._el_25, '\n    ', null);
+        this._text_29 = this.renderer.createText(this._el_23, '\n', null);
         this._map_0 = import4.pureProxy1(function (p0) {
             return { display: p0 };
         });
@@ -172,9 +144,7 @@ var _View_ValidationComponent0 = (function (_super) {
             return [p0];
         });
         this._expr_3 = import7.UNINITIALIZED;
-        var disposable_1 = this.renderer.listen(this._el_37, 'click', this.eventHandler(this._handle_click_37_0.bind(this)));
-        this._viewQuery_solution_0.reset([new import19.ElementRef(this._el_32)]);
-        this.context.solutionElem = this._viewQuery_solution_0.first;
+        this._expr_4 = import7.UNINITIALIZED;
         this.init([], [
             this._el_0,
             this._text_1,
@@ -203,32 +173,10 @@ var _View_ValidationComponent0 = (function (_super) {
             this._text_24,
             this._el_25,
             this._text_26,
-            this._text_27,
-            this._el_28,
-            this._text_29,
-            this._el_30,
-            this._text_31,
-            this._el_32,
-            this._text_33,
-            this._text_34,
-            this._el_35,
-            this._text_36,
-            this._el_37,
-            this._text_38,
-            this._text_39,
-            this._text_40,
-            this._text_41,
-            this._el_42,
-            this._text_43,
-            this._el_44,
-            this._text_45,
-            this._el_46,
-            this._text_47,
-            this._text_48
-        ], [
-            disposable_0,
-            disposable_1
-        ], []);
+            this._anchor_27,
+            this._text_28,
+            this._text_29
+        ], [disposable_0], []);
         return null;
     };
     _View_ValidationComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
@@ -241,11 +189,11 @@ var _View_ValidationComponent0 = (function (_super) {
         if (((token === import14.NgStyle) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 21)))) {
             return this._NgStyle_2_3;
         }
-        if (((token === import16.SuccessValidationComponent) && (44 === requestNodeIndex))) {
-            return this._SuccessValidationComponent_44_4;
+        if (((token === import22.TemplateRef) && (27 === requestNodeIndex))) {
+            return this._TemplateRef_27_5;
         }
-        if (((token === import17.WorseSolutionsComponent) && (46 === requestNodeIndex))) {
-            return this._WorseSolutionsComponent_46_4;
+        if (((token === import16.NgIf) && (27 === requestNodeIndex))) {
+            return this._NgIf_27_6;
         }
         return notFoundResult;
     };
@@ -271,27 +219,25 @@ var _View_ValidationComponent0 = (function (_super) {
             this._RouterLink_16_3.routerLink = currVal_3;
             this._expr_3 = currVal_3;
         }
-        if (((this.numberOfChecks === 0) && !throwOnChange)) {
-            this._SuccessValidationComponent_44_4.ngOnInit();
-        }
-        if (((this.numberOfChecks === 0) && !throwOnChange)) {
-            this._WorseSolutionsComponent_46_4.ngOnInit();
+        var currVal_4 = this.context.showValidator();
+        if (import4.checkBinding(throwOnChange, this._expr_4, currVal_4)) {
+            this._NgIf_27_6.ngIf = currVal_4;
+            this._expr_4 = currVal_4;
         }
         this.detectContentChildrenChanges(throwOnChange);
         this.detectViewChildrenChanges(throwOnChange);
-    };
-    _View_ValidationComponent0.prototype.destroyInternal = function () {
-        this._SuccessValidationComponent_44_4.ngOnDestroy();
-        this._WorseSolutionsComponent_46_4.ngOnDestroy();
+        if (!throwOnChange) {
+            if (this._viewQuery_solution_0.dirty) {
+                this._viewQuery_solution_0.reset([this._appEl_27.mapNestedViews(_View_ValidationComponent1, function (nestedView) {
+                        return [new import18.ElementRef(nestedView._el_14)];
+                    })]);
+                this.context.solutionElem = this._viewQuery_solution_0.first;
+            }
+        }
     };
     _View_ValidationComponent0.prototype._handle_click_16_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this._RouterLink_16_3.onClick($event.button, $event.ctrlKey, $event.metaKey) !== false);
-        return (true && pd_0);
-    };
-    _View_ValidationComponent0.prototype._handle_click_37_0 = function ($event) {
-        this.markPathToRootAsCheckOnce();
-        var pd_0 = (this.context.onValidate() !== false);
         return (true && pd_0);
     };
     return _View_ValidationComponent0;
@@ -301,4 +247,131 @@ export function viewFactory_ValidationComponent0(viewUtils, parentInjector, decl
         (renderType_ValidationComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/validation/validation.component.html', 0, import11.ViewEncapsulation.None, styles_ValidationComponent, {}));
     }
     return new _View_ValidationComponent0(viewUtils, parentInjector, declarationEl);
+}
+var _View_ValidationComponent1 = (function (_super) {
+    __extends(_View_ValidationComponent1, _super);
+    function _View_ValidationComponent1(viewUtils, parentInjector, declarationEl) {
+        _super.call(this, _View_ValidationComponent1, renderType_ValidationComponent, import6.ViewType.EMBEDDED, viewUtils, parentInjector, declarationEl, import7.ChangeDetectorStatus.CheckAlways);
+    }
+    _View_ValidationComponent1.prototype.createInternal = function (rootSelector) {
+        this._el_0 = this.renderer.createElement(null, 'div', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
+        this.renderer.setElementAttribute(this._el_2, 'class', 'col-xs-12 col-md-6 col-md-offset-3');
+        this._text_3 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
+        this.renderer.setElementAttribute(this._el_4, 'class', 'jumbotron ');
+        this._text_5 = this.renderer.createText(this._el_4, '\n                    ', null);
+        this._el_6 = this.renderer.createElement(this._el_4, 'div', null);
+        this.renderer.setElementAttribute(this._el_6, 'class', 'text-center');
+        this._text_7 = this.renderer.createText(this._el_6, '\n                        ', null);
+        this._el_8 = this.renderer.createElement(this._el_6, 'h2', null);
+        this._text_9 = this.renderer.createText(this._el_8, 'Validate solution', null);
+        this._text_10 = this.renderer.createText(this._el_6, '\n                    ', null);
+        this._text_11 = this.renderer.createText(this._el_4, '\n                    ', null);
+        this._el_12 = this.renderer.createElement(this._el_4, 'div', null);
+        this._text_13 = this.renderer.createText(this._el_12, '\n                        ', null);
+        this._el_14 = this.renderer.createElement(this._el_12, 'input', null);
+        this.renderer.setElementAttribute(this._el_14, 'type', 'file');
+        this._text_15 = this.renderer.createText(this._el_12, '\n                    ', null);
+        this._text_16 = this.renderer.createText(this._el_4, '\n                    ', null);
+        this._el_17 = this.renderer.createElement(this._el_4, 'div', null);
+        this.renderer.setElementAttribute(this._el_17, 'align', 'right');
+        this._text_18 = this.renderer.createText(this._el_17, '\n                        ', null);
+        this._el_19 = this.renderer.createElement(this._el_17, 'button', null);
+        this.renderer.setElementAttribute(this._el_19, 'class', 'btn btn-primary btn-s');
+        this._text_20 = this.renderer.createText(this._el_19, 'Validate', null);
+        this._text_21 = this.renderer.createText(this._el_17, '\n                    ', null);
+        this._text_22 = this.renderer.createText(this._el_4, '\n                ', null);
+        this._text_23 = this.renderer.createText(this._el_2, '\n            ', null);
+        this._text_24 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._el_25 = this.renderer.createElement(this._el_0, 'div', null);
+        this._text_26 = this.renderer.createText(this._el_25, '\n                ', null);
+        this._el_27 = this.renderer.createElement(this._el_25, 'app-success-validation', null);
+        this._appEl_27 = new import2.AppElement(27, 25, this, this._el_27);
+        var compView_27 = import25.viewFactory_SuccessValidationComponent0(this.viewUtils, this.injector(27), this._appEl_27);
+        this._SuccessValidationComponent_27_4 = new import23.SuccessValidationComponent(this.parent.parentInjector.get(import8.SolutionService), this.parent.parentInjector.get(import9.SessionStorageService));
+        this._appEl_27.initComponent(this._SuccessValidationComponent_27_4, [], compView_27);
+        compView_27.create(this._SuccessValidationComponent_27_4, [], null);
+        this._text_28 = this.renderer.createText(this._el_25, '\n                ', null);
+        this._el_29 = this.renderer.createElement(this._el_25, 'app-worse-solutions', null);
+        this._appEl_29 = new import2.AppElement(29, 25, this, this._el_29);
+        var compView_29 = import26.viewFactory_WorseSolutionsComponent0(this.viewUtils, this.injector(29), this._appEl_29);
+        this._WorseSolutionsComponent_29_4 = new import24.WorseSolutionsComponent(this.parent.parentInjector.get(import8.SolutionService));
+        this._appEl_29.initComponent(this._WorseSolutionsComponent_29_4, [], compView_29);
+        compView_29.create(this._WorseSolutionsComponent_29_4, [], null);
+        this._text_30 = this.renderer.createText(this._el_25, '\n            ', null);
+        this._text_31 = this.renderer.createText(this._el_0, '\n        ', null);
+        var disposable_0 = this.renderer.listen(this._el_19, 'click', this.eventHandler(this._handle_click_19_0.bind(this)));
+        this.init([].concat([this._el_0]), [
+            this._el_0,
+            this._text_1,
+            this._el_2,
+            this._text_3,
+            this._el_4,
+            this._text_5,
+            this._el_6,
+            this._text_7,
+            this._el_8,
+            this._text_9,
+            this._text_10,
+            this._text_11,
+            this._el_12,
+            this._text_13,
+            this._el_14,
+            this._text_15,
+            this._text_16,
+            this._el_17,
+            this._text_18,
+            this._el_19,
+            this._text_20,
+            this._text_21,
+            this._text_22,
+            this._text_23,
+            this._text_24,
+            this._el_25,
+            this._text_26,
+            this._el_27,
+            this._text_28,
+            this._el_29,
+            this._text_30,
+            this._text_31
+        ], [disposable_0], []);
+        return null;
+    };
+    _View_ValidationComponent1.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
+        if (((token === import23.SuccessValidationComponent) && (27 === requestNodeIndex))) {
+            return this._SuccessValidationComponent_27_4;
+        }
+        if (((token === import24.WorseSolutionsComponent) && (29 === requestNodeIndex))) {
+            return this._WorseSolutionsComponent_29_4;
+        }
+        return notFoundResult;
+    };
+    _View_ValidationComponent1.prototype.detectChangesInternal = function (throwOnChange) {
+        if (((this.numberOfChecks === 0) && !throwOnChange)) {
+            this._SuccessValidationComponent_27_4.ngOnInit();
+        }
+        if (((this.numberOfChecks === 0) && !throwOnChange)) {
+            this._WorseSolutionsComponent_29_4.ngOnInit();
+        }
+        this.detectContentChildrenChanges(throwOnChange);
+        this.detectViewChildrenChanges(throwOnChange);
+    };
+    _View_ValidationComponent1.prototype.dirtyParentQueriesInternal = function () {
+        this.parent._viewQuery_solution_0.setDirty();
+    };
+    _View_ValidationComponent1.prototype.destroyInternal = function () {
+        this._SuccessValidationComponent_27_4.ngOnDestroy();
+        this._WorseSolutionsComponent_29_4.ngOnDestroy();
+    };
+    _View_ValidationComponent1.prototype._handle_click_19_0 = function ($event) {
+        this.markPathToRootAsCheckOnce();
+        var pd_0 = (this.parent.context.onValidate() !== false);
+        return (true && pd_0);
+    };
+    return _View_ValidationComponent1;
+}(import1.AppView));
+function viewFactory_ValidationComponent1(viewUtils, parentInjector, declarationEl) {
+    return new _View_ValidationComponent1(viewUtils, parentInjector, declarationEl);
 }

@@ -85,28 +85,33 @@ var _View_UserEditComponent0 = (function (_super) {
     _View_UserEditComponent0.prototype.createInternal = function (rootSelector) {
         var parentRenderNode = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
         this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
-        this.renderer.setElementAttribute(this._el_0, 'class', 'row');
+        this.renderer.setElementAttribute(this._el_0, 'class', 'container');
+        this.renderer.setElementAttribute(this._el_0, 'style', 'margin-top: 3%');
         this._text_1 = this.renderer.createText(this._el_0, '\n    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
-        this.renderer.setElementAttribute(this._el_2, 'class', 'col-sm-6 col-sm-offset-3');
+        this.renderer.setElementAttribute(this._el_2, 'class', 'row');
         this._text_3 = this.renderer.createText(this._el_2, '\n        ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
-        this.renderer.setElementAttribute(this._el_4, 'class', 'jumbotron');
+        this.renderer.setElementAttribute(this._el_4, 'class', 'col-xs-12 col-md-6 col-md-offset-3');
         this._text_5 = this.renderer.createText(this._el_4, '\n            ', null);
         this._el_6 = this.renderer.createElement(this._el_4, 'div', null);
-        this.renderer.setElementAttribute(this._el_6, 'class', 'text-center');
+        this.renderer.setElementAttribute(this._el_6, 'class', 'jumbotron');
         this._text_7 = this.renderer.createText(this._el_6, '\n                ', null);
-        this._el_8 = this.renderer.createElement(this._el_6, 'h2', null);
-        this._text_9 = this.renderer.createText(this._el_8, 'Edit user', null);
-        this._text_10 = this.renderer.createText(this._el_6, '\n            ', null);
-        this._text_11 = this.renderer.createText(this._el_4, '\n            ', null);
-        this._anchor_12 = this.renderer.createTemplateAnchor(this._el_4, null);
-        this._appEl_12 = new import2.AppElement(12, 4, this, this._anchor_12);
-        this._TemplateRef_12_5 = new import15.TemplateRef_(this._appEl_12, viewFactory_UserEditComponent1);
-        this._NgIf_12_6 = new import14.NgIf(this._appEl_12.vcRef, this._TemplateRef_12_5);
-        this._text_13 = this.renderer.createText(this._el_4, '\n        ', null);
-        this._text_14 = this.renderer.createText(this._el_2, '\n    ', null);
-        this._text_15 = this.renderer.createText(this._el_0, '\n', null);
+        this._el_8 = this.renderer.createElement(this._el_6, 'div', null);
+        this.renderer.setElementAttribute(this._el_8, 'class', 'text-center');
+        this._text_9 = this.renderer.createText(this._el_8, '\n                    ', null);
+        this._el_10 = this.renderer.createElement(this._el_8, 'h2', null);
+        this._text_11 = this.renderer.createText(this._el_10, 'Edit user', null);
+        this._text_12 = this.renderer.createText(this._el_8, '\n                ', null);
+        this._text_13 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._anchor_14 = this.renderer.createTemplateAnchor(this._el_6, null);
+        this._appEl_14 = new import2.AppElement(14, 6, this, this._anchor_14);
+        this._TemplateRef_14_5 = new import15.TemplateRef_(this._appEl_14, viewFactory_UserEditComponent1);
+        this._NgIf_14_6 = new import14.NgIf(this._appEl_14.vcRef, this._TemplateRef_14_5);
+        this._text_15 = this.renderer.createText(this._el_6, '\n            ', null);
+        this._text_16 = this.renderer.createText(this._el_4, '\n        ', null);
+        this._text_17 = this.renderer.createText(this._el_2, '\n    ', null);
+        this._text_18 = this.renderer.createText(this._el_0, '\n', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([], [
             this._el_0,
@@ -119,28 +124,31 @@ var _View_UserEditComponent0 = (function (_super) {
             this._text_7,
             this._el_8,
             this._text_9,
-            this._text_10,
+            this._el_10,
             this._text_11,
-            this._anchor_12,
+            this._text_12,
             this._text_13,
-            this._text_14,
-            this._text_15
+            this._anchor_14,
+            this._text_15,
+            this._text_16,
+            this._text_17,
+            this._text_18
         ], [], []);
         return null;
     };
     _View_UserEditComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import15.TemplateRef) && (12 === requestNodeIndex))) {
-            return this._TemplateRef_12_5;
+        if (((token === import15.TemplateRef) && (14 === requestNodeIndex))) {
+            return this._TemplateRef_14_5;
         }
-        if (((token === import14.NgIf) && (12 === requestNodeIndex))) {
-            return this._NgIf_12_6;
+        if (((token === import14.NgIf) && (14 === requestNodeIndex))) {
+            return this._NgIf_14_6;
         }
         return notFoundResult;
     };
     _View_UserEditComponent0.prototype.detectChangesInternal = function (throwOnChange) {
         var currVal_0 = this.context.myForm;
         if (import4.checkBinding(throwOnChange, this._expr_0, currVal_0)) {
-            this._NgIf_12_6.ngIf = currVal_0;
+            this._NgIf_14_6.ngIf = currVal_0;
             this._expr_0 = currVal_0;
         }
         this.detectContentChildrenChanges(throwOnChange);
@@ -164,15 +172,15 @@ var _View_UserEditComponent1 = (function (_super) {
         this._FormGroupDirective_0_3 = new import16.FormGroupDirective(null, null);
         this._ControlContainer_0_4 = this._FormGroupDirective_0_3;
         this._NgControlStatusGroup_0_5 = new import17.NgControlStatusGroup(this._ControlContainer_0_4);
-        this._text_1 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'form-group');
         this._NgClass_2_3 = new import18.NgClass(this.parent.parentInjector.get(import22.IterableDiffers), this.parent.parentInjector.get(import23.KeyValueDiffers), new import24.ElementRef(this._el_2), this.renderer);
-        this._text_3 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_3 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'label', null);
         this.renderer.setElementAttribute(this._el_4, 'for', 'firstName');
-        this._text_5 = this.renderer.createText(this._el_4, '\n                        First name\n                    ', null);
-        this._text_6 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_5 = this.renderer.createText(this._el_4, '\n                            First name\n                        ', null);
+        this._text_6 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_7 = this.renderer.createElement(this._el_2, 'input', null);
         this.renderer.setElementAttribute(this._el_7, 'class', 'form-control');
         this.renderer.setElementAttribute(this._el_7, 'id', 'firstName');
@@ -182,26 +190,26 @@ var _View_UserEditComponent1 = (function (_super) {
         this._FormControlDirective_7_5 = new import20.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_7_4);
         this._NgControl_7_6 = this._FormControlDirective_7_5;
         this._NgControlStatus_7_7 = new import17.NgControlStatus(this._NgControl_7_6);
-        this._text_8 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_8 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._anchor_9 = this.renderer.createTemplateAnchor(this._el_2, null);
         this._appEl_9 = new import2.AppElement(9, 2, this, this._anchor_9);
         this._TemplateRef_9_5 = new import15.TemplateRef_(this._appEl_9, viewFactory_UserEditComponent2);
         this._NgIf_9_6 = new import14.NgIf(this._appEl_9.vcRef, this._TemplateRef_9_5);
-        this._text_10 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_10 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._anchor_11 = this.renderer.createTemplateAnchor(this._el_2, null);
         this._appEl_11 = new import2.AppElement(11, 2, this, this._anchor_11);
         this._TemplateRef_11_5 = new import15.TemplateRef_(this._appEl_11, viewFactory_UserEditComponent3);
         this._NgIf_11_6 = new import14.NgIf(this._appEl_11.vcRef, this._TemplateRef_11_5);
-        this._text_12 = this.renderer.createText(this._el_2, '\n                ', null);
-        this._text_13 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_12 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_13 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_14 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_14, 'class', 'form-group');
         this._NgClass_14_3 = new import18.NgClass(this.parent.parentInjector.get(import22.IterableDiffers), this.parent.parentInjector.get(import23.KeyValueDiffers), new import24.ElementRef(this._el_14), this.renderer);
-        this._text_15 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._text_15 = this.renderer.createText(this._el_14, '\n                        ', null);
         this._el_16 = this.renderer.createElement(this._el_14, 'label', null);
         this.renderer.setElementAttribute(this._el_16, 'for', 'lastName');
-        this._text_17 = this.renderer.createText(this._el_16, '\n                        Last name\n                    ', null);
-        this._text_18 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._text_17 = this.renderer.createText(this._el_16, '\n                            Last name\n                        ', null);
+        this._text_18 = this.renderer.createText(this._el_14, '\n                        ', null);
         this._el_19 = this.renderer.createElement(this._el_14, 'input', null);
         this.renderer.setElementAttribute(this._el_19, 'class', 'form-control');
         this.renderer.setElementAttribute(this._el_19, 'id', 'lastName');
@@ -211,26 +219,26 @@ var _View_UserEditComponent1 = (function (_super) {
         this._FormControlDirective_19_5 = new import20.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_19_4);
         this._NgControl_19_6 = this._FormControlDirective_19_5;
         this._NgControlStatus_19_7 = new import17.NgControlStatus(this._NgControl_19_6);
-        this._text_20 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._text_20 = this.renderer.createText(this._el_14, '\n                        ', null);
         this._anchor_21 = this.renderer.createTemplateAnchor(this._el_14, null);
         this._appEl_21 = new import2.AppElement(21, 14, this, this._anchor_21);
         this._TemplateRef_21_5 = new import15.TemplateRef_(this._appEl_21, viewFactory_UserEditComponent4);
         this._NgIf_21_6 = new import14.NgIf(this._appEl_21.vcRef, this._TemplateRef_21_5);
-        this._text_22 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._text_22 = this.renderer.createText(this._el_14, '\n                        ', null);
         this._anchor_23 = this.renderer.createTemplateAnchor(this._el_14, null);
         this._appEl_23 = new import2.AppElement(23, 14, this, this._anchor_23);
         this._TemplateRef_23_5 = new import15.TemplateRef_(this._appEl_23, viewFactory_UserEditComponent5);
         this._NgIf_23_6 = new import14.NgIf(this._appEl_23.vcRef, this._TemplateRef_23_5);
-        this._text_24 = this.renderer.createText(this._el_14, '\n                ', null);
-        this._text_25 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_24 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._text_25 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_26 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_26, 'class', 'form-group');
         this._NgClass_26_3 = new import18.NgClass(this.parent.parentInjector.get(import22.IterableDiffers), this.parent.parentInjector.get(import23.KeyValueDiffers), new import24.ElementRef(this._el_26), this.renderer);
-        this._text_27 = this.renderer.createText(this._el_26, '\n                    ', null);
+        this._text_27 = this.renderer.createText(this._el_26, '\n                        ', null);
         this._el_28 = this.renderer.createElement(this._el_26, 'label', null);
         this.renderer.setElementAttribute(this._el_28, 'for', 'email');
-        this._text_29 = this.renderer.createText(this._el_28, '\n                        Email address\n                    ', null);
-        this._text_30 = this.renderer.createText(this._el_26, '\n                    ', null);
+        this._text_29 = this.renderer.createText(this._el_28, '\n                            Email address\n                        ', null);
+        this._text_30 = this.renderer.createText(this._el_26, '\n                        ', null);
         this._el_31 = this.renderer.createElement(this._el_26, 'input', null);
         this.renderer.setElementAttribute(this._el_31, 'class', 'form-control');
         this.renderer.setElementAttribute(this._el_31, 'id', 'email');
@@ -240,39 +248,39 @@ var _View_UserEditComponent1 = (function (_super) {
         this._FormControlDirective_31_5 = new import20.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_31_4);
         this._NgControl_31_6 = this._FormControlDirective_31_5;
         this._NgControlStatus_31_7 = new import17.NgControlStatus(this._NgControl_31_6);
-        this._text_32 = this.renderer.createText(this._el_26, '\n                    ', null);
+        this._text_32 = this.renderer.createText(this._el_26, '\n                        ', null);
         this._anchor_33 = this.renderer.createTemplateAnchor(this._el_26, null);
         this._appEl_33 = new import2.AppElement(33, 26, this, this._anchor_33);
         this._TemplateRef_33_5 = new import15.TemplateRef_(this._appEl_33, viewFactory_UserEditComponent6);
         this._NgIf_33_6 = new import14.NgIf(this._appEl_33.vcRef, this._TemplateRef_33_5);
-        this._text_34 = this.renderer.createText(this._el_26, '\n                ', null);
-        this._text_35 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_34 = this.renderer.createText(this._el_26, '\n                    ', null);
+        this._text_35 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_36 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_36, 'class', 'form-group');
-        this._text_37 = this.renderer.createText(this._el_36, '\n                    ', null);
+        this._text_37 = this.renderer.createText(this._el_36, '\n                        ', null);
         this._el_38 = this.renderer.createElement(this._el_36, 'label', null);
         this.renderer.setElementAttribute(this._el_38, 'for', 'role');
-        this._text_39 = this.renderer.createText(this._el_38, '\n                        Role\n                    ', null);
-        this._text_40 = this.renderer.createText(this._el_36, '\n                    ', null);
+        this._text_39 = this.renderer.createText(this._el_38, '\n                            Role\n                        ', null);
+        this._text_40 = this.renderer.createText(this._el_36, '\n                        ', null);
         this._anchor_41 = this.renderer.createTemplateAnchor(this._el_36, null);
         this._appEl_41 = new import2.AppElement(41, 36, this, this._anchor_41);
         this._TemplateRef_41_5 = new import15.TemplateRef_(this._appEl_41, viewFactory_UserEditComponent7);
         this._NgFor_41_6 = new import21.NgFor(this._appEl_41.vcRef, this._TemplateRef_41_5, this.parent.parentInjector.get(import22.IterableDiffers), this.parent.ref);
-        this._text_42 = this.renderer.createText(this._el_36, '\n                ', null);
-        this._text_43 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_42 = this.renderer.createText(this._el_36, '\n                    ', null);
+        this._text_43 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_44 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_44, 'align', 'right');
-        this._text_45 = this.renderer.createText(this._el_44, '\n                    ', null);
+        this._text_45 = this.renderer.createText(this._el_44, '\n                        ', null);
         this._el_46 = this.renderer.createElement(this._el_44, 'button', null);
         this.renderer.setElementAttribute(this._el_46, 'class', 'btn btn-primary');
         this.renderer.setElementAttribute(this._el_46, 'type', 'submit');
-        this._text_47 = this.renderer.createText(this._el_46, '\n                        Save\n                    ', null);
-        this._text_48 = this.renderer.createText(this._el_44, '\n                    ', null);
+        this._text_47 = this.renderer.createText(this._el_46, '\n                            Save\n                        ', null);
+        this._text_48 = this.renderer.createText(this._el_44, '\n                        ', null);
         this._el_49 = this.renderer.createElement(this._el_44, 'button', null);
         this.renderer.setElementAttribute(this._el_49, 'class', 'btn btn-default');
-        this._text_50 = this.renderer.createText(this._el_49, '\n                        Cancel\n                    ', null);
-        this._text_51 = this.renderer.createText(this._el_44, '\n                ', null);
-        this._text_52 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._text_50 = this.renderer.createText(this._el_49, '\n                            Cancel\n                        ', null);
+        this._text_51 = this.renderer.createText(this._el_44, '\n                    ', null);
+        this._text_52 = this.renderer.createText(this._el_0, '\n                ', null);
         var disposable_0 = this.renderer.listen(this._el_0, 'ngSubmit', this.eventHandler(this._handle_ngSubmit_0_0.bind(this)));
         var disposable_1 = this.renderer.listen(this._el_0, 'submit', this.eventHandler(this._handle_submit_0_1.bind(this)));
         var disposable_2 = this.renderer.listen(this._el_0, 'reset', this.eventHandler(this._handle_reset_0_2.bind(this)));
@@ -823,7 +831,7 @@ var _View_UserEditComponent2 = (function (_super) {
     _View_UserEditComponent2.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        First name is required.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field is required.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -843,7 +851,7 @@ var _View_UserEditComponent3 = (function (_super) {
     _View_UserEditComponent3.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        First name can have max 100 characters.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field can have max 100 characters.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -863,7 +871,7 @@ var _View_UserEditComponent4 = (function (_super) {
     _View_UserEditComponent4.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Last name is required.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field is required.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -883,7 +891,7 @@ var _View_UserEditComponent5 = (function (_super) {
     _View_UserEditComponent5.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Last name can have max 100 characters.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field can have max 100 characters.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -903,7 +911,7 @@ var _View_UserEditComponent6 = (function (_super) {
     _View_UserEditComponent6.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Email has to be valid e.g. john@gmail.com.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Email has to be valid e.g. john@gmail.com.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -922,7 +930,7 @@ var _View_UserEditComponent7 = (function (_super) {
     }
     _View_UserEditComponent7.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'input', null);
         this.renderer.setElementAttribute(this._el_2, 'id', 'role');
         this.renderer.setElementAttribute(this._el_2, 'name', 'role');
@@ -952,7 +960,7 @@ var _View_UserEditComponent7 = (function (_super) {
             this.renderer.setElementProperty(this._el_2, 'value', currVal_2);
             this._expr_2 = currVal_2;
         }
-        var currVal_3 = import4.interpolate(1, '', this.context.$implicit, '\n                    ');
+        var currVal_3 = import4.interpolate(1, '', this.context.$implicit, '\n                        ');
         if (import4.checkBinding(throwOnChange, this._expr_3, currVal_3)) {
             this.renderer.setText(this._text_3, currVal_3);
             this._expr_3 = currVal_3;

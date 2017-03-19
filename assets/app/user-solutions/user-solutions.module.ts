@@ -4,16 +4,15 @@ import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 
 import {userSolutionsRouting} from "./user-solutions.routing";
 import {UserSolutionsComponent} from "./user-solutions.component";
-import {ValidatorInfoComponent} from "./validator-info/validator-info.component";
 import {OrderByModule} from "../order-by.module";
 import {EscapeHtmlModule} from "../escape-html.module";
 import {PaperService} from "../shared/paper.service";
 import {SolutionService} from "../validation/solution.service";
+import {FlashMessageService} from "../flash-message/flash-messages.service";
 
 @NgModule({
     declarations: [
         UserSolutionsComponent,
-        ValidatorInfoComponent,
     ],
     imports: [
         ReactiveFormsModule,
@@ -21,8 +20,11 @@ import {SolutionService} from "../validation/solution.service";
         CommonModule,
         OrderByModule,
         EscapeHtmlModule,
-        userSolutionsRouting
+        userSolutionsRouting,
     ],
-    providers: [PaperService, SolutionService]
+    providers: [
+        PaperService,
+        SolutionService,
+    ]
 })
 export class UserSolutionsModule {}

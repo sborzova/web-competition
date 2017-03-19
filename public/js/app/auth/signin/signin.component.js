@@ -3,9 +3,11 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { User } from "../user.model";
 import { AuthService } from "../auth.service";
+import { SessionStorageService } from "../../shared/session-storage.service";
 export var SigninComponent = (function () {
-    function SigninComponent(authService, router) {
+    function SigninComponent(authService, sessionStorageService, router) {
         this.authService = authService;
+        this.sessionStorageService = sessionStorageService;
         this.router = router;
         this.submitted = false;
     }
@@ -16,7 +18,7 @@ export var SigninComponent = (function () {
             var user = new User(this.myForm.value.email, this.myForm.value.password);
             this.authService.signin(user)
                 .subscribe(function (data) {
-                _this.authService.setSessionStorage(data);
+                _this.sessionStorageService.setSessionStorageAuth(data);
                 _this.router.navigate(['/#home']);
             }, function (error) {
                 console.error(error);
@@ -45,6 +47,7 @@ export var SigninComponent = (function () {
     /** @nocollapse */
     SigninComponent.ctorParameters = [
         { type: AuthService, },
+        { type: SessionStorageService, },
         { type: Router, },
     ];
     return SigninComponent;

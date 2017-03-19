@@ -3,10 +3,12 @@ import { Http, Headers } from "@angular/http";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
+import { PreferenceService } from "../preference/preference.service";
 export var AuthService = (function () {
-    function AuthService(http, flashMessageService) {
+    function AuthService(http, flashMessageService, preferenceService) {
         this.http = http;
         this.flashMessageService = flashMessageService;
+        this.preferenceService = preferenceService;
         var routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
@@ -34,26 +36,6 @@ export var AuthService = (function () {
             return Observable.throw(error);
         });
     };
-    AuthService.prototype.logout = function () {
-        sessionStorage.clear();
-    };
-    AuthService.prototype.isLoggedIn = function () {
-        return sessionStorage.getItem('token') !== null;
-    };
-    AuthService.prototype.isAdmin = function () {
-        return sessionStorage.getItem('isAdmin') !== null;
-    };
-    AuthService.prototype.getEmailLoggedIn = function () {
-        return sessionStorage.getItem('email');
-    };
-    AuthService.prototype.setSessionStorage = function (data) {
-        sessionStorage.setItem('token', data.token);
-        sessionStorage.setItem('userId', data.userId);
-        sessionStorage.setItem('email', data.email);
-        if (data.isAdmin === 'true') {
-            sessionStorage.setItem('isAdmin', 'true');
-        }
-    };
     AuthService.decorators = [
         { type: Injectable },
     ];
@@ -61,6 +43,7 @@ export var AuthService = (function () {
     AuthService.ctorParameters = [
         { type: Http, },
         { type: FlashMessageService, },
+        { type: PreferenceService, },
     ];
     return AuthService;
 }());

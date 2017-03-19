@@ -2,10 +2,12 @@ import { Component } from "@angular/core";
 import { SolutionService } from "../../validation/solution.service";
 import { InstanceService } from "../../instances/instance.service";
 import { SolutionResult } from "../solution-result.model";
+import { ResultsService } from "../results.service";
 export var ResultsBestComponent = (function () {
-    function ResultsBestComponent(solutionService, instanceService) {
+    function ResultsBestComponent(solutionService, instanceService, resultsService) {
         this.solutionService = solutionService;
         this.instanceService = instanceService;
+        this.resultsService = resultsService;
         this.fileSaver = require('file-saver');
     }
     ResultsBestComponent.prototype.ngOnInit = function () {
@@ -20,18 +22,7 @@ export var ResultsBestComponent = (function () {
                         results.push(new SolutionResult(instance));
                     }
                     else {
-                        solutions.sort(function (a, b) {
-                            var aUnassigned = a.unassigned;
-                            var bUnassigned = b.unassigned;
-                            var aTotal = a.total;
-                            var bTotal = b.total;
-                            if (aUnassigned == bUnassigned) {
-                                return (aTotal > bTotal) ? -1 : (aTotal < bTotal) ? 1 : 0;
-                            }
-                            else {
-                                return (aUnassigned < bUnassigned) ? -1 : 1;
-                            }
-                        });
+                        solutions = _this.resultsService.sortQualityAsc(solutions);
                         results.push(solutions[0]);
                     }
                 }, function (error) { return console.error(error); });
@@ -63,6 +54,7 @@ export var ResultsBestComponent = (function () {
     ResultsBestComponent.ctorParameters = [
         { type: SolutionService, },
         { type: InstanceService, },
+        { type: ResultsService, },
     ];
     return ResultsBestComponent;
 }());

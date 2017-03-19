@@ -29,8 +29,8 @@ router.post('/preference', function (req, res) {
     });
 });
 
-router.patch('/preference/:name', function (req, res, next) {
-    Preference.findOne({name: req.params.name}, function (err, preference) {
+router.patch('/preference', function (req, res, next) {
+    Preference.findOne({name: 'competitionIsOn'}, function (err, preference) {
         if (err) {
             return res.status(500).json({
                 title: 'An error occurred',
@@ -61,8 +61,8 @@ router.patch('/preference/:name', function (req, res, next) {
     });
 });
 
-router.get('/preference/:name', function(req, res, next) {
-    Preference.findOne({name: req.params.name}, function(err, preference) {
+router.get('/preference', function(req, res, next) {
+    Preference.findOne({name: 'competitionIsOn'}, function(err, preference) {
         if (err) {
             return res.status(500).json({
                 title: 'An error occurred',

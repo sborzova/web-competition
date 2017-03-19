@@ -7,6 +7,7 @@ import { Validation } from "../validation.model";
 import { SolutionFindWorse } from "../solution-find-worse.model";
 import { Solution } from "../../user-solutions/solution.model";
 import { SolutionCreate } from "../solution-create.model";
+import {SessionStorageService} from "../../shared/session-storage.service";
 
 @Component({
     selector: 'app-success-validation',
@@ -20,7 +21,9 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     private submitted: boolean = false;
     private citationMissing: boolean = false;
 
-    constructor(private solutionService: SolutionService) {
+    constructor(private solutionService: SolutionService,
+                private sessionStorageService: SessionStorageService) {
+
         this.subscription = solutionService.successValidationDelete$
             .subscribe(
                 () => {
@@ -119,5 +122,9 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
 
     isCitationMissing(){
         return this.citationMissing;
+    }
+
+    competitionIsOn(){
+        return this.sessionStorageService.getCompetitionIsOn();
     }
 }

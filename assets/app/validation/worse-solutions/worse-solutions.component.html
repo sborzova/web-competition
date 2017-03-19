@@ -1,4 +1,4 @@
-<div *ngIf="solutions" [ngStyle]="{'display': display}">
+<div *ngIf="solutions" [ngStyle]="{'display': display}" class="col-xs-12">
     <h4>My solutions for the same instance with the same technique
         <strong>{{ solutions[0].technique }}</strong>
         but with worse quality:</h4>
@@ -37,7 +37,7 @@
                 Delete selected
             </button>
             <button
-                    class="btn btn-default"
+                    class="btn btn-danger"
                     (click)="onDeleteNone()">
                 Delete none
             </button>

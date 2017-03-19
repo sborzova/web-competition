@@ -73,37 +73,52 @@ var _View_InstanceStatsComponent0 = (function (_super) {
     _View_InstanceStatsComponent0.prototype.createInternal = function (rootSelector) {
         var parentRenderNode = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
         this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
-        this.renderer.setElementAttribute(this._el_0, 'class', 'col-md-8 col-md-offset-2');
+        this.renderer.setElementAttribute(this._el_0, 'class', 'container');
+        this.renderer.setElementAttribute(this._el_0, 'style', 'margin-top: 3%');
         this._text_1 = this.renderer.createText(this._el_0, '\n     ', null);
-        this._anchor_2 = this.renderer.createTemplateAnchor(this._el_0, null);
-        this._appEl_2 = new import2.AppElement(2, 0, this, this._anchor_2);
-        this._TemplateRef_2_5 = new import13.TemplateRef_(this._appEl_2, viewFactory_InstanceStatsComponent1);
-        this._NgIf_2_6 = new import12.NgIf(this._appEl_2.vcRef, this._TemplateRef_2_5);
-        this._text_3 = this.renderer.createText(this._el_0, '\n', null);
-        this._text_4 = this.renderer.createText(parentRenderNode, '\n', null);
+        this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
+        this.renderer.setElementAttribute(this._el_2, 'class', 'row');
+        this._text_3 = this.renderer.createText(this._el_2, '\n          ', null);
+        this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
+        this.renderer.setElementAttribute(this._el_4, 'class', 'col-xs-12 col-md-8 col-md-offset-2');
+        this._text_5 = this.renderer.createText(this._el_4, '\n               ', null);
+        this._anchor_6 = this.renderer.createTemplateAnchor(this._el_4, null);
+        this._appEl_6 = new import2.AppElement(6, 4, this, this._anchor_6);
+        this._TemplateRef_6_5 = new import13.TemplateRef_(this._appEl_6, viewFactory_InstanceStatsComponent1);
+        this._NgIf_6_6 = new import12.NgIf(this._appEl_6.vcRef, this._TemplateRef_6_5);
+        this._text_7 = this.renderer.createText(this._el_4, '\n          ', null);
+        this._text_8 = this.renderer.createText(this._el_2, '\n     ', null);
+        this._text_9 = this.renderer.createText(this._el_0, '\n', null);
+        this._text_10 = this.renderer.createText(parentRenderNode, '\n', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([], [
             this._el_0,
             this._text_1,
-            this._anchor_2,
+            this._el_2,
             this._text_3,
-            this._text_4
+            this._el_4,
+            this._text_5,
+            this._anchor_6,
+            this._text_7,
+            this._text_8,
+            this._text_9,
+            this._text_10
         ], [], []);
         return null;
     };
     _View_InstanceStatsComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import13.TemplateRef) && (2 === requestNodeIndex))) {
-            return this._TemplateRef_2_5;
+        if (((token === import13.TemplateRef) && (6 === requestNodeIndex))) {
+            return this._TemplateRef_6_5;
         }
-        if (((token === import12.NgIf) && (2 === requestNodeIndex))) {
-            return this._NgIf_2_6;
+        if (((token === import12.NgIf) && (6 === requestNodeIndex))) {
+            return this._NgIf_6_6;
         }
         return notFoundResult;
     };
     _View_InstanceStatsComponent0.prototype.detectChangesInternal = function (throwOnChange) {
         var currVal_0 = this.context.instance;
         if (import4.checkBinding(throwOnChange, this._expr_0, currVal_0)) {
-            this._NgIf_2_6.ngIf = currVal_0;
+            this._NgIf_6_6.ngIf = currVal_0;
             this._expr_0 = currVal_0;
         }
         this.detectContentChildrenChanges(throwOnChange);
@@ -124,9 +139,9 @@ var _View_InstanceStatsComponent1 = (function (_super) {
     }
     _View_InstanceStatsComponent1.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
-        this._text_1 = this.renderer.createText(this._el_0, '\n          ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
-        this._text_3 = this.renderer.createText(this._el_0, '\n     ', null);
+        this._text_3 = this.renderer.createText(this._el_0, '\n               ', null);
         this._pipe_escapeHtml_0 = new import14.EscapeHtmlPipe();
         this._expr_0 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [

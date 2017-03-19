@@ -61,12 +61,18 @@ var renderType_InstanceStatsComponent:import0.RenderComponentType = (null as any
 class _View_InstanceStatsComponent0 extends import1.AppView<import3.InstanceStatsComponent> {
   _el_0:any;
   _text_1:any;
-  _anchor_2:any;
-  /*private*/ _appEl_2:import2.AppElement;
-  _TemplateRef_2_5:any;
-  _NgIf_2_6:import12.NgIf;
+  _el_2:any;
   _text_3:any;
-  _text_4:any;
+  _el_4:any;
+  _text_5:any;
+  _anchor_6:any;
+  /*private*/ _appEl_6:import2.AppElement;
+  _TemplateRef_6_5:any;
+  _NgIf_6_6:import12.NgIf;
+  _text_7:any;
+  _text_8:any;
+  _text_9:any;
+  _text_10:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_InstanceStatsComponent0,renderType_InstanceStatsComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
@@ -74,34 +80,49 @@ class _View_InstanceStatsComponent0 extends import1.AppView<import3.InstanceStat
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
     this._el_0 = this.renderer.createElement(parentRenderNode,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_0,'class','col-md-8 col-md-offset-2');
+    this.renderer.setElementAttribute(this._el_0,'class','container');
+    this.renderer.setElementAttribute(this._el_0,'style','margin-top: 3%');
     this._text_1 = this.renderer.createText(this._el_0,'\n     ',(null as any));
-    this._anchor_2 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
-    this._appEl_2 = new import2.AppElement(2,0,this,this._anchor_2);
-    this._TemplateRef_2_5 = new import13.TemplateRef_(this._appEl_2,viewFactory_InstanceStatsComponent1);
-    this._NgIf_2_6 = new import12.NgIf(this._appEl_2.vcRef,this._TemplateRef_2_5);
-    this._text_3 = this.renderer.createText(this._el_0,'\n',(null as any));
-    this._text_4 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_2,'class','row');
+    this._text_3 = this.renderer.createText(this._el_2,'\n          ',(null as any));
+    this._el_4 = this.renderer.createElement(this._el_2,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_4,'class','col-xs-12 col-md-8 col-md-offset-2');
+    this._text_5 = this.renderer.createText(this._el_4,'\n               ',(null as any));
+    this._anchor_6 = this.renderer.createTemplateAnchor(this._el_4,(null as any));
+    this._appEl_6 = new import2.AppElement(6,4,this,this._anchor_6);
+    this._TemplateRef_6_5 = new import13.TemplateRef_(this._appEl_6,viewFactory_InstanceStatsComponent1);
+    this._NgIf_6_6 = new import12.NgIf(this._appEl_6.vcRef,this._TemplateRef_6_5);
+    this._text_7 = this.renderer.createText(this._el_4,'\n          ',(null as any));
+    this._text_8 = this.renderer.createText(this._el_2,'\n     ',(null as any));
+    this._text_9 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_10 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this.init([],[
       this._el_0,
       this._text_1,
-      this._anchor_2,
+      this._el_2,
       this._text_3,
-      this._text_4
+      this._el_4,
+      this._text_5,
+      this._anchor_6,
+      this._text_7,
+      this._text_8,
+      this._text_9,
+      this._text_10
     ]
     ,[],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import13.TemplateRef) && (2 === requestNodeIndex))) { return this._TemplateRef_2_5; }
-    if (((token === import12.NgIf) && (2 === requestNodeIndex))) { return this._NgIf_2_6; }
+    if (((token === import13.TemplateRef) && (6 === requestNodeIndex))) { return this._TemplateRef_6_5; }
+    if (((token === import12.NgIf) && (6 === requestNodeIndex))) { return this._NgIf_6_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
     const currVal_0:any = this.context.instance;
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this._NgIf_2_6.ngIf = currVal_0;
+      this._NgIf_6_6.ngIf = currVal_0;
       this._expr_0 = currVal_0;
     }
     this.detectContentChildrenChanges(throwOnChange);
@@ -124,9 +145,9 @@ class _View_InstanceStatsComponent1 extends import1.AppView<any> {
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
-    this._text_1 = this.renderer.createText(this._el_0,'\n          ',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
-    this._text_3 = this.renderer.createText(this._el_0,'\n     ',(null as any));
+    this._text_3 = this.renderer.createText(this._el_0,'\n               ',(null as any));
     this._pipe_escapeHtml_0 = new import14.EscapeHtmlPipe();
     this._expr_0 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[

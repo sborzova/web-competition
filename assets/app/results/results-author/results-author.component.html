@@ -5,38 +5,57 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Instance</th>
+            <th rowspan="2">Instance</th>
+            <th colspan="2">
+                <span style="float: left">Quality</span>
+                <span (click)="onQualityAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                <span (click)="onQualityDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+            </th>
+            <th rowspan="2">
+                <span style="float: left">Student Conflict</span>
+                <span (click)="onScAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                <span (click)="onScDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+            </th>
+            <th rowspan="2">
+                <span style="float: left">Time Preferences</span>
+                <span (click)="onTimeAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                <span (click)="onTimeDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+            </th>
+            <th rowspan="2">
+                <span style="float: left">Room Preferences</span>
+                <span (click)="onRoomAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                <span (click)="onRoomDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+            </th>
+            <th rowspan="2">
+                <span style="float: left">Distribution Preferences</span>
+                <span (click)="onDistributionAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                <span (click)="onDistributionDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+            </th>
+            <th rowspan="2">Download</th>
+            <th rowspan="2">Technique</th>
+            <th rowspan="2">Submission time</th>
+            <th rowspan="2">Validator Info</th>
+        </tr>
+        <tr>
             <th>Unassigned Variables</th>
             <th>Total Cost</th>
-            <th>Student Conflicts</th>
-            <th>Time Preferences</th>
-            <th>Room Preferences</th>
-            <th>Distribution Preferences</th>
-            <th>Download</th>
-            <th>Technique</th>
-            <th>Submission time</th>
-            <th>Validator Info</th>
         </tr>
         </thead>
-        <tbody  *ngFor="let solution of solutions">
+        <tbody *ngFor="let solution of solutions">
         <tr>
             <td>{{ solution.instance.name }}</td>
-            <td *ngIf="solution.unassigned">{{ solution.unassigned }}&nbsp;%</td>
-            <td *ngIf="!solution.unassigned"></td>
+            <td>{{ solution.unassigned }}&nbsp;%</td>
             <td>{{ solution.total }}</td>
-            <td *ngIf="solution.sc">{{ solution.sc }}&nbsp;%</td>
-            <td *ngIf="!solution.sc"></td>
-            <td *ngIf="solution.time">{{ solution.time }}&nbsp;%</td>
-            <td *ngIf="!solution.time"></td>
-            <td *ngIf="solution.room">{{ solution.room }}&nbsp;%</td>
-            <td *ngIf="!solution.room"></td>
-            <td *ngIf="solution.distr">{{ solution.distr }}&nbsp;%</td>
-            <td *ngIf="!solution.distr"></td>
-            <td *ngIf="solution.unassigned"><a (click)="onDownload(solution)">download</a></td>
-            <td *ngIf="!solution.unassigned"></td>
+            <td>{{ solution.sc }}&nbsp;%</td>
+            <td>{{ solution.time }}&nbsp;%</td>
+            <td>{{ solution.room }}&nbsp;%</td>
+            <td>{{ solution.distr }}&nbsp;%</td>
+            <td><a (click)="onDownload(solution)">download</a></td>
             <td><a (click)="onTechnique(solution.technique)">{{ solution.technique }}</a></td>
             <td>{{ solution.postDate | date }}</td>
-            <td>{{ solution.info }}</td>
+            <td><a
+                    [routerLink]="['/#solution/validatorinfo']"
+                    [queryParams]="{solutionId: solution.solutionId}">view</a></td>
         </tr>
         <tr *ngIf="isShowPapers()">
             <td><strong>Citation: </strong></td>

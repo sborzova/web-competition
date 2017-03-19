@@ -22,20 +22,15 @@ import * as import10 from '@angular/common/src/localization';
 import * as import11 from '../shared/paper.service';
 import * as import12 from '../validation/solution.service';
 import * as import14 from './user-solutions.component.ngfactory';
-import * as import15 from './validator-info/validator-info.component.ngfactory';
-import * as import16 from '@angular/core/src/i18n/tokens';
-import * as import17 from './user-solutions.component';
-import * as import18 from './validator-info/validator-info.component';
-import * as import19 from '@angular/http/src/http';
-import * as import20 from '../flash-message/flash-messages.service';
-import * as import21 from '@angular/router/src/router_config_loader';
+import * as import15 from '@angular/core/src/i18n/tokens';
+import * as import16 from './user-solutions.component';
+import * as import17 from '@angular/http/src/http';
+import * as import18 from '../flash-message/flash-messages.service';
+import * as import19 from '@angular/router/src/router_config_loader';
 var UserSolutionsModuleInjector = (function (_super) {
     __extends(UserSolutionsModuleInjector, _super);
     function UserSolutionsModuleInjector(parent) {
-        _super.call(this, parent, [
-            import14.UserSolutionsComponentNgFactory,
-            import15.ValidatorInfoComponentNgFactory
-        ], []);
+        _super.call(this, parent, [import14.UserSolutionsComponentNgFactory], []);
     }
     Object.defineProperty(UserSolutionsModuleInjector.prototype, "_FormBuilder_8", {
         get: function () {
@@ -60,7 +55,7 @@ var UserSolutionsModuleInjector = (function (_super) {
     Object.defineProperty(UserSolutionsModuleInjector.prototype, "_NgLocalization_10", {
         get: function () {
             if ((this.__NgLocalization_10 == null)) {
-                (this.__NgLocalization_10 = new import10.NgLocaleLocalization(this.parent.get(import16.LOCALE_ID)));
+                (this.__NgLocalization_10 = new import10.NgLocaleLocalization(this.parent.get(import15.LOCALE_ID)));
             }
             return this.__NgLocalization_10;
         },
@@ -80,11 +75,7 @@ var UserSolutionsModuleInjector = (function (_super) {
                                 },
                                 {
                                     path: 'all',
-                                    component: import17.UserSolutionsComponent
-                                },
-                                {
-                                    path: 'validatorinfo',
-                                    component: import18.ValidatorInfoComponent
+                                    component: import16.UserSolutionsComponent
                                 }
                             ]
                         }
@@ -98,7 +89,7 @@ var UserSolutionsModuleInjector = (function (_super) {
     Object.defineProperty(UserSolutionsModuleInjector.prototype, "_PaperService_12", {
         get: function () {
             if ((this.__PaperService_12 == null)) {
-                (this.__PaperService_12 = new import11.PaperService(this.parent.get(import19.Http)));
+                (this.__PaperService_12 = new import11.PaperService(this.parent.get(import17.Http)));
             }
             return this.__PaperService_12;
         },
@@ -108,7 +99,7 @@ var UserSolutionsModuleInjector = (function (_super) {
     Object.defineProperty(UserSolutionsModuleInjector.prototype, "_SolutionService_13", {
         get: function () {
             if ((this.__SolutionService_13 == null)) {
-                (this.__SolutionService_13 = new import12.SolutionService(this.parent.get(import19.Http), this.parent.get(import20.FlashMessageService)));
+                (this.__SolutionService_13 = new import12.SolutionService(this.parent.get(import17.Http), this.parent.get(import18.FlashMessageService)));
             }
             return this.__SolutionService_13;
         },
@@ -160,7 +151,7 @@ var UserSolutionsModuleInjector = (function (_super) {
         if ((token === import10.NgLocalization)) {
             return this._NgLocalization_10;
         }
-        if ((token === import21.ROUTES)) {
+        if ((token === import19.ROUTES)) {
             return this._ROUTES_11;
         }
         if ((token === import11.PaperService)) {

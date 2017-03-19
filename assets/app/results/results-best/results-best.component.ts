@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { SolutionService } from "../../validation/solution.service";
 import { InstanceService } from "../../instances/instance.service";
 import { SolutionResult } from "../solution-result.model";
+import {ResultsService} from "../results.service";
 
 @Component({
     selector: 'app-results-best',
@@ -13,7 +14,8 @@ export class ResultsBestComponent implements OnInit {
     fileSaver = require('file-saver');
 
     constructor(private solutionService: SolutionService,
-                private instanceService: InstanceService){}
+                private instanceService: InstanceService,
+                private resultsService: ResultsService){}
 
     ngOnInit(){
         this.instanceService.getInstances()
@@ -27,18 +29,7 @@ export class ResultsBestComponent implements OnInit {
                                     if (solutions.length == 0){
                                         results.push(new SolutionResult(instance));
                                     }else {
-                                        solutions.sort(function (a, b) {
-                                            let aUnassigned = a.unassigned;
-                                            let bUnassigned = b.unassigned;
-                                            let aTotal = a.total;
-                                            let bTotal = b.total;
-
-                                            if (aUnassigned == bUnassigned){
-                                                return (aTotal > bTotal) ? -1 : (aTotal < bTotal) ? 1 : 0;
-                                            }else {
-                                                return (aUnassigned < bUnassigned) ? -1 : 1;
-                                            }
-                                        });
+                                        solutions = this.resultsService.sortQualityAsc(solutions);
                                         results.push(solutions[0]);
                                     }
                                 },

@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { UsersService } from "./users.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
-import { AuthService } from "../auth/auth.service";
+import { SessionStorageService } from "../shared/session-storage.service";
 export var UsersComponent = (function () {
-    function UsersComponent(usersService, authService, flashMessageService) {
+    function UsersComponent(usersService, sessionStorageService, flashMessageService) {
         this.usersService = usersService;
-        this.authService = authService;
+        this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
     }
     UsersComponent.prototype.ngOnInit = function () {
@@ -23,7 +23,7 @@ export var UsersComponent = (function () {
         }, function (error) { return console.error(error); });
     };
     UsersComponent.prototype.isMe = function (user) {
-        return this.authService.getEmailLoggedIn() == user.email;
+        return this.sessionStorageService.getEmailLoggedIn() == user.email;
     };
     UsersComponent.decorators = [
         { type: Component, args: [{
@@ -34,7 +34,7 @@ export var UsersComponent = (function () {
     /** @nocollapse */
     UsersComponent.ctorParameters = [
         { type: UsersService, },
-        { type: AuthService, },
+        { type: SessionStorageService, },
         { type: FlashMessageService, },
     ];
     UsersComponent.propDecorators = {

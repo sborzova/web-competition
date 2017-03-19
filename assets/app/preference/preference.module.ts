@@ -1,8 +1,11 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 import {PreferenceComponent} from "./preference.component";
 import {preferenceRouting} from "./preference.routing";
+import {PreferenceService} from "./preference.service";
+import {FlashMessageService} from "../flash-message/flash-messages.service";
 
 @NgModule({
     declarations: [
@@ -10,7 +13,11 @@ import {preferenceRouting} from "./preference.routing";
     ],
     imports: [
         CommonModule,
-        preferenceRouting
+        preferenceRouting,
+        FormsModule,
+    ],
+    providers: [
+        PreferenceService,
     ]
 })
 export class PreferenceModule {}

@@ -10,6 +10,8 @@ import { OrderByModule } from "../order-by.module";
 import { PaperService } from "../shared/paper.service";
 import { InstanceService } from "../instances/instance.service";
 import { SolutionService } from "../validation/solution.service";
+import { ResultsService } from "./results.service";
+import { FlashMessageService } from "../flash-message/flash-messages.service";
 export var ResultsModule = (function () {
     function ResultsModule() {
     }
@@ -27,7 +29,13 @@ export var ResultsModule = (function () {
                         OrderByModule,
                         resultsRouting
                     ],
-                    providers: [PaperService, InstanceService, SolutionService]
+                    providers: [
+                        PaperService,
+                        InstanceService,
+                        SolutionService,
+                        ResultsService,
+                        FlashMessageService
+                    ]
                 },] },
     ];
     /** @nocollapse */

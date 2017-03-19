@@ -1,90 +1,92 @@
-<div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-        <div class="jumbotron">
-            <div class="text-center">
-                <h2>Modify instance</h2>
-            </div>
-            <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
-                <div class="form-group"
-                     [ngClass]="{'has-error':
+<div class="container" style="margin-top: 3%">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <div class="jumbotron">
+                <div class="text-center">
+                    <h2>Modify instance</h2>
+                </div>
+                <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
                         (!myForm.controls['order'].valid ) &&
                         (myForm.controls['order'].touched || isSubmitted())}">
-                    <label for="order">
-                        Order
-                    </label>
-                    <input
-                            type="number"
-                            id="order"
-                            class="form-control"
-                            [formControl]="myForm.controls['order']">
-                    <div class="field-error"
-                         *ngIf="!myForm.controls['order'].valid &&
+                        <label for="order">
+                            Order
+                        </label>
+                        <input
+                                type="number"
+                                id="order"
+                                class="form-control"
+                                [formControl]="myForm.controls['order']">
+                        <div class="field-error"
+                             *ngIf="!myForm.controls['order'].valid &&
                             (myForm.controls['order'].touched || isSubmitted())">
-                        Minimum value is 1.
+                            Minimum value is 1.
+                        </div>
                     </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
                         (!myForm.controls['name'].valid ) &&
                         (myForm.controls['name'].touched || isSubmitted())}">
-                    <label for="name">
-                        Name
-                    </label>
-                    <input
-                            type="text"
-                            id="name"
-                            class="form-control"
-                            [formControl]="myForm.controls['name']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['name'].hasError('required')) &&
+                        <label for="name">
+                            Name
+                        </label>
+                        <input
+                                type="text"
+                                id="name"
+                                class="form-control"
+                                [formControl]="myForm.controls['name']">
+                        <div class="field-error"
+                             *ngIf="(myForm.controls['name'].hasError('required')) &&
                             (myForm.controls['name'].touched || isSubmitted())">
-                        Field is required.
+                            Field is required.
+                        </div>
                     </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
                         (!myForm.controls['description'].valid ) &&
                         (myForm.controls['description'].touched || isSubmitted())}">
-                    <label for="description">
-                        Description
-                    </label>
-                    <input
-                            type="text"
-                            id="description"
-                            class="form-control"
-                            [formControl]="myForm.controls['description']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['description'].hasError('required')) &&
+                        <label for="description">
+                            Description
+                        </label>
+                        <input
+                                type="text"
+                                id="description"
+                                class="form-control"
+                                [formControl]="myForm.controls['description']">
+                        <div class="field-error"
+                             *ngIf="(myForm.controls['description'].hasError('required')) &&
                             (myForm.controls['description'].touched || isSubmitted())">
-                        Field is required.
+                            Field is required.
+                        </div>
                     </div>
-                </div>
-                <p>Insert in case you want to update status/data</p>
-                <div>
-                    <label for="stats">
-                        Status
-                    </label>
-                    <input
-                            #stats
-                            type="file"
-                            id="stats">
-                </div>
-                <div>
-                    <label for="data">
-                        Data
-                    </label>
-                    <input
-                            #data
-                            type="file"
-                            id="data">
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <button type="submit" class="btn btn-primary">Save</button>
-                        <a class="btn btn-danger" (click)="onCancel()">Cancel</a>
+                    <p>Insert in case you want to update status/data</p>
+                    <div>
+                        <label for="stats">
+                            Status
+                        </label>
+                        <input
+                                #stats
+                                type="file"
+                                id="stats">
                     </div>
-                </div>
-            </form>
+                    <div>
+                        <label for="data">
+                            Data
+                        </label>
+                        <input
+                                #data
+                                type="file"
+                                id="data">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a class="btn btn-danger" (click)="onCancel()">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

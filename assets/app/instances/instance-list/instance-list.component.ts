@@ -4,6 +4,7 @@ import { Instance } from "../instance.model";
 import { InstanceService } from "../instance.service";
 import { AuthService } from "../../auth/auth.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import {SessionStorageService} from "../../shared/session-storage.service";
 
 @Component({
     selector: 'app-instance-list',
@@ -15,7 +16,7 @@ export class InstanceListComponent implements OnInit {
     fileSaver = require('file-saver');
 
     constructor(private instanceService: InstanceService,
-                private authService: AuthService,
+                private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService) {
 
     }
@@ -58,6 +59,6 @@ export class InstanceListComponent implements OnInit {
     }
 
     isAdmin(){
-        return this.authService.isAdmin();
+        return this.sessionStorageService.isAdmin();
     }
 }

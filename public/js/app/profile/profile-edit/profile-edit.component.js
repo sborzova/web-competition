@@ -3,11 +3,11 @@ import { FormGroup, Validators, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { UserService } from "../../shared/user.service";
-import { AuthService } from "../../auth/auth.service";
+import { SessionStorageService } from "../../shared/session-storage.service";
 export var ProfileEditComponent = (function () {
-    function ProfileEditComponent(userService, authService, flashMessageService, router) {
+    function ProfileEditComponent(userService, sessionStorageService, flashMessageService, router) {
         this.userService = userService;
-        this.authService = authService;
+        this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
         this.router = router;
         this.submitted = false;
@@ -21,7 +21,7 @@ export var ProfileEditComponent = (function () {
             this.user.email = this.myForm.value.email;
             this.userService.updateUser(this.user)
                 .subscribe(function (data) {
-                _this.authService.setSessionStorage(data);
+                _this.sessionStorageService.setSessionStorageAuth(data);
                 _this.flashMessageService.showMessage('Profile was updated.', 'alert-success');
                 _this.navigateBack();
             }, function (error) { return console.error(error); });
@@ -57,7 +57,7 @@ export var ProfileEditComponent = (function () {
     /** @nocollapse */
     ProfileEditComponent.ctorParameters = [
         { type: UserService, },
-        { type: AuthService, },
+        { type: SessionStorageService, },
         { type: FlashMessageService, },
         { type: Router, },
     ];

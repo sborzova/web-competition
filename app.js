@@ -87,6 +87,7 @@ app.use('/', userRoutes);
 app.use('/', instanceRoutes);
 app.use('/', paperRoutes);
 app.use('/', solutionRoutes);
+app.use('/', preferenceRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

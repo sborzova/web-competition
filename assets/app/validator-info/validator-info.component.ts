@@ -2,8 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from "@angular/router";
 import { Subscription } from "rxjs";
 
-import { Solution } from "../solution.model";
-import { SolutionService } from "../../validation/solution.service";
+import {SolutionService} from "../validation/solution.service";
+import {Solution} from "./solution.model";
+
 
 @Component({
     selector: 'app-solution-validator-info',

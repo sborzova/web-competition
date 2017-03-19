@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { SolutionResult } from "../solution-result.model";
 import { SolutionService } from "../../validation/solution.service";
+import {ResultsService} from "../results.service";
 
 @Component({
     selector: 'app-results-author',
@@ -13,7 +14,8 @@ export class ResultsAuthorComponent implements OnInit{
     fileSaver = require('file-saver');
     showPapers: boolean = false;
 
-    constructor(private solutionService: SolutionService){
+    constructor(private solutionService: SolutionService,
+                private resultsService: ResultsService){
     }
 
     ngOnInit(){
@@ -52,5 +54,44 @@ export class ResultsAuthorComponent implements OnInit{
     onTechnique(technique: string){
         let solutions = this.solutions.filter(s => s.technique === technique);
         this.solutionService.resultsAuthorTechniqueShow(solutions);
+    }
+
+    onQualityAsc(){
+        this.solutions = this.resultsService.sortQualityAsc(this.solutions);
+    }
+
+    onQualityDesc(){
+        this.solutions = this.resultsService.sortQualityDesc(this.solutions);
+    }
+
+    onScAsc(){
+        this.solutions = this.resultsService.sortScAsc(this.solutions);
+    }
+
+    onScDesc(){
+        this.solutions = this.resultsService.sortScDesc(this.solutions);
+    }
+
+    onTimeAsc(){
+        this.solutions = this.resultsService.sortTimeAsc(this.solutions);
+    }
+
+    onTimeDesc(){
+        this.solutions = this.resultsService.sortTimeDesc(this.solutions);
+    }
+    onRoomAsc(){
+        this.solutions = this.resultsService.sortRoomAsc(this.solutions);
+    }
+
+    onRoomDesc(){
+        this.solutions = this.resultsService.sortRoomDesc(this.solutions);
+    }
+
+    onDistributionAsc(){
+        this.solutions = this.resultsService.sortDistributionAsc(this.solutions);
+    }
+
+    onDistributionDesc(){
+        this.solutions = this.resultsService.sortDistributionDesc(this.solutions);
     }
 }

@@ -84,28 +84,33 @@ var _View_UserEditPasswordComponent0 = (function (_super) {
     _View_UserEditPasswordComponent0.prototype.createInternal = function (rootSelector) {
         var parentRenderNode = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
         this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
-        this.renderer.setElementAttribute(this._el_0, 'class', 'row');
+        this.renderer.setElementAttribute(this._el_0, 'class', 'container');
+        this.renderer.setElementAttribute(this._el_0, 'style', 'margin-top: 3%');
         this._text_1 = this.renderer.createText(this._el_0, '\n    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
-        this.renderer.setElementAttribute(this._el_2, 'class', 'col-sm-6 col-sm-offset-3');
+        this.renderer.setElementAttribute(this._el_2, 'class', 'row');
         this._text_3 = this.renderer.createText(this._el_2, '\n        ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
-        this.renderer.setElementAttribute(this._el_4, 'class', 'jumbotron');
+        this.renderer.setElementAttribute(this._el_4, 'class', 'col-xs-12 col-md-6 col-md-offset-3');
         this._text_5 = this.renderer.createText(this._el_4, '\n            ', null);
         this._el_6 = this.renderer.createElement(this._el_4, 'div', null);
-        this.renderer.setElementAttribute(this._el_6, 'class', 'text-center');
+        this.renderer.setElementAttribute(this._el_6, 'class', 'jumbotron');
         this._text_7 = this.renderer.createText(this._el_6, '\n                ', null);
-        this._el_8 = this.renderer.createElement(this._el_6, 'h2', null);
-        this._text_9 = this.renderer.createText(this._el_8, 'Change password', null);
-        this._text_10 = this.renderer.createText(this._el_6, '\n            ', null);
-        this._text_11 = this.renderer.createText(this._el_4, '\n            ', null);
-        this._anchor_12 = this.renderer.createTemplateAnchor(this._el_4, null);
-        this._appEl_12 = new import2.AppElement(12, 4, this, this._anchor_12);
-        this._TemplateRef_12_5 = new import15.TemplateRef_(this._appEl_12, viewFactory_UserEditPasswordComponent1);
-        this._NgIf_12_6 = new import14.NgIf(this._appEl_12.vcRef, this._TemplateRef_12_5);
-        this._text_13 = this.renderer.createText(this._el_4, '\n        ', null);
-        this._text_14 = this.renderer.createText(this._el_2, '\n    ', null);
-        this._text_15 = this.renderer.createText(this._el_0, '\n', null);
+        this._el_8 = this.renderer.createElement(this._el_6, 'div', null);
+        this.renderer.setElementAttribute(this._el_8, 'class', 'text-center');
+        this._text_9 = this.renderer.createText(this._el_8, '\n                    ', null);
+        this._el_10 = this.renderer.createElement(this._el_8, 'h2', null);
+        this._text_11 = this.renderer.createText(this._el_10, 'Change password', null);
+        this._text_12 = this.renderer.createText(this._el_8, '\n                ', null);
+        this._text_13 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._anchor_14 = this.renderer.createTemplateAnchor(this._el_6, null);
+        this._appEl_14 = new import2.AppElement(14, 6, this, this._anchor_14);
+        this._TemplateRef_14_5 = new import15.TemplateRef_(this._appEl_14, viewFactory_UserEditPasswordComponent1);
+        this._NgIf_14_6 = new import14.NgIf(this._appEl_14.vcRef, this._TemplateRef_14_5);
+        this._text_15 = this.renderer.createText(this._el_6, '\n            ', null);
+        this._text_16 = this.renderer.createText(this._el_4, '\n        ', null);
+        this._text_17 = this.renderer.createText(this._el_2, '\n    ', null);
+        this._text_18 = this.renderer.createText(this._el_0, '\n', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([], [
             this._el_0,
@@ -118,28 +123,31 @@ var _View_UserEditPasswordComponent0 = (function (_super) {
             this._text_7,
             this._el_8,
             this._text_9,
-            this._text_10,
+            this._el_10,
             this._text_11,
-            this._anchor_12,
+            this._text_12,
             this._text_13,
-            this._text_14,
-            this._text_15
+            this._anchor_14,
+            this._text_15,
+            this._text_16,
+            this._text_17,
+            this._text_18
         ], [], []);
         return null;
     };
     _View_UserEditPasswordComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import15.TemplateRef) && (12 === requestNodeIndex))) {
-            return this._TemplateRef_12_5;
+        if (((token === import15.TemplateRef) && (14 === requestNodeIndex))) {
+            return this._TemplateRef_14_5;
         }
-        if (((token === import14.NgIf) && (12 === requestNodeIndex))) {
-            return this._NgIf_12_6;
+        if (((token === import14.NgIf) && (14 === requestNodeIndex))) {
+            return this._NgIf_14_6;
         }
         return notFoundResult;
     };
     _View_UserEditPasswordComponent0.prototype.detectChangesInternal = function (throwOnChange) {
         var currVal_0 = this.context.myForm;
         if (import4.checkBinding(throwOnChange, this._expr_0, currVal_0)) {
-            this._NgIf_12_6.ngIf = currVal_0;
+            this._NgIf_14_6.ngIf = currVal_0;
             this._expr_0 = currVal_0;
         }
         this.detectContentChildrenChanges(throwOnChange);
@@ -163,11 +171,11 @@ var _View_UserEditPasswordComponent1 = (function (_super) {
         this._FormGroupDirective_0_3 = new import16.FormGroupDirective(null, null);
         this._ControlContainer_0_4 = this._FormGroupDirective_0_3;
         this._NgControlStatusGroup_0_5 = new import17.NgControlStatusGroup(this._ControlContainer_0_4);
-        this._text_1 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'form-group');
         this._NgClass_2_3 = new import18.NgClass(this.parent.parentInjector.get(import21.IterableDiffers), this.parent.parentInjector.get(import22.KeyValueDiffers), new import23.ElementRef(this._el_2), this.renderer);
-        this._text_3 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_3 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'input', null);
         this.renderer.setElementAttribute(this._el_4, 'class', 'form-control');
         this.renderer.setElementAttribute(this._el_4, 'id', 'password');
@@ -177,36 +185,36 @@ var _View_UserEditPasswordComponent1 = (function (_super) {
         this._FormControlDirective_4_5 = new import20.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_4_4);
         this._NgControl_4_6 = this._FormControlDirective_4_5;
         this._NgControlStatus_4_7 = new import17.NgControlStatus(this._NgControl_4_6);
-        this._text_5 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_5 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._anchor_6 = this.renderer.createTemplateAnchor(this._el_2, null);
         this._appEl_6 = new import2.AppElement(6, 2, this, this._anchor_6);
         this._TemplateRef_6_5 = new import15.TemplateRef_(this._appEl_6, viewFactory_UserEditPasswordComponent2);
         this._NgIf_6_6 = new import14.NgIf(this._appEl_6.vcRef, this._TemplateRef_6_5);
-        this._text_7 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_7 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._anchor_8 = this.renderer.createTemplateAnchor(this._el_2, null);
         this._appEl_8 = new import2.AppElement(8, 2, this, this._anchor_8);
         this._TemplateRef_8_5 = new import15.TemplateRef_(this._appEl_8, viewFactory_UserEditPasswordComponent3);
         this._NgIf_8_6 = new import14.NgIf(this._appEl_8.vcRef, this._TemplateRef_8_5);
-        this._text_9 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_9 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._anchor_10 = this.renderer.createTemplateAnchor(this._el_2, null);
         this._appEl_10 = new import2.AppElement(10, 2, this, this._anchor_10);
         this._TemplateRef_10_5 = new import15.TemplateRef_(this._appEl_10, viewFactory_UserEditPasswordComponent4);
         this._NgIf_10_6 = new import14.NgIf(this._appEl_10.vcRef, this._TemplateRef_10_5);
-        this._text_11 = this.renderer.createText(this._el_2, '\n                ', null);
-        this._text_12 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_11 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_12 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_13 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_13, 'align', 'right');
-        this._text_14 = this.renderer.createText(this._el_13, '\n                    ', null);
+        this._text_14 = this.renderer.createText(this._el_13, '\n                        ', null);
         this._el_15 = this.renderer.createElement(this._el_13, 'button', null);
         this.renderer.setElementAttribute(this._el_15, 'class', 'btn btn-primary');
         this.renderer.setElementAttribute(this._el_15, 'type', 'submit');
-        this._text_16 = this.renderer.createText(this._el_15, '\n                        Save\n                    ', null);
-        this._text_17 = this.renderer.createText(this._el_13, '\n                    ', null);
+        this._text_16 = this.renderer.createText(this._el_15, '\n                            Save\n                        ', null);
+        this._text_17 = this.renderer.createText(this._el_13, '\n                        ', null);
         this._el_18 = this.renderer.createElement(this._el_13, 'button', null);
         this.renderer.setElementAttribute(this._el_18, 'class', 'btn btn-default');
-        this._text_19 = this.renderer.createText(this._el_18, '\n                        Cancel\n                    ', null);
-        this._text_20 = this.renderer.createText(this._el_13, '\n                ', null);
-        this._text_21 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._text_19 = this.renderer.createText(this._el_18, '\n                            Cancel\n                        ', null);
+        this._text_20 = this.renderer.createText(this._el_13, '\n                    ', null);
+        this._text_21 = this.renderer.createText(this._el_0, '\n                ', null);
         var disposable_0 = this.renderer.listen(this._el_0, 'ngSubmit', this.eventHandler(this._handle_ngSubmit_0_0.bind(this)));
         var disposable_1 = this.renderer.listen(this._el_0, 'submit', this.eventHandler(this._handle_submit_0_1.bind(this)));
         var disposable_2 = this.renderer.listen(this._el_0, 'reset', this.eventHandler(this._handle_reset_0_2.bind(this)));
@@ -479,7 +487,7 @@ var _View_UserEditPasswordComponent2 = (function (_super) {
     _View_UserEditPasswordComponent2.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field is required.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field is required.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -499,7 +507,7 @@ var _View_UserEditPasswordComponent3 = (function (_super) {
     _View_UserEditPasswordComponent3.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field can have min 4 characters.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field can have min 4 characters.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -519,7 +527,7 @@ var _View_UserEditPasswordComponent4 = (function (_super) {
     _View_UserEditPasswordComponent4.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field can have max 100 characters.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field can have max 100 characters.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1

@@ -14,7 +14,7 @@ import * as import3 from './header.component';
 import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../auth/auth.service';
+import * as import8 from '../shared/session-storage.service';
 import * as import9 from '@angular/router/src/router';
 import * as import10 from '@angular/core/src/metadata/view';
 import * as import11 from '@angular/core/src/linker/component_factory';
@@ -37,7 +37,7 @@ var _View_HeaderComponent_Host0 = (function (_super) {
         this._el_0 = this.selectOrCreateHostElement('app-header', rootSelector, null);
         this._appEl_0 = new import2.AppElement(0, null, this, this._el_0);
         var compView_0 = viewFactory_HeaderComponent0(this.viewUtils, this.injector(0), this._appEl_0);
-        this._HeaderComponent_0_4 = new import3.HeaderComponent(this.parentInjector.get(import8.AuthService), this.parentInjector.get(import9.Router));
+        this._HeaderComponent_0_4 = new import3.HeaderComponent(this.parentInjector.get(import8.SessionStorageService), this.parentInjector.get(import9.Router));
         this._appEl_0.initComponent(this._HeaderComponent_0_4, [], compView_0);
         compView_0.create(this._HeaderComponent_0_4, this.projectableNodes, null);
         this.init([].concat([this._el_0]), [this._el_0], [], []);
@@ -48,6 +48,13 @@ var _View_HeaderComponent_Host0 = (function (_super) {
             return this._HeaderComponent_0_4;
         }
         return notFoundResult;
+    };
+    _View_HeaderComponent_Host0.prototype.detectChangesInternal = function (throwOnChange) {
+        if (((this.numberOfChecks === 0) && !throwOnChange)) {
+            this._HeaderComponent_0_4.ngOnInit();
+        }
+        this.detectContentChildrenChanges(throwOnChange);
+        this.detectViewChildrenChanges(throwOnChange);
     };
     return _View_HeaderComponent_Host0;
 }(import1.AppView));
@@ -71,7 +78,7 @@ var _View_HeaderComponent0 = (function (_super) {
         this.renderer.setElementAttribute(this._el_0, 'class', 'navbar navbar-inverse navbar-fixed-top');
         this._text_1 = this.renderer.createText(this._el_0, '\n    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
-        this.renderer.setElementAttribute(this._el_2, 'class', 'container-fluid');
+        this.renderer.setElementAttribute(this._el_2, 'class', 'container');
         this._text_3 = this.renderer.createText(this._el_2, '\n        ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
         this.renderer.setElementAttribute(this._el_4, 'class', 'navbar-header');
@@ -411,7 +418,7 @@ var _View_HeaderComponent0 = (function (_super) {
         if ((changes !== null)) {
             this._RouterLinkWithHref_24_3.ngOnChanges(changes);
         }
-        var currVal_7 = this.context.isAdmin();
+        var currVal_7 = (this.context.isAdmin() || !this.context.competitionIsOn());
         if (import4.checkBinding(throwOnChange, this._expr_7, currVal_7)) {
             this._NgIf_27_6.ngIf = currVal_7;
             this._expr_7 = currVal_7;

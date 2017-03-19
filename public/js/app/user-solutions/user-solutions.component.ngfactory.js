@@ -94,51 +94,64 @@ var _View_UserSolutionsComponent0 = (function (_super) {
     _View_UserSolutionsComponent0.prototype.createInternal = function (rootSelector) {
         var parentRenderNode = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
         this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
-        this.renderer.setElementAttribute(this._el_0, 'class', 'col-sm-12');
+        this.renderer.setElementAttribute(this._el_0, 'class', 'container');
+        this.renderer.setElementAttribute(this._el_0, 'style', 'margin-top: 3%');
         this._text_1 = this.renderer.createText(this._el_0, '\n    ', null);
-        this._el_2 = this.renderer.createElement(this._el_0, 'h2', null);
-        this._text_3 = this.renderer.createText(this._el_2, 'My solutions', null);
-        this._text_4 = this.renderer.createText(this._el_0, '\n    ', null);
-        this._el_5 = this.renderer.createElement(this._el_0, 'div', null);
-        this._text_6 = this.renderer.createText(this._el_5, '\n        ', null);
-        this._anchor_7 = this.renderer.createTemplateAnchor(this._el_5, null);
-        this._appEl_7 = new import2.AppElement(7, 5, this, this._anchor_7);
-        this._TemplateRef_7_5 = new import16.TemplateRef_(this._appEl_7, viewFactory_UserSolutionsComponent1);
-        this._NgIf_7_6 = new import14.NgIf(this._appEl_7.vcRef, this._TemplateRef_7_5);
-        this._text_8 = this.renderer.createText(this._el_5, '\n        ', null);
-        this._anchor_9 = this.renderer.createTemplateAnchor(this._el_5, null);
-        this._appEl_9 = new import2.AppElement(9, 5, this, this._anchor_9);
-        this._TemplateRef_9_5 = new import16.TemplateRef_(this._appEl_9, viewFactory_UserSolutionsComponent2);
-        this._NgIf_9_6 = new import14.NgIf(this._appEl_9.vcRef, this._TemplateRef_9_5);
-        this._text_10 = this.renderer.createText(this._el_5, '\n        ', null);
-        this._el_11 = this.renderer.createElement(this._el_5, 'button', null);
-        this.renderer.setElementAttribute(this._el_11, 'class', 'btn btn-success btn-xs');
-        this._text_12 = this.renderer.createText(this._el_11, 'Add paper', null);
-        this._text_13 = this.renderer.createText(this._el_5, '\n        ', null);
-        this._el_14 = this.renderer.createElement(this._el_5, 'button', null);
-        this.renderer.setElementAttribute(this._el_14, 'class', 'btn btn-primary btn-xs');
-        this._text_15 = this.renderer.createText(this._el_14, 'Edit paper', null);
-        this._text_16 = this.renderer.createText(this._el_5, '\n        ', null);
-        this._el_17 = this.renderer.createElement(this._el_5, 'button', null);
-        this.renderer.setElementAttribute(this._el_17, 'class', 'btn btn-danger btn-xs');
-        this._text_18 = this.renderer.createText(this._el_17, 'Remove paper', null);
-        this._text_19 = this.renderer.createText(this._el_5, '\n    ', null);
-        this._text_20 = this.renderer.createText(this._el_0, '\n    ', null);
-        this._anchor_21 = this.renderer.createTemplateAnchor(this._el_0, null);
-        this._appEl_21 = new import2.AppElement(21, 0, this, this._anchor_21);
-        this._TemplateRef_21_5 = new import16.TemplateRef_(this._appEl_21, viewFactory_UserSolutionsComponent3);
-        this._NgIf_21_6 = new import14.NgIf(this._appEl_21.vcRef, this._TemplateRef_21_5);
-        this._text_22 = this.renderer.createText(this._el_0, '\n    ', null);
-        this._anchor_23 = this.renderer.createTemplateAnchor(this._el_0, null);
-        this._appEl_23 = new import2.AppElement(23, 0, this, this._anchor_23);
-        this._TemplateRef_23_5 = new import16.TemplateRef_(this._appEl_23, viewFactory_UserSolutionsComponent6);
-        this._NgIf_23_6 = new import14.NgIf(this._appEl_23.vcRef, this._TemplateRef_23_5);
-        this._text_24 = this.renderer.createText(this._el_0, '\n', null);
+        this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
+        this.renderer.setElementAttribute(this._el_2, 'class', 'row');
+        this._text_3 = this.renderer.createText(this._el_2, '\n        ', null);
+        this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
+        this.renderer.setElementAttribute(this._el_4, 'class', 'col-xs-12');
+        this._text_5 = this.renderer.createText(this._el_4, '\n            ', null);
+        this._el_6 = this.renderer.createElement(this._el_4, 'div', null);
+        this.renderer.setElementAttribute(this._el_6, 'style', 'margin-bottom: 3%');
+        this._text_7 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._el_8 = this.renderer.createElement(this._el_6, 'h2', null);
+        this._text_9 = this.renderer.createText(this._el_8, 'My solutions', null);
+        this._text_10 = this.renderer.createText(this._el_6, '\n            ', null);
+        this._text_11 = this.renderer.createText(this._el_4, '\n            ', null);
+        this._el_12 = this.renderer.createElement(this._el_4, 'div', null);
+        this._text_13 = this.renderer.createText(this._el_12, '\n                ', null);
+        this._anchor_14 = this.renderer.createTemplateAnchor(this._el_12, null);
+        this._appEl_14 = new import2.AppElement(14, 12, this, this._anchor_14);
+        this._TemplateRef_14_5 = new import16.TemplateRef_(this._appEl_14, viewFactory_UserSolutionsComponent1);
+        this._NgIf_14_6 = new import14.NgIf(this._appEl_14.vcRef, this._TemplateRef_14_5);
+        this._text_15 = this.renderer.createText(this._el_12, '\n                ', null);
+        this._anchor_16 = this.renderer.createTemplateAnchor(this._el_12, null);
+        this._appEl_16 = new import2.AppElement(16, 12, this, this._anchor_16);
+        this._TemplateRef_16_5 = new import16.TemplateRef_(this._appEl_16, viewFactory_UserSolutionsComponent2);
+        this._NgIf_16_6 = new import14.NgIf(this._appEl_16.vcRef, this._TemplateRef_16_5);
+        this._text_17 = this.renderer.createText(this._el_12, '\n                ', null);
+        this._el_18 = this.renderer.createElement(this._el_12, 'button', null);
+        this.renderer.setElementAttribute(this._el_18, 'class', 'btn btn-success btn-xs');
+        this._text_19 = this.renderer.createText(this._el_18, 'Add paper', null);
+        this._text_20 = this.renderer.createText(this._el_12, '\n                ', null);
+        this._el_21 = this.renderer.createElement(this._el_12, 'button', null);
+        this.renderer.setElementAttribute(this._el_21, 'class', 'btn btn-primary btn-xs');
+        this._text_22 = this.renderer.createText(this._el_21, 'Edit paper', null);
+        this._text_23 = this.renderer.createText(this._el_12, '\n                ', null);
+        this._el_24 = this.renderer.createElement(this._el_12, 'button', null);
+        this.renderer.setElementAttribute(this._el_24, 'class', 'btn btn-danger btn-xs');
+        this._text_25 = this.renderer.createText(this._el_24, 'Remove paper', null);
+        this._text_26 = this.renderer.createText(this._el_12, '\n            ', null);
+        this._text_27 = this.renderer.createText(this._el_4, '\n            ', null);
+        this._anchor_28 = this.renderer.createTemplateAnchor(this._el_4, null);
+        this._appEl_28 = new import2.AppElement(28, 4, this, this._anchor_28);
+        this._TemplateRef_28_5 = new import16.TemplateRef_(this._appEl_28, viewFactory_UserSolutionsComponent3);
+        this._NgIf_28_6 = new import14.NgIf(this._appEl_28.vcRef, this._TemplateRef_28_5);
+        this._text_29 = this.renderer.createText(this._el_4, '\n            ', null);
+        this._anchor_30 = this.renderer.createTemplateAnchor(this._el_4, null);
+        this._appEl_30 = new import2.AppElement(30, 4, this, this._anchor_30);
+        this._TemplateRef_30_5 = new import16.TemplateRef_(this._appEl_30, viewFactory_UserSolutionsComponent6);
+        this._NgIf_30_6 = new import14.NgIf(this._appEl_30.vcRef, this._TemplateRef_30_5);
+        this._text_31 = this.renderer.createText(this._el_4, '\n        ', null);
+        this._text_32 = this.renderer.createText(this._el_2, '\n    ', null);
+        this._text_33 = this.renderer.createText(this._el_0, '\n', null);
         this._expr_0 = import7.UNINITIALIZED;
         this._expr_1 = import7.UNINITIALIZED;
-        var disposable_0 = this.renderer.listen(this._el_11, 'click', this.eventHandler(this._handle_click_11_0.bind(this)));
-        var disposable_1 = this.renderer.listen(this._el_14, 'click', this.eventHandler(this._handle_click_14_0.bind(this)));
-        var disposable_2 = this.renderer.listen(this._el_17, 'click', this.eventHandler(this._handle_click_17_0.bind(this)));
+        var disposable_0 = this.renderer.listen(this._el_18, 'click', this.eventHandler(this._handle_click_18_0.bind(this)));
+        var disposable_1 = this.renderer.listen(this._el_21, 'click', this.eventHandler(this._handle_click_21_0.bind(this)));
+        var disposable_2 = this.renderer.listen(this._el_24, 'click', this.eventHandler(this._handle_click_24_0.bind(this)));
         this._expr_5 = import7.UNINITIALIZED;
         this._expr_6 = import7.UNINITIALIZED;
         this._pipe_date_0 = new import15.DatePipe(this.parentInjector.get(import17.LOCALE_ID));
@@ -147,27 +160,36 @@ var _View_UserSolutionsComponent0 = (function (_super) {
             this._text_1,
             this._el_2,
             this._text_3,
-            this._text_4,
-            this._el_5,
-            this._text_6,
-            this._anchor_7,
-            this._text_8,
-            this._anchor_9,
+            this._el_4,
+            this._text_5,
+            this._el_6,
+            this._text_7,
+            this._el_8,
+            this._text_9,
             this._text_10,
-            this._el_11,
-            this._text_12,
+            this._text_11,
+            this._el_12,
             this._text_13,
-            this._el_14,
+            this._anchor_14,
             this._text_15,
-            this._text_16,
-            this._el_17,
-            this._text_18,
+            this._anchor_16,
+            this._text_17,
+            this._el_18,
             this._text_19,
             this._text_20,
-            this._anchor_21,
+            this._el_21,
             this._text_22,
-            this._anchor_23,
-            this._text_24
+            this._text_23,
+            this._el_24,
+            this._text_25,
+            this._text_26,
+            this._text_27,
+            this._anchor_28,
+            this._text_29,
+            this._anchor_30,
+            this._text_31,
+            this._text_32,
+            this._text_33
         ], [
             disposable_0,
             disposable_1,
@@ -176,67 +198,67 @@ var _View_UserSolutionsComponent0 = (function (_super) {
         return null;
     };
     _View_UserSolutionsComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import16.TemplateRef) && (7 === requestNodeIndex))) {
-            return this._TemplateRef_7_5;
+        if (((token === import16.TemplateRef) && (14 === requestNodeIndex))) {
+            return this._TemplateRef_14_5;
         }
-        if (((token === import14.NgIf) && (7 === requestNodeIndex))) {
-            return this._NgIf_7_6;
+        if (((token === import14.NgIf) && (14 === requestNodeIndex))) {
+            return this._NgIf_14_6;
         }
-        if (((token === import16.TemplateRef) && (9 === requestNodeIndex))) {
-            return this._TemplateRef_9_5;
+        if (((token === import16.TemplateRef) && (16 === requestNodeIndex))) {
+            return this._TemplateRef_16_5;
         }
-        if (((token === import14.NgIf) && (9 === requestNodeIndex))) {
-            return this._NgIf_9_6;
+        if (((token === import14.NgIf) && (16 === requestNodeIndex))) {
+            return this._NgIf_16_6;
         }
-        if (((token === import16.TemplateRef) && (21 === requestNodeIndex))) {
-            return this._TemplateRef_21_5;
+        if (((token === import16.TemplateRef) && (28 === requestNodeIndex))) {
+            return this._TemplateRef_28_5;
         }
-        if (((token === import14.NgIf) && (21 === requestNodeIndex))) {
-            return this._NgIf_21_6;
+        if (((token === import14.NgIf) && (28 === requestNodeIndex))) {
+            return this._NgIf_28_6;
         }
-        if (((token === import16.TemplateRef) && (23 === requestNodeIndex))) {
-            return this._TemplateRef_23_5;
+        if (((token === import16.TemplateRef) && (30 === requestNodeIndex))) {
+            return this._TemplateRef_30_5;
         }
-        if (((token === import14.NgIf) && (23 === requestNodeIndex))) {
-            return this._NgIf_23_6;
+        if (((token === import14.NgIf) && (30 === requestNodeIndex))) {
+            return this._NgIf_30_6;
         }
         return notFoundResult;
     };
     _View_UserSolutionsComponent0.prototype.detectChangesInternal = function (throwOnChange) {
         var currVal_0 = !this.context.isShowPapers();
         if (import4.checkBinding(throwOnChange, this._expr_0, currVal_0)) {
-            this._NgIf_7_6.ngIf = currVal_0;
+            this._NgIf_14_6.ngIf = currVal_0;
             this._expr_0 = currVal_0;
         }
         var currVal_1 = this.context.isShowPapers();
         if (import4.checkBinding(throwOnChange, this._expr_1, currVal_1)) {
-            this._NgIf_9_6.ngIf = currVal_1;
+            this._NgIf_16_6.ngIf = currVal_1;
             this._expr_1 = currVal_1;
         }
         var currVal_5 = this.context.isShowPaperForm();
         if (import4.checkBinding(throwOnChange, this._expr_5, currVal_5)) {
-            this._NgIf_21_6.ngIf = currVal_5;
+            this._NgIf_28_6.ngIf = currVal_5;
             this._expr_5 = currVal_5;
         }
         var currVal_6 = this.context.solutions;
         if (import4.checkBinding(throwOnChange, this._expr_6, currVal_6)) {
-            this._NgIf_23_6.ngIf = currVal_6;
+            this._NgIf_30_6.ngIf = currVal_6;
             this._expr_6 = currVal_6;
         }
         this.detectContentChildrenChanges(throwOnChange);
         this.detectViewChildrenChanges(throwOnChange);
     };
-    _View_UserSolutionsComponent0.prototype._handle_click_11_0 = function ($event) {
+    _View_UserSolutionsComponent0.prototype._handle_click_18_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this.context.onAddPaper() !== false);
         return (true && pd_0);
     };
-    _View_UserSolutionsComponent0.prototype._handle_click_14_0 = function ($event) {
+    _View_UserSolutionsComponent0.prototype._handle_click_21_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this.context.onEditPaper() !== false);
         return (true && pd_0);
     };
-    _View_UserSolutionsComponent0.prototype._handle_click_17_0 = function ($event) {
+    _View_UserSolutionsComponent0.prototype._handle_click_24_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this.context.onRemovePaper() !== false);
         return (true && pd_0);
@@ -310,23 +332,23 @@ var _View_UserSolutionsComponent3 = (function (_super) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'col-sm-8 col-sm-offset-2');
         this.renderer.setElementAttribute(this._el_0, 'style', 'padding: 5% 0% 5% 0%');
-        this._text_1 = this.renderer.createText(this._el_0, '\n        ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'jumbotron');
-        this._text_3 = this.renderer.createText(this._el_2, '\n            ', null);
+        this._text_3 = this.renderer.createText(this._el_2, '\n                    ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
         this.renderer.setElementAttribute(this._el_4, 'class', 'text-center');
-        this._text_5 = this.renderer.createText(this._el_4, '\n                ', null);
+        this._text_5 = this.renderer.createText(this._el_4, '\n                        ', null);
         this._el_6 = this.renderer.createElement(this._el_4, 'h2', null);
         this._text_7 = this.renderer.createText(this._el_6, 'Paper', null);
-        this._text_8 = this.renderer.createText(this._el_4, '\n            ', null);
-        this._text_9 = this.renderer.createText(this._el_2, '\n            ', null);
+        this._text_8 = this.renderer.createText(this._el_4, '\n                    ', null);
+        this._text_9 = this.renderer.createText(this._el_2, '\n                    ', null);
         this._anchor_10 = this.renderer.createTemplateAnchor(this._el_2, null);
         this._appEl_10 = new import2.AppElement(10, 2, this, this._anchor_10);
         this._TemplateRef_10_5 = new import16.TemplateRef_(this._appEl_10, viewFactory_UserSolutionsComponent4);
         this._NgIf_10_6 = new import14.NgIf(this._appEl_10.vcRef, this._TemplateRef_10_5);
-        this._text_11 = this.renderer.createText(this._el_2, '\n        ', null);
-        this._text_12 = this.renderer.createText(this._el_0, '\n    ', null);
+        this._text_11 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_12 = this.renderer.createText(this._el_0, '\n            ', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [
             this._el_0,
@@ -378,15 +400,15 @@ var _View_UserSolutionsComponent4 = (function (_super) {
         this._FormGroupDirective_0_3 = new import18.FormGroupDirective(null, null);
         this._ControlContainer_0_4 = this._FormGroupDirective_0_3;
         this._NgControlStatusGroup_0_5 = new import19.NgControlStatusGroup(this._ControlContainer_0_4);
-        this._text_1 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'form-group');
         this._NgClass_2_3 = new import20.NgClass(this.parent.parent.parentInjector.get(import23.IterableDiffers), this.parent.parent.parentInjector.get(import24.KeyValueDiffers), new import25.ElementRef(this._el_2), this.renderer);
-        this._text_3 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_3 = this.renderer.createText(this._el_2, '\n                            ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'label', null);
         this.renderer.setElementAttribute(this._el_4, 'for', 'citation');
-        this._text_5 = this.renderer.createText(this._el_4, '\n                        Citation\n                    ', null);
-        this._text_6 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_5 = this.renderer.createText(this._el_4, '\n                                Citation\n                            ', null);
+        this._text_6 = this.renderer.createText(this._el_2, '\n                            ', null);
         this._el_7 = this.renderer.createElement(this._el_2, 'textarea', null);
         this.renderer.setElementAttribute(this._el_7, 'class', 'form-control');
         this.renderer.setElementAttribute(this._el_7, 'id', 'citation');
@@ -395,20 +417,20 @@ var _View_UserSolutionsComponent4 = (function (_super) {
         this._FormControlDirective_7_5 = new import22.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_7_4);
         this._NgControl_7_6 = this._FormControlDirective_7_5;
         this._NgControlStatus_7_7 = new import19.NgControlStatus(this._NgControl_7_6);
-        this._text_8 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_8 = this.renderer.createText(this._el_2, '\n                            ', null);
         this._anchor_9 = this.renderer.createTemplateAnchor(this._el_2, null);
         this._appEl_9 = new import2.AppElement(9, 2, this, this._anchor_9);
         this._TemplateRef_9_5 = new import16.TemplateRef_(this._appEl_9, viewFactory_UserSolutionsComponent5);
         this._NgIf_9_6 = new import14.NgIf(this._appEl_9.vcRef, this._TemplateRef_9_5);
-        this._text_10 = this.renderer.createText(this._el_2, '\n                ', null);
-        this._text_11 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_10 = this.renderer.createText(this._el_2, '\n                        ', null);
+        this._text_11 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_12 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_12, 'class', 'form-group');
-        this._text_13 = this.renderer.createText(this._el_12, '\n                    ', null);
+        this._text_13 = this.renderer.createText(this._el_12, '\n                            ', null);
         this._el_14 = this.renderer.createElement(this._el_12, 'label', null);
         this.renderer.setElementAttribute(this._el_14, 'for', 'url');
-        this._text_15 = this.renderer.createText(this._el_14, '\n                        Url\n                    ', null);
-        this._text_16 = this.renderer.createText(this._el_12, '\n                    ', null);
+        this._text_15 = this.renderer.createText(this._el_14, '\n                                Url\n                            ', null);
+        this._text_16 = this.renderer.createText(this._el_12, '\n                            ', null);
         this._el_17 = this.renderer.createElement(this._el_12, 'input', null);
         this.renderer.setElementAttribute(this._el_17, 'class', 'form-control');
         this.renderer.setElementAttribute(this._el_17, 'id', 'url');
@@ -418,25 +440,25 @@ var _View_UserSolutionsComponent4 = (function (_super) {
         this._FormControlDirective_17_5 = new import22.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_17_4);
         this._NgControl_17_6 = this._FormControlDirective_17_5;
         this._NgControlStatus_17_7 = new import19.NgControlStatus(this._NgControl_17_6);
-        this._text_18 = this.renderer.createText(this._el_12, '\n                ', null);
-        this._text_19 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_18 = this.renderer.createText(this._el_12, '\n                        ', null);
+        this._text_19 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_20 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_20, 'align', 'right');
-        this._text_21 = this.renderer.createText(this._el_20, '\n                    ', null);
+        this._text_21 = this.renderer.createText(this._el_20, '\n                            ', null);
         this._el_22 = this.renderer.createElement(this._el_20, 'div', null);
         this.renderer.setElementAttribute(this._el_22, 'align', 'right');
-        this._text_23 = this.renderer.createText(this._el_22, '\n                        ', null);
+        this._text_23 = this.renderer.createText(this._el_22, '\n                                ', null);
         this._el_24 = this.renderer.createElement(this._el_22, 'button', null);
         this.renderer.setElementAttribute(this._el_24, 'class', 'btn btn-default align-right');
-        this._text_25 = this.renderer.createText(this._el_24, '\n                            Cancel\n                        ', null);
-        this._text_26 = this.renderer.createText(this._el_22, '\n                        ', null);
+        this._text_25 = this.renderer.createText(this._el_24, '\n                                    Cancel\n                                ', null);
+        this._text_26 = this.renderer.createText(this._el_22, '\n                                ', null);
         this._el_27 = this.renderer.createElement(this._el_22, 'button', null);
         this.renderer.setElementAttribute(this._el_27, 'class', 'btn btn-primary align-right');
         this.renderer.setElementAttribute(this._el_27, 'type', 'submit');
-        this._text_28 = this.renderer.createText(this._el_27, '\n                            Save\n                        ', null);
-        this._text_29 = this.renderer.createText(this._el_22, '\n                    ', null);
-        this._text_30 = this.renderer.createText(this._el_20, '\n                ', null);
-        this._text_31 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._text_28 = this.renderer.createText(this._el_27, '\n                                    Save\n                                ', null);
+        this._text_29 = this.renderer.createText(this._el_22, '\n                            ', null);
+        this._text_30 = this.renderer.createText(this._el_20, '\n                        ', null);
+        this._text_31 = this.renderer.createText(this._el_0, '\n                    ', null);
         var disposable_0 = this.renderer.listen(this._el_0, 'ngSubmit', this.eventHandler(this._handle_ngSubmit_0_0.bind(this)));
         var disposable_1 = this.renderer.listen(this._el_0, 'submit', this.eventHandler(this._handle_submit_0_1.bind(this)));
         var disposable_2 = this.renderer.listen(this._el_0, 'reset', this.eventHandler(this._handle_reset_0_2.bind(this)));
@@ -774,7 +796,7 @@ var _View_UserSolutionsComponent5 = (function (_super) {
     _View_UserSolutionsComponent5.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field is required.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                                Field is required.\n                            ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -794,57 +816,57 @@ var _View_UserSolutionsComponent6 = (function (_super) {
     _View_UserSolutionsComponent6.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'solutions');
-        this._text_1 = this.renderer.createText(this._el_0, '\n        ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'table', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'table');
-        this._text_3 = this.renderer.createText(this._el_2, '\n            ', null);
+        this._text_3 = this.renderer.createText(this._el_2, '\n                    ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'thead', null);
-        this._text_5 = this.renderer.createText(this._el_4, '\n            ', null);
+        this._text_5 = this.renderer.createText(this._el_4, '\n                    ', null);
         this._el_6 = this.renderer.createElement(this._el_4, 'tr', null);
-        this._text_7 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_7 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_8 = this.renderer.createElement(this._el_6, 'th', null);
-        this._text_9 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_9 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_10 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_11 = this.renderer.createText(this._el_10, 'Instance', null);
-        this._text_12 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_12 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_13 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_14 = this.renderer.createText(this._el_13, 'Unassigned variables', null);
-        this._text_15 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_15 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_16 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_17 = this.renderer.createText(this._el_16, 'Total cost', null);
-        this._text_18 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_18 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_19 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_20 = this.renderer.createText(this._el_19, 'Student conflicts', null);
-        this._text_21 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_21 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_22 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_23 = this.renderer.createText(this._el_22, 'Time preferences', null);
-        this._text_24 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_24 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_25 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_26 = this.renderer.createText(this._el_25, 'Room preferences', null);
-        this._text_27 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_27 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_28 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_29 = this.renderer.createText(this._el_28, 'Distribution preferences', null);
-        this._text_30 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_30 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_31 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_32 = this.renderer.createText(this._el_31, 'Download', null);
-        this._text_33 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_33 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_34 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_35 = this.renderer.createText(this._el_34, 'Technique', null);
-        this._text_36 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_36 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_37 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_38 = this.renderer.createText(this._el_37, 'Submission time', null);
-        this._text_39 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._text_39 = this.renderer.createText(this._el_6, '\n                        ', null);
         this._el_40 = this.renderer.createElement(this._el_6, 'th', null);
         this._text_41 = this.renderer.createText(this._el_40, 'Validator info', null);
-        this._text_42 = this.renderer.createText(this._el_6, '\n            ', null);
-        this._text_43 = this.renderer.createText(this._el_4, '\n            ', null);
-        this._text_44 = this.renderer.createText(this._el_2, '\n            ', null);
+        this._text_42 = this.renderer.createText(this._el_6, '\n                    ', null);
+        this._text_43 = this.renderer.createText(this._el_4, '\n                    ', null);
+        this._text_44 = this.renderer.createText(this._el_2, '\n                    ', null);
         this._anchor_45 = this.renderer.createTemplateAnchor(this._el_2, null);
         this._appEl_45 = new import2.AppElement(45, 2, this, this._anchor_45);
         this._TemplateRef_45_5 = new import16.TemplateRef_(this._appEl_45, viewFactory_UserSolutionsComponent7);
         this._NgFor_45_6 = new import29.NgFor(this._appEl_45.vcRef, this._TemplateRef_45_5, this.parent.parentInjector.get(import23.IterableDiffers), this.parent.ref);
-        this._text_46 = this.renderer.createText(this._el_2, '\n        ', null);
-        this._text_47 = this.renderer.createText(this._el_0, '\n    ', null);
+        this._text_46 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_47 = this.renderer.createText(this._el_0, '\n            ', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [
             this._el_0,
@@ -940,9 +962,9 @@ var _View_UserSolutionsComponent7 = (function (_super) {
     }
     _View_UserSolutionsComponent7.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'tbody', null);
-        this._text_1 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'tr', null);
-        this._text_3 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_3 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'td', null);
         this._el_5 = this.renderer.createElement(this._el_4, 'input', null);
         this.renderer.setElementAttribute(this._el_5, 'type', 'checkbox');
@@ -951,54 +973,54 @@ var _View_UserSolutionsComponent7 = (function (_super) {
         this._NgModel_5_5 = new import31.NgModel(null, null, null, this._NG_VALUE_ACCESSOR_5_4);
         this._NgControl_5_6 = this._NgModel_5_5;
         this._NgControlStatus_5_7 = new import19.NgControlStatus(this._NgControl_5_6);
-        this._text_6 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_6 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_7 = this.renderer.createElement(this._el_2, 'td', null);
         this._text_8 = this.renderer.createText(this._el_7, '', null);
-        this._text_9 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_9 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_10 = this.renderer.createElement(this._el_2, 'td', null);
         this._text_11 = this.renderer.createText(this._el_10, '', null);
-        this._text_12 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_12 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_13 = this.renderer.createElement(this._el_2, 'td', null);
         this._text_14 = this.renderer.createText(this._el_13, '', null);
-        this._text_15 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_15 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_16 = this.renderer.createElement(this._el_2, 'td', null);
         this._text_17 = this.renderer.createText(this._el_16, '', null);
-        this._text_18 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_18 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_19 = this.renderer.createElement(this._el_2, 'td', null);
         this._text_20 = this.renderer.createText(this._el_19, '', null);
-        this._text_21 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_21 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_22 = this.renderer.createElement(this._el_2, 'td', null);
         this._text_23 = this.renderer.createText(this._el_22, '', null);
-        this._text_24 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_24 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_25 = this.renderer.createElement(this._el_2, 'td', null);
         this._text_26 = this.renderer.createText(this._el_25, '', null);
-        this._text_27 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_27 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_28 = this.renderer.createElement(this._el_2, 'td', null);
         this._el_29 = this.renderer.createElement(this._el_28, 'a', null);
         this._text_30 = this.renderer.createText(this._el_29, 'download', null);
-        this._text_31 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_31 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_32 = this.renderer.createElement(this._el_2, 'td', null);
         this._text_33 = this.renderer.createText(this._el_32, '', null);
-        this._text_34 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_34 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_35 = this.renderer.createElement(this._el_2, 'td', null);
         this._text_36 = this.renderer.createText(this._el_35, '', null);
-        this._text_37 = this.renderer.createText(this._el_2, '\n                ', null);
+        this._text_37 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_38 = this.renderer.createElement(this._el_2, 'td', null);
         this._el_39 = this.renderer.createElement(this._el_38, 'a', null);
         this._RouterLinkWithHref_39_3 = new import32.RouterLinkWithHref(this.parent.parent.parentInjector.get(import33.Router), this.parent.parent.parentInjector.get(import34.ActivatedRoute), this.parent.parent.parentInjector.get(import35.LocationStrategy));
         this._text_40 = this.renderer.createText(this._el_39, 'view', null);
-        this._text_41 = this.renderer.createText(this._el_2, '\n            ', null);
-        this._text_42 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._text_41 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_42 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._anchor_43 = this.renderer.createTemplateAnchor(this._el_0, null);
         this._appEl_43 = new import2.AppElement(43, 0, this, this._anchor_43);
         this._TemplateRef_43_5 = new import16.TemplateRef_(this._appEl_43, viewFactory_UserSolutionsComponent8);
         this._NgIf_43_6 = new import14.NgIf(this._appEl_43.vcRef, this._TemplateRef_43_5);
-        this._text_44 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._text_44 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._anchor_45 = this.renderer.createTemplateAnchor(this._el_0, null);
         this._appEl_45 = new import2.AppElement(45, 0, this, this._anchor_45);
         this._TemplateRef_45_5 = new import16.TemplateRef_(this._appEl_45, viewFactory_UserSolutionsComponent9);
         this._NgIf_45_6 = new import14.NgIf(this._appEl_45.vcRef, this._TemplateRef_45_5);
-        this._text_46 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._text_46 = this.renderer.createText(this._el_0, '\n                    ', null);
         var disposable_0 = this.renderer.listen(this._el_5, 'ngModelChange', this.eventHandler(this._handle_ngModelChange_5_0.bind(this)));
         var disposable_1 = this.renderer.listen(this._el_5, 'change', this.eventHandler(this._handle_change_5_1.bind(this)));
         var disposable_2 = this.renderer.listen(this._el_5, 'blur', this.eventHandler(this._handle_blur_5_2.bind(this)));
@@ -1149,7 +1171,7 @@ var _View_UserSolutionsComponent7 = (function (_super) {
             changes['queryParams'] = new import7.SimpleChange(this._expr_21, currVal_21);
             this._expr_21 = currVal_21;
         }
-        var currVal_22 = this._arr_0('/#mysolutions/validatorinfo');
+        var currVal_22 = this._arr_0('/#solution/validatorinfo');
         if (import4.checkBinding(throwOnChange, this._expr_22, currVal_22)) {
             this._RouterLinkWithHref_39_3.routerLink = currVal_22;
             if ((changes === null)) {
@@ -1296,18 +1318,18 @@ var _View_UserSolutionsComponent8 = (function (_super) {
     }
     _View_UserSolutionsComponent8.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'tr', null);
-        this._text_1 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'td', null);
-        this._text_3 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_3 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_4 = this.renderer.createElement(this._el_0, 'td', null);
         this._el_5 = this.renderer.createElement(this._el_4, 'strong', null);
         this._text_6 = this.renderer.createText(this._el_5, 'Citation: ', null);
-        this._text_7 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_7 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_8 = this.renderer.createElement(this._el_0, 'td', null);
         this.renderer.setElementAttribute(this._el_8, 'colspan', '10');
         this.renderer.setElementAttribute(this._el_8, 'id', 'paper');
         this._text_9 = this.renderer.createText(this._el_8, '', null);
-        this._text_10 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._text_10 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [
             this._el_0,
@@ -1345,19 +1367,19 @@ var _View_UserSolutionsComponent9 = (function (_super) {
     }
     _View_UserSolutionsComponent9.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'tr', null);
-        this._text_1 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'td', null);
-        this._text_3 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_3 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_4 = this.renderer.createElement(this._el_0, 'td', null);
         this._el_5 = this.renderer.createElement(this._el_4, 'strong', null);
         this._text_6 = this.renderer.createText(this._el_5, 'Url: ', null);
-        this._text_7 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_7 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_8 = this.renderer.createElement(this._el_0, 'td', null);
         this.renderer.setElementAttribute(this._el_8, 'colspan', '10');
         this.renderer.setElementAttribute(this._el_8, 'id', 'paper');
         this._el_9 = this.renderer.createElement(this._el_8, 'a', null);
         this._text_10 = this.renderer.createText(this._el_9, '', null);
-        this._text_11 = this.renderer.createText(this._el_0, '\n            ', null);
+        this._text_11 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._expr_0 = import7.UNINITIALIZED;
         this._expr_1 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [

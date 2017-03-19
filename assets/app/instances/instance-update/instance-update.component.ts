@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild, Input } from "@angular/core";
-import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 
 import { InstanceService } from "../instance.service";
@@ -48,13 +48,13 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
     }
 
-    onSubmit(form: NgForm){
+    onSubmit(){
         this.submitted = true;
 
-        if (form.valid){
-            this.instance.order = form.value.order;
-            this.instance.name = form.value.name;
-            this.instance.description = form.value.description;
+        if (this.myForm.valid){
+            this.instance.order = this.myForm.value.order;
+            this.instance.name = this.myForm.value.name;
+            this.instance.description = this.myForm.value.description;
 
             this.instanceService.updateInstanceTextFields(this.instance)
                 .subscribe(

@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 import { InstanceService } from "../instance.service";
-import { AuthService } from "../../auth/auth.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import { SessionStorageService } from "../../shared/session-storage.service";
 export var InstanceListComponent = (function () {
-    function InstanceListComponent(instanceService, authService, flashMessageService) {
+    function InstanceListComponent(instanceService, sessionStorageService, flashMessageService) {
         this.instanceService = instanceService;
-        this.authService = authService;
+        this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
         this.fileSaver = require('file-saver');
     }
@@ -41,7 +41,7 @@ export var InstanceListComponent = (function () {
         }, function (error) { return console.log("Error downloading the file."); });
     };
     InstanceListComponent.prototype.isAdmin = function () {
-        return this.authService.isAdmin();
+        return this.sessionStorageService.isAdmin();
     };
     InstanceListComponent.decorators = [
         { type: Component, args: [{
@@ -52,7 +52,7 @@ export var InstanceListComponent = (function () {
     /** @nocollapse */
     InstanceListComponent.ctorParameters = [
         { type: InstanceService, },
-        { type: AuthService, },
+        { type: SessionStorageService, },
         { type: FlashMessageService, },
     ];
     return InstanceListComponent;

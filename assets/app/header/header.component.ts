@@ -1,30 +1,38 @@
-import { Component } from "@angular/core";
-import { AuthService } from "../auth/auth.service";
+import {Component, OnInit} from "@angular/core";
 import { Router } from "@angular/router";
+import {SessionStorageService} from "../shared/session-storage.service";
 
 @Component({
     selector: 'app-header',
     templateUrl: 'header.component.html'
 })
-export class HeaderComponent{
+export class HeaderComponent implements OnInit {
 
-    constructor(private authService: AuthService, private router: Router) {
+    constructor(private sessionStorageService: SessionStorageService,
+                private router: Router) {}
+
+    ngOnInit(){
+        this.sessionStorageService.setSessionStorageCompetitionIsOn();
     }
 
     isLoggedIn() {
-        return this.authService.isLoggedIn();
+        return this.sessionStorageService.isLoggedIn();
     }
 
     onLogout(){
-        this.authService.logout();
+        this.sessionStorageService.logout();
         this.router.navigate(['/#home']);
     }
 
     isAdmin(){
-        return this.authService.isAdmin();
+        return this.sessionStorageService.isAdmin();
     }
 
     getEmailLoggedIn(){
-        return this.authService.getEmailLoggedIn();
+        return this.sessionStorageService.getEmailLoggedIn();
+    }
+
+    competitionIsOn(){
+        return this.sessionStorageService.getCompetitionIsOn();
     }
 }

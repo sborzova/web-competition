@@ -4,10 +4,12 @@ import { SolutionService } from "../solution.service";
 import { SolutionFindWorse } from "../solution-find-worse.model";
 import { Solution } from "../../user-solutions/solution.model";
 import { SolutionCreate } from "../solution-create.model";
+import { SessionStorageService } from "../../shared/session-storage.service";
 export var SuccessValidationComponent = (function () {
-    function SuccessValidationComponent(solutionService) {
+    function SuccessValidationComponent(solutionService, sessionStorageService) {
         var _this = this;
         this.solutionService = solutionService;
+        this.sessionStorageService = sessionStorageService;
         this.display = 'none';
         this.submitted = false;
         this.citationMissing = false;
@@ -77,6 +79,9 @@ export var SuccessValidationComponent = (function () {
     SuccessValidationComponent.prototype.isCitationMissing = function () {
         return this.citationMissing;
     };
+    SuccessValidationComponent.prototype.competitionIsOn = function () {
+        return this.sessionStorageService.getCompetitionIsOn();
+    };
     SuccessValidationComponent.decorators = [
         { type: Component, args: [{
                     selector: 'app-success-validation',
@@ -86,6 +91,7 @@ export var SuccessValidationComponent = (function () {
     /** @nocollapse */
     SuccessValidationComponent.ctorParameters = [
         { type: SolutionService, },
+        { type: SessionStorageService, },
     ];
     return SuccessValidationComponent;
 }());

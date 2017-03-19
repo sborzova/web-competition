@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NgForm, Validators, FormControl } from "@angular/forms";
+import { FormGroup, Validators, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { User } from "../user.model";
@@ -21,11 +21,11 @@ export class ProfileEditPasswordComponent implements OnInit{
                 private flashMessageService: FlashMessageService,
                 private router: Router) {}
 
-    onSubmit(form: NgForm){
+    onSubmit(){
         this.submitted = true;
-        if (form.valid){
-            this.user.confirmPassword = form.value.current;
-            this.user.newPassword = form.value.newPassword;
+        if (this.myForm.valid){
+            this.user.confirmPassword = this.myForm.value.current;
+            this.user.newPassword = this.myForm.value.newPassword;
             this.userService.updatePassword(this.user)
                 .subscribe(
                     () => {

@@ -1,5 +1,5 @@
 <div *ngIf="validation" [ngStyle]="{'display': display}">
-    <div class="col-sm-8 col-sm-offset-2" style="padding: 5% 0% 5% 0%">
+    <div class="col-xs-12 col-md-8 col-md-offset-2" style="padding: 5% 0% 5% 0%">
         <table class="table table-striped table-borderless">
             <tr>
                 <th>Unassigned variables</th>
@@ -32,7 +32,7 @@
         </table>
     </div>
 
-    <div class="jumbotron col-sm-8 col-sm-offset-2">
+    <div *ngIf="competitionIsOn()" class="jumbotron col-xs-12 col-md-8 col-md-offset-2">
         <div class="text-center">
             <h2>Upload solution</h2>
         </div>

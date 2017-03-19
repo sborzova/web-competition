@@ -187,7 +187,6 @@ router.patch('/user', function (req, res, next) {
         user.firstName = req.body.firstName;
         user.lastName = req.body.lastName;
         user.email = req.body.email;
-        user.password = bcrypt.hashSync(req.body.password, 10);
 
         user.save(function (err, result) {
             if (err) {
@@ -218,6 +217,10 @@ router.patch('/user', function (req, res, next) {
         });
     });
 });
+
+/**
+ * admin update user
+ */
 
 router.patch('/user/:id', function (req, res, next) {
     User.findById(req.params.id, function(err, user) {
@@ -294,6 +297,9 @@ router.patch('/password', function (req, res, next) {
     });
 });
 
+/**
+ *  admin update password
+ */
 router.patch('/password/:id', function (req, res, next) {
     User.findById(req.params.id, function(err, user) {
         if (err) {

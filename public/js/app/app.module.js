@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from "@angular/http";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
-import { AuthService } from "./auth/auth.service";
 import { routing } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
+import { PreferenceService } from "./preference/preference.service";
+import { SessionStorageService } from "./shared/session-storage.service";
 import { FlashMessageComponent } from "./flash-message/flash-message.component";
 import { FlashMessageService } from "./flash-message/flash-messages.service";
 export var AppModule = (function () {
@@ -15,17 +16,18 @@ export var AppModule = (function () {
         { type: NgModule, args: [{
                     declarations: [
                         AppComponent,
-                        FlashMessageComponent,
                         HeaderComponent,
                         HomeComponent,
+                        FlashMessageComponent
                     ],
                     imports: [
                         BrowserModule,
                         HttpModule,
-                        routing
+                        routing,
                     ],
                     providers: [
-                        AuthService,
+                        PreferenceService,
+                        SessionStorageService,
                         FlashMessageService
                     ],
                     bootstrap: [AppComponent]

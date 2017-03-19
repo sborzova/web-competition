@@ -4,16 +4,21 @@ import {CommonModule} from "@angular/common";
 import {SignupComponent} from "./signup.component";
 import {signupRouting} from "./signup.routing";
 import {EqualValidator} from "../validator-equal.directive";
+import {AuthService} from "../auth.service";
+import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
 @NgModule({
     declarations: [
         SignupComponent,
-        EqualValidator
+        EqualValidator,
     ],
     imports: [
         ReactiveFormsModule,
         CommonModule,
-        signupRouting
+        signupRouting,
+    ],
+    providers: [
+        AuthService,
     ]
 })
 export class SignupModule {}

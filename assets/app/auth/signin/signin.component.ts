@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 
 import { User } from "../user.model";
 import { AuthService } from "../auth.service";
+import {SessionStorageService} from "../../shared/session-storage.service";
 
 @Component({
     selector: 'app-signin',
@@ -14,8 +15,8 @@ export class SigninComponent {
     private submitted: boolean = false;
 
     constructor(private authService: AuthService,
-                private router: Router) {
-    }
+                private sessionStorageService: SessionStorageService,
+                private router: Router) {}
 
     onSubmit() {
         this.submitted = true;
@@ -26,7 +27,7 @@ export class SigninComponent {
             this.authService.signin(user)
                 .subscribe(
                     data => {
-                        this.authService.setSessionStorage(data);
+                        this.sessionStorageService.setSessionStorageAuth(data);
                         this.router.navigate(['/#home']);
                     },
                     error => {

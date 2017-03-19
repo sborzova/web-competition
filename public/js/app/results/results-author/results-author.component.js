@@ -1,8 +1,10 @@
 import { Component } from "@angular/core";
 import { SolutionService } from "../../validation/solution.service";
+import { ResultsService } from "../results.service";
 export var ResultsAuthorComponent = (function () {
-    function ResultsAuthorComponent(solutionService) {
+    function ResultsAuthorComponent(solutionService, resultsService) {
         this.solutionService = solutionService;
+        this.resultsService = resultsService;
         this.display = 'none';
         this.fileSaver = require('file-saver');
         this.showPapers = false;
@@ -35,6 +37,36 @@ export var ResultsAuthorComponent = (function () {
         var solutions = this.solutions.filter(function (s) { return s.technique === technique; });
         this.solutionService.resultsAuthorTechniqueShow(solutions);
     };
+    ResultsAuthorComponent.prototype.onQualityAsc = function () {
+        this.solutions = this.resultsService.sortQualityAsc(this.solutions);
+    };
+    ResultsAuthorComponent.prototype.onQualityDesc = function () {
+        this.solutions = this.resultsService.sortQualityDesc(this.solutions);
+    };
+    ResultsAuthorComponent.prototype.onScAsc = function () {
+        this.solutions = this.resultsService.sortScAsc(this.solutions);
+    };
+    ResultsAuthorComponent.prototype.onScDesc = function () {
+        this.solutions = this.resultsService.sortScDesc(this.solutions);
+    };
+    ResultsAuthorComponent.prototype.onTimeAsc = function () {
+        this.solutions = this.resultsService.sortTimeAsc(this.solutions);
+    };
+    ResultsAuthorComponent.prototype.onTimeDesc = function () {
+        this.solutions = this.resultsService.sortTimeDesc(this.solutions);
+    };
+    ResultsAuthorComponent.prototype.onRoomAsc = function () {
+        this.solutions = this.resultsService.sortRoomAsc(this.solutions);
+    };
+    ResultsAuthorComponent.prototype.onRoomDesc = function () {
+        this.solutions = this.resultsService.sortRoomDesc(this.solutions);
+    };
+    ResultsAuthorComponent.prototype.onDistributionAsc = function () {
+        this.solutions = this.resultsService.sortDistributionAsc(this.solutions);
+    };
+    ResultsAuthorComponent.prototype.onDistributionDesc = function () {
+        this.solutions = this.resultsService.sortDistributionDesc(this.solutions);
+    };
     ResultsAuthorComponent.decorators = [
         { type: Component, args: [{
                     selector: 'app-results-author',
@@ -44,6 +76,7 @@ export var ResultsAuthorComponent = (function () {
     /** @nocollapse */
     ResultsAuthorComponent.ctorParameters = [
         { type: SolutionService, },
+        { type: ResultsService, },
     ];
     return ResultsAuthorComponent;
 }());

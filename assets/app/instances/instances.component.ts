@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import { AuthService } from "../auth/auth.service";
+import {SessionStorageService} from "../shared/session-storage.service";
 
 @Component({
     selector: 'app-instances',
@@ -9,21 +10,31 @@ import { AuthService } from "../auth/auth.service";
 export class InstancesComponent implements OnInit{
     display = 'none';
 
-    constructor(private authService: AuthService){
-    }
+    constructor(private sessionStorageService: SessionStorageService){}
 
 
     ngOnInit(){
-        if (!this.isLoggedIn()){
+        if (!this.showInstances()){
             this.display = 'block';
         }
     }
 
+    showInstances(){
+        let loggedIn = this.isLoggedIn();
+        let competitionIsOn = this.competitionIsOn();
+        let isAdmin = this.isAdmin();
+        return !(!loggedIn && competitionIsOn) || isAdmin;
+    }
+
     isAdmin(){
-       return this.authService.isAdmin();
+       return this.sessionStorageService.isAdmin();
     }
 
     isLoggedIn(){
-        return this.authService.isLoggedIn();
+        return this.sessionStorageService.isLoggedIn();
+    }
+
+    competitionIsOn(){
+        return this.sessionStorageService.getCompetitionIsOn();
     }
 }

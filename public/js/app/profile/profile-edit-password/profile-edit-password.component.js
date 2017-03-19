@@ -10,12 +10,12 @@ export var ProfileEditPasswordComponent = (function () {
         this.router = router;
         this.submitted = false;
     }
-    ProfileEditPasswordComponent.prototype.onSubmit = function (form) {
+    ProfileEditPasswordComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
-        if (form.valid) {
-            this.user.confirmPassword = form.value.current;
-            this.user.newPassword = form.value.newPassword;
+        if (this.myForm.valid) {
+            this.user.confirmPassword = this.myForm.value.current;
+            this.user.newPassword = this.myForm.value.newPassword;
             this.userService.updatePassword(this.user)
                 .subscribe(function () {
                 _this.flashMessageService.showMessage('Password was updated.', 'alert-success');

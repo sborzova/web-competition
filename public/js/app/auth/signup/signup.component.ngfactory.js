@@ -82,190 +82,195 @@ var _View_SignupComponent0 = (function (_super) {
     _View_SignupComponent0.prototype.createInternal = function (rootSelector) {
         var parentRenderNode = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
         this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
-        this.renderer.setElementAttribute(this._el_0, 'class', 'row');
+        this.renderer.setElementAttribute(this._el_0, 'class', 'container');
+        this.renderer.setElementAttribute(this._el_0, 'style', 'margin-top: 3%');
         this._text_1 = this.renderer.createText(this._el_0, '\n    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
-        this.renderer.setElementAttribute(this._el_2, 'class', 'col-sm-6 col-sm-offset-3');
+        this.renderer.setElementAttribute(this._el_2, 'class', 'row');
         this._text_3 = this.renderer.createText(this._el_2, '\n        ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
-        this.renderer.setElementAttribute(this._el_4, 'class', 'jumbotron');
+        this.renderer.setElementAttribute(this._el_4, 'class', 'col-xs-12 col-md-6 col-md-offset-3');
         this._text_5 = this.renderer.createText(this._el_4, '\n            ', null);
         this._el_6 = this.renderer.createElement(this._el_4, 'div', null);
-        this.renderer.setElementAttribute(this._el_6, 'class', 'text-center');
+        this.renderer.setElementAttribute(this._el_6, 'class', 'jumbotron');
         this._text_7 = this.renderer.createText(this._el_6, '\n                ', null);
-        this._el_8 = this.renderer.createElement(this._el_6, 'h2', null);
-        this._text_9 = this.renderer.createText(this._el_8, 'Create account', null);
-        this._text_10 = this.renderer.createText(this._el_6, '\n            ', null);
-        this._text_11 = this.renderer.createText(this._el_4, '\n            ', null);
-        this._el_12 = this.renderer.createElement(this._el_4, 'form', null);
-        this._FormGroupDirective_12_3 = new import13.FormGroupDirective(null, null);
-        this._ControlContainer_12_4 = this._FormGroupDirective_12_3;
-        this._NgControlStatusGroup_12_5 = new import14.NgControlStatusGroup(this._ControlContainer_12_4);
-        this._text_13 = this.renderer.createText(this._el_12, '\n                ', null);
-        this._el_14 = this.renderer.createElement(this._el_12, 'div', null);
-        this.renderer.setElementAttribute(this._el_14, 'class', 'form-group');
-        this._NgClass_14_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_14), this.renderer);
+        this._el_8 = this.renderer.createElement(this._el_6, 'div', null);
+        this.renderer.setElementAttribute(this._el_8, 'class', 'text-center');
+        this._text_9 = this.renderer.createText(this._el_8, '\n                    ', null);
+        this._el_10 = this.renderer.createElement(this._el_8, 'h2', null);
+        this._text_11 = this.renderer.createText(this._el_10, 'Create account', null);
+        this._text_12 = this.renderer.createText(this._el_8, '\n                ', null);
+        this._text_13 = this.renderer.createText(this._el_6, '\n                ', null);
+        this._el_14 = this.renderer.createElement(this._el_6, 'form', null);
+        this._FormGroupDirective_14_3 = new import13.FormGroupDirective(null, null);
+        this._ControlContainer_14_4 = this._FormGroupDirective_14_3;
+        this._NgControlStatusGroup_14_5 = new import14.NgControlStatusGroup(this._ControlContainer_14_4);
         this._text_15 = this.renderer.createText(this._el_14, '\n                    ', null);
-        this._el_16 = this.renderer.createElement(this._el_14, 'label', null);
-        this.renderer.setElementAttribute(this._el_16, 'for', 'firstName');
-        this._text_17 = this.renderer.createText(this._el_16, '\n                        First name\n                    ', null);
-        this._text_18 = this.renderer.createText(this._el_14, '\n                        ', null);
-        this._el_19 = this.renderer.createElement(this._el_14, 'input', null);
-        this.renderer.setElementAttribute(this._el_19, 'class', 'form-control');
-        this.renderer.setElementAttribute(this._el_19, 'id', 'firstName');
-        this.renderer.setElementAttribute(this._el_19, 'type', 'text');
-        this._DefaultValueAccessor_19_3 = new import16.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_19));
-        this._NG_VALUE_ACCESSOR_19_4 = [this._DefaultValueAccessor_19_3];
-        this._FormControlDirective_19_5 = new import17.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_19_4);
-        this._NgControl_19_6 = this._FormControlDirective_19_5;
-        this._NgControlStatus_19_7 = new import14.NgControlStatus(this._NgControl_19_6);
-        this._text_20 = this.renderer.createText(this._el_14, '\n                    ', null);
-        this._anchor_21 = this.renderer.createTemplateAnchor(this._el_14, null);
-        this._appEl_21 = new import2.AppElement(21, 14, this, this._anchor_21);
-        this._TemplateRef_21_5 = new import23.TemplateRef_(this._appEl_21, viewFactory_SignupComponent1);
-        this._NgIf_21_6 = new import18.NgIf(this._appEl_21.vcRef, this._TemplateRef_21_5);
-        this._text_22 = this.renderer.createText(this._el_14, '\n                    ', null);
-        this._anchor_23 = this.renderer.createTemplateAnchor(this._el_14, null);
-        this._appEl_23 = new import2.AppElement(23, 14, this, this._anchor_23);
-        this._TemplateRef_23_5 = new import23.TemplateRef_(this._appEl_23, viewFactory_SignupComponent2);
+        this._el_16 = this.renderer.createElement(this._el_14, 'div', null);
+        this.renderer.setElementAttribute(this._el_16, 'class', 'form-group');
+        this._NgClass_16_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_16), this.renderer);
+        this._text_17 = this.renderer.createText(this._el_16, '\n                        ', null);
+        this._el_18 = this.renderer.createElement(this._el_16, 'label', null);
+        this.renderer.setElementAttribute(this._el_18, 'for', 'firstName');
+        this._text_19 = this.renderer.createText(this._el_18, '\n                            First name\n                        ', null);
+        this._text_20 = this.renderer.createText(this._el_16, '\n                        ', null);
+        this._el_21 = this.renderer.createElement(this._el_16, 'input', null);
+        this.renderer.setElementAttribute(this._el_21, 'class', 'form-control');
+        this.renderer.setElementAttribute(this._el_21, 'id', 'firstName');
+        this.renderer.setElementAttribute(this._el_21, 'type', 'text');
+        this._DefaultValueAccessor_21_3 = new import16.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_21));
+        this._NG_VALUE_ACCESSOR_21_4 = [this._DefaultValueAccessor_21_3];
+        this._FormControlDirective_21_5 = new import17.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_21_4);
+        this._NgControl_21_6 = this._FormControlDirective_21_5;
+        this._NgControlStatus_21_7 = new import14.NgControlStatus(this._NgControl_21_6);
+        this._text_22 = this.renderer.createText(this._el_16, '\n                        ', null);
+        this._anchor_23 = this.renderer.createTemplateAnchor(this._el_16, null);
+        this._appEl_23 = new import2.AppElement(23, 16, this, this._anchor_23);
+        this._TemplateRef_23_5 = new import23.TemplateRef_(this._appEl_23, viewFactory_SignupComponent1);
         this._NgIf_23_6 = new import18.NgIf(this._appEl_23.vcRef, this._TemplateRef_23_5);
-        this._text_24 = this.renderer.createText(this._el_14, '\n                ', null);
-        this._text_25 = this.renderer.createText(this._el_12, '\n                ', null);
-        this._el_26 = this.renderer.createElement(this._el_12, 'div', null);
-        this.renderer.setElementAttribute(this._el_26, 'class', 'form-group');
-        this._NgClass_26_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_26), this.renderer);
-        this._text_27 = this.renderer.createText(this._el_26, '\n                    ', null);
-        this._el_28 = this.renderer.createElement(this._el_26, 'label', null);
-        this.renderer.setElementAttribute(this._el_28, 'for', 'lastName');
-        this._text_29 = this.renderer.createText(this._el_28, '\n                        Last name\n                    ', null);
-        this._text_30 = this.renderer.createText(this._el_26, '\n                        ', null);
-        this._el_31 = this.renderer.createElement(this._el_26, 'input', null);
-        this.renderer.setElementAttribute(this._el_31, 'class', 'form-control');
-        this.renderer.setElementAttribute(this._el_31, 'id', 'lastName');
-        this.renderer.setElementAttribute(this._el_31, 'type', 'text');
-        this._DefaultValueAccessor_31_3 = new import16.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_31));
-        this._NG_VALUE_ACCESSOR_31_4 = [this._DefaultValueAccessor_31_3];
-        this._FormControlDirective_31_5 = new import17.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_31_4);
-        this._NgControl_31_6 = this._FormControlDirective_31_5;
-        this._NgControlStatus_31_7 = new import14.NgControlStatus(this._NgControl_31_6);
-        this._text_32 = this.renderer.createText(this._el_26, '\n                    ', null);
-        this._anchor_33 = this.renderer.createTemplateAnchor(this._el_26, null);
-        this._appEl_33 = new import2.AppElement(33, 26, this, this._anchor_33);
-        this._TemplateRef_33_5 = new import23.TemplateRef_(this._appEl_33, viewFactory_SignupComponent3);
-        this._NgIf_33_6 = new import18.NgIf(this._appEl_33.vcRef, this._TemplateRef_33_5);
-        this._text_34 = this.renderer.createText(this._el_26, '\n                    ', null);
-        this._anchor_35 = this.renderer.createTemplateAnchor(this._el_26, null);
-        this._appEl_35 = new import2.AppElement(35, 26, this, this._anchor_35);
-        this._TemplateRef_35_5 = new import23.TemplateRef_(this._appEl_35, viewFactory_SignupComponent4);
+        this._text_24 = this.renderer.createText(this._el_16, '\n                        ', null);
+        this._anchor_25 = this.renderer.createTemplateAnchor(this._el_16, null);
+        this._appEl_25 = new import2.AppElement(25, 16, this, this._anchor_25);
+        this._TemplateRef_25_5 = new import23.TemplateRef_(this._appEl_25, viewFactory_SignupComponent2);
+        this._NgIf_25_6 = new import18.NgIf(this._appEl_25.vcRef, this._TemplateRef_25_5);
+        this._text_26 = this.renderer.createText(this._el_16, '\n                    ', null);
+        this._text_27 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._el_28 = this.renderer.createElement(this._el_14, 'div', null);
+        this.renderer.setElementAttribute(this._el_28, 'class', 'form-group');
+        this._NgClass_28_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_28), this.renderer);
+        this._text_29 = this.renderer.createText(this._el_28, '\n                        ', null);
+        this._el_30 = this.renderer.createElement(this._el_28, 'label', null);
+        this.renderer.setElementAttribute(this._el_30, 'for', 'lastName');
+        this._text_31 = this.renderer.createText(this._el_30, '\n                            Last name\n                        ', null);
+        this._text_32 = this.renderer.createText(this._el_28, '\n                        ', null);
+        this._el_33 = this.renderer.createElement(this._el_28, 'input', null);
+        this.renderer.setElementAttribute(this._el_33, 'class', 'form-control');
+        this.renderer.setElementAttribute(this._el_33, 'id', 'lastName');
+        this.renderer.setElementAttribute(this._el_33, 'type', 'text');
+        this._DefaultValueAccessor_33_3 = new import16.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_33));
+        this._NG_VALUE_ACCESSOR_33_4 = [this._DefaultValueAccessor_33_3];
+        this._FormControlDirective_33_5 = new import17.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_33_4);
+        this._NgControl_33_6 = this._FormControlDirective_33_5;
+        this._NgControlStatus_33_7 = new import14.NgControlStatus(this._NgControl_33_6);
+        this._text_34 = this.renderer.createText(this._el_28, '\n                        ', null);
+        this._anchor_35 = this.renderer.createTemplateAnchor(this._el_28, null);
+        this._appEl_35 = new import2.AppElement(35, 28, this, this._anchor_35);
+        this._TemplateRef_35_5 = new import23.TemplateRef_(this._appEl_35, viewFactory_SignupComponent3);
         this._NgIf_35_6 = new import18.NgIf(this._appEl_35.vcRef, this._TemplateRef_35_5);
-        this._text_36 = this.renderer.createText(this._el_26, '\n                ', null);
-        this._text_37 = this.renderer.createText(this._el_12, '\n                ', null);
-        this._el_38 = this.renderer.createElement(this._el_12, 'div', null);
-        this.renderer.setElementAttribute(this._el_38, 'class', 'form-group');
-        this._NgClass_38_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_38), this.renderer);
-        this._text_39 = this.renderer.createText(this._el_38, '\n                    ', null);
-        this._el_40 = this.renderer.createElement(this._el_38, 'label', null);
-        this.renderer.setElementAttribute(this._el_40, 'for', 'email');
-        this._text_41 = this.renderer.createText(this._el_40, '\n                        Email address\n                    ', null);
-        this._text_42 = this.renderer.createText(this._el_38, '\n                        ', null);
-        this._el_43 = this.renderer.createElement(this._el_38, 'input', null);
-        this.renderer.setElementAttribute(this._el_43, 'class', 'form-control');
-        this.renderer.setElementAttribute(this._el_43, 'id', 'email');
-        this.renderer.setElementAttribute(this._el_43, 'type', 'email');
-        this._DefaultValueAccessor_43_3 = new import16.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_43));
-        this._NG_VALUE_ACCESSOR_43_4 = [this._DefaultValueAccessor_43_3];
-        this._FormControlDirective_43_5 = new import17.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_43_4);
-        this._NgControl_43_6 = this._FormControlDirective_43_5;
-        this._NgControlStatus_43_7 = new import14.NgControlStatus(this._NgControl_43_6);
-        this._text_44 = this.renderer.createText(this._el_38, '\n                    ', null);
-        this._anchor_45 = this.renderer.createTemplateAnchor(this._el_38, null);
-        this._appEl_45 = new import2.AppElement(45, 38, this, this._anchor_45);
-        this._TemplateRef_45_5 = new import23.TemplateRef_(this._appEl_45, viewFactory_SignupComponent5);
-        this._NgIf_45_6 = new import18.NgIf(this._appEl_45.vcRef, this._TemplateRef_45_5);
-        this._text_46 = this.renderer.createText(this._el_38, '\n                ', null);
-        this._text_47 = this.renderer.createText(this._el_12, '\n                ', null);
-        this._el_48 = this.renderer.createElement(this._el_12, 'div', null);
-        this.renderer.setElementAttribute(this._el_48, 'class', 'form-group');
-        this._NgClass_48_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_48), this.renderer);
-        this._text_49 = this.renderer.createText(this._el_48, '\n                    ', null);
-        this._el_50 = this.renderer.createElement(this._el_48, 'label', null);
-        this.renderer.setElementAttribute(this._el_50, 'for', 'password');
-        this._text_51 = this.renderer.createText(this._el_50, '\n                        Create a password\n                    ', null);
-        this._text_52 = this.renderer.createText(this._el_48, '\n                        ', null);
-        this._el_53 = this.renderer.createElement(this._el_48, 'input', null);
-        this.renderer.setElementAttribute(this._el_53, 'class', 'form-control');
-        this.renderer.setElementAttribute(this._el_53, 'id', 'password');
-        this.renderer.setElementAttribute(this._el_53, 'reverse', 'true');
-        this.renderer.setElementAttribute(this._el_53, 'type', 'password');
-        this.renderer.setElementAttribute(this._el_53, 'validateEqual', 'confirmPassword');
-        this._DefaultValueAccessor_53_3 = new import16.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_53));
-        this._EqualValidator_53_4 = new import19.EqualValidator('confirmPassword', 'true');
-        this._NG_VALIDATORS_53_5 = [this._EqualValidator_53_4];
-        this._NG_VALUE_ACCESSOR_53_6 = [this._DefaultValueAccessor_53_3];
-        this._FormControlDirective_53_7 = new import17.FormControlDirective(this._NG_VALIDATORS_53_5, null, this._NG_VALUE_ACCESSOR_53_6);
-        this._NgControl_53_8 = this._FormControlDirective_53_7;
-        this._NgControlStatus_53_9 = new import14.NgControlStatus(this._NgControl_53_8);
-        this._text_54 = this.renderer.createText(this._el_48, '\n                    ', null);
-        this._anchor_55 = this.renderer.createTemplateAnchor(this._el_48, null);
-        this._appEl_55 = new import2.AppElement(55, 48, this, this._anchor_55);
-        this._TemplateRef_55_5 = new import23.TemplateRef_(this._appEl_55, viewFactory_SignupComponent6);
-        this._NgIf_55_6 = new import18.NgIf(this._appEl_55.vcRef, this._TemplateRef_55_5);
-        this._text_56 = this.renderer.createText(this._el_48, '\n                    ', null);
-        this._anchor_57 = this.renderer.createTemplateAnchor(this._el_48, null);
-        this._appEl_57 = new import2.AppElement(57, 48, this, this._anchor_57);
-        this._TemplateRef_57_5 = new import23.TemplateRef_(this._appEl_57, viewFactory_SignupComponent7);
+        this._text_36 = this.renderer.createText(this._el_28, '\n                        ', null);
+        this._anchor_37 = this.renderer.createTemplateAnchor(this._el_28, null);
+        this._appEl_37 = new import2.AppElement(37, 28, this, this._anchor_37);
+        this._TemplateRef_37_5 = new import23.TemplateRef_(this._appEl_37, viewFactory_SignupComponent4);
+        this._NgIf_37_6 = new import18.NgIf(this._appEl_37.vcRef, this._TemplateRef_37_5);
+        this._text_38 = this.renderer.createText(this._el_28, '\n                    ', null);
+        this._text_39 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._el_40 = this.renderer.createElement(this._el_14, 'div', null);
+        this.renderer.setElementAttribute(this._el_40, 'class', 'form-group');
+        this._NgClass_40_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_40), this.renderer);
+        this._text_41 = this.renderer.createText(this._el_40, '\n                        ', null);
+        this._el_42 = this.renderer.createElement(this._el_40, 'label', null);
+        this.renderer.setElementAttribute(this._el_42, 'for', 'email');
+        this._text_43 = this.renderer.createText(this._el_42, '\n                            Email address\n                        ', null);
+        this._text_44 = this.renderer.createText(this._el_40, '\n                        ', null);
+        this._el_45 = this.renderer.createElement(this._el_40, 'input', null);
+        this.renderer.setElementAttribute(this._el_45, 'class', 'form-control');
+        this.renderer.setElementAttribute(this._el_45, 'id', 'email');
+        this.renderer.setElementAttribute(this._el_45, 'type', 'email');
+        this._DefaultValueAccessor_45_3 = new import16.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_45));
+        this._NG_VALUE_ACCESSOR_45_4 = [this._DefaultValueAccessor_45_3];
+        this._FormControlDirective_45_5 = new import17.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_45_4);
+        this._NgControl_45_6 = this._FormControlDirective_45_5;
+        this._NgControlStatus_45_7 = new import14.NgControlStatus(this._NgControl_45_6);
+        this._text_46 = this.renderer.createText(this._el_40, '\n                        ', null);
+        this._anchor_47 = this.renderer.createTemplateAnchor(this._el_40, null);
+        this._appEl_47 = new import2.AppElement(47, 40, this, this._anchor_47);
+        this._TemplateRef_47_5 = new import23.TemplateRef_(this._appEl_47, viewFactory_SignupComponent5);
+        this._NgIf_47_6 = new import18.NgIf(this._appEl_47.vcRef, this._TemplateRef_47_5);
+        this._text_48 = this.renderer.createText(this._el_40, '\n                    ', null);
+        this._text_49 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._el_50 = this.renderer.createElement(this._el_14, 'div', null);
+        this.renderer.setElementAttribute(this._el_50, 'class', 'form-group');
+        this._NgClass_50_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_50), this.renderer);
+        this._text_51 = this.renderer.createText(this._el_50, '\n                        ', null);
+        this._el_52 = this.renderer.createElement(this._el_50, 'label', null);
+        this.renderer.setElementAttribute(this._el_52, 'for', 'password');
+        this._text_53 = this.renderer.createText(this._el_52, '\n                            Create a password\n                        ', null);
+        this._text_54 = this.renderer.createText(this._el_50, '\n                        ', null);
+        this._el_55 = this.renderer.createElement(this._el_50, 'input', null);
+        this.renderer.setElementAttribute(this._el_55, 'class', 'form-control');
+        this.renderer.setElementAttribute(this._el_55, 'id', 'password');
+        this.renderer.setElementAttribute(this._el_55, 'reverse', 'true');
+        this.renderer.setElementAttribute(this._el_55, 'type', 'password');
+        this.renderer.setElementAttribute(this._el_55, 'validateEqual', 'confirmPassword');
+        this._DefaultValueAccessor_55_3 = new import16.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_55));
+        this._EqualValidator_55_4 = new import19.EqualValidator('confirmPassword', 'true');
+        this._NG_VALIDATORS_55_5 = [this._EqualValidator_55_4];
+        this._NG_VALUE_ACCESSOR_55_6 = [this._DefaultValueAccessor_55_3];
+        this._FormControlDirective_55_7 = new import17.FormControlDirective(this._NG_VALIDATORS_55_5, null, this._NG_VALUE_ACCESSOR_55_6);
+        this._NgControl_55_8 = this._FormControlDirective_55_7;
+        this._NgControlStatus_55_9 = new import14.NgControlStatus(this._NgControl_55_8);
+        this._text_56 = this.renderer.createText(this._el_50, '\n                        ', null);
+        this._anchor_57 = this.renderer.createTemplateAnchor(this._el_50, null);
+        this._appEl_57 = new import2.AppElement(57, 50, this, this._anchor_57);
+        this._TemplateRef_57_5 = new import23.TemplateRef_(this._appEl_57, viewFactory_SignupComponent6);
         this._NgIf_57_6 = new import18.NgIf(this._appEl_57.vcRef, this._TemplateRef_57_5);
-        this._text_58 = this.renderer.createText(this._el_48, '\n                    ', null);
-        this._anchor_59 = this.renderer.createTemplateAnchor(this._el_48, null);
-        this._appEl_59 = new import2.AppElement(59, 48, this, this._anchor_59);
-        this._TemplateRef_59_5 = new import23.TemplateRef_(this._appEl_59, viewFactory_SignupComponent8);
+        this._text_58 = this.renderer.createText(this._el_50, '\n                        ', null);
+        this._anchor_59 = this.renderer.createTemplateAnchor(this._el_50, null);
+        this._appEl_59 = new import2.AppElement(59, 50, this, this._anchor_59);
+        this._TemplateRef_59_5 = new import23.TemplateRef_(this._appEl_59, viewFactory_SignupComponent7);
         this._NgIf_59_6 = new import18.NgIf(this._appEl_59.vcRef, this._TemplateRef_59_5);
-        this._text_60 = this.renderer.createText(this._el_48, '\n                ', null);
-        this._text_61 = this.renderer.createText(this._el_12, '\n                ', null);
-        this._el_62 = this.renderer.createElement(this._el_12, 'div', null);
-        this.renderer.setElementAttribute(this._el_62, 'class', 'form-group');
-        this._NgClass_62_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_62), this.renderer);
-        this._text_63 = this.renderer.createText(this._el_62, '\n                    ', null);
-        this._el_64 = this.renderer.createElement(this._el_62, 'label', null);
-        this.renderer.setElementAttribute(this._el_64, 'for', 'confirmPassword');
-        this._text_65 = this.renderer.createText(this._el_64, '\n                        Confirm the password\n                    ', null);
-        this._text_66 = this.renderer.createText(this._el_62, '\n                        ', null);
-        this._el_67 = this.renderer.createElement(this._el_62, 'input', null);
-        this.renderer.setElementAttribute(this._el_67, 'class', 'form-control');
-        this.renderer.setElementAttribute(this._el_67, 'id', 'confirmPassword');
-        this.renderer.setElementAttribute(this._el_67, 'type', 'password');
-        this.renderer.setElementAttribute(this._el_67, 'validateEqual', 'password');
-        this._DefaultValueAccessor_67_3 = new import16.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_67));
-        this._EqualValidator_67_4 = new import19.EqualValidator('password', null);
-        this._NG_VALIDATORS_67_5 = [this._EqualValidator_67_4];
-        this._NG_VALUE_ACCESSOR_67_6 = [this._DefaultValueAccessor_67_3];
-        this._FormControlDirective_67_7 = new import17.FormControlDirective(this._NG_VALIDATORS_67_5, null, this._NG_VALUE_ACCESSOR_67_6);
-        this._NgControl_67_8 = this._FormControlDirective_67_7;
-        this._NgControlStatus_67_9 = new import14.NgControlStatus(this._NgControl_67_8);
-        this._text_68 = this.renderer.createText(this._el_62, '\n                    ', null);
-        this._anchor_69 = this.renderer.createTemplateAnchor(this._el_62, null);
-        this._appEl_69 = new import2.AppElement(69, 62, this, this._anchor_69);
-        this._TemplateRef_69_5 = new import23.TemplateRef_(this._appEl_69, viewFactory_SignupComponent9);
-        this._NgIf_69_6 = new import18.NgIf(this._appEl_69.vcRef, this._TemplateRef_69_5);
-        this._text_70 = this.renderer.createText(this._el_62, '\n                ', null);
-        this._text_71 = this.renderer.createText(this._el_12, '\n                ', null);
-        this._el_72 = this.renderer.createElement(this._el_12, 'div', null);
-        this.renderer.setElementAttribute(this._el_72, 'align', 'right');
-        this._text_73 = this.renderer.createText(this._el_72, '\n                    ', null);
-        this._el_74 = this.renderer.createElement(this._el_72, 'button', null);
-        this.renderer.setElementAttribute(this._el_74, 'class', 'btn btn-primary align-right');
-        this.renderer.setElementAttribute(this._el_74, 'type', 'submit');
-        this._text_75 = this.renderer.createText(this._el_74, '\n                            Sign up\n                    ', null);
-        this._text_76 = this.renderer.createText(this._el_72, '\n                ', null);
-        this._text_77 = this.renderer.createText(this._el_12, '\n            ', null);
-        this._text_78 = this.renderer.createText(this._el_4, '\n        ', null);
-        this._text_79 = this.renderer.createText(this._el_2, '\n    ', null);
-        this._text_80 = this.renderer.createText(this._el_0, '\n', null);
-        var disposable_0 = this.renderer.listen(this._el_12, 'ngSubmit', this.eventHandler(this._handle_ngSubmit_12_0.bind(this)));
-        var disposable_1 = this.renderer.listen(this._el_12, 'submit', this.eventHandler(this._handle_submit_12_1.bind(this)));
-        var disposable_2 = this.renderer.listen(this._el_12, 'reset', this.eventHandler(this._handle_reset_12_2.bind(this)));
+        this._text_60 = this.renderer.createText(this._el_50, '\n                        ', null);
+        this._anchor_61 = this.renderer.createTemplateAnchor(this._el_50, null);
+        this._appEl_61 = new import2.AppElement(61, 50, this, this._anchor_61);
+        this._TemplateRef_61_5 = new import23.TemplateRef_(this._appEl_61, viewFactory_SignupComponent8);
+        this._NgIf_61_6 = new import18.NgIf(this._appEl_61.vcRef, this._TemplateRef_61_5);
+        this._text_62 = this.renderer.createText(this._el_50, '\n                    ', null);
+        this._text_63 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._el_64 = this.renderer.createElement(this._el_14, 'div', null);
+        this.renderer.setElementAttribute(this._el_64, 'class', 'form-group');
+        this._NgClass_64_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_64), this.renderer);
+        this._text_65 = this.renderer.createText(this._el_64, '\n                        ', null);
+        this._el_66 = this.renderer.createElement(this._el_64, 'label', null);
+        this.renderer.setElementAttribute(this._el_66, 'for', 'confirmPassword');
+        this._text_67 = this.renderer.createText(this._el_66, '\n                            Confirm the password\n                        ', null);
+        this._text_68 = this.renderer.createText(this._el_64, '\n                        ', null);
+        this._el_69 = this.renderer.createElement(this._el_64, 'input', null);
+        this.renderer.setElementAttribute(this._el_69, 'class', 'form-control');
+        this.renderer.setElementAttribute(this._el_69, 'id', 'confirmPassword');
+        this.renderer.setElementAttribute(this._el_69, 'type', 'password');
+        this.renderer.setElementAttribute(this._el_69, 'validateEqual', 'password');
+        this._DefaultValueAccessor_69_3 = new import16.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_69));
+        this._EqualValidator_69_4 = new import19.EqualValidator('password', null);
+        this._NG_VALIDATORS_69_5 = [this._EqualValidator_69_4];
+        this._NG_VALUE_ACCESSOR_69_6 = [this._DefaultValueAccessor_69_3];
+        this._FormControlDirective_69_7 = new import17.FormControlDirective(this._NG_VALIDATORS_69_5, null, this._NG_VALUE_ACCESSOR_69_6);
+        this._NgControl_69_8 = this._FormControlDirective_69_7;
+        this._NgControlStatus_69_9 = new import14.NgControlStatus(this._NgControl_69_8);
+        this._text_70 = this.renderer.createText(this._el_64, '\n                        ', null);
+        this._anchor_71 = this.renderer.createTemplateAnchor(this._el_64, null);
+        this._appEl_71 = new import2.AppElement(71, 64, this, this._anchor_71);
+        this._TemplateRef_71_5 = new import23.TemplateRef_(this._appEl_71, viewFactory_SignupComponent9);
+        this._NgIf_71_6 = new import18.NgIf(this._appEl_71.vcRef, this._TemplateRef_71_5);
+        this._text_72 = this.renderer.createText(this._el_64, '\n                    ', null);
+        this._text_73 = this.renderer.createText(this._el_14, '\n                    ', null);
+        this._el_74 = this.renderer.createElement(this._el_14, 'div', null);
+        this.renderer.setElementAttribute(this._el_74, 'align', 'right');
+        this._text_75 = this.renderer.createText(this._el_74, '\n                        ', null);
+        this._el_76 = this.renderer.createElement(this._el_74, 'button', null);
+        this.renderer.setElementAttribute(this._el_76, 'class', 'btn btn-primary align-right');
+        this.renderer.setElementAttribute(this._el_76, 'type', 'submit');
+        this._text_77 = this.renderer.createText(this._el_76, '\n                            Sign up\n                        ', null);
+        this._text_78 = this.renderer.createText(this._el_74, '\n                    ', null);
+        this._text_79 = this.renderer.createText(this._el_14, '\n                ', null);
+        this._text_80 = this.renderer.createText(this._el_6, '\n            ', null);
+        this._text_81 = this.renderer.createText(this._el_4, '\n        ', null);
+        this._text_82 = this.renderer.createText(this._el_2, '\n    ', null);
+        this._text_83 = this.renderer.createText(this._el_0, '\n', null);
+        var disposable_0 = this.renderer.listen(this._el_14, 'ngSubmit', this.eventHandler(this._handle_ngSubmit_14_0.bind(this)));
+        var disposable_1 = this.renderer.listen(this._el_14, 'submit', this.eventHandler(this._handle_submit_14_1.bind(this)));
+        var disposable_2 = this.renderer.listen(this._el_14, 'reset', this.eventHandler(this._handle_reset_14_2.bind(this)));
         this._expr_3 = import7.UNINITIALIZED;
-        var subscription_0 = this._FormGroupDirective_12_3.ngSubmit.subscribe(this.eventHandler(this._handle_ngSubmit_12_0.bind(this)));
+        var subscription_0 = this._FormGroupDirective_14_3.ngSubmit.subscribe(this.eventHandler(this._handle_ngSubmit_14_0.bind(this)));
         this._expr_4 = import7.UNINITIALIZED;
         this._expr_5 = import7.UNINITIALIZED;
         this._expr_6 = import7.UNINITIALIZED;
@@ -277,8 +282,8 @@ var _View_SignupComponent0 = (function (_super) {
             return { 'has-error': p0 };
         });
         this._expr_11 = import7.UNINITIALIZED;
-        var disposable_3 = this.renderer.listen(this._el_19, 'input', this.eventHandler(this._handle_input_19_0.bind(this)));
-        var disposable_4 = this.renderer.listen(this._el_19, 'blur', this.eventHandler(this._handle_blur_19_1.bind(this)));
+        var disposable_3 = this.renderer.listen(this._el_21, 'input', this.eventHandler(this._handle_input_21_0.bind(this)));
+        var disposable_4 = this.renderer.listen(this._el_21, 'blur', this.eventHandler(this._handle_blur_21_1.bind(this)));
         this._expr_14 = import7.UNINITIALIZED;
         this._expr_15 = import7.UNINITIALIZED;
         this._expr_16 = import7.UNINITIALIZED;
@@ -293,8 +298,8 @@ var _View_SignupComponent0 = (function (_super) {
             return { 'has-error': p0 };
         });
         this._expr_24 = import7.UNINITIALIZED;
-        var disposable_5 = this.renderer.listen(this._el_31, 'input', this.eventHandler(this._handle_input_31_0.bind(this)));
-        var disposable_6 = this.renderer.listen(this._el_31, 'blur', this.eventHandler(this._handle_blur_31_1.bind(this)));
+        var disposable_5 = this.renderer.listen(this._el_33, 'input', this.eventHandler(this._handle_input_33_0.bind(this)));
+        var disposable_6 = this.renderer.listen(this._el_33, 'blur', this.eventHandler(this._handle_blur_33_1.bind(this)));
         this._expr_27 = import7.UNINITIALIZED;
         this._expr_28 = import7.UNINITIALIZED;
         this._expr_29 = import7.UNINITIALIZED;
@@ -309,8 +314,8 @@ var _View_SignupComponent0 = (function (_super) {
             return { 'has-error': p0 };
         });
         this._expr_37 = import7.UNINITIALIZED;
-        var disposable_7 = this.renderer.listen(this._el_43, 'input', this.eventHandler(this._handle_input_43_0.bind(this)));
-        var disposable_8 = this.renderer.listen(this._el_43, 'blur', this.eventHandler(this._handle_blur_43_1.bind(this)));
+        var disposable_7 = this.renderer.listen(this._el_45, 'input', this.eventHandler(this._handle_input_45_0.bind(this)));
+        var disposable_8 = this.renderer.listen(this._el_45, 'blur', this.eventHandler(this._handle_blur_45_1.bind(this)));
         this._expr_40 = import7.UNINITIALIZED;
         this._expr_41 = import7.UNINITIALIZED;
         this._expr_42 = import7.UNINITIALIZED;
@@ -324,8 +329,8 @@ var _View_SignupComponent0 = (function (_super) {
             return { 'has-error': p0 };
         });
         this._expr_49 = import7.UNINITIALIZED;
-        var disposable_9 = this.renderer.listen(this._el_53, 'input', this.eventHandler(this._handle_input_53_0.bind(this)));
-        var disposable_10 = this.renderer.listen(this._el_53, 'blur', this.eventHandler(this._handle_blur_53_1.bind(this)));
+        var disposable_9 = this.renderer.listen(this._el_55, 'input', this.eventHandler(this._handle_input_55_0.bind(this)));
+        var disposable_10 = this.renderer.listen(this._el_55, 'blur', this.eventHandler(this._handle_blur_55_1.bind(this)));
         this._expr_52 = import7.UNINITIALIZED;
         this._expr_53 = import7.UNINITIALIZED;
         this._expr_54 = import7.UNINITIALIZED;
@@ -341,8 +346,8 @@ var _View_SignupComponent0 = (function (_super) {
             return { 'has-error': p0 };
         });
         this._expr_63 = import7.UNINITIALIZED;
-        var disposable_11 = this.renderer.listen(this._el_67, 'input', this.eventHandler(this._handle_input_67_0.bind(this)));
-        var disposable_12 = this.renderer.listen(this._el_67, 'blur', this.eventHandler(this._handle_blur_67_1.bind(this)));
+        var disposable_11 = this.renderer.listen(this._el_69, 'input', this.eventHandler(this._handle_input_69_0.bind(this)));
+        var disposable_12 = this.renderer.listen(this._el_69, 'blur', this.eventHandler(this._handle_blur_69_1.bind(this)));
         this._expr_66 = import7.UNINITIALIZED;
         this._expr_67 = import7.UNINITIALIZED;
         this._expr_68 = import7.UNINITIALIZED;
@@ -362,77 +367,80 @@ var _View_SignupComponent0 = (function (_super) {
             this._text_7,
             this._el_8,
             this._text_9,
-            this._text_10,
+            this._el_10,
             this._text_11,
-            this._el_12,
+            this._text_12,
             this._text_13,
             this._el_14,
             this._text_15,
             this._el_16,
             this._text_17,
-            this._text_18,
-            this._el_19,
+            this._el_18,
+            this._text_19,
             this._text_20,
-            this._anchor_21,
+            this._el_21,
             this._text_22,
             this._anchor_23,
             this._text_24,
-            this._text_25,
-            this._el_26,
+            this._anchor_25,
+            this._text_26,
             this._text_27,
             this._el_28,
             this._text_29,
-            this._text_30,
-            this._el_31,
+            this._el_30,
+            this._text_31,
             this._text_32,
-            this._anchor_33,
+            this._el_33,
             this._text_34,
             this._anchor_35,
             this._text_36,
-            this._text_37,
-            this._el_38,
+            this._anchor_37,
+            this._text_38,
             this._text_39,
             this._el_40,
             this._text_41,
-            this._text_42,
-            this._el_43,
+            this._el_42,
+            this._text_43,
             this._text_44,
-            this._anchor_45,
+            this._el_45,
             this._text_46,
-            this._text_47,
-            this._el_48,
+            this._anchor_47,
+            this._text_48,
             this._text_49,
             this._el_50,
             this._text_51,
-            this._text_52,
-            this._el_53,
+            this._el_52,
+            this._text_53,
             this._text_54,
-            this._anchor_55,
+            this._el_55,
             this._text_56,
             this._anchor_57,
             this._text_58,
             this._anchor_59,
             this._text_60,
-            this._text_61,
-            this._el_62,
+            this._anchor_61,
+            this._text_62,
             this._text_63,
             this._el_64,
             this._text_65,
-            this._text_66,
-            this._el_67,
+            this._el_66,
+            this._text_67,
             this._text_68,
-            this._anchor_69,
+            this._el_69,
             this._text_70,
-            this._text_71,
-            this._el_72,
+            this._anchor_71,
+            this._text_72,
             this._text_73,
             this._el_74,
             this._text_75,
-            this._text_76,
+            this._el_76,
             this._text_77,
             this._text_78,
             this._text_79,
-            this._text_80
+            this._text_80,
+            this._text_81,
+            this._text_82,
+            this._text_83
         ], [
             disposable_0,
             disposable_1,
@@ -451,26 +459,20 @@ var _View_SignupComponent0 = (function (_super) {
         return null;
     };
     _View_SignupComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import16.DefaultValueAccessor) && (19 === requestNodeIndex))) {
-            return this._DefaultValueAccessor_19_3;
+        if (((token === import16.DefaultValueAccessor) && (21 === requestNodeIndex))) {
+            return this._DefaultValueAccessor_21_3;
         }
-        if (((token === import24.NG_VALUE_ACCESSOR) && (19 === requestNodeIndex))) {
-            return this._NG_VALUE_ACCESSOR_19_4;
+        if (((token === import24.NG_VALUE_ACCESSOR) && (21 === requestNodeIndex))) {
+            return this._NG_VALUE_ACCESSOR_21_4;
         }
-        if (((token === import17.FormControlDirective) && (19 === requestNodeIndex))) {
-            return this._FormControlDirective_19_5;
+        if (((token === import17.FormControlDirective) && (21 === requestNodeIndex))) {
+            return this._FormControlDirective_21_5;
         }
-        if (((token === import25.NgControl) && (19 === requestNodeIndex))) {
-            return this._NgControl_19_6;
+        if (((token === import25.NgControl) && (21 === requestNodeIndex))) {
+            return this._NgControl_21_6;
         }
-        if (((token === import14.NgControlStatus) && (19 === requestNodeIndex))) {
-            return this._NgControlStatus_19_7;
-        }
-        if (((token === import23.TemplateRef) && (21 === requestNodeIndex))) {
-            return this._TemplateRef_21_5;
-        }
-        if (((token === import18.NgIf) && (21 === requestNodeIndex))) {
-            return this._NgIf_21_6;
+        if (((token === import14.NgControlStatus) && (21 === requestNodeIndex))) {
+            return this._NgControlStatus_21_7;
         }
         if (((token === import23.TemplateRef) && (23 === requestNodeIndex))) {
             return this._TemplateRef_23_5;
@@ -478,29 +480,29 @@ var _View_SignupComponent0 = (function (_super) {
         if (((token === import18.NgIf) && (23 === requestNodeIndex))) {
             return this._NgIf_23_6;
         }
-        if (((token === import15.NgClass) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 24)))) {
-            return this._NgClass_14_3;
+        if (((token === import23.TemplateRef) && (25 === requestNodeIndex))) {
+            return this._TemplateRef_25_5;
         }
-        if (((token === import16.DefaultValueAccessor) && (31 === requestNodeIndex))) {
-            return this._DefaultValueAccessor_31_3;
+        if (((token === import18.NgIf) && (25 === requestNodeIndex))) {
+            return this._NgIf_25_6;
         }
-        if (((token === import24.NG_VALUE_ACCESSOR) && (31 === requestNodeIndex))) {
-            return this._NG_VALUE_ACCESSOR_31_4;
+        if (((token === import15.NgClass) && ((16 <= requestNodeIndex) && (requestNodeIndex <= 26)))) {
+            return this._NgClass_16_3;
         }
-        if (((token === import17.FormControlDirective) && (31 === requestNodeIndex))) {
-            return this._FormControlDirective_31_5;
+        if (((token === import16.DefaultValueAccessor) && (33 === requestNodeIndex))) {
+            return this._DefaultValueAccessor_33_3;
         }
-        if (((token === import25.NgControl) && (31 === requestNodeIndex))) {
-            return this._NgControl_31_6;
+        if (((token === import24.NG_VALUE_ACCESSOR) && (33 === requestNodeIndex))) {
+            return this._NG_VALUE_ACCESSOR_33_4;
         }
-        if (((token === import14.NgControlStatus) && (31 === requestNodeIndex))) {
-            return this._NgControlStatus_31_7;
+        if (((token === import17.FormControlDirective) && (33 === requestNodeIndex))) {
+            return this._FormControlDirective_33_5;
         }
-        if (((token === import23.TemplateRef) && (33 === requestNodeIndex))) {
-            return this._TemplateRef_33_5;
+        if (((token === import25.NgControl) && (33 === requestNodeIndex))) {
+            return this._NgControl_33_6;
         }
-        if (((token === import18.NgIf) && (33 === requestNodeIndex))) {
-            return this._NgIf_33_6;
+        if (((token === import14.NgControlStatus) && (33 === requestNodeIndex))) {
+            return this._NgControlStatus_33_7;
         }
         if (((token === import23.TemplateRef) && (35 === requestNodeIndex))) {
             return this._TemplateRef_35_5;
@@ -508,59 +510,59 @@ var _View_SignupComponent0 = (function (_super) {
         if (((token === import18.NgIf) && (35 === requestNodeIndex))) {
             return this._NgIf_35_6;
         }
-        if (((token === import15.NgClass) && ((26 <= requestNodeIndex) && (requestNodeIndex <= 36)))) {
-            return this._NgClass_26_3;
+        if (((token === import23.TemplateRef) && (37 === requestNodeIndex))) {
+            return this._TemplateRef_37_5;
         }
-        if (((token === import16.DefaultValueAccessor) && (43 === requestNodeIndex))) {
-            return this._DefaultValueAccessor_43_3;
+        if (((token === import18.NgIf) && (37 === requestNodeIndex))) {
+            return this._NgIf_37_6;
         }
-        if (((token === import24.NG_VALUE_ACCESSOR) && (43 === requestNodeIndex))) {
-            return this._NG_VALUE_ACCESSOR_43_4;
+        if (((token === import15.NgClass) && ((28 <= requestNodeIndex) && (requestNodeIndex <= 38)))) {
+            return this._NgClass_28_3;
         }
-        if (((token === import17.FormControlDirective) && (43 === requestNodeIndex))) {
-            return this._FormControlDirective_43_5;
+        if (((token === import16.DefaultValueAccessor) && (45 === requestNodeIndex))) {
+            return this._DefaultValueAccessor_45_3;
         }
-        if (((token === import25.NgControl) && (43 === requestNodeIndex))) {
-            return this._NgControl_43_6;
+        if (((token === import24.NG_VALUE_ACCESSOR) && (45 === requestNodeIndex))) {
+            return this._NG_VALUE_ACCESSOR_45_4;
         }
-        if (((token === import14.NgControlStatus) && (43 === requestNodeIndex))) {
-            return this._NgControlStatus_43_7;
+        if (((token === import17.FormControlDirective) && (45 === requestNodeIndex))) {
+            return this._FormControlDirective_45_5;
         }
-        if (((token === import23.TemplateRef) && (45 === requestNodeIndex))) {
-            return this._TemplateRef_45_5;
+        if (((token === import25.NgControl) && (45 === requestNodeIndex))) {
+            return this._NgControl_45_6;
         }
-        if (((token === import18.NgIf) && (45 === requestNodeIndex))) {
-            return this._NgIf_45_6;
+        if (((token === import14.NgControlStatus) && (45 === requestNodeIndex))) {
+            return this._NgControlStatus_45_7;
         }
-        if (((token === import15.NgClass) && ((38 <= requestNodeIndex) && (requestNodeIndex <= 46)))) {
-            return this._NgClass_38_3;
+        if (((token === import23.TemplateRef) && (47 === requestNodeIndex))) {
+            return this._TemplateRef_47_5;
         }
-        if (((token === import16.DefaultValueAccessor) && (53 === requestNodeIndex))) {
-            return this._DefaultValueAccessor_53_3;
+        if (((token === import18.NgIf) && (47 === requestNodeIndex))) {
+            return this._NgIf_47_6;
         }
-        if (((token === import19.EqualValidator) && (53 === requestNodeIndex))) {
-            return this._EqualValidator_53_4;
+        if (((token === import15.NgClass) && ((40 <= requestNodeIndex) && (requestNodeIndex <= 48)))) {
+            return this._NgClass_40_3;
         }
-        if (((token === import26.NG_VALIDATORS) && (53 === requestNodeIndex))) {
-            return this._NG_VALIDATORS_53_5;
+        if (((token === import16.DefaultValueAccessor) && (55 === requestNodeIndex))) {
+            return this._DefaultValueAccessor_55_3;
         }
-        if (((token === import24.NG_VALUE_ACCESSOR) && (53 === requestNodeIndex))) {
-            return this._NG_VALUE_ACCESSOR_53_6;
+        if (((token === import19.EqualValidator) && (55 === requestNodeIndex))) {
+            return this._EqualValidator_55_4;
         }
-        if (((token === import17.FormControlDirective) && (53 === requestNodeIndex))) {
-            return this._FormControlDirective_53_7;
+        if (((token === import26.NG_VALIDATORS) && (55 === requestNodeIndex))) {
+            return this._NG_VALIDATORS_55_5;
         }
-        if (((token === import25.NgControl) && (53 === requestNodeIndex))) {
-            return this._NgControl_53_8;
+        if (((token === import24.NG_VALUE_ACCESSOR) && (55 === requestNodeIndex))) {
+            return this._NG_VALUE_ACCESSOR_55_6;
         }
-        if (((token === import14.NgControlStatus) && (53 === requestNodeIndex))) {
-            return this._NgControlStatus_53_9;
+        if (((token === import17.FormControlDirective) && (55 === requestNodeIndex))) {
+            return this._FormControlDirective_55_7;
         }
-        if (((token === import23.TemplateRef) && (55 === requestNodeIndex))) {
-            return this._TemplateRef_55_5;
+        if (((token === import25.NgControl) && (55 === requestNodeIndex))) {
+            return this._NgControl_55_8;
         }
-        if (((token === import18.NgIf) && (55 === requestNodeIndex))) {
-            return this._NgIf_55_6;
+        if (((token === import14.NgControlStatus) && (55 === requestNodeIndex))) {
+            return this._NgControlStatus_55_9;
         }
         if (((token === import23.TemplateRef) && (57 === requestNodeIndex))) {
             return this._TemplateRef_57_5;
@@ -574,47 +576,53 @@ var _View_SignupComponent0 = (function (_super) {
         if (((token === import18.NgIf) && (59 === requestNodeIndex))) {
             return this._NgIf_59_6;
         }
-        if (((token === import15.NgClass) && ((48 <= requestNodeIndex) && (requestNodeIndex <= 60)))) {
-            return this._NgClass_48_3;
+        if (((token === import23.TemplateRef) && (61 === requestNodeIndex))) {
+            return this._TemplateRef_61_5;
         }
-        if (((token === import16.DefaultValueAccessor) && (67 === requestNodeIndex))) {
-            return this._DefaultValueAccessor_67_3;
+        if (((token === import18.NgIf) && (61 === requestNodeIndex))) {
+            return this._NgIf_61_6;
         }
-        if (((token === import19.EqualValidator) && (67 === requestNodeIndex))) {
-            return this._EqualValidator_67_4;
+        if (((token === import15.NgClass) && ((50 <= requestNodeIndex) && (requestNodeIndex <= 62)))) {
+            return this._NgClass_50_3;
         }
-        if (((token === import26.NG_VALIDATORS) && (67 === requestNodeIndex))) {
-            return this._NG_VALIDATORS_67_5;
+        if (((token === import16.DefaultValueAccessor) && (69 === requestNodeIndex))) {
+            return this._DefaultValueAccessor_69_3;
         }
-        if (((token === import24.NG_VALUE_ACCESSOR) && (67 === requestNodeIndex))) {
-            return this._NG_VALUE_ACCESSOR_67_6;
+        if (((token === import19.EqualValidator) && (69 === requestNodeIndex))) {
+            return this._EqualValidator_69_4;
         }
-        if (((token === import17.FormControlDirective) && (67 === requestNodeIndex))) {
-            return this._FormControlDirective_67_7;
+        if (((token === import26.NG_VALIDATORS) && (69 === requestNodeIndex))) {
+            return this._NG_VALIDATORS_69_5;
         }
-        if (((token === import25.NgControl) && (67 === requestNodeIndex))) {
-            return this._NgControl_67_8;
+        if (((token === import24.NG_VALUE_ACCESSOR) && (69 === requestNodeIndex))) {
+            return this._NG_VALUE_ACCESSOR_69_6;
         }
-        if (((token === import14.NgControlStatus) && (67 === requestNodeIndex))) {
-            return this._NgControlStatus_67_9;
+        if (((token === import17.FormControlDirective) && (69 === requestNodeIndex))) {
+            return this._FormControlDirective_69_7;
         }
-        if (((token === import23.TemplateRef) && (69 === requestNodeIndex))) {
-            return this._TemplateRef_69_5;
+        if (((token === import25.NgControl) && (69 === requestNodeIndex))) {
+            return this._NgControl_69_8;
         }
-        if (((token === import18.NgIf) && (69 === requestNodeIndex))) {
-            return this._NgIf_69_6;
+        if (((token === import14.NgControlStatus) && (69 === requestNodeIndex))) {
+            return this._NgControlStatus_69_9;
         }
-        if (((token === import15.NgClass) && ((62 <= requestNodeIndex) && (requestNodeIndex <= 70)))) {
-            return this._NgClass_62_3;
+        if (((token === import23.TemplateRef) && (71 === requestNodeIndex))) {
+            return this._TemplateRef_71_5;
         }
-        if (((token === import13.FormGroupDirective) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 77)))) {
-            return this._FormGroupDirective_12_3;
+        if (((token === import18.NgIf) && (71 === requestNodeIndex))) {
+            return this._NgIf_71_6;
         }
-        if (((token === import27.ControlContainer) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 77)))) {
-            return this._ControlContainer_12_4;
+        if (((token === import15.NgClass) && ((64 <= requestNodeIndex) && (requestNodeIndex <= 72)))) {
+            return this._NgClass_64_3;
         }
-        if (((token === import14.NgControlStatusGroup) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 77)))) {
-            return this._NgControlStatusGroup_12_5;
+        if (((token === import13.FormGroupDirective) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 79)))) {
+            return this._FormGroupDirective_14_3;
+        }
+        if (((token === import27.ControlContainer) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 79)))) {
+            return this._ControlContainer_14_4;
+        }
+        if (((token === import14.NgControlStatusGroup) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 79)))) {
+            return this._NgControlStatusGroup_14_5;
         }
         return notFoundResult;
     };
@@ -623,7 +631,7 @@ var _View_SignupComponent0 = (function (_super) {
         changes = null;
         var currVal_3 = this.context.myForm;
         if (import4.checkBinding(throwOnChange, this._expr_3, currVal_3)) {
-            this._FormGroupDirective_12_3.form = currVal_3;
+            this._FormGroupDirective_14_3.form = currVal_3;
             if ((changes === null)) {
                 (changes = {});
             }
@@ -631,25 +639,25 @@ var _View_SignupComponent0 = (function (_super) {
             this._expr_3 = currVal_3;
         }
         if ((changes !== null)) {
-            this._FormGroupDirective_12_3.ngOnChanges(changes);
+            this._FormGroupDirective_14_3.ngOnChanges(changes);
         }
         var currVal_10 = 'form-group';
         if (import4.checkBinding(throwOnChange, this._expr_10, currVal_10)) {
-            this._NgClass_14_3.klass = currVal_10;
+            this._NgClass_16_3.klass = currVal_10;
             this._expr_10 = currVal_10;
         }
         var currVal_11 = this._map_0((!this.context.myForm.controls['firstName'].valid && (this.context.myForm.controls['firstName'].touched || this.context.isSubmitted())));
         if (import4.checkBinding(throwOnChange, this._expr_11, currVal_11)) {
-            this._NgClass_14_3.ngClass = currVal_11;
+            this._NgClass_16_3.ngClass = currVal_11;
             this._expr_11 = currVal_11;
         }
         if (!throwOnChange) {
-            this._NgClass_14_3.ngDoCheck();
+            this._NgClass_16_3.ngDoCheck();
         }
         changes = null;
         var currVal_14 = this.context.myForm.controls['firstName'];
         if (import4.checkBinding(throwOnChange, this._expr_14, currVal_14)) {
-            this._FormControlDirective_19_5.form = currVal_14;
+            this._FormControlDirective_21_5.form = currVal_14;
             if ((changes === null)) {
                 (changes = {});
             }
@@ -657,35 +665,35 @@ var _View_SignupComponent0 = (function (_super) {
             this._expr_14 = currVal_14;
         }
         if ((changes !== null)) {
-            this._FormControlDirective_19_5.ngOnChanges(changes);
+            this._FormControlDirective_21_5.ngOnChanges(changes);
         }
         var currVal_21 = (this.context.myForm.controls['firstName'].hasError('required') && (this.context.myForm.controls['firstName'].touched || this.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_21, currVal_21)) {
-            this._NgIf_21_6.ngIf = currVal_21;
+            this._NgIf_23_6.ngIf = currVal_21;
             this._expr_21 = currVal_21;
         }
         var currVal_22 = (this.context.myForm.controls['firstName'].hasError('maxlength') && (this.context.myForm.controls['firstName'].touched || this.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_22, currVal_22)) {
-            this._NgIf_23_6.ngIf = currVal_22;
+            this._NgIf_25_6.ngIf = currVal_22;
             this._expr_22 = currVal_22;
         }
         var currVal_23 = 'form-group';
         if (import4.checkBinding(throwOnChange, this._expr_23, currVal_23)) {
-            this._NgClass_26_3.klass = currVal_23;
+            this._NgClass_28_3.klass = currVal_23;
             this._expr_23 = currVal_23;
         }
         var currVal_24 = this._map_1((!this.context.myForm.controls['lastName'].valid && (this.context.myForm.controls['lastName'].touched || this.context.isSubmitted())));
         if (import4.checkBinding(throwOnChange, this._expr_24, currVal_24)) {
-            this._NgClass_26_3.ngClass = currVal_24;
+            this._NgClass_28_3.ngClass = currVal_24;
             this._expr_24 = currVal_24;
         }
         if (!throwOnChange) {
-            this._NgClass_26_3.ngDoCheck();
+            this._NgClass_28_3.ngDoCheck();
         }
         changes = null;
         var currVal_27 = this.context.myForm.controls['lastName'];
         if (import4.checkBinding(throwOnChange, this._expr_27, currVal_27)) {
-            this._FormControlDirective_31_5.form = currVal_27;
+            this._FormControlDirective_33_5.form = currVal_27;
             if ((changes === null)) {
                 (changes = {});
             }
@@ -693,35 +701,35 @@ var _View_SignupComponent0 = (function (_super) {
             this._expr_27 = currVal_27;
         }
         if ((changes !== null)) {
-            this._FormControlDirective_31_5.ngOnChanges(changes);
+            this._FormControlDirective_33_5.ngOnChanges(changes);
         }
         var currVal_34 = (this.context.myForm.controls['lastName'].hasError('required') && (this.context.myForm.controls['lastName'].touched || this.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_34, currVal_34)) {
-            this._NgIf_33_6.ngIf = currVal_34;
+            this._NgIf_35_6.ngIf = currVal_34;
             this._expr_34 = currVal_34;
         }
         var currVal_35 = (this.context.myForm.controls['lastName'].hasError('maxlength') && (this.context.myForm.controls['lastName'].touched || this.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_35, currVal_35)) {
-            this._NgIf_35_6.ngIf = currVal_35;
+            this._NgIf_37_6.ngIf = currVal_35;
             this._expr_35 = currVal_35;
         }
         var currVal_36 = 'form-group';
         if (import4.checkBinding(throwOnChange, this._expr_36, currVal_36)) {
-            this._NgClass_38_3.klass = currVal_36;
+            this._NgClass_40_3.klass = currVal_36;
             this._expr_36 = currVal_36;
         }
         var currVal_37 = this._map_2((!this.context.myForm.controls['email'].valid && (this.context.myForm.controls['email'].touched || this.context.isSubmitted())));
         if (import4.checkBinding(throwOnChange, this._expr_37, currVal_37)) {
-            this._NgClass_38_3.ngClass = currVal_37;
+            this._NgClass_40_3.ngClass = currVal_37;
             this._expr_37 = currVal_37;
         }
         if (!throwOnChange) {
-            this._NgClass_38_3.ngDoCheck();
+            this._NgClass_40_3.ngDoCheck();
         }
         changes = null;
         var currVal_40 = this.context.myForm.controls['email'];
         if (import4.checkBinding(throwOnChange, this._expr_40, currVal_40)) {
-            this._FormControlDirective_43_5.form = currVal_40;
+            this._FormControlDirective_45_5.form = currVal_40;
             if ((changes === null)) {
                 (changes = {});
             }
@@ -729,30 +737,30 @@ var _View_SignupComponent0 = (function (_super) {
             this._expr_40 = currVal_40;
         }
         if ((changes !== null)) {
-            this._FormControlDirective_43_5.ngOnChanges(changes);
+            this._FormControlDirective_45_5.ngOnChanges(changes);
         }
         var currVal_47 = (!this.context.myForm.controls['email'].valid && (this.context.myForm.controls['email'].touched || this.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_47, currVal_47)) {
-            this._NgIf_45_6.ngIf = currVal_47;
+            this._NgIf_47_6.ngIf = currVal_47;
             this._expr_47 = currVal_47;
         }
         var currVal_48 = 'form-group';
         if (import4.checkBinding(throwOnChange, this._expr_48, currVal_48)) {
-            this._NgClass_48_3.klass = currVal_48;
+            this._NgClass_50_3.klass = currVal_48;
             this._expr_48 = currVal_48;
         }
         var currVal_49 = this._map_3((!this.context.myForm.controls['password'].valid && (this.context.myForm.controls['password'].touched || this.context.isSubmitted())));
         if (import4.checkBinding(throwOnChange, this._expr_49, currVal_49)) {
-            this._NgClass_48_3.ngClass = currVal_49;
+            this._NgClass_50_3.ngClass = currVal_49;
             this._expr_49 = currVal_49;
         }
         if (!throwOnChange) {
-            this._NgClass_48_3.ngDoCheck();
+            this._NgClass_50_3.ngDoCheck();
         }
         changes = null;
         var currVal_52 = this.context.myForm.controls['password'];
         if (import4.checkBinding(throwOnChange, this._expr_52, currVal_52)) {
-            this._FormControlDirective_53_7.form = currVal_52;
+            this._FormControlDirective_55_7.form = currVal_52;
             if ((changes === null)) {
                 (changes = {});
             }
@@ -760,40 +768,40 @@ var _View_SignupComponent0 = (function (_super) {
             this._expr_52 = currVal_52;
         }
         if ((changes !== null)) {
-            this._FormControlDirective_53_7.ngOnChanges(changes);
+            this._FormControlDirective_55_7.ngOnChanges(changes);
         }
         var currVal_59 = (this.context.myForm.controls['password'].hasError('required') && (this.context.myForm.controls['password'].touched || this.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_59, currVal_59)) {
-            this._NgIf_55_6.ngIf = currVal_59;
+            this._NgIf_57_6.ngIf = currVal_59;
             this._expr_59 = currVal_59;
         }
         var currVal_60 = (this.context.myForm.controls['password'].hasError('minlength') && (this.context.myForm.controls['password'].touched || this.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_60, currVal_60)) {
-            this._NgIf_57_6.ngIf = currVal_60;
+            this._NgIf_59_6.ngIf = currVal_60;
             this._expr_60 = currVal_60;
         }
         var currVal_61 = (this.context.myForm.controls['password'].hasError('maxlength') && (this.context.myForm.controls['password'].touched || this.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_61, currVal_61)) {
-            this._NgIf_59_6.ngIf = currVal_61;
+            this._NgIf_61_6.ngIf = currVal_61;
             this._expr_61 = currVal_61;
         }
         var currVal_62 = 'form-group';
         if (import4.checkBinding(throwOnChange, this._expr_62, currVal_62)) {
-            this._NgClass_62_3.klass = currVal_62;
+            this._NgClass_64_3.klass = currVal_62;
             this._expr_62 = currVal_62;
         }
         var currVal_63 = this._map_4((!this.context.myForm.controls['confirmPassword'].valid && (this.context.myForm.controls['confirmPassword'].touched || this.context.isSubmitted())));
         if (import4.checkBinding(throwOnChange, this._expr_63, currVal_63)) {
-            this._NgClass_62_3.ngClass = currVal_63;
+            this._NgClass_64_3.ngClass = currVal_63;
             this._expr_63 = currVal_63;
         }
         if (!throwOnChange) {
-            this._NgClass_62_3.ngDoCheck();
+            this._NgClass_64_3.ngDoCheck();
         }
         changes = null;
         var currVal_66 = this.context.myForm.controls['confirmPassword'];
         if (import4.checkBinding(throwOnChange, this._expr_66, currVal_66)) {
-            this._FormControlDirective_67_7.form = currVal_66;
+            this._FormControlDirective_69_7.form = currVal_66;
             if ((changes === null)) {
                 (changes = {});
             }
@@ -801,259 +809,259 @@ var _View_SignupComponent0 = (function (_super) {
             this._expr_66 = currVal_66;
         }
         if ((changes !== null)) {
-            this._FormControlDirective_67_7.ngOnChanges(changes);
+            this._FormControlDirective_69_7.ngOnChanges(changes);
         }
         var currVal_73 = (!this.context.myForm.controls['confirmPassword'].valid && (this.context.myForm.controls['confirmPassword'].touched || this.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_73, currVal_73)) {
-            this._NgIf_69_6.ngIf = currVal_73;
+            this._NgIf_71_6.ngIf = currVal_73;
             this._expr_73 = currVal_73;
         }
         this.detectContentChildrenChanges(throwOnChange);
-        var currVal_4 = this._NgControlStatusGroup_12_5.ngClassUntouched;
+        var currVal_4 = this._NgControlStatusGroup_14_5.ngClassUntouched;
         if (import4.checkBinding(throwOnChange, this._expr_4, currVal_4)) {
-            this.renderer.setElementClass(this._el_12, 'ng-untouched', currVal_4);
+            this.renderer.setElementClass(this._el_14, 'ng-untouched', currVal_4);
             this._expr_4 = currVal_4;
         }
-        var currVal_5 = this._NgControlStatusGroup_12_5.ngClassTouched;
+        var currVal_5 = this._NgControlStatusGroup_14_5.ngClassTouched;
         if (import4.checkBinding(throwOnChange, this._expr_5, currVal_5)) {
-            this.renderer.setElementClass(this._el_12, 'ng-touched', currVal_5);
+            this.renderer.setElementClass(this._el_14, 'ng-touched', currVal_5);
             this._expr_5 = currVal_5;
         }
-        var currVal_6 = this._NgControlStatusGroup_12_5.ngClassPristine;
+        var currVal_6 = this._NgControlStatusGroup_14_5.ngClassPristine;
         if (import4.checkBinding(throwOnChange, this._expr_6, currVal_6)) {
-            this.renderer.setElementClass(this._el_12, 'ng-pristine', currVal_6);
+            this.renderer.setElementClass(this._el_14, 'ng-pristine', currVal_6);
             this._expr_6 = currVal_6;
         }
-        var currVal_7 = this._NgControlStatusGroup_12_5.ngClassDirty;
+        var currVal_7 = this._NgControlStatusGroup_14_5.ngClassDirty;
         if (import4.checkBinding(throwOnChange, this._expr_7, currVal_7)) {
-            this.renderer.setElementClass(this._el_12, 'ng-dirty', currVal_7);
+            this.renderer.setElementClass(this._el_14, 'ng-dirty', currVal_7);
             this._expr_7 = currVal_7;
         }
-        var currVal_8 = this._NgControlStatusGroup_12_5.ngClassValid;
+        var currVal_8 = this._NgControlStatusGroup_14_5.ngClassValid;
         if (import4.checkBinding(throwOnChange, this._expr_8, currVal_8)) {
-            this.renderer.setElementClass(this._el_12, 'ng-valid', currVal_8);
+            this.renderer.setElementClass(this._el_14, 'ng-valid', currVal_8);
             this._expr_8 = currVal_8;
         }
-        var currVal_9 = this._NgControlStatusGroup_12_5.ngClassInvalid;
+        var currVal_9 = this._NgControlStatusGroup_14_5.ngClassInvalid;
         if (import4.checkBinding(throwOnChange, this._expr_9, currVal_9)) {
-            this.renderer.setElementClass(this._el_12, 'ng-invalid', currVal_9);
+            this.renderer.setElementClass(this._el_14, 'ng-invalid', currVal_9);
             this._expr_9 = currVal_9;
         }
-        var currVal_15 = this._NgControlStatus_19_7.ngClassUntouched;
+        var currVal_15 = this._NgControlStatus_21_7.ngClassUntouched;
         if (import4.checkBinding(throwOnChange, this._expr_15, currVal_15)) {
-            this.renderer.setElementClass(this._el_19, 'ng-untouched', currVal_15);
+            this.renderer.setElementClass(this._el_21, 'ng-untouched', currVal_15);
             this._expr_15 = currVal_15;
         }
-        var currVal_16 = this._NgControlStatus_19_7.ngClassTouched;
+        var currVal_16 = this._NgControlStatus_21_7.ngClassTouched;
         if (import4.checkBinding(throwOnChange, this._expr_16, currVal_16)) {
-            this.renderer.setElementClass(this._el_19, 'ng-touched', currVal_16);
+            this.renderer.setElementClass(this._el_21, 'ng-touched', currVal_16);
             this._expr_16 = currVal_16;
         }
-        var currVal_17 = this._NgControlStatus_19_7.ngClassPristine;
+        var currVal_17 = this._NgControlStatus_21_7.ngClassPristine;
         if (import4.checkBinding(throwOnChange, this._expr_17, currVal_17)) {
-            this.renderer.setElementClass(this._el_19, 'ng-pristine', currVal_17);
+            this.renderer.setElementClass(this._el_21, 'ng-pristine', currVal_17);
             this._expr_17 = currVal_17;
         }
-        var currVal_18 = this._NgControlStatus_19_7.ngClassDirty;
+        var currVal_18 = this._NgControlStatus_21_7.ngClassDirty;
         if (import4.checkBinding(throwOnChange, this._expr_18, currVal_18)) {
-            this.renderer.setElementClass(this._el_19, 'ng-dirty', currVal_18);
+            this.renderer.setElementClass(this._el_21, 'ng-dirty', currVal_18);
             this._expr_18 = currVal_18;
         }
-        var currVal_19 = this._NgControlStatus_19_7.ngClassValid;
+        var currVal_19 = this._NgControlStatus_21_7.ngClassValid;
         if (import4.checkBinding(throwOnChange, this._expr_19, currVal_19)) {
-            this.renderer.setElementClass(this._el_19, 'ng-valid', currVal_19);
+            this.renderer.setElementClass(this._el_21, 'ng-valid', currVal_19);
             this._expr_19 = currVal_19;
         }
-        var currVal_20 = this._NgControlStatus_19_7.ngClassInvalid;
+        var currVal_20 = this._NgControlStatus_21_7.ngClassInvalid;
         if (import4.checkBinding(throwOnChange, this._expr_20, currVal_20)) {
-            this.renderer.setElementClass(this._el_19, 'ng-invalid', currVal_20);
+            this.renderer.setElementClass(this._el_21, 'ng-invalid', currVal_20);
             this._expr_20 = currVal_20;
         }
-        var currVal_28 = this._NgControlStatus_31_7.ngClassUntouched;
+        var currVal_28 = this._NgControlStatus_33_7.ngClassUntouched;
         if (import4.checkBinding(throwOnChange, this._expr_28, currVal_28)) {
-            this.renderer.setElementClass(this._el_31, 'ng-untouched', currVal_28);
+            this.renderer.setElementClass(this._el_33, 'ng-untouched', currVal_28);
             this._expr_28 = currVal_28;
         }
-        var currVal_29 = this._NgControlStatus_31_7.ngClassTouched;
+        var currVal_29 = this._NgControlStatus_33_7.ngClassTouched;
         if (import4.checkBinding(throwOnChange, this._expr_29, currVal_29)) {
-            this.renderer.setElementClass(this._el_31, 'ng-touched', currVal_29);
+            this.renderer.setElementClass(this._el_33, 'ng-touched', currVal_29);
             this._expr_29 = currVal_29;
         }
-        var currVal_30 = this._NgControlStatus_31_7.ngClassPristine;
+        var currVal_30 = this._NgControlStatus_33_7.ngClassPristine;
         if (import4.checkBinding(throwOnChange, this._expr_30, currVal_30)) {
-            this.renderer.setElementClass(this._el_31, 'ng-pristine', currVal_30);
+            this.renderer.setElementClass(this._el_33, 'ng-pristine', currVal_30);
             this._expr_30 = currVal_30;
         }
-        var currVal_31 = this._NgControlStatus_31_7.ngClassDirty;
+        var currVal_31 = this._NgControlStatus_33_7.ngClassDirty;
         if (import4.checkBinding(throwOnChange, this._expr_31, currVal_31)) {
-            this.renderer.setElementClass(this._el_31, 'ng-dirty', currVal_31);
+            this.renderer.setElementClass(this._el_33, 'ng-dirty', currVal_31);
             this._expr_31 = currVal_31;
         }
-        var currVal_32 = this._NgControlStatus_31_7.ngClassValid;
+        var currVal_32 = this._NgControlStatus_33_7.ngClassValid;
         if (import4.checkBinding(throwOnChange, this._expr_32, currVal_32)) {
-            this.renderer.setElementClass(this._el_31, 'ng-valid', currVal_32);
+            this.renderer.setElementClass(this._el_33, 'ng-valid', currVal_32);
             this._expr_32 = currVal_32;
         }
-        var currVal_33 = this._NgControlStatus_31_7.ngClassInvalid;
+        var currVal_33 = this._NgControlStatus_33_7.ngClassInvalid;
         if (import4.checkBinding(throwOnChange, this._expr_33, currVal_33)) {
-            this.renderer.setElementClass(this._el_31, 'ng-invalid', currVal_33);
+            this.renderer.setElementClass(this._el_33, 'ng-invalid', currVal_33);
             this._expr_33 = currVal_33;
         }
-        var currVal_41 = this._NgControlStatus_43_7.ngClassUntouched;
+        var currVal_41 = this._NgControlStatus_45_7.ngClassUntouched;
         if (import4.checkBinding(throwOnChange, this._expr_41, currVal_41)) {
-            this.renderer.setElementClass(this._el_43, 'ng-untouched', currVal_41);
+            this.renderer.setElementClass(this._el_45, 'ng-untouched', currVal_41);
             this._expr_41 = currVal_41;
         }
-        var currVal_42 = this._NgControlStatus_43_7.ngClassTouched;
+        var currVal_42 = this._NgControlStatus_45_7.ngClassTouched;
         if (import4.checkBinding(throwOnChange, this._expr_42, currVal_42)) {
-            this.renderer.setElementClass(this._el_43, 'ng-touched', currVal_42);
+            this.renderer.setElementClass(this._el_45, 'ng-touched', currVal_42);
             this._expr_42 = currVal_42;
         }
-        var currVal_43 = this._NgControlStatus_43_7.ngClassPristine;
+        var currVal_43 = this._NgControlStatus_45_7.ngClassPristine;
         if (import4.checkBinding(throwOnChange, this._expr_43, currVal_43)) {
-            this.renderer.setElementClass(this._el_43, 'ng-pristine', currVal_43);
+            this.renderer.setElementClass(this._el_45, 'ng-pristine', currVal_43);
             this._expr_43 = currVal_43;
         }
-        var currVal_44 = this._NgControlStatus_43_7.ngClassDirty;
+        var currVal_44 = this._NgControlStatus_45_7.ngClassDirty;
         if (import4.checkBinding(throwOnChange, this._expr_44, currVal_44)) {
-            this.renderer.setElementClass(this._el_43, 'ng-dirty', currVal_44);
+            this.renderer.setElementClass(this._el_45, 'ng-dirty', currVal_44);
             this._expr_44 = currVal_44;
         }
-        var currVal_45 = this._NgControlStatus_43_7.ngClassValid;
+        var currVal_45 = this._NgControlStatus_45_7.ngClassValid;
         if (import4.checkBinding(throwOnChange, this._expr_45, currVal_45)) {
-            this.renderer.setElementClass(this._el_43, 'ng-valid', currVal_45);
+            this.renderer.setElementClass(this._el_45, 'ng-valid', currVal_45);
             this._expr_45 = currVal_45;
         }
-        var currVal_46 = this._NgControlStatus_43_7.ngClassInvalid;
+        var currVal_46 = this._NgControlStatus_45_7.ngClassInvalid;
         if (import4.checkBinding(throwOnChange, this._expr_46, currVal_46)) {
-            this.renderer.setElementClass(this._el_43, 'ng-invalid', currVal_46);
+            this.renderer.setElementClass(this._el_45, 'ng-invalid', currVal_46);
             this._expr_46 = currVal_46;
         }
-        var currVal_53 = this._NgControlStatus_53_9.ngClassUntouched;
+        var currVal_53 = this._NgControlStatus_55_9.ngClassUntouched;
         if (import4.checkBinding(throwOnChange, this._expr_53, currVal_53)) {
-            this.renderer.setElementClass(this._el_53, 'ng-untouched', currVal_53);
+            this.renderer.setElementClass(this._el_55, 'ng-untouched', currVal_53);
             this._expr_53 = currVal_53;
         }
-        var currVal_54 = this._NgControlStatus_53_9.ngClassTouched;
+        var currVal_54 = this._NgControlStatus_55_9.ngClassTouched;
         if (import4.checkBinding(throwOnChange, this._expr_54, currVal_54)) {
-            this.renderer.setElementClass(this._el_53, 'ng-touched', currVal_54);
+            this.renderer.setElementClass(this._el_55, 'ng-touched', currVal_54);
             this._expr_54 = currVal_54;
         }
-        var currVal_55 = this._NgControlStatus_53_9.ngClassPristine;
+        var currVal_55 = this._NgControlStatus_55_9.ngClassPristine;
         if (import4.checkBinding(throwOnChange, this._expr_55, currVal_55)) {
-            this.renderer.setElementClass(this._el_53, 'ng-pristine', currVal_55);
+            this.renderer.setElementClass(this._el_55, 'ng-pristine', currVal_55);
             this._expr_55 = currVal_55;
         }
-        var currVal_56 = this._NgControlStatus_53_9.ngClassDirty;
+        var currVal_56 = this._NgControlStatus_55_9.ngClassDirty;
         if (import4.checkBinding(throwOnChange, this._expr_56, currVal_56)) {
-            this.renderer.setElementClass(this._el_53, 'ng-dirty', currVal_56);
+            this.renderer.setElementClass(this._el_55, 'ng-dirty', currVal_56);
             this._expr_56 = currVal_56;
         }
-        var currVal_57 = this._NgControlStatus_53_9.ngClassValid;
+        var currVal_57 = this._NgControlStatus_55_9.ngClassValid;
         if (import4.checkBinding(throwOnChange, this._expr_57, currVal_57)) {
-            this.renderer.setElementClass(this._el_53, 'ng-valid', currVal_57);
+            this.renderer.setElementClass(this._el_55, 'ng-valid', currVal_57);
             this._expr_57 = currVal_57;
         }
-        var currVal_58 = this._NgControlStatus_53_9.ngClassInvalid;
+        var currVal_58 = this._NgControlStatus_55_9.ngClassInvalid;
         if (import4.checkBinding(throwOnChange, this._expr_58, currVal_58)) {
-            this.renderer.setElementClass(this._el_53, 'ng-invalid', currVal_58);
+            this.renderer.setElementClass(this._el_55, 'ng-invalid', currVal_58);
             this._expr_58 = currVal_58;
         }
-        var currVal_67 = this._NgControlStatus_67_9.ngClassUntouched;
+        var currVal_67 = this._NgControlStatus_69_9.ngClassUntouched;
         if (import4.checkBinding(throwOnChange, this._expr_67, currVal_67)) {
-            this.renderer.setElementClass(this._el_67, 'ng-untouched', currVal_67);
+            this.renderer.setElementClass(this._el_69, 'ng-untouched', currVal_67);
             this._expr_67 = currVal_67;
         }
-        var currVal_68 = this._NgControlStatus_67_9.ngClassTouched;
+        var currVal_68 = this._NgControlStatus_69_9.ngClassTouched;
         if (import4.checkBinding(throwOnChange, this._expr_68, currVal_68)) {
-            this.renderer.setElementClass(this._el_67, 'ng-touched', currVal_68);
+            this.renderer.setElementClass(this._el_69, 'ng-touched', currVal_68);
             this._expr_68 = currVal_68;
         }
-        var currVal_69 = this._NgControlStatus_67_9.ngClassPristine;
+        var currVal_69 = this._NgControlStatus_69_9.ngClassPristine;
         if (import4.checkBinding(throwOnChange, this._expr_69, currVal_69)) {
-            this.renderer.setElementClass(this._el_67, 'ng-pristine', currVal_69);
+            this.renderer.setElementClass(this._el_69, 'ng-pristine', currVal_69);
             this._expr_69 = currVal_69;
         }
-        var currVal_70 = this._NgControlStatus_67_9.ngClassDirty;
+        var currVal_70 = this._NgControlStatus_69_9.ngClassDirty;
         if (import4.checkBinding(throwOnChange, this._expr_70, currVal_70)) {
-            this.renderer.setElementClass(this._el_67, 'ng-dirty', currVal_70);
+            this.renderer.setElementClass(this._el_69, 'ng-dirty', currVal_70);
             this._expr_70 = currVal_70;
         }
-        var currVal_71 = this._NgControlStatus_67_9.ngClassValid;
+        var currVal_71 = this._NgControlStatus_69_9.ngClassValid;
         if (import4.checkBinding(throwOnChange, this._expr_71, currVal_71)) {
-            this.renderer.setElementClass(this._el_67, 'ng-valid', currVal_71);
+            this.renderer.setElementClass(this._el_69, 'ng-valid', currVal_71);
             this._expr_71 = currVal_71;
         }
-        var currVal_72 = this._NgControlStatus_67_9.ngClassInvalid;
+        var currVal_72 = this._NgControlStatus_69_9.ngClassInvalid;
         if (import4.checkBinding(throwOnChange, this._expr_72, currVal_72)) {
-            this.renderer.setElementClass(this._el_67, 'ng-invalid', currVal_72);
+            this.renderer.setElementClass(this._el_69, 'ng-invalid', currVal_72);
             this._expr_72 = currVal_72;
         }
         this.detectViewChildrenChanges(throwOnChange);
     };
-    _View_SignupComponent0.prototype._handle_ngSubmit_12_0 = function ($event) {
+    _View_SignupComponent0.prototype._handle_ngSubmit_14_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this.context.onSubmit() !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_submit_12_1 = function ($event) {
+    _View_SignupComponent0.prototype._handle_submit_14_1 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._FormGroupDirective_12_3.onSubmit() !== false);
+        var pd_0 = (this._FormGroupDirective_14_3.onSubmit() !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_reset_12_2 = function ($event) {
+    _View_SignupComponent0.prototype._handle_reset_14_2 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._FormGroupDirective_12_3.onReset() !== false);
+        var pd_0 = (this._FormGroupDirective_14_3.onReset() !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_input_19_0 = function ($event) {
+    _View_SignupComponent0.prototype._handle_input_21_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_19_3.onChange($event.target.value) !== false);
+        var pd_0 = (this._DefaultValueAccessor_21_3.onChange($event.target.value) !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_blur_19_1 = function ($event) {
+    _View_SignupComponent0.prototype._handle_blur_21_1 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_19_3.onTouched() !== false);
+        var pd_0 = (this._DefaultValueAccessor_21_3.onTouched() !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_input_31_0 = function ($event) {
+    _View_SignupComponent0.prototype._handle_input_33_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_31_3.onChange($event.target.value) !== false);
+        var pd_0 = (this._DefaultValueAccessor_33_3.onChange($event.target.value) !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_blur_31_1 = function ($event) {
+    _View_SignupComponent0.prototype._handle_blur_33_1 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_31_3.onTouched() !== false);
+        var pd_0 = (this._DefaultValueAccessor_33_3.onTouched() !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_input_43_0 = function ($event) {
+    _View_SignupComponent0.prototype._handle_input_45_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_43_3.onChange($event.target.value) !== false);
+        var pd_0 = (this._DefaultValueAccessor_45_3.onChange($event.target.value) !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_blur_43_1 = function ($event) {
+    _View_SignupComponent0.prototype._handle_blur_45_1 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_43_3.onTouched() !== false);
+        var pd_0 = (this._DefaultValueAccessor_45_3.onTouched() !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_input_53_0 = function ($event) {
+    _View_SignupComponent0.prototype._handle_input_55_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_53_3.onChange($event.target.value) !== false);
+        var pd_0 = (this._DefaultValueAccessor_55_3.onChange($event.target.value) !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_blur_53_1 = function ($event) {
+    _View_SignupComponent0.prototype._handle_blur_55_1 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_53_3.onTouched() !== false);
+        var pd_0 = (this._DefaultValueAccessor_55_3.onTouched() !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_input_67_0 = function ($event) {
+    _View_SignupComponent0.prototype._handle_input_69_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_67_3.onChange($event.target.value) !== false);
+        var pd_0 = (this._DefaultValueAccessor_69_3.onChange($event.target.value) !== false);
         return (true && pd_0);
     };
-    _View_SignupComponent0.prototype._handle_blur_67_1 = function ($event) {
+    _View_SignupComponent0.prototype._handle_blur_69_1 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_67_3.onTouched() !== false);
+        var pd_0 = (this._DefaultValueAccessor_69_3.onTouched() !== false);
         return (true && pd_0);
     };
     return _View_SignupComponent0;
@@ -1072,7 +1080,7 @@ var _View_SignupComponent1 = (function (_super) {
     _View_SignupComponent1.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field is required.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field is required.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -1092,7 +1100,7 @@ var _View_SignupComponent2 = (function (_super) {
     _View_SignupComponent2.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field can have max 100 characters.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field can have max 100 characters.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -1112,7 +1120,7 @@ var _View_SignupComponent3 = (function (_super) {
     _View_SignupComponent3.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field is required.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field is required.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -1132,7 +1140,7 @@ var _View_SignupComponent4 = (function (_super) {
     _View_SignupComponent4.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field can have max 100 characters.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field can have max 100 characters.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -1152,7 +1160,7 @@ var _View_SignupComponent5 = (function (_super) {
     _View_SignupComponent5.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Email has to be valid e.g. john@gmail.com.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Email has to be valid e.g. john@gmail.com.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -1172,7 +1180,7 @@ var _View_SignupComponent6 = (function (_super) {
     _View_SignupComponent6.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field is required.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field is required.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -1192,7 +1200,7 @@ var _View_SignupComponent7 = (function (_super) {
     _View_SignupComponent7.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field can have min 4 characters.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field can have min 4 characters.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -1212,7 +1220,7 @@ var _View_SignupComponent8 = (function (_super) {
     _View_SignupComponent8.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        Field can have max 100 characters.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            Field can have max 100 characters.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -1232,7 +1240,7 @@ var _View_SignupComponent9 = (function (_super) {
     _View_SignupComponent9.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
-        this._text_1 = this.renderer.createText(this._el_0, '\n                        These passwords don\'t match.\n                    ', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            These passwords don\'t match.\n                        ', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1

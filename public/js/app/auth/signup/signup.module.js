@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { SignupComponent } from "./signup.component";
 import { signupRouting } from "./signup.routing";
 import { EqualValidator } from "../validator-equal.directive";
+import { AuthService } from "../auth.service";
 export var SignupModule = (function () {
     function SignupModule() {
     }
@@ -11,12 +12,15 @@ export var SignupModule = (function () {
         { type: NgModule, args: [{
                     declarations: [
                         SignupComponent,
-                        EqualValidator
+                        EqualValidator,
                     ],
                     imports: [
                         ReactiveFormsModule,
                         CommonModule,
-                        signupRouting
+                        signupRouting,
+                    ],
+                    providers: [
+                        AuthService,
                     ]
                 },] },
     ];

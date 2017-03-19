@@ -55,11 +55,19 @@ var _View_HomeComponent0 = (function (_super) {
     }
     _View_HomeComponent0.prototype.createInternal = function (rootSelector) {
         var parentRenderNode = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-        this._el_0 = this.renderer.createElement(parentRenderNode, 'h1', null);
-        this._text_1 = this.renderer.createText(this._el_0, 'Course timetabling competition', null);
+        this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
+        this.renderer.setElementAttribute(this._el_0, 'class', 'container');
+        this.renderer.setElementAttribute(this._el_0, 'style', 'margin-top: 3%');
+        this._text_1 = this.renderer.createText(this._el_0, '\n    ', null);
+        this._el_2 = this.renderer.createElement(this._el_0, 'h1', null);
+        this._text_3 = this.renderer.createText(this._el_2, 'Course timetabling competition', null);
+        this._text_4 = this.renderer.createText(this._el_0, '\n', null);
         this.init([], [
             this._el_0,
-            this._text_1
+            this._text_1,
+            this._el_2,
+            this._text_3,
+            this._text_4
         ], [], []);
         return null;
     };

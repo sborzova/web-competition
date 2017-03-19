@@ -4,6 +4,7 @@ import { UsersService } from "./users.service";
 import { User } from "./user.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { AuthService } from "../auth/auth.service";
+import {SessionStorageService} from "../shared/session-storage.service";
 
 @Component({
     selector: 'app-users',
@@ -13,7 +14,7 @@ export class UsersComponent implements OnInit {
     @Input() users : User[];
 
     constructor(private usersService: UsersService,
-                private authService: AuthService,
+                private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService){
     }
 
@@ -37,6 +38,6 @@ export class UsersComponent implements OnInit {
     }
 
     isMe(user: User){
-      return this.authService.getEmailLoggedIn() == user.email;
+      return this.sessionStorageService.getEmailLoggedIn() == user.email;
     }
 }

@@ -47,16 +47,27 @@ var renderType_HomeComponent:import0.RenderComponentType = (null as any);
 class _View_HomeComponent0 extends import1.AppView<import3.HomeComponent> {
   _el_0:any;
   _text_1:any;
+  _el_2:any;
+  _text_3:any;
+  _text_4:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_HomeComponent0,renderType_HomeComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-    this._el_0 = this.renderer.createElement(parentRenderNode,'h1',(null as any));
-    this._text_1 = this.renderer.createText(this._el_0,'Course timetabling competition',(null as any));
+    this._el_0 = this.renderer.createElement(parentRenderNode,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','container');
+    this.renderer.setElementAttribute(this._el_0,'style','margin-top: 3%');
+    this._text_1 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'h1',(null as any));
+    this._text_3 = this.renderer.createText(this._el_2,'Course timetabling competition',(null as any));
+    this._text_4 = this.renderer.createText(this._el_0,'\n',(null as any));
     this.init([],[
       this._el_0,
-      this._text_1
+      this._text_1,
+      this._el_2,
+      this._text_3,
+      this._text_4
     ]
     ,[],[]);
     return (null as any);

@@ -10,6 +10,7 @@ import {InstanceStatsComponent} from "./instance-stats/instance-stats.component"
 import {OrderByModule} from "../order-by.module";
 import {EscapeHtmlModule} from "../escape-html.module";
 import {InstanceService} from "./instance.service";
+import {FlashMessageService} from "../flash-message/flash-messages.service";
 
 @NgModule({
     declarations: [
@@ -24,8 +25,10 @@ import {InstanceService} from "./instance.service";
         CommonModule,
         OrderByModule,
         EscapeHtmlModule,
-        instanceRouting
+        instanceRouting,
     ],
-    providers: [InstanceService]
+    providers: [
+        InstanceService,
+    ]
 })
 export class InstanceModule {}

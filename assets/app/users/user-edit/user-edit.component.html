@@ -1,101 +1,103 @@
-<div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-        <div class="jumbotron">
-            <div class="text-center">
-                <h2>Edit user</h2>
-            </div>
-            <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
-                <div class="form-group"
-                     [ngClass]="{'has-error':
-                        (!myForm.controls['firstName'].valid ) &&
-                        (myForm.controls['firstName'].touched || isSubmitted())}">
-                    <label for="firstName">
-                        First name
-                    </label>
-                    <input
-                            type="text"
-                            id="firstName"
-                            class="form-control"
-                            [formControl]="myForm.controls['firstName']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['firstName'].hasError('required')) &&
-                            (myForm.controls['firstName'].touched || isSubmitted())">
-                        First name is required.
-                    </div>
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['firstName'].hasError('maxlength')) &&
-                            (myForm.controls['firstName'].touched || isSubmitted())">
-                        First name can have max 100 characters.
-                    </div>
+<div class="container" style="margin-top: 3%">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <div class="jumbotron">
+                <div class="text-center">
+                    <h2>Edit user</h2>
                 </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
-                        (!myForm.controls['lastName'].valid) &&
-                        (myForm.controls['lastName'].touched || isSubmitted())}">
-                    <label for="lastName">
-                        Last name
-                    </label>
-                    <input
-                            type="text"
-                            id="lastName"
-                            class="form-control"
-                            [formControl]="myForm.controls['lastName']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['lastName'].hasError('required')) &&
-                            (myForm.controls['lastName'].touched || isSubmitted())">
-                        Last name is required.
-                    </div>
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['lastName'].hasError('maxlength')) &&
-                            (myForm.controls['lastName'].touched || isSubmitted())">
-                        Last name can have max 100 characters.
-                    </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
-                    !myForm.controls['email'].valid &&
-                    (myForm.controls['email'].touched || isSubmitted())}">
-                    <label for="email">
-                        Email address
-                    </label>
-                    <input
-                            type="email"
-                            id="email"
-                            class="form-control"
-                            [formControl]="myForm.controls['email']">
-                    <div class="field-error"
-                         *ngIf="!myForm.controls['email'].valid &&
-                        (myForm.controls['email'].touched || isSubmitted())">
-                        Email has to be valid e.g. john@gmail.com.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="role">
-                        Role
-                    </label>
-                    <div *ngFor="let role of roles">
+                <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
+                    (!myForm.controls['firstName'].valid ) &&
+                    (myForm.controls['firstName'].touched || isSubmitted())}">
+                        <label for="firstName">
+                            First name
+                        </label>
                         <input
-                                type="radio"
-                                id="role"
-                                name="role"
-                                (click)="getValue(role)"
-                                [checked]="role == selectedRole"
-                                value={{role}}>{{role}}
+                                type="text"
+                                id="firstName"
+                                class="form-control"
+                                [formControl]="myForm.controls['firstName']">
+                        <div class="field-error"
+                             *ngIf="(myForm.controls['firstName'].hasError('required')) &&
+                        (myForm.controls['firstName'].touched || isSubmitted())">
+                            Field is required.
+                        </div>
+                        <div class="field-error"
+                             *ngIf="(myForm.controls['firstName'].hasError('maxlength')) &&
+                        (myForm.controls['firstName'].touched || isSubmitted())">
+                            Field can have max 100 characters.
+                        </div>
                     </div>
-                </div>
-                <div align="right">
-                    <button
-                            class="btn btn-primary"
-                            type="submit">
-                        Save
-                    </button>
-                    <button
-                            class="btn btn-default"
-                            (click)="onCancel()">
-                        Cancel
-                    </button>
-                </div>
-            </form>
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
+                    (!myForm.controls['lastName'].valid) &&
+                    (myForm.controls['lastName'].touched || isSubmitted())}">
+                        <label for="lastName">
+                            Last name
+                        </label>
+                        <input
+                                type="text"
+                                id="lastName"
+                                class="form-control"
+                                [formControl]="myForm.controls['lastName']">
+                        <div class="field-error"
+                             *ngIf="(myForm.controls['lastName'].hasError('required')) &&
+                        (myForm.controls['lastName'].touched || isSubmitted())">
+                            Field is required.
+                        </div>
+                        <div class="field-error"
+                             *ngIf="(myForm.controls['lastName'].hasError('maxlength')) &&
+                        (myForm.controls['lastName'].touched || isSubmitted())">
+                            Field can have max 100 characters.
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
+                !myForm.controls['email'].valid &&
+                (myForm.controls['email'].touched || isSubmitted())}">
+                        <label for="email">
+                            Email address
+                        </label>
+                        <input
+                                type="email"
+                                id="email"
+                                class="form-control"
+                                [formControl]="myForm.controls['email']">
+                        <div class="field-error"
+                             *ngIf="!myForm.controls['email'].valid &&
+                    (myForm.controls['email'].touched || isSubmitted())">
+                            Email has to be valid e.g. john@gmail.com.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">
+                            Role
+                        </label>
+                        <div *ngFor="let role of roles">
+                            <input
+                                    type="radio"
+                                    id="role"
+                                    name="role"
+                                    (click)="getValue(role)"
+                                    [checked]="role == selectedRole"
+                                    value={{role}}>{{role}}
+                        </div>
+                    </div>
+                    <div align="right">
+                        <button
+                                class="btn btn-primary"
+                                type="submit">
+                            Save
+                        </button>
+                        <button
+                                class="btn btn-default"
+                                (click)="onCancel()">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

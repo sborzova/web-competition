@@ -1,130 +1,132 @@
-<div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-        <div class="jumbotron">
-            <div class="text-center">
-                <h2>Create account</h2>
-            </div>
-            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-                <div class="form-group"
-                     [ngClass]="{'has-error':
+<div class="container" style="margin-top: 3%">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <div class="jumbotron">
+                <div class="text-center">
+                    <h2>Create account</h2>
+                </div>
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
                         (!myForm.controls['firstName'].valid ) &&
                         (myForm.controls['firstName'].touched || isSubmitted())}">
-                    <label for="firstName">
-                        First name
-                    </label>
+                        <label for="firstName">
+                            First name
+                        </label>
                         <input
-                            type="text"
-                            id="firstName"
-                            class="form-control"
-                            [formControl]="myForm.controls['firstName']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['firstName'].hasError('required')) &&
+                                type="text"
+                                id="firstName"
+                                class="form-control"
+                                [formControl]="myForm.controls['firstName']">
+                        <div class="field-error"
+                             *ngIf="(myForm.controls['firstName'].hasError('required')) &&
                             (myForm.controls['firstName'].touched || isSubmitted())">
-                        Field is required.
-                    </div>
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['firstName'].hasError('maxlength')) &&
+                            Field is required.
+                        </div>
+                        <div class="field-error"
+                             *ngIf="(myForm.controls['firstName'].hasError('maxlength')) &&
                             (myForm.controls['firstName'].touched || isSubmitted())">
-                        Field can have max 100 characters.
+                            Field can have max 100 characters.
+                        </div>
                     </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
                         (!myForm.controls['lastName'].valid) &&
                         (myForm.controls['lastName'].touched || isSubmitted())}">
-                    <label for="lastName">
-                        Last name
-                    </label>
+                        <label for="lastName">
+                            Last name
+                        </label>
                         <input
-                            type="text"
-                            id="lastName"
-                            class="form-control"
-                            [formControl]="myForm.controls['lastName']">
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['lastName'].hasError('required')) &&
+                                type="text"
+                                id="lastName"
+                                class="form-control"
+                                [formControl]="myForm.controls['lastName']">
+                        <div class="field-error"
+                             *ngIf="(myForm.controls['lastName'].hasError('required')) &&
                             (myForm.controls['lastName'].touched || isSubmitted())">
-                        Field is required.
-                    </div>
-                    <div class="field-error"
-                         *ngIf="(myForm.controls['lastName'].hasError('maxlength')) &&
+                            Field is required.
+                        </div>
+                        <div class="field-error"
+                             *ngIf="(myForm.controls['lastName'].hasError('maxlength')) &&
                             (myForm.controls['lastName'].touched || isSubmitted())">
-                        Field can have max 100 characters.
+                            Field can have max 100 characters.
+                        </div>
                     </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
                         !myForm.controls['email'].valid &&
                         (myForm.controls['email'].touched || isSubmitted())}">
-                    <label for="email">
-                        Email address
-                    </label>
+                        <label for="email">
+                            Email address
+                        </label>
                         <input
-                            type="email"
-                            id="email"
-                            class="form-control"
-                            [formControl]="myForm.controls['email']">
-                    <div class="field-error"
-                         *ngIf="!myForm.controls['email'].valid &&
+                                type="email"
+                                id="email"
+                                class="form-control"
+                                [formControl]="myForm.controls['email']">
+                        <div class="field-error"
+                             *ngIf="!myForm.controls['email'].valid &&
                             (myForm.controls['email'].touched || isSubmitted())">
-                        Email has to be valid e.g. john@gmail.com.
+                            Email has to be valid e.g. john@gmail.com.
+                        </div>
                     </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
                         !myForm.controls['password'].valid &&
                         (myForm.controls['password'].touched || isSubmitted())}">
-                    <label for="password">
-                        Create a password
-                    </label>
+                        <label for="password">
+                            Create a password
+                        </label>
                         <input
-                            type="password"
-                            id="password"
-                            class="form-control"
-                            [formControl]="myForm.controls['password']"
-                            validateEqual="confirmPassword" reverse="true">
-                    <div class="field-error"
-                         *ngIf="myForm.controls['password'].hasError('required') &&
+                                type="password"
+                                id="password"
+                                class="form-control"
+                                [formControl]="myForm.controls['password']"
+                                validateEqual="confirmPassword" reverse="true">
+                        <div class="field-error"
+                             *ngIf="myForm.controls['password'].hasError('required') &&
                             (myForm.controls['password'].touched || isSubmitted())">
-                        Field is required.
-                    </div>
-                    <div class="field-error"
-                         *ngIf="myForm.controls['password'].hasError('minlength') &&
+                            Field is required.
+                        </div>
+                        <div class="field-error"
+                             *ngIf="myForm.controls['password'].hasError('minlength') &&
                             (myForm.controls['password'].touched || isSubmitted())">
-                        Field can have min 4 characters.
-                    </div>
-                    <div class="field-error"
-                         *ngIf="myForm.controls['password'].hasError('maxlength') &&
+                            Field can have min 4 characters.
+                        </div>
+                        <div class="field-error"
+                             *ngIf="myForm.controls['password'].hasError('maxlength') &&
                             (myForm.controls['password'].touched || isSubmitted())">
-                        Field can have max 100 characters.
+                            Field can have max 100 characters.
+                        </div>
                     </div>
-                </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error':
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
                         !myForm.controls['confirmPassword'].valid &&
                         (myForm.controls['confirmPassword'].touched || isSubmitted())}">
-                    <label for="confirmPassword">
-                        Confirm the password
-                    </label>
+                        <label for="confirmPassword">
+                            Confirm the password
+                        </label>
                         <input
-                            type="password"
-                            id="confirmPassword"
-                            class="form-control"
-                            [formControl]="myForm.controls['confirmPassword']"
-                            validateEqual="password">
-                    <div class="field-error"
-                         *ngIf="!myForm.controls['confirmPassword'].valid &&
+                                type="password"
+                                id="confirmPassword"
+                                class="form-control"
+                                [formControl]="myForm.controls['confirmPassword']"
+                                validateEqual="password">
+                        <div class="field-error"
+                             *ngIf="!myForm.controls['confirmPassword'].valid &&
                             (myForm.controls['confirmPassword'].touched || isSubmitted())">
-                        These passwords don't match.
+                            These passwords don't match.
+                        </div>
                     </div>
-                </div>
-                <div align="right">
-                    <button
-                            class="btn btn-primary align-right"
-                            type="submit">
+                    <div align="right">
+                        <button
+                                class="btn btn-primary align-right"
+                                type="submit">
                             Sign up
-                    </button>
-                </div>
-            </form>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

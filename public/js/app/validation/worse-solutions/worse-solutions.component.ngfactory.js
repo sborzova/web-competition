@@ -127,6 +127,7 @@ var _View_WorseSolutionsComponent1 = (function (_super) {
     }
     _View_WorseSolutionsComponent1.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
+        this.renderer.setElementAttribute(this._el_0, 'class', 'col-xs-12');
         this._NgStyle_0_3 = new import15.NgStyle(this.parentInjector.get(import17.KeyValueDiffers), new import18.ElementRef(this._el_0), this.renderer);
         this._text_1 = this.renderer.createText(this._el_0, '\n    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'h4', null);
@@ -184,7 +185,7 @@ var _View_WorseSolutionsComponent1 = (function (_super) {
         this._text_47 = this.renderer.createText(this._el_46, '\n                Delete selected\n            ', null);
         this._text_48 = this.renderer.createText(this._el_44, '\n            ', null);
         this._el_49 = this.renderer.createElement(this._el_44, 'button', null);
-        this.renderer.setElementAttribute(this._el_49, 'class', 'btn btn-default');
+        this.renderer.setElementAttribute(this._el_49, 'class', 'btn btn-danger');
         this._text_50 = this.renderer.createText(this._el_49, '\n                Delete none\n            ', null);
         this._text_51 = this.renderer.createText(this._el_44, '\n        ', null);
         this._text_52 = this.renderer.createText(this._el_8, '\n    ', null);

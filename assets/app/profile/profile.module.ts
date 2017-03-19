@@ -6,6 +6,8 @@ import {ProfileEditComponent} from "./profile-edit/profile-edit.component";
 import {ProfileEditPasswordComponent} from "./profile-edit-password/profile-edit-password.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {UserService} from "../shared/user.service";
+import {FlashMessageComponent} from "../flash-message/flash-message.component";
+import {FlashMessageService} from "../flash-message/flash-messages.service";
 
 @NgModule({
     declarations: [
@@ -13,7 +15,13 @@ import {UserService} from "../shared/user.service";
         ProfileEditComponent,
         ProfileEditPasswordComponent,
     ],
-    imports: [ReactiveFormsModule, CommonModule, profileRouting],
-    providers: [UserService]
+    imports: [
+        ReactiveFormsModule,
+        CommonModule,
+        profileRouting,
+    ],
+    providers: [
+        UserService,
+    ]
 })
 export class ProfileModule {}

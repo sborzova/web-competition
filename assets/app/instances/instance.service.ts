@@ -5,7 +5,6 @@ import { Observable } from "rxjs";
 import { Instance } from "./instance.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 
-
 @Injectable()
 export class InstanceService {
     private instances: Instance[] = [];

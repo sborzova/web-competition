@@ -27,9 +27,11 @@ export var InstanceModule = (function () {
                         CommonModule,
                         OrderByModule,
                         EscapeHtmlModule,
-                        instanceRouting
+                        instanceRouting,
                     ],
-                    providers: [InstanceService]
+                    providers: [
+                        InstanceService,
+                    ]
                 },] },
     ];
     /** @nocollapse */

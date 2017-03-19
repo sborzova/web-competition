@@ -13,11 +13,15 @@ import * as import5 from '@angular/router/src/router_module';
 import * as import6 from '@angular/forms/src/form_builder';
 import * as import7 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import8 from '@angular/common/src/localization';
-import * as import9 from '@angular/core/src/di/injector';
-import * as import10 from './signin.component.ngfactory';
-import * as import11 from '@angular/core/src/i18n/tokens';
-import * as import12 from './signin.component';
-import * as import13 from '@angular/router/src/router_config_loader';
+import * as import9 from '../auth.service';
+import * as import10 from '@angular/core/src/di/injector';
+import * as import11 from './signin.component.ngfactory';
+import * as import12 from '@angular/core/src/i18n/tokens';
+import * as import13 from './signin.component';
+import * as import14 from '@angular/http/src/http';
+import * as import15 from '../../flash-message/flash-messages.service';
+import * as import16 from '../../preference/preference.service';
+import * as import17 from '@angular/router/src/router_config_loader';
 class SigninModuleInjector extends import0.NgModuleInjector<import1.SigninModule> {
   _InternalFormsSharedModule_0:import2.InternalFormsSharedModule;
   _ReactiveFormsModule_1:import3.ReactiveFormsModule;
@@ -28,8 +32,9 @@ class SigninModuleInjector extends import0.NgModuleInjector<import1.SigninModule
   __RadioControlRegistry_6:import7.RadioControlRegistry;
   __NgLocalization_7:import8.NgLocaleLocalization;
   __ROUTES_8:any[];
-  constructor(parent:import9.Injector) {
-    super(parent,[import10.SigninComponentNgFactory],[]);
+  __AuthService_9:import9.AuthService;
+  constructor(parent:import10.Injector) {
+    super(parent,[import11.SigninComponentNgFactory],[]);
   }
   get _FormBuilder_5():import6.FormBuilder {
     if ((this.__FormBuilder_5 == (null as any))) { (this.__FormBuilder_5 = new import6.FormBuilder()); }
@@ -40,7 +45,7 @@ class SigninModuleInjector extends import0.NgModuleInjector<import1.SigninModule
     return this.__RadioControlRegistry_6;
   }
   get _NgLocalization_7():import8.NgLocaleLocalization {
-    if ((this.__NgLocalization_7 == (null as any))) { (this.__NgLocalization_7 = new import8.NgLocaleLocalization(this.parent.get(import11.LOCALE_ID))); }
+    if ((this.__NgLocalization_7 == (null as any))) { (this.__NgLocalization_7 = new import8.NgLocaleLocalization(this.parent.get(import12.LOCALE_ID))); }
     return this.__NgLocalization_7;
   }
   get _ROUTES_8():any[] {
@@ -48,12 +53,16 @@ class SigninModuleInjector extends import0.NgModuleInjector<import1.SigninModule
           path: '',
             children: [{
               path: '',
-              component: import12.SigninComponent
+              component: import13.SigninComponent
             }
           ]
         }
     ]]); }
     return this.__ROUTES_8;
+  }
+  get _AuthService_9():import9.AuthService {
+    if ((this.__AuthService_9 == (null as any))) { (this.__AuthService_9 = new import9.AuthService(this.parent.get(import14.Http),this.parent.get(import15.FlashMessageService),this.parent.get(import16.PreferenceService))); }
+    return this.__AuthService_9;
   }
   createInternal():import1.SigninModule {
     this._InternalFormsSharedModule_0 = new import2.InternalFormsSharedModule();
@@ -72,7 +81,8 @@ class SigninModuleInjector extends import0.NgModuleInjector<import1.SigninModule
     if ((token === import6.FormBuilder)) { return this._FormBuilder_5; }
     if ((token === import7.RadioControlRegistry)) { return this._RadioControlRegistry_6; }
     if ((token === import8.NgLocalization)) { return this._NgLocalization_7; }
-    if ((token === import13.ROUTES)) { return this._ROUTES_8; }
+    if ((token === import17.ROUTES)) { return this._ROUTES_8; }
+    if ((token === import9.AuthService)) { return this._AuthService_9; }
     return notFoundResult;
   }
   destroyInternal():void {

@@ -5,13 +5,15 @@ import { Observable } from "rxjs";
 
 import { User } from "./user.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
+import {PreferenceService} from "../preference/preference.service";
 
 @Injectable()
 export class AuthService{
     private hostUrl: string;
 
     constructor(private http: Http,
-                private flashMessageService: FlashMessageService) {
+                private flashMessageService: FlashMessageService,
+                private preferenceService: PreferenceService) {
 
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
@@ -41,31 +43,4 @@ export class AuthService{
                 return Observable.throw(error);
             });
     }
-
-    logout() {
-        sessionStorage.clear();
-    }
-
-    isLoggedIn() {
-        return sessionStorage.getItem('token') !== null;
-    }
-
-    isAdmin(){
-        return sessionStorage.getItem('isAdmin') !== null;
-    }
-
-    getEmailLoggedIn(){
-        return sessionStorage.getItem('email');
-    }
-
-    setSessionStorage(data : any){
-        sessionStorage.setItem('token', data.token);
-        sessionStorage.setItem('userId', data.userId);
-        sessionStorage.setItem('email', data.email);
-
-        if (data.isAdmin === 'true'){
-            sessionStorage.setItem('isAdmin', 'true');
-        }
-    }
-
 }

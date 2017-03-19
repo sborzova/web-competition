@@ -31,13 +31,13 @@ export var InstanceEditComponent = (function () {
     InstanceEditComponent.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();
     };
-    InstanceEditComponent.prototype.onSubmit = function (form) {
+    InstanceEditComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
-        if (form.valid) {
-            this.instance.order = form.value.order;
-            this.instance.name = form.value.name;
-            this.instance.description = form.value.description;
+        if (this.myForm.valid) {
+            this.instance.order = this.myForm.value.order;
+            this.instance.name = this.myForm.value.name;
+            this.instance.description = this.myForm.value.description;
             this.instanceService.updateInstanceTextFields(this.instance)
                 .subscribe(function (data) {
                 _this.navigateBack();

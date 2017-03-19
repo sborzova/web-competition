@@ -16,8 +16,14 @@ export var ProfileModule = (function () {
                         ProfileEditComponent,
                         ProfileEditPasswordComponent,
                     ],
-                    imports: [ReactiveFormsModule, CommonModule, profileRouting],
-                    providers: [UserService]
+                    imports: [
+                        ReactiveFormsModule,
+                        CommonModule,
+                        profileRouting,
+                    ],
+                    providers: [
+                        UserService,
+                    ]
                 },] },
     ];
     /** @nocollapse */

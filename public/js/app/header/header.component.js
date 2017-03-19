@@ -1,23 +1,29 @@
 import { Component } from "@angular/core";
-import { AuthService } from "../auth/auth.service";
 import { Router } from "@angular/router";
+import { SessionStorageService } from "../shared/session-storage.service";
 export var HeaderComponent = (function () {
-    function HeaderComponent(authService, router) {
-        this.authService = authService;
+    function HeaderComponent(sessionStorageService, router) {
+        this.sessionStorageService = sessionStorageService;
         this.router = router;
     }
+    HeaderComponent.prototype.ngOnInit = function () {
+        this.sessionStorageService.setSessionStorageCompetitionIsOn();
+    };
     HeaderComponent.prototype.isLoggedIn = function () {
-        return this.authService.isLoggedIn();
+        return this.sessionStorageService.isLoggedIn();
     };
     HeaderComponent.prototype.onLogout = function () {
-        this.authService.logout();
+        this.sessionStorageService.logout();
         this.router.navigate(['/#home']);
     };
     HeaderComponent.prototype.isAdmin = function () {
-        return this.authService.isAdmin();
+        return this.sessionStorageService.isAdmin();
     };
     HeaderComponent.prototype.getEmailLoggedIn = function () {
-        return this.authService.getEmailLoggedIn();
+        return this.sessionStorageService.getEmailLoggedIn();
+    };
+    HeaderComponent.prototype.competitionIsOn = function () {
+        return this.sessionStorageService.getCompetitionIsOn();
     };
     HeaderComponent.decorators = [
         { type: Component, args: [{
@@ -27,7 +33,7 @@ export var HeaderComponent = (function () {
     ];
     /** @nocollapse */
     HeaderComponent.ctorParameters = [
-        { type: AuthService, },
+        { type: SessionStorageService, },
         { type: Router, },
     ];
     return HeaderComponent;

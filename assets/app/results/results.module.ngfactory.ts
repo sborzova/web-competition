@@ -11,15 +11,16 @@ import * as import3 from '../order-by.module';
 import * as import4 from '@angular/router/src/router_module';
 import * as import5 from '@angular/common/src/localization';
 import * as import6 from '../shared/paper.service';
-import * as import7 from '../instances/instance.service';
-import * as import8 from '../validation/solution.service';
-import * as import9 from '@angular/core/src/di/injector';
-import * as import10 from './results.component.ngfactory';
-import * as import11 from '@angular/core/src/i18n/tokens';
-import * as import12 from './results.component';
-import * as import13 from '@angular/http/src/http';
-import * as import14 from '../flash-message/flash-messages.service';
-import * as import15 from '@angular/router/src/router_config_loader';
+import * as import7 from '../flash-message/flash-messages.service';
+import * as import8 from '../instances/instance.service';
+import * as import9 from '../validation/solution.service';
+import * as import10 from './results.service';
+import * as import11 from '@angular/core/src/di/injector';
+import * as import12 from './results.component.ngfactory';
+import * as import13 from '@angular/core/src/i18n/tokens';
+import * as import14 from './results.component';
+import * as import15 from '@angular/http/src/http';
+import * as import16 from '@angular/router/src/router_config_loader';
 class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModule> {
   _CommonModule_0:import2.CommonModule;
   _OrderByModule_1:import3.OrderByModule;
@@ -28,13 +29,15 @@ class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModu
   __NgLocalization_4:import5.NgLocaleLocalization;
   __ROUTES_5:any[];
   __PaperService_6:import6.PaperService;
-  __InstanceService_7:import7.InstanceService;
-  __SolutionService_8:import8.SolutionService;
-  constructor(parent:import9.Injector) {
-    super(parent,[import10.ResultsComponentNgFactory],[]);
+  __FlashMessageService_7:import7.FlashMessageService;
+  __InstanceService_8:import8.InstanceService;
+  __SolutionService_9:import9.SolutionService;
+  __ResultsService_10:import10.ResultsService;
+  constructor(parent:import11.Injector) {
+    super(parent,[import12.ResultsComponentNgFactory],[]);
   }
   get _NgLocalization_4():import5.NgLocaleLocalization {
-    if ((this.__NgLocalization_4 == (null as any))) { (this.__NgLocalization_4 = new import5.NgLocaleLocalization(this.parent.get(import11.LOCALE_ID))); }
+    if ((this.__NgLocalization_4 == (null as any))) { (this.__NgLocalization_4 = new import5.NgLocaleLocalization(this.parent.get(import13.LOCALE_ID))); }
     return this.__NgLocalization_4;
   }
   get _ROUTES_5():any[] {
@@ -42,7 +45,7 @@ class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModu
           path: '',
             children: [{
               path: '',
-              component: import12.ResultsComponent
+              component: import14.ResultsComponent
             }
           ]
         }
@@ -50,16 +53,24 @@ class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModu
     return this.__ROUTES_5;
   }
   get _PaperService_6():import6.PaperService {
-    if ((this.__PaperService_6 == (null as any))) { (this.__PaperService_6 = new import6.PaperService(this.parent.get(import13.Http))); }
+    if ((this.__PaperService_6 == (null as any))) { (this.__PaperService_6 = new import6.PaperService(this.parent.get(import15.Http))); }
     return this.__PaperService_6;
   }
-  get _InstanceService_7():import7.InstanceService {
-    if ((this.__InstanceService_7 == (null as any))) { (this.__InstanceService_7 = new import7.InstanceService(this.parent.get(import13.Http),this.parent.get(import14.FlashMessageService))); }
-    return this.__InstanceService_7;
+  get _FlashMessageService_7():import7.FlashMessageService {
+    if ((this.__FlashMessageService_7 == (null as any))) { (this.__FlashMessageService_7 = new import7.FlashMessageService()); }
+    return this.__FlashMessageService_7;
   }
-  get _SolutionService_8():import8.SolutionService {
-    if ((this.__SolutionService_8 == (null as any))) { (this.__SolutionService_8 = new import8.SolutionService(this.parent.get(import13.Http),this.parent.get(import14.FlashMessageService))); }
-    return this.__SolutionService_8;
+  get _InstanceService_8():import8.InstanceService {
+    if ((this.__InstanceService_8 == (null as any))) { (this.__InstanceService_8 = new import8.InstanceService(this.parent.get(import15.Http),this._FlashMessageService_7)); }
+    return this.__InstanceService_8;
+  }
+  get _SolutionService_9():import9.SolutionService {
+    if ((this.__SolutionService_9 == (null as any))) { (this.__SolutionService_9 = new import9.SolutionService(this.parent.get(import15.Http),this._FlashMessageService_7)); }
+    return this.__SolutionService_9;
+  }
+  get _ResultsService_10():import10.ResultsService {
+    if ((this.__ResultsService_10 == (null as any))) { (this.__ResultsService_10 = new import10.ResultsService()); }
+    return this.__ResultsService_10;
   }
   createInternal():import1.ResultsModule {
     this._CommonModule_0 = new import2.CommonModule();
@@ -74,10 +85,12 @@ class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModu
     if ((token === import4.RouterModule)) { return this._RouterModule_2; }
     if ((token === import1.ResultsModule)) { return this._ResultsModule_3; }
     if ((token === import5.NgLocalization)) { return this._NgLocalization_4; }
-    if ((token === import15.ROUTES)) { return this._ROUTES_5; }
+    if ((token === import16.ROUTES)) { return this._ROUTES_5; }
     if ((token === import6.PaperService)) { return this._PaperService_6; }
-    if ((token === import7.InstanceService)) { return this._InstanceService_7; }
-    if ((token === import8.SolutionService)) { return this._SolutionService_8; }
+    if ((token === import7.FlashMessageService)) { return this._FlashMessageService_7; }
+    if ((token === import8.InstanceService)) { return this._InstanceService_8; }
+    if ((token === import9.SolutionService)) { return this._SolutionService_9; }
+    if ((token === import10.ResultsService)) { return this._ResultsService_10; }
     return notFoundResult;
   }
   destroyInternal():void {

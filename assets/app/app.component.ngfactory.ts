@@ -14,14 +14,14 @@ import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from '@angular/core/src/metadata/view';
 import * as import9 from '@angular/core/src/linker/component_factory';
-import * as import10 from './header/header.component';
-import * as import11 from './flash-message/flash-message.component';
+import * as import10 from './flash-message/flash-message.component';
+import * as import11 from './header/header.component';
 import * as import12 from '@angular/router/src/directives/router_outlet';
-import * as import13 from './header/header.component.ngfactory';
-import * as import14 from './auth/auth.service';
-import * as import15 from '@angular/router/src/router';
-import * as import16 from './flash-message/flash-message.component.ngfactory';
-import * as import17 from './flash-message/flash-messages.service';
+import * as import13 from './flash-message/flash-message.component.ngfactory';
+import * as import14 from './flash-message/flash-messages.service';
+import * as import15 from './header/header.component.ngfactory';
+import * as import16 from './shared/session-storage.service';
+import * as import17 from '@angular/router/src/router';
 import * as import18 from '@angular/router/src/router_outlet_map';
 import * as import19 from '@angular/core/src/linker/component_factory_resolver';
 var renderType_AppComponent_Host:import0.RenderComponentType = (null as any);
@@ -55,118 +55,73 @@ export const AppComponentNgFactory:import9.ComponentFactory<import3.AppComponent
 const styles_AppComponent:any[] = [];
 var renderType_AppComponent:import0.RenderComponentType = (null as any);
 class _View_AppComponent0 extends import1.AppView<import3.AppComponent> {
-  _text_0:any;
-  _el_1:any;
-  _text_2:any;
-  _el_3:any;
-  _text_4:any;
-  _el_5:any;
-  _text_6:any;
-  _el_7:any;
-  _text_8:any;
-  _text_9:any;
-  _el_10:any;
-  _text_11:any;
-  _el_12:any;
-  _text_13:any;
-  _el_14:any;
-  /*private*/ _appEl_14:import2.AppElement;
-  _HeaderComponent_14_4:import10.HeaderComponent;
-  _text_15:any;
-  _el_16:any;
-  /*private*/ _appEl_16:import2.AppElement;
-  _FlashMessageComponent_16_4:import11.FlashMessageComponent;
-  _text_17:any;
-  _el_18:any;
-  /*private*/ _appEl_18:import2.AppElement;
-  _RouterOutlet_18_5:import12.RouterOutlet;
-  _text_19:any;
-  _text_20:any;
-  _text_21:any;
+  _el_0:any;
+  _text_1:any;
+  _el_2:any;
+  /*private*/ _appEl_2:import2.AppElement;
+  _FlashMessageComponent_2_4:import10.FlashMessageComponent;
+  _text_3:any;
+  _el_4:any;
+  /*private*/ _appEl_4:import2.AppElement;
+  _HeaderComponent_4_4:import11.HeaderComponent;
+  _text_5:any;
+  _el_6:any;
+  /*private*/ _appEl_6:import2.AppElement;
+  _RouterOutlet_6_5:import12.RouterOutlet;
+  _text_7:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_AppComponent0,renderType_AppComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-    this._text_0 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    this._el_1 = this.renderer.createElement(parentRenderNode,'html',(null as any));
-    this.renderer.setElementAttribute(this._el_1,'lang','en');
-    this._text_2 = this.renderer.createText(this._el_1,'\n',(null as any));
-    this._el_3 = this.renderer.createElement(this._el_1,'head',(null as any));
-    this._text_4 = this.renderer.createText(this._el_3,'\n    ',(null as any));
-    this._el_5 = this.renderer.createElement(this._el_3,'meta',(null as any));
-    this.renderer.setElementAttribute(this._el_5,'charset','utf-8');
-    this._text_6 = this.renderer.createText(this._el_3,'\n    ',(null as any));
-    this._el_7 = this.renderer.createElement(this._el_3,'meta',(null as any));
-    this.renderer.setElementAttribute(this._el_7,'content','width=device-width, initial-scale=1.0');
-    this.renderer.setElementAttribute(this._el_7,'name','viewport');
-    this._text_8 = this.renderer.createText(this._el_3,'\n',(null as any));
-    this._text_9 = this.renderer.createText(this._el_1,'\n',(null as any));
-    this._el_10 = this.renderer.createElement(this._el_1,'body',(null as any));
-    this._text_11 = this.renderer.createText(this._el_10,'\n    ',(null as any));
-    this._el_12 = this.renderer.createElement(this._el_10,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_12,'class','container-fluid');
-    this._text_13 = this.renderer.createText(this._el_12,'\n        ',(null as any));
-    this._el_14 = this.renderer.createElement(this._el_12,'app-header',(null as any));
-    this._appEl_14 = new import2.AppElement(14,12,this,this._el_14);
-    var compView_14:any = import13.viewFactory_HeaderComponent0(this.viewUtils,this.injector(14),this._appEl_14);
-    this._HeaderComponent_14_4 = new import10.HeaderComponent(this.parentInjector.get(import14.AuthService),this.parentInjector.get(import15.Router));
-    this._appEl_14.initComponent(this._HeaderComponent_14_4,[],compView_14);
-    compView_14.create(this._HeaderComponent_14_4,[],(null as any));
-    this._text_15 = this.renderer.createText(this._el_12,'\n        ',(null as any));
-    this._el_16 = this.renderer.createElement(this._el_12,'app-flash-message',(null as any));
-    this._appEl_16 = new import2.AppElement(16,12,this,this._el_16);
-    var compView_16:any = import16.viewFactory_FlashMessageComponent0(this.viewUtils,this.injector(16),this._appEl_16);
-    this._FlashMessageComponent_16_4 = new import11.FlashMessageComponent(this.parentInjector.get(import17.FlashMessageService));
-    this._appEl_16.initComponent(this._FlashMessageComponent_16_4,[],compView_16);
-    compView_16.create(this._FlashMessageComponent_16_4,[],(null as any));
-    this._text_17 = this.renderer.createText(this._el_12,'\n        ',(null as any));
-    this._el_18 = this.renderer.createElement(this._el_12,'router-outlet',(null as any));
-    this._appEl_18 = new import2.AppElement(18,12,this,this._el_18);
-    this._RouterOutlet_18_5 = new import12.RouterOutlet(this.parentInjector.get(import18.RouterOutletMap),this._appEl_18.vcRef,this.parentInjector.get(import19.ComponentFactoryResolver),(null as any));
-    this._text_19 = this.renderer.createText(this._el_12,'\n    ',(null as any));
-    this._text_20 = this.renderer.createText(this._el_10,'\n',(null as any));
-    this._text_21 = this.renderer.createText(this._el_1,'\n',(null as any));
+    this._el_0 = this.renderer.createElement(parentRenderNode,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','container');
+    this._text_1 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'app-flash-message',(null as any));
+    this._appEl_2 = new import2.AppElement(2,0,this,this._el_2);
+    var compView_2:any = import13.viewFactory_FlashMessageComponent0(this.viewUtils,this.injector(2),this._appEl_2);
+    this._FlashMessageComponent_2_4 = new import10.FlashMessageComponent(this.parentInjector.get(import14.FlashMessageService));
+    this._appEl_2.initComponent(this._FlashMessageComponent_2_4,[],compView_2);
+    compView_2.create(this._FlashMessageComponent_2_4,[],(null as any));
+    this._text_3 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this._el_4 = this.renderer.createElement(this._el_0,'app-header',(null as any));
+    this._appEl_4 = new import2.AppElement(4,0,this,this._el_4);
+    var compView_4:any = import15.viewFactory_HeaderComponent0(this.viewUtils,this.injector(4),this._appEl_4);
+    this._HeaderComponent_4_4 = new import11.HeaderComponent(this.parentInjector.get(import16.SessionStorageService),this.parentInjector.get(import17.Router));
+    this._appEl_4.initComponent(this._HeaderComponent_4_4,[],compView_4);
+    compView_4.create(this._HeaderComponent_4_4,[],(null as any));
+    this._text_5 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this._el_6 = this.renderer.createElement(this._el_0,'router-outlet',(null as any));
+    this._appEl_6 = new import2.AppElement(6,0,this,this._el_6);
+    this._RouterOutlet_6_5 = new import12.RouterOutlet(this.parentInjector.get(import18.RouterOutletMap),this._appEl_6.vcRef,this.parentInjector.get(import19.ComponentFactoryResolver),(null as any));
+    this._text_7 = this.renderer.createText(this._el_0,'\n',(null as any));
     this.init([],[
-      this._text_0,
-      this._el_1,
-      this._text_2,
-      this._el_3,
-      this._text_4,
-      this._el_5,
-      this._text_6,
-      this._el_7,
-      this._text_8,
-      this._text_9,
-      this._el_10,
-      this._text_11,
-      this._el_12,
-      this._text_13,
-      this._el_14,
-      this._text_15,
-      this._el_16,
-      this._text_17,
-      this._el_18,
-      this._text_19,
-      this._text_20,
-      this._text_21
+      this._el_0,
+      this._text_1,
+      this._el_2,
+      this._text_3,
+      this._el_4,
+      this._text_5,
+      this._el_6,
+      this._text_7
     ]
     ,[],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import10.HeaderComponent) && (14 === requestNodeIndex))) { return this._HeaderComponent_14_4; }
-    if (((token === import11.FlashMessageComponent) && (16 === requestNodeIndex))) { return this._FlashMessageComponent_16_4; }
-    if (((token === import12.RouterOutlet) && (18 === requestNodeIndex))) { return this._RouterOutlet_18_5; }
+    if (((token === import10.FlashMessageComponent) && (2 === requestNodeIndex))) { return this._FlashMessageComponent_2_4; }
+    if (((token === import11.HeaderComponent) && (4 === requestNodeIndex))) { return this._HeaderComponent_4_4; }
+    if (((token === import12.RouterOutlet) && (6 === requestNodeIndex))) { return this._RouterOutlet_6_5; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._FlashMessageComponent_16_4.ngOnInit(); }
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._FlashMessageComponent_2_4.ngOnInit(); }
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._HeaderComponent_4_4.ngOnInit(); }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
   destroyInternal():void {
-    this._RouterOutlet_18_5.ngOnDestroy();
+    this._RouterOutlet_6_5.ngOnDestroy();
   }
 }
 export function viewFactory_AppComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.AppComponent> {

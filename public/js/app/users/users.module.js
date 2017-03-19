@@ -21,9 +21,11 @@ export var UsersModule = (function () {
                         ReactiveFormsModule,
                         CommonModule,
                         OrderByModule,
-                        usersRouting
+                        usersRouting,
                     ],
-                    providers: [UsersService]
+                    providers: [
+                        UsersService,
+                    ]
                 },] },
     ];
     /** @nocollapse */

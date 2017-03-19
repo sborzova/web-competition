@@ -1,20 +1,29 @@
 import { Component } from '@angular/core';
-import { AuthService } from "../auth/auth.service";
+import { SessionStorageService } from "../shared/session-storage.service";
 export var InstancesComponent = (function () {
-    function InstancesComponent(authService) {
-        this.authService = authService;
+    function InstancesComponent(sessionStorageService) {
+        this.sessionStorageService = sessionStorageService;
         this.display = 'none';
     }
     InstancesComponent.prototype.ngOnInit = function () {
-        if (!this.isLoggedIn()) {
+        if (!this.showInstances()) {
             this.display = 'block';
         }
     };
+    InstancesComponent.prototype.showInstances = function () {
+        var loggedIn = this.isLoggedIn();
+        var competitionIsOn = this.competitionIsOn();
+        var isAdmin = this.isAdmin();
+        return !(!loggedIn && competitionIsOn) || isAdmin;
+    };
     InstancesComponent.prototype.isAdmin = function () {
-        return this.authService.isAdmin();
+        return this.sessionStorageService.isAdmin();
     };
     InstancesComponent.prototype.isLoggedIn = function () {
-        return this.authService.isLoggedIn();
+        return this.sessionStorageService.isLoggedIn();
+    };
+    InstancesComponent.prototype.competitionIsOn = function () {
+        return this.sessionStorageService.getCompetitionIsOn();
     };
     InstancesComponent.decorators = [
         { type: Component, args: [{
@@ -24,7 +33,7 @@ export var InstancesComponent = (function () {
     ];
     /** @nocollapse */
     InstancesComponent.ctorParameters = [
-        { type: AuthService, },
+        { type: SessionStorageService, },
     ];
     return InstancesComponent;
 }());

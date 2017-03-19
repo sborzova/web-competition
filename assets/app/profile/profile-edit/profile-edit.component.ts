@@ -6,6 +6,7 @@ import { User } from "../user.model";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { UserService } from "../../shared/user.service";
 import { AuthService } from "../../auth/auth.service";
+import {SessionStorageService} from "../../shared/session-storage.service";
 
 @Component({
     selector: 'app-profile-edit',
@@ -17,7 +18,7 @@ export class ProfileEditComponent implements OnInit {
     private submitted: boolean = false;
 
     constructor(private userService: UserService,
-                private authService: AuthService,
+                private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService,
                 private router: Router) {}
 
@@ -31,7 +32,7 @@ export class ProfileEditComponent implements OnInit {
             this.userService.updateUser(this.user)
                 .subscribe(
                     (data) => {
-                        this.authService.setSessionStorage(data);
+                        this.sessionStorageService.setSessionStorageAuth(data);
                         this.flashMessageService.showMessage('Profile was updated.', 'alert-success' );
                         this.navigateBack();
                     },

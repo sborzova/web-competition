@@ -14,7 +14,7 @@ a {
 }
 
 .results{
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .grayOutDiv
@@ -48,3 +48,4 @@ a {
 .table-borderless th {
   border:none !important
 }
+

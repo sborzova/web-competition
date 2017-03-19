@@ -2,20 +2,26 @@ import { Component, ViewChild } from "@angular/core";
 import { SolutionService } from "./solution.service";
 import { SolutionCreate } from "./solution-create.model";
 import { Validation } from "./validation.model";
-import { AuthService } from "../auth/auth.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
+import { SessionStorageService } from "../shared/session-storage.service";
 export var ValidationComponent = (function () {
-    function ValidationComponent(validationService, authService, flashMessageService) {
+    function ValidationComponent(validationService, sessionStorageService, flashMessageService) {
         this.validationService = validationService;
-        this.authService = authService;
+        this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
         this.solution = new SolutionCreate();
         this.display = 'none';
     }
     ValidationComponent.prototype.ngOnInit = function () {
-        if (!this.authService.isLoggedIn()) {
+        if (!this.showValidator()) {
             this.display = 'block';
         }
+    };
+    ValidationComponent.prototype.showValidator = function () {
+        var loggedIn = this.sessionStorageService.isLoggedIn();
+        var competitionIsOn = this.sessionStorageService.getCompetitionIsOn();
+        var isAdmin = this.sessionStorageService.isAdmin();
+        return !(!loggedIn && competitionIsOn) || isAdmin;
     };
     ValidationComponent.prototype.onValidate = function () {
         var _this = this;
@@ -24,11 +30,9 @@ export var ValidationComponent = (function () {
         if (solutionInput.files && solutionInput.files[0]) {
             var fd = new FormData();
             fd.append('solution', solutionInput.files[0], solutionInput.files[0].name);
-            console.log(solutionInput.files[0]);
             this.validationService.validate(fd)
                 .subscribe(function (data) {
                 var result = JSON.parse(data);
-                console.log(result);
                 if (result.status == 400) {
                     _this.flashMessageService.showMessage('Invalid XML format.', 'alert-danger');
                 }
@@ -84,7 +88,7 @@ export var ValidationComponent = (function () {
     /** @nocollapse */
     ValidationComponent.ctorParameters = [
         { type: SolutionService, },
-        { type: AuthService, },
+        { type: SessionStorageService, },
         { type: FlashMessageService, },
     ];
     ValidationComponent.propDecorators = {
