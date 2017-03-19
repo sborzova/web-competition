@@ -3,12 +3,13 @@
         <div style="margin-bottom: 3%">
             <h2>Preference</h2>
         </div>
-        <div class="col-xs-9 col-sm-2" style="display: table; height: 20px; overflow: hidden;">
-            <div *ngIf="value" style="display: table-cell; vertical-align: middle;">Competition is on</div>
-            <div *ngIf="!value" style="display: table-cell; vertical-align: middle;">Competition is off</div>
+        <div class="col-xs-9 col-md-2" style="display: table; height: 20px; overflow: hidden;">
+            <div *ngIf="isCompetitionOn()" style="display: table-cell; vertical-align: middle;">Competition is on</div>
+            <div *ngIf="!isCompetitionOn()" style="display: table-cell; vertical-align: middle;">Competition is off</div>
         </div>
-        <div class="col-xs-3 col-sm-10">
-            <!--<ui-switch color="#1e61f5" switchcolor="#8c969e" size="small" [(ngModel)]="value" (change)="onChange()"></ui-switch>-->
+        <div class="col-xs-3 col-md-10">
+            <button *ngIf="isCompetitionOn()" (click)="onTurnOff()" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-off"></span></button>
+            <button *ngIf="!isCompetitionOn()" (click)="onTurnOn()" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-off"></span></button>
         </div>
     </div>
 </div>

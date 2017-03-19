@@ -40,10 +40,10 @@ export class SessionStorageService {
     }
 
     setSessionStorageCompetitionIsOn(){
-        this.preferenceService.getValueCompetitionIsOn()
-            .subscribe(
-                state => sessionStorage.setItem('competitionIsOn', state),
-                error => console.error(error)
-            )
+        sessionStorage.setItem('competitionIsOn', 'true');
+    }
+
+    setSessionStorageCompetitionIsOff(){
+        sessionStorage.setItem('competitionIsOn', 'false');
     }
 }

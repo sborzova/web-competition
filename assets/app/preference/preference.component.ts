@@ -6,33 +6,48 @@ import {SessionStorageService} from "../shared/session-storage.service";
 
 @Component({
     selector: 'app-preference',
-    templateUrl: './preference.component.html'
+    templateUrl: './preference.component.html',
+    styleUrls: ['preference.component.css']
 })
 export class PreferenceComponent implements OnInit {
-    value: boolean;
+    competitionOn: boolean;
 
     constructor(private preferenceService: PreferenceService,
-                private flashMessageService: FlashMessageService,
                 private sessionStorageService: SessionStorageService){}
 
     ngOnInit(){
         this.preferenceService.getValueCompetitionIsOn()
             .subscribe(
                 (value : boolean) => {
-                    this.value = value;
+                    this.competitionOn = value;
                 },
                 error => console.error(error)
             )
     }
-    //
-    // onChange(){
-    //     this.preferenceService.updateValueCompetitionIsOn(!this.value)
-    //         .subscribe(
-    //             () => {
-    //                 this.flashMessageService.showMessage('Preference was updated.', 'alert-success');
-    //                 this.sessionStorageService.setSessionStorageCompetitionIsOn();
-    //             },
-    //             error => console.error(error)
-    //         )
-    // }
+
+    onTurnOn(){
+        this.competitionOn = true;
+        this.preferenceService.updateValueCompetitionIsOn(this.competitionOn)
+            .subscribe(
+                () => {
+                    this.sessionStorageService.setSessionStorageCompetitionIsOn();
+                },
+                error => console.error(error)
+            )
+    }
+
+    onTurnOff(){
+        this.competitionOn = false;
+        this.preferenceService.updateValueCompetitionIsOn(this.competitionOn)
+            .subscribe(
+                () => {
+                    this.sessionStorageService.setSessionStorageCompetitionIsOff();
+                },
+                error => console.error(error)
+            )
+    }
+
+    isCompetitionOn(){
+        return this.competitionOn;
+    }
 }
