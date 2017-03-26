@@ -1,37 +1,24 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 
 import { SolutionResult } from "../solution-result.model";
-import { SolutionService } from "../../validation/solution.service";
-import {ResultsService} from "../results.service";
+import {SortService} from "../../shared/sort.service";
 
 @Component({
     selector: 'app-results-author',
     templateUrl: './results-author.component.html'
 })
-export class ResultsAuthorComponent implements OnInit{
-    solutions: SolutionResult[];
-    display = 'none';
+export class ResultsAuthorComponent implements OnChanges{
+    @Input() solutions: SolutionResult[];
+    solutionsAuthorInstance: SolutionResult[];
+    solutionsAuthorTechnique: SolutionResult[];
     fileSaver = require('file-saver');
     showPapers: boolean = false;
 
-    constructor(private solutionService: SolutionService,
-                private resultsService: ResultsService){
-    }
+    constructor(private resultsService: SortService){}
 
-    ngOnInit(){
-        this.solutionService.resultsAuthor
-            .subscribe(
-                (authorId: string) => {
-                    this.solutionService.getSolutionsByUser(authorId)
-                        .subscribe(
-                            (solutions: SolutionResult[]) => {
-                                this.solutions = solutions;
-                            },
-                            error => console.error(error)
-                        );
-                    this.display = 'block';
-                }
-            );
+    ngOnChanges(changes: SimpleChanges){
+        this.solutionsAuthorInstance = null;
+        this.solutionsAuthorTechnique = null;
     }
 
     onDownload(solution: SolutionResult){
@@ -51,9 +38,12 @@ export class ResultsAuthorComponent implements OnInit{
         this.showPapers = false;
     }
 
+    onInstance(instanceId: string){
+        this.solutionsAuthorInstance = this.solutions.filter( s => s.instance.instanceId == instanceId);
+    }
+
     onTechnique(technique: string){
-        let solutions = this.solutions.filter(s => s.technique === technique);
-        this.solutionService.resultsAuthorTechniqueShow(solutions);
+        this.solutionsAuthorTechnique = this.solutions.filter(s => s.technique === technique);
     }
 
     onQualityAsc(){

@@ -70,39 +70,54 @@ var _View_FlashMessageComponent0 = (function (_super) {
         this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
         this._NgStyle_0_3 = new import11.NgStyle(this.parentInjector.get(import12.KeyValueDiffers), new import13.ElementRef(this._el_0), this.renderer);
         this._text_1 = this.renderer.createText(this._el_0, '\n    ', null);
-        this._text_2 = this.renderer.createText(this._el_0, '\n    ', null);
-        this._el_3 = this.renderer.createElement(this._el_0, 'div', null);
-        this.renderer.setElementAttribute(this._el_3, 'class', 'grayOutDiv');
-        this._text_4 = this.renderer.createText(this._el_0, '\n    ', null);
-        this._el_5 = this.renderer.createElement(this._el_0, 'div', null);
-        this._text_6 = this.renderer.createText(this._el_5, '\n        ', null);
-        this._el_7 = this.renderer.createElement(this._el_5, 'p', null);
-        this._text_8 = this.renderer.createText(this._el_7, '', null);
-        this._text_9 = this.renderer.createText(this._el_5, '\n    ', null);
-        this._text_10 = this.renderer.createText(this._el_0, '\n', null);
+        this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
+        this.renderer.setElementAttribute(this._el_2, 'class', 'grayOutDiv');
+        this._text_3 = this.renderer.createText(this._el_0, '\n    ', null);
+        this._el_4 = this.renderer.createElement(this._el_0, 'div', null);
+        this._text_5 = this.renderer.createText(this._el_4, '\n        ', null);
+        this._el_6 = this.renderer.createElement(this._el_4, 'div', null);
+        this.renderer.setElementAttribute(this._el_6, 'style', 'vertical-align: center');
+        this._text_7 = this.renderer.createText(this._el_6, '', null);
+        this._text_8 = this.renderer.createText(this._el_4, '\n        ', null);
+        this._el_9 = this.renderer.createElement(this._el_4, 'div', null);
+        this.renderer.setElementAttribute(this._el_9, 'align', 'right');
+        this._text_10 = this.renderer.createText(this._el_9, '\n            ', null);
+        this._el_11 = this.renderer.createElement(this._el_9, 'button', null);
+        this.renderer.setElementAttribute(this._el_11, 'class', 'btn btn-default');
+        this.renderer.setElementAttribute(this._el_11, 'type', 'button');
+        this._text_12 = this.renderer.createText(this._el_11, 'OK', null);
+        this._text_13 = this.renderer.createText(this._el_9, '\n        ', null);
+        this._text_14 = this.renderer.createText(this._el_4, '\n    ', null);
+        this._text_15 = this.renderer.createText(this._el_0, '\n', null);
         this._map_0 = import4.pureProxy1(function (p0) {
             return { display: p0 };
         });
         this._expr_0 = import7.UNINITIALIZED;
         this._expr_1 = import7.UNINITIALIZED;
         this._expr_2 = import7.UNINITIALIZED;
+        var disposable_0 = this.renderer.listen(this._el_11, 'click', this.eventHandler(this._handle_click_11_0.bind(this)));
         this.init([], [
             this._el_0,
             this._text_1,
-            this._text_2,
-            this._el_3,
-            this._text_4,
-            this._el_5,
-            this._text_6,
-            this._el_7,
+            this._el_2,
+            this._text_3,
+            this._el_4,
+            this._text_5,
+            this._el_6,
+            this._text_7,
             this._text_8,
-            this._text_9,
-            this._text_10
-        ], [], []);
+            this._el_9,
+            this._text_10,
+            this._el_11,
+            this._text_12,
+            this._text_13,
+            this._text_14,
+            this._text_15
+        ], [disposable_0], []);
         return null;
     };
     _View_FlashMessageComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import11.NgStyle) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 10)))) {
+        if (((token === import11.NgStyle) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 15)))) {
             return this._NgStyle_0_3;
         }
         return notFoundResult;
@@ -119,15 +134,20 @@ var _View_FlashMessageComponent0 = (function (_super) {
         this.detectContentChildrenChanges(throwOnChange);
         var currVal_1 = import4.interpolate(1, 'alert flash-message ', ((this.context.message == null) ? null : this.context.message.cssClass), '');
         if (import4.checkBinding(throwOnChange, this._expr_1, currVal_1)) {
-            this.renderer.setElementProperty(this._el_5, 'className', currVal_1);
+            this.renderer.setElementProperty(this._el_4, 'className', currVal_1);
             this._expr_1 = currVal_1;
         }
         var currVal_2 = import4.interpolate(1, '', ((this.context.message == null) ? null : this.context.message.text), '');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
-            this.renderer.setText(this._text_8, currVal_2);
+            this.renderer.setText(this._text_7, currVal_2);
             this._expr_2 = currVal_2;
         }
         this.detectViewChildrenChanges(throwOnChange);
+    };
+    _View_FlashMessageComponent0.prototype._handle_click_11_0 = function ($event) {
+        this.markPathToRootAsCheckOnce();
+        var pd_0 = (this.context.onOk() !== false);
+        return (true && pd_0);
     };
     return _View_FlashMessageComponent0;
 }(import1.AppView));

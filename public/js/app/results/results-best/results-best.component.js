@@ -1,37 +1,33 @@
 import { Component } from "@angular/core";
-import { SolutionService } from "../../validation/solution.service";
+import { SolutionService } from "../../shared/solution.service";
 import { InstanceService } from "../../instances/instance.service";
-import { SolutionResult } from "../solution-result.model";
-import { ResultsService } from "../results.service";
+import { SortService } from "../../shared/sort.service";
 export var ResultsBestComponent = (function () {
     function ResultsBestComponent(solutionService, instanceService, resultsService) {
         this.solutionService = solutionService;
         this.instanceService = instanceService;
         this.resultsService = resultsService;
+        this.solutionsAll = [];
         this.fileSaver = require('file-saver');
+        this.showPapers = false;
     }
     ResultsBestComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.instanceService.getInstances()
             .subscribe(function (instances) {
             var results = [];
-            var _loop_1 = function(instance) {
-                _this.solutionService.getSolutionsByInstance(instance.instanceId)
-                    .subscribe(function (solutions) {
-                    if (solutions.length == 0) {
-                        results.push(new SolutionResult(instance));
-                    }
-                    else {
-                        solutions = _this.resultsService.sortQualityAsc(solutions);
-                        results.push(solutions[0]);
-                    }
-                }, function (error) { return console.error(error); });
-            };
             for (var _i = 0, instances_1 = instances; _i < instances_1.length; _i++) {
                 var instance = instances_1[_i];
-                _loop_1(instance);
+                _this.solutionService.getSolutionsByInstance(instance.instanceId)
+                    .subscribe(function (solutions) {
+                    if (solutions.length != 0) {
+                        solutions = _this.resultsService.sortQualityAsc(solutions);
+                        results.push(solutions[0]);
+                        _this.solutionsAll = _this.solutionsAll.concat(solutions);
+                    }
+                }, function (error) { return console.error(error); });
             }
-            _this.solutions = results;
+            _this.results = results;
         }, function (error) { return console.error(error); });
     };
     ResultsBestComponent.prototype.onDownload = function (solution) {
@@ -39,10 +35,21 @@ export var ResultsBestComponent = (function () {
         this.fileSaver.saveAs(file);
     };
     ResultsBestComponent.prototype.onAuthor = function (authorId) {
-        this.solutionService.resultsAuthorShow(authorId);
+        this.solutionsInstance = null;
+        this.solutionsAuthor = this.solutionsAll.filter(function (s) { return s.author.authorId == authorId; });
     };
-    ResultsBestComponent.prototype.onViewAll = function (instanceId) {
-        this.solutionService.resultsInstanceShow(instanceId);
+    ResultsBestComponent.prototype.onInstance = function (instanceId) {
+        this.solutionsAuthor = null;
+        this.solutionsInstance = this.solutionsAll.filter(function (s) { return s.instance.instanceId == instanceId; });
+    };
+    ResultsBestComponent.prototype.isShowPapers = function () {
+        return this.showPapers;
+    };
+    ResultsBestComponent.prototype.onShowPapers = function () {
+        this.showPapers = true;
+    };
+    ResultsBestComponent.prototype.onHidePapers = function () {
+        this.showPapers = false;
     };
     ResultsBestComponent.decorators = [
         { type: Component, args: [{
@@ -54,7 +61,7 @@ export var ResultsBestComponent = (function () {
     ResultsBestComponent.ctorParameters = [
         { type: SolutionService, },
         { type: InstanceService, },
-        { type: ResultsService, },
+        { type: SortService, },
     ];
     return ResultsBestComponent;
 }());

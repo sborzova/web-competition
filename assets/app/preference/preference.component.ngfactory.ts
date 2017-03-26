@@ -112,7 +112,7 @@ class _View_PreferenceComponent0 extends import1.AppView<import3.PreferenceCompo
     this.renderer.setElementAttribute(this._el_4,'style','margin-bottom: 3%');
     this._text_5 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._el_6 = this.renderer.createElement(this._el_4,'h2',(null as any));
-    this._text_7 = this.renderer.createText(this._el_6,'Preference',(null as any));
+    this._text_7 = this.renderer.createText(this._el_6,'Preferences',(null as any));
     this._text_8 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._text_9 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._el_10 = this.renderer.createElement(this._el_2,'div',(null as any));
@@ -228,7 +228,7 @@ class _View_PreferenceComponent1 extends import1.AppView<any> {
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
     this.renderer.setElementAttribute(this._el_0,'style','display: table-cell; vertical-align: middle;');
-    this._text_1 = this.renderer.createText(this._el_0,'Competition is on',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'During competition is on',(null as any));
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1
@@ -249,7 +249,7 @@ class _View_PreferenceComponent2 extends import1.AppView<any> {
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
     this.renderer.setElementAttribute(this._el_0,'style','display: table-cell; vertical-align: middle;');
-    this._text_1 = this.renderer.createText(this._el_0,'Competition is off',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'During competition is off',(null as any));
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1

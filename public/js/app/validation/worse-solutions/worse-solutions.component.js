@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SolutionService } from "../solution.service";
+import { SolutionService } from "../../shared/solution.service";
 export var WorseSolutionsComponent = (function () {
     function WorseSolutionsComponent(solutionService) {
         var _this = this;

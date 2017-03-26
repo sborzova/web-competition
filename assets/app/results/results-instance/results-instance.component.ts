@@ -1,36 +1,22 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 
-import { SolutionService } from "../../validation/solution.service";
 import { SolutionResult } from "../solution-result.model";
-import {ResultsService} from "../results.service";
+import {SortService} from "../../shared/sort.service";
 
 @Component({
     selector: 'app-results-instance',
     templateUrl: './results-instance.component.html'
 })
-export class ResultsInstanceComponent implements OnInit{
-    solutions: SolutionResult[];
-    display = 'none';
+export class ResultsInstanceComponent implements OnChanges {
+    @Input() solutions: SolutionResult[];
+    solutionsAuthorInstance: SolutionResult[];
     fileSaver = require('file-saver');
     showPapers: boolean = false;
 
-    constructor(private solutionService: SolutionService,
-                private resultsService: ResultsService){}
+    constructor(private resultsService: SortService){}
 
-    ngOnInit(){
-        this.solutionService.resultsInstance
-            .subscribe(
-                (instanceId: string) => {
-                    this.solutionService.getSolutionsByInstance(instanceId)
-                        .subscribe(
-                            (solutions: SolutionResult[]) => {
-                                this.solutions = solutions
-                            },
-                            error => console.error(error)
-                        );
-                    this.display = 'block';
-                }
-            );
+    ngOnChanges(changes: SimpleChanges){
+       this.solutionsAuthorInstance = null;
     }
 
     onDownload(solution: SolutionResult){
@@ -39,7 +25,7 @@ export class ResultsInstanceComponent implements OnInit{
     }
 
     onAuthor(authorId: string){
-        this.solutionService.resultsAuthorShow(authorId);
+        this.solutionsAuthorInstance = this.solutions.filter( s => s.author.authorId == authorId);
     }
 
     isShowPapers(){

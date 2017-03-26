@@ -57,15 +57,20 @@ class _View_FlashMessageComponent0 extends import1.AppView<import3.FlashMessageC
   _el_0:any;
   _NgStyle_0_3:import11.NgStyle;
   _text_1:any;
-  _text_2:any;
-  _el_3:any;
-  _text_4:any;
-  _el_5:any;
-  _text_6:any;
-  _el_7:any;
+  _el_2:any;
+  _text_3:any;
+  _el_4:any;
+  _text_5:any;
+  _el_6:any;
+  _text_7:any;
   _text_8:any;
-  _text_9:any;
+  _el_9:any;
   _text_10:any;
+  _el_11:any;
+  _text_12:any;
+  _text_13:any;
+  _text_14:any;
+  _text_15:any;
   _map_0:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
@@ -78,40 +83,55 @@ class _View_FlashMessageComponent0 extends import1.AppView<import3.FlashMessageC
     this._el_0 = this.renderer.createElement(parentRenderNode,'div',(null as any));
     this._NgStyle_0_3 = new import11.NgStyle(this.parentInjector.get(import12.KeyValueDiffers),new import13.ElementRef(this._el_0),this.renderer);
     this._text_1 = this.renderer.createText(this._el_0,'\n    ',(null as any));
-    this._text_2 = this.renderer.createText(this._el_0,'\n    ',(null as any));
-    this._el_3 = this.renderer.createElement(this._el_0,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_3,'class','grayOutDiv');
-    this._text_4 = this.renderer.createText(this._el_0,'\n    ',(null as any));
-    this._el_5 = this.renderer.createElement(this._el_0,'div',(null as any));
-    this._text_6 = this.renderer.createText(this._el_5,'\n        ',(null as any));
-    this._el_7 = this.renderer.createElement(this._el_5,'p',(null as any));
-    this._text_8 = this.renderer.createText(this._el_7,'',(null as any));
-    this._text_9 = this.renderer.createText(this._el_5,'\n    ',(null as any));
-    this._text_10 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_2,'class','grayOutDiv');
+    this._text_3 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this._el_4 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this._text_5 = this.renderer.createText(this._el_4,'\n        ',(null as any));
+    this._el_6 = this.renderer.createElement(this._el_4,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_6,'style','vertical-align: center');
+    this._text_7 = this.renderer.createText(this._el_6,'',(null as any));
+    this._text_8 = this.renderer.createText(this._el_4,'\n        ',(null as any));
+    this._el_9 = this.renderer.createElement(this._el_4,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_9,'align','right');
+    this._text_10 = this.renderer.createText(this._el_9,'\n            ',(null as any));
+    this._el_11 = this.renderer.createElement(this._el_9,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_11,'class','btn btn-default');
+    this.renderer.setElementAttribute(this._el_11,'type','button');
+    this._text_12 = this.renderer.createText(this._el_11,'OK',(null as any));
+    this._text_13 = this.renderer.createText(this._el_9,'\n        ',(null as any));
+    this._text_14 = this.renderer.createText(this._el_4,'\n    ',(null as any));
+    this._text_15 = this.renderer.createText(this._el_0,'\n',(null as any));
     this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
       return {display: p0};
     });
     this._expr_0 = import7.UNINITIALIZED;
     this._expr_1 = import7.UNINITIALIZED;
     this._expr_2 = import7.UNINITIALIZED;
+    var disposable_0:Function = this.renderer.listen(this._el_11,'click',this.eventHandler(this._handle_click_11_0.bind(this)));
     this.init([],[
       this._el_0,
       this._text_1,
-      this._text_2,
-      this._el_3,
-      this._text_4,
-      this._el_5,
-      this._text_6,
-      this._el_7,
+      this._el_2,
+      this._text_3,
+      this._el_4,
+      this._text_5,
+      this._el_6,
+      this._text_7,
       this._text_8,
-      this._text_9,
-      this._text_10
+      this._el_9,
+      this._text_10,
+      this._el_11,
+      this._text_12,
+      this._text_13,
+      this._text_14,
+      this._text_15
     ]
-    ,[],[]);
+    ,[disposable_0],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import11.NgStyle) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 10)))) { return this._NgStyle_0_3; }
+    if (((token === import11.NgStyle) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 15)))) { return this._NgStyle_0_3; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -124,15 +144,20 @@ class _View_FlashMessageComponent0 extends import1.AppView<import3.FlashMessageC
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_1:any = import4.interpolate(1,'alert flash-message ',((this.context.message == (null as any))? (null as any): this.context.message.cssClass),'');
     if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
-      this.renderer.setElementProperty(this._el_5,'className',currVal_1);
+      this.renderer.setElementProperty(this._el_4,'className',currVal_1);
       this._expr_1 = currVal_1;
     }
     const currVal_2:any = import4.interpolate(1,'',((this.context.message == (null as any))? (null as any): this.context.message.text),'');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
-      this.renderer.setText(this._text_8,currVal_2);
+      this.renderer.setText(this._text_7,currVal_2);
       this._expr_2 = currVal_2;
     }
     this.detectViewChildrenChanges(throwOnChange);
+  }
+  private _handle_click_11_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this.context.onOk()) !== false);
+    return (true && pd_0);
   }
 }
 export function viewFactory_FlashMessageComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.FlashMessageComponent> {

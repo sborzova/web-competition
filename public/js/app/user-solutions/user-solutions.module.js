@@ -6,7 +6,8 @@ import { UserSolutionsComponent } from "./user-solutions.component";
 import { OrderByModule } from "../order-by.module";
 import { EscapeHtmlModule } from "../escape-html.module";
 import { PaperService } from "../shared/paper.service";
-import { SolutionService } from "../validation/solution.service";
+import { SolutionService } from "../shared/solution.service";
+import { SortService } from "../shared/sort.service";
 export var UserSolutionsModule = (function () {
     function UserSolutionsModule() {
     }
@@ -26,6 +27,7 @@ export var UserSolutionsModule = (function () {
                     providers: [
                         PaperService,
                         SolutionService,
+                        SortService
                     ]
                 },] },
     ];

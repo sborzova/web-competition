@@ -2,12 +2,12 @@ import { Injectable, EventEmitter } from "@angular/core";
 import { Headers, Http, Response } from "@angular/http";
 import { Observable, Subject } from "rxjs";
 
-import { SolutionCreate } from "./solution-create.model";
+import { SolutionCreate } from "../validation/solution-create.model";
 import { Solution } from "../user-solutions/solution.model";
-import { Validation } from "./validation.model";
-import { Paper } from "./paper.model";
+import { Validation } from "../validation/validation.model";
+import { Paper } from "../validation/paper.model";
 import { SolutionPaper } from "../user-solutions/solution-paper.model";
-import { SolutionFindWorse } from "./solution-find-worse.model";
+import { SolutionFindWorse } from "../validation/solution-find-worse.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SolutionResult } from "../results/solution-result.model";
 import { Author } from "../results/author.model";
@@ -20,9 +20,6 @@ export class SolutionService {
     private solutionFile;
     successValidation = new EventEmitter<Validation>();
     worseSolutions = new EventEmitter<Solution []>();
-    resultsInstance = new EventEmitter<string>();
-    resultsAuthor = new EventEmitter<string>();
-    resultsAuthorTechnique = new EventEmitter<SolutionResult []>();
     private successValidationDeleteSource = new Subject();
     private worseSolutionsDeleteSource = new Subject();
     successValidationDelete$ = this.successValidationDeleteSource.asObservable();
@@ -307,18 +304,6 @@ export class SolutionService {
 
     worseSolutionsHide(){
         this.worseSolutionsDeleteSource.next();
-    }
-
-    resultsInstanceShow(instanceId: string){
-        this.resultsInstance.emit(instanceId);
-    }
-
-    resultsAuthorShow(authorId: string){
-        this.resultsAuthor.emit(authorId);
-    }
-
-    resultsAuthorTechniqueShow(solutions: SolutionResult[]){
-        this.resultsAuthorTechnique.emit(solutions);
     }
 
     setSolutionFile(file: any){

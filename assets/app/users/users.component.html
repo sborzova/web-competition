@@ -21,20 +21,23 @@
                         <td *ngIf="!isMe(user)" class="btn-group" style="vertical-align: middle; border: none;">
                             <button
                                     class="btn btn-info btn-xs"
+                                    title="Edit profile"
                                     [routerLink]="['/#users/edit']"
                                     [queryParams]="{userId: user.userId}">
-                                Edit
+                                <span class="glyphicon glyphicon-pencil"></span>&nbsp;Profile
                             </button>
                             <button
                                     class="btn btn-primary btn-xs"
+                                    title="Change password"
                                     [routerLink]="['/#users/editpass']"
                                     [queryParams]="{userId: user.userId}">
-                                Change password
+                                <span class="glyphicon glyphicon-pencil"></span>&nbsp;Password
                             </button>
                             <button
                                     class="btn btn-danger btn-xs"
+                                    title="Delete"
                                     (click)="onDelete(user)">
-                                Delete
+                                <span class="glyphicon glyphicon-trash">&nbsp;User</span>
                             </button></td>
                     </tr>
                 </tbody>

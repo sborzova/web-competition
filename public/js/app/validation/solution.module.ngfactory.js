@@ -12,7 +12,7 @@ import * as import0 from '@angular/core/src/linker/ng_module_factory';
 import * as import1 from './solution.module';
 import * as import2 from '@angular/common/src/common_module';
 import * as import3 from '@angular/common/src/localization';
-import * as import4 from './solution.service';
+import * as import4 from '../shared/solution.service';
 import * as import6 from '@angular/core/src/i18n/tokens';
 import * as import7 from '@angular/http/src/http';
 import * as import8 from '../flash-message/flash-messages.service';

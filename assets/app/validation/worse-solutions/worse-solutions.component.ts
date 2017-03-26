@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
-import { SolutionService } from "../solution.service";
+import { SolutionService } from "../../shared/solution.service";
 import { Solution } from "../../user-solutions/solution.model";
 
 @Component({

@@ -56,7 +56,7 @@ export var InstanceCreateComponent = (function () {
                 var fd = new FormData();
                 fd.append('stats', statsInput.files[0], statsInput.files[0].name);
                 fd.append('data', dataInput.files[0], dataInput.files[0].name);
-                _this.router.navigate(['/#instances']);
+                _this.navigateBack();
                 _this.instancesService.saveFiles(fd, id)
                     .subscribe(function () {
                     _this.flashMessageService.showMessage('Instance was created.', 'alert-success');
@@ -81,6 +81,12 @@ export var InstanceCreateComponent = (function () {
     };
     InstanceCreateComponent.prototype.isDataInvalid = function () {
         return this.dataInvalid;
+    };
+    InstanceCreateComponent.prototype.onCancel = function () {
+        this.navigateBack();
+    };
+    InstanceCreateComponent.prototype.navigateBack = function () {
+        this.router.navigate(['/#instances']);
     };
     InstanceCreateComponent.decorators = [
         { type: Component, args: [{

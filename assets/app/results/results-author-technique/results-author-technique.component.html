@@ -1,6 +1,6 @@
-<div *ngIf="solutions" [ngStyle]="{'display': display}" class="results">
-    <h2>Solutions of <strong>{{ solutions[0].author.name}}</strong>
-        with the technique <strong> {{ solutions[0].technique }}</strong></h2>
+<div *ngIf="solutions" class="results">
+    <h4>Solutions of <strong>{{ solutions[0].author.name}}</strong>
+        with the technique <strong> {{ solutions[0].technique }}</strong></h4>
     <button *ngIf="!isShowPapers()" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
     <button *ngIf="isShowPapers()" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
     <table class="table">
@@ -50,20 +50,30 @@
             <td>{{ solution.time }}&nbsp;%</td>
             <td>{{ solution.room }}&nbsp;%</td>
             <td>{{ solution.distr }}&nbsp;%</td>
-            <td><a (click)="onDownload(solution)">download</a></td>
+            <td>
+                <button type="button" class="btn btn-success btn-xs" (click)="onDownload(solution)" title="Download">
+                    <i class="glyphicon glyphicon-download-alt"></i>
+                </button>
+            </td>
             <td>{{ solution.postDate | date }}</td>
-            <td><a
+            <td><button
+                    type="button"
+                    class="btn btn-primary btn-xs"
+                    title="View"
                     [routerLink]="['/#solution/validatorinfo']"
-                    [queryParams]="{solutionId: solution.solutionId}">view</a></td>
+                    [queryParams]="{solutionId: solution.solutionId}">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+            </td>
         </tr>
-        <tr *ngIf="isShowPapers()">
-            <td><strong>Citation: </strong></td>
-            <td colspan="10" id="paper">{{ solution.paper?.citation}}</td>
-        </tr>
-        <tr *ngIf="isShowPapers()">
-            <td><strong>Url: </strong></td>
-            <td colspan="10" id="paper"><a href="{{solution.paper?.url}}">{{ solution.paper?.url}}</a></td>
+        <tr *ngIf="isShowPapers() && solution.paper" class="paper">
+            <td ><strong>Citation: </strong></td>
+            <td colspan="11" id="paper">
+                {{ solution.paper?.citation}}
+                <a href="{{solution.paper?.url}}">URL</a>
+            </td>
         </tr>
         </tbody>
     </table>
+    <app-results-author-instance-technique [solutions]="solutionsAuthorInstanceTechnique"></app-results-author-instance-technique>
 </div>

@@ -1,6 +1,6 @@
 import { Component, ViewChild, OnInit } from "@angular/core";
 
-import { SolutionService } from "./solution.service";
+import { SolutionService } from "../shared/solution.service";
 import { SolutionCreate } from "./solution-create.model";
 import { Validation } from "./validation.model";
 import { AuthService } from "../auth/auth.service";

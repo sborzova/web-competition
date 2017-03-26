@@ -363,17 +363,30 @@ var _View_UsersComponent3 = (function (_super) {
         this._text_1 = this.renderer.createText(this._el_0, '\n                            ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'button', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'btn btn-info btn-xs');
+        this.renderer.setElementAttribute(this._el_2, 'title', 'Edit profile');
         this._RouterLink_2_3 = new import18.RouterLink(this.parent.parent.parent.parentInjector.get(import19.Router), this.parent.parent.parent.parentInjector.get(import20.ActivatedRoute), this.parent.parent.parent.parentInjector.get(import21.LocationStrategy));
-        this._text_3 = this.renderer.createText(this._el_2, '\n                                Edit\n                            ', null);
-        this._text_4 = this.renderer.createText(this._el_0, '\n                            ', null);
-        this._el_5 = this.renderer.createElement(this._el_0, 'button', null);
-        this.renderer.setElementAttribute(this._el_5, 'class', 'btn btn-primary btn-xs');
-        this._RouterLink_5_3 = new import18.RouterLink(this.parent.parent.parent.parentInjector.get(import19.Router), this.parent.parent.parent.parentInjector.get(import20.ActivatedRoute), this.parent.parent.parent.parentInjector.get(import21.LocationStrategy));
-        this._text_6 = this.renderer.createText(this._el_5, '\n                                Change password\n                            ', null);
-        this._text_7 = this.renderer.createText(this._el_0, '\n                            ', null);
-        this._el_8 = this.renderer.createElement(this._el_0, 'button', null);
-        this.renderer.setElementAttribute(this._el_8, 'class', 'btn btn-danger btn-xs');
-        this._text_9 = this.renderer.createText(this._el_8, '\n                                Delete\n                            ', null);
+        this._text_3 = this.renderer.createText(this._el_2, '\n                                ', null);
+        this._el_4 = this.renderer.createElement(this._el_2, 'span', null);
+        this.renderer.setElementAttribute(this._el_4, 'class', 'glyphicon glyphicon-pencil');
+        this._text_5 = this.renderer.createText(this._el_2, ' Profile\n                            ', null);
+        this._text_6 = this.renderer.createText(this._el_0, '\n                            ', null);
+        this._el_7 = this.renderer.createElement(this._el_0, 'button', null);
+        this.renderer.setElementAttribute(this._el_7, 'class', 'btn btn-primary btn-xs');
+        this.renderer.setElementAttribute(this._el_7, 'title', 'Change password');
+        this._RouterLink_7_3 = new import18.RouterLink(this.parent.parent.parent.parentInjector.get(import19.Router), this.parent.parent.parent.parentInjector.get(import20.ActivatedRoute), this.parent.parent.parent.parentInjector.get(import21.LocationStrategy));
+        this._text_8 = this.renderer.createText(this._el_7, '\n                                ', null);
+        this._el_9 = this.renderer.createElement(this._el_7, 'span', null);
+        this.renderer.setElementAttribute(this._el_9, 'class', 'glyphicon glyphicon-pencil');
+        this._text_10 = this.renderer.createText(this._el_7, ' Password\n                            ', null);
+        this._text_11 = this.renderer.createText(this._el_0, '\n                            ', null);
+        this._el_12 = this.renderer.createElement(this._el_0, 'button', null);
+        this.renderer.setElementAttribute(this._el_12, 'class', 'btn btn-danger btn-xs');
+        this.renderer.setElementAttribute(this._el_12, 'title', 'Delete');
+        this._text_13 = this.renderer.createText(this._el_12, '\n                                ', null);
+        this._el_14 = this.renderer.createElement(this._el_12, 'span', null);
+        this.renderer.setElementAttribute(this._el_14, 'class', 'glyphicon glyphicon-trash');
+        this._text_15 = this.renderer.createText(this._el_14, ' User', null);
+        this._text_16 = this.renderer.createText(this._el_12, '\n                            ', null);
         var disposable_0 = this.renderer.listen(this._el_2, 'click', this.eventHandler(this._handle_click_2_0.bind(this)));
         this._map_0 = import4.pureProxy1(function (p0) {
             return { userId: p0 };
@@ -383,7 +396,7 @@ var _View_UsersComponent3 = (function (_super) {
             return [p0];
         });
         this._expr_2 = import7.UNINITIALIZED;
-        var disposable_1 = this.renderer.listen(this._el_5, 'click', this.eventHandler(this._handle_click_5_0.bind(this)));
+        var disposable_1 = this.renderer.listen(this._el_7, 'click', this.eventHandler(this._handle_click_7_0.bind(this)));
         this._map_1 = import4.pureProxy1(function (p0) {
             return { userId: p0 };
         });
@@ -392,18 +405,25 @@ var _View_UsersComponent3 = (function (_super) {
             return [p0];
         });
         this._expr_5 = import7.UNINITIALIZED;
-        var disposable_2 = this.renderer.listen(this._el_8, 'click', this.eventHandler(this._handle_click_8_0.bind(this)));
+        var disposable_2 = this.renderer.listen(this._el_12, 'click', this.eventHandler(this._handle_click_12_0.bind(this)));
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1,
             this._el_2,
             this._text_3,
-            this._text_4,
-            this._el_5,
+            this._el_4,
+            this._text_5,
             this._text_6,
-            this._text_7,
-            this._el_8,
-            this._text_9
+            this._el_7,
+            this._text_8,
+            this._el_9,
+            this._text_10,
+            this._text_11,
+            this._el_12,
+            this._text_13,
+            this._el_14,
+            this._text_15,
+            this._text_16
         ], [
             disposable_0,
             disposable_1,
@@ -412,11 +432,11 @@ var _View_UsersComponent3 = (function (_super) {
         return null;
     };
     _View_UsersComponent3.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import18.RouterLink) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 3)))) {
+        if (((token === import18.RouterLink) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 5)))) {
             return this._RouterLink_2_3;
         }
-        if (((token === import18.RouterLink) && ((5 <= requestNodeIndex) && (requestNodeIndex <= 6)))) {
-            return this._RouterLink_5_3;
+        if (((token === import18.RouterLink) && ((7 <= requestNodeIndex) && (requestNodeIndex <= 10)))) {
+            return this._RouterLink_7_3;
         }
         return notFoundResult;
     };
@@ -433,12 +453,12 @@ var _View_UsersComponent3 = (function (_super) {
         }
         var currVal_4 = this._map_1(this.parent.context.$implicit.userId);
         if (import4.checkBinding(throwOnChange, this._expr_4, currVal_4)) {
-            this._RouterLink_5_3.queryParams = currVal_4;
+            this._RouterLink_7_3.queryParams = currVal_4;
             this._expr_4 = currVal_4;
         }
         var currVal_5 = this._arr_1('/#users/editpass');
         if (import4.checkBinding(throwOnChange, this._expr_5, currVal_5)) {
-            this._RouterLink_5_3.routerLink = currVal_5;
+            this._RouterLink_7_3.routerLink = currVal_5;
             this._expr_5 = currVal_5;
         }
         this.detectContentChildrenChanges(throwOnChange);
@@ -449,12 +469,12 @@ var _View_UsersComponent3 = (function (_super) {
         var pd_0 = (this._RouterLink_2_3.onClick($event.button, $event.ctrlKey, $event.metaKey) !== false);
         return (true && pd_0);
     };
-    _View_UsersComponent3.prototype._handle_click_5_0 = function ($event) {
+    _View_UsersComponent3.prototype._handle_click_7_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._RouterLink_5_3.onClick($event.button, $event.ctrlKey, $event.metaKey) !== false);
+        var pd_0 = (this._RouterLink_7_3.onClick($event.button, $event.ctrlKey, $event.metaKey) !== false);
         return (true && pd_0);
     };
-    _View_UsersComponent3.prototype._handle_click_8_0 = function ($event) {
+    _View_UsersComponent3.prototype._handle_click_12_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this.parent.parent.parent.context.onDelete(this.parent.context.$implicit) !== false);
         return (true && pd_0);

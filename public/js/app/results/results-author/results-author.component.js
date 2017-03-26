@@ -1,24 +1,14 @@
-import { Component } from "@angular/core";
-import { SolutionService } from "../../validation/solution.service";
-import { ResultsService } from "../results.service";
+import { Component, Input } from "@angular/core";
+import { SortService } from "../../shared/sort.service";
 export var ResultsAuthorComponent = (function () {
-    function ResultsAuthorComponent(solutionService, resultsService) {
-        this.solutionService = solutionService;
+    function ResultsAuthorComponent(resultsService) {
         this.resultsService = resultsService;
-        this.display = 'none';
         this.fileSaver = require('file-saver');
         this.showPapers = false;
     }
-    ResultsAuthorComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.solutionService.resultsAuthor
-            .subscribe(function (authorId) {
-            _this.solutionService.getSolutionsByUser(authorId)
-                .subscribe(function (solutions) {
-                _this.solutions = solutions;
-            }, function (error) { return console.error(error); });
-            _this.display = 'block';
-        });
+    ResultsAuthorComponent.prototype.ngOnChanges = function (changes) {
+        this.solutionsAuthorInstance = null;
+        this.solutionsAuthorTechnique = null;
     };
     ResultsAuthorComponent.prototype.onDownload = function (solution) {
         var file = new File([solution.data], 'solution.xml', { type: "text/xml;charset=utf-8" });
@@ -33,9 +23,11 @@ export var ResultsAuthorComponent = (function () {
     ResultsAuthorComponent.prototype.onHidePapers = function () {
         this.showPapers = false;
     };
+    ResultsAuthorComponent.prototype.onInstance = function (instanceId) {
+        this.solutionsAuthorInstance = this.solutions.filter(function (s) { return s.instance.instanceId == instanceId; });
+    };
     ResultsAuthorComponent.prototype.onTechnique = function (technique) {
-        var solutions = this.solutions.filter(function (s) { return s.technique === technique; });
-        this.solutionService.resultsAuthorTechniqueShow(solutions);
+        this.solutionsAuthorTechnique = this.solutions.filter(function (s) { return s.technique === technique; });
     };
     ResultsAuthorComponent.prototype.onQualityAsc = function () {
         this.solutions = this.resultsService.sortQualityAsc(this.solutions);
@@ -75,8 +67,10 @@ export var ResultsAuthorComponent = (function () {
     ];
     /** @nocollapse */
     ResultsAuthorComponent.ctorParameters = [
-        { type: SolutionService, },
-        { type: ResultsService, },
+        { type: SortService, },
     ];
+    ResultsAuthorComponent.propDecorators = {
+        'solutions': [{ type: Input },],
+    };
     return ResultsAuthorComponent;
 }());

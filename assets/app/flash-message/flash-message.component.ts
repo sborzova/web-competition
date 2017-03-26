@@ -21,10 +21,11 @@ export class FlashMessageComponent implements OnInit {
                 (message: FlashMessage) => {
                     this.message = message;
                     this.display = 'block';
-                    window.setTimeout( () => {
-                        this.display = 'none';
-                    }, 1700);
                 }
             )
+    }
+
+    onOk(){
+        this.display = 'none';
     }
 }

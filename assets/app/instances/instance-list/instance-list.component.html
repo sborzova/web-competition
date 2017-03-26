@@ -15,24 +15,36 @@
                                 <td><div *ngIf="isAdmin()">{{ instance.order }}</div></td>
                                 <td>{{ instance.name }}</td>
                                 <td>{{ instance.description }}</td>
-                                <td><a
+                                <td><button
+                                        type="button"
+                                        class="btn btn-primary btn-xs"
+                                        title="View"
                                         [routerLink]="['/#instances/stats']"
-                                        [queryParams]="{instanceId: instance.instanceId}">view</a></td>
+                                        [queryParams]="{instanceId: instance.instanceId}">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                                </td>
                                 <td>{{ instance.postDate | date}}</td>
-                                <td><a (click)="onDownload(instance)">download</a></td>
+                                <td>
+                                        <button type="button" class="btn btn-success btn-xs" (click)="onDownload(instance)" title="Download">
+                                                <i class="glyphicon glyphicon-download-alt"></i>
+                                        </button>
+                                </td>
                                 <td class="btn-group" style="vertical-align: middle; border: none">
                                         <button
                                                 *ngIf="isAdmin()"
                                                 class="btn btn-info btn-xs"
+                                                title="Edit"
                                                 [routerLink]="['/#instances/edit']"
                                                 [queryParams]="{instanceId: instance.instanceId}">
-                                                Edit
+                                                <span class="glyphicon glyphicon-pencil"></span>
                                         </button>
                                         <button
                                                 *ngIf="isAdmin()"
                                                 class="btn btn-danger btn-xs"
+                                                title="Delete"
                                                 (click)="onDelete(instance)">
-                                                Delete
+                                                <span class="glyphicon glyphicon-trash"></span>
                                         </button>
                                 </td>
                         </tr>

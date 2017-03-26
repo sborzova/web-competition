@@ -2,10 +2,11 @@ import {Component, OnInit, Input, OnDestroy} from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Solution } from "./solution.model";
 import { Paper } from "./paper.model";
-import { SolutionService } from "../validation/solution.service";
+import { SolutionService } from "../shared/solution.service";
 import { PaperService } from "../shared/paper.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SolutionPaper } from "./solution-paper.model";
+import {SortService} from "../shared/sort.service";
 
 @Component({
     selector: 'app-user-solutions',
@@ -25,7 +26,8 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
 
     constructor(private solutionService: SolutionService,
                 private paperService: PaperService,
-                private flashMessageService: FlashMessageService){}
+                private flashMessageService: FlashMessageService,
+                private sortService: SortService){}
 
     ngOnInit(){
         this.solutionService.getSolutionsByLoggedUser()
@@ -94,7 +96,8 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
                 if (solution.paper){
                     paperIds.add(solution.paper.paperId);
                 } else {
-                    this.flashMessageService.showMessage('It is not possible to modify not existing paper.', 'alert-danger');
+                    this.flashMessageService.showMessage('It is not possible to modify not existing paper. ' +
+                        'You must add paper first.', 'alert-danger');
                     return;
                 }
             }
@@ -203,6 +206,46 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     isSubmitted(){
         return this.submitted;
     }
+
+    // onQualityAsc(){
+    //     this.solutions = this.sortService.sortQualityAsc(this.solutions);
+    // }
+    //
+    // onQualityDesc(){
+    //     this.solutions = this.sortService.sortQualityDesc(this.solutions);
+    // }
+    //
+    // onScAsc(){
+    //     this.solutions = this.sortService.sortScAsc(this.solutions);
+    // }
+    //
+    // onScDesc(){
+    //     this.solutions = this.sortService.sortScDesc(this.solutions);
+    // }
+    //
+    // onTimeAsc(){
+    //     this.solutions = this.sortService.sortTimeAsc(this.solutions);
+    // }
+    //
+    // onTimeDesc(){
+    //     this.solutions = this.sortService.sortTimeDesc(this.solutions);
+    // }
+    //
+    // onRoomAsc(){
+    //     this.solutions = this.sortService.sortRoomAsc(this.solutions);
+    // }
+    //
+    // onRoomDesc(){
+    //     this.solutions = this.sortService.sortRoomDesc(this.solutions);
+    // }
+    //
+    // onDistributionAsc(){
+    //     this.solutions = this.sortService.sortDistributionAsc(this.solutions);
+    // }
+    //
+    // onDistributionDesc(){
+    //     this.solutions = this.sortService.sortDistributionDesc(this.solutions);
+    // }
 
     private checkIfSelected() {
         if (this.selectedSolutions.length == 0){

@@ -39,9 +39,6 @@ export var ProfileEditComponent = (function () {
             });
         });
     };
-    ProfileEditComponent.prototype.onCancel = function () {
-        this.navigateBack();
-    };
     ProfileEditComponent.prototype.isSubmitted = function () {
         return this.submitted;
     };

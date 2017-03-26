@@ -1,30 +1,23 @@
-import { Component } from "@angular/core";
+import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 
 import { SolutionResult } from "../solution-result.model";
-import { SolutionService } from "../../validation/solution.service";
-import {ResultsService} from "../results.service";
+import { SolutionService } from "../../shared/solution.service";
+import {SortService} from "../../shared/sort.service";
 
 @Component({
     selector: 'app-results-author-technique',
     templateUrl: './results-author-technique.component.html'
 })
-export class ResultsAuthorTechniqueComponent {
-    solutions: SolutionResult[];
-    display = 'none';
+export class ResultsAuthorTechniqueComponent implements OnChanges{
+    @Input() solutions: SolutionResult[];
+    solutionsAuthorInstanceTechnique: SolutionResult[];
     fileSaver = require('file-saver');
     showPapers: boolean = false;
 
-    constructor(private solutionService: SolutionService,
-                private resultsService: ResultsService){}
+    constructor(private resultsService: SortService){}
 
-    ngOnInit(){
-        this.solutionService.resultsAuthorTechnique
-            .subscribe(
-                (solutions: SolutionResult[]) => {
-                    this.solutions = solutions;
-                    this.display = 'block';
-                }
-            );
+    ngOnChanges(changes: SimpleChanges){
+        this.solutionsAuthorInstanceTechnique = null;
     }
 
     onDownload(solution: SolutionResult){

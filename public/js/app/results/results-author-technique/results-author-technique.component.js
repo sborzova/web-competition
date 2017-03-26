@@ -1,21 +1,13 @@
-import { Component } from "@angular/core";
-import { SolutionService } from "../../validation/solution.service";
-import { ResultsService } from "../results.service";
+import { Component, Input } from "@angular/core";
+import { SortService } from "../../shared/sort.service";
 export var ResultsAuthorTechniqueComponent = (function () {
-    function ResultsAuthorTechniqueComponent(solutionService, resultsService) {
-        this.solutionService = solutionService;
+    function ResultsAuthorTechniqueComponent(resultsService) {
         this.resultsService = resultsService;
-        this.display = 'none';
         this.fileSaver = require('file-saver');
         this.showPapers = false;
     }
-    ResultsAuthorTechniqueComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.solutionService.resultsAuthorTechnique
-            .subscribe(function (solutions) {
-            _this.solutions = solutions;
-            _this.display = 'block';
-        });
+    ResultsAuthorTechniqueComponent.prototype.ngOnChanges = function (changes) {
+        this.solutionsAuthorInstanceTechnique = null;
     };
     ResultsAuthorTechniqueComponent.prototype.onDownload = function (solution) {
         var file = new File([solution.data], 'solution.xml', { type: "text/xml;charset=utf-8" });
@@ -68,8 +60,10 @@ export var ResultsAuthorTechniqueComponent = (function () {
     ];
     /** @nocollapse */
     ResultsAuthorTechniqueComponent.ctorParameters = [
-        { type: SolutionService, },
-        { type: ResultsService, },
+        { type: SortService, },
     ];
+    ResultsAuthorTechniqueComponent.propDecorators = {
+        'solutions': [{ type: Input },],
+    };
     return ResultsAuthorTechniqueComponent;
 }());

@@ -55,10 +55,6 @@ export class ProfileEditComponent implements OnInit {
             );
     }
 
-    onCancel() {
-        this.navigateBack();
-    }
-
     isSubmitted(){
         return this.submitted;
     }

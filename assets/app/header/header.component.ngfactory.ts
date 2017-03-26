@@ -218,7 +218,7 @@ class _View_HeaderComponent0 extends import1.AppView<import3.HeaderComponent> {
     this._el_15 = this.renderer.createElement(this._el_4,'a',(null as any));
     this.renderer.setElementAttribute(this._el_15,'class','navbar-brand');
     this._RouterLinkWithHref_15_3 = new import12.RouterLinkWithHref(this.parentInjector.get(import9.Router),this.parentInjector.get(import16.ActivatedRoute),this.parentInjector.get(import17.LocationStrategy));
-    this._text_16 = this.renderer.createText(this._el_15,'CTT Competition',(null as any));
+    this._text_16 = this.renderer.createText(this._el_15,'Home',(null as any));
     this._text_17 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._text_18 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._el_19 = this.renderer.createElement(this._el_2,'div',(null as any));

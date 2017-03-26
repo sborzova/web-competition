@@ -1,6 +1,6 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 50px 10px 50px 10px;
+  font: 13px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -14,7 +14,7 @@ a {
 }
 
 .results{
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .grayOutDiv
@@ -34,7 +34,7 @@ a {
 {
   text-align: center;
   width:30%;
-  height:15%;
+  height:20%;
   padding-top: 3%;
   margin-top: -7%; /*set to a negative number 1/2 of your height*/
   margin-left: -15%; /*set to a negative number 1/2 of your width*/
@@ -49,3 +49,7 @@ a {
   border:none !important
 }
 
+.paper {
+  background-color: whitesmoke;
+  text-align: left;
+}

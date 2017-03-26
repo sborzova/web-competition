@@ -47,14 +47,14 @@
                         <div align="right">
                             <div align="right">
                                 <button
-                                        class="btn btn-default align-right"
-                                        (click)="onHidePaperForm()">
-                                    Cancel
-                                </button>
-                                <button
                                         class="btn btn-primary align-right"
                                         type="submit">
                                     Save
+                                </button>
+                                <button
+                                        class="btn btn-default align-right"
+                                        (click)="onHidePaperForm()">
+                                    Cancel
                                 </button>
                             </div>
                         </div>
@@ -65,18 +65,41 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th></th>
-                        <th>Instance</th>
-                        <th>Unassigned variables</th>
-                        <th>Total cost</th>
-                        <th>Student conflicts</th>
-                        <th>Time preferences</th>
-                        <th>Room preferences</th>
-                        <th>Distribution preferences</th>
-                        <th>Download</th>
-                        <th>Technique</th>
-                        <th>Submission time</th>
-                        <th>Validator info</th>
+                        <th rowspan="2"></th>
+                        <th rowspan="2">Instance</th>
+                        <th colspan="2">
+                            <span style="float: left">Quality</span>
+                            <span (click)="onQualityAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                            <span (click)="onQualityDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+                        </th>
+                        <th rowspan="2">
+                            <span style="float: left">Student Conflict</span>
+                            <span (click)="onScAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                            <span (click)="onScDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+                        </th>
+                        <th rowspan="2">
+                            <span style="float: left">Time Preferences</span>
+                            <span (click)="onTimeAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                            <span (click)="onTimeDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+                        </th>
+                        <th rowspan="2">
+                            <span style="float: left">Room Preferences</span>
+                            <span (click)="onRoomAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                            <span (click)="onRoomDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+                        </th>
+                        <th rowspan="2">
+                            <span style="float: left">Distribution Preferences</span>
+                            <span (click)="onDistributionAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                            <span (click)="onDistributionDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+                        </th>
+                        <th rowspan="2">Download</th>
+                        <th rowspan="2">Technique</th>
+                        <th rowspan="2">Submission time</th>
+                        <th rowspan="2">Validator Info</th>
+                    </tr>
+                    <tr>
+                        <th>Unassigned Variables</th>
+                        <th>Total Cost</th>
                     </tr>
                     </thead>
                     <tbody *ngFor="let solution of solutions">
@@ -89,12 +112,22 @@
                         <td>{{ solution.time }}&nbsp;%</td>
                         <td>{{ solution.room }}&nbsp;%</td>
                         <td>{{ solution.distr }}&nbsp;%</td>
-                        <td><a (click)="onDownload(solution)">download</a></td>
+                        <td>
+                            <button type="button" class="btn btn-success btn-xs" (click)="onDownload(solution)" title="Download">
+                                <span class="glyphicon glyphicon-download-alt"></span>
+                            </button>
+                        </td>
                         <td>{{ solution.technique }}</td>
                         <td>{{ solution.postDate | date }}</td>
-                        <td><a
+                        <td><button
+                                type="button"
+                                class="btn btn-primary btn-xs"
+                                title="View"
                                 [routerLink]="['/#solution/validatorinfo']"
-                                [queryParams]="{solutionId: solution.solutionId}">view</a></td>
+                                [queryParams]="{solutionId: solution.solutionId}">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                        </td>
                     </tr>
                     <tr *ngIf="isShowPapers()">
                         <td></td>

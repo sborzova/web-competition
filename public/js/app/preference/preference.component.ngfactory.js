@@ -79,7 +79,7 @@ var _View_PreferenceComponent0 = (function (_super) {
         this.renderer.setElementAttribute(this._el_4, 'style', 'margin-bottom: 3%');
         this._text_5 = this.renderer.createText(this._el_4, '\n            ', null);
         this._el_6 = this.renderer.createElement(this._el_4, 'h2', null);
-        this._text_7 = this.renderer.createText(this._el_6, 'Preference', null);
+        this._text_7 = this.renderer.createText(this._el_6, 'Preferences', null);
         this._text_8 = this.renderer.createText(this._el_4, '\n        ', null);
         this._text_9 = this.renderer.createText(this._el_2, '\n        ', null);
         this._el_10 = this.renderer.createElement(this._el_2, 'div', null);
@@ -212,7 +212,7 @@ var _View_PreferenceComponent1 = (function (_super) {
     _View_PreferenceComponent1.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'style', 'display: table-cell; vertical-align: middle;');
-        this._text_1 = this.renderer.createText(this._el_0, 'Competition is on', null);
+        this._text_1 = this.renderer.createText(this._el_0, 'During competition is on', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
@@ -232,7 +232,7 @@ var _View_PreferenceComponent2 = (function (_super) {
     _View_PreferenceComponent2.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'style', 'display: table-cell; vertical-align: middle;');
-        this._text_1 = this.renderer.createText(this._el_0, 'Competition is off', null);
+        this._text_1 = this.renderer.createText(this._el_0, 'During competition is off', null);
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1

@@ -35,9 +35,6 @@ export var ProfileEditPasswordComponent = (function () {
             });
         });
     };
-    ProfileEditPasswordComponent.prototype.onCancel = function () {
-        this.navigateBack();
-    };
     ProfileEditPasswordComponent.prototype.navigateBack = function () {
         this.router.navigate(['/#profile/info']);
     };

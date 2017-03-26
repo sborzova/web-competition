@@ -1,10 +1,10 @@
 import {Routes, RouterModule} from "@angular/router";
 
-import {ResultsComponent} from "./results.component";
+import {ResultsBestComponent} from "./results-best/results-best.component";
 
 const RESULTS_ROUTES: Routes = [
     { path: '', children: [
-        { path: '', component: ResultsComponent},
+        { path: '', component: ResultsBestComponent},
     ]}
 ];
 

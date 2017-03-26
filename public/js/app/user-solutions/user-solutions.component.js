@@ -1,15 +1,17 @@
 import { Component } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Paper } from "./paper.model";
-import { SolutionService } from "../validation/solution.service";
+import { SolutionService } from "../shared/solution.service";
 import { PaperService } from "../shared/paper.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SolutionPaper } from "./solution-paper.model";
+import { SortService } from "../shared/sort.service";
 export var UserSolutionsComponent = (function () {
-    function UserSolutionsComponent(solutionService, paperService, flashMessageService) {
+    function UserSolutionsComponent(solutionService, paperService, flashMessageService, sortService) {
         this.solutionService = solutionService;
         this.paperService = paperService;
         this.flashMessageService = flashMessageService;
+        this.sortService = sortService;
         this.fileSaver = require('file-saver');
         this.showPaperForm = false;
         this.showPapers = false;
@@ -76,7 +78,8 @@ export var UserSolutionsComponent = (function () {
                     paperIds.add(solution.paper.paperId);
                 }
                 else {
-                    this.flashMessageService.showMessage('It is not possible to modify not existing paper.', 'alert-danger');
+                    this.flashMessageService.showMessage('It is not possible to modify not existing paper. ' +
+                        'You must add paper first.', 'alert-danger');
                     return;
                 }
             }
@@ -171,6 +174,45 @@ export var UserSolutionsComponent = (function () {
     UserSolutionsComponent.prototype.isSubmitted = function () {
         return this.submitted;
     };
+    // onQualityAsc(){
+    //     this.solutions = this.sortService.sortQualityAsc(this.solutions);
+    // }
+    //
+    // onQualityDesc(){
+    //     this.solutions = this.sortService.sortQualityDesc(this.solutions);
+    // }
+    //
+    // onScAsc(){
+    //     this.solutions = this.sortService.sortScAsc(this.solutions);
+    // }
+    //
+    // onScDesc(){
+    //     this.solutions = this.sortService.sortScDesc(this.solutions);
+    // }
+    //
+    // onTimeAsc(){
+    //     this.solutions = this.sortService.sortTimeAsc(this.solutions);
+    // }
+    //
+    // onTimeDesc(){
+    //     this.solutions = this.sortService.sortTimeDesc(this.solutions);
+    // }
+    //
+    // onRoomAsc(){
+    //     this.solutions = this.sortService.sortRoomAsc(this.solutions);
+    // }
+    //
+    // onRoomDesc(){
+    //     this.solutions = this.sortService.sortRoomDesc(this.solutions);
+    // }
+    //
+    // onDistributionAsc(){
+    //     this.solutions = this.sortService.sortDistributionAsc(this.solutions);
+    // }
+    //
+    // onDistributionDesc(){
+    //     this.solutions = this.sortService.sortDistributionDesc(this.solutions);
+    // }
     UserSolutionsComponent.prototype.checkIfSelected = function () {
         if (this.selectedSolutions.length == 0) {
             this.flashMessageService.showMessage('Select solutions.', 'alert-info');
@@ -222,6 +264,7 @@ export var UserSolutionsComponent = (function () {
         { type: SolutionService, },
         { type: PaperService, },
         { type: FlashMessageService, },
+        { type: SortService, },
     ];
     return UserSolutionsComponent;
 }());

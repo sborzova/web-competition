@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { SolutionService } from "./solution.service";
+import { SolutionService } from "../shared/solution.service";
 import { SolutionCreate } from "./solution-create.model";
 import { Validation } from "./validation.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";

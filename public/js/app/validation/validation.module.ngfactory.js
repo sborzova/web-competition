@@ -19,7 +19,7 @@ import * as import7 from '@angular/forms/src/form_builder';
 import * as import8 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import9 from '@angular/common/src/localization';
 import * as import10 from '../shared/paper.service';
-import * as import11 from './solution.service';
+import * as import11 from '../shared/solution.service';
 import * as import13 from './validation.component.ngfactory';
 import * as import14 from '@angular/core/src/i18n/tokens';
 import * as import15 from './validation.component';

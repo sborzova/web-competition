@@ -244,10 +244,7 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
   _el_38:any;
   _text_39:any;
   _text_40:any;
-  _el_41:any;
-  _text_42:any;
-  _text_43:any;
-  _text_44:any;
+  _text_41:any;
   /*private*/ _expr_3:any;
   /*private*/ _expr_4:any;
   /*private*/ _expr_5:any;
@@ -391,12 +388,8 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_38,'class','btn btn-primary');
     this.renderer.setElementAttribute(this._el_38,'type','submit');
     this._text_39 = this.renderer.createText(this._el_38,'Save',(null as any));
-    this._text_40 = this.renderer.createText(this._el_36,'\n                        ',(null as any));
-    this._el_41 = this.renderer.createElement(this._el_36,'a',(null as any));
-    this.renderer.setElementAttribute(this._el_41,'class','btn btn-default');
-    this._text_42 = this.renderer.createText(this._el_41,'Cancel',(null as any));
-    this._text_43 = this.renderer.createText(this._el_36,'\n                    ',(null as any));
-    this._text_44 = this.renderer.createText(this._el_0,'\n                ',(null as any));
+    this._text_40 = this.renderer.createText(this._el_36,'\n                    ',(null as any));
+    this._text_41 = this.renderer.createText(this._el_0,'\n                ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_0,'ngSubmit',this.eventHandler(this._handle_ngSubmit_0_0.bind(this)));
     var disposable_1:Function = this.renderer.listen(this._el_0,'submit',this.eventHandler(this._handle_submit_0_1.bind(this)));
     var disposable_2:Function = this.renderer.listen(this._el_0,'reset',this.eventHandler(this._handle_reset_0_2.bind(this)));
@@ -455,7 +448,6 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
     this._expr_45 = import7.UNINITIALIZED;
     this._expr_46 = import7.UNINITIALIZED;
     this._expr_47 = import7.UNINITIALIZED;
-    var disposable_9:Function = this.renderer.listen(this._el_41,'click',this.eventHandler(this._handle_click_41_0.bind(this)));
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -498,10 +490,7 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
       this._el_38,
       this._text_39,
       this._text_40,
-      this._el_41,
-      this._text_42,
-      this._text_43,
-      this._text_44
+      this._text_41
     ]
     ,[
       disposable_0,
@@ -512,8 +501,7 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
       disposable_5,
       disposable_6,
       disposable_7,
-      disposable_8,
-      disposable_9
+      disposable_8
     ]
     ,[subscription_0]);
     return (null as any);
@@ -547,9 +535,9 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
     if (((token === import14.TemplateRef) && (33 === requestNodeIndex))) { return this._TemplateRef_33_5; }
     if (((token === import13.NgIf) && (33 === requestNodeIndex))) { return this._NgIf_33_6; }
     if (((token === import17.NgClass) && ((26 <= requestNodeIndex) && (requestNodeIndex <= 34)))) { return this._NgClass_26_3; }
-    if (((token === import15.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._FormGroupDirective_0_3; }
-    if (((token === import25.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._ControlContainer_0_4; }
-    if (((token === import16.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) { return this._NgControlStatusGroup_0_5; }
+    if (((token === import15.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) { return this._FormGroupDirective_0_3; }
+    if (((token === import25.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) { return this._ControlContainer_0_4; }
+    if (((token === import16.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) { return this._NgControlStatusGroup_0_5; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -814,11 +802,6 @@ class _View_ProfileEditPasswordComponent1 extends import1.AppView<any> {
   private _handle_blur_31_1($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this._DefaultValueAccessor_31_3.onTouched()) !== false);
-    return (true && pd_0);
-  }
-  private _handle_click_41_0($event:any):boolean {
-    this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.parent.context.onCancel()) !== false);
     return (true && pd_0);
   }
 }

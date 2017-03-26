@@ -277,14 +277,11 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
   _text_52:any;
   _el_53:any;
   _text_54:any;
-  _el_55:any;
-  _text_56:any;
+  _text_55:any;
+  _el_56:any;
   _text_57:any;
-  _el_58:any;
+  _text_58:any;
   _text_59:any;
-  _text_60:any;
-  _text_61:any;
-  _text_62:any;
   /*private*/ _expr_3:any;
   /*private*/ _expr_4:any;
   /*private*/ _expr_5:any;
@@ -415,6 +412,7 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
     this._text_33 = this.renderer.createText(this._el_32,'Insert in case you want to update status/data',(null as any));
     this._text_34 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
     this._el_35 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_35,'class','form-group');
     this._text_36 = this.renderer.createText(this._el_35,'\n                        ',(null as any));
     this._el_37 = this.renderer.createElement(this._el_35,'label',(null as any));
     this.renderer.setElementAttribute(this._el_37,'for','stats');
@@ -426,6 +424,7 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
     this._text_41 = this.renderer.createText(this._el_35,'\n                    ',(null as any));
     this._text_42 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
     this._el_43 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_43,'class','form-group');
     this._text_44 = this.renderer.createText(this._el_43,'\n                        ',(null as any));
     this._el_45 = this.renderer.createElement(this._el_43,'label',(null as any));
     this.renderer.setElementAttribute(this._el_45,'for','data');
@@ -437,22 +436,18 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
     this._text_49 = this.renderer.createText(this._el_43,'\n                    ',(null as any));
     this._text_50 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
     this._el_51 = this.renderer.createElement(this._el_0,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_51,'class','row');
+    this.renderer.setElementAttribute(this._el_51,'align','right');
     this._text_52 = this.renderer.createText(this._el_51,'\n                        ',(null as any));
-    this._el_53 = this.renderer.createElement(this._el_51,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_53,'class','col-xs-12');
-    this._text_54 = this.renderer.createText(this._el_53,'\n                            ',(null as any));
-    this._el_55 = this.renderer.createElement(this._el_53,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_55,'class','btn btn-primary');
-    this.renderer.setElementAttribute(this._el_55,'type','submit');
-    this._text_56 = this.renderer.createText(this._el_55,'Save',(null as any));
-    this._text_57 = this.renderer.createText(this._el_53,'\n                            ',(null as any));
-    this._el_58 = this.renderer.createElement(this._el_53,'a',(null as any));
-    this.renderer.setElementAttribute(this._el_58,'class','btn btn-danger');
-    this._text_59 = this.renderer.createText(this._el_58,'Cancel',(null as any));
-    this._text_60 = this.renderer.createText(this._el_53,'\n                        ',(null as any));
-    this._text_61 = this.renderer.createText(this._el_51,'\n                    ',(null as any));
-    this._text_62 = this.renderer.createText(this._el_0,'\n                ',(null as any));
+    this._el_53 = this.renderer.createElement(this._el_51,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_53,'class','btn btn-primary align-right');
+    this.renderer.setElementAttribute(this._el_53,'type','submit');
+    this._text_54 = this.renderer.createText(this._el_53,'\n                            Save\n                        ',(null as any));
+    this._text_55 = this.renderer.createText(this._el_51,'\n                        ',(null as any));
+    this._el_56 = this.renderer.createElement(this._el_51,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_56,'class','btn btn-default align-right');
+    this._text_57 = this.renderer.createText(this._el_56,'\n                            Cancel\n                        ',(null as any));
+    this._text_58 = this.renderer.createText(this._el_51,'\n                    ',(null as any));
+    this._text_59 = this.renderer.createText(this._el_0,'\n                ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_0,'ngSubmit',this.eventHandler(this._handle_ngSubmit_0_0.bind(this)));
     var disposable_1:Function = this.renderer.listen(this._el_0,'submit',this.eventHandler(this._handle_submit_0_1.bind(this)));
     var disposable_2:Function = this.renderer.listen(this._el_0,'reset',this.eventHandler(this._handle_reset_0_2.bind(this)));
@@ -510,7 +505,7 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
     this._expr_46 = import7.UNINITIALIZED;
     this._expr_47 = import7.UNINITIALIZED;
     this._expr_48 = import7.UNINITIALIZED;
-    var disposable_10:Function = this.renderer.listen(this._el_58,'click',this.eventHandler(this._handle_click_58_0.bind(this)));
+    var disposable_10:Function = this.renderer.listen(this._el_56,'click',this.eventHandler(this._handle_click_56_0.bind(this)));
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -567,14 +562,11 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
       this._text_52,
       this._el_53,
       this._text_54,
-      this._el_55,
-      this._text_56,
+      this._text_55,
+      this._el_56,
       this._text_57,
-      this._el_58,
-      this._text_59,
-      this._text_60,
-      this._text_61,
-      this._text_62
+      this._text_58,
+      this._text_59
     ]
     ,[
       disposable_0,
@@ -618,9 +610,9 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
     if (((token === import16.TemplateRef) && (29 === requestNodeIndex))) { return this._TemplateRef_29_5; }
     if (((token === import15.NgIf) && (29 === requestNodeIndex))) { return this._NgIf_29_6; }
     if (((token === import20.NgClass) && ((22 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._NgClass_22_3; }
-    if (((token === import18.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 62)))) { return this._FormGroupDirective_0_3; }
-    if (((token === import28.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 62)))) { return this._ControlContainer_0_4; }
-    if (((token === import19.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 62)))) { return this._NgControlStatusGroup_0_5; }
+    if (((token === import18.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 59)))) { return this._FormGroupDirective_0_3; }
+    if (((token === import28.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 59)))) { return this._ControlContainer_0_4; }
+    if (((token === import19.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 59)))) { return this._NgControlStatusGroup_0_5; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -888,7 +880,7 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
     const pd_0:any = ((<any>this._DefaultValueAccessor_27_3.onTouched()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_58_0($event:any):boolean {
+  private _handle_click_56_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onCancel()) !== false);
     return (true && pd_0);

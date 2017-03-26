@@ -1,31 +1,20 @@
-import { Component } from "@angular/core";
-import { SolutionService } from "../../validation/solution.service";
-import { ResultsService } from "../results.service";
+import { Component, Input } from "@angular/core";
+import { SortService } from "../../shared/sort.service";
 export var ResultsInstanceComponent = (function () {
-    function ResultsInstanceComponent(solutionService, resultsService) {
-        this.solutionService = solutionService;
+    function ResultsInstanceComponent(resultsService) {
         this.resultsService = resultsService;
-        this.display = 'none';
         this.fileSaver = require('file-saver');
         this.showPapers = false;
     }
-    ResultsInstanceComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.solutionService.resultsInstance
-            .subscribe(function (instanceId) {
-            _this.solutionService.getSolutionsByInstance(instanceId)
-                .subscribe(function (solutions) {
-                _this.solutions = solutions;
-            }, function (error) { return console.error(error); });
-            _this.display = 'block';
-        });
+    ResultsInstanceComponent.prototype.ngOnChanges = function (changes) {
+        this.solutionsAuthorInstance = null;
     };
     ResultsInstanceComponent.prototype.onDownload = function (solution) {
         var file = new File([solution.data], 'solution.xml', { type: "text/xml;charset=utf-8" });
         this.fileSaver.saveAs(file);
     };
     ResultsInstanceComponent.prototype.onAuthor = function (authorId) {
-        this.solutionService.resultsAuthorShow(authorId);
+        this.solutionsAuthorInstance = this.solutions.filter(function (s) { return s.author.authorId == authorId; });
     };
     ResultsInstanceComponent.prototype.isShowPapers = function () {
         return this.showPapers;
@@ -74,8 +63,10 @@ export var ResultsInstanceComponent = (function () {
     ];
     /** @nocollapse */
     ResultsInstanceComponent.ctorParameters = [
-        { type: SolutionService, },
-        { type: ResultsService, },
+        { type: SortService, },
     ];
+    ResultsInstanceComponent.propDecorators = {
+        'solutions': [{ type: Input },],
+    };
     return ResultsInstanceComponent;
 }());

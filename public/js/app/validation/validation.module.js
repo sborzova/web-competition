@@ -7,7 +7,7 @@ import { SuccessValidationComponent } from "./success-validation/success-validat
 import { WorseSolutionsComponent } from "./worse-solutions/worse-solutions.component";
 import { EscapeHtmlModule } from "../escape-html.module";
 import { PaperService } from "../shared/paper.service";
-import { SolutionService } from "./solution.service";
+import { SolutionService } from "../shared/solution.service";
 export var ValidationModule = (function () {
     function ValidationModule() {
     }

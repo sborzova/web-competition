@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
-import {SolutionResult} from "./solution-result.model";
+import {SolutionResult} from "../results/solution-result.model";
 
 @Injectable()
-export class ResultsService {
+export class SortService {
 
     sortQualityAsc(solutions: SolutionResult[]){
         return solutions.sort(function compare(a,b) {

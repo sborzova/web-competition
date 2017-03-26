@@ -4,7 +4,7 @@ import {CommonModule} from "@angular/common";
 import {EscapeHtmlModule} from "../escape-html.module";
 import {ValidatorInfoComponent} from "./validator-info.component";
 import {validatorInfoRouting} from "./validator-info.routing";
-import {SolutionService} from "../validation/solution.service";
+import {SolutionService} from "../shared/solution.service";
 
 @NgModule({
     declarations: [

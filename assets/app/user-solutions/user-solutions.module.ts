@@ -7,8 +7,8 @@ import {UserSolutionsComponent} from "./user-solutions.component";
 import {OrderByModule} from "../order-by.module";
 import {EscapeHtmlModule} from "../escape-html.module";
 import {PaperService} from "../shared/paper.service";
-import {SolutionService} from "../validation/solution.service";
-import {FlashMessageService} from "../flash-message/flash-messages.service";
+import {SolutionService} from "../shared/solution.service";
+import {SortService} from "../shared/sort.service";
 
 @NgModule({
     declarations: [
@@ -25,6 +25,7 @@ import {FlashMessageService} from "../flash-message/flash-messages.service";
     providers: [
         PaperService,
         SolutionService,
+        SortService
     ]
 })
 export class UserSolutionsModule {}

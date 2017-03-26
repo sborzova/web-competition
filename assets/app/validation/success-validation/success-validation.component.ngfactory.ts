@@ -12,7 +12,7 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../solution.service';
+import * as import8 from '../../shared/solution.service';
 import * as import9 from '../../shared/session-storage.service';
 import * as import10 from '@angular/core/src/metadata/view';
 import * as import11 from '@angular/core/src/linker/component_factory';
@@ -181,11 +181,20 @@ class _View_SuccessValidationComponent1 extends import1.AppView<any> {
   _text_68:any;
   _text_69:any;
   _text_70:any;
-  _anchor_71:any;
-  /*private*/ _appEl_71:import2.AppElement;
-  _TemplateRef_71_5:any;
-  _NgIf_71_6:import12.NgIf;
+  _el_71:any;
   _text_72:any;
+  _el_73:any;
+  _text_74:any;
+  _el_75:any;
+  _text_76:any;
+  _text_77:any;
+  _text_78:any;
+  _anchor_79:any;
+  /*private*/ _appEl_79:import2.AppElement;
+  _TemplateRef_79_5:any;
+  _NgIf_79_6:import12.NgIf;
+  _text_80:any;
+  _text_81:any;
   _map_0:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
@@ -276,11 +285,22 @@ class _View_SuccessValidationComponent1 extends import1.AppView<any> {
     this._text_68 = this.renderer.createText(this._el_6,'\n        ',(null as any));
     this._text_69 = this.renderer.createText(this._el_2,'\n    ',(null as any));
     this._text_70 = this.renderer.createText(this._el_0,'\n\n    ',(null as any));
-    this._anchor_71 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
-    this._appEl_71 = new import2.AppElement(71,0,this,this._anchor_71);
-    this._TemplateRef_71_5 = new import13.TemplateRef_(this._appEl_71,viewFactory_SuccessValidationComponent2);
-    this._NgIf_71_6 = new import12.NgIf(this._appEl_71.vcRef,this._TemplateRef_71_5);
-    this._text_72 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._el_71 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_71,'class','jumbotron col-xs-12 col-md-8 col-md-offset-2');
+    this._text_72 = this.renderer.createText(this._el_71,'\n        ',(null as any));
+    this._el_73 = this.renderer.createElement(this._el_71,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_73,'class','text-center');
+    this._text_74 = this.renderer.createText(this._el_73,'\n            ',(null as any));
+    this._el_75 = this.renderer.createElement(this._el_73,'h2',(null as any));
+    this._text_76 = this.renderer.createText(this._el_75,'Upload solution',(null as any));
+    this._text_77 = this.renderer.createText(this._el_73,'\n        ',(null as any));
+    this._text_78 = this.renderer.createText(this._el_71,'\n        ',(null as any));
+    this._anchor_79 = this.renderer.createTemplateAnchor(this._el_71,(null as any));
+    this._appEl_79 = new import2.AppElement(79,71,this,this._anchor_79);
+    this._TemplateRef_79_5 = new import13.TemplateRef_(this._appEl_79,viewFactory_SuccessValidationComponent2);
+    this._NgIf_79_6 = new import12.NgIf(this._appEl_79.vcRef,this._TemplateRef_79_5);
+    this._text_80 = this.renderer.createText(this._el_71,'\n    ',(null as any));
+    this._text_81 = this.renderer.createText(this._el_0,'\n',(null as any));
     this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
       return {display: p0};
     });
@@ -366,16 +386,25 @@ class _View_SuccessValidationComponent1 extends import1.AppView<any> {
       this._text_68,
       this._text_69,
       this._text_70,
-      this._anchor_71,
-      this._text_72
+      this._el_71,
+      this._text_72,
+      this._el_73,
+      this._text_74,
+      this._el_75,
+      this._text_76,
+      this._text_77,
+      this._text_78,
+      this._anchor_79,
+      this._text_80,
+      this._text_81
     ]
     ,[],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import13.TemplateRef) && (71 === requestNodeIndex))) { return this._TemplateRef_71_5; }
-    if (((token === import12.NgIf) && (71 === requestNodeIndex))) { return this._NgIf_71_6; }
-    if (((token === import14.NgStyle) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 72)))) { return this._NgStyle_0_3; }
+    if (((token === import13.TemplateRef) && (79 === requestNodeIndex))) { return this._TemplateRef_79_5; }
+    if (((token === import12.NgIf) && (79 === requestNodeIndex))) { return this._NgIf_79_6; }
+    if (((token === import14.NgStyle) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 81)))) { return this._NgStyle_0_3; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -386,9 +415,9 @@ class _View_SuccessValidationComponent1 extends import1.AppView<any> {
       this._expr_0 = currVal_0;
     }
     if (!throwOnChange) { this._NgStyle_0_3.ngDoCheck(); }
-    const currVal_8:any = this.parent.context.competitionIsOn();
+    const currVal_8:any = this.parent.context.myForm;
     if (import4.checkBinding(throwOnChange,this._expr_8,currVal_8)) {
-      this._NgIf_71_6.ngIf = currVal_8;
+      this._NgIf_79_6.ngIf = currVal_8;
       this._expr_8 = currVal_8;
     }
     this.detectContentChildrenChanges(throwOnChange);
@@ -435,74 +464,6 @@ function viewFactory_SuccessValidationComponent1(viewUtils:import4.ViewUtils,par
   return new _View_SuccessValidationComponent1(viewUtils,parentInjector,declarationEl);
 }
 class _View_SuccessValidationComponent2 extends import1.AppView<any> {
-  _el_0:any;
-  _text_1:any;
-  _el_2:any;
-  _text_3:any;
-  _el_4:any;
-  _text_5:any;
-  _text_6:any;
-  _text_7:any;
-  _anchor_8:any;
-  /*private*/ _appEl_8:import2.AppElement;
-  _TemplateRef_8_5:any;
-  _NgIf_8_6:import12.NgIf;
-  _text_9:any;
-  /*private*/ _expr_0:any;
-  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_SuccessValidationComponent2,renderType_SuccessValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
-  }
-  createInternal(rootSelector:string):import2.AppElement {
-    this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
-    this.renderer.setElementAttribute(this._el_0,'class','jumbotron col-xs-12 col-md-8 col-md-offset-2');
-    this._text_1 = this.renderer.createText(this._el_0,'\n        ',(null as any));
-    this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_2,'class','text-center');
-    this._text_3 = this.renderer.createText(this._el_2,'\n            ',(null as any));
-    this._el_4 = this.renderer.createElement(this._el_2,'h2',(null as any));
-    this._text_5 = this.renderer.createText(this._el_4,'Upload solution',(null as any));
-    this._text_6 = this.renderer.createText(this._el_2,'\n        ',(null as any));
-    this._text_7 = this.renderer.createText(this._el_0,'\n        ',(null as any));
-    this._anchor_8 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
-    this._appEl_8 = new import2.AppElement(8,0,this,this._anchor_8);
-    this._TemplateRef_8_5 = new import13.TemplateRef_(this._appEl_8,viewFactory_SuccessValidationComponent3);
-    this._NgIf_8_6 = new import12.NgIf(this._appEl_8.vcRef,this._TemplateRef_8_5);
-    this._text_9 = this.renderer.createText(this._el_0,'\n    ',(null as any));
-    this._expr_0 = import7.UNINITIALIZED;
-    this.init([].concat([this._el_0]),[
-      this._el_0,
-      this._text_1,
-      this._el_2,
-      this._text_3,
-      this._el_4,
-      this._text_5,
-      this._text_6,
-      this._text_7,
-      this._anchor_8,
-      this._text_9
-    ]
-    ,[],[]);
-    return (null as any);
-  }
-  injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import13.TemplateRef) && (8 === requestNodeIndex))) { return this._TemplateRef_8_5; }
-    if (((token === import12.NgIf) && (8 === requestNodeIndex))) { return this._NgIf_8_6; }
-    return notFoundResult;
-  }
-  detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_0:any = this.parent.parent.context.myForm;
-    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this._NgIf_8_6.ngIf = currVal_0;
-      this._expr_0 = currVal_0;
-    }
-    this.detectContentChildrenChanges(throwOnChange);
-    this.detectViewChildrenChanges(throwOnChange);
-  }
-}
-function viewFactory_SuccessValidationComponent2(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_SuccessValidationComponent2(viewUtils,parentInjector,declarationEl);
-}
-class _View_SuccessValidationComponent3 extends import1.AppView<any> {
   _el_0:any;
   _FormGroupDirective_0_3:import19.FormGroupDirective;
   _ControlContainer_0_4:any;
@@ -608,7 +569,7 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
   /*private*/ _expr_41:any;
   /*private*/ _expr_42:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_SuccessValidationComponent3,renderType_SuccessValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_SuccessValidationComponent2,renderType_SuccessValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'form',(null as any));
@@ -618,7 +579,7 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
     this._text_1 = this.renderer.createText(this._el_0,'\n            ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
     this.renderer.setElementAttribute(this._el_2,'class','form-group');
-    this._NgClass_2_3 = new import21.NgClass(this.parent.parent.parentInjector.get(import24.IterableDiffers),this.parent.parent.parentInjector.get(import16.KeyValueDiffers),new import17.ElementRef(this._el_2),this.renderer);
+    this._NgClass_2_3 = new import21.NgClass(this.parent.parentInjector.get(import24.IterableDiffers),this.parent.parentInjector.get(import16.KeyValueDiffers),new import17.ElementRef(this._el_2),this.renderer);
     this._text_3 = this.renderer.createText(this._el_2,'\n                ',(null as any));
     this._el_4 = this.renderer.createElement(this._el_2,'label',(null as any));
     this.renderer.setElementAttribute(this._el_4,'for','technique');
@@ -636,7 +597,7 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
     this._text_8 = this.renderer.createText(this._el_2,'\n                ',(null as any));
     this._anchor_9 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
     this._appEl_9 = new import2.AppElement(9,2,this,this._anchor_9);
-    this._TemplateRef_9_5 = new import13.TemplateRef_(this._appEl_9,viewFactory_SuccessValidationComponent4);
+    this._TemplateRef_9_5 = new import13.TemplateRef_(this._appEl_9,viewFactory_SuccessValidationComponent3);
     this._NgIf_9_6 = new import12.NgIf(this._appEl_9.vcRef,this._TemplateRef_9_5);
     this._text_10 = this.renderer.createText(this._el_2,'\n            ',(null as any));
     this._text_11 = this.renderer.createText(this._el_0,'\n            ',(null as any));
@@ -644,12 +605,12 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_12,'style','padding: 2% 0% 1% 0%; text-align: center; font-weight: bold');
     this._text_13 = this.renderer.createText(this._el_12,'\n                ',(null as any));
     this._el_14 = this.renderer.createElement(this._el_12,'h4',(null as any));
-    this._text_15 = this.renderer.createText(this._el_14,'Highly recommended adding paper',(null as any));
+    this._text_15 = this.renderer.createText(this._el_14,'Add reference (highly recommended)',(null as any));
     this._text_16 = this.renderer.createText(this._el_12,'\n            ',(null as any));
     this._text_17 = this.renderer.createText(this._el_0,'\n            ',(null as any));
     this._el_18 = this.renderer.createElement(this._el_0,'div',(null as any));
     this.renderer.setElementAttribute(this._el_18,'class','form-group');
-    this._NgClass_18_3 = new import21.NgClass(this.parent.parent.parentInjector.get(import24.IterableDiffers),this.parent.parent.parentInjector.get(import16.KeyValueDiffers),new import17.ElementRef(this._el_18),this.renderer);
+    this._NgClass_18_3 = new import21.NgClass(this.parent.parentInjector.get(import24.IterableDiffers),this.parent.parentInjector.get(import16.KeyValueDiffers),new import17.ElementRef(this._el_18),this.renderer);
     this._text_19 = this.renderer.createText(this._el_18,'\n                ',(null as any));
     this._el_20 = this.renderer.createElement(this._el_18,'label',(null as any));
     this.renderer.setElementAttribute(this._el_20,'for','citation');
@@ -666,7 +627,7 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
     this._text_24 = this.renderer.createText(this._el_18,'\n                ',(null as any));
     this._anchor_25 = this.renderer.createTemplateAnchor(this._el_18,(null as any));
     this._appEl_25 = new import2.AppElement(25,18,this,this._anchor_25);
-    this._TemplateRef_25_5 = new import13.TemplateRef_(this._appEl_25,viewFactory_SuccessValidationComponent5);
+    this._TemplateRef_25_5 = new import13.TemplateRef_(this._appEl_25,viewFactory_SuccessValidationComponent4);
     this._NgIf_25_6 = new import12.NgIf(this._appEl_25.vcRef,this._TemplateRef_25_5);
     this._text_26 = this.renderer.createText(this._el_18,'\n            ',(null as any));
     this._text_27 = this.renderer.createText(this._el_0,'\n            ',(null as any));
@@ -835,7 +796,7 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
   detectChangesInternal(throwOnChange:boolean):void {
     var changes:{[key: string]:import7.SimpleChange} = (null as any);
     changes = (null as any);
-    const currVal_3:any = this.parent.parent.parent.context.myForm;
+    const currVal_3:any = this.parent.parent.context.myForm;
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
       this._FormGroupDirective_0_3.form = currVal_3;
       if ((changes === (null as any))) { (changes = {}); }
@@ -848,14 +809,14 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
       this._NgClass_2_3.klass = currVal_10;
       this._expr_10 = currVal_10;
     }
-    const currVal_11:any = this._map_0((!this.parent.parent.parent.context.myForm.controls['technique'].valid && (this.parent.parent.parent.context.myForm.controls['technique'].touched || this.parent.parent.parent.context.isSubmitted())));
+    const currVal_11:any = this._map_0((!this.parent.parent.context.myForm.controls['technique'].valid && (this.parent.parent.context.myForm.controls['technique'].touched || this.parent.parent.context.isSubmitted())));
     if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
       this._NgClass_2_3.ngClass = currVal_11;
       this._expr_11 = currVal_11;
     }
     if (!throwOnChange) { this._NgClass_2_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_14:any = this.parent.parent.parent.context.myForm.controls['technique'];
+    const currVal_14:any = this.parent.parent.context.myForm.controls['technique'];
     if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
       this._FormControlDirective_7_5.form = currVal_14;
       if ((changes === (null as any))) { (changes = {}); }
@@ -863,7 +824,7 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
       this._expr_14 = currVal_14;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_7_5.ngOnChanges(changes); }
-    const currVal_21:any = (this.parent.parent.parent.context.myForm.controls['technique'].hasError('required') && (this.parent.parent.parent.context.myForm.controls['technique'].touched || this.parent.parent.parent.context.isSubmitted()));
+    const currVal_21:any = (this.parent.parent.context.myForm.controls['technique'].hasError('required') && (this.parent.parent.context.myForm.controls['technique'].touched || this.parent.parent.context.isSubmitted()));
     if (import4.checkBinding(throwOnChange,this._expr_21,currVal_21)) {
       this._NgIf_9_6.ngIf = currVal_21;
       this._expr_21 = currVal_21;
@@ -873,14 +834,14 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
       this._NgClass_18_3.klass = currVal_22;
       this._expr_22 = currVal_22;
     }
-    const currVal_23:any = this._map_1(this.parent.parent.parent.context.isCitationMissing());
+    const currVal_23:any = this._map_1(this.parent.parent.context.isCitationMissing());
     if (import4.checkBinding(throwOnChange,this._expr_23,currVal_23)) {
       this._NgClass_18_3.ngClass = currVal_23;
       this._expr_23 = currVal_23;
     }
     if (!throwOnChange) { this._NgClass_18_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_26:any = this.parent.parent.parent.context.myForm.controls['citation'];
+    const currVal_26:any = this.parent.parent.context.myForm.controls['citation'];
     if (import4.checkBinding(throwOnChange,this._expr_26,currVal_26)) {
       this._FormControlDirective_23_5.form = currVal_26;
       if ((changes === (null as any))) { (changes = {}); }
@@ -888,13 +849,13 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
       this._expr_26 = currVal_26;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_23_5.ngOnChanges(changes); }
-    const currVal_33:any = this.parent.parent.parent.context.isCitationMissing();
+    const currVal_33:any = this.parent.parent.context.isCitationMissing();
     if (import4.checkBinding(throwOnChange,this._expr_33,currVal_33)) {
       this._NgIf_25_6.ngIf = currVal_33;
       this._expr_33 = currVal_33;
     }
     changes = (null as any);
-    const currVal_36:any = this.parent.parent.parent.context.myForm.controls['url'];
+    const currVal_36:any = this.parent.parent.context.myForm.controls['url'];
     if (import4.checkBinding(throwOnChange,this._expr_36,currVal_36)) {
       this._FormControlDirective_33_5.form = currVal_36;
       if ((changes === (null as any))) { (changes = {}); }
@@ -1027,7 +988,7 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
   }
   private _handle_ngSubmit_0_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.parent.parent.parent.context.onSubmit()) !== false);
+    const pd_0:any = ((<any>this.parent.parent.context.onSubmit()) !== false);
     return (true && pd_0);
   }
   private _handle_submit_0_1($event:any):boolean {
@@ -1071,14 +1032,14 @@ class _View_SuccessValidationComponent3 extends import1.AppView<any> {
     return (true && pd_0);
   }
 }
-function viewFactory_SuccessValidationComponent3(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_SuccessValidationComponent3(viewUtils,parentInjector,declarationEl);
+function viewFactory_SuccessValidationComponent2(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_SuccessValidationComponent2(viewUtils,parentInjector,declarationEl);
 }
-class _View_SuccessValidationComponent4 extends import1.AppView<any> {
+class _View_SuccessValidationComponent3 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_SuccessValidationComponent4,renderType_SuccessValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_SuccessValidationComponent3,renderType_SuccessValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
@@ -1092,14 +1053,14 @@ class _View_SuccessValidationComponent4 extends import1.AppView<any> {
     return (null as any);
   }
 }
-function viewFactory_SuccessValidationComponent4(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_SuccessValidationComponent4(viewUtils,parentInjector,declarationEl);
+function viewFactory_SuccessValidationComponent3(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_SuccessValidationComponent3(viewUtils,parentInjector,declarationEl);
 }
-class _View_SuccessValidationComponent5 extends import1.AppView<any> {
+class _View_SuccessValidationComponent4 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_SuccessValidationComponent5,renderType_SuccessValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_SuccessValidationComponent4,renderType_SuccessValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
@@ -1113,6 +1074,6 @@ class _View_SuccessValidationComponent5 extends import1.AppView<any> {
     return (null as any);
   }
 }
-function viewFactory_SuccessValidationComponent5(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_SuccessValidationComponent5(viewUtils,parentInjector,declarationEl);
+function viewFactory_SuccessValidationComponent4(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_SuccessValidationComponent4(viewUtils,parentInjector,declarationEl);
 }

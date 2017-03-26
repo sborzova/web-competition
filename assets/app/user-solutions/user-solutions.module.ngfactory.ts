@@ -16,14 +16,15 @@ import * as import8 from '@angular/forms/src/form_builder';
 import * as import9 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import10 from '@angular/common/src/localization';
 import * as import11 from '../shared/paper.service';
-import * as import12 from '../validation/solution.service';
-import * as import13 from '@angular/core/src/di/injector';
-import * as import14 from './user-solutions.component.ngfactory';
-import * as import15 from '@angular/core/src/i18n/tokens';
-import * as import16 from './user-solutions.component';
-import * as import17 from '@angular/http/src/http';
-import * as import18 from '../flash-message/flash-messages.service';
-import * as import19 from '@angular/router/src/router_config_loader';
+import * as import12 from '../shared/solution.service';
+import * as import13 from '../shared/sort.service';
+import * as import14 from '@angular/core/src/di/injector';
+import * as import15 from './user-solutions.component.ngfactory';
+import * as import16 from '@angular/core/src/i18n/tokens';
+import * as import17 from './user-solutions.component';
+import * as import18 from '@angular/http/src/http';
+import * as import19 from '../flash-message/flash-messages.service';
+import * as import20 from '@angular/router/src/router_config_loader';
 class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserSolutionsModule> {
   _InternalFormsSharedModule_0:import2.InternalFormsSharedModule;
   _ReactiveFormsModule_1:import3.ReactiveFormsModule;
@@ -39,8 +40,9 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
   __ROUTES_11:any[];
   __PaperService_12:import11.PaperService;
   __SolutionService_13:import12.SolutionService;
-  constructor(parent:import13.Injector) {
-    super(parent,[import14.UserSolutionsComponentNgFactory],[]);
+  __SortService_14:import13.SortService;
+  constructor(parent:import14.Injector) {
+    super(parent,[import15.UserSolutionsComponentNgFactory],[]);
   }
   get _FormBuilder_8():import8.FormBuilder {
     if ((this.__FormBuilder_8 == (null as any))) { (this.__FormBuilder_8 = new import8.FormBuilder()); }
@@ -51,7 +53,7 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
     return this.__RadioControlRegistry_9;
   }
   get _NgLocalization_10():import10.NgLocaleLocalization {
-    if ((this.__NgLocalization_10 == (null as any))) { (this.__NgLocalization_10 = new import10.NgLocaleLocalization(this.parent.get(import15.LOCALE_ID))); }
+    if ((this.__NgLocalization_10 == (null as any))) { (this.__NgLocalization_10 = new import10.NgLocaleLocalization(this.parent.get(import16.LOCALE_ID))); }
     return this.__NgLocalization_10;
   }
   get _ROUTES_11():any[] {
@@ -66,7 +68,7 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
             ,
             {
               path: 'all',
-              component: import16.UserSolutionsComponent
+              component: import17.UserSolutionsComponent
             }
 
           ]
@@ -76,12 +78,16 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
     return this.__ROUTES_11;
   }
   get _PaperService_12():import11.PaperService {
-    if ((this.__PaperService_12 == (null as any))) { (this.__PaperService_12 = new import11.PaperService(this.parent.get(import17.Http))); }
+    if ((this.__PaperService_12 == (null as any))) { (this.__PaperService_12 = new import11.PaperService(this.parent.get(import18.Http))); }
     return this.__PaperService_12;
   }
   get _SolutionService_13():import12.SolutionService {
-    if ((this.__SolutionService_13 == (null as any))) { (this.__SolutionService_13 = new import12.SolutionService(this.parent.get(import17.Http),this.parent.get(import18.FlashMessageService))); }
+    if ((this.__SolutionService_13 == (null as any))) { (this.__SolutionService_13 = new import12.SolutionService(this.parent.get(import18.Http),this.parent.get(import19.FlashMessageService))); }
     return this.__SolutionService_13;
+  }
+  get _SortService_14():import13.SortService {
+    if ((this.__SortService_14 == (null as any))) { (this.__SortService_14 = new import13.SortService()); }
+    return this.__SortService_14;
   }
   createInternal():import1.UserSolutionsModule {
     this._InternalFormsSharedModule_0 = new import2.InternalFormsSharedModule();
@@ -106,9 +112,10 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
     if ((token === import8.FormBuilder)) { return this._FormBuilder_8; }
     if ((token === import9.RadioControlRegistry)) { return this._RadioControlRegistry_9; }
     if ((token === import10.NgLocalization)) { return this._NgLocalization_10; }
-    if ((token === import19.ROUTES)) { return this._ROUTES_11; }
+    if ((token === import20.ROUTES)) { return this._ROUTES_11; }
     if ((token === import11.PaperService)) { return this._PaperService_12; }
     if ((token === import12.SolutionService)) { return this._SolutionService_13; }
+    if ((token === import13.SortService)) { return this._SortService_14; }
     return notFoundResult;
   }
   destroyInternal():void {

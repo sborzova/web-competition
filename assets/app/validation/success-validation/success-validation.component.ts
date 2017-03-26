@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Subscription} from "rxjs";
 
-import { SolutionService } from "../solution.service";
+import { SolutionService } from "../../shared/solution.service";
 import { Validation } from "../validation.model";
 import { SolutionFindWorse } from "../solution-find-worse.model";
 import { Solution } from "../../user-solutions/solution.model";

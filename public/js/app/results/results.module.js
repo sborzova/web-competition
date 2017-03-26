@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ResultsComponent } from "./results.component";
 import { ResultsBestComponent } from "./results-best/results-best.component";
 import { ResultsInstanceComponent } from "./results-instance/results-instance.component";
 import { ResultsAuthorComponent } from "./results-author/results-author.component";
@@ -9,20 +8,22 @@ import { resultsRouting } from "./results.routing";
 import { OrderByModule } from "../order-by.module";
 import { PaperService } from "../shared/paper.service";
 import { InstanceService } from "../instances/instance.service";
-import { SolutionService } from "../validation/solution.service";
-import { ResultsService } from "./results.service";
-import { FlashMessageService } from "../flash-message/flash-messages.service";
+import { SolutionService } from "../shared/solution.service";
+import { SortService } from "../shared/sort.service";
+import { ResultsAuthorInstanceComponent } from "./results-author-instance/results-author-instance.component";
+import { ResultsAuthorInstanceTechniqueComponent } from "./results-author-instance-technique/results-author-instance-technique.component";
 export var ResultsModule = (function () {
     function ResultsModule() {
     }
     ResultsModule.decorators = [
         { type: NgModule, args: [{
                     declarations: [
-                        ResultsComponent,
                         ResultsBestComponent,
                         ResultsInstanceComponent,
                         ResultsAuthorComponent,
+                        ResultsAuthorInstanceComponent,
                         ResultsAuthorTechniqueComponent,
+                        ResultsAuthorInstanceTechniqueComponent
                     ],
                     imports: [
                         CommonModule,
@@ -33,8 +34,7 @@ export var ResultsModule = (function () {
                         PaperService,
                         InstanceService,
                         SolutionService,
-                        ResultsService,
-                        FlashMessageService
+                        SortService,
                     ]
                 },] },
     ];

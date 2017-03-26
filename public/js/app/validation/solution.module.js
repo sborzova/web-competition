@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { SolutionService } from "./solution.service";
+import { SolutionService } from "../shared/solution.service";
 export var SolutionModule = (function () {
     function SolutionModule() {
     }

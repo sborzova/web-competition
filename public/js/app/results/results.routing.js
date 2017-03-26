@@ -1,8 +1,8 @@
 import { RouterModule } from "@angular/router";
-import { ResultsComponent } from "./results.component";
+import { ResultsBestComponent } from "./results-best/results-best.component";
 var RESULTS_ROUTES = [
     { path: '', children: [
-            { path: '', component: ResultsComponent },
+            { path: '', component: ResultsBestComponent },
         ] }
 ];
 export var resultsRouting = RouterModule.forChild(RESULTS_ROUTES);

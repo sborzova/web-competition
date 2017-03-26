@@ -11,10 +11,10 @@ export var FlashMessageComponent = (function () {
             .subscribe(function (message) {
             _this.message = message;
             _this.display = 'block';
-            window.setTimeout(function () {
-                _this.display = 'none';
-            }, 1700);
         });
+    };
+    FlashMessageComponent.prototype.onOk = function () {
+        this.display = 'none';
     };
     FlashMessageComponent.decorators = [
         { type: Component, args: [{

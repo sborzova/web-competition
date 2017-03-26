@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <p>Insert in case you want to update status/data</p>
-                    <div>
+                    <div class="form-group">
                         <label for="stats">
                             Status
                         </label>
@@ -70,7 +70,7 @@
                                 type="file"
                                 id="stats">
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="data">
                             Data
                         </label>
@@ -79,11 +79,17 @@
                                 type="file"
                                 id="data">
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <a class="btn btn-danger" (click)="onCancel()">Cancel</a>
-                        </div>
+                    <div align="right">
+                        <button
+                                class="btn btn-primary align-right"
+                                type="submit">
+                            Save
+                        </button>
+                        <button
+                                class="btn btn-default align-right"
+                                (click)="onCancel()">
+                            Cancel
+                        </button>
                     </div>
                 </form>
             </div>

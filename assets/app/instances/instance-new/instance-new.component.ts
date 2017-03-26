@@ -75,7 +75,7 @@ export class InstanceCreateComponent implements OnInit {
                         fd.append('stats', statsInput.files[0], statsInput.files[0].name);
                         fd.append('data', dataInput.files[0], dataInput.files[0].name);
 
-                        this.router.navigate(['/#instances']);
+                        this.navigateBack();
                         this.instancesService.saveFiles(fd, id)
                             .subscribe(
                                 () => {
@@ -110,5 +110,13 @@ export class InstanceCreateComponent implements OnInit {
 
     isDataInvalid(){
         return this.dataInvalid;
+    }
+
+    onCancel(){
+        this.navigateBack();
+    }
+
+    private navigateBack() {
+        this.router.navigate(['/#instances']);
     }
 }

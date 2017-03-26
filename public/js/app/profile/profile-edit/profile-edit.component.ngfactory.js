@@ -80,71 +80,73 @@ var _View_ProfileEditComponent0 = (function (_super) {
     }
     _View_ProfileEditComponent0.prototype.createInternal = function (rootSelector) {
         var parentRenderNode = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-        this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
-        this.renderer.setElementAttribute(this._el_0, 'class', 'container');
-        this.renderer.setElementAttribute(this._el_0, 'style', 'margin-top: 3%');
-        this._text_1 = this.renderer.createText(this._el_0, '\n    ', null);
-        this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
-        this.renderer.setElementAttribute(this._el_2, 'class', 'row');
-        this._text_3 = this.renderer.createText(this._el_2, '\n        ', null);
-        this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
-        this.renderer.setElementAttribute(this._el_4, 'class', 'col-xs-12 col-md-6 col-md-offset-3');
-        this._text_5 = this.renderer.createText(this._el_4, '\n            ', null);
-        this._el_6 = this.renderer.createElement(this._el_4, 'div', null);
-        this.renderer.setElementAttribute(this._el_6, 'class', 'jumbotron');
-        this._text_7 = this.renderer.createText(this._el_6, '\n                ', null);
-        this._el_8 = this.renderer.createElement(this._el_6, 'div', null);
-        this.renderer.setElementAttribute(this._el_8, 'class', 'text-center');
-        this._text_9 = this.renderer.createText(this._el_8, '\n                    ', null);
-        this._el_10 = this.renderer.createElement(this._el_8, 'h2', null);
-        this._text_11 = this.renderer.createText(this._el_10, 'Edit profile', null);
-        this._text_12 = this.renderer.createText(this._el_8, '\n                ', null);
-        this._text_13 = this.renderer.createText(this._el_6, '\n                ', null);
-        this._anchor_14 = this.renderer.createTemplateAnchor(this._el_6, null);
-        this._appEl_14 = new import2.AppElement(14, 6, this, this._anchor_14);
-        this._TemplateRef_14_5 = new import15.TemplateRef_(this._appEl_14, viewFactory_ProfileEditComponent1);
-        this._NgIf_14_6 = new import14.NgIf(this._appEl_14.vcRef, this._TemplateRef_14_5);
-        this._text_15 = this.renderer.createText(this._el_6, '\n            ', null);
-        this._text_16 = this.renderer.createText(this._el_4, '\n        ', null);
-        this._text_17 = this.renderer.createText(this._el_2, '\n    ', null);
-        this._text_18 = this.renderer.createText(this._el_0, '\n', null);
+        this._text_0 = this.renderer.createText(parentRenderNode, '\n', null);
+        this._el_1 = this.renderer.createElement(parentRenderNode, 'div', null);
+        this.renderer.setElementAttribute(this._el_1, 'class', 'container');
+        this.renderer.setElementAttribute(this._el_1, 'style', 'margin-top: 3%');
+        this._text_2 = this.renderer.createText(this._el_1, '\n    ', null);
+        this._el_3 = this.renderer.createElement(this._el_1, 'div', null);
+        this.renderer.setElementAttribute(this._el_3, 'class', 'row');
+        this._text_4 = this.renderer.createText(this._el_3, '\n        ', null);
+        this._el_5 = this.renderer.createElement(this._el_3, 'div', null);
+        this.renderer.setElementAttribute(this._el_5, 'class', 'col-xs-12 col-md-6 col-md-offset-3');
+        this._text_6 = this.renderer.createText(this._el_5, '\n            ', null);
+        this._el_7 = this.renderer.createElement(this._el_5, 'div', null);
+        this.renderer.setElementAttribute(this._el_7, 'class', 'jumbotron');
+        this._text_8 = this.renderer.createText(this._el_7, '\n                ', null);
+        this._el_9 = this.renderer.createElement(this._el_7, 'div', null);
+        this.renderer.setElementAttribute(this._el_9, 'class', 'text-center');
+        this._text_10 = this.renderer.createText(this._el_9, '\n                    ', null);
+        this._el_11 = this.renderer.createElement(this._el_9, 'h2', null);
+        this._text_12 = this.renderer.createText(this._el_11, 'Edit profile', null);
+        this._text_13 = this.renderer.createText(this._el_9, '\n                ', null);
+        this._text_14 = this.renderer.createText(this._el_7, '\n                ', null);
+        this._anchor_15 = this.renderer.createTemplateAnchor(this._el_7, null);
+        this._appEl_15 = new import2.AppElement(15, 7, this, this._anchor_15);
+        this._TemplateRef_15_5 = new import15.TemplateRef_(this._appEl_15, viewFactory_ProfileEditComponent1);
+        this._NgIf_15_6 = new import14.NgIf(this._appEl_15.vcRef, this._TemplateRef_15_5);
+        this._text_16 = this.renderer.createText(this._el_7, '\n            ', null);
+        this._text_17 = this.renderer.createText(this._el_5, '\n        ', null);
+        this._text_18 = this.renderer.createText(this._el_3, '\n    ', null);
+        this._text_19 = this.renderer.createText(this._el_1, '\n', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([], [
-            this._el_0,
-            this._text_1,
-            this._el_2,
-            this._text_3,
-            this._el_4,
-            this._text_5,
-            this._el_6,
-            this._text_7,
-            this._el_8,
-            this._text_9,
-            this._el_10,
-            this._text_11,
+            this._text_0,
+            this._el_1,
+            this._text_2,
+            this._el_3,
+            this._text_4,
+            this._el_5,
+            this._text_6,
+            this._el_7,
+            this._text_8,
+            this._el_9,
+            this._text_10,
+            this._el_11,
             this._text_12,
             this._text_13,
-            this._anchor_14,
-            this._text_15,
+            this._text_14,
+            this._anchor_15,
             this._text_16,
             this._text_17,
-            this._text_18
+            this._text_18,
+            this._text_19
         ], [], []);
         return null;
     };
     _View_ProfileEditComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import15.TemplateRef) && (14 === requestNodeIndex))) {
-            return this._TemplateRef_14_5;
+        if (((token === import15.TemplateRef) && (15 === requestNodeIndex))) {
+            return this._TemplateRef_15_5;
         }
-        if (((token === import14.NgIf) && (14 === requestNodeIndex))) {
-            return this._NgIf_14_6;
+        if (((token === import14.NgIf) && (15 === requestNodeIndex))) {
+            return this._NgIf_15_6;
         }
         return notFoundResult;
     };
     _View_ProfileEditComponent0.prototype.detectChangesInternal = function (throwOnChange) {
         var currVal_0 = this.context.myForm;
         if (import4.checkBinding(throwOnChange, this._expr_0, currVal_0)) {
-            this._NgIf_14_6.ngIf = currVal_0;
+            this._NgIf_15_6.ngIf = currVal_0;
             this._expr_0 = currVal_0;
         }
         this.detectContentChildrenChanges(throwOnChange);
@@ -258,12 +260,8 @@ var _View_ProfileEditComponent1 = (function (_super) {
         this.renderer.setElementAttribute(this._el_38, 'class', 'btn btn-primary');
         this.renderer.setElementAttribute(this._el_38, 'type', 'submit');
         this._text_39 = this.renderer.createText(this._el_38, '\n                            Save\n                        ', null);
-        this._text_40 = this.renderer.createText(this._el_36, '\n                        ', null);
-        this._el_41 = this.renderer.createElement(this._el_36, 'button', null);
-        this.renderer.setElementAttribute(this._el_41, 'class', 'btn btn-default');
-        this._text_42 = this.renderer.createText(this._el_41, '\n                            Cancel\n                        ', null);
-        this._text_43 = this.renderer.createText(this._el_36, '\n                    ', null);
-        this._text_44 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_40 = this.renderer.createText(this._el_36, '\n                    ', null);
+        this._text_41 = this.renderer.createText(this._el_0, '\n                ', null);
         var disposable_0 = this.renderer.listen(this._el_0, 'ngSubmit', this.eventHandler(this._handle_ngSubmit_0_0.bind(this)));
         var disposable_1 = this.renderer.listen(this._el_0, 'submit', this.eventHandler(this._handle_submit_0_1.bind(this)));
         var disposable_2 = this.renderer.listen(this._el_0, 'reset', this.eventHandler(this._handle_reset_0_2.bind(this)));
@@ -322,7 +320,6 @@ var _View_ProfileEditComponent1 = (function (_super) {
         this._expr_45 = import7.UNINITIALIZED;
         this._expr_46 = import7.UNINITIALIZED;
         this._expr_47 = import7.UNINITIALIZED;
-        var disposable_9 = this.renderer.listen(this._el_41, 'click', this.eventHandler(this._handle_click_41_0.bind(this)));
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1,
@@ -365,10 +362,7 @@ var _View_ProfileEditComponent1 = (function (_super) {
             this._el_38,
             this._text_39,
             this._text_40,
-            this._el_41,
-            this._text_42,
-            this._text_43,
-            this._text_44
+            this._text_41
         ], [
             disposable_0,
             disposable_1,
@@ -378,8 +372,7 @@ var _View_ProfileEditComponent1 = (function (_super) {
             disposable_5,
             disposable_6,
             disposable_7,
-            disposable_8,
-            disposable_9
+            disposable_8
         ], [subscription_0]);
         return null;
     };
@@ -468,13 +461,13 @@ var _View_ProfileEditComponent1 = (function (_super) {
         if (((token === import18.NgClass) && ((26 <= requestNodeIndex) && (requestNodeIndex <= 34)))) {
             return this._NgClass_26_3;
         }
-        if (((token === import16.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) {
+        if (((token === import16.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) {
             return this._FormGroupDirective_0_3;
         }
-        if (((token === import26.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) {
+        if (((token === import26.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) {
             return this._ControlContainer_0_4;
         }
-        if (((token === import17.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) {
+        if (((token === import17.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) {
             return this._NgControlStatusGroup_0_5;
         }
         return notFoundResult;
@@ -763,11 +756,6 @@ var _View_ProfileEditComponent1 = (function (_super) {
     _View_ProfileEditComponent1.prototype._handle_blur_31_1 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this._DefaultValueAccessor_31_3.onTouched() !== false);
-        return (true && pd_0);
-    };
-    _View_ProfileEditComponent1.prototype._handle_click_41_0 = function ($event) {
-        this.markPathToRootAsCheckOnce();
-        var pd_0 = (this.parent.context.onCancel() !== false);
         return (true && pd_0);
     };
     return _View_ProfileEditComponent1;

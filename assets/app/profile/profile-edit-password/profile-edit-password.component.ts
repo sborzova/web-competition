@@ -51,10 +51,6 @@ export class ProfileEditPasswordComponent implements OnInit{
             );
     }
 
-    onCancel() {
-        this.navigateBack();
-    }
-
     private navigateBack() {
         this.router.navigate(['/#profile/info']);
     }

@@ -1,52 +1,65 @@
-<div *ngIf="solutions" class="results">
-    <h2>Best solutions</h2>
-    <table class="table">
-        <thead>
-        <tr style="text-align: center">
-            <th rowspan="2">Instance</th>
-            <th colspan="2">Quality</th>
-            <th rowspan="2">Student Conflicts</th>
-            <th rowspan="2">Time Preferences</th>
-            <th rowspan="2">Room Preferences</th>
-            <th rowspan="2">Distribution Preferences</th>
-            <th rowspan="2">Download</th>
-            <th rowspan="2">Author</th>
-            <th rowspan="2">Technique</th>
-            <th rowspan="2">Submission time</th>
-            <th rowspan="2">Validator Info</th>
-            <th rowspan="2">View all</th>
-        </tr>
-        <tr>
-            <th>Unassigned Variables</th>
-            <th>Total Cost</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let solution of solutions | orderBy : 'instance.order' ">
-            <td>{{ solution.instance.name }}</td>
-            <td *ngIf="solution.postDate">{{ solution.unassigned }}&nbsp;%</td>
-            <td *ngIf="!solution.postDate"></td>
-            <td>{{ solution.total }}</td>
-            <td *ngIf="solution.postDate">{{ solution.sc }}&nbsp;%</td>
-            <td *ngIf="!solution.postDate"></td>
-            <td *ngIf="solution.postDate">{{ solution.time }}&nbsp;%</td>
-            <td *ngIf="!solution.postDate"></td>
-            <td *ngIf="solution.postDate">{{ solution.room }}&nbsp;%</td>
-            <td *ngIf="!solution.postDate"></td>
-            <td *ngIf="solution.postDate">{{ solution.distr }}&nbsp;%</td>
-            <td *ngIf="!solution.postDate"></td>
-            <td *ngIf="solution.postDate"><a (click)="onDownload(solution)">download</a></td>
-            <td *ngIf="!solution.postDate"></td>
-            <td><a (click)="onAuthor(solution.author.authorId)">{{ solution.author?.name }}</a></td>
-            <td>{{ solution.technique }}</td>
-            <td>{{ solution.postDate | date }}</td>
-            <td><a
-                    *ngIf="solution.postDate"
-                    [routerLink]="['/#solution/validatorinfo']"
-                    [queryParams]="{solutionId: solution.solutionId}">view</a></td>
-            <td *ngIf="!solution.postDate"></td>
-            <td *ngIf="solution.postDate"><a (click)="onViewAll(solution.instance.instanceId)">view</a></td>
-        </tr>
-        </tbody>
-    </table>
+<div class="col-xs-12" style="margin-top: 3%" >
+    <div *ngIf="results" class="results">
+        <h4>Best solutions</h4>
+        <button *ngIf="!isShowPapers()" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
+        <button *ngIf="isShowPapers()" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
+        <table class="table">
+            <thead>
+                <tr style="text-align: center">
+                    <th rowspan="2">Instance</th>
+                    <th colspan="2">Quality</th>
+                    <th rowspan="2">Student Conflicts</th>
+                    <th rowspan="2">Time Preferences</th>
+                    <th rowspan="2">Room Preferences</th>
+                    <th rowspan="2">Distribution Preferences</th>
+                    <th rowspan="2">Download</th>
+                    <th rowspan="2">Author</th>
+                    <th rowspan="2">Technique</th>
+                    <th rowspan="2">Submission time</th>
+                    <th rowspan="2">Validator Info</th>
+                </tr>
+                <tr>
+                    <th>Unassigned Variables</th>
+                    <th>Total Cost</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let solution of results | orderBy : 'instance.order' ">
+                <tr>
+                    <td><a (click)="onInstance(solution.instance.instanceId)">{{ solution.instance.name }}</a></td>
+                    <td>{{ solution.unassigned }}&nbsp;%</td>
+                    <td>{{ solution.total }}</td>
+                    <td>{{ solution.sc }}&nbsp;%</td>
+                    <td>{{ solution.time }}&nbsp;%</td>
+                    <td>{{ solution.room }}&nbsp;%</td>
+                    <td>{{ solution.distr }}&nbsp;%</td>
+                    <td>
+                        <button type="button" class="btn btn-success btn-xs" (click)="onDownload(solution)" title="Download">
+                            <i class="glyphicon glyphicon-download-alt"></i>
+                        </button>
+                    </td>
+                    <td><a (click)="onAuthor(solution.author.authorId)">{{ solution.author?.name }}</a></td>
+                    <td>{{ solution.technique }}</td>
+                    <td>{{ solution.postDate | date }}</td>
+                    <td><button
+                            type="button"
+                            class="btn btn-primary btn-xs"
+                            title="View"
+                            [routerLink]="['/#solution/validatorinfo']"
+                            [queryParams]="{solutionId: solution.solutionId}">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    </td>
+                </tr>
+                <tr *ngIf="isShowPapers() && solution.paper" class="paper">
+                    <td ><strong>Citation: </strong></td>
+                    <td colspan="11" id="paper">
+                        {{ solution.paper?.citation}}
+                        <a href="{{solution.paper?.url}}">URL</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <app-results-instance [solutions]="solutionsInstance"></app-results-instance>
+    <app-results-author [solutions]="solutionsAuthor"></app-results-author>
 </div>

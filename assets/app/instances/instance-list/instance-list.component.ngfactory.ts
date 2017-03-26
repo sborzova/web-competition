@@ -28,7 +28,6 @@ import * as import20 from '@angular/router/src/directives/router_link';
 import * as import21 from '@angular/router/src/router';
 import * as import22 from '@angular/router/src/router_state';
 import * as import23 from '@angular/common/src/location/location_strategy';
-import * as import24 from '@angular/core/src/security';
 var renderType_InstanceListComponent_Host:import0.RenderComponentType = (null as any);
 class _View_InstanceListComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -306,29 +305,36 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
   _text_10:any;
   _el_11:any;
   _el_12:any;
-  _RouterLinkWithHref_12_3:import20.RouterLinkWithHref;
+  _RouterLink_12_3:import20.RouterLink;
   _text_13:any;
-  _text_14:any;
-  _el_15:any;
+  _el_14:any;
+  _text_15:any;
   _text_16:any;
   _text_17:any;
   _el_18:any;
-  _el_19:any;
+  _text_19:any;
   _text_20:any;
-  _text_21:any;
-  _el_22:any;
-  _text_23:any;
-  _anchor_24:any;
-  /*private*/ _appEl_24:import2.AppElement;
-  _TemplateRef_24_5:any;
-  _NgIf_24_6:import13.NgIf;
-  _text_25:any;
-  _anchor_26:any;
-  /*private*/ _appEl_26:import2.AppElement;
-  _TemplateRef_26_5:any;
-  _NgIf_26_6:import13.NgIf;
+  _el_21:any;
+  _text_22:any;
+  _el_23:any;
+  _text_24:any;
+  _el_25:any;
+  _text_26:any;
   _text_27:any;
   _text_28:any;
+  _el_29:any;
+  _text_30:any;
+  _anchor_31:any;
+  /*private*/ _appEl_31:import2.AppElement;
+  _TemplateRef_31_5:any;
+  _NgIf_31_6:import13.NgIf;
+  _text_32:any;
+  _anchor_33:any;
+  /*private*/ _appEl_33:import2.AppElement;
+  _TemplateRef_33_5:any;
+  _NgIf_33_6:import13.NgIf;
+  _text_34:any;
+  _text_35:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   /*private*/ _expr_2:any;
@@ -336,11 +342,10 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
   /*private*/ _expr_4:any;
   _arr_0:any;
   /*private*/ _expr_5:any;
-  /*private*/ _expr_6:any;
   _pipe_date_0_0:any;
-  /*private*/ _expr_7:any;
+  /*private*/ _expr_6:any;
+  /*private*/ _expr_8:any;
   /*private*/ _expr_9:any;
-  /*private*/ _expr_10:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_InstanceListComponent3,renderType_InstanceListComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -360,32 +365,47 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
     this._text_9 = this.renderer.createText(this._el_8,'',(null as any));
     this._text_10 = this.renderer.createText(this._el_0,'\n                                ',(null as any));
     this._el_11 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this._el_12 = this.renderer.createElement(this._el_11,'a',(null as any));
-    this._RouterLinkWithHref_12_3 = new import20.RouterLinkWithHref(this.parent.parentInjector.get(import21.Router),this.parent.parentInjector.get(import22.ActivatedRoute),this.parent.parentInjector.get(import23.LocationStrategy));
-    this._text_13 = this.renderer.createText(this._el_12,'view',(null as any));
-    this._text_14 = this.renderer.createText(this._el_0,'\n                                ',(null as any));
-    this._el_15 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this._text_16 = this.renderer.createText(this._el_15,'',(null as any));
+    this._el_12 = this.renderer.createElement(this._el_11,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_12,'class','btn btn-primary btn-xs');
+    this.renderer.setElementAttribute(this._el_12,'title','View');
+    this.renderer.setElementAttribute(this._el_12,'type','button');
+    this._RouterLink_12_3 = new import20.RouterLink(this.parent.parentInjector.get(import21.Router),this.parent.parentInjector.get(import22.ActivatedRoute),this.parent.parentInjector.get(import23.LocationStrategy));
+    this._text_13 = this.renderer.createText(this._el_12,'\n                                        ',(null as any));
+    this._el_14 = this.renderer.createElement(this._el_12,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_14,'class','glyphicon glyphicon-search');
+    this._text_15 = this.renderer.createText(this._el_12,'\n                                ',(null as any));
+    this._text_16 = this.renderer.createText(this._el_11,'\n                                ',(null as any));
     this._text_17 = this.renderer.createText(this._el_0,'\n                                ',(null as any));
     this._el_18 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this._el_19 = this.renderer.createElement(this._el_18,'a',(null as any));
-    this._text_20 = this.renderer.createText(this._el_19,'download',(null as any));
-    this._text_21 = this.renderer.createText(this._el_0,'\n                                ',(null as any));
-    this._el_22 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this.renderer.setElementAttribute(this._el_22,'class','btn-group');
-    this.renderer.setElementAttribute(this._el_22,'style','vertical-align: middle; border: none');
-    this._text_23 = this.renderer.createText(this._el_22,'\n                                        ',(null as any));
-    this._anchor_24 = this.renderer.createTemplateAnchor(this._el_22,(null as any));
-    this._appEl_24 = new import2.AppElement(24,22,this,this._anchor_24);
-    this._TemplateRef_24_5 = new import15.TemplateRef_(this._appEl_24,viewFactory_InstanceListComponent5);
-    this._NgIf_24_6 = new import13.NgIf(this._appEl_24.vcRef,this._TemplateRef_24_5);
-    this._text_25 = this.renderer.createText(this._el_22,'\n                                        ',(null as any));
-    this._anchor_26 = this.renderer.createTemplateAnchor(this._el_22,(null as any));
-    this._appEl_26 = new import2.AppElement(26,22,this,this._anchor_26);
-    this._TemplateRef_26_5 = new import15.TemplateRef_(this._appEl_26,viewFactory_InstanceListComponent6);
-    this._NgIf_26_6 = new import13.NgIf(this._appEl_26.vcRef,this._TemplateRef_26_5);
-    this._text_27 = this.renderer.createText(this._el_22,'\n                                ',(null as any));
-    this._text_28 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
+    this._text_19 = this.renderer.createText(this._el_18,'',(null as any));
+    this._text_20 = this.renderer.createText(this._el_0,'\n                                ',(null as any));
+    this._el_21 = this.renderer.createElement(this._el_0,'td',(null as any));
+    this._text_22 = this.renderer.createText(this._el_21,'\n                                        ',(null as any));
+    this._el_23 = this.renderer.createElement(this._el_21,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_23,'class','btn btn-success btn-xs');
+    this.renderer.setElementAttribute(this._el_23,'title','Download');
+    this.renderer.setElementAttribute(this._el_23,'type','button');
+    this._text_24 = this.renderer.createText(this._el_23,'\n                                                ',(null as any));
+    this._el_25 = this.renderer.createElement(this._el_23,'i',(null as any));
+    this.renderer.setElementAttribute(this._el_25,'class','glyphicon glyphicon-download-alt');
+    this._text_26 = this.renderer.createText(this._el_23,'\n                                        ',(null as any));
+    this._text_27 = this.renderer.createText(this._el_21,'\n                                ',(null as any));
+    this._text_28 = this.renderer.createText(this._el_0,'\n                                ',(null as any));
+    this._el_29 = this.renderer.createElement(this._el_0,'td',(null as any));
+    this.renderer.setElementAttribute(this._el_29,'class','btn-group');
+    this.renderer.setElementAttribute(this._el_29,'style','vertical-align: middle; border: none');
+    this._text_30 = this.renderer.createText(this._el_29,'\n                                        ',(null as any));
+    this._anchor_31 = this.renderer.createTemplateAnchor(this._el_29,(null as any));
+    this._appEl_31 = new import2.AppElement(31,29,this,this._anchor_31);
+    this._TemplateRef_31_5 = new import15.TemplateRef_(this._appEl_31,viewFactory_InstanceListComponent5);
+    this._NgIf_31_6 = new import13.NgIf(this._appEl_31.vcRef,this._TemplateRef_31_5);
+    this._text_32 = this.renderer.createText(this._el_29,'\n                                        ',(null as any));
+    this._anchor_33 = this.renderer.createTemplateAnchor(this._el_29,(null as any));
+    this._appEl_33 = new import2.AppElement(33,29,this,this._anchor_33);
+    this._TemplateRef_33_5 = new import15.TemplateRef_(this._appEl_33,viewFactory_InstanceListComponent6);
+    this._NgIf_33_6 = new import13.NgIf(this._appEl_33.vcRef,this._TemplateRef_33_5);
+    this._text_34 = this.renderer.createText(this._el_29,'\n                                ',(null as any));
+    this._text_35 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this._expr_1 = import7.UNINITIALIZED;
     this._expr_2 = import7.UNINITIALIZED;
@@ -398,12 +418,11 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
       return [p0];
     });
     this._expr_5 = import7.UNINITIALIZED;
-    this._expr_6 = import7.UNINITIALIZED;
     this._pipe_date_0_0 = import4.pureProxy1((<_View_InstanceListComponent0>this.parent.parent)._pipe_date_0.transform.bind((<_View_InstanceListComponent0>this.parent.parent)._pipe_date_0));
-    this._expr_7 = import7.UNINITIALIZED;
-    var disposable_1:Function = this.renderer.listen(this._el_19,'click',this.eventHandler(this._handle_click_19_0.bind(this)));
+    this._expr_6 = import7.UNINITIALIZED;
+    var disposable_1:Function = this.renderer.listen(this._el_23,'click',this.eventHandler(this._handle_click_23_0.bind(this)));
+    this._expr_8 = import7.UNINITIALIZED;
     this._expr_9 = import7.UNINITIALIZED;
-    this._expr_10 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -419,21 +438,28 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
       this._el_11,
       this._el_12,
       this._text_13,
-      this._text_14,
-      this._el_15,
+      this._el_14,
+      this._text_15,
       this._text_16,
       this._text_17,
       this._el_18,
-      this._el_19,
+      this._text_19,
       this._text_20,
-      this._text_21,
-      this._el_22,
-      this._text_23,
-      this._anchor_24,
-      this._text_25,
-      this._anchor_26,
+      this._el_21,
+      this._text_22,
+      this._el_23,
+      this._text_24,
+      this._el_25,
+      this._text_26,
       this._text_27,
-      this._text_28
+      this._text_28,
+      this._el_29,
+      this._text_30,
+      this._anchor_31,
+      this._text_32,
+      this._anchor_33,
+      this._text_34,
+      this._text_35
     ]
     ,[
       disposable_0,
@@ -445,46 +471,39 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
     if (((token === import15.TemplateRef) && (3 === requestNodeIndex))) { return this._TemplateRef_3_5; }
     if (((token === import13.NgIf) && (3 === requestNodeIndex))) { return this._NgIf_3_6; }
-    if (((token === import20.RouterLinkWithHref) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 13)))) { return this._RouterLinkWithHref_12_3; }
-    if (((token === import15.TemplateRef) && (24 === requestNodeIndex))) { return this._TemplateRef_24_5; }
-    if (((token === import13.NgIf) && (24 === requestNodeIndex))) { return this._NgIf_24_6; }
-    if (((token === import15.TemplateRef) && (26 === requestNodeIndex))) { return this._TemplateRef_26_5; }
-    if (((token === import13.NgIf) && (26 === requestNodeIndex))) { return this._NgIf_26_6; }
+    if (((token === import20.RouterLink) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 15)))) { return this._RouterLink_12_3; }
+    if (((token === import15.TemplateRef) && (31 === requestNodeIndex))) { return this._TemplateRef_31_5; }
+    if (((token === import13.NgIf) && (31 === requestNodeIndex))) { return this._NgIf_31_6; }
+    if (((token === import15.TemplateRef) && (33 === requestNodeIndex))) { return this._TemplateRef_33_5; }
+    if (((token === import13.NgIf) && (33 === requestNodeIndex))) { return this._NgIf_33_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    var changes:{[key: string]:import7.SimpleChange} = (null as any);
     const valUnwrapper:any = new import7.ValueUnwrapper();
     const currVal_0:any = this.parent.parent.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
       this._NgIf_3_6.ngIf = currVal_0;
       this._expr_0 = currVal_0;
     }
-    changes = (null as any);
     const currVal_4:any = this._map_0(this.context.$implicit.instanceId);
     if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
-      this._RouterLinkWithHref_12_3.queryParams = currVal_4;
-      if ((changes === (null as any))) { (changes = {}); }
-      changes['queryParams'] = new import7.SimpleChange(this._expr_4,currVal_4);
+      this._RouterLink_12_3.queryParams = currVal_4;
       this._expr_4 = currVal_4;
     }
     const currVal_5:any = this._arr_0('/#instances/stats');
     if (import4.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
-      this._RouterLinkWithHref_12_3.routerLink = currVal_5;
-      if ((changes === (null as any))) { (changes = {}); }
-      changes['routerLink'] = new import7.SimpleChange(this._expr_5,currVal_5);
+      this._RouterLink_12_3.routerLink = currVal_5;
       this._expr_5 = currVal_5;
     }
-    if ((changes !== (null as any))) { this._RouterLinkWithHref_12_3.ngOnChanges(changes); }
+    const currVal_8:any = this.parent.parent.context.isAdmin();
+    if (import4.checkBinding(throwOnChange,this._expr_8,currVal_8)) {
+      this._NgIf_31_6.ngIf = currVal_8;
+      this._expr_8 = currVal_8;
+    }
     const currVal_9:any = this.parent.parent.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_9,currVal_9)) {
-      this._NgIf_24_6.ngIf = currVal_9;
+      this._NgIf_33_6.ngIf = currVal_9;
       this._expr_9 = currVal_9;
-    }
-    const currVal_10:any = this.parent.parent.context.isAdmin();
-    if (import4.checkBinding(throwOnChange,this._expr_10,currVal_10)) {
-      this._NgIf_26_6.ngIf = currVal_10;
-      this._expr_10 = currVal_10;
     }
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_1:any = import4.interpolate(1,'',this.context.$implicit.name,'');
@@ -497,28 +516,20 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
       this.renderer.setText(this._text_9,currVal_2);
       this._expr_2 = currVal_2;
     }
-    const currVal_6:any = this._RouterLinkWithHref_12_3.href;
-    if (import4.checkBinding(throwOnChange,this._expr_6,currVal_6)) {
-      this.renderer.setElementProperty(this._el_12,'href',this.viewUtils.sanitizer.sanitize(import24.SecurityContext.URL,currVal_6));
-      this._expr_6 = currVal_6;
-    }
     valUnwrapper.reset();
-    const currVal_7:any = import4.interpolate(1,'',valUnwrapper.unwrap(import4.castByValue(this._pipe_date_0_0,(<_View_InstanceListComponent0>this.parent.parent)._pipe_date_0.transform)(this.context.$implicit.postDate)),'');
-    if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange,this._expr_7,currVal_7))) {
-      this.renderer.setText(this._text_16,currVal_7);
-      this._expr_7 = currVal_7;
+    const currVal_6:any = import4.interpolate(1,'',valUnwrapper.unwrap(import4.castByValue(this._pipe_date_0_0,(<_View_InstanceListComponent0>this.parent.parent)._pipe_date_0.transform)(this.context.$implicit.postDate)),'');
+    if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange,this._expr_6,currVal_6))) {
+      this.renderer.setText(this._text_19,currVal_6);
+      this._expr_6 = currVal_6;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }
-  destroyInternal():void {
-    this._RouterLinkWithHref_12_3.ngOnDestroy();
-  }
   private _handle_click_12_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this._RouterLinkWithHref_12_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    const pd_0:any = ((<any>this._RouterLink_12_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
     return (true && pd_0);
   }
-  private _handle_click_19_0($event:any):boolean {
+  private _handle_click_23_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.parent.context.onDownload(this.context.$implicit)) !== false);
     return (true && pd_0);
@@ -562,6 +573,8 @@ class _View_InstanceListComponent5 extends import1.AppView<any> {
   _el_0:any;
   _RouterLink_0_3:import20.RouterLink;
   _text_1:any;
+  _el_2:any;
+  _text_3:any;
   _map_0:any;
   /*private*/ _expr_1:any;
   _arr_0:any;
@@ -572,8 +585,12 @@ class _View_InstanceListComponent5 extends import1.AppView<any> {
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'button',(null as any));
     this.renderer.setElementAttribute(this._el_0,'class','btn btn-info btn-xs');
+    this.renderer.setElementAttribute(this._el_0,'title','Edit');
     this._RouterLink_0_3 = new import20.RouterLink(this.parent.parent.parentInjector.get(import21.Router),this.parent.parent.parentInjector.get(import22.ActivatedRoute),this.parent.parent.parentInjector.get(import23.LocationStrategy));
-    this._text_1 = this.renderer.createText(this._el_0,'\n                                                Edit\n                                        ',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'\n                                                ',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_2,'class','glyphicon glyphicon-pencil');
+    this._text_3 = this.renderer.createText(this._el_0,'\n                                        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_0,'click',this.eventHandler(this._handle_click_0_0.bind(this)));
     this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
       return {instanceId: p0};
@@ -585,13 +602,15 @@ class _View_InstanceListComponent5 extends import1.AppView<any> {
     this._expr_2 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
-      this._text_1
+      this._text_1,
+      this._el_2,
+      this._text_3
     ]
     ,[disposable_0],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import20.RouterLink) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 1)))) { return this._RouterLink_0_3; }
+    if (((token === import20.RouterLink) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 3)))) { return this._RouterLink_0_3; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -620,17 +639,25 @@ function viewFactory_InstanceListComponent5(viewUtils:import4.ViewUtils,parentIn
 class _View_InstanceListComponent6 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
+  _el_2:any;
+  _text_3:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_InstanceListComponent6,renderType_InstanceListComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'button',(null as any));
     this.renderer.setElementAttribute(this._el_0,'class','btn btn-danger btn-xs');
-    this._text_1 = this.renderer.createText(this._el_0,'\n                                                Delete\n                                        ',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'title','Delete');
+    this._text_1 = this.renderer.createText(this._el_0,'\n                                                ',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_2,'class','glyphicon glyphicon-trash');
+    this._text_3 = this.renderer.createText(this._el_0,'\n                                        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_0,'click',this.eventHandler(this._handle_click_0_0.bind(this)));
     this.init([].concat([this._el_0]),[
       this._el_0,
-      this._text_1
+      this._text_1,
+      this._el_2,
+      this._text_3
     ]
     ,[disposable_0],[]);
     return (null as any);

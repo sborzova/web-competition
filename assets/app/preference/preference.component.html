@@ -1,11 +1,11 @@
 <div class="container" style="margin-top: 3%">
     <div class="row">
         <div style="margin-bottom: 3%">
-            <h2>Preference</h2>
+            <h2>Preferences</h2>
         </div>
         <div class="col-xs-9 col-md-2" style="display: table; height: 20px; overflow: hidden;">
-            <div *ngIf="isCompetitionOn()" style="display: table-cell; vertical-align: middle;">Competition is on</div>
-            <div *ngIf="!isCompetitionOn()" style="display: table-cell; vertical-align: middle;">Competition is off</div>
+            <div *ngIf="isCompetitionOn()" style="display: table-cell; vertical-align: middle;">During competition is on</div>
+            <div *ngIf="!isCompetitionOn()" style="display: table-cell; vertical-align: middle;">During competition is off</div>
         </div>
         <div class="col-xs-3 col-md-10">
             <button *ngIf="isCompetitionOn()" (click)="onTurnOff()" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-off"></span></button>
