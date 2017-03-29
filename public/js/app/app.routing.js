@@ -16,5 +16,5 @@ var APP_ROUTES = [
 ];
 // export const hostUrl = 'http://localhost:3000/';
 // export const hostUrl = 'https://bakalar.herokuapp.com/';
-export var hostUrl = 'https://http://test-cttcompetition.azurewebsites.net/';
+export var hostUrl = 'https://test-cttcompetition.azurewebsites.net/';
 export var routing = RouterModule.forRoot(APP_ROUTES);
