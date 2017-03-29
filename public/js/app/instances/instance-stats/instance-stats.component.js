@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { InstanceService } from "../instance.service";
+import { InstanceService } from "../../shared/instance.service";
 export var InstanceStatsComponent = (function () {
     function InstanceStatsComponent(instanceService, activatedRoute) {
         this.instanceService = instanceService;

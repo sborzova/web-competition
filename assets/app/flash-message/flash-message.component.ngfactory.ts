@@ -15,9 +15,7 @@ import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from './flash-messages.service';
 import * as import9 from '@angular/core/src/metadata/view';
 import * as import10 from '@angular/core/src/linker/component_factory';
-import * as import11 from '@angular/common/src/directives/ng_style';
-import * as import12 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import13 from '@angular/core/src/linker/element_ref';
+import * as import11 from './flash-message.component.css.shim';
 var renderType_FlashMessageComponent_Host:import0.RenderComponentType = (null as any);
 class _View_FlashMessageComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -51,11 +49,10 @@ function viewFactory_FlashMessageComponent_Host0(viewUtils:import4.ViewUtils,par
   return new _View_FlashMessageComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
 export const FlashMessageComponentNgFactory:import10.ComponentFactory<import3.FlashMessageComponent> = new import10.ComponentFactory<import3.FlashMessageComponent>('app-flash-message',viewFactory_FlashMessageComponent_Host0,import3.FlashMessageComponent);
-const styles_FlashMessageComponent:any[] = [];
+const styles_FlashMessageComponent:any[] = [import11.styles];
 var renderType_FlashMessageComponent:import0.RenderComponentType = (null as any);
 class _View_FlashMessageComponent0 extends import1.AppView<import3.FlashMessageComponent> {
   _el_0:any;
-  _NgStyle_0_3:import11.NgStyle;
   _text_1:any;
   _el_2:any;
   _text_3:any;
@@ -63,15 +60,20 @@ class _View_FlashMessageComponent0 extends import1.AppView<import3.FlashMessageC
   _text_5:any;
   _el_6:any;
   _text_7:any;
-  _text_8:any;
-  _el_9:any;
-  _text_10:any;
-  _el_11:any;
+  _el_8:any;
+  _text_9:any;
+  _el_10:any;
+  _text_11:any;
   _text_12:any;
   _text_13:any;
-  _text_14:any;
+  _el_14:any;
   _text_15:any;
-  _map_0:any;
+  _el_16:any;
+  _text_17:any;
+  _text_18:any;
+  _text_19:any;
+  _text_20:any;
+  _text_21:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   /*private*/ _expr_2:any;
@@ -80,35 +82,47 @@ class _View_FlashMessageComponent0 extends import1.AppView<import3.FlashMessageC
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-    this._el_0 = this.renderer.createElement(parentRenderNode,'div',(null as any));
-    this._NgStyle_0_3 = new import11.NgStyle(this.parentInjector.get(import12.KeyValueDiffers),new import13.ElementRef(this._el_0),this.renderer);
-    this._text_1 = this.renderer.createText(this._el_0,'\n    ',(null as any));
-    this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_2,'class','grayOutDiv');
-    this._text_3 = this.renderer.createText(this._el_0,'\n    ',(null as any));
-    this._el_4 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this._el_0 = this.renderer.createElement(parentRenderNode,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'data-target','#myModal');
+    this.renderer.setElementAttribute(this._el_0,'data-toggle','modal');
+    this.renderer.setElementAttribute(this._el_0,'id','openFlashMessage');
+    this._text_1 = this.renderer.createText(parentRenderNode,'\n\n',(null as any));
+    this._el_2 = this.renderer.createElement(parentRenderNode,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_2,'aria-hidden','true');
+    this.renderer.setElementAttribute(this._el_2,'class','modal fade');
+    this.renderer.setElementAttribute(this._el_2,'id','myModal');
+    this.renderer.setElementAttribute(this._el_2,'role','dialog');
+    this.renderer.setElementAttribute(this._el_2,'tabindex','-1');
+    this._text_3 = this.renderer.createText(this._el_2,'\n    ',(null as any));
+    this._el_4 = this.renderer.createElement(this._el_2,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_4,'role','document');
     this._text_5 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._el_6 = this.renderer.createElement(this._el_4,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_6,'style','vertical-align: center');
-    this._text_7 = this.renderer.createText(this._el_6,'',(null as any));
-    this._text_8 = this.renderer.createText(this._el_4,'\n        ',(null as any));
-    this._el_9 = this.renderer.createElement(this._el_4,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_9,'align','right');
-    this._text_10 = this.renderer.createText(this._el_9,'\n            ',(null as any));
-    this._el_11 = this.renderer.createElement(this._el_9,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_11,'class','btn btn-default');
-    this.renderer.setElementAttribute(this._el_11,'type','button');
-    this._text_12 = this.renderer.createText(this._el_11,'OK',(null as any));
-    this._text_13 = this.renderer.createText(this._el_9,'\n        ',(null as any));
-    this._text_14 = this.renderer.createText(this._el_4,'\n    ',(null as any));
-    this._text_15 = this.renderer.createText(this._el_0,'\n',(null as any));
-    this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
-      return {display: p0};
-    });
+    this.renderer.setElementAttribute(this._el_6,'class','modal-content');
+    this._text_7 = this.renderer.createText(this._el_6,'\n            ',(null as any));
+    this._el_8 = this.renderer.createElement(this._el_6,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_8,'class','modal-body');
+    this.renderer.setElementAttribute(this._el_8,'style','text-align: center; padding: 5% 0 5% 0');
+    this._text_9 = this.renderer.createText(this._el_8,'\n                ',(null as any));
+    this._el_10 = this.renderer.createElement(this._el_8,'h5',(null as any));
+    this._text_11 = this.renderer.createText(this._el_10,'',(null as any));
+    this._text_12 = this.renderer.createText(this._el_8,'\n            ',(null as any));
+    this._text_13 = this.renderer.createText(this._el_6,'\n            ',(null as any));
+    this._el_14 = this.renderer.createElement(this._el_6,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_14,'class','modal-footer');
+    this._text_15 = this.renderer.createText(this._el_14,'\n                ',(null as any));
+    this._el_16 = this.renderer.createElement(this._el_14,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_16,'class','btn btn-default');
+    this.renderer.setElementAttribute(this._el_16,'data-dismiss','modal');
+    this.renderer.setElementAttribute(this._el_16,'type','button');
+    this._text_17 = this.renderer.createText(this._el_16,'OK',(null as any));
+    this._text_18 = this.renderer.createText(this._el_14,'\n            ',(null as any));
+    this._text_19 = this.renderer.createText(this._el_6,'\n        ',(null as any));
+    this._text_20 = this.renderer.createText(this._el_4,'\n    ',(null as any));
+    this._text_21 = this.renderer.createText(this._el_2,'\n',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this._expr_1 = import7.UNINITIALIZED;
     this._expr_2 = import7.UNINITIALIZED;
-    var disposable_0:Function = this.renderer.listen(this._el_11,'click',this.eventHandler(this._handle_click_11_0.bind(this)));
     this.init([],[
       this._el_0,
       this._text_1,
@@ -118,49 +132,45 @@ class _View_FlashMessageComponent0 extends import1.AppView<import3.FlashMessageC
       this._text_5,
       this._el_6,
       this._text_7,
-      this._text_8,
-      this._el_9,
-      this._text_10,
-      this._el_11,
+      this._el_8,
+      this._text_9,
+      this._el_10,
+      this._text_11,
       this._text_12,
       this._text_13,
-      this._text_14,
-      this._text_15
+      this._el_14,
+      this._text_15,
+      this._el_16,
+      this._text_17,
+      this._text_18,
+      this._text_19,
+      this._text_20,
+      this._text_21
     ]
-    ,[disposable_0],[]);
+    ,[],[]);
     return (null as any);
   }
-  injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import11.NgStyle) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 15)))) { return this._NgStyle_0_3; }
-    return notFoundResult;
-  }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_0:any = this._map_0(this.context.display);
+    this.detectContentChildrenChanges(throwOnChange);
+    const currVal_0:any = true;
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this._NgStyle_0_3.ngStyle = currVal_0;
+      this.renderer.setElementProperty(this._el_0,'hidden',currVal_0);
       this._expr_0 = currVal_0;
     }
-    if (!throwOnChange) { this._NgStyle_0_3.ngDoCheck(); }
-    this.detectContentChildrenChanges(throwOnChange);
-    const currVal_1:any = import4.interpolate(1,'alert flash-message ',((this.context.message == (null as any))? (null as any): this.context.message.cssClass),'');
+    const currVal_1:any = import4.interpolate(1,'modal-dialog ',((this.context.message == (null as any))? (null as any): this.context.message.cssClass),'');
     if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
       this.renderer.setElementProperty(this._el_4,'className',currVal_1);
       this._expr_1 = currVal_1;
     }
     const currVal_2:any = import4.interpolate(1,'',((this.context.message == (null as any))? (null as any): this.context.message.text),'');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
-      this.renderer.setText(this._text_7,currVal_2);
+      this.renderer.setText(this._text_11,currVal_2);
       this._expr_2 = currVal_2;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }
-  private _handle_click_11_0($event:any):boolean {
-    this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.context.onOk()) !== false);
-    return (true && pd_0);
-  }
 }
 export function viewFactory_FlashMessageComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.FlashMessageComponent> {
-  if ((renderType_FlashMessageComponent === (null as any))) { (renderType_FlashMessageComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/flash-message/flash-message.component.html',0,import9.ViewEncapsulation.None,styles_FlashMessageComponent,{})); }
+  if ((renderType_FlashMessageComponent === (null as any))) { (renderType_FlashMessageComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/flash-message/flash-message.component.html',0,import9.ViewEncapsulation.Emulated,styles_FlashMessageComponent,{})); }
   return new _View_FlashMessageComponent0(viewUtils,parentInjector,declarationEl);
 }

@@ -1,12 +1,13 @@
-<div class="backdrop" [ngStyle]="{'display': display}"></div>
-<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display': display}">
+<button id="openModalNotView" [hidden]="true" data-toggle="modal" data-target="#notViewInstances"></button>
+
+<div class="modal fade" id="notViewInstances" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-body">
-                <h6>You must be registered and logged in to display instances</h6>
+            <div class="modal-body" style="text-align: center; padding: 5% 0 5% 0">
+                You must be registered and logged in to display instances.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" [routerLink]="['/#signin']">Log in</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/#signin']">Log in</button>
             </div>
         </div>
     </div>

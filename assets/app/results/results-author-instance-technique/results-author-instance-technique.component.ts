@@ -1,20 +1,20 @@
 import {Component, Input} from "@angular/core";
 
-import { SolutionResult } from "../solution-result.model";
 import {SortService} from "../../shared/sort.service";
+import {Solution} from "../../shared/solution.model";
 
 @Component({
     selector: 'app-results-author-instance-technique',
     templateUrl: './results-author-instance-technique.component.html'
 })
 export class ResultsAuthorInstanceTechniqueComponent{
-    @Input() solutions: SolutionResult[];
+    @Input() solutions: Solution[];
     fileSaver = require('file-saver');
     showPapers: boolean = false;
 
     constructor(private resultsService: SortService){}
 
-    onDownload(solution: SolutionResult){
+    onDownload(solution: Solution){
         let file = new File([solution.data], 'solution.xml', {type: "text/xml;charset=utf-8"});
         this.fileSaver.saveAs(file);
     }

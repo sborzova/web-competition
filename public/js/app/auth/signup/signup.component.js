@@ -18,7 +18,7 @@ export var SignupComponent = (function () {
             var user = new User(this.myForm.value.email, this.myForm.value.password, this.myForm.value.firstName, this.myForm.value.lastName);
             this.authService.signup(user)
                 .subscribe(function (user) {
-                _this.flashMessageService.showMessage('Account created.', 'alert-success');
+                _this.flashMessageService.showMessage('Account created.', 'success');
                 _this.router.navigateByUrl('#home');
             }, function (error) { return console.error(error); });
         }

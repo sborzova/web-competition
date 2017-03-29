@@ -2,9 +2,9 @@ import { Component } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { SolutionService } from "../../shared/solution.service";
 import { SolutionFindWorse } from "../solution-find-worse.model";
-import { Solution } from "../../user-solutions/solution.model";
 import { SolutionCreate } from "../solution-create.model";
 import { SessionStorageService } from "../../shared/session-storage.service";
+import { Solution } from "../../shared/solution.model";
 export var SuccessValidationComponent = (function () {
     function SuccessValidationComponent(solutionService, sessionStorageService) {
         var _this = this;

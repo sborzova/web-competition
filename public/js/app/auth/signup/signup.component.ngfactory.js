@@ -25,7 +25,7 @@ import * as import15 from '@angular/common/src/directives/ng_class';
 import * as import16 from '@angular/forms/src/directives/default_value_accessor';
 import * as import17 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
 import * as import18 from '@angular/common/src/directives/ng_if';
-import * as import19 from '../validator-equal.directive';
+import * as import19 from '../../shared/validator-equal.directive';
 import * as import20 from '@angular/core/src/change_detection/differs/iterable_differs';
 import * as import21 from '@angular/core/src/change_detection/differs/keyvalue_differs';
 import * as import22 from '@angular/core/src/linker/element_ref';

@@ -26,13 +26,15 @@ import * as import16 from '@angular/forms/src/directives/reactive_directives/for
 import * as import17 from '@angular/forms/src/directives/ng_control_status';
 import * as import18 from '@angular/common/src/directives/ng_class';
 import * as import19 from '@angular/forms/src/directives/default_value_accessor';
-import * as import20 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
-import * as import21 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import22 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import23 from '@angular/core/src/linker/element_ref';
-import * as import24 from '@angular/forms/src/directives/control_value_accessor';
-import * as import25 from '@angular/forms/src/directives/ng_control';
-import * as import26 from '@angular/forms/src/directives/control_container';
+import * as import20 from '../../shared/validator-equal.directive';
+import * as import21 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
+import * as import22 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import23 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import24 from '@angular/core/src/linker/element_ref';
+import * as import25 from '@angular/forms/src/validators';
+import * as import26 from '@angular/forms/src/directives/control_value_accessor';
+import * as import27 from '@angular/forms/src/directives/ng_control';
+import * as import28 from '@angular/forms/src/directives/control_container';
 var renderType_UserEditPasswordComponent_Host = null;
 var _View_UserEditPasswordComponent_Host0 = (function (_super) {
     __extends(_View_UserEditPasswordComponent_Host0, _super);
@@ -174,47 +176,82 @@ var _View_UserEditPasswordComponent1 = (function (_super) {
         this._text_1 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'form-group');
-        this._NgClass_2_3 = new import18.NgClass(this.parent.parentInjector.get(import21.IterableDiffers), this.parent.parentInjector.get(import22.KeyValueDiffers), new import23.ElementRef(this._el_2), this.renderer);
+        this._NgClass_2_3 = new import18.NgClass(this.parent.parentInjector.get(import22.IterableDiffers), this.parent.parentInjector.get(import23.KeyValueDiffers), new import24.ElementRef(this._el_2), this.renderer);
         this._text_3 = this.renderer.createText(this._el_2, '\n                        ', null);
-        this._el_4 = this.renderer.createElement(this._el_2, 'input', null);
-        this.renderer.setElementAttribute(this._el_4, 'class', 'form-control');
-        this.renderer.setElementAttribute(this._el_4, 'id', 'password');
-        this.renderer.setElementAttribute(this._el_4, 'type', 'password');
-        this._DefaultValueAccessor_4_3 = new import19.DefaultValueAccessor(this.renderer, new import23.ElementRef(this._el_4));
-        this._NG_VALUE_ACCESSOR_4_4 = [this._DefaultValueAccessor_4_3];
-        this._FormControlDirective_4_5 = new import20.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_4_4);
-        this._NgControl_4_6 = this._FormControlDirective_4_5;
-        this._NgControlStatus_4_7 = new import17.NgControlStatus(this._NgControl_4_6);
-        this._text_5 = this.renderer.createText(this._el_2, '\n                        ', null);
-        this._anchor_6 = this.renderer.createTemplateAnchor(this._el_2, null);
-        this._appEl_6 = new import2.AppElement(6, 2, this, this._anchor_6);
-        this._TemplateRef_6_5 = new import15.TemplateRef_(this._appEl_6, viewFactory_UserEditPasswordComponent2);
-        this._NgIf_6_6 = new import14.NgIf(this._appEl_6.vcRef, this._TemplateRef_6_5);
-        this._text_7 = this.renderer.createText(this._el_2, '\n                        ', null);
-        this._anchor_8 = this.renderer.createTemplateAnchor(this._el_2, null);
-        this._appEl_8 = new import2.AppElement(8, 2, this, this._anchor_8);
-        this._TemplateRef_8_5 = new import15.TemplateRef_(this._appEl_8, viewFactory_UserEditPasswordComponent3);
-        this._NgIf_8_6 = new import14.NgIf(this._appEl_8.vcRef, this._TemplateRef_8_5);
-        this._text_9 = this.renderer.createText(this._el_2, '\n                        ', null);
-        this._anchor_10 = this.renderer.createTemplateAnchor(this._el_2, null);
-        this._appEl_10 = new import2.AppElement(10, 2, this, this._anchor_10);
-        this._TemplateRef_10_5 = new import15.TemplateRef_(this._appEl_10, viewFactory_UserEditPasswordComponent4);
-        this._NgIf_10_6 = new import14.NgIf(this._appEl_10.vcRef, this._TemplateRef_10_5);
-        this._text_11 = this.renderer.createText(this._el_2, '\n                    ', null);
-        this._text_12 = this.renderer.createText(this._el_0, '\n                    ', null);
-        this._el_13 = this.renderer.createElement(this._el_0, 'div', null);
-        this.renderer.setElementAttribute(this._el_13, 'align', 'right');
-        this._text_14 = this.renderer.createText(this._el_13, '\n                        ', null);
-        this._el_15 = this.renderer.createElement(this._el_13, 'button', null);
-        this.renderer.setElementAttribute(this._el_15, 'class', 'btn btn-primary');
-        this.renderer.setElementAttribute(this._el_15, 'type', 'submit');
-        this._text_16 = this.renderer.createText(this._el_15, '\n                            Save\n                        ', null);
-        this._text_17 = this.renderer.createText(this._el_13, '\n                        ', null);
-        this._el_18 = this.renderer.createElement(this._el_13, 'button', null);
-        this.renderer.setElementAttribute(this._el_18, 'class', 'btn btn-default');
-        this._text_19 = this.renderer.createText(this._el_18, '\n                            Cancel\n                        ', null);
-        this._text_20 = this.renderer.createText(this._el_13, '\n                    ', null);
-        this._text_21 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._el_4 = this.renderer.createElement(this._el_2, 'label', null);
+        this.renderer.setElementAttribute(this._el_4, 'for', 'password');
+        this._text_5 = this.renderer.createText(this._el_4, '\n                            Create a password\n                        ', null);
+        this._text_6 = this.renderer.createText(this._el_2, '\n                        ', null);
+        this._el_7 = this.renderer.createElement(this._el_2, 'input', null);
+        this.renderer.setElementAttribute(this._el_7, 'class', 'form-control');
+        this.renderer.setElementAttribute(this._el_7, 'id', 'password');
+        this.renderer.setElementAttribute(this._el_7, 'reverse', 'true');
+        this.renderer.setElementAttribute(this._el_7, 'type', 'password');
+        this.renderer.setElementAttribute(this._el_7, 'validateEqual', 'confirmPassword');
+        this._DefaultValueAccessor_7_3 = new import19.DefaultValueAccessor(this.renderer, new import24.ElementRef(this._el_7));
+        this._EqualValidator_7_4 = new import20.EqualValidator('confirmPassword', 'true');
+        this._NG_VALIDATORS_7_5 = [this._EqualValidator_7_4];
+        this._NG_VALUE_ACCESSOR_7_6 = [this._DefaultValueAccessor_7_3];
+        this._FormControlDirective_7_7 = new import21.FormControlDirective(this._NG_VALIDATORS_7_5, null, this._NG_VALUE_ACCESSOR_7_6);
+        this._NgControl_7_8 = this._FormControlDirective_7_7;
+        this._NgControlStatus_7_9 = new import17.NgControlStatus(this._NgControl_7_8);
+        this._text_8 = this.renderer.createText(this._el_2, '\n                        ', null);
+        this._anchor_9 = this.renderer.createTemplateAnchor(this._el_2, null);
+        this._appEl_9 = new import2.AppElement(9, 2, this, this._anchor_9);
+        this._TemplateRef_9_5 = new import15.TemplateRef_(this._appEl_9, viewFactory_UserEditPasswordComponent2);
+        this._NgIf_9_6 = new import14.NgIf(this._appEl_9.vcRef, this._TemplateRef_9_5);
+        this._text_10 = this.renderer.createText(this._el_2, '\n                        ', null);
+        this._anchor_11 = this.renderer.createTemplateAnchor(this._el_2, null);
+        this._appEl_11 = new import2.AppElement(11, 2, this, this._anchor_11);
+        this._TemplateRef_11_5 = new import15.TemplateRef_(this._appEl_11, viewFactory_UserEditPasswordComponent3);
+        this._NgIf_11_6 = new import14.NgIf(this._appEl_11.vcRef, this._TemplateRef_11_5);
+        this._text_12 = this.renderer.createText(this._el_2, '\n                        ', null);
+        this._anchor_13 = this.renderer.createTemplateAnchor(this._el_2, null);
+        this._appEl_13 = new import2.AppElement(13, 2, this, this._anchor_13);
+        this._TemplateRef_13_5 = new import15.TemplateRef_(this._appEl_13, viewFactory_UserEditPasswordComponent4);
+        this._NgIf_13_6 = new import14.NgIf(this._appEl_13.vcRef, this._TemplateRef_13_5);
+        this._text_14 = this.renderer.createText(this._el_2, '\n                    ', null);
+        this._text_15 = this.renderer.createText(this._el_0, '\n                    ', null);
+        this._el_16 = this.renderer.createElement(this._el_0, 'div', null);
+        this.renderer.setElementAttribute(this._el_16, 'class', 'form-group');
+        this._NgClass_16_3 = new import18.NgClass(this.parent.parentInjector.get(import22.IterableDiffers), this.parent.parentInjector.get(import23.KeyValueDiffers), new import24.ElementRef(this._el_16), this.renderer);
+        this._text_17 = this.renderer.createText(this._el_16, '\n                        ', null);
+        this._el_18 = this.renderer.createElement(this._el_16, 'label', null);
+        this.renderer.setElementAttribute(this._el_18, 'for', 'confirmPassword');
+        this._text_19 = this.renderer.createText(this._el_18, '\n                            Confirm the password\n                        ', null);
+        this._text_20 = this.renderer.createText(this._el_16, '\n                        ', null);
+        this._el_21 = this.renderer.createElement(this._el_16, 'input', null);
+        this.renderer.setElementAttribute(this._el_21, 'class', 'form-control');
+        this.renderer.setElementAttribute(this._el_21, 'id', 'confirmPassword');
+        this.renderer.setElementAttribute(this._el_21, 'type', 'password');
+        this.renderer.setElementAttribute(this._el_21, 'validateEqual', 'password');
+        this._DefaultValueAccessor_21_3 = new import19.DefaultValueAccessor(this.renderer, new import24.ElementRef(this._el_21));
+        this._EqualValidator_21_4 = new import20.EqualValidator('password', null);
+        this._NG_VALIDATORS_21_5 = [this._EqualValidator_21_4];
+        this._NG_VALUE_ACCESSOR_21_6 = [this._DefaultValueAccessor_21_3];
+        this._FormControlDirective_21_7 = new import21.FormControlDirective(this._NG_VALIDATORS_21_5, null, this._NG_VALUE_ACCESSOR_21_6);
+        this._NgControl_21_8 = this._FormControlDirective_21_7;
+        this._NgControlStatus_21_9 = new import17.NgControlStatus(this._NgControl_21_8);
+        this._text_22 = this.renderer.createText(this._el_16, '\n                        ', null);
+        this._anchor_23 = this.renderer.createTemplateAnchor(this._el_16, null);
+        this._appEl_23 = new import2.AppElement(23, 16, this, this._anchor_23);
+        this._TemplateRef_23_5 = new import15.TemplateRef_(this._appEl_23, viewFactory_UserEditPasswordComponent5);
+        this._NgIf_23_6 = new import14.NgIf(this._appEl_23.vcRef, this._TemplateRef_23_5);
+        this._text_24 = this.renderer.createText(this._el_16, '\n                    ', null);
+        this._text_25 = this.renderer.createText(this._el_0, '\n                    ', null);
+        this._el_26 = this.renderer.createElement(this._el_0, 'div', null);
+        this.renderer.setElementAttribute(this._el_26, 'align', 'right');
+        this._text_27 = this.renderer.createText(this._el_26, '\n                        ', null);
+        this._el_28 = this.renderer.createElement(this._el_26, 'button', null);
+        this.renderer.setElementAttribute(this._el_28, 'class', 'btn btn-primary');
+        this.renderer.setElementAttribute(this._el_28, 'type', 'submit');
+        this._text_29 = this.renderer.createText(this._el_28, '\n                            Save\n                        ', null);
+        this._text_30 = this.renderer.createText(this._el_26, '\n                        ', null);
+        this._el_31 = this.renderer.createElement(this._el_26, 'button', null);
+        this.renderer.setElementAttribute(this._el_31, 'class', 'btn btn-default');
+        this._text_32 = this.renderer.createText(this._el_31, '\n                            Cancel\n                        ', null);
+        this._text_33 = this.renderer.createText(this._el_26, '\n                    ', null);
+        this._text_34 = this.renderer.createText(this._el_0, '\n                ', null);
         var disposable_0 = this.renderer.listen(this._el_0, 'ngSubmit', this.eventHandler(this._handle_ngSubmit_0_0.bind(this)));
         var disposable_1 = this.renderer.listen(this._el_0, 'submit', this.eventHandler(this._handle_submit_0_1.bind(this)));
         var disposable_2 = this.renderer.listen(this._el_0, 'reset', this.eventHandler(this._handle_reset_0_2.bind(this)));
@@ -231,8 +268,8 @@ var _View_UserEditPasswordComponent1 = (function (_super) {
             return { 'has-error': p0 };
         });
         this._expr_11 = import7.UNINITIALIZED;
-        var disposable_3 = this.renderer.listen(this._el_4, 'input', this.eventHandler(this._handle_input_4_0.bind(this)));
-        var disposable_4 = this.renderer.listen(this._el_4, 'blur', this.eventHandler(this._handle_blur_4_1.bind(this)));
+        var disposable_3 = this.renderer.listen(this._el_7, 'input', this.eventHandler(this._handle_input_7_0.bind(this)));
+        var disposable_4 = this.renderer.listen(this._el_7, 'blur', this.eventHandler(this._handle_blur_7_1.bind(this)));
         this._expr_14 = import7.UNINITIALIZED;
         this._expr_15 = import7.UNINITIALIZED;
         this._expr_16 = import7.UNINITIALIZED;
@@ -243,7 +280,22 @@ var _View_UserEditPasswordComponent1 = (function (_super) {
         this._expr_21 = import7.UNINITIALIZED;
         this._expr_22 = import7.UNINITIALIZED;
         this._expr_23 = import7.UNINITIALIZED;
-        var disposable_5 = this.renderer.listen(this._el_18, 'click', this.eventHandler(this._handle_click_18_0.bind(this)));
+        this._expr_24 = import7.UNINITIALIZED;
+        this._map_1 = import4.pureProxy1(function (p0) {
+            return { 'has-error': p0 };
+        });
+        this._expr_25 = import7.UNINITIALIZED;
+        var disposable_5 = this.renderer.listen(this._el_21, 'input', this.eventHandler(this._handle_input_21_0.bind(this)));
+        var disposable_6 = this.renderer.listen(this._el_21, 'blur', this.eventHandler(this._handle_blur_21_1.bind(this)));
+        this._expr_28 = import7.UNINITIALIZED;
+        this._expr_29 = import7.UNINITIALIZED;
+        this._expr_30 = import7.UNINITIALIZED;
+        this._expr_31 = import7.UNINITIALIZED;
+        this._expr_32 = import7.UNINITIALIZED;
+        this._expr_33 = import7.UNINITIALIZED;
+        this._expr_34 = import7.UNINITIALIZED;
+        this._expr_35 = import7.UNINITIALIZED;
+        var disposable_7 = this.renderer.listen(this._el_31, 'click', this.eventHandler(this._handle_click_31_0.bind(this)));
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1,
@@ -251,76 +303,127 @@ var _View_UserEditPasswordComponent1 = (function (_super) {
             this._text_3,
             this._el_4,
             this._text_5,
-            this._anchor_6,
-            this._text_7,
-            this._anchor_8,
-            this._text_9,
-            this._anchor_10,
-            this._text_11,
+            this._text_6,
+            this._el_7,
+            this._text_8,
+            this._anchor_9,
+            this._text_10,
+            this._anchor_11,
             this._text_12,
-            this._el_13,
+            this._anchor_13,
             this._text_14,
-            this._el_15,
-            this._text_16,
+            this._text_15,
+            this._el_16,
             this._text_17,
             this._el_18,
             this._text_19,
             this._text_20,
-            this._text_21
+            this._el_21,
+            this._text_22,
+            this._anchor_23,
+            this._text_24,
+            this._text_25,
+            this._el_26,
+            this._text_27,
+            this._el_28,
+            this._text_29,
+            this._text_30,
+            this._el_31,
+            this._text_32,
+            this._text_33,
+            this._text_34
         ], [
             disposable_0,
             disposable_1,
             disposable_2,
             disposable_3,
             disposable_4,
-            disposable_5
+            disposable_5,
+            disposable_6,
+            disposable_7
         ], [subscription_0]);
         return null;
     };
     _View_UserEditPasswordComponent1.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import19.DefaultValueAccessor) && (4 === requestNodeIndex))) {
-            return this._DefaultValueAccessor_4_3;
+        if (((token === import19.DefaultValueAccessor) && (7 === requestNodeIndex))) {
+            return this._DefaultValueAccessor_7_3;
         }
-        if (((token === import24.NG_VALUE_ACCESSOR) && (4 === requestNodeIndex))) {
-            return this._NG_VALUE_ACCESSOR_4_4;
+        if (((token === import20.EqualValidator) && (7 === requestNodeIndex))) {
+            return this._EqualValidator_7_4;
         }
-        if (((token === import20.FormControlDirective) && (4 === requestNodeIndex))) {
-            return this._FormControlDirective_4_5;
+        if (((token === import25.NG_VALIDATORS) && (7 === requestNodeIndex))) {
+            return this._NG_VALIDATORS_7_5;
         }
-        if (((token === import25.NgControl) && (4 === requestNodeIndex))) {
-            return this._NgControl_4_6;
+        if (((token === import26.NG_VALUE_ACCESSOR) && (7 === requestNodeIndex))) {
+            return this._NG_VALUE_ACCESSOR_7_6;
         }
-        if (((token === import17.NgControlStatus) && (4 === requestNodeIndex))) {
-            return this._NgControlStatus_4_7;
+        if (((token === import21.FormControlDirective) && (7 === requestNodeIndex))) {
+            return this._FormControlDirective_7_7;
         }
-        if (((token === import15.TemplateRef) && (6 === requestNodeIndex))) {
-            return this._TemplateRef_6_5;
+        if (((token === import27.NgControl) && (7 === requestNodeIndex))) {
+            return this._NgControl_7_8;
         }
-        if (((token === import14.NgIf) && (6 === requestNodeIndex))) {
-            return this._NgIf_6_6;
+        if (((token === import17.NgControlStatus) && (7 === requestNodeIndex))) {
+            return this._NgControlStatus_7_9;
         }
-        if (((token === import15.TemplateRef) && (8 === requestNodeIndex))) {
-            return this._TemplateRef_8_5;
+        if (((token === import15.TemplateRef) && (9 === requestNodeIndex))) {
+            return this._TemplateRef_9_5;
         }
-        if (((token === import14.NgIf) && (8 === requestNodeIndex))) {
-            return this._NgIf_8_6;
+        if (((token === import14.NgIf) && (9 === requestNodeIndex))) {
+            return this._NgIf_9_6;
         }
-        if (((token === import15.TemplateRef) && (10 === requestNodeIndex))) {
-            return this._TemplateRef_10_5;
+        if (((token === import15.TemplateRef) && (11 === requestNodeIndex))) {
+            return this._TemplateRef_11_5;
         }
-        if (((token === import14.NgIf) && (10 === requestNodeIndex))) {
-            return this._NgIf_10_6;
+        if (((token === import14.NgIf) && (11 === requestNodeIndex))) {
+            return this._NgIf_11_6;
         }
-        if (((token === import18.NgClass) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 11)))) {
+        if (((token === import15.TemplateRef) && (13 === requestNodeIndex))) {
+            return this._TemplateRef_13_5;
+        }
+        if (((token === import14.NgIf) && (13 === requestNodeIndex))) {
+            return this._NgIf_13_6;
+        }
+        if (((token === import18.NgClass) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 14)))) {
             return this._NgClass_2_3;
         }
-        if (((token === import16.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 21)))) {
+        if (((token === import19.DefaultValueAccessor) && (21 === requestNodeIndex))) {
+            return this._DefaultValueAccessor_21_3;
+        }
+        if (((token === import20.EqualValidator) && (21 === requestNodeIndex))) {
+            return this._EqualValidator_21_4;
+        }
+        if (((token === import25.NG_VALIDATORS) && (21 === requestNodeIndex))) {
+            return this._NG_VALIDATORS_21_5;
+        }
+        if (((token === import26.NG_VALUE_ACCESSOR) && (21 === requestNodeIndex))) {
+            return this._NG_VALUE_ACCESSOR_21_6;
+        }
+        if (((token === import21.FormControlDirective) && (21 === requestNodeIndex))) {
+            return this._FormControlDirective_21_7;
+        }
+        if (((token === import27.NgControl) && (21 === requestNodeIndex))) {
+            return this._NgControl_21_8;
+        }
+        if (((token === import17.NgControlStatus) && (21 === requestNodeIndex))) {
+            return this._NgControlStatus_21_9;
+        }
+        if (((token === import15.TemplateRef) && (23 === requestNodeIndex))) {
+            return this._TemplateRef_23_5;
+        }
+        if (((token === import14.NgIf) && (23 === requestNodeIndex))) {
+            return this._NgIf_23_6;
+        }
+        if (((token === import18.NgClass) && ((16 <= requestNodeIndex) && (requestNodeIndex <= 24)))) {
+            return this._NgClass_16_3;
+        }
+        if (((token === import16.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 34)))) {
             return this._FormGroupDirective_0_3;
         }
-        if (((token === import26.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 21)))) {
+        if (((token === import28.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 34)))) {
             return this._ControlContainer_0_4;
         }
-        if (((token === import17.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 21)))) {
+        if (((token === import17.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 34)))) {
             return this._NgControlStatusGroup_0_5;
         }
         return notFoundResult;
@@ -356,7 +459,7 @@ var _View_UserEditPasswordComponent1 = (function (_super) {
         changes = null;
         var currVal_14 = this.parent.context.myForm.controls['password'];
         if (import4.checkBinding(throwOnChange, this._expr_14, currVal_14)) {
-            this._FormControlDirective_4_5.form = currVal_14;
+            this._FormControlDirective_7_7.form = currVal_14;
             if ((changes === null)) {
                 (changes = {});
             }
@@ -364,22 +467,53 @@ var _View_UserEditPasswordComponent1 = (function (_super) {
             this._expr_14 = currVal_14;
         }
         if ((changes !== null)) {
-            this._FormControlDirective_4_5.ngOnChanges(changes);
+            this._FormControlDirective_7_7.ngOnChanges(changes);
         }
         var currVal_21 = (this.parent.context.myForm.controls['password'].hasError('required') && (this.parent.context.myForm.controls['password'].touched || this.parent.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_21, currVal_21)) {
-            this._NgIf_6_6.ngIf = currVal_21;
+            this._NgIf_9_6.ngIf = currVal_21;
             this._expr_21 = currVal_21;
         }
         var currVal_22 = (this.parent.context.myForm.controls['password'].hasError('minlength') && (this.parent.context.myForm.controls['password'].touched || this.parent.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_22, currVal_22)) {
-            this._NgIf_8_6.ngIf = currVal_22;
+            this._NgIf_11_6.ngIf = currVal_22;
             this._expr_22 = currVal_22;
         }
         var currVal_23 = (this.parent.context.myForm.controls['password'].hasError('maxlength') && (this.parent.context.myForm.controls['password'].touched || this.parent.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_23, currVal_23)) {
-            this._NgIf_10_6.ngIf = currVal_23;
+            this._NgIf_13_6.ngIf = currVal_23;
             this._expr_23 = currVal_23;
+        }
+        var currVal_24 = 'form-group';
+        if (import4.checkBinding(throwOnChange, this._expr_24, currVal_24)) {
+            this._NgClass_16_3.klass = currVal_24;
+            this._expr_24 = currVal_24;
+        }
+        var currVal_25 = this._map_1((!this.parent.context.myForm.controls['confirmPassword'].valid && (this.parent.context.myForm.controls['confirmPassword'].touched || this.parent.context.isSubmitted())));
+        if (import4.checkBinding(throwOnChange, this._expr_25, currVal_25)) {
+            this._NgClass_16_3.ngClass = currVal_25;
+            this._expr_25 = currVal_25;
+        }
+        if (!throwOnChange) {
+            this._NgClass_16_3.ngDoCheck();
+        }
+        changes = null;
+        var currVal_28 = this.parent.context.myForm.controls['confirmPassword'];
+        if (import4.checkBinding(throwOnChange, this._expr_28, currVal_28)) {
+            this._FormControlDirective_21_7.form = currVal_28;
+            if ((changes === null)) {
+                (changes = {});
+            }
+            changes['form'] = new import7.SimpleChange(this._expr_28, currVal_28);
+            this._expr_28 = currVal_28;
+        }
+        if ((changes !== null)) {
+            this._FormControlDirective_21_7.ngOnChanges(changes);
+        }
+        var currVal_35 = (!this.parent.context.myForm.controls['confirmPassword'].valid && (this.parent.context.myForm.controls['confirmPassword'].touched || this.parent.context.isSubmitted()));
+        if (import4.checkBinding(throwOnChange, this._expr_35, currVal_35)) {
+            this._NgIf_23_6.ngIf = currVal_35;
+            this._expr_35 = currVal_35;
         }
         this.detectContentChildrenChanges(throwOnChange);
         var currVal_4 = this._NgControlStatusGroup_0_5.ngClassUntouched;
@@ -412,35 +546,65 @@ var _View_UserEditPasswordComponent1 = (function (_super) {
             this.renderer.setElementClass(this._el_0, 'ng-invalid', currVal_9);
             this._expr_9 = currVal_9;
         }
-        var currVal_15 = this._NgControlStatus_4_7.ngClassUntouched;
+        var currVal_15 = this._NgControlStatus_7_9.ngClassUntouched;
         if (import4.checkBinding(throwOnChange, this._expr_15, currVal_15)) {
-            this.renderer.setElementClass(this._el_4, 'ng-untouched', currVal_15);
+            this.renderer.setElementClass(this._el_7, 'ng-untouched', currVal_15);
             this._expr_15 = currVal_15;
         }
-        var currVal_16 = this._NgControlStatus_4_7.ngClassTouched;
+        var currVal_16 = this._NgControlStatus_7_9.ngClassTouched;
         if (import4.checkBinding(throwOnChange, this._expr_16, currVal_16)) {
-            this.renderer.setElementClass(this._el_4, 'ng-touched', currVal_16);
+            this.renderer.setElementClass(this._el_7, 'ng-touched', currVal_16);
             this._expr_16 = currVal_16;
         }
-        var currVal_17 = this._NgControlStatus_4_7.ngClassPristine;
+        var currVal_17 = this._NgControlStatus_7_9.ngClassPristine;
         if (import4.checkBinding(throwOnChange, this._expr_17, currVal_17)) {
-            this.renderer.setElementClass(this._el_4, 'ng-pristine', currVal_17);
+            this.renderer.setElementClass(this._el_7, 'ng-pristine', currVal_17);
             this._expr_17 = currVal_17;
         }
-        var currVal_18 = this._NgControlStatus_4_7.ngClassDirty;
+        var currVal_18 = this._NgControlStatus_7_9.ngClassDirty;
         if (import4.checkBinding(throwOnChange, this._expr_18, currVal_18)) {
-            this.renderer.setElementClass(this._el_4, 'ng-dirty', currVal_18);
+            this.renderer.setElementClass(this._el_7, 'ng-dirty', currVal_18);
             this._expr_18 = currVal_18;
         }
-        var currVal_19 = this._NgControlStatus_4_7.ngClassValid;
+        var currVal_19 = this._NgControlStatus_7_9.ngClassValid;
         if (import4.checkBinding(throwOnChange, this._expr_19, currVal_19)) {
-            this.renderer.setElementClass(this._el_4, 'ng-valid', currVal_19);
+            this.renderer.setElementClass(this._el_7, 'ng-valid', currVal_19);
             this._expr_19 = currVal_19;
         }
-        var currVal_20 = this._NgControlStatus_4_7.ngClassInvalid;
+        var currVal_20 = this._NgControlStatus_7_9.ngClassInvalid;
         if (import4.checkBinding(throwOnChange, this._expr_20, currVal_20)) {
-            this.renderer.setElementClass(this._el_4, 'ng-invalid', currVal_20);
+            this.renderer.setElementClass(this._el_7, 'ng-invalid', currVal_20);
             this._expr_20 = currVal_20;
+        }
+        var currVal_29 = this._NgControlStatus_21_9.ngClassUntouched;
+        if (import4.checkBinding(throwOnChange, this._expr_29, currVal_29)) {
+            this.renderer.setElementClass(this._el_21, 'ng-untouched', currVal_29);
+            this._expr_29 = currVal_29;
+        }
+        var currVal_30 = this._NgControlStatus_21_9.ngClassTouched;
+        if (import4.checkBinding(throwOnChange, this._expr_30, currVal_30)) {
+            this.renderer.setElementClass(this._el_21, 'ng-touched', currVal_30);
+            this._expr_30 = currVal_30;
+        }
+        var currVal_31 = this._NgControlStatus_21_9.ngClassPristine;
+        if (import4.checkBinding(throwOnChange, this._expr_31, currVal_31)) {
+            this.renderer.setElementClass(this._el_21, 'ng-pristine', currVal_31);
+            this._expr_31 = currVal_31;
+        }
+        var currVal_32 = this._NgControlStatus_21_9.ngClassDirty;
+        if (import4.checkBinding(throwOnChange, this._expr_32, currVal_32)) {
+            this.renderer.setElementClass(this._el_21, 'ng-dirty', currVal_32);
+            this._expr_32 = currVal_32;
+        }
+        var currVal_33 = this._NgControlStatus_21_9.ngClassValid;
+        if (import4.checkBinding(throwOnChange, this._expr_33, currVal_33)) {
+            this.renderer.setElementClass(this._el_21, 'ng-valid', currVal_33);
+            this._expr_33 = currVal_33;
+        }
+        var currVal_34 = this._NgControlStatus_21_9.ngClassInvalid;
+        if (import4.checkBinding(throwOnChange, this._expr_34, currVal_34)) {
+            this.renderer.setElementClass(this._el_21, 'ng-invalid', currVal_34);
+            this._expr_34 = currVal_34;
         }
         this.detectViewChildrenChanges(throwOnChange);
     };
@@ -459,17 +623,27 @@ var _View_UserEditPasswordComponent1 = (function (_super) {
         var pd_0 = (this._FormGroupDirective_0_3.onReset() !== false);
         return (true && pd_0);
     };
-    _View_UserEditPasswordComponent1.prototype._handle_input_4_0 = function ($event) {
+    _View_UserEditPasswordComponent1.prototype._handle_input_7_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_4_3.onChange($event.target.value) !== false);
+        var pd_0 = (this._DefaultValueAccessor_7_3.onChange($event.target.value) !== false);
         return (true && pd_0);
     };
-    _View_UserEditPasswordComponent1.prototype._handle_blur_4_1 = function ($event) {
+    _View_UserEditPasswordComponent1.prototype._handle_blur_7_1 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this._DefaultValueAccessor_4_3.onTouched() !== false);
+        var pd_0 = (this._DefaultValueAccessor_7_3.onTouched() !== false);
         return (true && pd_0);
     };
-    _View_UserEditPasswordComponent1.prototype._handle_click_18_0 = function ($event) {
+    _View_UserEditPasswordComponent1.prototype._handle_input_21_0 = function ($event) {
+        this.markPathToRootAsCheckOnce();
+        var pd_0 = (this._DefaultValueAccessor_21_3.onChange($event.target.value) !== false);
+        return (true && pd_0);
+    };
+    _View_UserEditPasswordComponent1.prototype._handle_blur_21_1 = function ($event) {
+        this.markPathToRootAsCheckOnce();
+        var pd_0 = (this._DefaultValueAccessor_21_3.onTouched() !== false);
+        return (true && pd_0);
+    };
+    _View_UserEditPasswordComponent1.prototype._handle_click_31_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this.parent.context.onCancel() !== false);
         return (true && pd_0);
@@ -538,4 +712,24 @@ var _View_UserEditPasswordComponent4 = (function (_super) {
 }(import1.AppView));
 function viewFactory_UserEditPasswordComponent4(viewUtils, parentInjector, declarationEl) {
     return new _View_UserEditPasswordComponent4(viewUtils, parentInjector, declarationEl);
+}
+var _View_UserEditPasswordComponent5 = (function (_super) {
+    __extends(_View_UserEditPasswordComponent5, _super);
+    function _View_UserEditPasswordComponent5(viewUtils, parentInjector, declarationEl) {
+        _super.call(this, _View_UserEditPasswordComponent5, renderType_UserEditPasswordComponent, import6.ViewType.EMBEDDED, viewUtils, parentInjector, declarationEl, import7.ChangeDetectorStatus.CheckAlways);
+    }
+    _View_UserEditPasswordComponent5.prototype.createInternal = function (rootSelector) {
+        this._el_0 = this.renderer.createElement(null, 'div', null);
+        this.renderer.setElementAttribute(this._el_0, 'class', 'field-error');
+        this._text_1 = this.renderer.createText(this._el_0, '\n                            These passwords don\'t match.\n                        ', null);
+        this.init([].concat([this._el_0]), [
+            this._el_0,
+            this._text_1
+        ], [], []);
+        return null;
+    };
+    return _View_UserEditPasswordComponent5;
+}(import1.AppView));
+function viewFactory_UserEditPasswordComponent5(viewUtils, parentInjector, declarationEl) {
+    return new _View_UserEditPasswordComponent5(viewUtils, parentInjector, declarationEl);
 }

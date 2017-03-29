@@ -18,7 +18,7 @@ export var ProfileEditPasswordComponent = (function () {
             this.user.newPassword = this.myForm.value.newPassword;
             this.userService.updatePassword(this.user)
                 .subscribe(function () {
-                _this.flashMessageService.showMessage('Password was updated.', 'alert-success');
+                _this.flashMessageService.showMessage('Password was updated.', 'success');
                 _this.navigateBack();
             }, function (error) { return console.error(error); });
         }

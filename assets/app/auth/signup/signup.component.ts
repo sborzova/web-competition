@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
                 this.authService.signup(user)
                     .subscribe(
                         user => {
-                            this.flashMessageService.showMessage('Account created.', 'alert-success'  );
+                            this.flashMessageService.showMessage('Account created.', 'success'  );
                             this.router.navigateByUrl('#home');
                         } ,
                         error => console.error(error)

@@ -33,7 +33,7 @@ export class ProfileEditComponent implements OnInit {
                 .subscribe(
                     (data) => {
                         this.sessionStorageService.setSessionStorageAuth(data);
-                        this.flashMessageService.showMessage('Profile was updated.', 'alert-success' );
+                        this.flashMessageService.showMessage('Profile was updated.', 'success' );
                         this.navigateBack();
                     },
                     error => console.error(error)

@@ -1,12 +1,12 @@
 import {Component, OnInit, Input, OnDestroy} from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Solution } from "./solution.model";
-import { Paper } from "./paper.model";
+import { Paper } from "../shared/paper.model";
 import { SolutionService } from "../shared/solution.service";
 import { PaperService } from "../shared/paper.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SolutionPaper } from "./solution-paper.model";
 import {SortService} from "../shared/sort.service";
+import {Solution} from "../shared/solution.model";
 
 @Component({
     selector: 'app-user-solutions',
@@ -78,7 +78,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
             this.solutionService.deletePaperFromSolution(solution)
                 .subscribe(
                     solution => {
-                        this.flashMessageService.showMessage('Papers were deleted.', 'alert-success' );
+                        this.flashMessageService.showMessage('Papers were deleted.', 'success' );
                         this.uncheckSelected();
                     },
                     error => console.error(error)
@@ -97,13 +97,13 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
                     paperIds.add(solution.paper.paperId);
                 } else {
                     this.flashMessageService.showMessage('It is not possible to modify not existing paper. ' +
-                        'You must add paper first.', 'alert-danger');
+                        'You must add paper first.', 'danger');
                     return;
                 }
             }
             if (paperIds.size != 1){
                 this.flashMessageService.showMessage('It is not possible to modify two different citations at a time. ' +
-                    'Please select the same citations only.', 'alert-danger');
+                    'Please select the same citations only.', 'danger');
             }
             let paperId : string = Array.from(paperIds)[0];
             let showMessage = false;
@@ -117,7 +117,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
             }
             if (showMessage){
                 this.flashMessageService.showMessage('The same citation is also used for other solutions, ' +
-                    'all of them are modified now', 'alert-info');
+                    'all of them are modified now.', 'info');
             }
             this.isEdited = true;
             this.submitted = false;
@@ -143,7 +143,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
                             this.editedPaper = null;
                             this.uncheckSelected();
                             this.showPaperForm = false;
-                            this.flashMessageService.showMessage('Paper was updated', 'alert-success');
+                            this.flashMessageService.showMessage('Paper was updated', 'success');
                         },
                         error => console.error(error),
                     )
@@ -172,7 +172,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
                 );
             s.paper = paper;
         }
-        this.flashMessageService.showMessage('Paper was saved.', 'alert-success' );
+        this.flashMessageService.showMessage('Paper was saved.', 'success' );
         this.uncheckSelected();
         this.showPaperForm = false;
     }
@@ -207,49 +207,49 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
         return this.submitted;
     }
 
-    // onQualityAsc(){
-    //     this.solutions = this.sortService.sortQualityAsc(this.solutions);
-    // }
-    //
-    // onQualityDesc(){
-    //     this.solutions = this.sortService.sortQualityDesc(this.solutions);
-    // }
-    //
-    // onScAsc(){
-    //     this.solutions = this.sortService.sortScAsc(this.solutions);
-    // }
-    //
-    // onScDesc(){
-    //     this.solutions = this.sortService.sortScDesc(this.solutions);
-    // }
-    //
-    // onTimeAsc(){
-    //     this.solutions = this.sortService.sortTimeAsc(this.solutions);
-    // }
-    //
-    // onTimeDesc(){
-    //     this.solutions = this.sortService.sortTimeDesc(this.solutions);
-    // }
-    //
-    // onRoomAsc(){
-    //     this.solutions = this.sortService.sortRoomAsc(this.solutions);
-    // }
-    //
-    // onRoomDesc(){
-    //     this.solutions = this.sortService.sortRoomDesc(this.solutions);
-    // }
-    //
-    // onDistributionAsc(){
-    //     this.solutions = this.sortService.sortDistributionAsc(this.solutions);
-    // }
-    //
-    // onDistributionDesc(){
-    //     this.solutions = this.sortService.sortDistributionDesc(this.solutions);
-    // }
+    onQualityAsc(){
+        this.solutions = this.sortService.sortQualityAsc(this.solutions);
+    }
+
+    onQualityDesc(){
+        this.solutions = this.sortService.sortQualityDesc(this.solutions);
+    }
+
+    onScAsc(){
+        this.solutions = this.sortService.sortScAsc(this.solutions);
+    }
+
+    onScDesc(){
+        this.solutions = this.sortService.sortScDesc(this.solutions);
+    }
+
+    onTimeAsc(){
+        this.solutions = this.sortService.sortTimeAsc(this.solutions);
+    }
+
+    onTimeDesc(){
+        this.solutions = this.sortService.sortTimeDesc(this.solutions);
+    }
+
+    onRoomAsc(){
+        this.solutions = this.sortService.sortRoomAsc(this.solutions);
+    }
+
+    onRoomDesc(){
+        this.solutions = this.sortService.sortRoomDesc(this.solutions);
+    }
+
+    onDistributionAsc(){
+        this.solutions = this.sortService.sortDistributionAsc(this.solutions);
+    }
+
+    onDistributionDesc(){
+        this.solutions = this.sortService.sortDistributionDesc(this.solutions);
+    }
 
     private checkIfSelected() {
         if (this.selectedSolutions.length == 0){
-            this.flashMessageService.showMessage('Select solutions.', 'alert-info' );
+            this.flashMessageService.showMessage('Select solutions.', 'info' );
             return false;
         }
         return true;
@@ -264,7 +264,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     private checkOnlyWithNoPaper() {
         for (let s of this.selectedSolutions){
             if (s.paper != null){
-                this.flashMessageService.showMessage('Select only solutions with no papers.', 'alert-danger' );
+                this.flashMessageService.showMessage('Select only solutions with no papers.', 'danger' );
                 return false;
             }
         }
@@ -272,6 +272,9 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     private removePaperFromDatabase(paperIds: Set<string>) {
+        /**
+         *  Delete paper id from paperIds if it is related to any solution
+         */
         for (let solution of this.solutions){
             if (solution.paper){
                 if (paperIds.has(solution.paper.paperId)){

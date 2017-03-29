@@ -60,7 +60,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
             this.usersService.updateUser(this.user)
                 .subscribe(
                     (data) => {
-                        this.flashMessageService.showMessage('User was updated.', 'alert-success' );
+                        this.flashMessageService.showMessage('User was updated.', 'success' );
                         this.navigateBack();
                     },
                     error => console.error(error)

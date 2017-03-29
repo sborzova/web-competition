@@ -1,19 +1,19 @@
 import { Component, OnInit } from "@angular/core";
 
 import { SolutionService } from "../../shared/solution.service";
-import { InstanceService } from "../../instances/instance.service";
-import { SolutionResult } from "../solution-result.model";
+import { InstanceService } from "../../shared/instance.service";
 import {SortService} from "../../shared/sort.service";
+import {Solution} from "../../shared/solution.model";
 
 @Component({
     selector: 'app-results-best',
     templateUrl: './results-best.component.html'
 })
 export class ResultsBestComponent implements OnInit {
-    results: SolutionResult[];
-    solutionsAll: SolutionResult[] = [];
-    solutionsInstance: SolutionResult[];
-    solutionsAuthor: SolutionResult[];
+    results: Solution[];
+    solutionsAll: Solution[] = [];
+    solutionsInstance: Solution[];
+    solutionsAuthor: Solution[];
     fileSaver = require('file-saver');
     showPapers: boolean = false;
 
@@ -25,11 +25,11 @@ export class ResultsBestComponent implements OnInit {
         this.instanceService.getInstances()
             .subscribe(
                 instances => {
-                    let results: SolutionResult[] = [];
+                    let results: Solution[] = [];
                     for (let instance of instances){
                         this.solutionService.getSolutionsByInstance(instance.instanceId)
                             .subscribe(
-                                (solutions: SolutionResult[] )=> {
+                                (solutions: Solution[] )=> {
                                     if (solutions.length != 0){
                                         solutions = this.resultsService.sortQualityAsc(solutions);
                                         results.push(solutions[0]);
@@ -45,7 +45,7 @@ export class ResultsBestComponent implements OnInit {
             )
     }
 
-    onDownload(solution: SolutionResult){
+    onDownload(solution: Solution){
         let file = new File([solution.data], 'solution.xml', {type: "text/xml;charset=utf-8"});
         this.fileSaver.saveAs(file);
     }

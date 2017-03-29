@@ -268,7 +268,6 @@ router.get('/solutions', function (req, res, next) {
 });
 
 router.get('/solution/:id', function (req, res, next) {
-    console.log(req.params.id);
     Solution.findById(req.params.id)
         .populate('user')
         .populate('instance')
@@ -382,6 +381,7 @@ router.post('/worseSolutions', function (req, res, next) {
             });
         }
         Solution.find()
+            .populate('paper')
             .where('user').equals(decoded.user._id)
             .where('instance').equals(instance._id)
             .where('technique').equals(req.body.technique)
@@ -428,6 +428,7 @@ router.delete('/solution/:id', function (req, res, next) {
                     error: err
                 });
             }
+
             res.status(200).json({
                 message: 'Deleted solution',
                 obj: result

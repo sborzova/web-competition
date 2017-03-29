@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { Instance } from "../instance.model";
-import { InstanceService } from "../instance.service";
-import { AuthService } from "../../auth/auth.service";
+import { InstanceService } from "../../shared/instance.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import {SessionStorageService} from "../../shared/session-storage.service";
 
@@ -41,7 +40,7 @@ export class InstanceListComponent implements OnInit {
         this.instanceService.deleteInstance(instance)
             .subscribe(
                 result => {
-                    this.flashMessageService.showMessage('Instance was deleted', 'alert-success'  );
+                    this.flashMessageService.showMessage('Instance was deleted', 'success'  );
                 },
                 error => console.error(error)
             );

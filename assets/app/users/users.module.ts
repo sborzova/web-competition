@@ -8,8 +8,7 @@ import {UserEditPasswordComponent} from "./user-edit-password/user-edit-password
 import {UserEditComponent} from "./user-edit/user-edit.component";
 import {OrderByModule} from "../order-by.module";
 import {UsersService} from "./users.service";
-import {FlashMessageComponent} from "../flash-message/flash-message.component";
-import {FlashMessageService} from "../flash-message/flash-messages.service";
+import {EqualValidatorModule} from "../equal-validator.module";
 
 @NgModule({
     declarations: [
@@ -22,6 +21,7 @@ import {FlashMessageService} from "../flash-message/flash-messages.service";
         CommonModule,
         OrderByModule,
         usersRouting,
+        EqualValidatorModule
     ],
     providers: [
         UsersService,

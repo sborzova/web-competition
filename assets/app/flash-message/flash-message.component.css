@@ -1,0 +1,11 @@
+.danger .modal-content {
+    background-color: 	#f8c2ba;
+}
+
+.success .modal-content {
+    background-color: #caedc7;
+}
+
+.info .modal-content {
+    background-color: #cbd7fd;
+}

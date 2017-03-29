@@ -3,15 +3,14 @@ import { Headers, Http, Response } from "@angular/http";
 import { Observable, Subject } from "rxjs";
 
 import { SolutionCreate } from "../validation/solution-create.model";
-import { Solution } from "../user-solutions/solution.model";
 import { Validation } from "../validation/validation.model";
-import { Paper } from "../validation/paper.model";
 import { SolutionPaper } from "../user-solutions/solution-paper.model";
 import { SolutionFindWorse } from "../validation/solution-find-worse.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
-import { SolutionResult } from "../results/solution-result.model";
-import { Author } from "../results/author.model";
-import { Instance } from "../results/instance.model";
+import { Author } from "./author.model";
+import { Instance } from "./instance.model";
+import {Paper} from "./paper.model";
+import {Solution} from "./solution.model";
 
 @Injectable()
 export class SolutionService {
@@ -68,7 +67,7 @@ export class SolutionService {
                                     this.saveFileSolution(solutionId)
                                         .subscribe(
                                             () => {
-                                                this.flashMessageService.showMessage('Solution was uploaded.', 'alert-success' );
+                                                this.flashMessageService.showMessage('Solution was uploaded.', 'success' );
                                                 this.successValidationHideResult();
                                             },
                                             error => console.error(JSON.parse(error))
@@ -85,7 +84,7 @@ export class SolutionService {
                         this.saveFileSolution(solutionId)
                             .subscribe(
                                 () => {
-                                    this.flashMessageService.showMessage('Solution was uploaded.', 'alert-success' );
+                                    this.flashMessageService.showMessage('Solution was uploaded.', 'success' );
                                     this.successValidationHideResult();
                                 },
                                 error => console.error(JSON.parse(error))
@@ -119,7 +118,12 @@ export class SolutionService {
                         solution.postDate,
                         solution.data,
                         solution.instance,
-                        solution.paper,
+                        solution.paper ? new Paper(
+                            solution.paper.citation,
+                            solution.paper.url,
+                            solution.paper._id
+                        ) : null,
+                        null,
                         solution._id,
                         false)
                     );
@@ -169,6 +173,7 @@ export class SolutionService {
                     solution.data,
                     solution.instance,
                     solution.paper,
+                    null,
                     solution._id,
                     false
                 );
@@ -205,6 +210,7 @@ export class SolutionService {
                                 solution.paper.url,
                                 solution.paper._id
                                         ) : null,
+                        null,
                         solution._id,
                         false)
                     );
@@ -218,13 +224,9 @@ export class SolutionService {
         return this.http.get(this.hostUrl.concat('solutionsByInstance/') + instanceId)
             .map((response: Response) => {
                 const solutions = response.json().obj;
-                let transformedSolutions: SolutionResult[] = [];
+                let transformedSolutions: Solution[] = [];
                 for (let solution of solutions) {
-                    transformedSolutions.push(new SolutionResult(
-                        new Instance(
-                            solution.instance.name,
-                            solution.instance._id,
-                            solution.instance.order),
+                    transformedSolutions.push(new Solution(
                         solution.unassigned,
                         solution.total,
                         solution.sc,
@@ -235,6 +237,10 @@ export class SolutionService {
                         solution.info,
                         solution.postDate,
                         solution.data,
+                        new Instance(
+                            solution.instance.name,
+                            solution.instance._id,
+                            solution.instance.order),
                         solution.paper,
                         new Author(
                             solution.user.firstName.concat(" ").concat(solution.user.lastName),
@@ -251,13 +257,9 @@ export class SolutionService {
         return this.http.get(this.hostUrl.concat('solutionsByUser/') + userId)
             .map((response: Response) => {
                 const solutions = response.json().obj;
-                let transformedSolutions: SolutionResult[] = [];
+                let transformedSolutions: Solution[] = [];
                 for (let solution of solutions) {
-                    transformedSolutions.push(new SolutionResult(
-                        new Instance(
-                            solution.instance.name,
-                            solution.instance._id,
-                            solution.instance.order),
+                    transformedSolutions.push(new Solution(
                         solution.unassigned,
                         solution.total,
                         solution.sc,
@@ -268,6 +270,10 @@ export class SolutionService {
                         solution.info,
                         solution.postDate,
                         solution.data,
+                        new Instance(
+                            solution.instance.name,
+                            solution.instance._id,
+                            solution.instance.order),
                         solution.paper,
                         new Author(
                             solution.user.firstName.concat(" ").concat(solution.user.lastName),
@@ -366,10 +372,10 @@ export class SolutionService {
                     () => {},
                     error => console.error(error))
         }
-        if (solutions.length = 1){
-            this.flashMessageService.showMessage('Solution was deleted.', 'alert-success');
+        if (solutions.length == 1){
+            this.flashMessageService.showMessage('Solution was deleted.', 'success');
         }else {
-            this.flashMessageService.showMessage('Solutions were deleted.', 'alert-success');
+            this.flashMessageService.showMessage('Solutions were deleted.', 'success');
         }
     }
 }

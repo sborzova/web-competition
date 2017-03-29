@@ -1,5 +1,6 @@
 import { Instance } from "../validation/instance.model";
-import { Paper } from "../validation/paper.model";
+import {Paper} from "./paper.model";
+import {Author} from "./author.model";
 
 export class Solution {
     constructor(public unassigned?: number,
@@ -14,6 +15,7 @@ export class Solution {
                 public data?: string,
                 public instance?: Instance,
                 public paper?: Paper,
+                public author?: Author,
                 public solutionId?: string,
                 public isChecked?: boolean) {}
 

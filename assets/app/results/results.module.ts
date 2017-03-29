@@ -8,7 +8,7 @@ import {ResultsAuthorTechniqueComponent} from "./results-author-technique/result
 import {resultsRouting} from "./results.routing";
 import {OrderByModule} from "../order-by.module";
 import {PaperService} from "../shared/paper.service";
-import {InstanceService} from "../instances/instance.service";
+import {InstanceService} from "../shared/instance.service";
 import {SolutionService} from "../shared/solution.service";
 import {SortService} from "../shared/sort.service";
 import {ResultsAuthorInstanceComponent} from "./results-author-instance/results-author-instance.component";

@@ -13,7 +13,7 @@ import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from '@angular/router/src/router';
-import * as import9 from '../instance.service';
+import * as import9 from '../../shared/instance.service';
 import * as import10 from '@angular/router/src/router_state';
 import * as import11 from '../../flash-message/flash-messages.service';
 import * as import12 from '@angular/core/src/metadata/view';

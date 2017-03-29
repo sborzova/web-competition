@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { InstanceService } from "../instance.service";
+import { InstanceService } from "../../shared/instance.service";
 import { Instance } from "../instance.model";
 import { minValue } from "../min-value.validator";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
@@ -79,7 +79,7 @@ export class InstanceCreateComponent implements OnInit {
                         this.instancesService.saveFiles(fd, id)
                             .subscribe(
                                 () => {
-                                    this.flashMessageService.showMessage('Instance was created.', 'alert-success' );
+                                    this.flashMessageService.showMessage('Instance was created.', 'success' );
                                 },
                                 error => {
                                     console.error(error);

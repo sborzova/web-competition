@@ -19,7 +19,7 @@ import * as import11 from '@angular/core/src/linker/component_factory';
 import * as import12 from '@angular/common/src/directives/ng_if';
 import * as import13 from '@angular/core/src/linker/template_ref';
 import * as import14 from '@angular/common/src/directives/ng_style';
-import * as import15 from '../../instances/escape-html.pipe';
+import * as import15 from '../../shared/escape-html.pipe';
 import * as import16 from '@angular/core/src/change_detection/differs/keyvalue_differs';
 import * as import17 from '@angular/core/src/linker/element_ref';
 import * as import18 from '@angular/core/src/security';

@@ -13,7 +13,7 @@ import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from '../../shared/solution.service';
-import * as import9 from '../../instances/instance.service';
+import * as import9 from '../../shared/instance.service';
 import * as import10 from '../../shared/sort.service';
 import * as import11 from '@angular/core/src/metadata/view';
 import * as import12 from '@angular/core/src/linker/component_factory';
@@ -26,7 +26,7 @@ import * as import18 from '../results-instance/results-instance.component.ngfact
 import * as import19 from '../results-author/results-author.component.ngfactory';
 import * as import20 from '@angular/core/src/i18n/tokens';
 import * as import21 from '@angular/common/src/directives/ng_for';
-import * as import22 from '../order-by.pipe';
+import * as import22 from '../../shared/order-by.pipe';
 import * as import23 from '@angular/core/src/change_detection/differs/iterable_differs';
 import * as import24 from '@angular/router/src/directives/router_link';
 import * as import25 from '@angular/router/src/router';

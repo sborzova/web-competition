@@ -14,7 +14,6 @@ import {SessionStorageService} from "../shared/session-storage.service";
 export class ValidationComponent implements OnInit {
     solution: SolutionCreate = new SolutionCreate();
     @ViewChild('solution') solutionElem;
-    display = 'none';
 
     constructor(private validationService: SolutionService,
                 private sessionStorageService: SessionStorageService,
@@ -22,7 +21,7 @@ export class ValidationComponent implements OnInit {
 
     ngOnInit(){
         if (!this.showValidator()){
-            this.display = 'block';
+            document.getElementById('openModalNotView').click();
         }
     }
 
@@ -45,7 +44,7 @@ export class ValidationComponent implements OnInit {
                     data => {
                         let result = JSON.parse(data);
                         if (result.status == 400){
-                                this.flashMessageService.showMessage('Invalid XML format.', 'alert-danger' );
+                                this.flashMessageService.showMessage('Invalid XML format.', 'danger' );
                         }else {
                             let info = "";
                             let logs : string[] = result.obj.log;
@@ -95,7 +94,7 @@ export class ValidationComponent implements OnInit {
                 )
         }
         else {
-            this.flashMessageService.showMessage('Insert file.', 'alert-info' );
+            this.flashMessageService.showMessage('Insert file.', 'info' );
         }
     }
 

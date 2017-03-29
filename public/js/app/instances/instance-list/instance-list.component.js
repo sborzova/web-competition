@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { InstanceService } from "../instance.service";
+import { InstanceService } from "../../shared/instance.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { SessionStorageService } from "../../shared/session-storage.service";
 export var InstanceListComponent = (function () {
@@ -28,7 +28,7 @@ export var InstanceListComponent = (function () {
         var _this = this;
         this.instanceService.deleteInstance(instance)
             .subscribe(function (result) {
-            _this.flashMessageService.showMessage('Instance was deleted', 'alert-success');
+            _this.flashMessageService.showMessage('Instance was deleted', 'success');
         }, function (error) { return console.error(error); });
     };
     InstanceListComponent.prototype.onDownload = function (instance) {

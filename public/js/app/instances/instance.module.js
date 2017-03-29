@@ -9,7 +9,7 @@ import { InstanceEditComponent } from "./instance-update/instance-update.compone
 import { InstanceStatsComponent } from "./instance-stats/instance-stats.component";
 import { OrderByModule } from "../order-by.module";
 import { EscapeHtmlModule } from "../escape-html.module";
-import { InstanceService } from "./instance.service";
+import { InstanceService } from "../shared/instance.service";
 export var InstanceModule = (function () {
     function InstanceModule() {
     }

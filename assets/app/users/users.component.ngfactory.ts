@@ -20,7 +20,7 @@ import * as import12 from '@angular/core/src/linker/component_factory';
 import * as import13 from '@angular/common/src/directives/ng_if';
 import * as import14 from '@angular/core/src/linker/template_ref';
 import * as import15 from '@angular/common/src/directives/ng_for';
-import * as import16 from '../results/order-by.pipe';
+import * as import16 from '../shared/order-by.pipe';
 import * as import17 from '@angular/core/src/change_detection/differs/iterable_differs';
 import * as import18 from '@angular/router/src/directives/router_link';
 import * as import19 from '@angular/router/src/router';
@@ -292,12 +292,18 @@ class _View_UsersComponent2 extends import1.AppView<any> {
   _TemplateRef_17_5:any;
   _NgIf_17_6:import13.NgIf;
   _text_18:any;
+  _anchor_19:any;
+  /*private*/ _appEl_19:import2.AppElement;
+  _TemplateRef_19_5:any;
+  _NgIf_19_6:import13.NgIf;
+  _text_20:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   /*private*/ _expr_2:any;
   /*private*/ _expr_3:any;
   /*private*/ _expr_4:any;
   /*private*/ _expr_5:any;
+  /*private*/ _expr_6:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_UsersComponent2,renderType_UsersComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -323,13 +329,19 @@ class _View_UsersComponent2 extends import1.AppView<any> {
     this._appEl_17 = new import2.AppElement(17,0,this,this._anchor_17);
     this._TemplateRef_17_5 = new import14.TemplateRef_(this._appEl_17,viewFactory_UsersComponent3);
     this._NgIf_17_6 = new import13.NgIf(this._appEl_17.vcRef,this._TemplateRef_17_5);
-    this._text_18 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
+    this._text_18 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
+    this._anchor_19 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
+    this._appEl_19 = new import2.AppElement(19,0,this,this._anchor_19);
+    this._TemplateRef_19_5 = new import14.TemplateRef_(this._appEl_19,viewFactory_UsersComponent4);
+    this._NgIf_19_6 = new import13.NgIf(this._appEl_19.vcRef,this._TemplateRef_19_5);
+    this._text_20 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this._expr_1 = import7.UNINITIALIZED;
     this._expr_2 = import7.UNINITIALIZED;
     this._expr_3 = import7.UNINITIALIZED;
     this._expr_4 = import7.UNINITIALIZED;
     this._expr_5 = import7.UNINITIALIZED;
+    this._expr_6 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -349,7 +361,9 @@ class _View_UsersComponent2 extends import1.AppView<any> {
       this._text_15,
       this._text_16,
       this._anchor_17,
-      this._text_18
+      this._text_18,
+      this._anchor_19,
+      this._text_20
     ]
     ,[],[]);
     return (null as any);
@@ -357,6 +371,8 @@ class _View_UsersComponent2 extends import1.AppView<any> {
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
     if (((token === import14.TemplateRef) && (17 === requestNodeIndex))) { return this._TemplateRef_17_5; }
     if (((token === import13.NgIf) && (17 === requestNodeIndex))) { return this._NgIf_17_6; }
+    if (((token === import14.TemplateRef) && (19 === requestNodeIndex))) { return this._TemplateRef_19_5; }
+    if (((token === import13.NgIf) && (19 === requestNodeIndex))) { return this._NgIf_19_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -364,6 +380,11 @@ class _View_UsersComponent2 extends import1.AppView<any> {
     if (import4.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
       this._NgIf_17_6.ngIf = currVal_5;
       this._expr_5 = currVal_5;
+    }
+    const currVal_6:any = this.parent.parent.context.isMe(this.context.$implicit);
+    if (import4.checkBinding(throwOnChange,this._expr_6,currVal_6)) {
+      this._NgIf_19_6.ngIf = currVal_6;
+      this._expr_6 = currVal_6;
     }
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_0:any = import4.interpolate(1,'',(this.context.index + 1),' ');
@@ -417,6 +438,7 @@ class _View_UsersComponent3 extends import1.AppView<any> {
   _el_14:any;
   _text_15:any;
   _text_16:any;
+  _text_17:any;
   _map_0:any;
   /*private*/ _expr_1:any;
   _arr_0:any;
@@ -459,6 +481,7 @@ class _View_UsersComponent3 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_14,'class','glyphicon glyphicon-trash');
     this._text_15 = this.renderer.createText(this._el_14,' User',(null as any));
     this._text_16 = this.renderer.createText(this._el_12,'\n                            ',(null as any));
+    this._text_17 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
     this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
       return {userId: p0};
@@ -495,7 +518,8 @@ class _View_UsersComponent3 extends import1.AppView<any> {
       this._text_13,
       this._el_14,
       this._text_15,
-      this._text_16
+      this._text_16,
+      this._text_17
     ]
     ,[
       disposable_0,
@@ -552,4 +576,135 @@ class _View_UsersComponent3 extends import1.AppView<any> {
 }
 function viewFactory_UsersComponent3(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
   return new _View_UsersComponent3(viewUtils,parentInjector,declarationEl);
+}
+class _View_UsersComponent4 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  _el_2:any;
+  _RouterLink_2_3:import18.RouterLink;
+  _text_3:any;
+  _el_4:any;
+  _text_5:any;
+  _text_6:any;
+  _el_7:any;
+  _RouterLink_7_3:import18.RouterLink;
+  _text_8:any;
+  _el_9:any;
+  _text_10:any;
+  _text_11:any;
+  _map_0:any;
+  /*private*/ _expr_1:any;
+  _arr_0:any;
+  /*private*/ _expr_2:any;
+  _map_1:any;
+  /*private*/ _expr_4:any;
+  _arr_1:any;
+  /*private*/ _expr_5:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_UsersComponent4,renderType_UsersComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'td',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','btn-group');
+    this.renderer.setElementAttribute(this._el_0,'style','vertical-align: middle; border: none;');
+    this._text_1 = this.renderer.createText(this._el_0,'\n                            ',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_2,'class','btn btn-info btn-xs');
+    this.renderer.setElementAttribute(this._el_2,'title','Edit profile');
+    this._RouterLink_2_3 = new import18.RouterLink(this.parent.parent.parent.parentInjector.get(import19.Router),this.parent.parent.parent.parentInjector.get(import20.ActivatedRoute),this.parent.parent.parent.parentInjector.get(import21.LocationStrategy));
+    this._text_3 = this.renderer.createText(this._el_2,'\n                                ',(null as any));
+    this._el_4 = this.renderer.createElement(this._el_2,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_4,'class','glyphicon glyphicon-pencil');
+    this._text_5 = this.renderer.createText(this._el_2,' Profile\n                            ',(null as any));
+    this._text_6 = this.renderer.createText(this._el_0,'\n                            ',(null as any));
+    this._el_7 = this.renderer.createElement(this._el_0,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_7,'class','btn btn-primary btn-xs');
+    this.renderer.setElementAttribute(this._el_7,'title','Change password');
+    this._RouterLink_7_3 = new import18.RouterLink(this.parent.parent.parent.parentInjector.get(import19.Router),this.parent.parent.parent.parentInjector.get(import20.ActivatedRoute),this.parent.parent.parent.parentInjector.get(import21.LocationStrategy));
+    this._text_8 = this.renderer.createText(this._el_7,'\n                                ',(null as any));
+    this._el_9 = this.renderer.createElement(this._el_7,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_9,'class','glyphicon glyphicon-pencil');
+    this._text_10 = this.renderer.createText(this._el_7,' Password\n                            ',(null as any));
+    this._text_11 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
+    var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
+    this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
+      return {userId: p0};
+    });
+    this._expr_1 = import7.UNINITIALIZED;
+    this._arr_0 = import4.pureProxy1((p0:any):any[] => {
+      return [p0];
+    });
+    this._expr_2 = import7.UNINITIALIZED;
+    var disposable_1:Function = this.renderer.listen(this._el_7,'click',this.eventHandler(this._handle_click_7_0.bind(this)));
+    this._map_1 = import4.pureProxy1((p0:any):{[key: string]:any} => {
+      return {userId: p0};
+    });
+    this._expr_4 = import7.UNINITIALIZED;
+    this._arr_1 = import4.pureProxy1((p0:any):any[] => {
+      return [p0];
+    });
+    this._expr_5 = import7.UNINITIALIZED;
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1,
+      this._el_2,
+      this._text_3,
+      this._el_4,
+      this._text_5,
+      this._text_6,
+      this._el_7,
+      this._text_8,
+      this._el_9,
+      this._text_10,
+      this._text_11
+    ]
+    ,[
+      disposable_0,
+      disposable_1
+    ]
+    ,[]);
+    return (null as any);
+  }
+  injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
+    if (((token === import18.RouterLink) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 5)))) { return this._RouterLink_2_3; }
+    if (((token === import18.RouterLink) && ((7 <= requestNodeIndex) && (requestNodeIndex <= 10)))) { return this._RouterLink_7_3; }
+    return notFoundResult;
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    const currVal_1:any = this._map_0(this.parent.context.$implicit.userId);
+    if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
+      this._RouterLink_2_3.queryParams = currVal_1;
+      this._expr_1 = currVal_1;
+    }
+    const currVal_2:any = this._arr_0('/#profile/edit');
+    if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
+      this._RouterLink_2_3.routerLink = currVal_2;
+      this._expr_2 = currVal_2;
+    }
+    const currVal_4:any = this._map_1(this.parent.context.$implicit.userId);
+    if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
+      this._RouterLink_7_3.queryParams = currVal_4;
+      this._expr_4 = currVal_4;
+    }
+    const currVal_5:any = this._arr_1('/#profile/editpass');
+    if (import4.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
+      this._RouterLink_7_3.routerLink = currVal_5;
+      this._expr_5 = currVal_5;
+    }
+    this.detectContentChildrenChanges(throwOnChange);
+    this.detectViewChildrenChanges(throwOnChange);
+  }
+  private _handle_click_2_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this._RouterLink_2_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_0);
+  }
+  private _handle_click_7_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this._RouterLink_7_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_0);
+  }
+}
+function viewFactory_UsersComponent4(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UsersComponent4(viewUtils,parentInjector,declarationEl);
 }

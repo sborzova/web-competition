@@ -40,7 +40,7 @@ export class UserService{
             })
             .catch((error: Response) => {
                 if (error.status === 422){
-                    this.flashMessageService.showMessage('Email address is already in use.', 'alert-danger' );
+                    this.flashMessageService.showMessage('Email address is already in use.', 'danger' );
                 }
                 return Observable.throw(error);
 
@@ -59,7 +59,7 @@ export class UserService{
             })
             .catch((error: Response) => {
                 if (error.status === 412){
-                    this.flashMessageService.showMessage('Current password is incorrect.', 'alert-danger' );
+                    this.flashMessageService.showMessage('Current password is incorrect.', 'danger' );
                 }
                 return Observable.throw(error);
             })

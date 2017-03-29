@@ -19,7 +19,7 @@ import * as import7 from '@angular/router/src/router_module';
 import * as import8 from '@angular/forms/src/form_builder';
 import * as import9 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import10 from '@angular/common/src/localization';
-import * as import11 from './instance.service';
+import * as import11 from '../shared/instance.service';
 import * as import13 from './instances.component.ngfactory';
 import * as import14 from './instance-new/instance-new.component.ngfactory';
 import * as import15 from './instance-update/instance-update.component.ngfactory';

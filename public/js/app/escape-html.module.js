@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { EscapeHtmlPipe } from "./instances/escape-html.pipe";
+import { EscapeHtmlPipe } from "./shared/escape-html.pipe";
 export var EscapeHtmlModule = (function () {
     function EscapeHtmlModule() {
     }

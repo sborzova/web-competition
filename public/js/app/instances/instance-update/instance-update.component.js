@@ -1,7 +1,7 @@
 import { Component, ViewChild, Input } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
-import { InstanceService } from "../instance.service";
+import { InstanceService } from "../../shared/instance.service";
 import { minValue } from "../min-value.validator";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 export var InstanceEditComponent = (function () {
@@ -41,7 +41,7 @@ export var InstanceEditComponent = (function () {
             this.instanceService.updateInstanceTextFields(this.instance)
                 .subscribe(function (data) {
                 _this.navigateBack();
-                _this.flashMessageService.showMessage('Instance was updated', 'alert-success');
+                _this.flashMessageService.showMessage('Instance was updated', 'success');
                 _this.saveFiles();
             }, function (error) { return console.error(error); });
         }

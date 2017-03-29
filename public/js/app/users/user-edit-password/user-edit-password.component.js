@@ -20,7 +20,8 @@ export var UserEditPasswordComponent = (function () {
                 .subscribe(function (user) {
                 _this.user = user;
                 _this.myForm = new FormGroup({
-                    password: new FormControl(null, Validators.required)
+                    password: new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(100)]),
+                    confirmPassword: new FormControl(null, Validators.required)
                 });
             });
         });
@@ -35,7 +36,7 @@ export var UserEditPasswordComponent = (function () {
             this.user.password = this.myForm.value.password;
             this.usersService.updateUserPassword(this.user)
                 .subscribe(function (data) {
-                _this.flashMessageService.showMessage('Password was changed.', 'alert-success');
+                _this.flashMessageService.showMessage('Password was changed.', 'success');
                 _this.navigateBack();
             }, function (error) { return console.error(error); });
         }

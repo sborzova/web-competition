@@ -18,7 +18,7 @@
                         <td>{{ user.lastName }}</td>
                         <td>{{ user.email }}</td>
                         <td>{{ user.role }}</td>
-                        <td *ngIf="!isMe(user)" class="btn-group" style="vertical-align: middle; border: none;">
+                        <td *ngIf="!isMe(user)"class="btn-group" style="vertical-align: middle; border: none;">
                             <button
                                     class="btn btn-info btn-xs"
                                     title="Edit profile"
@@ -38,7 +38,24 @@
                                     title="Delete"
                                     (click)="onDelete(user)">
                                 <span class="glyphicon glyphicon-trash">&nbsp;User</span>
-                            </button></td>
+                            </button>
+                        </td>
+                        <td *ngIf="isMe(user)"class="btn-group" style="vertical-align: middle; border: none;">
+                            <button
+                                    class="btn btn-info btn-xs"
+                                    title="Edit profile"
+                                    [routerLink]="['/#profile/edit']"
+                                    [queryParams]="{userId: user.userId}">
+                                <span class="glyphicon glyphicon-pencil"></span>&nbsp;Profile
+                            </button>
+                            <button
+                                    class="btn btn-primary btn-xs"
+                                    title="Change password"
+                                    [routerLink]="['/#profile/editpass']"
+                                    [queryParams]="{userId: user.userId}">
+                                <span class="glyphicon glyphicon-pencil"></span>&nbsp;Password
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

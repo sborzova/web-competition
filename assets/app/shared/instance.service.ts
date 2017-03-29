@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Http, Response, Headers } from "@angular/http";
 import { Observable } from "rxjs";
 
-import { Instance } from "./instance.model";
+import { Instance } from "../instances/instance.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 
 @Injectable()
@@ -37,7 +37,7 @@ export class InstanceService {
             })
             .catch((error: Response) => {
                 if (error.status === 422){
-                    this.flashMessageService.showMessage('The name is already in use.', 'alert-danger' );
+                    this.flashMessageService.showMessage('The name is already in use.', 'danger' );
                 }
                 return Observable.throw(error);
             });
@@ -95,7 +95,7 @@ export class InstanceService {
             })
             .catch((error: Response) => {
                 if (error.status === 422){
-                    this.flashMessageService.showMessage('The name is already in use.', 'alert-danger' );
+                    this.flashMessageService.showMessage('The name is already in use.', 'danger' );
                 }
                 return Observable.throw(error);
             });

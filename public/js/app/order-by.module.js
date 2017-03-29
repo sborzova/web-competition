@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { OrderByPipe } from "./results/order-by.pipe";
+import { OrderByPipe } from "./shared/order-by.pipe";
 export var OrderByModule = (function () {
     function OrderByModule() {
     }

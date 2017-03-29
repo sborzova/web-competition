@@ -3,8 +3,7 @@ import { ActivatedRoute, Params } from "@angular/router";
 import { Subscription } from "rxjs";
 
 import {SolutionService} from "../shared/solution.service";
-import {Solution} from "./solution.model";
-
+import {Solution} from "../shared/solution.model";
 
 @Component({
     selector: 'app-solution-validator-info',

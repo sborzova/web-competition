@@ -19,7 +19,7 @@ export var UsersComponent = (function () {
         var _this = this;
         this.usersService.deleteUser(user)
             .subscribe(function (result) {
-            _this.flashMessageService.showMessage('User was deleted.', 'alert-success');
+            _this.flashMessageService.showMessage('User was deleted.', 'success');
         }, function (error) { return console.error(error); });
     };
     UsersComponent.prototype.isMe = function (user) {

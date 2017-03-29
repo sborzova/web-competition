@@ -31,7 +31,7 @@ export class UsersComponent implements OnInit {
         this.usersService.deleteUser(user)
             .subscribe(
                 result => {
-                    this.flashMessageService.showMessage('User was deleted.', 'alert-success' );
+                    this.flashMessageService.showMessage('User was deleted.', 'success' );
                 },
                 error => console.error(error)
             );

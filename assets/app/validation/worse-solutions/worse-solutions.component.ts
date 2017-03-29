@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 import { SolutionService } from "../../shared/solution.service";
-import { Solution } from "../../user-solutions/solution.model";
+import {Solution} from "../../shared/solution.model";
 
 @Component({
     selector: 'app-worse-solutions',

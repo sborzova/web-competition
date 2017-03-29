@@ -10,11 +10,10 @@ export var ValidationComponent = (function () {
         this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
         this.solution = new SolutionCreate();
-        this.display = 'none';
     }
     ValidationComponent.prototype.ngOnInit = function () {
         if (!this.showValidator()) {
-            this.display = 'block';
+            document.getElementById('openModalNotView').click();
         }
     };
     ValidationComponent.prototype.showValidator = function () {
@@ -34,7 +33,7 @@ export var ValidationComponent = (function () {
                 .subscribe(function (data) {
                 var result = JSON.parse(data);
                 if (result.status == 400) {
-                    _this.flashMessageService.showMessage('Invalid XML format.', 'alert-danger');
+                    _this.flashMessageService.showMessage('Invalid XML format.', 'danger');
                 }
                 else {
                     var info = "";
@@ -76,7 +75,7 @@ export var ValidationComponent = (function () {
             }, function (error) { return console.error(error); });
         }
         else {
-            this.flashMessageService.showMessage('Insert file.', 'alert-info');
+            this.flashMessageService.showMessage('Insert file.', 'info');
         }
     };
     ValidationComponent.decorators = [

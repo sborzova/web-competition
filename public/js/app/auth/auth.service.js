@@ -20,7 +20,7 @@ export var AuthService = (function () {
             .map(function (response) { return response.json(); })
             .catch(function (error) {
             if (error.status === 422) {
-                _this.flashMessageService.showMessage('Email address is already in use.', 'alert-danger');
+                _this.flashMessageService.showMessage('Email address is already in use.', 'danger');
             }
             return Observable.throw(error);
         });
@@ -32,7 +32,7 @@ export var AuthService = (function () {
         return this.http.post(this.hostUrl.concat('signin'), body, { headers: headers })
             .map(function (response) { return response.json(); })
             .catch(function (error) {
-            _this.flashMessageService.showMessage('Invalid login credentials.', 'alert-danger');
+            _this.flashMessageService.showMessage('Invalid login credentials.', 'danger');
             return Observable.throw(error);
         });
     };

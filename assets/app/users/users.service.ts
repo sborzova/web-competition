@@ -63,7 +63,7 @@ export class UsersService {
             })
             .catch((error: Response) => {
                 if (error.status === 422){
-                    this.flashMessageService.showMessage('Email address is already in use.', 'alert-danger' );
+                    this.flashMessageService.showMessage('Email address is already in use.', 'danger' );
                 }
                 return Observable.throw(error);
             });

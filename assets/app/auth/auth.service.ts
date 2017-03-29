@@ -26,7 +26,7 @@ export class AuthService{
             .map((response: Response) => response.json())
             .catch((error: Response) => {
                 if (error.status === 422){
-                    this.flashMessageService.showMessage('Email address is already in use.', 'alert-danger' );
+                    this.flashMessageService.showMessage('Email address is already in use.', 'danger' );
                 }
                 return Observable.throw(error);
 
@@ -39,7 +39,7 @@ export class AuthService{
         return this.http.post(this.hostUrl.concat('signin'), body, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => {
-                this.flashMessageService.showMessage('Invalid login credentials.', 'alert-danger' );
+                this.flashMessageService.showMessage('Invalid login credentials.', 'danger' );
                 return Observable.throw(error);
             });
     }

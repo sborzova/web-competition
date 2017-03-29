@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { SolutionService } from "../../shared/solution.service";
-import { InstanceService } from "../../instances/instance.service";
+import { InstanceService } from "../../shared/instance.service";
 import { SortService } from "../../shared/sort.service";
 export var ResultsBestComponent = (function () {
     function ResultsBestComponent(solutionService, instanceService, resultsService) {

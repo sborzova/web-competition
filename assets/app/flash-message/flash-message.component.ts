@@ -5,11 +5,10 @@ import { FlashMessageService } from "./flash-messages.service";
 @Component({
     selector: 'app-flash-message',
     templateUrl: 'flash-message.component.html',
-    // styleUrls: ['flash-message.component.css']
+    styleUrls: ['flash-message.component.css']
 })
 export class FlashMessageComponent implements OnInit {
     message: FlashMessage;
-    display = 'none';
 
     constructor(private flashMessageService: FlashMessageService){
 
@@ -20,12 +19,9 @@ export class FlashMessageComponent implements OnInit {
             .subscribe(
                 (message: FlashMessage) => {
                     this.message = message;
-                    this.display = 'block';
+                    document.getElementById('openFlashMessage').click();
                 }
             )
     }
 
-    onOk(){
-        this.display = 'none';
-    }
 }

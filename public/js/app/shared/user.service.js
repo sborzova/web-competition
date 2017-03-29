@@ -33,7 +33,7 @@ export var UserService = (function () {
         })
             .catch(function (error) {
             if (error.status === 422) {
-                _this.flashMessageService.showMessage('Email address is already in use.', 'alert-danger');
+                _this.flashMessageService.showMessage('Email address is already in use.', 'danger');
             }
             return Observable.throw(error);
         });
@@ -51,7 +51,7 @@ export var UserService = (function () {
         })
             .catch(function (error) {
             if (error.status === 412) {
-                _this.flashMessageService.showMessage('Current password is incorrect.', 'alert-danger');
+                _this.flashMessageService.showMessage('Current password is incorrect.', 'danger');
             }
             return Observable.throw(error);
         });

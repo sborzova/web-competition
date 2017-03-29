@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Paper } from "./paper.model";
+import { Paper } from "../shared/paper.model";
 import { SolutionService } from "../shared/solution.service";
 import { PaperService } from "../shared/paper.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
@@ -61,7 +61,7 @@ export var UserSolutionsComponent = (function () {
             }
             this.solutionService.deletePaperFromSolution(solution)
                 .subscribe(function (solution) {
-                _this.flashMessageService.showMessage('Papers were deleted.', 'alert-success');
+                _this.flashMessageService.showMessage('Papers were deleted.', 'success');
                 _this.uncheckSelected();
             }, function (error) { return console.error(error); });
         }
@@ -79,13 +79,13 @@ export var UserSolutionsComponent = (function () {
                 }
                 else {
                     this.flashMessageService.showMessage('It is not possible to modify not existing paper. ' +
-                        'You must add paper first.', 'alert-danger');
+                        'You must add paper first.', 'danger');
                     return;
                 }
             }
             if (paperIds.size != 1) {
                 this.flashMessageService.showMessage('It is not possible to modify two different citations at a time. ' +
-                    'Please select the same citations only.', 'alert-danger');
+                    'Please select the same citations only.', 'danger');
             }
             var paperId = Array.from(paperIds)[0];
             var showMessage = false;
@@ -100,7 +100,7 @@ export var UserSolutionsComponent = (function () {
             }
             if (showMessage) {
                 this.flashMessageService.showMessage('The same citation is also used for other solutions, ' +
-                    'all of them are modified now', 'alert-info');
+                    'all of them are modified now.', 'info');
             }
             this.isEdited = true;
             this.submitted = false;
@@ -125,7 +125,7 @@ export var UserSolutionsComponent = (function () {
                     _this.editedPaper = null;
                     _this.uncheckSelected();
                     _this.showPaperForm = false;
-                    _this.flashMessageService.showMessage('Paper was updated', 'alert-success');
+                    _this.flashMessageService.showMessage('Paper was updated', 'success');
                 }, function (error) { return console.error(error); });
             }
             else {
@@ -144,7 +144,7 @@ export var UserSolutionsComponent = (function () {
                 .subscribe(function (result) { }, function (error) { return console.error(error); });
             s.paper = paper;
         }
-        this.flashMessageService.showMessage('Paper was saved.', 'alert-success');
+        this.flashMessageService.showMessage('Paper was saved.', 'success');
         this.uncheckSelected();
         this.showPaperForm = false;
     };
@@ -174,48 +174,39 @@ export var UserSolutionsComponent = (function () {
     UserSolutionsComponent.prototype.isSubmitted = function () {
         return this.submitted;
     };
-    // onQualityAsc(){
-    //     this.solutions = this.sortService.sortQualityAsc(this.solutions);
-    // }
-    //
-    // onQualityDesc(){
-    //     this.solutions = this.sortService.sortQualityDesc(this.solutions);
-    // }
-    //
-    // onScAsc(){
-    //     this.solutions = this.sortService.sortScAsc(this.solutions);
-    // }
-    //
-    // onScDesc(){
-    //     this.solutions = this.sortService.sortScDesc(this.solutions);
-    // }
-    //
-    // onTimeAsc(){
-    //     this.solutions = this.sortService.sortTimeAsc(this.solutions);
-    // }
-    //
-    // onTimeDesc(){
-    //     this.solutions = this.sortService.sortTimeDesc(this.solutions);
-    // }
-    //
-    // onRoomAsc(){
-    //     this.solutions = this.sortService.sortRoomAsc(this.solutions);
-    // }
-    //
-    // onRoomDesc(){
-    //     this.solutions = this.sortService.sortRoomDesc(this.solutions);
-    // }
-    //
-    // onDistributionAsc(){
-    //     this.solutions = this.sortService.sortDistributionAsc(this.solutions);
-    // }
-    //
-    // onDistributionDesc(){
-    //     this.solutions = this.sortService.sortDistributionDesc(this.solutions);
-    // }
+    UserSolutionsComponent.prototype.onQualityAsc = function () {
+        this.solutions = this.sortService.sortQualityAsc(this.solutions);
+    };
+    UserSolutionsComponent.prototype.onQualityDesc = function () {
+        this.solutions = this.sortService.sortQualityDesc(this.solutions);
+    };
+    UserSolutionsComponent.prototype.onScAsc = function () {
+        this.solutions = this.sortService.sortScAsc(this.solutions);
+    };
+    UserSolutionsComponent.prototype.onScDesc = function () {
+        this.solutions = this.sortService.sortScDesc(this.solutions);
+    };
+    UserSolutionsComponent.prototype.onTimeAsc = function () {
+        this.solutions = this.sortService.sortTimeAsc(this.solutions);
+    };
+    UserSolutionsComponent.prototype.onTimeDesc = function () {
+        this.solutions = this.sortService.sortTimeDesc(this.solutions);
+    };
+    UserSolutionsComponent.prototype.onRoomAsc = function () {
+        this.solutions = this.sortService.sortRoomAsc(this.solutions);
+    };
+    UserSolutionsComponent.prototype.onRoomDesc = function () {
+        this.solutions = this.sortService.sortRoomDesc(this.solutions);
+    };
+    UserSolutionsComponent.prototype.onDistributionAsc = function () {
+        this.solutions = this.sortService.sortDistributionAsc(this.solutions);
+    };
+    UserSolutionsComponent.prototype.onDistributionDesc = function () {
+        this.solutions = this.sortService.sortDistributionDesc(this.solutions);
+    };
     UserSolutionsComponent.prototype.checkIfSelected = function () {
         if (this.selectedSolutions.length == 0) {
-            this.flashMessageService.showMessage('Select solutions.', 'alert-info');
+            this.flashMessageService.showMessage('Select solutions.', 'info');
             return false;
         }
         return true;
@@ -230,13 +221,16 @@ export var UserSolutionsComponent = (function () {
         for (var _i = 0, _a = this.selectedSolutions; _i < _a.length; _i++) {
             var s = _a[_i];
             if (s.paper != null) {
-                this.flashMessageService.showMessage('Select only solutions with no papers.', 'alert-danger');
+                this.flashMessageService.showMessage('Select only solutions with no papers.', 'danger');
                 return false;
             }
         }
         return true;
     };
     UserSolutionsComponent.prototype.removePaperFromDatabase = function (paperIds) {
+        /**
+         *  Delete paper id from paperIds if it is related to any solution
+         */
         for (var _i = 0, _a = this.solutions; _i < _a.length; _i++) {
             var solution = _a[_i];
             if (solution.paper) {

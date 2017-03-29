@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var mongooseUniqueValidator = require('mongoose-unique-validator');
 
+var Paper = require('./paper');
+
 var schema = new Schema({
     unassigned: {type: Number, required: true},
     total: {type: Number, required: true},
@@ -19,5 +21,20 @@ var schema = new Schema({
 });
 
 schema.plugin(mongooseUniqueValidator);
+
+schema.post('remove', function (solution) {
+    if (solution.paper){
+        var solutionModel = mongoose.model('Solution', schema);
+        solutionModel.find()
+            .where('paper').equals(solution.paper)
+            .exec(function (err, solutions) {
+                if (solutions.length === 0){
+                    Paper.findById(solution.paper, function (err, paper) {
+                        paper.remove();
+                    })
+                }
+            })
+    }
+});
 
 module.exports = mongoose.model('Solution', schema);

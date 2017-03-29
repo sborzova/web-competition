@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var mongooseUniqueValidator = require('mongoose-unique-validator');
 
+var Solution = require('./solution');
+
 var schema = new Schema({
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
@@ -11,5 +13,15 @@ var schema = new Schema({
 });
 
 schema.plugin(mongooseUniqueValidator);
+
+schema.post('remove', function (user) {
+   Solution.find()
+       .where('user').equals(user)
+       .exec(function (err, solutions){
+           for (var i=0; i<solutions.length; i++){
+               solutions[i].remove();
+           }
+       });
+});
 
 module.exports = mongoose.model('User', schema);

@@ -18,7 +18,7 @@ import * as import10 from '@angular/core/src/metadata/view';
 import * as import11 from '@angular/core/src/linker/component_factory';
 import * as import12 from '@angular/common/src/directives/ng_if';
 import * as import13 from '@angular/core/src/linker/template_ref';
-import * as import14 from '../instances/escape-html.pipe';
+import * as import14 from '../shared/escape-html.pipe';
 import * as import15 from '@angular/core/src/security';
 var renderType_ValidatorInfoComponent_Host:import0.RenderComponentType = (null as any);
 class _View_ValidatorInfoComponent_Host0 extends import1.AppView<any> {

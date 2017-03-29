@@ -3,11 +3,10 @@ import { SessionStorageService } from "../shared/session-storage.service";
 export var InstancesComponent = (function () {
     function InstancesComponent(sessionStorageService) {
         this.sessionStorageService = sessionStorageService;
-        this.display = 'none';
     }
     InstancesComponent.prototype.ngOnInit = function () {
         if (!this.showInstances()) {
-            this.display = 'block';
+            document.getElementById('openModalNotView').click();
         }
     };
     InstancesComponent.prototype.showInstances = function () {

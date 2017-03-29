@@ -29,7 +29,7 @@ export class ProfileEditPasswordComponent implements OnInit{
             this.userService.updatePassword(this.user)
                 .subscribe(
                     () => {
-                        this.flashMessageService.showMessage('Password was updated.', 'alert-success' );
+                        this.flashMessageService.showMessage('Password was updated.', 'success' );
                         this.navigateBack();
                     },
                     error => console.error(error)

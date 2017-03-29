@@ -14,13 +14,13 @@ import * as import3 from './instance-stats.component';
 import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../instance.service';
+import * as import8 from '../../shared/instance.service';
 import * as import9 from '@angular/router/src/router_state';
 import * as import10 from '@angular/core/src/metadata/view';
 import * as import11 from '@angular/core/src/linker/component_factory';
 import * as import12 from '@angular/common/src/directives/ng_if';
 import * as import13 from '@angular/core/src/linker/template_ref';
-import * as import14 from '../escape-html.pipe';
+import * as import14 from '../../shared/escape-html.pipe';
 import * as import15 from '@angular/core/src/security';
 var renderType_InstanceStatsComponent_Host = null;
 var _View_InstanceStatsComponent_Host0 = (function (_super) {

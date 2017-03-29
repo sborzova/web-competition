@@ -9,7 +9,7 @@ import {InstanceEditComponent} from "./instance-update/instance-update.component
 import {InstanceStatsComponent} from "./instance-stats/instance-stats.component";
 import {OrderByModule} from "../order-by.module";
 import {EscapeHtmlModule} from "../escape-html.module";
-import {InstanceService} from "./instance.service";
+import {InstanceService} from "../shared/instance.service";
 import {FlashMessageService} from "../flash-message/flash-messages.service";
 
 @NgModule({

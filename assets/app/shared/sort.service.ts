@@ -1,10 +1,10 @@
 import {Injectable} from "@angular/core";
-import {SolutionResult} from "../results/solution-result.model";
+import {Solution} from "./solution.model";
 
 @Injectable()
 export class SortService {
 
-    sortQualityAsc(solutions: SolutionResult[]){
+    sortQualityAsc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
             let aUnassigned = a.unassigned;
             let bUnassigned = b.unassigned;
@@ -19,7 +19,7 @@ export class SortService {
         })
     }
 
-    sortQualityDesc(solutions: SolutionResult[]){
+    sortQualityDesc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
             let aUnassigned = a.unassigned;
             let bUnassigned = b.unassigned;
@@ -34,7 +34,7 @@ export class SortService {
         })
     }
 
-    sortScAsc(solutions: SolutionResult[]){
+    sortScAsc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
             if (a.sc < b.sc)
                 return -1;
@@ -44,7 +44,7 @@ export class SortService {
         })
     }
 
-    sortScDesc(solutions: SolutionResult[]){
+    sortScDesc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
             if (a.sc < b.sc)
                 return 1;
@@ -54,7 +54,7 @@ export class SortService {
         })
     }
 
-    sortTimeAsc(solutions: SolutionResult[]){
+    sortTimeAsc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
             if (a.time < b.time)
                 return -1;
@@ -64,7 +64,7 @@ export class SortService {
         })
     }
 
-    sortTimeDesc(solutions: SolutionResult[]){
+    sortTimeDesc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
             if (a.time < b.time)
                 return 1;
@@ -74,7 +74,7 @@ export class SortService {
         })
     }
 
-    sortRoomAsc(solutions: SolutionResult[]){
+    sortRoomAsc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
             if (a.room < b.room)
                 return -1;
@@ -84,7 +84,7 @@ export class SortService {
         })
     }
 
-    sortRoomDesc(solutions: SolutionResult[]){
+    sortRoomDesc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
             if (a.room < b.room)
                 return 1;
@@ -94,7 +94,7 @@ export class SortService {
         })
     }
 
-    sortDistributionAsc(solutions: SolutionResult[]){
+    sortDistributionAsc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
             if (a.distr < b.distr)
                 return -1;
@@ -104,7 +104,7 @@ export class SortService {
         })
     }
 
-    sortDistributionDesc(solutions: SolutionResult[]){
+    sortDistributionDesc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
             if (a.distr < b.distr)
                 return 1;

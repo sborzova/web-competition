@@ -22,7 +22,7 @@ export var ProfileEditComponent = (function () {
             this.userService.updateUser(this.user)
                 .subscribe(function (data) {
                 _this.sessionStorageService.setSessionStorageAuth(data);
-                _this.flashMessageService.showMessage('Profile was updated.', 'alert-success');
+                _this.flashMessageService.showMessage('Profile was updated.', 'success');
                 _this.navigateBack();
             }, function (error) { return console.error(error); });
         }

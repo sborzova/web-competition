@@ -15,7 +15,7 @@ import * as import3 from '../order-by.module';
 import * as import4 from '@angular/router/src/router_module';
 import * as import5 from '@angular/common/src/localization';
 import * as import6 from '../shared/paper.service';
-import * as import7 from '../instances/instance.service';
+import * as import7 from '../shared/instance.service';
 import * as import8 from '../shared/solution.service';
 import * as import9 from '../shared/sort.service';
 import * as import11 from './results-best/results-best.component.ngfactory';

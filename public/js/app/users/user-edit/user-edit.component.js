@@ -43,7 +43,7 @@ export var UserEditComponent = (function () {
             this.user.role = this.selectedRole;
             this.usersService.updateUser(this.user)
                 .subscribe(function (data) {
-                _this.flashMessageService.showMessage('User was updated.', 'alert-success');
+                _this.flashMessageService.showMessage('User was updated.', 'success');
                 _this.navigateBack();
             }, function (error) { return console.error(error); });
         }

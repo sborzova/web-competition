@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Params } from "@angular/router";
 
 import { Instance } from "../instance.model";
-import { InstanceService } from "../instance.service";
+import { InstanceService } from "../../shared/instance.service";
 import { Subscription } from "rxjs";
 
 @Component({

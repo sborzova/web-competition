@@ -1,16 +1,15 @@
 import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 
-import { SolutionResult } from "../solution-result.model";
-import { SolutionService } from "../../shared/solution.service";
 import {SortService} from "../../shared/sort.service";
+import {Solution} from "../../shared/solution.model";
 
 @Component({
     selector: 'app-results-author-technique',
     templateUrl: './results-author-technique.component.html'
 })
 export class ResultsAuthorTechniqueComponent implements OnChanges{
-    @Input() solutions: SolutionResult[];
-    solutionsAuthorInstanceTechnique: SolutionResult[];
+    @Input() solutions: Solution[];
+    solutionsAuthorInstanceTechnique: Solution[];
     fileSaver = require('file-saver');
     showPapers: boolean = false;
 
@@ -20,7 +19,7 @@ export class ResultsAuthorTechniqueComponent implements OnChanges{
         this.solutionsAuthorInstanceTechnique = null;
     }
 
-    onDownload(solution: SolutionResult){
+    onDownload(solution: Solution){
         let file = new File([solution.data], 'solution.xml', {type: "text/xml;charset=utf-8"});
         this.fileSaver.saveAs(file);
     }

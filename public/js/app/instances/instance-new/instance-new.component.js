@@ -1,7 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { InstanceService } from "../instance.service";
+import { InstanceService } from "../../shared/instance.service";
 import { Instance } from "../instance.model";
 import { minValue } from "../min-value.validator";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
@@ -59,7 +59,7 @@ export var InstanceCreateComponent = (function () {
                 _this.navigateBack();
                 _this.instancesService.saveFiles(fd, id)
                     .subscribe(function () {
-                    _this.flashMessageService.showMessage('Instance was created.', 'alert-success');
+                    _this.flashMessageService.showMessage('Instance was created.', 'success');
                 }, function (error) {
                     console.error(error);
                 });

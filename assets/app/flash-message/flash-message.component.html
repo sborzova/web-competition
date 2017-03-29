@@ -1,9 +1,14 @@
-<div [ngStyle]="{'display': display}">
-    <div class="grayOutDiv"></div>
-    <div class="alert flash-message {{message?.cssClass}}">
-        <div style="vertical-align: center">{{message?.text}}</div>
-        <div align="right">
-            <button type="button" class="btn btn-default" (click)="onOk()">OK</button>
+<button id="openFlashMessage" [hidden]="true" data-toggle="modal" data-target="#myModal"></button>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog {{ message?.cssClass }}" role="document">
+        <div class="modal-content">
+            <div class="modal-body" style="text-align: center; padding: 5% 0 5% 0">
+                <h5>{{ message?.text }}</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
         </div>
     </div>
 </div>
