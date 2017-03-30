@@ -3,7 +3,6 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var bcrypt = require('bcryptjs');
 
 var appRoutes = require('./routes/app');
 var userRoutes = require('./routes/user');
@@ -18,18 +17,19 @@ mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc'
 //save admin if does not exist
 var User = require('./models/user');
 var emailAdmin = 'hanka@fi.muni.cz';
-var user = new User({
-    firstName: 'Hana',
-    lastName: 'Rudová',
-    password: bcrypt.hashSync('1234', 10),
-    email: emailAdmin,
-    role: 'admin'
-});
 
 User.findOne({email: emailAdmin}, function(err, admin) {
     if (err)
       console.error(err);
     if (!admin){
+        var bcrypt = require('bcryptjs');
+        var user = new User({
+            firstName: 'Hana',
+            lastName: 'Rudová',
+            password: bcrypt.hashSync('1234', 10),
+            email: emailAdmin,
+            role: 'admin'
+        });
         user.save(function(err, result) {
             if (err) {
                 console.error(err);
