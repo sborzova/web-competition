@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var helper = require('sendgrid').mail;
 
 var User = require('../models/user');
 
@@ -21,7 +20,10 @@ router.post('/email', function (req, res) {
                 });
             }
             for (var i=0; i<users.length; i++){
-                var from_email = new helper.Email('no-reply@test-cttcompetition.herokuapp.com');
+                console.log(req.body.content);
+                console.log(req.body.subject);
+                var helper = require('sendgrid').mail;
+                var from_email = new helper.Email('no-reply@test-cttcompetition.com');
                 var to_email = new helper.Email('borzovasilvia@gmail.com');
                 var subject = req.body.subject;
                 var content = new helper.Content('text/plain', req.body.content);
