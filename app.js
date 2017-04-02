@@ -15,50 +15,50 @@ var app = express();
 mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc');
 
 //save admin if does not exist
-var User = require('./models/user');
-var emailAdmin = 'hanka@fi.muni.cz';
-
-User.findOne({email: emailAdmin}, function(err, admin) {
-    if (err)
-      console.error(err);
-    if (!admin){
-        var bcrypt = require('bcryptjs');
-        var user = new User({
-            firstName: 'Hana',
-            lastName: 'Rudová',
-            password: bcrypt.hashSync('1234', 10),
-            email: emailAdmin,
-            role: 'admin'
-        });
-        user.save(function(err, result) {
-            if (err) {
-                console.error(err);
-            }
-            console.log(result);
-        });
-    }
-});
+// var User = require('./models/user');
+// var emailAdmin = 'hanka@fi.muni.cz';
+//
+// User.findOne({email: emailAdmin}, function(err, admin) {
+//     if (err)
+//       console.error(err);
+//     if (!admin){
+//         var bcrypt = require('bcryptjs');
+//         var user = new User({
+//             firstName: 'Hana',
+//             lastName: 'Rudová',
+//             password: bcrypt.hashSync('1234', 10),
+//             email: emailAdmin,
+//             role: 'admin'
+//         });
+//         user.save(function(err, result) {
+//             if (err) {
+//                 console.error(err);
+//             }
+//             console.log(result);
+//         });
+//     }
+// });
 
 //set preference competition is not running
-var Preference = require('./models/preference');
-var preferenceName = 'competitionIsOn';
-var preferenceDefault = new Preference({
-    name: preferenceName,
-    state: false
-});
-
-Preference.findOne({name: preferenceName}, function (err, preference) {
-    if (err)
-        console.error(err);
-    if (!preference){
-        preferenceDefault.save(function(err, result) {
-            if (err) {
-                console.error(err);
-            }
-            console.log(result);
-        });
-    }
-});
+// var Preference = require('./models/preference');
+// var preferenceName = 'competitionIsOn';
+// var preferenceDefault = new Preference({
+//     name: preferenceName,
+//     state: false
+// });
+//
+// Preference.findOne({name: preferenceName}, function (err, preference) {
+//     if (err)
+//         console.error(err);
+//     if (!preference){
+//         preferenceDefault.save(function(err, result) {
+//             if (err) {
+//                 console.error(err);
+//             }
+//             console.log(result);
+//         });
+//     }
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

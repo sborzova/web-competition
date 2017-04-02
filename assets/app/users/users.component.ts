@@ -40,4 +40,7 @@ export class UsersComponent implements OnInit {
     isMe(user: User){
       return this.sessionStorageService.getEmailLoggedIn() == user.email;
     }
+
+    onSendEmail(){
+    }
 }

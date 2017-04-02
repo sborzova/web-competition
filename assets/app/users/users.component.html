@@ -1,5 +1,12 @@
 <div class="container" style="margin-top: 3%">
     <div class="row">
+        <div>
+            <button class="btn btn-primary btn-xs"
+                    title="Send email to all users"
+                    (click)="onSendEmail()">
+            <span class="glyphicon glyphicon-envelope"></span>&nbsp;Send email
+            </button>
+        </div>
         <div *ngIf="users" class="col-xs-12">
             <table class="table">
                 <thead>

@@ -25,6 +25,8 @@ export var UsersComponent = (function () {
     UsersComponent.prototype.isMe = function (user) {
         return this.sessionStorageService.getEmailLoggedIn() == user.email;
     };
+    UsersComponent.prototype.onSendEmail = function () {
+    };
     UsersComponent.decorators = [
         { type: Component, args: [{
                     selector: 'app-users',

@@ -66,13 +66,21 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
   _text_1:any;
   _el_2:any;
   _text_3:any;
-  _anchor_4:any;
-  /*private*/ _appEl_4:import2.AppElement;
-  _TemplateRef_4_5:any;
-  _NgIf_4_6:import13.NgIf;
+  _el_4:any;
   _text_5:any;
-  _text_6:any;
-  /*private*/ _expr_0:any;
+  _el_6:any;
+  _text_7:any;
+  _el_8:any;
+  _text_9:any;
+  _text_10:any;
+  _text_11:any;
+  _anchor_12:any;
+  /*private*/ _appEl_12:import2.AppElement;
+  _TemplateRef_12_5:any;
+  _NgIf_12_6:import13.NgIf;
+  _text_13:any;
+  _text_14:any;
+  /*private*/ _expr_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_UsersComponent0,renderType_UsersComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -85,38 +93,63 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
     this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
     this.renderer.setElementAttribute(this._el_2,'class','row');
     this._text_3 = this.renderer.createText(this._el_2,'\n        ',(null as any));
-    this._anchor_4 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
-    this._appEl_4 = new import2.AppElement(4,2,this,this._anchor_4);
-    this._TemplateRef_4_5 = new import14.TemplateRef_(this._appEl_4,viewFactory_UsersComponent1);
-    this._NgIf_4_6 = new import13.NgIf(this._appEl_4.vcRef,this._TemplateRef_4_5);
-    this._text_5 = this.renderer.createText(this._el_2,'\n\n    ',(null as any));
-    this._text_6 = this.renderer.createText(this._el_0,'\n',(null as any));
-    this._expr_0 = import7.UNINITIALIZED;
+    this._el_4 = this.renderer.createElement(this._el_2,'div',(null as any));
+    this._text_5 = this.renderer.createText(this._el_4,'\n            ',(null as any));
+    this._el_6 = this.renderer.createElement(this._el_4,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_6,'class','btn btn-primary btn-xs');
+    this.renderer.setElementAttribute(this._el_6,'title','Send email to all users');
+    this._text_7 = this.renderer.createText(this._el_6,'\n            ',(null as any));
+    this._el_8 = this.renderer.createElement(this._el_6,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_8,'class','glyphicon glyphicon-envelope');
+    this._text_9 = this.renderer.createText(this._el_6,' Send email\n            ',(null as any));
+    this._text_10 = this.renderer.createText(this._el_4,'\n        ',(null as any));
+    this._text_11 = this.renderer.createText(this._el_2,'\n        ',(null as any));
+    this._anchor_12 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
+    this._appEl_12 = new import2.AppElement(12,2,this,this._anchor_12);
+    this._TemplateRef_12_5 = new import14.TemplateRef_(this._appEl_12,viewFactory_UsersComponent1);
+    this._NgIf_12_6 = new import13.NgIf(this._appEl_12.vcRef,this._TemplateRef_12_5);
+    this._text_13 = this.renderer.createText(this._el_2,'\n\n    ',(null as any));
+    this._text_14 = this.renderer.createText(this._el_0,'\n',(null as any));
+    var disposable_0:Function = this.renderer.listen(this._el_6,'click',this.eventHandler(this._handle_click_6_0.bind(this)));
+    this._expr_1 = import7.UNINITIALIZED;
     this.init([],[
       this._el_0,
       this._text_1,
       this._el_2,
       this._text_3,
-      this._anchor_4,
+      this._el_4,
       this._text_5,
-      this._text_6
+      this._el_6,
+      this._text_7,
+      this._el_8,
+      this._text_9,
+      this._text_10,
+      this._text_11,
+      this._anchor_12,
+      this._text_13,
+      this._text_14
     ]
-    ,[],[]);
+    ,[disposable_0],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import14.TemplateRef) && (4 === requestNodeIndex))) { return this._TemplateRef_4_5; }
-    if (((token === import13.NgIf) && (4 === requestNodeIndex))) { return this._NgIf_4_6; }
+    if (((token === import14.TemplateRef) && (12 === requestNodeIndex))) { return this._TemplateRef_12_5; }
+    if (((token === import13.NgIf) && (12 === requestNodeIndex))) { return this._NgIf_12_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_0:any = this.context.users;
-    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this._NgIf_4_6.ngIf = currVal_0;
-      this._expr_0 = currVal_0;
+    const currVal_1:any = this.context.users;
+    if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
+      this._NgIf_12_6.ngIf = currVal_1;
+      this._expr_1 = currVal_1;
     }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
+  }
+  private _handle_click_6_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this.context.onSendEmail()) !== false);
+    return (true && pd_0);
   }
 }
 export function viewFactory_UsersComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UsersComponent> {

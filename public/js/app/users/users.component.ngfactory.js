@@ -82,41 +82,66 @@ var _View_UsersComponent0 = (function (_super) {
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'row');
         this._text_3 = this.renderer.createText(this._el_2, '\n        ', null);
-        this._anchor_4 = this.renderer.createTemplateAnchor(this._el_2, null);
-        this._appEl_4 = new import2.AppElement(4, 2, this, this._anchor_4);
-        this._TemplateRef_4_5 = new import14.TemplateRef_(this._appEl_4, viewFactory_UsersComponent1);
-        this._NgIf_4_6 = new import13.NgIf(this._appEl_4.vcRef, this._TemplateRef_4_5);
-        this._text_5 = this.renderer.createText(this._el_2, '\n\n    ', null);
-        this._text_6 = this.renderer.createText(this._el_0, '\n', null);
-        this._expr_0 = import7.UNINITIALIZED;
+        this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
+        this._text_5 = this.renderer.createText(this._el_4, '\n            ', null);
+        this._el_6 = this.renderer.createElement(this._el_4, 'button', null);
+        this.renderer.setElementAttribute(this._el_6, 'class', 'btn btn-primary btn-xs');
+        this.renderer.setElementAttribute(this._el_6, 'title', 'Send email to all users');
+        this._text_7 = this.renderer.createText(this._el_6, '\n            ', null);
+        this._el_8 = this.renderer.createElement(this._el_6, 'span', null);
+        this.renderer.setElementAttribute(this._el_8, 'class', 'glyphicon glyphicon-envelope');
+        this._text_9 = this.renderer.createText(this._el_6, ' Send email\n            ', null);
+        this._text_10 = this.renderer.createText(this._el_4, '\n        ', null);
+        this._text_11 = this.renderer.createText(this._el_2, '\n        ', null);
+        this._anchor_12 = this.renderer.createTemplateAnchor(this._el_2, null);
+        this._appEl_12 = new import2.AppElement(12, 2, this, this._anchor_12);
+        this._TemplateRef_12_5 = new import14.TemplateRef_(this._appEl_12, viewFactory_UsersComponent1);
+        this._NgIf_12_6 = new import13.NgIf(this._appEl_12.vcRef, this._TemplateRef_12_5);
+        this._text_13 = this.renderer.createText(this._el_2, '\n\n    ', null);
+        this._text_14 = this.renderer.createText(this._el_0, '\n', null);
+        var disposable_0 = this.renderer.listen(this._el_6, 'click', this.eventHandler(this._handle_click_6_0.bind(this)));
+        this._expr_1 = import7.UNINITIALIZED;
         this.init([], [
             this._el_0,
             this._text_1,
             this._el_2,
             this._text_3,
-            this._anchor_4,
+            this._el_4,
             this._text_5,
-            this._text_6
-        ], [], []);
+            this._el_6,
+            this._text_7,
+            this._el_8,
+            this._text_9,
+            this._text_10,
+            this._text_11,
+            this._anchor_12,
+            this._text_13,
+            this._text_14
+        ], [disposable_0], []);
         return null;
     };
     _View_UsersComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import14.TemplateRef) && (4 === requestNodeIndex))) {
-            return this._TemplateRef_4_5;
+        if (((token === import14.TemplateRef) && (12 === requestNodeIndex))) {
+            return this._TemplateRef_12_5;
         }
-        if (((token === import13.NgIf) && (4 === requestNodeIndex))) {
-            return this._NgIf_4_6;
+        if (((token === import13.NgIf) && (12 === requestNodeIndex))) {
+            return this._NgIf_12_6;
         }
         return notFoundResult;
     };
     _View_UsersComponent0.prototype.detectChangesInternal = function (throwOnChange) {
-        var currVal_0 = this.context.users;
-        if (import4.checkBinding(throwOnChange, this._expr_0, currVal_0)) {
-            this._NgIf_4_6.ngIf = currVal_0;
-            this._expr_0 = currVal_0;
+        var currVal_1 = this.context.users;
+        if (import4.checkBinding(throwOnChange, this._expr_1, currVal_1)) {
+            this._NgIf_12_6.ngIf = currVal_1;
+            this._expr_1 = currVal_1;
         }
         this.detectContentChildrenChanges(throwOnChange);
         this.detectViewChildrenChanges(throwOnChange);
+    };
+    _View_UsersComponent0.prototype._handle_click_6_0 = function ($event) {
+        this.markPathToRootAsCheckOnce();
+        var pd_0 = (this.context.onSendEmail() !== false);
+        return (true && pd_0);
     };
     return _View_UsersComponent0;
 }(import1.AppView));
