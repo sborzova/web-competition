@@ -19,6 +19,9 @@ export class EmailService {
         const body = JSON.stringify(email);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('email'), body, {headers: headers})
+            .map((response: Response) => {
+                return response.json();
+            })
             .catch((error: Response) => {
                 return Observable.throw(error);
             });
