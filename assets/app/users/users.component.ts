@@ -59,6 +59,7 @@ export class UsersComponent implements OnInit {
         this.submitted = true;
         if (this.myForm.valid) {
             document.getElementById('hideEmailForm').click();
+            this.submitted = false;
             const email = new Email(
                 this.myForm.value.subject,
                 this.myForm.value.content

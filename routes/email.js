@@ -35,9 +35,9 @@ router.post('/email', function (req, res) {
                 });
 
                 sg.API(request, function(error, response) {
-                    return res.status(response.statusCode).json({
-                        message: response.body
-                    });
+                    console.log(response.statusCode);
+                    console.log(response.body);
+                    console.log(response.headers);
                 });
             }
         });

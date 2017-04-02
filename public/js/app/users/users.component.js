@@ -41,6 +41,7 @@ export var UsersComponent = (function () {
         this.submitted = true;
         if (this.myForm.valid) {
             document.getElementById('hideEmailForm').click();
+            this.submitted = false;
             var email = new Email(this.myForm.value.subject, this.myForm.value.content);
             this.emailService.sendEmailToAll(email)
                 .subscribe(function () {
