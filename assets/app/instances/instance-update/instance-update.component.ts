@@ -14,7 +14,7 @@ import { FlashMessageService } from "../../flash-message/flash-messages.service"
 })
 export class InstanceEditComponent implements OnInit, OnDestroy {
     myForm: FormGroup;
-    @Input() instance: Instance;
+    instance: Instance;
     private submitted: boolean = false;
     @ViewChild('stats') statsElem;
     @ViewChild('data') dataElem;

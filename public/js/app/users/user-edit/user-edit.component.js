@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { UsersService } from "../users.service";
@@ -73,8 +73,5 @@ export var UserEditComponent = (function () {
         { type: ActivatedRoute, },
         { type: FlashMessageService, },
     ];
-    UserEditComponent.propDecorators = {
-        'user': [{ type: Input },],
-    };
     return UserEditComponent;
 }());

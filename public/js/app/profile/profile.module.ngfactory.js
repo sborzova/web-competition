@@ -14,63 +14,64 @@ import * as import2 from '@angular/forms/src/directives';
 import * as import3 from '@angular/forms/src/form_providers';
 import * as import4 from '@angular/common/src/common_module';
 import * as import5 from '@angular/router/src/router_module';
-import * as import6 from '@angular/forms/src/form_builder';
-import * as import7 from '@angular/forms/src/directives/radio_control_value_accessor';
-import * as import8 from '@angular/common/src/localization';
-import * as import9 from '../shared/user.service';
-import * as import11 from './profile-edit/profile-edit.component.ngfactory';
-import * as import12 from './profile-edit-password/profile-edit-password.component.ngfactory';
-import * as import13 from './profile-info/profile-info.component.ngfactory';
-import * as import14 from '@angular/core/src/i18n/tokens';
-import * as import15 from './profile-edit/profile-edit.component';
-import * as import16 from './profile-edit-password/profile-edit-password.component';
-import * as import17 from './profile-info/profile-info.component';
-import * as import18 from '@angular/http/src/http';
-import * as import19 from '../flash-message/flash-messages.service';
-import * as import20 from '@angular/router/src/router_config_loader';
+import * as import6 from '../equal-validator.module';
+import * as import7 from '@angular/forms/src/form_builder';
+import * as import8 from '@angular/forms/src/directives/radio_control_value_accessor';
+import * as import9 from '@angular/common/src/localization';
+import * as import10 from '../shared/user.service';
+import * as import12 from './profile-edit/profile-edit.component.ngfactory';
+import * as import13 from './profile-edit-password/profile-edit-password.component.ngfactory';
+import * as import14 from './profile-info/profile-info.component.ngfactory';
+import * as import15 from '@angular/core/src/i18n/tokens';
+import * as import16 from './profile-edit/profile-edit.component';
+import * as import17 from './profile-edit-password/profile-edit-password.component';
+import * as import18 from './profile-info/profile-info.component';
+import * as import19 from '@angular/http/src/http';
+import * as import20 from '../flash-message/flash-messages.service';
+import * as import21 from '@angular/router/src/router_config_loader';
 var ProfileModuleInjector = (function (_super) {
     __extends(ProfileModuleInjector, _super);
     function ProfileModuleInjector(parent) {
         _super.call(this, parent, [
-            import11.ProfileEditComponentNgFactory,
-            import12.ProfileEditPasswordComponentNgFactory,
-            import13.ProfileInfoComponentNgFactory
+            import12.ProfileEditComponentNgFactory,
+            import13.ProfileEditPasswordComponentNgFactory,
+            import14.ProfileInfoComponentNgFactory
         ], []);
     }
-    Object.defineProperty(ProfileModuleInjector.prototype, "_FormBuilder_5", {
+    Object.defineProperty(ProfileModuleInjector.prototype, "_FormBuilder_6", {
         get: function () {
-            if ((this.__FormBuilder_5 == null)) {
-                (this.__FormBuilder_5 = new import6.FormBuilder());
+            if ((this.__FormBuilder_6 == null)) {
+                (this.__FormBuilder_6 = new import7.FormBuilder());
             }
-            return this.__FormBuilder_5;
+            return this.__FormBuilder_6;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ProfileModuleInjector.prototype, "_RadioControlRegistry_6", {
+    Object.defineProperty(ProfileModuleInjector.prototype, "_RadioControlRegistry_7", {
         get: function () {
-            if ((this.__RadioControlRegistry_6 == null)) {
-                (this.__RadioControlRegistry_6 = new import7.RadioControlRegistry());
+            if ((this.__RadioControlRegistry_7 == null)) {
+                (this.__RadioControlRegistry_7 = new import8.RadioControlRegistry());
             }
-            return this.__RadioControlRegistry_6;
+            return this.__RadioControlRegistry_7;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ProfileModuleInjector.prototype, "_NgLocalization_7", {
+    Object.defineProperty(ProfileModuleInjector.prototype, "_NgLocalization_8", {
         get: function () {
-            if ((this.__NgLocalization_7 == null)) {
-                (this.__NgLocalization_7 = new import8.NgLocaleLocalization(this.parent.get(import14.LOCALE_ID)));
+            if ((this.__NgLocalization_8 == null)) {
+                (this.__NgLocalization_8 = new import9.NgLocaleLocalization(this.parent.get(import15.LOCALE_ID)));
             }
-            return this.__NgLocalization_7;
+            return this.__NgLocalization_8;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ProfileModuleInjector.prototype, "_ROUTES_8", {
+    Object.defineProperty(ProfileModuleInjector.prototype, "_ROUTES_9", {
         get: function () {
-            if ((this.__ROUTES_8 == null)) {
-                (this.__ROUTES_8 = [[{
+            if ((this.__ROUTES_9 == null)) {
+                (this.__ROUTES_9 = [[{
                             path: '',
                             children: [
                                 {
@@ -80,31 +81,31 @@ var ProfileModuleInjector = (function (_super) {
                                 },
                                 {
                                     path: 'edit',
-                                    component: import15.ProfileEditComponent
+                                    component: import16.ProfileEditComponent
                                 },
                                 {
                                     path: 'editpass',
-                                    component: import16.ProfileEditPasswordComponent
+                                    component: import17.ProfileEditPasswordComponent
                                 },
                                 {
                                     path: 'info',
-                                    component: import17.ProfileInfoComponent
+                                    component: import18.ProfileInfoComponent
                                 }
                             ]
                         }
                     ]]);
             }
-            return this.__ROUTES_8;
+            return this.__ROUTES_9;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ProfileModuleInjector.prototype, "_UserService_9", {
+    Object.defineProperty(ProfileModuleInjector.prototype, "_UserService_10", {
         get: function () {
-            if ((this.__UserService_9 == null)) {
-                (this.__UserService_9 = new import9.UserService(this.parent.get(import18.Http), this.parent.get(import19.FlashMessageService)));
+            if ((this.__UserService_10 == null)) {
+                (this.__UserService_10 = new import10.UserService(this.parent.get(import19.Http), this.parent.get(import20.FlashMessageService)));
             }
-            return this.__UserService_9;
+            return this.__UserService_10;
         },
         enumerable: true,
         configurable: true
@@ -114,8 +115,9 @@ var ProfileModuleInjector = (function (_super) {
         this._ReactiveFormsModule_1 = new import3.ReactiveFormsModule();
         this._CommonModule_2 = new import4.CommonModule();
         this._RouterModule_3 = new import5.RouterModule(this.parent.get(import5.ROUTER_FORROOT_GUARD, null));
-        this._ProfileModule_4 = new import1.ProfileModule();
-        return this._ProfileModule_4;
+        this._EqualValidatorModule_4 = new import6.EqualValidatorModule();
+        this._ProfileModule_5 = new import1.ProfileModule();
+        return this._ProfileModule_5;
     };
     ProfileModuleInjector.prototype.getInternal = function (token, notFoundResult) {
         if ((token === import2.InternalFormsSharedModule)) {
@@ -130,23 +132,26 @@ var ProfileModuleInjector = (function (_super) {
         if ((token === import5.RouterModule)) {
             return this._RouterModule_3;
         }
+        if ((token === import6.EqualValidatorModule)) {
+            return this._EqualValidatorModule_4;
+        }
         if ((token === import1.ProfileModule)) {
-            return this._ProfileModule_4;
+            return this._ProfileModule_5;
         }
-        if ((token === import6.FormBuilder)) {
-            return this._FormBuilder_5;
+        if ((token === import7.FormBuilder)) {
+            return this._FormBuilder_6;
         }
-        if ((token === import7.RadioControlRegistry)) {
-            return this._RadioControlRegistry_6;
+        if ((token === import8.RadioControlRegistry)) {
+            return this._RadioControlRegistry_7;
         }
-        if ((token === import8.NgLocalization)) {
-            return this._NgLocalization_7;
+        if ((token === import9.NgLocalization)) {
+            return this._NgLocalization_8;
         }
-        if ((token === import20.ROUTES)) {
-            return this._ROUTES_8;
+        if ((token === import21.ROUTES)) {
+            return this._ROUTES_9;
         }
-        if ((token === import9.UserService)) {
-            return this._UserService_9;
+        if ((token === import10.UserService)) {
+            return this._UserService_10;
         }
         return notFoundResult;
     };

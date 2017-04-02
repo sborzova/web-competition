@@ -11,7 +11,7 @@ import {SessionStorageService} from "../shared/session-storage.service";
     templateUrl: 'users.component.html'
 })
 export class UsersComponent implements OnInit {
-    @Input() users : User[];
+    users : User[];
 
     constructor(private usersService: UsersService,
                 private sessionStorageService: SessionStorageService,

@@ -12,7 +12,7 @@ import {FlashMessageService} from "../../flash-message/flash-messages.service";
 })
 export class UserEditPasswordComponent{
     myForm: FormGroup;
-    @Input() user: User;
+    user: User;
     private submitted: boolean = false;
     private subscription: Subscription;
 

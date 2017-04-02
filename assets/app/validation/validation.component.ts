@@ -87,7 +87,6 @@ export class ValidationComponent implements OnInit {
                                 instanceName
                             );
                             this.validationService.successValidationShowResult(validation, solutionInput.files[0]);
-                            this.solutionElem.nativeElement.value = "";
                         }
                     },
                     error => console.error(error)

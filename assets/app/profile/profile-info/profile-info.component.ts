@@ -9,7 +9,7 @@ import { UserService } from "../../shared/user.service";
     templateUrl: 'profile-info.component.html'
 })
 export class ProfileInfoComponent implements OnInit {
-    @Input() user: User;
+    user: User;
 
     constructor(private userService: UserService) {
     }

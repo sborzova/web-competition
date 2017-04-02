@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from "../../shared/user.service";
 export var ProfileInfoComponent = (function () {
     function ProfileInfoComponent(userService) {
@@ -21,8 +21,5 @@ export var ProfileInfoComponent = (function () {
     ProfileInfoComponent.ctorParameters = [
         { type: UserService, },
     ];
-    ProfileInfoComponent.propDecorators = {
-        'user': [{ type: Input },],
-    };
     return ProfileInfoComponent;
 }());

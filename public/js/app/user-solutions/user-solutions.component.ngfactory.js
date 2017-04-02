@@ -1246,7 +1246,7 @@ var _View_UserSolutionsComponent7 = (function (_super) {
         this._expr_16 = import7.UNINITIALIZED;
         var disposable_3 = this.renderer.listen(this._el_30, 'click', this.eventHandler(this._handle_click_30_0.bind(this)));
         this._expr_18 = import7.UNINITIALIZED;
-        this._pipe_date_0_0 = import4.pureProxy1(this.parent.parent._pipe_date_0.transform.bind(this.parent.parent._pipe_date_0));
+        this._pipe_date_0_0 = import4.pureProxy2(this.parent.parent._pipe_date_0.transform.bind(this.parent.parent._pipe_date_0));
         this._expr_19 = import7.UNINITIALIZED;
         var disposable_4 = this.renderer.listen(this._el_43, 'click', this.eventHandler(this._handle_click_43_0.bind(this)));
         this._map_0 = import4.pureProxy1(function (p0) {
@@ -1464,7 +1464,7 @@ var _View_UserSolutionsComponent7 = (function (_super) {
             this._expr_18 = currVal_18;
         }
         valUnwrapper.reset();
-        var currVal_19 = import4.interpolate(1, '', valUnwrapper.unwrap(import4.castByValue(this._pipe_date_0_0, this.parent.parent._pipe_date_0.transform)(this.context.$implicit.postDate)), '');
+        var currVal_19 = import4.interpolate(1, '', valUnwrapper.unwrap(import4.castByValue(this._pipe_date_0_0, this.parent.parent._pipe_date_0.transform)(this.context.$implicit.postDate, 'medium')), '');
         if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange, this._expr_19, currVal_19))) {
             this.renderer.setText(this._text_40, currVal_19);
             this._expr_19 = currVal_19;

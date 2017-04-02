@@ -13,7 +13,7 @@ import { FlashMessageService } from "../../flash-message/flash-messages.service"
 })
 export class UserEditComponent implements OnInit, OnDestroy {
     myForm: FormGroup;
-    @Input() user: User;
+    user: User;
     roles: string[] = [];
     selectedRole: string;
     private submitted: boolean = false;

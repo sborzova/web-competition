@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { UsersService } from "./users.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SessionStorageService } from "../shared/session-storage.service";
@@ -37,8 +37,5 @@ export var UsersComponent = (function () {
         { type: SessionStorageService, },
         { type: FlashMessageService, },
     ];
-    UsersComponent.propDecorators = {
-        'users': [{ type: Input },],
-    };
     return UsersComponent;
 }());

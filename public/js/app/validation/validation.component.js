@@ -70,7 +70,6 @@ export var ValidationComponent = (function () {
                     }
                     var validation = new Validation(parseFloat((100 - assigned).toFixed(2)), total, sc, time, room, distr, info, instanceName);
                     _this.validationService.successValidationShowResult(validation, solutionInput.files[0]);
-                    _this.solutionElem.nativeElement.value = "";
                 }
             }, function (error) { return console.error(error); });
         }

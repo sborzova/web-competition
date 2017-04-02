@@ -26,12 +26,14 @@ import * as import16 from '@angular/forms/src/directives/ng_control_status';
 import * as import17 from '@angular/common/src/directives/ng_class';
 import * as import18 from '@angular/forms/src/directives/default_value_accessor';
 import * as import19 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
-import * as import20 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import21 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import22 from '@angular/core/src/linker/element_ref';
-import * as import23 from '@angular/forms/src/directives/control_value_accessor';
-import * as import24 from '@angular/forms/src/directives/ng_control';
-import * as import25 from '@angular/forms/src/directives/control_container';
+import * as import20 from '../../shared/validator-equal.directive';
+import * as import21 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import22 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import23 from '@angular/core/src/linker/element_ref';
+import * as import24 from '@angular/forms/src/directives/control_value_accessor';
+import * as import25 from '@angular/forms/src/directives/ng_control';
+import * as import26 from '@angular/forms/src/validators';
+import * as import27 from '@angular/forms/src/directives/control_container';
 var renderType_ProfileEditPasswordComponent_Host = null;
 var _View_ProfileEditPasswordComponent_Host0 = (function (_super) {
     __extends(_View_ProfileEditPasswordComponent_Host0, _super);
@@ -170,7 +172,7 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         this._text_1 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'form-group');
-        this._NgClass_2_3 = new import17.NgClass(this.parent.parentInjector.get(import20.IterableDiffers), this.parent.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_2), this.renderer);
+        this._NgClass_2_3 = new import17.NgClass(this.parent.parentInjector.get(import21.IterableDiffers), this.parent.parentInjector.get(import22.KeyValueDiffers), new import23.ElementRef(this._el_2), this.renderer);
         this._text_3 = this.renderer.createText(this._el_2, '\n                        ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'label', null);
         this.renderer.setElementAttribute(this._el_4, 'for', 'current');
@@ -180,7 +182,7 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         this.renderer.setElementAttribute(this._el_7, 'class', 'form-control');
         this.renderer.setElementAttribute(this._el_7, 'id', 'current');
         this.renderer.setElementAttribute(this._el_7, 'type', 'password');
-        this._DefaultValueAccessor_7_3 = new import18.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_7));
+        this._DefaultValueAccessor_7_3 = new import18.DefaultValueAccessor(this.renderer, new import23.ElementRef(this._el_7));
         this._NG_VALUE_ACCESSOR_7_4 = [this._DefaultValueAccessor_7_3];
         this._FormControlDirective_7_5 = new import19.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_7_4);
         this._NgControl_7_6 = this._FormControlDirective_7_5;
@@ -194,7 +196,7 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         this._text_11 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_12 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_12, 'class', 'form-group');
-        this._NgClass_12_3 = new import17.NgClass(this.parent.parentInjector.get(import20.IterableDiffers), this.parent.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_12), this.renderer);
+        this._NgClass_12_3 = new import17.NgClass(this.parent.parentInjector.get(import21.IterableDiffers), this.parent.parentInjector.get(import22.KeyValueDiffers), new import23.ElementRef(this._el_12), this.renderer);
         this._text_13 = this.renderer.createText(this._el_12, '\n                        ', null);
         this._el_14 = this.renderer.createElement(this._el_12, 'label', null);
         this.renderer.setElementAttribute(this._el_14, 'for', 'newPassword');
@@ -206,11 +208,13 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         this.renderer.setElementAttribute(this._el_17, 'reverse', 'true');
         this.renderer.setElementAttribute(this._el_17, 'type', 'password');
         this.renderer.setElementAttribute(this._el_17, 'validateEqual', 'confirmNew');
-        this._DefaultValueAccessor_17_3 = new import18.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_17));
-        this._NG_VALUE_ACCESSOR_17_4 = [this._DefaultValueAccessor_17_3];
-        this._FormControlDirective_17_5 = new import19.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_17_4);
-        this._NgControl_17_6 = this._FormControlDirective_17_5;
-        this._NgControlStatus_17_7 = new import16.NgControlStatus(this._NgControl_17_6);
+        this._DefaultValueAccessor_17_3 = new import18.DefaultValueAccessor(this.renderer, new import23.ElementRef(this._el_17));
+        this._EqualValidator_17_4 = new import20.EqualValidator('confirmNew', 'true');
+        this._NG_VALIDATORS_17_5 = [this._EqualValidator_17_4];
+        this._NG_VALUE_ACCESSOR_17_6 = [this._DefaultValueAccessor_17_3];
+        this._FormControlDirective_17_7 = new import19.FormControlDirective(this._NG_VALIDATORS_17_5, null, this._NG_VALUE_ACCESSOR_17_6);
+        this._NgControl_17_8 = this._FormControlDirective_17_7;
+        this._NgControlStatus_17_9 = new import16.NgControlStatus(this._NgControl_17_8);
         this._text_18 = this.renderer.createText(this._el_12, '\n                        ', null);
         this._anchor_19 = this.renderer.createTemplateAnchor(this._el_12, null);
         this._appEl_19 = new import2.AppElement(19, 12, this, this._anchor_19);
@@ -230,7 +234,7 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         this._text_25 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._el_26 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_26, 'class', 'form-group');
-        this._NgClass_26_3 = new import17.NgClass(this.parent.parentInjector.get(import20.IterableDiffers), this.parent.parentInjector.get(import21.KeyValueDiffers), new import22.ElementRef(this._el_26), this.renderer);
+        this._NgClass_26_3 = new import17.NgClass(this.parent.parentInjector.get(import21.IterableDiffers), this.parent.parentInjector.get(import22.KeyValueDiffers), new import23.ElementRef(this._el_26), this.renderer);
         this._text_27 = this.renderer.createText(this._el_26, '\n                        ', null);
         this._el_28 = this.renderer.createElement(this._el_26, 'label', null);
         this.renderer.setElementAttribute(this._el_28, 'for', 'confirmNew');
@@ -241,11 +245,13 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         this.renderer.setElementAttribute(this._el_31, 'id', 'confirmNew');
         this.renderer.setElementAttribute(this._el_31, 'type', 'password');
         this.renderer.setElementAttribute(this._el_31, 'validateEqual', 'newPassword');
-        this._DefaultValueAccessor_31_3 = new import18.DefaultValueAccessor(this.renderer, new import22.ElementRef(this._el_31));
-        this._NG_VALUE_ACCESSOR_31_4 = [this._DefaultValueAccessor_31_3];
-        this._FormControlDirective_31_5 = new import19.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_31_4);
-        this._NgControl_31_6 = this._FormControlDirective_31_5;
-        this._NgControlStatus_31_7 = new import16.NgControlStatus(this._NgControl_31_6);
+        this._DefaultValueAccessor_31_3 = new import18.DefaultValueAccessor(this.renderer, new import23.ElementRef(this._el_31));
+        this._EqualValidator_31_4 = new import20.EqualValidator('newPassword', null);
+        this._NG_VALIDATORS_31_5 = [this._EqualValidator_31_4];
+        this._NG_VALUE_ACCESSOR_31_6 = [this._DefaultValueAccessor_31_3];
+        this._FormControlDirective_31_7 = new import19.FormControlDirective(this._NG_VALIDATORS_31_5, null, this._NG_VALUE_ACCESSOR_31_6);
+        this._NgControl_31_8 = this._FormControlDirective_31_7;
+        this._NgControlStatus_31_9 = new import16.NgControlStatus(this._NgControl_31_8);
         this._text_32 = this.renderer.createText(this._el_26, '\n                        ', null);
         this._anchor_33 = this.renderer.createTemplateAnchor(this._el_26, null);
         this._appEl_33 = new import2.AppElement(33, 26, this, this._anchor_33);
@@ -380,13 +386,13 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         if (((token === import18.DefaultValueAccessor) && (7 === requestNodeIndex))) {
             return this._DefaultValueAccessor_7_3;
         }
-        if (((token === import23.NG_VALUE_ACCESSOR) && (7 === requestNodeIndex))) {
+        if (((token === import24.NG_VALUE_ACCESSOR) && (7 === requestNodeIndex))) {
             return this._NG_VALUE_ACCESSOR_7_4;
         }
         if (((token === import19.FormControlDirective) && (7 === requestNodeIndex))) {
             return this._FormControlDirective_7_5;
         }
-        if (((token === import24.NgControl) && (7 === requestNodeIndex))) {
+        if (((token === import25.NgControl) && (7 === requestNodeIndex))) {
             return this._NgControl_7_6;
         }
         if (((token === import16.NgControlStatus) && (7 === requestNodeIndex))) {
@@ -404,17 +410,23 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         if (((token === import18.DefaultValueAccessor) && (17 === requestNodeIndex))) {
             return this._DefaultValueAccessor_17_3;
         }
-        if (((token === import23.NG_VALUE_ACCESSOR) && (17 === requestNodeIndex))) {
-            return this._NG_VALUE_ACCESSOR_17_4;
+        if (((token === import20.EqualValidator) && (17 === requestNodeIndex))) {
+            return this._EqualValidator_17_4;
+        }
+        if (((token === import26.NG_VALIDATORS) && (17 === requestNodeIndex))) {
+            return this._NG_VALIDATORS_17_5;
+        }
+        if (((token === import24.NG_VALUE_ACCESSOR) && (17 === requestNodeIndex))) {
+            return this._NG_VALUE_ACCESSOR_17_6;
         }
         if (((token === import19.FormControlDirective) && (17 === requestNodeIndex))) {
-            return this._FormControlDirective_17_5;
+            return this._FormControlDirective_17_7;
         }
-        if (((token === import24.NgControl) && (17 === requestNodeIndex))) {
-            return this._NgControl_17_6;
+        if (((token === import25.NgControl) && (17 === requestNodeIndex))) {
+            return this._NgControl_17_8;
         }
         if (((token === import16.NgControlStatus) && (17 === requestNodeIndex))) {
-            return this._NgControlStatus_17_7;
+            return this._NgControlStatus_17_9;
         }
         if (((token === import14.TemplateRef) && (19 === requestNodeIndex))) {
             return this._TemplateRef_19_5;
@@ -440,17 +452,23 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         if (((token === import18.DefaultValueAccessor) && (31 === requestNodeIndex))) {
             return this._DefaultValueAccessor_31_3;
         }
-        if (((token === import23.NG_VALUE_ACCESSOR) && (31 === requestNodeIndex))) {
-            return this._NG_VALUE_ACCESSOR_31_4;
+        if (((token === import20.EqualValidator) && (31 === requestNodeIndex))) {
+            return this._EqualValidator_31_4;
+        }
+        if (((token === import26.NG_VALIDATORS) && (31 === requestNodeIndex))) {
+            return this._NG_VALIDATORS_31_5;
+        }
+        if (((token === import24.NG_VALUE_ACCESSOR) && (31 === requestNodeIndex))) {
+            return this._NG_VALUE_ACCESSOR_31_6;
         }
         if (((token === import19.FormControlDirective) && (31 === requestNodeIndex))) {
-            return this._FormControlDirective_31_5;
+            return this._FormControlDirective_31_7;
         }
-        if (((token === import24.NgControl) && (31 === requestNodeIndex))) {
-            return this._NgControl_31_6;
+        if (((token === import25.NgControl) && (31 === requestNodeIndex))) {
+            return this._NgControl_31_8;
         }
         if (((token === import16.NgControlStatus) && (31 === requestNodeIndex))) {
-            return this._NgControlStatus_31_7;
+            return this._NgControlStatus_31_9;
         }
         if (((token === import14.TemplateRef) && (33 === requestNodeIndex))) {
             return this._TemplateRef_33_5;
@@ -464,7 +482,7 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         if (((token === import15.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) {
             return this._FormGroupDirective_0_3;
         }
-        if (((token === import25.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) {
+        if (((token === import27.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) {
             return this._ControlContainer_0_4;
         }
         if (((token === import16.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) {
@@ -534,7 +552,7 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         changes = null;
         var currVal_26 = this.parent.context.myForm.controls['newPassword'];
         if (import4.checkBinding(throwOnChange, this._expr_26, currVal_26)) {
-            this._FormControlDirective_17_5.form = currVal_26;
+            this._FormControlDirective_17_7.form = currVal_26;
             if ((changes === null)) {
                 (changes = {});
             }
@@ -542,7 +560,7 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
             this._expr_26 = currVal_26;
         }
         if ((changes !== null)) {
-            this._FormControlDirective_17_5.ngOnChanges(changes);
+            this._FormControlDirective_17_7.ngOnChanges(changes);
         }
         var currVal_33 = (this.parent.context.myForm.controls['newPassword'].hasError('required') && (this.parent.context.myForm.controls['newPassword'].touched || this.parent.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_33, currVal_33)) {
@@ -575,7 +593,7 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
         changes = null;
         var currVal_40 = this.parent.context.myForm.controls['confirmNew'];
         if (import4.checkBinding(throwOnChange, this._expr_40, currVal_40)) {
-            this._FormControlDirective_31_5.form = currVal_40;
+            this._FormControlDirective_31_7.form = currVal_40;
             if ((changes === null)) {
                 (changes = {});
             }
@@ -583,7 +601,7 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
             this._expr_40 = currVal_40;
         }
         if ((changes !== null)) {
-            this._FormControlDirective_31_5.ngOnChanges(changes);
+            this._FormControlDirective_31_7.ngOnChanges(changes);
         }
         var currVal_47 = (!this.parent.context.myForm.controls['confirmNew'].valid && (this.parent.context.myForm.controls['confirmNew'].touched || this.parent.context.isSubmitted()));
         if (import4.checkBinding(throwOnChange, this._expr_47, currVal_47)) {
@@ -651,62 +669,62 @@ var _View_ProfileEditPasswordComponent1 = (function (_super) {
             this.renderer.setElementClass(this._el_7, 'ng-invalid', currVal_20);
             this._expr_20 = currVal_20;
         }
-        var currVal_27 = this._NgControlStatus_17_7.ngClassUntouched;
+        var currVal_27 = this._NgControlStatus_17_9.ngClassUntouched;
         if (import4.checkBinding(throwOnChange, this._expr_27, currVal_27)) {
             this.renderer.setElementClass(this._el_17, 'ng-untouched', currVal_27);
             this._expr_27 = currVal_27;
         }
-        var currVal_28 = this._NgControlStatus_17_7.ngClassTouched;
+        var currVal_28 = this._NgControlStatus_17_9.ngClassTouched;
         if (import4.checkBinding(throwOnChange, this._expr_28, currVal_28)) {
             this.renderer.setElementClass(this._el_17, 'ng-touched', currVal_28);
             this._expr_28 = currVal_28;
         }
-        var currVal_29 = this._NgControlStatus_17_7.ngClassPristine;
+        var currVal_29 = this._NgControlStatus_17_9.ngClassPristine;
         if (import4.checkBinding(throwOnChange, this._expr_29, currVal_29)) {
             this.renderer.setElementClass(this._el_17, 'ng-pristine', currVal_29);
             this._expr_29 = currVal_29;
         }
-        var currVal_30 = this._NgControlStatus_17_7.ngClassDirty;
+        var currVal_30 = this._NgControlStatus_17_9.ngClassDirty;
         if (import4.checkBinding(throwOnChange, this._expr_30, currVal_30)) {
             this.renderer.setElementClass(this._el_17, 'ng-dirty', currVal_30);
             this._expr_30 = currVal_30;
         }
-        var currVal_31 = this._NgControlStatus_17_7.ngClassValid;
+        var currVal_31 = this._NgControlStatus_17_9.ngClassValid;
         if (import4.checkBinding(throwOnChange, this._expr_31, currVal_31)) {
             this.renderer.setElementClass(this._el_17, 'ng-valid', currVal_31);
             this._expr_31 = currVal_31;
         }
-        var currVal_32 = this._NgControlStatus_17_7.ngClassInvalid;
+        var currVal_32 = this._NgControlStatus_17_9.ngClassInvalid;
         if (import4.checkBinding(throwOnChange, this._expr_32, currVal_32)) {
             this.renderer.setElementClass(this._el_17, 'ng-invalid', currVal_32);
             this._expr_32 = currVal_32;
         }
-        var currVal_41 = this._NgControlStatus_31_7.ngClassUntouched;
+        var currVal_41 = this._NgControlStatus_31_9.ngClassUntouched;
         if (import4.checkBinding(throwOnChange, this._expr_41, currVal_41)) {
             this.renderer.setElementClass(this._el_31, 'ng-untouched', currVal_41);
             this._expr_41 = currVal_41;
         }
-        var currVal_42 = this._NgControlStatus_31_7.ngClassTouched;
+        var currVal_42 = this._NgControlStatus_31_9.ngClassTouched;
         if (import4.checkBinding(throwOnChange, this._expr_42, currVal_42)) {
             this.renderer.setElementClass(this._el_31, 'ng-touched', currVal_42);
             this._expr_42 = currVal_42;
         }
-        var currVal_43 = this._NgControlStatus_31_7.ngClassPristine;
+        var currVal_43 = this._NgControlStatus_31_9.ngClassPristine;
         if (import4.checkBinding(throwOnChange, this._expr_43, currVal_43)) {
             this.renderer.setElementClass(this._el_31, 'ng-pristine', currVal_43);
             this._expr_43 = currVal_43;
         }
-        var currVal_44 = this._NgControlStatus_31_7.ngClassDirty;
+        var currVal_44 = this._NgControlStatus_31_9.ngClassDirty;
         if (import4.checkBinding(throwOnChange, this._expr_44, currVal_44)) {
             this.renderer.setElementClass(this._el_31, 'ng-dirty', currVal_44);
             this._expr_44 = currVal_44;
         }
-        var currVal_45 = this._NgControlStatus_31_7.ngClassValid;
+        var currVal_45 = this._NgControlStatus_31_9.ngClassValid;
         if (import4.checkBinding(throwOnChange, this._expr_45, currVal_45)) {
             this.renderer.setElementClass(this._el_31, 'ng-valid', currVal_45);
             this._expr_45 = currVal_45;
         }
-        var currVal_46 = this._NgControlStatus_31_7.ngClassInvalid;
+        var currVal_46 = this._NgControlStatus_31_9.ngClassInvalid;
         if (import4.checkBinding(throwOnChange, this._expr_46, currVal_46)) {
             this.renderer.setElementClass(this._el_31, 'ng-invalid', currVal_46);
             this._expr_46 = currVal_46;

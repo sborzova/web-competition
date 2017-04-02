@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { InstanceService } from "../../shared/instance.service";
@@ -93,7 +93,6 @@ export var InstanceEditComponent = (function () {
         { type: FlashMessageService, },
     ];
     InstanceEditComponent.propDecorators = {
-        'instance': [{ type: Input },],
         'statsElem': [{ type: ViewChild, args: ['stats',] },],
         'dataElem': [{ type: ViewChild, args: ['data',] },],
     };
