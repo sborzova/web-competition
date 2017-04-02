@@ -9,6 +9,7 @@ import {UserEditComponent} from "./user-edit/user-edit.component";
 import {OrderByModule} from "../order-by.module";
 import {UsersService} from "./users.service";
 import {EqualValidatorModule} from "../equal-validator.module";
+import {EmailService} from "../shared/email.service";
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import {EqualValidatorModule} from "../equal-validator.module";
     ],
     providers: [
         UsersService,
+        EmailService
     ]
 })
 export class UsersModule {}

@@ -5,6 +5,9 @@ import { User } from "./user.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { AuthService } from "../auth/auth.service";
 import {SessionStorageService} from "../shared/session-storage.service";
+import {EmailService} from "../shared/email.service";
+import {Email} from "../shared/email.model";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
     selector: 'app-users',
@@ -12,9 +15,12 @@ import {SessionStorageService} from "../shared/session-storage.service";
 })
 export class UsersComponent implements OnInit {
     users : User[];
+    myForm: FormGroup;
+    private submitted: boolean = false;
 
     constructor(private usersService: UsersService,
                 private sessionStorageService: SessionStorageService,
+                private emailService: EmailService,
                 private flashMessageService: FlashMessageService){
     }
 
@@ -41,6 +47,33 @@ export class UsersComponent implements OnInit {
       return this.sessionStorageService.getEmailLoggedIn() == user.email;
     }
 
-    onSendEmail(){
+    onShowEmailForm(){
+        this.myForm = new FormGroup({
+            subject: new FormControl(null, [Validators.required, Validators.maxLength(100)]),
+            content: new FormControl(null, [Validators.required, Validators.maxLength(1000)]),
+        });
+        document.getElementById('openEmailForm').click();
+    }
+
+    onSubmit(){
+        this.submitted = true;
+        if (this.myForm.valid) {
+            document.getElementById('hideEmailForm').click();
+            const email = new Email(
+                this.myForm.value.subject,
+                this.myForm.value.content
+            );
+            this.emailService.sendEmailToAll(email)
+                .subscribe(
+                    () => {
+                    },
+                    error => console.error(error)
+                );
+            this.flashMessageService.showMessage('Email was send.', 'success');
+        }
+    }
+
+    isSubmitted(){
+        return this.submitted;
     }
 }

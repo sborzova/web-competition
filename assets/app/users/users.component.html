@@ -1,11 +1,75 @@
 <div class="container" style="margin-top: 3%">
     <div class="row">
         <div>
-            <button class="btn btn-primary btn-xs"
+            <button type="button"
+                    class="btn btn-primary btn-xs"
                     title="Send email to all users"
-                    (click)="onSendEmail()">
+                    (click)="onShowEmailForm()">
             <span class="glyphicon glyphicon-envelope"></span>&nbsp;Send email
             </button>
+        </div>
+        <button id="openEmailForm" [hidden]="true" data-toggle="modal" data-target="#emailForm"></button>
+        <div class="modal fade" id="emailForm" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Email</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group"
+                                 [ngClass]="{'has-error':
+                                (!myForm.controls['subject'].valid ) &&
+                                (myForm.controls['subject'].touched || isSubmitted())}">
+                                <label for="subject">
+                                    Subject
+                                </label>
+                                <input
+                                        type="text"
+                                        id="subject"
+                                        class="form-control"
+                                        [formControl]="myForm.controls['subject']">
+                                <div class="field-error"
+                                     *ngIf="myForm.controls['subject'].hasError('required') &&
+                                    (myForm.controls['subject'].touched || isSubmitted())">
+                                    Field is required.
+                                </div>
+                                <div class="field-error"
+                                     *ngIf="myForm.controls['subject'].hasError('maxlength') &&
+                                    (myForm.controls['subject'].touched || isSubmitted())">
+                                    Field can have max 100 characters.
+                                </div>
+                            </div>
+                            <div class="form-group"
+                                    [ngClass]="{'has-error':
+                                    (!myForm.controls['content'].valid ) &&
+                                    (myForm.controls['content'].touched || isSubmitted())}">
+                                <label for="content">
+                                    Content
+                                </label>
+                                <textarea
+                                        id="content"
+                                        class="form-control"
+                                        [formControl]="myForm.controls['content']"></textarea>
+                                <div class="field-error"
+                                     *ngIf="myForm.controls['content'].hasError('required') &&
+                                    (myForm.controls['content'].touched || isSubmitted())">
+                                    Field is required.
+                                </div>
+                                <div class="field-error"
+                                     *ngIf="myForm.controls['content'].hasError('maxlength') &&
+                                    (myForm.controls['content'].touched || isSubmitted())">
+                                    Field can have max 1000 characters.
+                                </div>
+                                </div>
+                            <div align="right">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                                <button id="hideEmailForm" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <div *ngIf="users" class="col-xs-12">
             <table class="table">

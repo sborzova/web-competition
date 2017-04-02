@@ -1,0 +1,27 @@
+import {Injectable} from "@angular/core";
+import {Http, Headers, Response } from "@angular/http";
+import {FlashMessageService} from "../flash-message/flash-messages.service";
+import {Email} from "./email.model";
+import {Observable} from "rxjs";
+
+@Injectable()
+export class EmailService {
+    private hostUrl: string;
+
+    constructor(private http: Http,
+                private flashMessageService: FlashMessageService) {
+
+        const routeModule = require("../app.routing");
+        this.hostUrl = routeModule.hostUrl;
+    }
+
+    sendEmailToAll(email: Email){
+        const body = JSON.stringify(email);
+        const headers = new Headers({'Content-Type': 'application/json'});
+        return this.http.post(this.hostUrl.concat('email'), body, {headers: headers})
+            .catch((error: Response) => {
+                return Observable.throw(error);
+            });
+    }
+
+}

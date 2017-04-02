@@ -16,17 +16,18 @@ import * as import8 from '@angular/forms/src/form_builder';
 import * as import9 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import10 from '@angular/common/src/localization';
 import * as import11 from './users.service';
-import * as import12 from '@angular/core/src/di/injector';
-import * as import13 from './users.component.ngfactory';
-import * as import14 from './user-edit/user-edit.component.ngfactory';
-import * as import15 from './user-edit-password/user-edit-password.component.ngfactory';
-import * as import16 from '@angular/core/src/i18n/tokens';
-import * as import17 from './users.component';
-import * as import18 from './user-edit/user-edit.component';
-import * as import19 from './user-edit-password/user-edit-password.component';
-import * as import20 from '@angular/http/src/http';
-import * as import21 from '../flash-message/flash-messages.service';
-import * as import22 from '@angular/router/src/router_config_loader';
+import * as import12 from '../shared/email.service';
+import * as import13 from '@angular/core/src/di/injector';
+import * as import14 from './users.component.ngfactory';
+import * as import15 from './user-edit/user-edit.component.ngfactory';
+import * as import16 from './user-edit-password/user-edit-password.component.ngfactory';
+import * as import17 from '@angular/core/src/i18n/tokens';
+import * as import18 from './users.component';
+import * as import19 from './user-edit/user-edit.component';
+import * as import20 from './user-edit-password/user-edit-password.component';
+import * as import21 from '@angular/http/src/http';
+import * as import22 from '../flash-message/flash-messages.service';
+import * as import23 from '@angular/router/src/router_config_loader';
 class UsersModuleInjector extends import0.NgModuleInjector<import1.UsersModule> {
   _InternalFormsSharedModule_0:import2.InternalFormsSharedModule;
   _ReactiveFormsModule_1:import3.ReactiveFormsModule;
@@ -40,11 +41,12 @@ class UsersModuleInjector extends import0.NgModuleInjector<import1.UsersModule> 
   __NgLocalization_9:import10.NgLocaleLocalization;
   __ROUTES_10:any[];
   __UsersService_11:import11.UsersService;
-  constructor(parent:import12.Injector) {
+  __EmailService_12:import12.EmailService;
+  constructor(parent:import13.Injector) {
     super(parent,[
-      import13.UsersComponentNgFactory,
-      import14.UserEditComponentNgFactory,
-      import15.UserEditPasswordComponentNgFactory
+      import14.UsersComponentNgFactory,
+      import15.UserEditComponentNgFactory,
+      import16.UserEditPasswordComponentNgFactory
     ]
     ,[]);
   }
@@ -57,7 +59,7 @@ class UsersModuleInjector extends import0.NgModuleInjector<import1.UsersModule> 
     return this.__RadioControlRegistry_8;
   }
   get _NgLocalization_9():import10.NgLocaleLocalization {
-    if ((this.__NgLocalization_9 == (null as any))) { (this.__NgLocalization_9 = new import10.NgLocaleLocalization(this.parent.get(import16.LOCALE_ID))); }
+    if ((this.__NgLocalization_9 == (null as any))) { (this.__NgLocalization_9 = new import10.NgLocaleLocalization(this.parent.get(import17.LOCALE_ID))); }
     return this.__NgLocalization_9;
   }
   get _ROUTES_10():any[] {
@@ -72,17 +74,17 @@ class UsersModuleInjector extends import0.NgModuleInjector<import1.UsersModule> 
             ,
             {
               path: 'all',
-              component: import17.UsersComponent
+              component: import18.UsersComponent
             }
             ,
             {
               path: 'edit',
-              component: import18.UserEditComponent
+              component: import19.UserEditComponent
             }
             ,
             {
               path: 'editpass',
-              component: import19.UserEditPasswordComponent
+              component: import20.UserEditPasswordComponent
             }
 
           ]
@@ -92,8 +94,12 @@ class UsersModuleInjector extends import0.NgModuleInjector<import1.UsersModule> 
     return this.__ROUTES_10;
   }
   get _UsersService_11():import11.UsersService {
-    if ((this.__UsersService_11 == (null as any))) { (this.__UsersService_11 = new import11.UsersService(this.parent.get(import20.Http),this.parent.get(import21.FlashMessageService))); }
+    if ((this.__UsersService_11 == (null as any))) { (this.__UsersService_11 = new import11.UsersService(this.parent.get(import21.Http),this.parent.get(import22.FlashMessageService))); }
     return this.__UsersService_11;
+  }
+  get _EmailService_12():import12.EmailService {
+    if ((this.__EmailService_12 == (null as any))) { (this.__EmailService_12 = new import12.EmailService(this.parent.get(import21.Http),this.parent.get(import22.FlashMessageService))); }
+    return this.__EmailService_12;
   }
   createInternal():import1.UsersModule {
     this._InternalFormsSharedModule_0 = new import2.InternalFormsSharedModule();
@@ -116,8 +122,9 @@ class UsersModuleInjector extends import0.NgModuleInjector<import1.UsersModule> 
     if ((token === import8.FormBuilder)) { return this._FormBuilder_7; }
     if ((token === import9.RadioControlRegistry)) { return this._RadioControlRegistry_8; }
     if ((token === import10.NgLocalization)) { return this._NgLocalization_9; }
-    if ((token === import22.ROUTES)) { return this._ROUTES_10; }
+    if ((token === import23.ROUTES)) { return this._ROUTES_10; }
     if ((token === import11.UsersService)) { return this._UsersService_11; }
+    if ((token === import12.EmailService)) { return this._EmailService_12; }
     return notFoundResult;
   }
   destroyInternal():void {
