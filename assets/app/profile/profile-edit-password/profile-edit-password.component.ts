@@ -44,7 +44,7 @@ export class ProfileEditPasswordComponent implements OnInit{
                     this.user = user;
                     this.myForm = new FormGroup({
                         current: new FormControl(null, Validators.required),
-                        newPassword: new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(100)]),
+                        newPassword: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(100)]),
                         confirmNew: new FormControl(null, Validators.required),
                     });
                 }

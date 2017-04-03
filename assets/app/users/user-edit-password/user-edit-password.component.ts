@@ -32,7 +32,7 @@ export class UserEditPasswordComponent{
                         (user: User) => {
                             this.user = user;
                             this.myForm = new FormGroup({
-                                password: new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(100)]),
+                                password: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(100)]),
                                 confirmPassword: new FormControl(null, Validators.required)
                             });
                         });

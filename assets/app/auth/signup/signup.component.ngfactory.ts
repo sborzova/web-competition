@@ -1268,7 +1268,7 @@ class _View_SignupComponent7 extends import1.AppView<any> {
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
     this.renderer.setElementAttribute(this._el_0,'class','field-error');
-    this._text_1 = this.renderer.createText(this._el_0,'\n                            Field can have min 4 characters.\n                        ',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'\n                            Field can have min 6 characters.\n                        ',(null as any));
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1

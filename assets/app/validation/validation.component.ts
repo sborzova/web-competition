@@ -34,6 +34,7 @@ export class ValidationComponent implements OnInit {
 
     onValidate(){
         this.validationService.successValidationHideResult();
+        this.validationService.worseSolutionsHide();
         let solutionInput= this.solutionElem.nativeElement;
 
         if (solutionInput.files && solutionInput.files[0]){

@@ -26,3 +26,7 @@ a {
   background-color: whitesmoke;
   text-align: left;
 }
+
+textarea {
+  resize:vertical;
+}

@@ -20,26 +20,28 @@ import * as import12 from '@angular/core/src/metadata/view';
 import * as import13 from '@angular/core/src/linker/component_factory';
 import * as import14 from './user-solutions.component.css.shim';
 import * as import15 from '@angular/common/src/directives/ng_if';
-import * as import16 from '@angular/core/src/linker/template_ref';
-import * as import17 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
-import * as import18 from '@angular/forms/src/directives/ng_control_status';
-import * as import19 from '@angular/common/src/directives/ng_class';
-import * as import20 from '@angular/forms/src/directives/default_value_accessor';
-import * as import21 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
-import * as import22 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import23 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import24 from '@angular/core/src/linker/element_ref';
-import * as import25 from '@angular/forms/src/directives/control_value_accessor';
-import * as import26 from '@angular/forms/src/directives/ng_control';
-import * as import27 from '@angular/forms/src/directives/control_container';
-import * as import28 from '@angular/common/src/directives/ng_for';
-import * as import29 from '@angular/forms/src/directives/checkbox_value_accessor';
-import * as import30 from '@angular/forms/src/directives/ng_model';
-import * as import31 from '@angular/router/src/directives/router_link';
-import * as import32 from '@angular/router/src/router';
-import * as import33 from '@angular/router/src/router_state';
-import * as import34 from '@angular/common/src/location/location_strategy';
-import * as import35 from '@angular/core/src/security';
+import * as import16 from '@angular/common/src/pipes/date_pipe';
+import * as import17 from '@angular/core/src/linker/template_ref';
+import * as import18 from '@angular/core/src/i18n/tokens';
+import * as import19 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
+import * as import20 from '@angular/forms/src/directives/ng_control_status';
+import * as import21 from '@angular/common/src/directives/ng_class';
+import * as import22 from '@angular/forms/src/directives/default_value_accessor';
+import * as import23 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
+import * as import24 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import25 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import26 from '@angular/core/src/linker/element_ref';
+import * as import27 from '@angular/forms/src/directives/control_value_accessor';
+import * as import28 from '@angular/forms/src/directives/ng_control';
+import * as import29 from '@angular/forms/src/directives/control_container';
+import * as import30 from '@angular/common/src/directives/ng_for';
+import * as import31 from '@angular/forms/src/directives/checkbox_value_accessor';
+import * as import32 from '@angular/forms/src/directives/ng_model';
+import * as import33 from '@angular/router/src/directives/router_link';
+import * as import34 from '@angular/router/src/router';
+import * as import35 from '@angular/router/src/router_state';
+import * as import36 from '@angular/common/src/location/location_strategy';
+import * as import37 from '@angular/core/src/security';
 var renderType_UserSolutionsComponent_Host:import0.RenderComponentType = (null as any);
 class _View_UserSolutionsComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -129,6 +131,7 @@ class _View_UserSolutionsComponent0 extends import1.AppView<import3.UserSolution
   /*private*/ _expr_1:any;
   /*private*/ _expr_5:any;
   /*private*/ _expr_6:any;
+  _pipe_date_0:import16.DatePipe;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_UserSolutionsComponent0,renderType_UserSolutionsComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -155,12 +158,12 @@ class _View_UserSolutionsComponent0 extends import1.AppView<import3.UserSolution
     this._text_13 = this.renderer.createText(this._el_12,'\n                ',(null as any));
     this._anchor_14 = this.renderer.createTemplateAnchor(this._el_12,(null as any));
     this._appEl_14 = new import2.AppElement(14,12,this,this._anchor_14);
-    this._TemplateRef_14_5 = new import16.TemplateRef_(this._appEl_14,viewFactory_UserSolutionsComponent1);
+    this._TemplateRef_14_5 = new import17.TemplateRef_(this._appEl_14,viewFactory_UserSolutionsComponent1);
     this._NgIf_14_6 = new import15.NgIf(this._appEl_14.vcRef,this._TemplateRef_14_5);
     this._text_15 = this.renderer.createText(this._el_12,'\n                ',(null as any));
     this._anchor_16 = this.renderer.createTemplateAnchor(this._el_12,(null as any));
     this._appEl_16 = new import2.AppElement(16,12,this,this._anchor_16);
-    this._TemplateRef_16_5 = new import16.TemplateRef_(this._appEl_16,viewFactory_UserSolutionsComponent2);
+    this._TemplateRef_16_5 = new import17.TemplateRef_(this._appEl_16,viewFactory_UserSolutionsComponent2);
     this._NgIf_16_6 = new import15.NgIf(this._appEl_16.vcRef,this._TemplateRef_16_5);
     this._text_17 = this.renderer.createText(this._el_12,'\n                ',(null as any));
     this._el_18 = this.renderer.createElement(this._el_12,'button',(null as any));
@@ -178,12 +181,12 @@ class _View_UserSolutionsComponent0 extends import1.AppView<import3.UserSolution
     this._text_27 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._anchor_28 = this.renderer.createTemplateAnchor(this._el_4,(null as any));
     this._appEl_28 = new import2.AppElement(28,4,this,this._anchor_28);
-    this._TemplateRef_28_5 = new import16.TemplateRef_(this._appEl_28,viewFactory_UserSolutionsComponent3);
+    this._TemplateRef_28_5 = new import17.TemplateRef_(this._appEl_28,viewFactory_UserSolutionsComponent3);
     this._NgIf_28_6 = new import15.NgIf(this._appEl_28.vcRef,this._TemplateRef_28_5);
     this._text_29 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._anchor_30 = this.renderer.createTemplateAnchor(this._el_4,(null as any));
     this._appEl_30 = new import2.AppElement(30,4,this,this._anchor_30);
-    this._TemplateRef_30_5 = new import16.TemplateRef_(this._appEl_30,viewFactory_UserSolutionsComponent6);
+    this._TemplateRef_30_5 = new import17.TemplateRef_(this._appEl_30,viewFactory_UserSolutionsComponent6);
     this._NgIf_30_6 = new import15.NgIf(this._appEl_30.vcRef,this._TemplateRef_30_5);
     this._text_31 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._text_32 = this.renderer.createText(this._el_2,'\n    ',(null as any));
@@ -195,6 +198,7 @@ class _View_UserSolutionsComponent0 extends import1.AppView<import3.UserSolution
     var disposable_2:Function = this.renderer.listen(this._el_24,'click',this.eventHandler(this._handle_click_24_0.bind(this)));
     this._expr_5 = import7.UNINITIALIZED;
     this._expr_6 = import7.UNINITIALIZED;
+    this._pipe_date_0 = new import16.DatePipe(this.parentInjector.get(import18.LOCALE_ID));
     this.init([],[
       this._el_0,
       this._text_1,
@@ -240,13 +244,13 @@ class _View_UserSolutionsComponent0 extends import1.AppView<import3.UserSolution
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import16.TemplateRef) && (14 === requestNodeIndex))) { return this._TemplateRef_14_5; }
+    if (((token === import17.TemplateRef) && (14 === requestNodeIndex))) { return this._TemplateRef_14_5; }
     if (((token === import15.NgIf) && (14 === requestNodeIndex))) { return this._NgIf_14_6; }
-    if (((token === import16.TemplateRef) && (16 === requestNodeIndex))) { return this._TemplateRef_16_5; }
+    if (((token === import17.TemplateRef) && (16 === requestNodeIndex))) { return this._TemplateRef_16_5; }
     if (((token === import15.NgIf) && (16 === requestNodeIndex))) { return this._NgIf_16_6; }
-    if (((token === import16.TemplateRef) && (28 === requestNodeIndex))) { return this._TemplateRef_28_5; }
+    if (((token === import17.TemplateRef) && (28 === requestNodeIndex))) { return this._TemplateRef_28_5; }
     if (((token === import15.NgIf) && (28 === requestNodeIndex))) { return this._NgIf_28_6; }
-    if (((token === import16.TemplateRef) && (30 === requestNodeIndex))) { return this._TemplateRef_30_5; }
+    if (((token === import17.TemplateRef) && (30 === requestNodeIndex))) { return this._TemplateRef_30_5; }
     if (((token === import15.NgIf) && (30 === requestNodeIndex))) { return this._NgIf_30_6; }
     return notFoundResult;
   }
@@ -386,7 +390,7 @@ class _View_UserSolutionsComponent3 extends import1.AppView<any> {
     this._text_9 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
     this._anchor_10 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
     this._appEl_10 = new import2.AppElement(10,2,this,this._anchor_10);
-    this._TemplateRef_10_5 = new import16.TemplateRef_(this._appEl_10,viewFactory_UserSolutionsComponent4);
+    this._TemplateRef_10_5 = new import17.TemplateRef_(this._appEl_10,viewFactory_UserSolutionsComponent4);
     this._NgIf_10_6 = new import15.NgIf(this._appEl_10.vcRef,this._TemplateRef_10_5);
     this._text_11 = this.renderer.createText(this._el_2,'\n                ',(null as any));
     this._text_12 = this.renderer.createText(this._el_0,'\n            ',(null as any));
@@ -410,7 +414,7 @@ class _View_UserSolutionsComponent3 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import16.TemplateRef) && (10 === requestNodeIndex))) { return this._TemplateRef_10_5; }
+    if (((token === import17.TemplateRef) && (10 === requestNodeIndex))) { return this._TemplateRef_10_5; }
     if (((token === import15.NgIf) && (10 === requestNodeIndex))) { return this._NgIf_10_6; }
     return notFoundResult;
   }
@@ -429,22 +433,22 @@ function viewFactory_UserSolutionsComponent3(viewUtils:import4.ViewUtils,parentI
 }
 class _View_UserSolutionsComponent4 extends import1.AppView<any> {
   _el_0:any;
-  _FormGroupDirective_0_3:import17.FormGroupDirective;
+  _FormGroupDirective_0_3:import19.FormGroupDirective;
   _ControlContainer_0_4:any;
-  _NgControlStatusGroup_0_5:import18.NgControlStatusGroup;
+  _NgControlStatusGroup_0_5:import20.NgControlStatusGroup;
   _text_1:any;
   _el_2:any;
-  _NgClass_2_3:import19.NgClass;
+  _NgClass_2_3:import21.NgClass;
   _text_3:any;
   _el_4:any;
   _text_5:any;
   _text_6:any;
   _el_7:any;
-  _DefaultValueAccessor_7_3:import20.DefaultValueAccessor;
+  _DefaultValueAccessor_7_3:import22.DefaultValueAccessor;
   _NG_VALUE_ACCESSOR_7_4:any[];
-  _FormControlDirective_7_5:import21.FormControlDirective;
+  _FormControlDirective_7_5:import23.FormControlDirective;
   _NgControl_7_6:any;
-  _NgControlStatus_7_7:import18.NgControlStatus;
+  _NgControlStatus_7_7:import20.NgControlStatus;
   _text_8:any;
   _anchor_9:any;
   /*private*/ _appEl_9:import2.AppElement;
@@ -458,11 +462,11 @@ class _View_UserSolutionsComponent4 extends import1.AppView<any> {
   _text_15:any;
   _text_16:any;
   _el_17:any;
-  _DefaultValueAccessor_17_3:import20.DefaultValueAccessor;
+  _DefaultValueAccessor_17_3:import22.DefaultValueAccessor;
   _NG_VALUE_ACCESSOR_17_4:any[];
-  _FormControlDirective_17_5:import21.FormControlDirective;
+  _FormControlDirective_17_5:import23.FormControlDirective;
   _NgControl_17_6:any;
-  _NgControlStatus_17_7:import18.NgControlStatus;
+  _NgControlStatus_17_7:import20.NgControlStatus;
   _text_18:any;
   _text_19:any;
   _el_20:any;
@@ -507,13 +511,13 @@ class _View_UserSolutionsComponent4 extends import1.AppView<any> {
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'form',(null as any));
-    this._FormGroupDirective_0_3 = new import17.FormGroupDirective((null as any),(null as any));
+    this._FormGroupDirective_0_3 = new import19.FormGroupDirective((null as any),(null as any));
     this._ControlContainer_0_4 = this._FormGroupDirective_0_3;
-    this._NgControlStatusGroup_0_5 = new import18.NgControlStatusGroup(this._ControlContainer_0_4);
+    this._NgControlStatusGroup_0_5 = new import20.NgControlStatusGroup(this._ControlContainer_0_4);
     this._text_1 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
     this.renderer.setElementAttribute(this._el_2,'class','form-group');
-    this._NgClass_2_3 = new import19.NgClass(this.parent.parent.parentInjector.get(import22.IterableDiffers),this.parent.parent.parentInjector.get(import23.KeyValueDiffers),new import24.ElementRef(this._el_2),this.renderer);
+    this._NgClass_2_3 = new import21.NgClass(this.parent.parent.parentInjector.get(import24.IterableDiffers),this.parent.parent.parentInjector.get(import25.KeyValueDiffers),new import26.ElementRef(this._el_2),this.renderer);
     this._text_3 = this.renderer.createText(this._el_2,'\n                            ',(null as any));
     this._el_4 = this.renderer.createElement(this._el_2,'label',(null as any));
     this.renderer.setElementAttribute(this._el_4,'for','citation');
@@ -522,15 +526,15 @@ class _View_UserSolutionsComponent4 extends import1.AppView<any> {
     this._el_7 = this.renderer.createElement(this._el_2,'textarea',(null as any));
     this.renderer.setElementAttribute(this._el_7,'class','form-control');
     this.renderer.setElementAttribute(this._el_7,'id','citation');
-    this._DefaultValueAccessor_7_3 = new import20.DefaultValueAccessor(this.renderer,new import24.ElementRef(this._el_7));
+    this._DefaultValueAccessor_7_3 = new import22.DefaultValueAccessor(this.renderer,new import26.ElementRef(this._el_7));
     this._NG_VALUE_ACCESSOR_7_4 = [this._DefaultValueAccessor_7_3];
-    this._FormControlDirective_7_5 = new import21.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_7_4);
+    this._FormControlDirective_7_5 = new import23.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_7_4);
     this._NgControl_7_6 = this._FormControlDirective_7_5;
-    this._NgControlStatus_7_7 = new import18.NgControlStatus(this._NgControl_7_6);
+    this._NgControlStatus_7_7 = new import20.NgControlStatus(this._NgControl_7_6);
     this._text_8 = this.renderer.createText(this._el_2,'\n                            ',(null as any));
     this._anchor_9 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
     this._appEl_9 = new import2.AppElement(9,2,this,this._anchor_9);
-    this._TemplateRef_9_5 = new import16.TemplateRef_(this._appEl_9,viewFactory_UserSolutionsComponent5);
+    this._TemplateRef_9_5 = new import17.TemplateRef_(this._appEl_9,viewFactory_UserSolutionsComponent5);
     this._NgIf_9_6 = new import15.NgIf(this._appEl_9.vcRef,this._TemplateRef_9_5);
     this._text_10 = this.renderer.createText(this._el_2,'\n                        ',(null as any));
     this._text_11 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
@@ -545,11 +549,11 @@ class _View_UserSolutionsComponent4 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_17,'class','form-control');
     this.renderer.setElementAttribute(this._el_17,'id','url');
     this.renderer.setElementAttribute(this._el_17,'type','url');
-    this._DefaultValueAccessor_17_3 = new import20.DefaultValueAccessor(this.renderer,new import24.ElementRef(this._el_17));
+    this._DefaultValueAccessor_17_3 = new import22.DefaultValueAccessor(this.renderer,new import26.ElementRef(this._el_17));
     this._NG_VALUE_ACCESSOR_17_4 = [this._DefaultValueAccessor_17_3];
-    this._FormControlDirective_17_5 = new import21.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_17_4);
+    this._FormControlDirective_17_5 = new import23.FormControlDirective((null as any),(null as any),this._NG_VALUE_ACCESSOR_17_4);
     this._NgControl_17_6 = this._FormControlDirective_17_5;
-    this._NgControlStatus_17_7 = new import18.NgControlStatus(this._NgControl_17_6);
+    this._NgControlStatus_17_7 = new import20.NgControlStatus(this._NgControl_17_6);
     this._text_18 = this.renderer.createText(this._el_12,'\n                        ',(null as any));
     this._text_19 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
     this._el_20 = this.renderer.createElement(this._el_0,'div',(null as any));
@@ -653,22 +657,22 @@ class _View_UserSolutionsComponent4 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import20.DefaultValueAccessor) && (7 === requestNodeIndex))) { return this._DefaultValueAccessor_7_3; }
-    if (((token === import25.NG_VALUE_ACCESSOR) && (7 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_7_4; }
-    if (((token === import21.FormControlDirective) && (7 === requestNodeIndex))) { return this._FormControlDirective_7_5; }
-    if (((token === import26.NgControl) && (7 === requestNodeIndex))) { return this._NgControl_7_6; }
-    if (((token === import18.NgControlStatus) && (7 === requestNodeIndex))) { return this._NgControlStatus_7_7; }
-    if (((token === import16.TemplateRef) && (9 === requestNodeIndex))) { return this._TemplateRef_9_5; }
+    if (((token === import22.DefaultValueAccessor) && (7 === requestNodeIndex))) { return this._DefaultValueAccessor_7_3; }
+    if (((token === import27.NG_VALUE_ACCESSOR) && (7 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_7_4; }
+    if (((token === import23.FormControlDirective) && (7 === requestNodeIndex))) { return this._FormControlDirective_7_5; }
+    if (((token === import28.NgControl) && (7 === requestNodeIndex))) { return this._NgControl_7_6; }
+    if (((token === import20.NgControlStatus) && (7 === requestNodeIndex))) { return this._NgControlStatus_7_7; }
+    if (((token === import17.TemplateRef) && (9 === requestNodeIndex))) { return this._TemplateRef_9_5; }
     if (((token === import15.NgIf) && (9 === requestNodeIndex))) { return this._NgIf_9_6; }
-    if (((token === import19.NgClass) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 10)))) { return this._NgClass_2_3; }
-    if (((token === import20.DefaultValueAccessor) && (17 === requestNodeIndex))) { return this._DefaultValueAccessor_17_3; }
-    if (((token === import25.NG_VALUE_ACCESSOR) && (17 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_17_4; }
-    if (((token === import21.FormControlDirective) && (17 === requestNodeIndex))) { return this._FormControlDirective_17_5; }
-    if (((token === import26.NgControl) && (17 === requestNodeIndex))) { return this._NgControl_17_6; }
-    if (((token === import18.NgControlStatus) && (17 === requestNodeIndex))) { return this._NgControlStatus_17_7; }
-    if (((token === import17.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 31)))) { return this._FormGroupDirective_0_3; }
-    if (((token === import27.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 31)))) { return this._ControlContainer_0_4; }
-    if (((token === import18.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 31)))) { return this._NgControlStatusGroup_0_5; }
+    if (((token === import21.NgClass) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 10)))) { return this._NgClass_2_3; }
+    if (((token === import22.DefaultValueAccessor) && (17 === requestNodeIndex))) { return this._DefaultValueAccessor_17_3; }
+    if (((token === import27.NG_VALUE_ACCESSOR) && (17 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_17_4; }
+    if (((token === import23.FormControlDirective) && (17 === requestNodeIndex))) { return this._FormControlDirective_17_5; }
+    if (((token === import28.NgControl) && (17 === requestNodeIndex))) { return this._NgControl_17_6; }
+    if (((token === import20.NgControlStatus) && (17 === requestNodeIndex))) { return this._NgControlStatus_17_7; }
+    if (((token === import19.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 31)))) { return this._FormGroupDirective_0_3; }
+    if (((token === import29.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 31)))) { return this._ControlContainer_0_4; }
+    if (((token === import20.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 31)))) { return this._NgControlStatusGroup_0_5; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -964,7 +968,7 @@ class _View_UserSolutionsComponent6 extends import1.AppView<any> {
   _anchor_86:any;
   /*private*/ _appEl_86:import2.AppElement;
   _TemplateRef_86_5:any;
-  _NgFor_86_6:import28.NgFor;
+  _NgFor_86_6:import30.NgFor;
   _text_87:any;
   _text_88:any;
   /*private*/ _expr_10:any;
@@ -1098,8 +1102,8 @@ class _View_UserSolutionsComponent6 extends import1.AppView<any> {
     this._text_85 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
     this._anchor_86 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
     this._appEl_86 = new import2.AppElement(86,2,this,this._anchor_86);
-    this._TemplateRef_86_5 = new import16.TemplateRef_(this._appEl_86,viewFactory_UserSolutionsComponent7);
-    this._NgFor_86_6 = new import28.NgFor(this._appEl_86.vcRef,this._TemplateRef_86_5,this.parent.parentInjector.get(import22.IterableDiffers),this.parent.ref);
+    this._TemplateRef_86_5 = new import17.TemplateRef_(this._appEl_86,viewFactory_UserSolutionsComponent7);
+    this._NgFor_86_6 = new import30.NgFor(this._appEl_86.vcRef,this._TemplateRef_86_5,this.parent.parentInjector.get(import24.IterableDiffers),this.parent.ref);
     this._text_87 = this.renderer.createText(this._el_2,'\n                ',(null as any));
     this._text_88 = this.renderer.createText(this._el_0,'\n            ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_18,'click',this.eventHandler(this._handle_click_18_0.bind(this)));
@@ -1220,8 +1224,8 @@ class _View_UserSolutionsComponent6 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import16.TemplateRef) && (86 === requestNodeIndex))) { return this._TemplateRef_86_5; }
-    if (((token === import28.NgFor) && (86 === requestNodeIndex))) { return this._NgFor_86_6; }
+    if (((token === import17.TemplateRef) && (86 === requestNodeIndex))) { return this._TemplateRef_86_5; }
+    if (((token === import30.NgFor) && (86 === requestNodeIndex))) { return this._NgFor_86_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -1300,11 +1304,11 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
   _text_3:any;
   _el_4:any;
   _el_5:any;
-  _CheckboxControlValueAccessor_5_3:import29.CheckboxControlValueAccessor;
+  _CheckboxControlValueAccessor_5_3:import31.CheckboxControlValueAccessor;
   _NG_VALUE_ACCESSOR_5_4:any[];
-  _NgModel_5_5:import30.NgModel;
+  _NgModel_5_5:import32.NgModel;
   _NgControl_5_6:any;
-  _NgControlStatus_5_7:import18.NgControlStatus;
+  _NgControlStatus_5_7:import20.NgControlStatus;
   _text_6:any;
   _el_7:any;
   _text_8:any;
@@ -1343,7 +1347,7 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
   _text_41:any;
   _el_42:any;
   _el_43:any;
-  _RouterLink_43_3:import31.RouterLink;
+  _RouterLink_43_3:import33.RouterLink;
   _text_44:any;
   _el_45:any;
   _text_46:any;
@@ -1375,6 +1379,7 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
   /*private*/ _expr_15:any;
   /*private*/ _expr_16:any;
   /*private*/ _expr_18:any;
+  _pipe_date_0_0:any;
   /*private*/ _expr_19:any;
   _map_0:any;
   /*private*/ _expr_21:any;
@@ -1393,11 +1398,11 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
     this._el_4 = this.renderer.createElement(this._el_2,'td',(null as any));
     this._el_5 = this.renderer.createElement(this._el_4,'input',(null as any));
     this.renderer.setElementAttribute(this._el_5,'type','checkbox');
-    this._CheckboxControlValueAccessor_5_3 = new import29.CheckboxControlValueAccessor(this.renderer,new import24.ElementRef(this._el_5));
+    this._CheckboxControlValueAccessor_5_3 = new import31.CheckboxControlValueAccessor(this.renderer,new import26.ElementRef(this._el_5));
     this._NG_VALUE_ACCESSOR_5_4 = [this._CheckboxControlValueAccessor_5_3];
-    this._NgModel_5_5 = new import30.NgModel((null as any),(null as any),(null as any),this._NG_VALUE_ACCESSOR_5_4);
+    this._NgModel_5_5 = new import32.NgModel((null as any),(null as any),(null as any),this._NG_VALUE_ACCESSOR_5_4);
     this._NgControl_5_6 = this._NgModel_5_5;
-    this._NgControlStatus_5_7 = new import18.NgControlStatus(this._NgControl_5_6);
+    this._NgControlStatus_5_7 = new import20.NgControlStatus(this._NgControl_5_6);
     this._text_6 = this.renderer.createText(this._el_2,'\n                        ',(null as any));
     this._el_7 = this.renderer.createElement(this._el_2,'td',(null as any));
     this._text_8 = this.renderer.createText(this._el_7,'',(null as any));
@@ -1443,7 +1448,7 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_43,'class','btn btn-primary btn-xs');
     this.renderer.setElementAttribute(this._el_43,'title','View');
     this.renderer.setElementAttribute(this._el_43,'type','button');
-    this._RouterLink_43_3 = new import31.RouterLink(this.parent.parent.parentInjector.get(import32.Router),this.parent.parent.parentInjector.get(import33.ActivatedRoute),this.parent.parent.parentInjector.get(import34.LocationStrategy));
+    this._RouterLink_43_3 = new import33.RouterLink(this.parent.parent.parentInjector.get(import34.Router),this.parent.parent.parentInjector.get(import35.ActivatedRoute),this.parent.parent.parentInjector.get(import36.LocationStrategy));
     this._text_44 = this.renderer.createText(this._el_43,'\n                            ',(null as any));
     this._el_45 = this.renderer.createElement(this._el_43,'i',(null as any));
     this.renderer.setElementAttribute(this._el_45,'class','glyphicon glyphicon-search');
@@ -1453,12 +1458,12 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
     this._text_49 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
     this._anchor_50 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
     this._appEl_50 = new import2.AppElement(50,0,this,this._anchor_50);
-    this._TemplateRef_50_5 = new import16.TemplateRef_(this._appEl_50,viewFactory_UserSolutionsComponent8);
+    this._TemplateRef_50_5 = new import17.TemplateRef_(this._appEl_50,viewFactory_UserSolutionsComponent8);
     this._NgIf_50_6 = new import15.NgIf(this._appEl_50.vcRef,this._TemplateRef_50_5);
     this._text_51 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
     this._anchor_52 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
     this._appEl_52 = new import2.AppElement(52,0,this,this._anchor_52);
-    this._TemplateRef_52_5 = new import16.TemplateRef_(this._appEl_52,viewFactory_UserSolutionsComponent9);
+    this._TemplateRef_52_5 = new import17.TemplateRef_(this._appEl_52,viewFactory_UserSolutionsComponent9);
     this._NgIf_52_6 = new import15.NgIf(this._appEl_52.vcRef,this._TemplateRef_52_5);
     this._text_53 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_5,'ngModelChange',this.eventHandler(this._handle_ngModelChange_5_0.bind(this)));
@@ -1481,6 +1486,7 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
     this._expr_16 = import7.UNINITIALIZED;
     var disposable_3:Function = this.renderer.listen(this._el_30,'click',this.eventHandler(this._handle_click_30_0.bind(this)));
     this._expr_18 = import7.UNINITIALIZED;
+    this._pipe_date_0_0 = import4.pureProxy1((<_View_UserSolutionsComponent0>this.parent.parent)._pipe_date_0.transform.bind((<_View_UserSolutionsComponent0>this.parent.parent)._pipe_date_0));
     this._expr_19 = import7.UNINITIALIZED;
     var disposable_4:Function = this.renderer.listen(this._el_43,'click',this.eventHandler(this._handle_click_43_0.bind(this)));
     this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
@@ -1560,20 +1566,21 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import29.CheckboxControlValueAccessor) && (5 === requestNodeIndex))) { return this._CheckboxControlValueAccessor_5_3; }
-    if (((token === import25.NG_VALUE_ACCESSOR) && (5 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_5_4; }
-    if (((token === import30.NgModel) && (5 === requestNodeIndex))) { return this._NgModel_5_5; }
-    if (((token === import26.NgControl) && (5 === requestNodeIndex))) { return this._NgControl_5_6; }
-    if (((token === import18.NgControlStatus) && (5 === requestNodeIndex))) { return this._NgControlStatus_5_7; }
-    if (((token === import31.RouterLink) && ((43 <= requestNodeIndex) && (requestNodeIndex <= 46)))) { return this._RouterLink_43_3; }
-    if (((token === import16.TemplateRef) && (50 === requestNodeIndex))) { return this._TemplateRef_50_5; }
+    if (((token === import31.CheckboxControlValueAccessor) && (5 === requestNodeIndex))) { return this._CheckboxControlValueAccessor_5_3; }
+    if (((token === import27.NG_VALUE_ACCESSOR) && (5 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_5_4; }
+    if (((token === import32.NgModel) && (5 === requestNodeIndex))) { return this._NgModel_5_5; }
+    if (((token === import28.NgControl) && (5 === requestNodeIndex))) { return this._NgControl_5_6; }
+    if (((token === import20.NgControlStatus) && (5 === requestNodeIndex))) { return this._NgControlStatus_5_7; }
+    if (((token === import33.RouterLink) && ((43 <= requestNodeIndex) && (requestNodeIndex <= 46)))) { return this._RouterLink_43_3; }
+    if (((token === import17.TemplateRef) && (50 === requestNodeIndex))) { return this._TemplateRef_50_5; }
     if (((token === import15.NgIf) && (50 === requestNodeIndex))) { return this._NgIf_50_6; }
-    if (((token === import16.TemplateRef) && (52 === requestNodeIndex))) { return this._TemplateRef_52_5; }
+    if (((token === import17.TemplateRef) && (52 === requestNodeIndex))) { return this._TemplateRef_52_5; }
     if (((token === import15.NgIf) && (52 === requestNodeIndex))) { return this._NgIf_52_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
     var changes:{[key: string]:import7.SimpleChange} = (null as any);
+    const valUnwrapper:any = new import7.ValueUnwrapper();
     changes = (null as any);
     const currVal_3:any = this.context.$implicit.isChecked;
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
@@ -1674,8 +1681,9 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
       this.renderer.setText(this._text_37,currVal_18);
       this._expr_18 = currVal_18;
     }
-    const currVal_19:any = import4.interpolate(1,'',this.context.$implicit.postDate,'');
-    if (import4.checkBinding(throwOnChange,this._expr_19,currVal_19)) {
+    valUnwrapper.reset();
+    const currVal_19:any = import4.interpolate(1,'',valUnwrapper.unwrap(import4.castByValue(this._pipe_date_0_0,(<_View_UserSolutionsComponent0>this.parent.parent)._pipe_date_0.transform)(this.context.$implicit.postDate)),'');
+    if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange,this._expr_19,currVal_19))) {
       this.renderer.setText(this._text_40,currVal_19);
       this._expr_19 = currVal_19;
     }
@@ -1829,7 +1837,7 @@ class _View_UserSolutionsComponent9 extends import1.AppView<any> {
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_0:any = import4.interpolate(1,'',((this.parent.context.$implicit.paper == (null as any))? (null as any): this.parent.context.$implicit.paper.url),'');
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this.renderer.setElementProperty(this._el_9,'href',this.viewUtils.sanitizer.sanitize(import35.SecurityContext.URL,currVal_0));
+      this.renderer.setElementProperty(this._el_9,'href',this.viewUtils.sanitizer.sanitize(import37.SecurityContext.URL,currVal_0));
       this._expr_0 = currVal_0;
     }
     const currVal_1:any = import4.interpolate(1,'',((this.parent.context.$implicit.paper == (null as any))? (null as any): this.parent.context.$implicit.paper.url),'');

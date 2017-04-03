@@ -15,7 +15,10 @@ var emailRoutes = require('./routes/email');
 var app = express();
 mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc');
 
-//save admin if does not exist
+/*
+ *  Uncomment on first deploy on server
+ */
+
 // var User = require('./models/user');
 // var emailAdmin = 'hanka@fi.muni.cz';
 //
@@ -40,7 +43,6 @@ mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc'
 //     }
 // });
 
-//set preference competition is not running
 // var Preference = require('./models/preference');
 // var preferenceName = 'competitionIsOn';
 // var preferenceDefault = new Preference({
@@ -60,6 +62,7 @@ mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc'
 //         });
 //     }
 // });
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

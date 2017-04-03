@@ -60,16 +60,19 @@ export class UsersComponent implements OnInit {
         if (this.myForm.valid) {
             document.getElementById('hideEmailForm').click();
             this.submitted = false;
-            const email = new Email(
-                this.myForm.value.subject,
-                this.myForm.value.content
-            );
-            this.emailService.sendEmailToAll(email)
-                .subscribe(
-                    () => {
-                    },
-                    error => console.error(error)
+            for (let user of this.users){
+                const email = new Email(
+                    user.email,
+                    this.myForm.value.subject,
+                    this.myForm.value.content
                 );
+                this.emailService.sendEmail(email)
+                    .subscribe(
+                        () => {
+                        },
+                        error => console.error(error)
+                    );
+            }
             this.flashMessageService.showMessage('Email was send.', 'success');
         }
     }

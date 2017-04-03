@@ -1,4 +1,5 @@
 export class Email {
-    constructor(public subject: string,
+    constructor(public receiver: string,
+                public subject: string,
                 public content: string){}
 }

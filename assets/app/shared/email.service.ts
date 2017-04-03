@@ -15,10 +15,20 @@ export class EmailService {
         this.hostUrl = routeModule.hostUrl;
     }
 
-    sendEmailToAll(email: Email){
+    sendEmail(email: Email){
         const body = JSON.stringify(email);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('email'), body, {headers: headers})
+            .map((response: Response) => {
+                return response.json();
+            })
+            .catch((error: Response) => {
+                return Observable.throw(error);
+            });
+    }
+
+    sendEmailNewPassword(email: string){
+        return this.http.post(this.hostUrl.concat('emailpassword/') + email,'')
             .map((response: Response) => {
                 return response.json();
             })

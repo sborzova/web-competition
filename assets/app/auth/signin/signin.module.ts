@@ -5,6 +5,7 @@ import {CommonModule} from "@angular/common";
 import {signinRouting} from "./signin.routing";
 import {AuthService} from "../auth.service";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
+import {EmailService} from "../../shared/email.service";
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import {FlashMessageService} from "../../flash-message/flash-messages.service";
     ],
     providers: [
         AuthService,
+        EmailService,
     ]
 })
 export class SigninModule {}
