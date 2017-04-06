@@ -52,86 +52,84 @@ export class SolutionService {
         });
     }
 
-    saveSolution(solution: SolutionCreate,
-                 paperCitation: string,
-                 paperUrl: string){
+    uploadSolution(solution: SolutionCreate,
+                   paperCitation: string,
+                   paperUrl: string){
 
         if (paperCitation || paperUrl){
             this.savePaper(new Paper(paperCitation, paperUrl))
                 .subscribe(
                     paperId => {
                         solution.paperId = paperId;
-                        this.saveSolutionWithoutFile(solution)
-                            .subscribe(
-                                solutionId => {
-                                    this.saveFileSolution(solutionId)
-                                        .subscribe(
-                                            () => {
-                                                this.flashMessageService.showMessage('Solution was uploaded.', 'success' );
-                                                this.successValidationHideResult();
-                                            },
-                                            error => console.error(JSON.parse(error))
-                                        );
-                                },
-                                error => console.error(error)
-                            );
+                        this.saveSolution(solution);
+                    },
+                    error => {
+                        console.error(error);
                     }
                 );
         } else {
-            this.saveSolutionWithoutFile(solution)
-                .subscribe(
-                    solutionId => {
-                        this.saveFileSolution(solutionId)
-                            .subscribe(
-                                () => {
-                                    this.flashMessageService.showMessage('Solution was uploaded.', 'success' );
-                                    this.successValidationHideResult();
-                                },
-                                error => console.error(JSON.parse(error))
-                        );
-                    },
-                    error => console.error(error)
-                );
+            this.saveSolution(solution);
         }
     }
 
-    getWorseSolutions(solution: SolutionFindWorse){
-        const body = JSON.stringify(solution);
-        const token = sessionStorage.getItem('token')
-            ? '?token=' + sessionStorage.getItem('token')
-            : '';
-        const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.hostUrl.concat('worseSolutions') + token, body, {headers: headers})
-            .map((response: Response) => {
-                const solutions = response.json().obj;
-                let transformedSolutions: Solution[] = [];
-                for (let solution of solutions) {
-                    transformedSolutions.push(new Solution(
-                        solution.unassigned,
-                        solution.total,
-                        solution.sc,
-                        solution.time,
-                        solution.room,
-                        solution.distr,
-                        solution.technique,
-                        solution.info,
-                        solution.postDate,
-                        solution.data,
-                        solution.instance,
-                        solution.paper ? new Paper(
-                            solution.paper.citation,
-                            solution.paper.url,
-                            solution.paper._id
-                        ) : null,
-                        null,
-                        solution._id,
-                        false)
-                    );
+    saveSolution(solution: SolutionCreate){
+        this.saveSolutionWithoutFile(solution)
+            .subscribe(
+                solutionId => {
+                    this.saveFileSolution(solutionId)
+                        .subscribe(
+                            () => {
+                                this.flashMessageService.showMessage('Solution was uploaded.', 'success' );
+                                this.successValidationHideResult();
+                            },
+                            error => {
+                                console.error(error);
+                            }
+                        );
+                },
+                error => {
+                    console.error(error);
                 }
-                return transformedSolutions;
-            })
-            .catch((error: Response) => Observable.throw(error.json()));
+            );
     }
+
+    // getWorseSolutions(solution: SolutionFindWorse){
+    //     const body = JSON.stringify(solution);
+    //     const token = sessionStorage.getItem('token')
+    //         ? '?token=' + sessionStorage.getItem('token')
+    //         : '';
+    //     const headers = new Headers({'Content-Type': 'application/json'});
+    //     return this.http.post(this.hostUrl.concat('worseSolutions') + token, body, {headers: headers})
+    //         .map((response: Response) => {
+    //             const solutions = response.json().obj;
+    //             let transformedSolutions: Solution[] = [];
+    //             for (let solution of solutions) {
+    //                 transformedSolutions.push(new Solution(
+    //                     solution.unassigned,
+    //                     solution.total,
+    //                     solution.sc,
+    //                     solution.time,
+    //                     solution.room,
+    //                     solution.distr,
+    //                     solution.technique,
+    //                     solution.info,
+    //                     solution.postDate,
+    //                     solution.data,
+    //                     solution.instance,
+    //                     solution.paper ? new Paper(
+    //                         solution.paper.citation,
+    //                         solution.paper.url,
+    //                         solution.paper._id
+    //                     ) : null,
+    //                     null,
+    //                     solution._id,
+    //                     false)
+    //                 );
+    //             }
+    //             return transformedSolutions;
+    //         })
+    //         .catch((error: Response) => Observable.throw(error));
+    // }
 
     savePaper(paper: Paper){
             const body = JSON.stringify(paper);
@@ -140,7 +138,7 @@ export class SolutionService {
                 .map((response: Response) => {
                     return response.json().obj.data._id;
                 })
-                .catch((error: Response) => Observable.throw(error.json()));
+                .catch((error: Response) => Observable.throw(error));
     }
 
     saveSolutionWithoutFile(solution: SolutionCreate){
@@ -153,7 +151,10 @@ export class SolutionService {
             .map((response: Response) => {
                 return response.json().obj.data._id;
             })
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => {
+                this.flashMessageService.showMessage(error.json().error.message, 'danger');
+                return Observable.throw(error)
+        });
     }
 
     getSolution(solutionId: string){

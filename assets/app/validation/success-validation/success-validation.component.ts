@@ -57,44 +57,44 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
             return;
         }
         if (this.myForm.valid){
-            this.solutionService.getWorseSolutions(
-                new SolutionFindWorse(
-                    this.validation.unassigned,
-                    this.validation.total,
-                    this.myForm.value.technique,
-                    this.validation.instanceName)
-                ).subscribe(
-                (solutions: Solution[]) => {
-                        solutions.push(new Solution(
-                            this.validation.unassigned,
-                            this.validation.total,
-                        ));
-                        solutions.sort(function (a, b) {
-                            let aUnassigned = a.unassigned;
-                            let bUnassigned = b.unassigned;
-                            let aTotal = a.total;
-                            let bTotal = b.total;
+            // this.solutionService.getWorseSolutions(
+            //     new SolutionFindWorse(
+            //         this.validation.unassigned,
+            //         this.validation.total,
+            //         this.myForm.value.technique,
+            //         this.validation.instanceName)
+            //     ).subscribe(
+            //     (solutions: Solution[]) => {
+            //             solutions.push(new Solution(
+            //                 this.validation.unassigned,
+            //                 this.validation.total,
+            //             ));
+            //             solutions.sort(function (a, b) {
+            //                 let aUnassigned = a.unassigned;
+            //                 let bUnassigned = b.unassigned;
+            //                 let aTotal = a.total;
+            //                 let bTotal = b.total;
+            //
+            //                 if (aUnassigned == bUnassigned){
+            //                     return (aTotal < bTotal) ? -1 : (aTotal >= bTotal) ? 1 : 0;
+            //                 }else {
+            //                     return (aUnassigned > bUnassigned) ? -1 : 1;
+            //                 }
+            //             });
+            //             let worseSolutions: Solution [] = [];
+            //             let i : number = 0;
+            //             while(i < solutions.length && solutions[i].solutionId){
+            //                 worseSolutions.push(solutions[i]);
+            //                 i++;
+            //             }
+            //             if (worseSolutions.length > 0){
+            //                 this.solutionService.worseSolutionsShow(worseSolutions);
+            //             }
+            //         },
+            //         error => console.log(error)
+            // );
 
-                            if (aUnassigned == bUnassigned){
-                                return (aTotal < bTotal) ? -1 : (aTotal >= bTotal) ? 1 : 0;
-                            }else {
-                                return (aUnassigned > bUnassigned) ? -1 : 1;
-                            }
-                        });
-                        let worseSolutions: Solution [] = [];
-                        let i : number = 0;
-                        while(i < solutions.length && solutions[i].solutionId){
-                            worseSolutions.push(solutions[i]);
-                            i++;
-                        }
-                        if (worseSolutions.length > 0){
-                            this.solutionService.worseSolutionsShow(worseSolutions);
-                        }
-                    },
-                    error => console.log(error)
-            );
-
-            this.solutionService.saveSolution(
+            this.solutionService.uploadSolution(
                 new SolutionCreate(
                     this.validation.unassigned,
                     this.validation.total,

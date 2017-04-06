@@ -16,6 +16,7 @@ const APP_ROUTES: Routes = [
     { path: '#preferences', loadChildren: '../app/preference/preference.module#PreferenceModule' },
     { path: '#solution/validatorinfo', loadChildren: '../app/validator-info/validator-info.module#ValidatorInfoModule' },
 ];
+
 // export const hostUrl = 'http://localhost:3000/';
 export const hostUrl = 'https://test-cttcompetition.herokuapp.com/';
 

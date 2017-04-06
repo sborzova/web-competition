@@ -76,11 +76,23 @@ router.post('/solution', function (req, res, next) {
                 error: err
             });
         }
+        if (!instance) {
+            return res.status(500).json({
+                title: 'No Instance Found!',
+                error: {message: 'Instance not found'}
+            });
+        }
         User.findOne({email: decoded.user.email}, function (err, user) {
             if (err) {
                 return res.status(500).json({
                     title: 'An error occurred',
                     error: err
+                });
+            }
+            if (!user) {
+                return res.status(500).json({
+                    title: 'No User Found!',
+                    error: {message: 'User not found'}
                 });
             }
             Paper.findById(req.body.paperId, function (err, paper) {
@@ -378,6 +390,12 @@ router.post('/worseSolutions', function (req, res, next) {
             return res.status(500).json({
                 title: 'An error occurred',
                 error: err
+            });
+        }
+        if (!instance) {
+            return res.status(500).json({
+                title: 'No Instance Found!',
+                error: {message: 'Instance not found'}
             });
         }
         Solution.find()
