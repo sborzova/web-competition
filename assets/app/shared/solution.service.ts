@@ -152,7 +152,7 @@ export class SolutionService {
                 return response.json().obj.data._id;
             })
             .catch((error: Response) => {
-                this.flashMessageService.showMessage(error.json().error.message, 'danger');
+                this.flashMessageService.showMessage('Invalid XML format.', 'danger' );
                 return Observable.throw(error)
         });
     }
