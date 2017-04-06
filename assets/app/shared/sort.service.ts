@@ -3,6 +3,13 @@ import {Solution} from "./solution.model";
 
 @Injectable()
 export class SortService {
+    fileSaver = require('file-saver');
+
+    download(solution: Solution){
+        let file = new File([String.fromCharCode.apply(null, solution.data)],
+            'solution-' + solution.instance.name + '.xml', {type: "text/xml;charset=utf-8"});
+        this.fileSaver.saveAs(file);
+    }
 
     sortQualityAsc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {

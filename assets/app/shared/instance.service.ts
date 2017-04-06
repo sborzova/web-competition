@@ -10,6 +10,7 @@ export class InstanceService {
     private instances: Instance[] = [];
     private hostUrl: string;
     private xmlHttp;
+    fileSaver = require('file-saver');
 
     constructor(private http: Http,
                 private flashMessageService: FlashMessageService) {
@@ -75,7 +76,7 @@ export class InstanceService {
                     instance.name,
                     instance.description,
                     instance.stats,
-                    instance.data,
+                    new Buffer(instance.data.data),
                     instance.postDate,
                     instance._id
                 );
@@ -133,5 +134,11 @@ export class InstanceService {
             .catch((error: Response) => {
                 return Observable.throw(error);
             });
+    }
+
+    download(instance: Instance){
+        let file = new File([String.fromCharCode.apply(null, instance.data)],
+            instance.name + '.xml', {type: "text/xml;charset=utf-8"});
+        this.fileSaver.saveAs(file);
     }
 }

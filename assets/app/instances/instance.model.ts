@@ -3,7 +3,7 @@ export class Instance {
                 public name: string,
                 public description: string,
                 public stats?: String,
-                public data?: String,
+                public data?: Buffer,
                 public postDate?: Date,
                 public instanceId?: string){}
 }

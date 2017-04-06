@@ -9,14 +9,12 @@ import {Solution} from "../../shared/solution.model";
 })
 export class ResultsAuthorInstanceTechniqueComponent{
     @Input() solutions: Solution[];
-    fileSaver = require('file-saver');
     showPapers: boolean = false;
 
     constructor(private resultsService: SortService){}
 
     onDownload(solution: Solution){
-        let file = new File([solution.data], 'solution.xml', {type: "text/xml;charset=utf-8"});
-        this.fileSaver.saveAs(file);
+        this.resultsService.download(solution);
     }
 
     isShowPapers(){

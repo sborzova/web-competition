@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var multer = require('multer');
+var iconv = require('iconv-lite');
 
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
@@ -62,7 +63,7 @@ router.post('/files/:id', function (req, res, next) {
                 instance.stats = req.files['stats'][0].buffer.toString();
             }
             if (req.files['data'] && req.files['data'][0]){
-                instance.data = req.files['data'][0].buffer.toString();
+                instance.data = iconv.decode(req.files['data'][0].buffer, 'utf-8', {addBom : false});
             }
 
             instance.save(function (err, result) {

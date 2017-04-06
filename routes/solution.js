@@ -162,7 +162,7 @@ router.post('/solutionFile/:id', function (req, res, next) {
             }
 
             if (req.file.buffer){
-                solution.data = req.file.buffer.toString();
+                solution.data = iconv.decode(req.file.buffer, 'utf-8', {addBom : false});
             }
 
             solution.save(function (err, result) {

@@ -14,7 +14,6 @@ import {Solution} from "../shared/solution.model";
     styleUrls: ['user-solutions.component.css']
 })
 export class UserSolutionsComponent implements OnInit, OnDestroy {
-    fileSaver = require('file-saver');
     solutions: Solution[];
     papers: Paper[];
     editedPaper: Paper;
@@ -48,8 +47,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     onDownload(solution: Solution){
-        let file = new File([solution.data], 'solution.xml', {type: "text/xml;charset=utf-8"});
-        this.fileSaver.saveAs(file);
+        this.sortService.download(solution);
     }
 
     onAddPaper(){

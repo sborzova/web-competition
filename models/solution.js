@@ -13,9 +13,9 @@ var schema = new Schema({
     distr: {type: Number, required: true},
     technique: {type: String, required: true},
     info: {type: String, required: true},
-    data: {type: String},
-    instance: {type: Schema.Types.ObjectId, ref: 'Instance'},
-    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    data: {type: Buffer},
+    instance: {type: Schema.Types.ObjectId, ref: 'Instance', required: true},
+    user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     paper: {type: Schema.Types.ObjectId, ref: 'Paper'},
     postDate: {type: Date, default: Date.now, required: true}
 });

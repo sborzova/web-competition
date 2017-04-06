@@ -12,7 +12,6 @@ import {SessionStorageService} from "../../shared/session-storage.service";
 export class InstanceListComponent implements OnInit {
     instances: Instance[];
     defaultOrder: number;
-    fileSaver = require('file-saver');
 
     constructor(private instanceService: InstanceService,
                 private sessionStorageService: SessionStorageService,
@@ -49,10 +48,8 @@ export class InstanceListComponent implements OnInit {
     onDownload(instance: Instance){
         this.instanceService.getInstance(instance.instanceId)
             .subscribe(
-                data => {
-                    let filename = data.name;
-                    let file = new File([data.data], filename.concat('.xml'), {type: "text/xml;charset=utf-8"});
-                    this.fileSaver.saveAs(file);
+                instance => {
+                    this.instanceService.download(instance);
                 },
                 error => console.log("Error downloading the file."))
     }

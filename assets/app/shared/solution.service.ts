@@ -171,7 +171,7 @@ export class SolutionService {
                     solution.technique,
                     solution.info,
                     solution.postDate,
-                    solution.data,
+                    new Buffer(solution.data.data),
                     solution.instance,
                     solution.paper,
                     null,
@@ -204,7 +204,7 @@ export class SolutionService {
                         solution.technique,
                         solution.info,
                         solution.postDate,
-                        solution.data,
+                        new Buffer(solution.data.data),
                         solution.instance,
                         solution.paper ? new Paper(
                                 solution.paper.citation,
@@ -237,7 +237,7 @@ export class SolutionService {
                         solution.technique,
                         solution.info,
                         solution.postDate,
-                        solution.data,
+                        new Buffer(solution.data.data),
                         new Instance(
                             solution.instance.name,
                             solution.instance._id,
@@ -270,7 +270,7 @@ export class SolutionService {
                         solution.technique,
                         solution.info,
                         solution.postDate,
-                        solution.data,
+                        new Buffer(solution.data.data),
                         new Instance(
                             solution.instance.name,
                             solution.instance._id,

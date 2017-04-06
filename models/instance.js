@@ -10,7 +10,7 @@ var schema = new Schema({
     description: {type: String, required: true},
     postDate: {type: Date, default: Date.now, required: true},
     stats: {type: String},
-    data: {type: String},
+    data: {type: Buffer},
 });
 
 schema.plugin(mongooseUniqueValidator);

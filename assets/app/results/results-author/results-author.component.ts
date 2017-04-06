@@ -11,7 +11,6 @@ export class ResultsAuthorComponent implements OnChanges{
     @Input() solutions: Solution[];
     solutionsAuthorInstance: Solution[];
     solutionsAuthorTechnique: Solution[];
-    fileSaver = require('file-saver');
     showPapers: boolean = false;
 
     constructor(private resultsService: SortService){}
@@ -22,8 +21,7 @@ export class ResultsAuthorComponent implements OnChanges{
     }
 
     onDownload(solution: Solution){
-        let file = new File([solution.data], 'solution.xml', {type: "text/xml;charset=utf-8"});
-        this.fileSaver.saveAs(file);
+        this.resultsService.download(solution);
     }
 
     isShowPapers(){

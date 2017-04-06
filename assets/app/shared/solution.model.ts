@@ -12,7 +12,7 @@ export class Solution {
                 public technique?: string,
                 public info?: string,
                 public postDate?: Date,
-                public data?: string,
+                public data?: Buffer,
                 public instance?: Instance,
                 public paper?: Paper,
                 public author?: Author,

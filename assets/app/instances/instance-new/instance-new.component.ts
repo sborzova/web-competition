@@ -69,7 +69,6 @@ export class InstanceCreateComponent implements OnInit {
             this.instancesService.saveInstance(instance)
                 .subscribe(
                     data => {
-                        console.log(data);
                         let id = data.instanceId;
                         let fd = new FormData();
                         fd.append('stats', statsInput.files[0], statsInput.files[0].name);
