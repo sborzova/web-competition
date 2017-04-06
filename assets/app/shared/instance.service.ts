@@ -87,6 +87,7 @@ export class InstanceService {
     }
 
     updateInstanceTextFields(instance: Instance){
+        instance = this.simplify(instance);
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(
@@ -140,5 +141,10 @@ export class InstanceService {
         let file = new File([String.fromCharCode.apply(null, instance.data)],
             instance.name + '.xml', {type: "text/xml;charset=utf-8"});
         this.fileSaver.saveAs(file);
+    }
+
+    simplify(instance: Instance){
+        instance.data = null;
+        return instance;
     }
 }

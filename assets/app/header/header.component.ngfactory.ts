@@ -262,7 +262,7 @@ class _View_HeaderComponent0 extends import1.AppView<import3.HeaderComponent> {
     this._text_32 = this.renderer.createText(this._el_31,'\n                    ',(null as any));
     this._el_33 = this.renderer.createElement(this._el_31,'a',(null as any));
     this._RouterLinkWithHref_33_3 = new import12.RouterLinkWithHref(this.parentInjector.get(import9.Router),this.parentInjector.get(import16.ActivatedRoute),this.parentInjector.get(import17.LocationStrategy));
-    this._text_34 = this.renderer.createText(this._el_33,'Validate & insert solution',(null as any));
+    this._text_34 = this.renderer.createText(this._el_33,'Validate & Insert solution',(null as any));
     this._text_35 = this.renderer.createText(this._el_31,'\n                ',(null as any));
     this._text_36 = this.renderer.createText(this._el_21,'\n                ',(null as any));
     this._anchor_37 = this.renderer.createTemplateAnchor(this._el_21,(null as any));
