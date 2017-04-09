@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "build": "del-cli public/js/app && webpack --config webpack.config.dev.js --progress --profile --watch",
     "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --bail && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js' '!public/js/app/*.chunk.js' 'assets/app/**/*.ngfactory.ts' 'assets/app/**/*.shim.ts'",
-    "build:prod2": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --watch && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js' '!public/js/app/*.chunk.js' 'assets/app/**/*.ngfactory.ts' 'assets/app/**/*.shim.ts'"
+    "build:prod2": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --watch && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js.gz' '!public/js/app/*.chunk.js.gz' 'assets/app/**/*.ngfactory.ts' 'assets/app/**/*.shim.ts'"
   },
   "dependencies": {
     "@angular/common": "2.0.1",
@@ -23,6 +23,7 @@
     "angular-in-memory-web-api": "^0.2.4",
     "bcryptjs": "^2.3.0",
     "body-parser": "~1.15.1",
+    "compression": "^1.6.2",
     "core-js": "^2.4.1",
     "debug": "~2.2.0",
     "express": "~4.13.4",

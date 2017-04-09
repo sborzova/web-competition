@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var webpackMerge = require('webpack-merge');
 var commonConfig = require('./webpack.config.common.js');
+var CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = webpackMerge.smart(commonConfig, {
     entry: {
@@ -31,6 +32,13 @@ module.exports = webpackMerge.smart(commonConfig, {
         new webpack.NoErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: false
+        }),
+        new CompressionPlugin({
+            asset: "[path].gz[query]",
+            algorithm: "gzip",
+            test: /\.js$|\.css$|\.html$/,
+            threshold: 10240,
+            minRatio: 0.8
         })
     ]
 });

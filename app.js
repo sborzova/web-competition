@@ -3,6 +3,7 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var compression = require('compression');
 
 var appRoutes = require('./routes/app');
 var userRoutes = require('./routes/user');
@@ -63,6 +64,7 @@ mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc'
 //     }
 // });
 
+app.use(compression());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

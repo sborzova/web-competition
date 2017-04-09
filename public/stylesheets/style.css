@@ -2,31 +2,22 @@ body {
   padding: 50px 10px 50px 10px;
   font: 13px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00B7FF;
 }
-
 .field-error {
   color: #c9183f;
   font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
   padding: 3px;
 }
-
-.results{
-  font-size: 13px;
-}
-
 .table-borderless td,
 .table-borderless th {
   border:none !important
 }
-
 .paper {
   background-color: whitesmoke;
   text-align: left;
 }
-
 textarea {
   resize:vertical;
 }
