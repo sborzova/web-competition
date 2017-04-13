@@ -1,3 +1,19 @@
+<button id="openModalDelete" [hidden]="true" data-toggle="modal" data-target="#deleteInstance"></button>
+
+<div class="modal fade" id="deleteInstance" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                        <div class="modal-body" style="text-align: center; padding: 5% 0 5% 0">
+                                Are you sure you want to delete this instance?
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onOk()">OK</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                </div>
+        </div>
+</div>
+
 <div *ngIf="instances" class="col-xs-12">
         <table class="table">
                 <thead>

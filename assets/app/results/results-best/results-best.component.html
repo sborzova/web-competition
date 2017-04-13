@@ -1,26 +1,26 @@
 <div class="col-xs-12" style="margin-top: 3%" >
     <div *ngIf="results" class="results">
         <h4>Best solutions</h4>
-        <button *ngIf="!isShowPapers()" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
-        <button *ngIf="isShowPapers()" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
+        <button *ngIf="!showPapers" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
+        <button *ngIf="showPapers" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
         <table class="table">
             <thead>
-                <tr style="text-align: center">
+                <tr>
                     <th rowspan="2">Instance</th>
                     <th colspan="2">Quality</th>
-                    <th rowspan="2">Student Conflicts</th>
-                    <th rowspan="2">Time Preferences</th>
-                    <th rowspan="2">Room Preferences</th>
-                    <th rowspan="2">Distribution Preferences</th>
-                    <th rowspan="2">Download</th>
+                    <th rowspan="2">Student conflicts</th>
+                    <th rowspan="2">Time preferences</th>
+                    <th rowspan="2">Room preferences</th>
+                    <th rowspan="2">Distribution preferences</th>
                     <th rowspan="2">Author</th>
                     <th rowspan="2">Technique</th>
                     <th rowspan="2">Submission time</th>
-                    <th rowspan="2">Validator Info</th>
+                    <th rowspan="2">Download</th>
+                    <th rowspan="2">Validator info</th>
                 </tr>
                 <tr>
-                    <th>Unassigned Variables</th>
-                    <th>Total Cost</th>
+                    <th>Unassigned variables</th>
+                    <th>Total cost</th>
                 </tr>
             </thead>
             <tbody *ngFor="let solution of results | orderBy : 'instance.order' ">
@@ -32,14 +32,14 @@
                     <td>{{ solution.time }}&nbsp;%</td>
                     <td>{{ solution.room }}&nbsp;%</td>
                     <td>{{ solution.distr }}&nbsp;%</td>
+                    <td><a (click)="onAuthor(solution.author.authorId)">{{ solution.author.firstName }} {{ solution.author.lastName}}</a></td>
+                    <td>{{ solution.technique }}</td>
+                    <td>{{ solution.postDate | date:'medium' }}</td>
                     <td>
                         <button type="button" class="btn btn-success btn-xs" (click)="onDownload(solution)" title="Download">
                             <i class="glyphicon glyphicon-download-alt"></i>
                         </button>
                     </td>
-                    <td><a (click)="onAuthor(solution.author.authorId)">{{ solution.author?.name }}</a></td>
-                    <td>{{ solution.technique }}</td>
-                    <td>{{ solution.postDate | date }}</td>
                     <td><button
                             type="button"
                             class="btn btn-primary btn-xs"
@@ -50,11 +50,11 @@
                     </button>
                     </td>
                 </tr>
-                <tr *ngIf="isShowPapers() && solution.paper" class="paper">
-                    <td ><strong>Citation: </strong></td>
-                    <td colspan="11" id="paper">
-                        {{ solution.paper?.citation}}
-                        <a href="{{solution.paper?.url}}">URL</a>
+                <tr *ngIf="showPapers && solution.paper" class="paper">
+                    <td style="border: none; background-color: white"></td>
+                    <td style="border: none" colspan="11" id="paper">
+                        <strong>Citation: </strong>{{ solution.paper?.citation}}
+                        <a *ngIf="solution.paper?.url" href="{{solution.paper?.url}}">URL</a>
                     </td>
                 </tr>
             </tbody>

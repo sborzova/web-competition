@@ -67,4 +67,20 @@ export class ResultsAuthorInstanceTechniqueComponent{
     onDistributionDesc(){
         this.solutions = this.resultsService.sortDistributionDesc(this.solutions);
     }
+
+    onTechniqueAsc(){
+        this.solutions = this.resultsService.sortTechniqueAsc(this.solutions);
+    }
+
+    onTechniqueDesc(){
+        this.solutions = this.resultsService.sortTechniqueDesc(this.solutions);
+    }
+
+    onSubmissionTimeAsc(){
+        this.solutions = this.resultsService.sortSubmissionTimeAsc(this.solutions);
+    }
+
+    onSubmissionTimeDesc(){
+        this.solutions = this.resultsService.sortSubmissionTimeDesc(this.solutions);
+    }
 }

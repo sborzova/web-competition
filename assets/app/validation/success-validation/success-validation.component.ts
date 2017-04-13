@@ -8,6 +8,9 @@ import { SolutionFindWorse } from "../solution-find-worse.model";
 import { SolutionCreate } from "../solution-create.model";
 import {SessionStorageService} from "../../shared/session-storage.service";
 import {Solution} from "../../shared/solution.model";
+import {Instance} from "../instance.model";
+import {Author} from "../../shared/author.model";
+import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
 @Component({
     selector: 'app-success-validation',
@@ -22,7 +25,8 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     private citationMissing: boolean = false;
 
     constructor(private solutionService: SolutionService,
-                private sessionStorageService: SessionStorageService) {
+                private sessionStorageService: SessionStorageService,
+                private flashMessageService: FlashMessageService) {
 
         this.subscription = solutionService.successValidationDelete$
             .subscribe(
@@ -57,57 +61,47 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
             return;
         }
         if (this.myForm.valid){
-            // this.solutionService.getWorseSolutions(
-            //     new SolutionFindWorse(
-            //         this.validation.unassigned,
-            //         this.validation.total,
-            //         this.myForm.value.technique,
-            //         this.validation.instanceName)
-            //     ).subscribe(
-            //     (solutions: Solution[]) => {
-            //             solutions.push(new Solution(
-            //                 this.validation.unassigned,
-            //                 this.validation.total,
-            //             ));
-            //             solutions.sort(function (a, b) {
-            //                 let aUnassigned = a.unassigned;
-            //                 let bUnassigned = b.unassigned;
-            //                 let aTotal = a.total;
-            //                 let bTotal = b.total;
-            //
-            //                 if (aUnassigned == bUnassigned){
-            //                     return (aTotal < bTotal) ? -1 : (aTotal >= bTotal) ? 1 : 0;
-            //                 }else {
-            //                     return (aUnassigned > bUnassigned) ? -1 : 1;
-            //                 }
-            //             });
-            //             let worseSolutions: Solution [] = [];
-            //             let i : number = 0;
-            //             while(i < solutions.length && solutions[i].solutionId){
-            //                 worseSolutions.push(solutions[i]);
-            //                 i++;
-            //             }
-            //             if (worseSolutions.length > 0){
-            //                 this.solutionService.worseSolutionsShow(worseSolutions);
-            //             }
-            //         },
-            //         error => console.log(error)
-            // );
-
-            this.solutionService.uploadSolution(
-                new SolutionCreate(
+            this.solutionService.findDuplicateSolution(
+                new Solution(
                     this.validation.unassigned,
                     this.validation.total,
                     this.validation.sc,
                     this.validation.time,
                     this.validation.room,
                     this.validation.distr,
-                    this.validation.info,
                     this.myForm.value.technique,
-                    this.validation.instanceName),
-                this.myForm.value.citation,
-                this.myForm.value.url,
-                );
+                    '',
+                    null,
+                    null,
+                    new Instance(this.validation.instanceName))
+                ).subscribe(
+                (solution: Solution) => {
+                    if (solution.postDate) {
+                        this.flashMessageService.showMessage(
+                            'Solution has the same unassigned variables, total cost, time preferences, ' +
+                            'room preferences, distribution preferences and technique as your other ' +
+                            'solution uploaded to the system ' + ', it is not ' +
+                            'uploaded.', 'info');
+                        return;
+                    }else {
+                        this.solutionService.uploadSolution(
+                            new SolutionCreate(
+                                this.validation.unassigned,
+                                this.validation.total,
+                                this.validation.sc,
+                                this.validation.time,
+                                this.validation.room,
+                                this.validation.distr,
+                                this.validation.info,
+                                this.myForm.value.technique,
+                                this.validation.instanceName),
+                            this.myForm.value.citation,
+                            this.myForm.value.url,
+                            );
+                        }
+                    },
+                    error => console.log(error)
+            );
         }
     }
 

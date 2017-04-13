@@ -14,7 +14,6 @@ export class ResultsBestComponent implements OnInit {
     solutionsAll: Solution[] = [];
     solutionsInstance: Solution[];
     solutionsAuthor: Solution[];
-    fileSaver = require('file-saver');
     showPapers: boolean = false;
 
     constructor(private solutionService: SolutionService,
@@ -46,8 +45,7 @@ export class ResultsBestComponent implements OnInit {
     }
 
     onDownload(solution: Solution){
-        let file = new File([solution.data], 'solution.xml', {type: "text/xml;charset=utf-8"});
-        this.fileSaver.saveAs(file);
+        this.resultsService.download(solution);
     }
 
     onAuthor(authorId: string){
@@ -58,10 +56,6 @@ export class ResultsBestComponent implements OnInit {
     onInstance(instanceId: string){
         this.solutionsAuthor = null;
         this.solutionsInstance = this.solutionsAll.filter( s => s.instance.instanceId == instanceId);
-    }
-
-    isShowPapers(){
-        return this.showPapers;
     }
 
     onShowPapers(){

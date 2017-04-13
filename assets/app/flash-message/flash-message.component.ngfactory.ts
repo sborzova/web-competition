@@ -102,7 +102,7 @@ class _View_FlashMessageComponent0 extends import1.AppView<import3.FlashMessageC
     this._text_7 = this.renderer.createText(this._el_6,'\n            ',(null as any));
     this._el_8 = this.renderer.createElement(this._el_6,'div',(null as any));
     this.renderer.setElementAttribute(this._el_8,'class','modal-body');
-    this.renderer.setElementAttribute(this._el_8,'style','text-align: center; padding: 5% 0 5% 0');
+    this.renderer.setElementAttribute(this._el_8,'style','text-align: center; padding: 5% 2% 5% 2%');
     this._text_9 = this.renderer.createText(this._el_8,'\n                ',(null as any));
     this._el_10 = this.renderer.createElement(this._el_8,'h5',(null as any));
     this._text_11 = this.renderer.createText(this._el_10,'',(null as any));

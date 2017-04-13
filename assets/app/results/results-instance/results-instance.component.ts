@@ -12,14 +12,14 @@ export class ResultsInstanceComponent implements OnChanges {
     solutionsAuthorInstance: Solution[];
     showPapers: boolean = false;
 
-    constructor(private resultsService: SortService){}
+    constructor(private sortService: SortService){}
 
     ngOnChanges(changes: SimpleChanges){
        this.solutionsAuthorInstance = null;
     }
 
     onDownload(solution: Solution){
-        this.resultsService.download(solution);
+        this.sortService.download(solution);
     }
 
     onAuthor(authorId: string){
@@ -39,41 +39,65 @@ export class ResultsInstanceComponent implements OnChanges {
     }
 
     onQualityAsc(){
-        this.solutions = this.resultsService.sortQualityAsc(this.solutions);
+        this.solutions = this.sortService.sortQualityAsc(this.solutions);
     }
 
     onQualityDesc(){
-        this.solutions = this.resultsService.sortQualityDesc(this.solutions);
+        this.solutions = this.sortService.sortQualityDesc(this.solutions);
     }
 
     onScAsc(){
-        this.solutions = this.resultsService.sortScAsc(this.solutions);
+        this.solutions = this.sortService.sortScAsc(this.solutions);
     }
 
     onScDesc(){
-        this.solutions = this.resultsService.sortScDesc(this.solutions);
+        this.solutions = this.sortService.sortScDesc(this.solutions);
     }
 
     onTimeAsc(){
-        this.solutions = this.resultsService.sortTimeAsc(this.solutions);
+        this.solutions = this.sortService.sortTimeAsc(this.solutions);
     }
 
     onTimeDesc(){
-        this.solutions = this.resultsService.sortTimeDesc(this.solutions);
+        this.solutions = this.sortService.sortTimeDesc(this.solutions);
     }
     onRoomAsc(){
-        this.solutions = this.resultsService.sortRoomAsc(this.solutions);
+        this.solutions = this.sortService.sortRoomAsc(this.solutions);
     }
 
     onRoomDesc(){
-        this.solutions = this.resultsService.sortRoomDesc(this.solutions);
+        this.solutions = this.sortService.sortRoomDesc(this.solutions);
     }
 
     onDistributionAsc(){
-        this.solutions = this.resultsService.sortDistributionAsc(this.solutions);
+        this.solutions = this.sortService.sortDistributionAsc(this.solutions);
     }
 
     onDistributionDesc(){
-        this.solutions = this.resultsService.sortDistributionDesc(this.solutions);
+        this.solutions = this.sortService.sortDistributionDesc(this.solutions);
+    }
+
+    onTechniqueAsc(){
+        this.solutions = this.sortService.sortTechniqueAsc(this.solutions);
+    }
+
+    onTechniqueDesc(){
+        this.solutions = this.sortService.sortTechniqueDesc(this.solutions);
+    }
+
+    onSubmissionTimeAsc(){
+        this.solutions = this.sortService.sortSubmissionTimeAsc(this.solutions);
+    }
+
+    onSubmissionTimeDesc(){
+        this.solutions = this.sortService.sortSubmissionTimeDesc(this.solutions);
+    }
+
+    onAuthorAsc(){
+        this.solutions = this.sortService.sortAuthorAsc(this.solutions);
+    }
+
+    onAuthorDesc(){
+        this.solutions = this.sortService.sortAuthorDesc(this.solutions);
     }
 }

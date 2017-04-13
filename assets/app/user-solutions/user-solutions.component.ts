@@ -22,6 +22,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     showPapers: boolean = false;
     submitted: boolean = false;
     isEdited: boolean = false;
+    disabled: boolean = false;
 
     constructor(private solutionService: SolutionService,
                 private paperService: PaperService,
@@ -55,6 +56,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
             return;
         if (!this.checkOnlyWithNoPaper())
             return;
+        this.disabled = true;
         const solutions = this.selectedSolutions;
         this.myForm = new FormGroup({
             citation: new FormControl(null, Validators.required),
@@ -66,7 +68,12 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     onRemovePaper(){
-        this.checkIfSelected();
+        if (this.checkIfSelected()){
+            document.getElementById('openModalDelete').click();
+        }
+    }
+
+    onOk(){
         let paperIds = new Set<string>();
         for (let solution of this.selectedSolutions){
             if (solution.paper){
@@ -123,6 +130,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
                 citation: new FormControl(this.editedPaper.citation, Validators.required),
                 url: new FormControl(this.editedPaper.url)
             });
+            this.disabled = true;
             this.showPaperForm = true;
         }
     }
@@ -141,6 +149,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
                             this.editedPaper = null;
                             this.uncheckSelected();
                             this.showPaperForm = false;
+                            this.disabled = false;
                             this.flashMessageService.showMessage('Paper was updated', 'success');
                         },
                         error => console.error(error),
@@ -172,6 +181,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
         }
         this.flashMessageService.showMessage('Paper was saved.', 'success' );
         this.uncheckSelected();
+        this.disabled = false;
         this.showPaperForm = false;
     }
 
@@ -198,6 +208,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
 
     onHidePaperForm(){
         this.uncheckSelected();
+        this.disabled = false;
         this.showPaperForm = false;
     }
 
@@ -245,6 +256,22 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
         this.solutions = this.sortService.sortDistributionDesc(this.solutions);
     }
 
+    onTechniqueAsc(){
+        this.solutions = this.sortService.sortTechniqueAsc(this.solutions);
+    }
+
+    onTechniqueDesc(){
+        this.solutions = this.sortService.sortTechniqueDesc(this.solutions);
+    }
+
+    onSubmissionTimeAsc(){
+        this.solutions = this.sortService.sortSubmissionTimeAsc(this.solutions);
+    }
+
+    onSubmissionTimeDesc(){
+        this.solutions = this.sortService.sortSubmissionTimeDesc(this.solutions);
+    }
+
     private checkIfSelected() {
         if (this.selectedSolutions.length == 0){
             this.flashMessageService.showMessage('Select solutions.', 'info' );
@@ -289,6 +316,4 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
                 )
         }
     }
-
-
 }

@@ -64,39 +64,144 @@ export const InstanceListComponentNgFactory:import12.ComponentFactory<import3.In
 const styles_InstanceListComponent:any[] = [];
 var renderType_InstanceListComponent:import0.RenderComponentType = (null as any);
 class _View_InstanceListComponent0 extends import1.AppView<import3.InstanceListComponent> {
-  _anchor_0:any;
-  /*private*/ _appEl_0:import2.AppElement;
-  _TemplateRef_0_5:any;
-  _NgIf_0_6:import13.NgIf;
+  _el_0:any;
+  _text_1:any;
+  _el_2:any;
+  _text_3:any;
+  _el_4:any;
+  _text_5:any;
+  _el_6:any;
+  _text_7:any;
+  _el_8:any;
+  _text_9:any;
+  _text_10:any;
+  _el_11:any;
+  _text_12:any;
+  _el_13:any;
+  _text_14:any;
+  _text_15:any;
+  _el_16:any;
+  _text_17:any;
+  _text_18:any;
+  _text_19:any;
+  _text_20:any;
+  _text_21:any;
+  _text_22:any;
+  _anchor_23:any;
+  /*private*/ _appEl_23:import2.AppElement;
+  _TemplateRef_23_5:any;
+  _NgIf_23_6:import13.NgIf;
   /*private*/ _expr_0:any;
+  /*private*/ _expr_2:any;
   _pipe_date_0:import14.DatePipe;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_InstanceListComponent0,renderType_InstanceListComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-    this._anchor_0 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
-    this._appEl_0 = new import2.AppElement(0,(null as any),this,this._anchor_0);
-    this._TemplateRef_0_5 = new import15.TemplateRef_(this._appEl_0,viewFactory_InstanceListComponent1);
-    this._NgIf_0_6 = new import13.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
+    this._el_0 = this.renderer.createElement(parentRenderNode,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'data-target','#deleteInstance');
+    this.renderer.setElementAttribute(this._el_0,'data-toggle','modal');
+    this.renderer.setElementAttribute(this._el_0,'id','openModalDelete');
+    this._text_1 = this.renderer.createText(parentRenderNode,'\n\n',(null as any));
+    this._el_2 = this.renderer.createElement(parentRenderNode,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_2,'aria-hidden','true');
+    this.renderer.setElementAttribute(this._el_2,'class','modal fade');
+    this.renderer.setElementAttribute(this._el_2,'id','deleteInstance');
+    this.renderer.setElementAttribute(this._el_2,'role','dialog');
+    this.renderer.setElementAttribute(this._el_2,'tabindex','-1');
+    this._text_3 = this.renderer.createText(this._el_2,'\n        ',(null as any));
+    this._el_4 = this.renderer.createElement(this._el_2,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_4,'class','modal-dialog');
+    this.renderer.setElementAttribute(this._el_4,'role','document');
+    this._text_5 = this.renderer.createText(this._el_4,'\n                ',(null as any));
+    this._el_6 = this.renderer.createElement(this._el_4,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_6,'class','modal-content');
+    this._text_7 = this.renderer.createText(this._el_6,'\n                        ',(null as any));
+    this._el_8 = this.renderer.createElement(this._el_6,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_8,'class','modal-body');
+    this.renderer.setElementAttribute(this._el_8,'style','text-align: center; padding: 5% 0 5% 0');
+    this._text_9 = this.renderer.createText(this._el_8,'\n                                Are you sure you want to delete this instance?\n                        ',(null as any));
+    this._text_10 = this.renderer.createText(this._el_6,'\n                        ',(null as any));
+    this._el_11 = this.renderer.createElement(this._el_6,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_11,'class','modal-footer');
+    this._text_12 = this.renderer.createText(this._el_11,'\n                                ',(null as any));
+    this._el_13 = this.renderer.createElement(this._el_11,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_13,'class','btn btn-primary');
+    this.renderer.setElementAttribute(this._el_13,'data-dismiss','modal');
+    this.renderer.setElementAttribute(this._el_13,'type','button');
+    this._text_14 = this.renderer.createText(this._el_13,'OK',(null as any));
+    this._text_15 = this.renderer.createText(this._el_11,'\n                                ',(null as any));
+    this._el_16 = this.renderer.createElement(this._el_11,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_16,'class','btn btn-default');
+    this.renderer.setElementAttribute(this._el_16,'data-dismiss','modal');
+    this.renderer.setElementAttribute(this._el_16,'type','button');
+    this._text_17 = this.renderer.createText(this._el_16,'Close',(null as any));
+    this._text_18 = this.renderer.createText(this._el_11,'\n                        ',(null as any));
+    this._text_19 = this.renderer.createText(this._el_6,'\n                ',(null as any));
+    this._text_20 = this.renderer.createText(this._el_4,'\n        ',(null as any));
+    this._text_21 = this.renderer.createText(this._el_2,'\n',(null as any));
+    this._text_22 = this.renderer.createText(parentRenderNode,'\n\n',(null as any));
+    this._anchor_23 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
+    this._appEl_23 = new import2.AppElement(23,(null as any),this,this._anchor_23);
+    this._TemplateRef_23_5 = new import15.TemplateRef_(this._appEl_23,viewFactory_InstanceListComponent1);
+    this._NgIf_23_6 = new import13.NgIf(this._appEl_23.vcRef,this._TemplateRef_23_5);
     this._expr_0 = import7.UNINITIALIZED;
+    var disposable_0:Function = this.renderer.listen(this._el_13,'click',this.eventHandler(this._handle_click_13_0.bind(this)));
+    this._expr_2 = import7.UNINITIALIZED;
     this._pipe_date_0 = new import14.DatePipe(this.parentInjector.get(import16.LOCALE_ID));
-    this.init([],[this._anchor_0],[],[]);
+    this.init([],[
+      this._el_0,
+      this._text_1,
+      this._el_2,
+      this._text_3,
+      this._el_4,
+      this._text_5,
+      this._el_6,
+      this._text_7,
+      this._el_8,
+      this._text_9,
+      this._text_10,
+      this._el_11,
+      this._text_12,
+      this._el_13,
+      this._text_14,
+      this._text_15,
+      this._el_16,
+      this._text_17,
+      this._text_18,
+      this._text_19,
+      this._text_20,
+      this._text_21,
+      this._text_22,
+      this._anchor_23
+    ]
+    ,[disposable_0],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import15.TemplateRef) && (0 === requestNodeIndex))) { return this._TemplateRef_0_5; }
-    if (((token === import13.NgIf) && (0 === requestNodeIndex))) { return this._NgIf_0_6; }
+    if (((token === import15.TemplateRef) && (23 === requestNodeIndex))) { return this._TemplateRef_23_5; }
+    if (((token === import13.NgIf) && (23 === requestNodeIndex))) { return this._NgIf_23_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_0:any = this.context.instances;
-    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this._NgIf_0_6.ngIf = currVal_0;
-      this._expr_0 = currVal_0;
+    const currVal_2:any = this.context.instances;
+    if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
+      this._NgIf_23_6.ngIf = currVal_2;
+      this._expr_2 = currVal_2;
     }
     this.detectContentChildrenChanges(throwOnChange);
+    const currVal_0:any = true;
+    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
+      this.renderer.setElementProperty(this._el_0,'hidden',currVal_0);
+      this._expr_0 = currVal_0;
+    }
     this.detectViewChildrenChanges(throwOnChange);
+  }
+  private _handle_click_13_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this.context.onOk()) !== false);
+    return (true && pd_0);
   }
 }
 export function viewFactory_InstanceListComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.InstanceListComponent> {

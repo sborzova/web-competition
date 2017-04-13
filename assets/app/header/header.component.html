@@ -22,6 +22,9 @@
                 <li routerLinkActive="active" *ngIf="isAdmin()" data-toggle="collapse" data-target=".navbar-collapse.in">
                     <a [routerLink]="['#users']">User management</a>
                 </li>
+                <li routerLinkActive="active" *ngIf="isLoggedIn()" data-toggle="collapse" data-target=".navbar-collapse.in">
+                    <a [routerLink]="['#mysolutions']">My solutions</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav  navbar-right">
                 <li class="dropdown pull-right">
@@ -37,9 +40,6 @@
                         </li>
                         <li routerLinkActive="active" *ngIf="isLoggedIn()" data-toggle="collapse" data-target=".navbar-collapse.in">
                             <a [routerLink]="['#profile']">My profile</a>
-                        </li>
-                        <li routerLinkActive="active" *ngIf="isLoggedIn()" data-toggle="collapse" data-target=".navbar-collapse.in">
-                            <a [routerLink]="['#mysolutions']">My solutions</a>
                         </li>
                         <li routerLinkActive="active" *ngIf="isAdmin()" data-toggle="collapse" data-target=".navbar-collapse.in">
                             <a [routerLink]="['#preferences']">Preferences</a>

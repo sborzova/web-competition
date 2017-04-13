@@ -17,9 +17,15 @@ export class SortService {
             let bUnassigned = b.unassigned;
             let aTotal = a.total;
             let bTotal = b.total;
+            let aSubmissionTime = a.postDate;
+            let bSubmissionTime = b.postDate;
 
             if (aUnassigned == bUnassigned){
-                return (aTotal > bTotal) ? -1 : (aTotal < bTotal) ? 1 : 0;
+                if (aTotal == bTotal){
+                    return (aSubmissionTime < bSubmissionTime) ? -1 : (aSubmissionTime > bSubmissionTime) ? 1 : 0;
+                }else {
+                    return (aTotal > bTotal) ? 1 : (aTotal < bTotal) ? -1 : 0;
+                }
             }else {
                 return (aUnassigned < bUnassigned) ? -1 : 1;
             }
@@ -32,9 +38,15 @@ export class SortService {
             let bUnassigned = b.unassigned;
             let aTotal = a.total;
             let bTotal = b.total;
+            let aSubmissionTime = a.postDate;
+            let bSubmissionTime = b.postDate;
 
             if (aUnassigned == bUnassigned){
-                return (aTotal > bTotal) ? 1 : (aTotal < bTotal) ? -1 : 0;
+                if (aTotal == bTotal){
+                    return (aSubmissionTime < bSubmissionTime) ? 1 : (aSubmissionTime > bSubmissionTime) ? -1 : 0;
+                }else {
+                    return (aTotal > bTotal) ? -1 : (aTotal < bTotal) ? 1 : 0;
+                }
             }else {
                 return (aUnassigned < bUnassigned) ? 1 : -1;
             }
@@ -118,6 +130,76 @@ export class SortService {
             if (a.distr > b.distr)
                 return -1;
             return 0;
+        })
+    }
+
+    sortTechniqueAsc(solutions: Solution[]){
+        return solutions.sort(function compare(a,b) {
+            if (a.technique < b.technique)
+                return -1;
+            if (a.technique > b.technique)
+                return 1;
+            return 0;
+        })
+    }
+
+    sortTechniqueDesc(solutions: Solution[]){
+        return solutions.sort(function compare(a,b) {
+            if (a.technique < b.technique)
+                return 1;
+            if (a.technique > b.technique)
+                return -1;
+            return 0;
+        })
+    }
+
+    sortSubmissionTimeAsc(solutions: Solution[]){
+        return solutions.sort(function compare(a,b) {
+            if (a.postDate < b.postDate)
+                return -1;
+            if (a.postDate > b.postDate)
+                return 1;
+            return 0;
+        })
+    }
+
+    sortSubmissionTimeDesc(solutions: Solution[]){
+        return solutions.sort(function compare(a,b) {
+            if (a.postDate < b.postDate)
+                return 1;
+            if (a.postDate > b.postDate)
+                return -1;
+            return 0;
+        })
+    }
+
+    sortAuthorAsc(solutions: Solution[]){
+        return solutions.sort(function compare(a,b) {
+            let aLastName = a.author.lastName;
+            let bLastName = b.author.lastName;
+            let aFirstName = a.author.firstName;
+            let bFirstName = b.author.firstName;
+
+            if (aLastName == bLastName){
+                return (aFirstName > bFirstName) ? 1 : (aFirstName < bFirstName) ? -1 : 0;
+            }else {
+                return (aLastName < bLastName) ? -1 : 1;
+            }
+        })
+    }
+
+    sortAuthorDesc(solutions: Solution[]){
+        return solutions.sort(function compare(a,b) {
+            let aLastName = a.author.lastName;
+            let bLastName = b.author.lastName;
+            let aFirstName = a.author.firstName;
+            let bFirstName = b.author.firstName;
+
+            if (aLastName == bLastName){
+                return (aFirstName > bFirstName) ? -1 : (aFirstName < bFirstName) ? 1 : 0;
+            }else {
+                return (aLastName < bLastName) ? 1 : -1;
+            }
         })
     }
 }

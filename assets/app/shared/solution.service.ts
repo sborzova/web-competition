@@ -93,43 +93,39 @@ export class SolutionService {
             );
     }
 
-    // getWorseSolutions(solution: SolutionFindWorse){
-    //     const body = JSON.stringify(solution);
-    //     const token = sessionStorage.getItem('token')
-    //         ? '?token=' + sessionStorage.getItem('token')
-    //         : '';
-    //     const headers = new Headers({'Content-Type': 'application/json'});
-    //     return this.http.post(this.hostUrl.concat('worseSolutions') + token, body, {headers: headers})
-    //         .map((response: Response) => {
-    //             const solutions = response.json().obj;
-    //             let transformedSolutions: Solution[] = [];
-    //             for (let solution of solutions) {
-    //                 transformedSolutions.push(new Solution(
-    //                     solution.unassigned,
-    //                     solution.total,
-    //                     solution.sc,
-    //                     solution.time,
-    //                     solution.room,
-    //                     solution.distr,
-    //                     solution.technique,
-    //                     solution.info,
-    //                     solution.postDate,
-    //                     solution.data,
-    //                     solution.instance,
-    //                     solution.paper ? new Paper(
-    //                         solution.paper.citation,
-    //                         solution.paper.url,
-    //                         solution.paper._id
-    //                     ) : null,
-    //                     null,
-    //                     solution._id,
-    //                     false)
-    //                 );
-    //             }
-    //             return transformedSolutions;
-    //         })
-    //         .catch((error: Response) => Observable.throw(error));
-    // }
+    findDuplicateSolution(solution: Solution){
+        const body = JSON.stringify(solution);
+        const token = sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
+            : '';
+        const headers = new Headers({'Content-Type': 'application/json'});
+        return this.http.post(this.hostUrl.concat('duplicateSolution') + token, body, {headers: headers})
+            .map((response: Response) => {
+                const solution = response.json().obj;
+                console.log(solution);
+                return new Solution(
+                        solution.unassigned,
+                        solution.total,
+                        solution.sc,
+                        solution.time,
+                        solution.room,
+                        solution.distr,
+                        solution.technique,
+                        solution.info,
+                        solution.postDate,
+                        solution.data,
+                        solution.instance,
+                        solution.paper ? new Paper(
+                            solution.paper.citation,
+                            solution.paper.url,
+                            solution.paper._id
+                        ) : null,
+                        null,
+                        solution._id,
+                        false);
+            })
+            .catch((error: Response) => Observable.throw(error));
+    }
 
     savePaper(paper: Paper){
             const body = JSON.stringify(paper);
@@ -244,7 +240,8 @@ export class SolutionService {
                             solution.instance.order),
                         solution.paper,
                         new Author(
-                            solution.user.firstName.concat(" ").concat(solution.user.lastName),
+                            solution.user.firstName,
+                            solution.user.lastName,
                             solution.user._id),
                         solution._id)
                     );
@@ -277,7 +274,8 @@ export class SolutionService {
                             solution.instance.order),
                         solution.paper,
                         new Author(
-                            solution.user.firstName.concat(" ").concat(solution.user.lastName),
+                            solution.user.firstName,
+                            solution.user.lastName,
                             solution.user._id),
                         solution._id)
                     );

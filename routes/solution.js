@@ -383,9 +383,10 @@ router.get('/solutionsByLoggedUser', function (req, res, next) {
 });
 
 
-router.post('/worseSolutions', function (req, res, next) {
+router.post('/duplicateSolution', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
-    Instance.findOne({name: req.body.instanceName}, function (err, instance) {
+    console.log(req.body);
+    Instance.findOne({name: req.body.instance.name}, function (err, instance) {
         if (err) {
             return res.status(500).json({
                 title: 'An error occurred',
@@ -398,20 +399,24 @@ router.post('/worseSolutions', function (req, res, next) {
                 error: {message: 'Instance not found'}
             });
         }
-        Solution.find()
+        Solution.findOne()
             .populate('paper')
             .where('user').equals(decoded.user._id)
             .where('instance').equals(instance._id)
             .where('technique').equals(req.body.technique)
             .where('unassigned').gte(req.body.unassigned)
-            .exec(function (err, solutions) {
+            .where('total').gte(req.body.total)
+            .where('time').gte(req.body.time)
+            .where('room').gte(req.body.room)
+            .where('distr').gte(req.body.distr)
+            .exec(function (err, solution) {
                 if (err) {
                     return res.status(500).json({
                         title: 'An error occurred',
                         error: err
                     });
                 }
-                if (!solutions) {
+                if (!solution) {
                     return res.status(500).json({
                         title: 'No Solution Found!',
                         error: {message: 'Solution not found'}
@@ -419,7 +424,7 @@ router.post('/worseSolutions', function (req, res, next) {
                 }
                 res.status(200).json({
                     message: 'Success',
-                    obj: solutions
+                    obj: solution
                 });
             });
     });

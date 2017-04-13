@@ -315,7 +315,7 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
     this._el_27 = this.renderer.createElement(this._el_25,'app-success-validation',(null as any));
     this._appEl_27 = new import2.AppElement(27,25,this,this._el_27);
     var compView_27:any = import23.viewFactory_SuccessValidationComponent0(this.viewUtils,this.injector(27),this._appEl_27);
-    this._SuccessValidationComponent_27_4 = new import21.SuccessValidationComponent(this.parent.parentInjector.get(import8.SolutionService),this.parent.parentInjector.get(import9.SessionStorageService));
+    this._SuccessValidationComponent_27_4 = new import21.SuccessValidationComponent(this.parent.parentInjector.get(import8.SolutionService),this.parent.parentInjector.get(import9.SessionStorageService),this.parent.parentInjector.get(import10.FlashMessageService));
     this._appEl_27.initComponent(this._SuccessValidationComponent_27_4,[],compView_27);
     compView_27.create(this._SuccessValidationComponent_27_4,[],(null as any));
     this._text_28 = this.renderer.createText(this._el_25,'\n                ',(null as any));

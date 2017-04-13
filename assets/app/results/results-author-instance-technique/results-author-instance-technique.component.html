@@ -1,5 +1,5 @@
 <div *ngIf="solutions" class="results">
-    <h4>Solutions of <strong>{{ solutions[0].author.name }}</strong>
+    <h4>Solutions of <strong>{{ solutions[0].author.firstName}} {{ solutions[0].author.lastName}}</strong>
         for instance <strong>{{ solutions[0].instance.name }}</strong>
         with the technique <strong>{{ solutions[0].technique }}</strong></h4>
     <button *ngIf="!isShowPapers()" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
@@ -13,32 +13,36 @@
                 <span (click)="onQualityDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
             </th>
             <th rowspan="2">
-                <span style="float: left">Student Conflict</span>
+                <span style="float: left">Student conflict</span>
                 <span (click)="onScAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
                 <span (click)="onScDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
             </th>
             <th rowspan="2">
-                <span style="float: left">Time Preferences</span>
+                <span style="float: left">Time preferences</span>
                 <span (click)="onTimeAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
                 <span (click)="onTimeDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
             </th>
             <th rowspan="2">
-                <span style="float: left">Room Preferences</span>
+                <span style="float: left">Room preferences</span>
                 <span (click)="onRoomAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
                 <span (click)="onRoomDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
             </th>
             <th rowspan="2">
-                <span style="float: left">Distribution Preferences</span>
+                <span style="float: left">Distribution preferences</span>
                 <span (click)="onDistributionAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
                 <span (click)="onDistributionDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
             </th>
+            <th rowspan="2">
+                <span style="float: left">Submission time</span>
+                <span (click)="onSubmissionTimeAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                <span (click)="onSubmissionTimeDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+            </th>
             <th rowspan="2">Download</th>
-            <th rowspan="2">Submission time</th>
-            <th rowspan="2">Validator Info</th>
+            <th rowspan="2">Validator info</th>
         </tr>
         <tr>
-            <th>Unassigned Variables</th>
-            <th>Total Cost</th>
+            <th>Unassigned variables</th>
+            <th>Total cost</th>
         </tr>
         </thead>
         <tbody *ngFor="let solution of solutions">
@@ -49,12 +53,12 @@
             <td>{{ solution.time }}&nbsp;%</td>
             <td>{{ solution.room }}&nbsp;%</td>
             <td>{{ solution.distr }}&nbsp;%</td>
+            <td>{{ solution.postDate | date:'medium' }}</td>
             <td>
                 <button type="button" class="btn btn-success btn-xs" (click)="onDownload(solution)" title="Download">
                     <i class="glyphicon glyphicon-download-alt"></i>
                 </button>
             </td>
-            <td>{{ solution.postDate | date }}</td>
             <td><button
                     type="button"
                     class="btn btn-primary btn-xs"
@@ -66,10 +70,10 @@
             </td>
         </tr>
         <tr *ngIf="isShowPapers() && solution.paper" class="paper">
-            <td ><strong>Citation: </strong></td>
-            <td colspan="11" id="paper">
-                {{ solution.paper?.citation}}
-                <a href="{{solution.paper?.url}}">URL</a>
+            <td style="border: none; background-color: white"></td>
+            <td style="border: none" colspan="11" id="paper">
+                <strong>Citation: </strong>{{ solution.paper?.citation}}
+                <a *ngIf="solution.paper?.url" href="{{solution.paper?.url}}">URL</a>
             </td>
         </tr>
         </tbody>

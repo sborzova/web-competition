@@ -12,6 +12,7 @@ import {SessionStorageService} from "../../shared/session-storage.service";
 export class InstanceListComponent implements OnInit {
     instances: Instance[];
     defaultOrder: number;
+    instance: Instance;
 
     constructor(private instanceService: InstanceService,
                 private sessionStorageService: SessionStorageService,
@@ -36,13 +37,8 @@ export class InstanceListComponent implements OnInit {
     }
 
     onDelete(instance: Instance) {
-        this.instanceService.deleteInstance(instance)
-            .subscribe(
-                result => {
-                    this.flashMessageService.showMessage('Instance was deleted', 'success'  );
-                },
-                error => console.error(error)
-            );
+        this.instance = instance;
+        document.getElementById('openModalDelete').click();
     }
 
     onDownload(instance: Instance){
@@ -56,5 +52,16 @@ export class InstanceListComponent implements OnInit {
 
     isAdmin(){
         return this.sessionStorageService.isAdmin();
+    }
+
+    onOk(){
+        this.instanceService.deleteInstance(this.instance)
+            .subscribe(
+                result => {
+                    this.instance = null;
+                    this.flashMessageService.showMessage('Instance was deleted', 'success'  );
+                },
+                error => console.error(error)
+            );
     }
 }

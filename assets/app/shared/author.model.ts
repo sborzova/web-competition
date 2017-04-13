@@ -1,4 +1,5 @@
 export class Author {
-    constructor(public name: string,
+    constructor(public firstName: string,
+                public lastName: string,
                 public authorId: string){}
 }

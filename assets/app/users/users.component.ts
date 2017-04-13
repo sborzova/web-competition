@@ -3,11 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UsersService } from "./users.service";
 import { User } from "./user.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
-import { AuthService } from "../auth/auth.service";
 import {SessionStorageService} from "../shared/session-storage.service";
-import {EmailService} from "../shared/email.service";
-import {Email} from "../shared/email.model";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
     selector: 'app-users',
@@ -15,12 +11,12 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class UsersComponent implements OnInit {
     users : User[];
-    myForm: FormGroup;
-    private submitted: boolean = false;
+    user: User;
+    fileSaver = require('file-saver');
+    iconv = require('iconv-lite');
 
     constructor(private usersService: UsersService,
                 private sessionStorageService: SessionStorageService,
-                private emailService: EmailService,
                 private flashMessageService: FlashMessageService){
     }
 
@@ -34,50 +30,78 @@ export class UsersComponent implements OnInit {
     }
 
     onDelete(user: User) {
-        this.usersService.deleteUser(user)
-            .subscribe(
-                result => {
-                    this.flashMessageService.showMessage('User was deleted.', 'success' );
-                },
-                error => console.error(error)
-            );
+        this.user = user;
+        document.getElementById('openModalDelete').click();
     }
 
     isMe(user: User){
       return this.sessionStorageService.getEmailLoggedIn() == user.email;
     }
 
-    onShowEmailForm(){
-        this.myForm = new FormGroup({
-            subject: new FormControl(null, [Validators.required, Validators.maxLength(100)]),
-            content: new FormControl(null, [Validators.required, Validators.maxLength(1000)]),
-        });
-        document.getElementById('openEmailForm').click();
-    }
+    onImportIntoCsvFile(){
+        let users = this.users.sort(function compare(a,b) {
+            let aLastName = a.lastName;
+            let bLastName = b.lastName;
+            let aFirstName = a.firstName;
+            let bFirstName = b.firstName;
 
-    onSubmit(){
-        this.submitted = true;
-        if (this.myForm.valid) {
-            document.getElementById('hideEmailForm').click();
-            this.submitted = false;
-            for (let user of this.users){
-                const email = new Email(
-                    user.email,
-                    this.myForm.value.subject,
-                    this.myForm.value.content
-                );
-                this.emailService.sendEmail(email)
-                    .subscribe(
-                        () => {
-                        },
-                        error => console.error(error)
-                    );
+            if (aLastName == bLastName){
+                return (aFirstName > bFirstName) ? 1 : (aFirstName < bFirstName) ? -1 : 0;
+            }else {
+                return (aLastName < bLastName) ? -1 : 1;
             }
-            this.flashMessageService.showMessage('Email was send.', 'success');
+        });
+        let content = '';
+        for (let user of this.users){
+            let line = user.firstName + ',' + user.lastName + ',' + user.email;
+            content = content.concat(line, '\n');
         }
+
+        let file = new File([(content)],
+            'users' + '.csv', {type: "text/csv;charset=utf-8"});
+        this.fileSaver.saveAs(file);
     }
 
-    isSubmitted(){
-        return this.submitted;
+    onOk(){
+        this.usersService.deleteUser(this.user)
+            .subscribe(
+                result => {
+                    this.user = null;
+                    this.flashMessageService.showMessage('User was deleted.', 'success' );
+                },
+                error => console.error(error)
+            );
     }
+
+    toUTF8Array(str) {
+        var utf8 = [];
+        for (var i=0; i < str.length; i++) {
+            var charcode = str.charCodeAt(i);
+            if (charcode < 0x80) utf8.push(charcode);
+            else if (charcode < 0x800) {
+                utf8.push(0xc0 | (charcode >> 6),
+                    0x80 | (charcode & 0x3f));
+            }
+            else if (charcode < 0xd800 || charcode >= 0xe000) {
+                utf8.push(0xe0 | (charcode >> 12),
+                    0x80 | ((charcode>>6) & 0x3f),
+                    0x80 | (charcode & 0x3f));
+            }
+            // surrogate pair
+            else {
+                i++;
+                // UTF-16 encodes 0x10000-0x10FFFF by
+                // subtracting 0x10000 and splitting the
+                // 20 bits of 0x0-0xFFFFF into two halves
+                charcode = 0x10000 + (((charcode & 0x3ff)<<10)
+                    | (str.charCodeAt(i) & 0x3ff))
+                utf8.push(0xf0 | (charcode >>18),
+                    0x80 | ((charcode>>12) & 0x3f),
+                    0x80 | ((charcode>>6) & 0x3f),
+                    0x80 | (charcode & 0x3f));
+            }
+        }
+        return utf8;
+}
+
 }
