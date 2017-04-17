@@ -8,8 +8,8 @@ const USERS_ROUTES: Routes = [
     { path: '', children: [
         { path: '', redirectTo: 'all', pathMatch: 'full' },
         { path: 'all', component:  UsersComponent },
-        { path: 'edit', component:  UserEditComponent },
-        { path: 'editpass', component:  UserEditPasswordComponent },
+        { path: 'edit/:id', component:  UserEditComponent },
+        { path: 'editpass/:id', component:  UserEditPasswordComponent },
     ]}
 ];
 

@@ -416,7 +416,7 @@ class _View_SuccessValidationComponent1 extends import1.AppView<any> {
       this._expr_0 = currVal_0;
     }
     if (!throwOnChange) { this._NgStyle_0_3.ngDoCheck(); }
-    const currVal_8:any = this.parent.context.myForm;
+    const currVal_8:any = this.parent.context.solutionForm;
     if (import4.checkBinding(throwOnChange,this._expr_8,currVal_8)) {
       this._NgIf_79_6.ngIf = currVal_8;
       this._expr_8 = currVal_8;
@@ -797,7 +797,7 @@ class _View_SuccessValidationComponent2 extends import1.AppView<any> {
   detectChangesInternal(throwOnChange:boolean):void {
     var changes:{[key: string]:import7.SimpleChange} = (null as any);
     changes = (null as any);
-    const currVal_3:any = this.parent.parent.context.myForm;
+    const currVal_3:any = this.parent.parent.context.solutionForm;
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
       this._FormGroupDirective_0_3.form = currVal_3;
       if ((changes === (null as any))) { (changes = {}); }
@@ -810,14 +810,14 @@ class _View_SuccessValidationComponent2 extends import1.AppView<any> {
       this._NgClass_2_3.klass = currVal_10;
       this._expr_10 = currVal_10;
     }
-    const currVal_11:any = this._map_0((!this.parent.parent.context.myForm.controls['technique'].valid && (this.parent.parent.context.myForm.controls['technique'].touched || this.parent.parent.context.isSubmitted())));
+    const currVal_11:any = this._map_0((!this.parent.parent.context.solutionForm.controls['technique'].valid && (this.parent.parent.context.solutionForm.controls['technique'].touched || this.parent.parent.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
       this._NgClass_2_3.ngClass = currVal_11;
       this._expr_11 = currVal_11;
     }
     if (!throwOnChange) { this._NgClass_2_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_14:any = this.parent.parent.context.myForm.controls['technique'];
+    const currVal_14:any = this.parent.parent.context.solutionForm.controls['technique'];
     if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
       this._FormControlDirective_7_5.form = currVal_14;
       if ((changes === (null as any))) { (changes = {}); }
@@ -825,7 +825,7 @@ class _View_SuccessValidationComponent2 extends import1.AppView<any> {
       this._expr_14 = currVal_14;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_7_5.ngOnChanges(changes); }
-    const currVal_21:any = (this.parent.parent.context.myForm.controls['technique'].hasError('required') && (this.parent.parent.context.myForm.controls['technique'].touched || this.parent.parent.context.isSubmitted()));
+    const currVal_21:any = (this.parent.parent.context.solutionForm.controls['technique'].hasError('required') && (this.parent.parent.context.solutionForm.controls['technique'].touched || this.parent.parent.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_21,currVal_21)) {
       this._NgIf_9_6.ngIf = currVal_21;
       this._expr_21 = currVal_21;
@@ -835,14 +835,14 @@ class _View_SuccessValidationComponent2 extends import1.AppView<any> {
       this._NgClass_18_3.klass = currVal_22;
       this._expr_22 = currVal_22;
     }
-    const currVal_23:any = this._map_1(this.parent.parent.context.isCitationMissing());
+    const currVal_23:any = this._map_1(this.parent.parent.context.citationMissing);
     if (import4.checkBinding(throwOnChange,this._expr_23,currVal_23)) {
       this._NgClass_18_3.ngClass = currVal_23;
       this._expr_23 = currVal_23;
     }
     if (!throwOnChange) { this._NgClass_18_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_26:any = this.parent.parent.context.myForm.controls['citation'];
+    const currVal_26:any = this.parent.parent.context.solutionForm.controls['citation'];
     if (import4.checkBinding(throwOnChange,this._expr_26,currVal_26)) {
       this._FormControlDirective_23_5.form = currVal_26;
       if ((changes === (null as any))) { (changes = {}); }
@@ -850,13 +850,13 @@ class _View_SuccessValidationComponent2 extends import1.AppView<any> {
       this._expr_26 = currVal_26;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_23_5.ngOnChanges(changes); }
-    const currVal_33:any = this.parent.parent.context.isCitationMissing();
+    const currVal_33:any = this.parent.parent.context.citationMissing;
     if (import4.checkBinding(throwOnChange,this._expr_33,currVal_33)) {
       this._NgIf_25_6.ngIf = currVal_33;
       this._expr_33 = currVal_33;
     }
     changes = (null as any);
-    const currVal_36:any = this.parent.parent.context.myForm.controls['url'];
+    const currVal_36:any = this.parent.parent.context.solutionForm.controls['url'];
     if (import4.checkBinding(throwOnChange,this._expr_36,currVal_36)) {
       this._FormControlDirective_33_5.form = currVal_36;
       if ((changes === (null as any))) { (changes = {}); }

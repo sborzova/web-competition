@@ -523,7 +523,7 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
       this._expr_1 = currVal_1;
     }
     changes = (null as any);
-    const currVal_5:any = this.context.myForm;
+    const currVal_5:any = this.context.signinForm;
     if (import4.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
       this._FormGroupDirective_36_3.form = currVal_5;
       if ((changes === (null as any))) { (changes = {}); }
@@ -536,14 +536,14 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
       this._NgClass_38_3.klass = currVal_12;
       this._expr_12 = currVal_12;
     }
-    const currVal_13:any = this._map_0((!this.context.myForm.controls['email'].valid && (this.context.myForm.controls['email'].touched || this.context.isSubmittedForm())));
+    const currVal_13:any = this._map_0((!this.context.signinForm.controls['email'].valid && (this.context.signinForm.controls['email'].touched || this.context.submittedForm)));
     if (import4.checkBinding(throwOnChange,this._expr_13,currVal_13)) {
       this._NgClass_38_3.ngClass = currVal_13;
       this._expr_13 = currVal_13;
     }
     if (!throwOnChange) { this._NgClass_38_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_16:any = this.context.myForm.controls['email'];
+    const currVal_16:any = this.context.signinForm.controls['email'];
     if (import4.checkBinding(throwOnChange,this._expr_16,currVal_16)) {
       this._FormControlDirective_43_5.form = currVal_16;
       if ((changes === (null as any))) { (changes = {}); }
@@ -551,7 +551,7 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
       this._expr_16 = currVal_16;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_43_5.ngOnChanges(changes); }
-    const currVal_23:boolean = (!this.context.myForm.controls['email'].valid && (this.context.myForm.controls['email'].touched || this.context.isSubmittedForm()));
+    const currVal_23:boolean = (!this.context.signinForm.controls['email'].valid && (this.context.signinForm.controls['email'].touched || this.context.submittedForm));
     if (import4.checkBinding(throwOnChange,this._expr_23,currVal_23)) {
       this._NgIf_45_6.ngIf = currVal_23;
       this._expr_23 = currVal_23;
@@ -561,14 +561,14 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
       this._NgClass_48_3.klass = currVal_24;
       this._expr_24 = currVal_24;
     }
-    const currVal_25:any = this._map_1((!this.context.myForm.controls['password'].valid && (this.context.myForm.controls['password'].touched || this.context.isSubmittedForm())));
+    const currVal_25:any = this._map_1((!this.context.signinForm.controls['password'].valid && (this.context.signinForm.controls['password'].touched || this.context.submittedForm)));
     if (import4.checkBinding(throwOnChange,this._expr_25,currVal_25)) {
       this._NgClass_48_3.ngClass = currVal_25;
       this._expr_25 = currVal_25;
     }
     if (!throwOnChange) { this._NgClass_48_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_28:any = this.context.myForm.controls['password'];
+    const currVal_28:any = this.context.signinForm.controls['password'];
     if (import4.checkBinding(throwOnChange,this._expr_28,currVal_28)) {
       this._FormControlDirective_53_5.form = currVal_28;
       if ((changes === (null as any))) { (changes = {}); }
@@ -576,7 +576,7 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
       this._expr_28 = currVal_28;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_53_5.ngOnChanges(changes); }
-    const currVal_35:any = (this.context.myForm.controls['password'].hasError('required') && (this.context.myForm.controls['password'].touched || this.context.isSubmittedForm()));
+    const currVal_35:any = (this.context.signinForm.controls['password'].hasError('required') && (this.context.signinForm.controls['password'].touched || this.context.submittedForm));
     if (import4.checkBinding(throwOnChange,this._expr_35,currVal_35)) {
       this._NgIf_55_6.ngIf = currVal_35;
       this._expr_35 = currVal_35;
@@ -936,14 +936,14 @@ class _View_SigninComponent1 extends import1.AppView<any> {
       this._NgClass_2_3.klass = currVal_10;
       this._expr_10 = currVal_10;
     }
-    const currVal_11:any = this._map_0((!this.parent.context.emailForm.controls['emailToSendPass'].valid && (this.parent.context.emailForm.controls['emailToSendPass'].touched || this.parent.context.isSubmittedEmailForm())));
+    const currVal_11:any = this._map_0((!this.parent.context.emailForm.controls['email'].valid && (this.parent.context.emailForm.controls['email'].touched || this.parent.context.submittedEmailForm)));
     if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
       this._NgClass_2_3.ngClass = currVal_11;
       this._expr_11 = currVal_11;
     }
     if (!throwOnChange) { this._NgClass_2_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_14:any = this.parent.context.emailForm.controls['emailToSendPass'];
+    const currVal_14:any = this.parent.context.emailForm.controls['email'];
     if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
       this._FormControlDirective_7_5.form = currVal_14;
       if ((changes === (null as any))) { (changes = {}); }
@@ -951,7 +951,7 @@ class _View_SigninComponent1 extends import1.AppView<any> {
       this._expr_14 = currVal_14;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_7_5.ngOnChanges(changes); }
-    const currVal_21:boolean = (!this.parent.context.emailForm.controls['emailToSendPass'].valid && (this.parent.context.emailForm.controls['emailToSendPass'].touched || this.parent.context.isSubmittedEmailForm()));
+    const currVal_21:boolean = (!this.parent.context.emailForm.controls['email'].valid && (this.parent.context.emailForm.controls['email'].touched || this.parent.context.submittedEmailForm));
     if (import4.checkBinding(throwOnChange,this._expr_21,currVal_21)) {
       this._NgIf_9_6.ngIf = currVal_21;
       this._expr_21 = currVal_21;

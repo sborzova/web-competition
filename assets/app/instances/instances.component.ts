@@ -4,7 +4,7 @@ import {SessionStorageService} from "../shared/session-storage.service";
 
 @Component({
     selector: 'app-instances',
-    templateUrl: 'instances.component.html'
+    templateUrl: './instances.component.html'
 })
 export class InstancesComponent implements OnInit{
 

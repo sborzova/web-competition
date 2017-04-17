@@ -31,7 +31,7 @@ export class InstanceService {
                     result.description,
                     null,
                     null,
-                    result.postDate,
+                    result.submissionTime,
                     result._id);
                 this.instances.push(instance);
                 return instance;
@@ -75,9 +75,9 @@ export class InstanceService {
                     instance.order,
                     instance.name,
                     instance.description,
-                    instance.stats,
+                    instance.status,
                     new Buffer(instance.data.data),
-                    instance.postDate,
+                    instance.submissionTime,
                     instance._id
                 );
             })
@@ -115,7 +115,7 @@ export class InstanceService {
                         instance.description,
                         null,
                         null,
-                        instance.postDate,
+                        instance.submissionTime,
                         instance._id)
                     );
                 }

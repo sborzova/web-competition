@@ -1,7 +1,9 @@
-import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from "@angular/core";
 
 import {SortService} from "../../shared/sort.service";
 import {Solution} from "../../shared/solution.model";
+import {SolutionService} from "../../shared/solution.service";
+import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
 @Component({
     selector: 'app-results-author-technique',
@@ -11,8 +13,11 @@ export class ResultsAuthorTechniqueComponent implements OnChanges{
     @Input() solutions: Solution[];
     solutionsAuthorInstanceTechnique: Solution[];
     showPapers: boolean = false;
+    solution: Solution;
 
-    constructor(private resultsService: SortService){}
+    constructor(private resultsService: SortService,
+                private flashMessageService: FlashMessageService,
+                private solutionService: SolutionService){}
 
     ngOnChanges(changes: SimpleChanges){
         this.solutionsAuthorInstanceTechnique = null;
@@ -22,8 +27,8 @@ export class ResultsAuthorTechniqueComponent implements OnChanges{
         this.resultsService.download(solution);
     }
 
-    isShowPapers(){
-        return this.showPapers;
+    onDelete(solution: Solution) {
+        this.solutionService.deleteSolutionObservable(solution);
     }
 
     onShowPapers(){

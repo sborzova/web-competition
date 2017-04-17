@@ -32,15 +32,14 @@
                                 <td>{{ instance.name }}</td>
                                 <td>{{ instance.description }}</td>
                                 <td><button
-                                        type="button"
-                                        class="btn btn-primary btn-xs"
-                                        title="View"
-                                        [routerLink]="['/#instances/stats']"
-                                        [queryParams]="{instanceId: instance.instanceId}">
-                                        <span class="glyphicon glyphicon-search"></span>
+                                                type="button"
+                                                class="btn btn-primary btn-xs"
+                                                title="View"
+                                                [routerLink]="['/#instances/status', instance.instanceId]">
+                                                <i class="glyphicon glyphicon-info-sign"></i>
                                 </button>
                                 </td>
-                                <td>{{ instance.postDate | date }}</td>
+                                <td>{{ instance.submissionTime | date }}</td>
                                 <td>
                                         <button type="button" class="btn btn-success btn-xs" (click)="onDownload(instance)" title="Download">
                                                 <i class="glyphicon glyphicon-download-alt"></i>
@@ -51,8 +50,7 @@
                                                 *ngIf="isAdmin()"
                                                 class="btn btn-info btn-xs"
                                                 title="Edit"
-                                                [routerLink]="['/#instances/edit']"
-                                                [queryParams]="{instanceId: instance.instanceId}">
+                                                [routerLink]="['/#instances/edit', instance.instanceId]">
                                                 <span class="glyphicon glyphicon-pencil"></span>
                                         </button>
                                         <button

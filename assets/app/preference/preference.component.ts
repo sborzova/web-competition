@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
 import {PreferenceService} from "./preference.service";
-import {FlashMessageService} from "../flash-message/flash-messages.service";
 import {SessionStorageService} from "../shared/session-storage.service";
 
 @Component({
@@ -45,9 +44,5 @@ export class PreferenceComponent implements OnInit {
                 },
                 error => console.error(error)
             )
-    }
-
-    isCompetitionOn(){
-        return this.competitionOn;
     }
 }

@@ -443,14 +443,12 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   /*private*/ _expr_2:any;
-  _map_0:any;
-  /*private*/ _expr_4:any;
   _arr_0:any;
-  /*private*/ _expr_5:any;
+  /*private*/ _expr_4:any;
   _pipe_date_0_0:any;
-  /*private*/ _expr_6:any;
+  /*private*/ _expr_5:any;
+  /*private*/ _expr_7:any;
   /*private*/ _expr_8:any;
-  /*private*/ _expr_9:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_InstanceListComponent3,renderType_InstanceListComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -475,9 +473,9 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_12,'title','View');
     this.renderer.setElementAttribute(this._el_12,'type','button');
     this._RouterLink_12_3 = new import20.RouterLink(this.parent.parentInjector.get(import21.Router),this.parent.parentInjector.get(import22.ActivatedRoute),this.parent.parentInjector.get(import23.LocationStrategy));
-    this._text_13 = this.renderer.createText(this._el_12,'\n                                        ',(null as any));
-    this._el_14 = this.renderer.createElement(this._el_12,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_14,'class','glyphicon glyphicon-search');
+    this._text_13 = this.renderer.createText(this._el_12,'\n                                                ',(null as any));
+    this._el_14 = this.renderer.createElement(this._el_12,'i',(null as any));
+    this.renderer.setElementAttribute(this._el_14,'class','glyphicon glyphicon-info-sign');
     this._text_15 = this.renderer.createText(this._el_12,'\n                                ',(null as any));
     this._text_16 = this.renderer.createText(this._el_11,'\n                                ',(null as any));
     this._text_17 = this.renderer.createText(this._el_0,'\n                                ',(null as any));
@@ -515,19 +513,19 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
     this._expr_1 = import7.UNINITIALIZED;
     this._expr_2 = import7.UNINITIALIZED;
     var disposable_0:Function = this.renderer.listen(this._el_12,'click',this.eventHandler(this._handle_click_12_0.bind(this)));
-    this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
-      return {instanceId: p0};
+    this._arr_0 = import4.pureProxy2((p0:any,p1:any):any[] => {
+      return [
+        p0,
+        p1
+      ]
+      ;
     });
     this._expr_4 = import7.UNINITIALIZED;
-    this._arr_0 = import4.pureProxy1((p0:any):any[] => {
-      return [p0];
-    });
-    this._expr_5 = import7.UNINITIALIZED;
     this._pipe_date_0_0 = import4.pureProxy1((<_View_InstanceListComponent0>this.parent.parent)._pipe_date_0.transform.bind((<_View_InstanceListComponent0>this.parent.parent)._pipe_date_0));
-    this._expr_6 = import7.UNINITIALIZED;
+    this._expr_5 = import7.UNINITIALIZED;
     var disposable_1:Function = this.renderer.listen(this._el_23,'click',this.eventHandler(this._handle_click_23_0.bind(this)));
+    this._expr_7 = import7.UNINITIALIZED;
     this._expr_8 = import7.UNINITIALIZED;
-    this._expr_9 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -590,25 +588,20 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
       this._NgIf_3_6.ngIf = currVal_0;
       this._expr_0 = currVal_0;
     }
-    const currVal_4:any = this._map_0(this.context.$implicit.instanceId);
+    const currVal_4:any = this._arr_0('/#instances/status',this.context.$implicit.instanceId);
     if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
-      this._RouterLink_12_3.queryParams = currVal_4;
+      this._RouterLink_12_3.routerLink = currVal_4;
       this._expr_4 = currVal_4;
     }
-    const currVal_5:any = this._arr_0('/#instances/stats');
-    if (import4.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
-      this._RouterLink_12_3.routerLink = currVal_5;
-      this._expr_5 = currVal_5;
+    const currVal_7:any = this.parent.parent.context.isAdmin();
+    if (import4.checkBinding(throwOnChange,this._expr_7,currVal_7)) {
+      this._NgIf_31_6.ngIf = currVal_7;
+      this._expr_7 = currVal_7;
     }
     const currVal_8:any = this.parent.parent.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_8,currVal_8)) {
-      this._NgIf_31_6.ngIf = currVal_8;
+      this._NgIf_33_6.ngIf = currVal_8;
       this._expr_8 = currVal_8;
-    }
-    const currVal_9:any = this.parent.parent.context.isAdmin();
-    if (import4.checkBinding(throwOnChange,this._expr_9,currVal_9)) {
-      this._NgIf_33_6.ngIf = currVal_9;
-      this._expr_9 = currVal_9;
     }
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_1:any = import4.interpolate(1,'',this.context.$implicit.name,'');
@@ -622,10 +615,10 @@ class _View_InstanceListComponent3 extends import1.AppView<any> {
       this._expr_2 = currVal_2;
     }
     valUnwrapper.reset();
-    const currVal_6:any = import4.interpolate(1,'',valUnwrapper.unwrap(import4.castByValue(this._pipe_date_0_0,(<_View_InstanceListComponent0>this.parent.parent)._pipe_date_0.transform)(this.context.$implicit.postDate)),'');
-    if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange,this._expr_6,currVal_6))) {
-      this.renderer.setText(this._text_19,currVal_6);
-      this._expr_6 = currVal_6;
+    const currVal_5:any = import4.interpolate(1,'',valUnwrapper.unwrap(import4.castByValue(this._pipe_date_0_0,(<_View_InstanceListComponent0>this.parent.parent)._pipe_date_0.transform)(this.context.$implicit.submissionTime)),'');
+    if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange,this._expr_5,currVal_5))) {
+      this.renderer.setText(this._text_19,currVal_5);
+      this._expr_5 = currVal_5;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }
@@ -680,10 +673,8 @@ class _View_InstanceListComponent5 extends import1.AppView<any> {
   _text_1:any;
   _el_2:any;
   _text_3:any;
-  _map_0:any;
-  /*private*/ _expr_1:any;
   _arr_0:any;
-  /*private*/ _expr_2:any;
+  /*private*/ _expr_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_InstanceListComponent5,renderType_InstanceListComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -697,14 +688,14 @@ class _View_InstanceListComponent5 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_2,'class','glyphicon glyphicon-pencil');
     this._text_3 = this.renderer.createText(this._el_0,'\n                                        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_0,'click',this.eventHandler(this._handle_click_0_0.bind(this)));
-    this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
-      return {instanceId: p0};
+    this._arr_0 = import4.pureProxy2((p0:any,p1:any):any[] => {
+      return [
+        p0,
+        p1
+      ]
+      ;
     });
     this._expr_1 = import7.UNINITIALIZED;
-    this._arr_0 = import4.pureProxy1((p0:any):any[] => {
-      return [p0];
-    });
-    this._expr_2 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -719,15 +710,10 @@ class _View_InstanceListComponent5 extends import1.AppView<any> {
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_1:any = this._map_0(this.parent.context.$implicit.instanceId);
+    const currVal_1:any = this._arr_0('/#instances/edit',this.parent.context.$implicit.instanceId);
     if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
-      this._RouterLink_0_3.queryParams = currVal_1;
+      this._RouterLink_0_3.routerLink = currVal_1;
       this._expr_1 = currVal_1;
-    }
-    const currVal_2:any = this._arr_0('/#instances/edit');
-    if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
-      this._RouterLink_0_3.routerLink = currVal_2;
-      this._expr_2 = currVal_2;
     }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);

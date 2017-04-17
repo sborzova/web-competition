@@ -310,7 +310,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
         }
         ,
         {
-          path: '#solution/validatorinfo',
+          path: '#solution/validatorinfo/:id',
           loadChildren: '../app/validator-info/validator-info.module#ValidatorInfoModule'
         }
 

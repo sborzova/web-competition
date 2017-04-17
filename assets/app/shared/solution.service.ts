@@ -17,12 +17,13 @@ export class SolutionService {
     private hostUrl : string;
     private xmlHttp;
     private solutionFile;
+    // private solutions: Solution[] = [];
     successValidation = new EventEmitter<Validation>();
-    worseSolutions = new EventEmitter<Solution []>();
     private successValidationDeleteSource = new Subject();
-    private worseSolutionsDeleteSource = new Subject();
+    private solutionDeleteSource = new Subject<Solution>();
+
     successValidationDelete$ = this.successValidationDeleteSource.asObservable();
-    worseSolutionsDeleteSource$ = this.worseSolutionsDeleteSource.asObservable();
+    solutionDelete$ = this.solutionDeleteSource.asObservable();
 
     constructor(private http: Http,
                 private flashMessageService: FlashMessageService){
@@ -101,28 +102,32 @@ export class SolutionService {
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('duplicateSolution') + token, body, {headers: headers})
             .map((response: Response) => {
-                const solution = response.json().obj;
-                console.log(solution);
-                return new Solution(
-                        solution.unassigned,
-                        solution.total,
-                        solution.sc,
-                        solution.time,
-                        solution.room,
-                        solution.distr,
-                        solution.technique,
-                        solution.info,
-                        solution.postDate,
-                        solution.data,
-                        solution.instance,
-                        solution.paper ? new Paper(
-                            solution.paper.citation,
-                            solution.paper.url,
-                            solution.paper._id
-                        ) : null,
-                        null,
-                        solution._id,
-                        false);
+                if (response.json().obj){
+                    const solution = response.json().obj;
+                    return new Solution(
+                            solution.unassigned,
+                            solution.total,
+                            solution.sc,
+                            solution.time,
+                            solution.room,
+                            solution.distr,
+                            solution.technique,
+                            solution.info,
+                            solution.submissionTime,
+                            solution.data,
+                            solution.instance,
+                            solution.paper ? new Paper(
+                                solution.paper.citation,
+                                solution.paper.url,
+                                solution.paper._id
+                            ) : null,
+                            null,
+                            solution._id,
+                            false);
+                }
+                else {
+                    return null;
+                }
             })
             .catch((error: Response) => Observable.throw(error));
     }
@@ -166,7 +171,7 @@ export class SolutionService {
                     solution.distr,
                     solution.technique,
                     solution.info,
-                    solution.postDate,
+                    solution.submissionTime,
                     new Buffer(solution.data.data),
                     solution.instance,
                     solution.paper,
@@ -199,7 +204,7 @@ export class SolutionService {
                         solution.distr,
                         solution.technique,
                         solution.info,
-                        solution.postDate,
+                        solution.submissionTime,
                         new Buffer(solution.data.data),
                         solution.instance,
                         solution.paper ? new Paper(
@@ -232,7 +237,7 @@ export class SolutionService {
                         solution.distr,
                         solution.technique,
                         solution.info,
-                        solution.postDate,
+                        solution.submissionTime,
                         new Buffer(solution.data.data),
                         new Instance(
                             solution.instance.name,
@@ -266,7 +271,7 @@ export class SolutionService {
                         solution.distr,
                         solution.technique,
                         solution.info,
-                        solution.postDate,
+                        solution.submissionTime,
                         new Buffer(solution.data.data),
                         new Instance(
                             solution.instance.name,
@@ -303,12 +308,8 @@ export class SolutionService {
         this.successValidationDeleteSource.next();
     }
 
-    worseSolutionsShow(solutions: Solution[]){
-        this.worseSolutions.emit(solutions);
-    }
-
-    worseSolutionsHide(){
-        this.worseSolutionsDeleteSource.next();
+    deleteSolutionObservable(solution: Solution){
+        this.solutionDeleteSource.next(solution);
     }
 
     setSolutionFile(file: any){

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Params } from "@angular/router";
+import {ActivatedRoute, ActivatedRouteSnapshot, Params} from "@angular/router";
 import { Subscription } from "rxjs";
 
 import {SolutionService} from "../shared/solution.service";
@@ -7,29 +7,22 @@ import {Solution} from "../shared/solution.model";
 
 @Component({
     selector: 'app-solution-validator-info',
-    templateUrl: 'validator-info.component.html'
+    templateUrl: './validator-info.component.html'
 })
-export class ValidatorInfoComponent implements OnInit, OnDestroy {
+export class ValidatorInfoComponent implements OnInit {
     solution: Solution;
-    private subscription: Subscription;
 
     constructor(private solutionService: SolutionService,
-                private activatedRoute: ActivatedRoute){}
+                private route: ActivatedRoute){}
 
     ngOnInit(){
-        this.subscription = this.activatedRoute.queryParams.subscribe((params: Params) => {
-            let solutionId = params['solutionId'];
-            this.solutionService.getSolution(solutionId)
-                .subscribe(
-                    (solution: Solution) => {
-                        this.solution = solution;
-                    },
-                    error => console.error(error)
-                );
-        });
-    }
-
-    ngOnDestroy(){
-        this.subscription.unsubscribe();
+        let id = this.route.snapshot.params['id'];
+        this.solutionService.getSolution(id)
+            .subscribe(
+                (solution: Solution) => {
+                    this.solution = solution;
+                },
+                error => console.error(error)
+            );
     }
 }

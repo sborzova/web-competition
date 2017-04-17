@@ -10,51 +10,43 @@ import { FlashMessageService } from "../../flash-message/flash-messages.service"
 
 @Component({
     selector: 'app-instance-edit',
-    templateUrl: 'instance-update.component.html'
+    templateUrl: './instance-update.component.html'
 })
-export class InstanceEditComponent implements OnInit, OnDestroy {
-    myForm: FormGroup;
+export class InstanceEditComponent implements OnInit {
+    instanceForm: FormGroup;
     instance: Instance;
-    private submitted: boolean = false;
-    @ViewChild('stats') statsElem;
+    submitted: boolean = false;
+    @ViewChild('status') statusElem;
     @ViewChild('data') dataElem;
-    private subscription: Subscription;
 
     constructor(private router: Router,
                 private instanceService: InstanceService,
-                private activatedRoute: ActivatedRoute,
+                private route: ActivatedRoute,
                 private flashMessageService: FlashMessageService){
 
     }
 
     ngOnInit(){
-        this.subscription = this.activatedRoute.queryParams
-            .subscribe((params: Params) => {
-                let instanceId = params['instanceId'];
-                this.instanceService.getInstance(instanceId)
-                    .subscribe(
-                        (instance: Instance) => {
-                            this.instance = instance;
-                            this.myForm = new FormGroup({
-                                order: new FormControl(this.instance.order, [Validators.required, minValue(0)]),
-                                name: new FormControl(this.instance.name, Validators.required),
-                                description: new FormControl(this.instance.description, Validators.required)
-                            });
-                        });
-        });
-    }
-
-    ngOnDestroy(){
-        this.subscription.unsubscribe();
+        let id = this.route.snapshot.params['id'];
+        this.instanceService.getInstance(id)
+            .subscribe(
+                (instance: Instance) => {
+                    this.instance = instance;
+                    this.instanceForm = new FormGroup({
+                        order: new FormControl(this.instance.order, [Validators.required, minValue(0)]),
+                        name: new FormControl(this.instance.name, Validators.required),
+                        description: new FormControl(this.instance.description, Validators.required)
+                    });
+                });
     }
 
     onSubmit(){
         this.submitted = true;
 
-        if (this.myForm.valid){
-            this.instance.order = this.myForm.value.order;
-            this.instance.name = this.myForm.value.name;
-            this.instance.description = this.myForm.value.description;
+        if (this.instanceForm.valid){
+            this.instance.order = this.instanceForm.value.order;
+            this.instance.name = this.instanceForm.value.name;
+            this.instance.description = this.instanceForm.value.description;
 
             this.instanceService.updateInstanceTextFields(this.instance)
                 .subscribe(
@@ -69,16 +61,16 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
     }
 
     saveFiles(){
-        let statsInput = this.statsElem.nativeElement;
+        let statusInput = this.statusElem.nativeElement;
         let dataInput = this.dataElem.nativeElement;
         let fd = new FormData();
         let updateFiles : boolean = false;
 
-        if (statsInput.files && statsInput.files[0]){
-            fd.append('stats', statsInput.files[0], statsInput.files[0].name);
+        if (statusInput.files && statusInput.files[0]){
+            fd.append('status', statusInput.files[0], statusInput.files[0].name);
             updateFiles = true;
         }else {
-            fd.append('stats', null);
+            fd.append('status', null);
         }
 
         if (dataInput.files && dataInput.files[0]){
@@ -103,9 +95,5 @@ export class InstanceEditComponent implements OnInit, OnDestroy {
 
     private navigateBack() {
         this.router.navigate(['/#instances']);
-    }
-
-    isSubmitted(){
-        return this.submitted;
     }
 }

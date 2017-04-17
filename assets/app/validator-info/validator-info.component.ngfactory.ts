@@ -47,9 +47,6 @@ class _View_ValidatorInfoComponent_Host0 extends import1.AppView<any> {
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
-  destroyInternal():void {
-    this._ValidatorInfoComponent_0_4.ngOnDestroy();
-  }
 }
 function viewFactory_ValidatorInfoComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
   if ((renderType_ValidatorInfoComponent_Host === (null as any))) { (renderType_ValidatorInfoComponent_Host = viewUtils.createRenderComponentType('',0,import10.ViewEncapsulation.None,[],{})); }

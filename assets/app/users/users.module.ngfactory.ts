@@ -78,12 +78,12 @@ class UsersModuleInjector extends import0.NgModuleInjector<import1.UsersModule> 
             }
             ,
             {
-              path: 'edit',
+              path: 'edit/:id',
               component: import19.UserEditComponent
             }
             ,
             {
-              path: 'editpass',
+              path: 'editpass/:id',
               component: import20.UserEditPasswordComponent
             }
 

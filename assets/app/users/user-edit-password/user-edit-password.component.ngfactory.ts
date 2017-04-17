@@ -60,9 +60,6 @@ class _View_UserEditPasswordComponent_Host0 extends import1.AppView<any> {
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
-  destroyInternal():void {
-    this._UserEditPasswordComponent_0_4.ngOnDestroy();
-  }
 }
 function viewFactory_UserEditPasswordComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
   if ((renderType_UserEditPasswordComponent_Host === (null as any))) { (renderType_UserEditPasswordComponent_Host = viewUtils.createRenderComponentType('',0,import12.ViewEncapsulation.None,[],{})); }
@@ -159,7 +156,7 @@ class _View_UserEditPasswordComponent0 extends import1.AppView<import3.UserEditP
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_0:any = this.context.myForm;
+    const currVal_0:any = this.context.passwordForm;
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
       this._NgIf_14_6.ngIf = currVal_0;
       this._expr_0 = currVal_0;
@@ -484,7 +481,7 @@ class _View_UserEditPasswordComponent1 extends import1.AppView<any> {
   detectChangesInternal(throwOnChange:boolean):void {
     var changes:{[key: string]:import7.SimpleChange} = (null as any);
     changes = (null as any);
-    const currVal_3:any = this.parent.context.myForm;
+    const currVal_3:any = this.parent.context.passwordForm;
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
       this._FormGroupDirective_0_3.form = currVal_3;
       if ((changes === (null as any))) { (changes = {}); }
@@ -497,14 +494,14 @@ class _View_UserEditPasswordComponent1 extends import1.AppView<any> {
       this._NgClass_2_3.klass = currVal_10;
       this._expr_10 = currVal_10;
     }
-    const currVal_11:any = this._map_0((!this.parent.context.myForm.controls['password'].valid && (this.parent.context.myForm.controls['password'].touched || this.parent.context.isSubmitted())));
+    const currVal_11:any = this._map_0((!this.parent.context.passwordForm.controls['password'].valid && (this.parent.context.passwordForm.controls['password'].touched || this.parent.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
       this._NgClass_2_3.ngClass = currVal_11;
       this._expr_11 = currVal_11;
     }
     if (!throwOnChange) { this._NgClass_2_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_14:any = this.parent.context.myForm.controls['password'];
+    const currVal_14:any = this.parent.context.passwordForm.controls['password'];
     if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
       this._FormControlDirective_7_7.form = currVal_14;
       if ((changes === (null as any))) { (changes = {}); }
@@ -512,17 +509,17 @@ class _View_UserEditPasswordComponent1 extends import1.AppView<any> {
       this._expr_14 = currVal_14;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_7_7.ngOnChanges(changes); }
-    const currVal_21:any = (this.parent.context.myForm.controls['password'].hasError('required') && (this.parent.context.myForm.controls['password'].touched || this.parent.context.isSubmitted()));
+    const currVal_21:any = (this.parent.context.passwordForm.controls['password'].hasError('required') && (this.parent.context.passwordForm.controls['password'].touched || this.parent.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_21,currVal_21)) {
       this._NgIf_9_6.ngIf = currVal_21;
       this._expr_21 = currVal_21;
     }
-    const currVal_22:any = (this.parent.context.myForm.controls['password'].hasError('minlength') && (this.parent.context.myForm.controls['password'].touched || this.parent.context.isSubmitted()));
+    const currVal_22:any = (this.parent.context.passwordForm.controls['password'].hasError('minlength') && (this.parent.context.passwordForm.controls['password'].touched || this.parent.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_22,currVal_22)) {
       this._NgIf_11_6.ngIf = currVal_22;
       this._expr_22 = currVal_22;
     }
-    const currVal_23:any = (this.parent.context.myForm.controls['password'].hasError('maxlength') && (this.parent.context.myForm.controls['password'].touched || this.parent.context.isSubmitted()));
+    const currVal_23:any = (this.parent.context.passwordForm.controls['password'].hasError('maxlength') && (this.parent.context.passwordForm.controls['password'].touched || this.parent.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_23,currVal_23)) {
       this._NgIf_13_6.ngIf = currVal_23;
       this._expr_23 = currVal_23;
@@ -532,14 +529,14 @@ class _View_UserEditPasswordComponent1 extends import1.AppView<any> {
       this._NgClass_16_3.klass = currVal_24;
       this._expr_24 = currVal_24;
     }
-    const currVal_25:any = this._map_1((!this.parent.context.myForm.controls['confirmPassword'].valid && (this.parent.context.myForm.controls['confirmPassword'].touched || this.parent.context.isSubmitted())));
+    const currVal_25:any = this._map_1((!this.parent.context.passwordForm.controls['confirmPassword'].valid && (this.parent.context.passwordForm.controls['confirmPassword'].touched || this.parent.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_25,currVal_25)) {
       this._NgClass_16_3.ngClass = currVal_25;
       this._expr_25 = currVal_25;
     }
     if (!throwOnChange) { this._NgClass_16_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_28:any = this.parent.context.myForm.controls['confirmPassword'];
+    const currVal_28:any = this.parent.context.passwordForm.controls['confirmPassword'];
     if (import4.checkBinding(throwOnChange,this._expr_28,currVal_28)) {
       this._FormControlDirective_21_7.form = currVal_28;
       if ((changes === (null as any))) { (changes = {}); }
@@ -547,7 +544,7 @@ class _View_UserEditPasswordComponent1 extends import1.AppView<any> {
       this._expr_28 = currVal_28;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_21_7.ngOnChanges(changes); }
-    const currVal_35:boolean = (!this.parent.context.myForm.controls['confirmPassword'].valid && (this.parent.context.myForm.controls['confirmPassword'].touched || this.parent.context.isSubmitted()));
+    const currVal_35:boolean = (!this.parent.context.passwordForm.controls['confirmPassword'].valid && (this.parent.context.passwordForm.controls['confirmPassword'].touched || this.parent.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_35,currVal_35)) {
       this._NgIf_23_6.ngIf = currVal_35;
       this._expr_35 = currVal_35;

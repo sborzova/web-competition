@@ -14,7 +14,7 @@ const APP_ROUTES: Routes = [
     { path: '#instances', loadChildren: '../app/instances/instance.module#InstanceModule' },
     { path: '#profile', loadChildren: '../app/profile/profile.module#ProfileModule' },
     { path: '#preferences', loadChildren: '../app/preference/preference.module#PreferenceModule' },
-    { path: '#solution/validatorinfo', loadChildren: '../app/validator-info/validator-info.module#ValidatorInfoModule' },
+    { path: '#solution/validatorinfo/:id', loadChildren: '../app/validator-info/validator-info.module#ValidatorInfoModule' },
 ];
 
 // export const hostUrl = 'http://localhost:3000/';

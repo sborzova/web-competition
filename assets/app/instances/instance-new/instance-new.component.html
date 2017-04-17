@@ -5,11 +5,11 @@
                 <div class="text-center">
                     <h2>Create instance</h2>
                 </div>
-                <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="instanceForm" (ngSubmit)="onSubmit()">
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                        (!myForm.controls['order'].valid ) &&
-                        (myForm.controls['order'].touched || isSubmitted())}">
+                        (!instanceForm.controls['order'].valid ) &&
+                        (instanceForm.controls['order'].touched || submitted)}">
                         <label for="order">
                             Order
                         </label>
@@ -17,17 +17,17 @@
                                 type="number"
                                 id="order"
                                 class="form-control"
-                                [formControl]="myForm.controls['order']">
+                                [formControl]="instanceForm.controls['order']">
                         <div class="field-error"
-                             *ngIf="!myForm.controls['order'].valid &&
-                            (myForm.controls['order'].touched || isSubmitted())">
+                             *ngIf="!instanceForm.controls['order'].valid &&
+                            (instanceForm.controls['order'].touched || submitted)">
                             Minimum value is 1.
                         </div>
                     </div>
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                        (!myForm.controls['name'].valid ) &&
-                        (myForm.controls['name'].touched || isSubmitted())}">
+                        (!instanceForm.controls['name'].valid ) &&
+                        (instanceForm.controls['name'].touched || submitted)}">
                         <label for="name">
                             Name
                         </label>
@@ -35,17 +35,17 @@
                                 type="text"
                                 id="name"
                                 class="form-control"
-                                [formControl]="myForm.controls['name']">
+                                [formControl]="instanceForm.controls['name']">
                         <div class="field-error"
-                             *ngIf="(myForm.controls['name'].hasError('required')) &&
-                            (myForm.controls['name'].touched || isSubmitted())">
+                             *ngIf="(instanceForm.controls['name'].hasError('required')) &&
+                            (instanceForm.controls['name'].touched || submitted)">
                             Field is required.
                         </div>
                     </div>
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                        (!myForm.controls['description'].valid ) &&
-                        (myForm.controls['description'].touched || isSubmitted())}">
+                        (!instanceForm.controls['description'].valid ) &&
+                        (instanceForm.controls['description'].touched || submitted)}">
                         <label for="name">
                             Description
                         </label>
@@ -53,28 +53,28 @@
                                 type="text"
                                 id="description"
                                 class="form-control"
-                                [formControl]="myForm.controls['description']">
+                                [formControl]="instanceForm.controls['description']">
                         <div class="field-error"
-                             *ngIf="(myForm.controls['description'].hasError('required')) &&
-                            (myForm.controls['description'].touched || isSubmitted())">
+                             *ngIf="(instanceForm.controls['description'].hasError('required')) &&
+                            (instanceForm.controls['description'].touched || submitted)">
                             Field is required.
                         </div>
                     </div>
                     <div class="form-group"
-                         [ngClass]="{'has-error': isStatsInvalid()}">
-                        <label for="stats">
+                         [ngClass]="{'has-error': statusInvalid}">
+                        <label for="status">
                             Status
                         </label>
                         <input
-                                #stats
+                                #status
                                 type="file"
-                                id="stats">
-                        <div class="field-error" *ngIf="isStatsInvalid()">
+                                id="status">
+                        <div class="field-error" *ngIf="statusInvalid">
                             Field is required.
                         </div>
                     </div>
                     <div class="form-group"
-                         [ngClass]="{'has-error': isDataInvalid()}">
+                         [ngClass]="{'has-error': dataInvalid}">
                         <label for="data">
                             Data
                         </label>
@@ -82,7 +82,7 @@
                                 #data
                                 type="file"
                                 id="data">
-                        <div class="field-error" *ngIf="isDataInvalid()">
+                        <div class="field-error" *ngIf="dataInvalid">
                             Field is required.
                         </div>
                     </div>

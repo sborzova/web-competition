@@ -348,17 +348,17 @@ class _View_UserSolutionsComponent0 extends import1.AppView<import3.UserSolution
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_2:boolean = !this.context.isShowPapers();
+    const currVal_2:boolean = !this.context.showPapers;
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
       this._NgIf_37_6.ngIf = currVal_2;
       this._expr_2 = currVal_2;
     }
-    const currVal_3:any = this.context.isShowPapers();
+    const currVal_3:any = this.context.showPapers;
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
       this._NgIf_39_6.ngIf = currVal_3;
       this._expr_3 = currVal_3;
     }
-    const currVal_7:any = this.context.isShowPaperForm();
+    const currVal_7:any = this.context.showPaperForm;
     if (import4.checkBinding(throwOnChange,this._expr_7,currVal_7)) {
       this._NgIf_51_6.ngIf = currVal_7;
       this._expr_7 = currVal_7;
@@ -522,7 +522,7 @@ class _View_UserSolutionsComponent3 extends import1.AppView<any> {
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_0:any = this.parent.context.myForm;
+    const currVal_0:any = this.parent.context.paperForm;
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
       this._NgIf_10_6.ngIf = currVal_0;
       this._expr_0 = currVal_0;
@@ -781,7 +781,7 @@ class _View_UserSolutionsComponent4 extends import1.AppView<any> {
   detectChangesInternal(throwOnChange:boolean):void {
     var changes:{[key: string]:import7.SimpleChange} = (null as any);
     changes = (null as any);
-    const currVal_3:any = this.parent.parent.context.myForm;
+    const currVal_3:any = this.parent.parent.context.paperForm;
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
       this._FormGroupDirective_0_3.form = currVal_3;
       if ((changes === (null as any))) { (changes = {}); }
@@ -794,14 +794,14 @@ class _View_UserSolutionsComponent4 extends import1.AppView<any> {
       this._NgClass_2_3.klass = currVal_10;
       this._expr_10 = currVal_10;
     }
-    const currVal_11:any = this._map_0((!this.parent.parent.context.myForm.controls['citation'].valid && (this.parent.parent.context.myForm.controls['citation'].touched || this.parent.parent.context.isSubmitted())));
+    const currVal_11:any = this._map_0((!this.parent.parent.context.paperForm.controls['citation'].valid && (this.parent.parent.context.paperForm.controls['citation'].touched || this.parent.parent.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
       this._NgClass_2_3.ngClass = currVal_11;
       this._expr_11 = currVal_11;
     }
     if (!throwOnChange) { this._NgClass_2_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_14:any = this.parent.parent.context.myForm.controls['citation'];
+    const currVal_14:any = this.parent.parent.context.paperForm.controls['citation'];
     if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
       this._FormControlDirective_7_5.form = currVal_14;
       if ((changes === (null as any))) { (changes = {}); }
@@ -809,13 +809,13 @@ class _View_UserSolutionsComponent4 extends import1.AppView<any> {
       this._expr_14 = currVal_14;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_7_5.ngOnChanges(changes); }
-    const currVal_21:any = (this.parent.parent.context.myForm.controls['citation'].hasError('required') && (this.parent.parent.context.myForm.controls['citation'].touched || this.parent.parent.context.isSubmitted()));
+    const currVal_21:any = (this.parent.parent.context.paperForm.controls['citation'].hasError('required') && (this.parent.parent.context.paperForm.controls['citation'].touched || this.parent.parent.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_21,currVal_21)) {
       this._NgIf_9_6.ngIf = currVal_21;
       this._expr_21 = currVal_21;
     }
     changes = (null as any);
-    const currVal_24:any = this.parent.parent.context.myForm.controls['url'];
+    const currVal_24:any = this.parent.parent.context.paperForm.controls['url'];
     if (import4.checkBinding(throwOnChange,this._expr_24,currVal_24)) {
       this._FormControlDirective_17_5.form = currVal_24;
       if ((changes === (null as any))) { (changes = {}); }
@@ -1565,12 +1565,10 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
   /*private*/ _expr_18:any;
   _pipe_date_0_0:any;
   /*private*/ _expr_19:any;
-  _map_0:any;
-  /*private*/ _expr_22:any;
   _arr_0:any;
+  /*private*/ _expr_22:any;
   /*private*/ _expr_23:any;
   /*private*/ _expr_24:any;
-  /*private*/ _expr_25:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_UserSolutionsComponent7,renderType_UserSolutionsComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -1633,9 +1631,9 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_43,'title','View');
     this.renderer.setElementAttribute(this._el_43,'type','button');
     this._RouterLink_43_3 = new import33.RouterLink(this.parent.parent.parentInjector.get(import34.Router),this.parent.parent.parentInjector.get(import35.ActivatedRoute),this.parent.parent.parentInjector.get(import36.LocationStrategy));
-    this._text_44 = this.renderer.createText(this._el_43,'\n                            ',(null as any));
+    this._text_44 = this.renderer.createText(this._el_43,'\n                                    ',(null as any));
     this._el_45 = this.renderer.createElement(this._el_43,'i',(null as any));
-    this.renderer.setElementAttribute(this._el_45,'class','glyphicon glyphicon-search');
+    this.renderer.setElementAttribute(this._el_45,'class','glyphicon glyphicon-info-sign');
     this._text_46 = this.renderer.createText(this._el_43,'\n                        ',(null as any));
     this._text_47 = this.renderer.createText(this._el_42,'\n                        ',(null as any));
     this._text_48 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
@@ -1674,16 +1672,16 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
     this._expr_19 = import7.UNINITIALIZED;
     var disposable_3:Function = this.renderer.listen(this._el_36,'click',this.eventHandler(this._handle_click_36_0.bind(this)));
     var disposable_4:Function = this.renderer.listen(this._el_43,'click',this.eventHandler(this._handle_click_43_0.bind(this)));
-    this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
-      return {solutionId: p0};
+    this._arr_0 = import4.pureProxy2((p0:any,p1:any):any[] => {
+      return [
+        p0,
+        p1
+      ]
+      ;
     });
     this._expr_22 = import7.UNINITIALIZED;
-    this._arr_0 = import4.pureProxy1((p0:any):any[] => {
-      return [p0];
-    });
     this._expr_23 = import7.UNINITIALIZED;
     this._expr_24 = import7.UNINITIALIZED;
-    this._expr_25 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -1782,25 +1780,20 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
       this._expr_4 = currVal_4;
     }
     if ((changes !== (null as any))) { this._NgModel_5_5.ngOnChanges(changes); }
-    const currVal_22:any = this._map_0(this.context.$implicit.solutionId);
+    const currVal_22:any = this._arr_0('/#solution/validatorinfo',this.context.$implicit.solutionId);
     if (import4.checkBinding(throwOnChange,this._expr_22,currVal_22)) {
-      this._RouterLink_43_3.queryParams = currVal_22;
+      this._RouterLink_43_3.routerLink = currVal_22;
       this._expr_22 = currVal_22;
     }
-    const currVal_23:any = this._arr_0('/#solution/validatorinfo');
+    const currVal_23:any = this.parent.parent.context.showPapers;
     if (import4.checkBinding(throwOnChange,this._expr_23,currVal_23)) {
-      this._RouterLink_43_3.routerLink = currVal_23;
+      this._NgIf_50_6.ngIf = currVal_23;
       this._expr_23 = currVal_23;
     }
-    const currVal_24:any = this.parent.parent.context.isShowPapers();
+    const currVal_24:any = this.parent.parent.context.showPapers;
     if (import4.checkBinding(throwOnChange,this._expr_24,currVal_24)) {
-      this._NgIf_50_6.ngIf = currVal_24;
+      this._NgIf_52_6.ngIf = currVal_24;
       this._expr_24 = currVal_24;
-    }
-    const currVal_25:any = this.parent.parent.context.isShowPapers();
-    if (import4.checkBinding(throwOnChange,this._expr_25,currVal_25)) {
-      this._NgIf_52_6.ngIf = currVal_25;
-      this._expr_25 = currVal_25;
     }
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_5:any = this._NgControlStatus_5_7.ngClassUntouched;
@@ -1874,7 +1867,7 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
       this._expr_18 = currVal_18;
     }
     valUnwrapper.reset();
-    const currVal_19:any = import4.interpolate(1,'',valUnwrapper.unwrap(import4.castByValue(this._pipe_date_0_0,(<_View_UserSolutionsComponent0>this.parent.parent)._pipe_date_0.transform)(this.context.$implicit.postDate,'medium')),'');
+    const currVal_19:any = import4.interpolate(1,'',valUnwrapper.unwrap(import4.castByValue(this._pipe_date_0_0,(<_View_UserSolutionsComponent0>this.parent.parent)._pipe_date_0.transform)(this.context.$implicit.submissionTime,'medium')),'');
     if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange,this._expr_19,currVal_19))) {
       this.renderer.setText(this._text_32,currVal_19);
       this._expr_19 = currVal_19;

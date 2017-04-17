@@ -1,7 +1,9 @@
-import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from "@angular/core";
 
 import {SortService} from "../../shared/sort.service";
 import {Solution} from "../../shared/solution.model";
+import {FlashMessageService} from "../../flash-message/flash-messages.service";
+import {SolutionService} from "../../shared/solution.service";
 
 @Component({
     selector: 'app-results-instance',
@@ -9,13 +11,20 @@ import {Solution} from "../../shared/solution.model";
 })
 export class ResultsInstanceComponent implements OnChanges {
     @Input() solutions: Solution[];
+    solution: Solution;
     solutionsAuthorInstance: Solution[];
     showPapers: boolean = false;
 
-    constructor(private sortService: SortService){}
+    constructor(private sortService: SortService,
+                private solutionService: SolutionService,
+                private flashMessageService: FlashMessageService){}
 
     ngOnChanges(changes: SimpleChanges){
        this.solutionsAuthorInstance = null;
+    }
+
+    onDelete(solution: Solution) {
+        this.solutionService.deleteSolutionObservable(solution);
     }
 
     onDownload(solution: Solution){
@@ -24,10 +33,6 @@ export class ResultsInstanceComponent implements OnChanges {
 
     onAuthor(authorId: string){
         this.solutionsAuthorInstance = this.solutions.filter( s => s.author.authorId == authorId);
-    }
-
-    isShowPapers(){
-        return this.showPapers;
     }
 
     onShowPapers(){

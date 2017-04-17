@@ -1,7 +1,9 @@
-import {Component, Input} from "@angular/core";
+import {Component, EventEmitter, Input, Output} from "@angular/core";
 
 import {SortService} from "../../shared/sort.service";
 import {Solution} from "../../shared/solution.model";
+import {SolutionService} from "../../shared/solution.service";
+import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
 @Component({
     selector: 'app-results-author-instance-technique',
@@ -10,15 +12,18 @@ import {Solution} from "../../shared/solution.model";
 export class ResultsAuthorInstanceTechniqueComponent{
     @Input() solutions: Solution[];
     showPapers: boolean = false;
+    solution: Solution;
 
-    constructor(private resultsService: SortService){}
+    constructor(private resultsService: SortService,
+                private flashMessageService: FlashMessageService,
+                private solutionService: SolutionService){}
 
     onDownload(solution: Solution){
         this.resultsService.download(solution);
     }
 
-    isShowPapers(){
-        return this.showPapers;
+    onDelete(solution: Solution) {
+        this.solutionService.deleteSolutionObservable(solution);
     }
 
     onShowPapers(){

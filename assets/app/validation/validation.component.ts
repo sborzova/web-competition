@@ -3,7 +3,6 @@ import { Component, ViewChild, OnInit } from "@angular/core";
 import { SolutionService } from "../shared/solution.service";
 import { SolutionCreate } from "./solution-create.model";
 import { Validation } from "./validation.model";
-import { AuthService } from "../auth/auth.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import {SessionStorageService} from "../shared/session-storage.service";
 
@@ -34,7 +33,6 @@ export class ValidationComponent implements OnInit {
 
     onValidate(){
         this.validationService.successValidationHideResult();
-        this.validationService.worseSolutionsHide();
         let solutionInput= this.solutionElem.nativeElement;
 
         if (solutionInput.files && solutionInput.files[0]){

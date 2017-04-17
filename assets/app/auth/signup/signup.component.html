@@ -5,11 +5,11 @@
                 <div class="text-center">
                     <h2>Create account</h2>
                 </div>
-                <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                        (!myForm.controls['firstName'].valid ) &&
-                        (myForm.controls['firstName'].touched || isSubmitted())}">
+                        (!signupForm.controls['firstName'].valid ) &&
+                        (signupForm.controls['firstName'].touched || submitted)}">
                         <label for="firstName">
                             First name
                         </label>
@@ -17,22 +17,22 @@
                                 type="text"
                                 id="firstName"
                                 class="form-control"
-                                [formControl]="myForm.controls['firstName']">
+                                [formControl]="signupForm.controls['firstName']">
                         <div class="field-error"
-                             *ngIf="(myForm.controls['firstName'].hasError('required')) &&
-                            (myForm.controls['firstName'].touched || isSubmitted())">
+                             *ngIf="(signupForm.controls['firstName'].hasError('required')) &&
+                            (signupForm.controls['firstName'].touched || submitted)">
                             Field is required.
                         </div>
                         <div class="field-error"
-                             *ngIf="(myForm.controls['firstName'].hasError('maxlength')) &&
-                            (myForm.controls['firstName'].touched || isSubmitted())">
+                             *ngIf="(signupForm.controls['firstName'].hasError('maxlength')) &&
+                            (signupForm.controls['firstName'].touched || submitted)">
                             Field can have max 100 characters.
                         </div>
                     </div>
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                        (!myForm.controls['lastName'].valid) &&
-                        (myForm.controls['lastName'].touched || isSubmitted())}">
+                        (!signupForm.controls['lastName'].valid) &&
+                        (signupForm.controls['lastName'].touched || submitted)}">
                         <label for="lastName">
                             Last name
                         </label>
@@ -40,22 +40,22 @@
                                 type="text"
                                 id="lastName"
                                 class="form-control"
-                                [formControl]="myForm.controls['lastName']">
+                                [formControl]="signupForm.controls['lastName']">
                         <div class="field-error"
-                             *ngIf="(myForm.controls['lastName'].hasError('required')) &&
-                            (myForm.controls['lastName'].touched || isSubmitted())">
+                             *ngIf="(signupForm.controls['lastName'].hasError('required')) &&
+                            (signupForm.controls['lastName'].touched || submitted)">
                             Field is required.
                         </div>
                         <div class="field-error"
-                             *ngIf="(myForm.controls['lastName'].hasError('maxlength')) &&
-                            (myForm.controls['lastName'].touched || isSubmitted())">
+                             *ngIf="(signupForm.controls['lastName'].hasError('maxlength')) &&
+                            (signupForm.controls['lastName'].touched || submitted)">
                             Field can have max 100 characters.
                         </div>
                     </div>
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                        !myForm.controls['email'].valid &&
-                        (myForm.controls['email'].touched || isSubmitted())}">
+                        !signupForm.controls['email'].valid &&
+                        (signupForm.controls['email'].touched || submitted)}">
                         <label for="email">
                             Email address
                         </label>
@@ -63,17 +63,17 @@
                                 type="email"
                                 id="email"
                                 class="form-control"
-                                [formControl]="myForm.controls['email']">
+                                [formControl]="signupForm.controls['email']">
                         <div class="field-error"
-                             *ngIf="!myForm.controls['email'].valid &&
-                            (myForm.controls['email'].touched || isSubmitted())">
+                             *ngIf="!signupForm.controls['email'].valid &&
+                            (signupForm.controls['email'].touched || submitted)">
                             Email has to be valid e.g. john@gmail.com.
                         </div>
                     </div>
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                        !myForm.controls['password'].valid &&
-                        (myForm.controls['password'].touched || isSubmitted())}">
+                        !signupForm.controls['password'].valid &&
+                        (signupForm.controls['password'].touched || submitted)}">
                         <label for="password">
                             Create a password
                         </label>
@@ -81,28 +81,28 @@
                                 type="password"
                                 id="password"
                                 class="form-control"
-                                [formControl]="myForm.controls['password']"
+                                [formControl]="signupForm.controls['password']"
                                 validateEqual="confirmPassword" reverse="true">
                         <div class="field-error"
-                             *ngIf="myForm.controls['password'].hasError('required') &&
-                            (myForm.controls['password'].touched || isSubmitted())">
+                             *ngIf="signupForm.controls['password'].hasError('required') &&
+                            (signupForm.controls['password'].touched || submitted)">
                             Field is required.
                         </div>
                         <div class="field-error"
-                             *ngIf="myForm.controls['password'].hasError('minlength') &&
-                            (myForm.controls['password'].touched || isSubmitted())">
+                             *ngIf="signupForm.controls['password'].hasError('minlength') &&
+                            (signupForm.controls['password'].touched || submitted)">
                             Field can have min 6 characters.
                         </div>
                         <div class="field-error"
-                             *ngIf="myForm.controls['password'].hasError('maxlength') &&
-                            (myForm.controls['password'].touched || isSubmitted())">
+                             *ngIf="signupForm.controls['password'].hasError('maxlength') &&
+                            (signupForm.controls['password'].touched || submitted)">
                             Field can have max 100 characters.
                         </div>
                     </div>
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                        !myForm.controls['confirmPassword'].valid &&
-                        (myForm.controls['confirmPassword'].touched || isSubmitted())}">
+                        !signupForm.controls['confirmPassword'].valid &&
+                        (signupForm.controls['confirmPassword'].touched || submitted)}">
                         <label for="confirmPassword">
                             Confirm the password
                         </label>
@@ -110,11 +110,11 @@
                                 type="password"
                                 id="confirmPassword"
                                 class="form-control"
-                                [formControl]="myForm.controls['confirmPassword']"
+                                [formControl]="signupForm.controls['confirmPassword']"
                                 validateEqual="password">
                         <div class="field-error"
-                             *ngIf="!myForm.controls['confirmPassword'].valid &&
-                            (myForm.controls['confirmPassword'].touched || isSubmitted())">
+                             *ngIf="!signupForm.controls['confirmPassword'].valid &&
+                            (signupForm.controls['confirmPassword'].touched || submitted)">
                             These passwords don't match.
                         </div>
                     </div>

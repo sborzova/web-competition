@@ -4,14 +4,13 @@ import { FlashMessageService } from "./flash-messages.service";
 
 @Component({
     selector: 'app-flash-message',
-    templateUrl: 'flash-message.component.html',
+    templateUrl: './flash-message.component.html',
     styleUrls: ['flash-message.component.css']
 })
 export class FlashMessageComponent implements OnInit {
     message: FlashMessage;
 
     constructor(private flashMessageService: FlashMessageService){
-
     }
 
     ngOnInit(){

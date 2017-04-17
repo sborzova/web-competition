@@ -45,15 +45,13 @@
                             <button
                                     class="btn btn-info btn-xs"
                                     title="Edit profile"
-                                    [routerLink]="['/#users/edit']"
-                                    [queryParams]="{userId: user.userId}">
+                                    [routerLink]="['/#users/edit', user.userId]">
                                 <span class="glyphicon glyphicon-pencil"></span>&nbsp;Profile
                             </button>
                             <button
                                     class="btn btn-primary btn-xs"
                                     title="Change password"
-                                    [routerLink]="['/#users/editpass']"
-                                    [queryParams]="{userId: user.userId}">
+                                    [routerLink]="['/#users/editpass', user.userId]">
                                 <span class="glyphicon glyphicon-pencil"></span>&nbsp;Password
                             </button>
                             <button
@@ -67,15 +65,13 @@
                             <button
                                     class="btn btn-info btn-xs"
                                     title="Edit profile"
-                                    [routerLink]="['/#profile/edit']"
-                                    [queryParams]="{userId: user.userId}">
+                                    [routerLink]="['/#profile/edit', user.userId]">
                                 <span class="glyphicon glyphicon-pencil"></span>&nbsp;Profile
                             </button>
                             <button
                                     class="btn btn-primary btn-xs"
                                     title="Change password"
-                                    [routerLink]="['/#profile/editpass']"
-                                    [queryParams]="{userId: user.userId}">
+                                    [routerLink]="['/#profile/editpass', user.userId]">
                                 <span class="glyphicon glyphicon-pencil"></span>&nbsp;Password
                             </button>
                         </td>

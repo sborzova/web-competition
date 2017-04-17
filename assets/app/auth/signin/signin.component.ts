@@ -10,13 +10,13 @@ import { FlashMessageService } from "../../flash-message/flash-messages.service"
 
 @Component({
     selector: 'app-signin',
-    templateUrl: 'signin.component.html'
+    templateUrl: './signin.component.html'
 })
 export class SigninComponent {
-    myForm: FormGroup;
+    signinForm: FormGroup;
     emailForm: FormGroup;
-    private submittedForm: boolean = false;
-    private submittedEmailForm: boolean = false;
+    submittedForm: boolean = false;
+    submittedEmailForm: boolean = false;
     emailRegex: string = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@" +
                             "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
 
@@ -28,10 +28,10 @@ export class SigninComponent {
 
     onSubmit() {
         this.submittedForm = true;
-        if (this.myForm.valid){
+        if (this.signinForm.valid){
             const user = new User(
-                this.myForm.value.email,
-                this.myForm.value.password);
+                this.signinForm.value.email,
+                this.signinForm.value.password);
             this.authService.signin(user)
                 .subscribe(
                     data => {
@@ -46,7 +46,7 @@ export class SigninComponent {
     }
 
     ngOnInit() {
-        this.myForm = new FormGroup({
+        this.signinForm = new FormGroup({
             email: new FormControl(null, [Validators.required, Validators.pattern(this.emailRegex)]),
             password: new FormControl(null, Validators.required)
         });
@@ -54,7 +54,7 @@ export class SigninComponent {
 
     onShowForm(){
         this.emailForm = new FormGroup({
-            emailToSendPass: new FormControl(null, [Validators.required, Validators.pattern(this.emailRegex)])
+            email: new FormControl(null, [Validators.required, Validators.pattern(this.emailRegex)])
         });
         document.getElementById('openEmailForm').click();
     }
@@ -64,21 +64,13 @@ export class SigninComponent {
         if (this.emailForm.valid){
             document.getElementById('hideEmailForm').click();
             this.submittedEmailForm = false;
-            console.log(this.emailForm.value.emailToSendPass);
-            this.emailService.sendEmailNewPassword(this.emailForm.value.emailToSendPass)
+            console.log(this.emailForm.value.email);
+            this.emailService.sendEmailNewPassword(this.emailForm.value.email)
                 .subscribe(
                     () => {},
                     error => console.error(error)
                 );
             this.flashMessageService.showMessage('Email with the new password was send.', 'success');
         }
-    }
-
-    isSubmittedForm(){
-        return this.submittedForm;
-    }
-
-    isSubmittedEmailForm(){
-        return this.submittedEmailForm;
     }
 }

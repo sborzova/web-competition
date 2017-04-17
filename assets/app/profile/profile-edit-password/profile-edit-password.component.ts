@@ -9,13 +9,13 @@ import { UserService } from "../../shared/user.service";
 
 @Component({
     selector: 'app-profile-edit-password',
-    templateUrl: 'profile-edit-password.component.html'
+    templateUrl: './profile-edit-password.component.html'
 })
 export class ProfileEditPasswordComponent implements OnInit{
-    myForm: FormGroup;
-    private password : Password;
-    private user: User;
-    private submitted: boolean = false;
+    passwordForm: FormGroup;
+    password : Password;
+    user: User;
+    submitted: boolean = false;
 
     constructor(private userService: UserService,
                 private flashMessageService: FlashMessageService,
@@ -23,9 +23,9 @@ export class ProfileEditPasswordComponent implements OnInit{
 
     onSubmit(){
         this.submitted = true;
-        if (this.myForm.valid){
-            this.user.confirmPassword = this.myForm.value.current;
-            this.user.newPassword = this.myForm.value.newPassword;
+        if (this.passwordForm.valid){
+            this.user.confirmPassword = this.passwordForm.value.current;
+            this.user.newPassword = this.passwordForm.value.newPassword;
             this.userService.updatePassword(this.user)
                 .subscribe(
                     () => {
@@ -42,7 +42,7 @@ export class ProfileEditPasswordComponent implements OnInit{
             .subscribe(
                 (user: User ) => {
                     this.user = user;
-                    this.myForm = new FormGroup({
+                    this.passwordForm = new FormGroup({
                         current: new FormControl(null, Validators.required),
                         newPassword: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(100)]),
                         confirmNew: new FormControl(null, Validators.required),
@@ -53,9 +53,5 @@ export class ProfileEditPasswordComponent implements OnInit{
 
     private navigateBack() {
         this.router.navigate(['/#profile/info']);
-    }
-
-    isSubmitted(){
-        return this.submitted;
     }
 }

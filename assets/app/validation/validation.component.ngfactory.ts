@@ -26,9 +26,7 @@ import * as import18 from '@angular/common/src/location/location_strategy';
 import * as import19 from '@angular/core/src/linker/template_ref';
 import * as import20 from '@angular/core/src/linker/element_ref';
 import * as import21 from './success-validation/success-validation.component';
-import * as import22 from './worse-solutions/worse-solutions.component';
-import * as import23 from './success-validation/success-validation.component.ngfactory';
-import * as import24 from './worse-solutions/worse-solutions.component.ngfactory';
+import * as import22 from './success-validation/success-validation.component.ngfactory';
 var renderType_ValidationComponent_Host:import0.RenderComponentType = (null as any);
 class _View_ValidationComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -270,11 +268,7 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
   /*private*/ _appEl_27:import2.AppElement;
   _SuccessValidationComponent_27_4:import21.SuccessValidationComponent;
   _text_28:any;
-  _el_29:any;
-  /*private*/ _appEl_29:import2.AppElement;
-  _WorseSolutionsComponent_29_4:import22.WorseSolutionsComponent;
-  _text_30:any;
-  _text_31:any;
+  _text_29:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_ValidationComponent1,renderType_ValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -314,19 +308,12 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
     this._text_26 = this.renderer.createText(this._el_25,'\n                ',(null as any));
     this._el_27 = this.renderer.createElement(this._el_25,'app-success-validation',(null as any));
     this._appEl_27 = new import2.AppElement(27,25,this,this._el_27);
-    var compView_27:any = import23.viewFactory_SuccessValidationComponent0(this.viewUtils,this.injector(27),this._appEl_27);
+    var compView_27:any = import22.viewFactory_SuccessValidationComponent0(this.viewUtils,this.injector(27),this._appEl_27);
     this._SuccessValidationComponent_27_4 = new import21.SuccessValidationComponent(this.parent.parentInjector.get(import8.SolutionService),this.parent.parentInjector.get(import9.SessionStorageService),this.parent.parentInjector.get(import10.FlashMessageService));
     this._appEl_27.initComponent(this._SuccessValidationComponent_27_4,[],compView_27);
     compView_27.create(this._SuccessValidationComponent_27_4,[],(null as any));
-    this._text_28 = this.renderer.createText(this._el_25,'\n                ',(null as any));
-    this._el_29 = this.renderer.createElement(this._el_25,'app-worse-solutions',(null as any));
-    this._appEl_29 = new import2.AppElement(29,25,this,this._el_29);
-    var compView_29:any = import24.viewFactory_WorseSolutionsComponent0(this.viewUtils,this.injector(29),this._appEl_29);
-    this._WorseSolutionsComponent_29_4 = new import22.WorseSolutionsComponent(this.parent.parentInjector.get(import8.SolutionService));
-    this._appEl_29.initComponent(this._WorseSolutionsComponent_29_4,[],compView_29);
-    compView_29.create(this._WorseSolutionsComponent_29_4,[],(null as any));
-    this._text_30 = this.renderer.createText(this._el_25,'\n            ',(null as any));
-    this._text_31 = this.renderer.createText(this._el_0,'\n        ',(null as any));
+    this._text_28 = this.renderer.createText(this._el_25,'\n            ',(null as any));
+    this._text_29 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_19,'click',this.eventHandler(this._handle_click_19_0.bind(this)));
     this.init([].concat([this._el_0]),[
       this._el_0,
@@ -358,21 +345,17 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
       this._text_26,
       this._el_27,
       this._text_28,
-      this._el_29,
-      this._text_30,
-      this._text_31
+      this._text_29
     ]
     ,[disposable_0],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
     if (((token === import21.SuccessValidationComponent) && (27 === requestNodeIndex))) { return this._SuccessValidationComponent_27_4; }
-    if (((token === import22.WorseSolutionsComponent) && (29 === requestNodeIndex))) { return this._WorseSolutionsComponent_29_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
     if (((this.numberOfChecks === 0) && !throwOnChange)) { this._SuccessValidationComponent_27_4.ngOnInit(); }
-    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._WorseSolutionsComponent_29_4.ngOnInit(); }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
@@ -381,7 +364,6 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
   }
   destroyInternal():void {
     this._SuccessValidationComponent_27_4.ngOnDestroy();
-    this._WorseSolutionsComponent_29_4.ngOnDestroy();
   }
   private _handle_click_19_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();

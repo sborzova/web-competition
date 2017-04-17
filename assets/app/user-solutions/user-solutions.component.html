@@ -21,32 +21,32 @@
                 <h2>My solutions</h2>
             </div>
             <div>
-                <button *ngIf="!isShowPapers()" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
-                <button *ngIf="isShowPapers()" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
+                <button *ngIf="!showPapers" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
+                <button *ngIf="showPapers" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
                 <button class="btn btn-success btn-xs" (click)="onAddPaper()">Add paper</button>
                 <button class="btn btn-primary btn-xs" (click)="onEditPaper()">Edit paper</button>
                 <button class="btn btn-danger btn-xs" (click)="onRemovePaper()">Remove paper</button>
             </div>
-            <div *ngIf="isShowPaperForm()" class="col-sm-8 col-sm-offset-2" style="padding: 5% 0% 5% 0%">
+            <div *ngIf="showPaperForm" class="col-sm-8 col-sm-offset-2" style="padding: 5% 0% 5% 0%">
                 <div class="jumbotron">
                     <div class="text-center">
                         <h2>Paper</h2>
                     </div>
-                    <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                    <form *ngIf="paperForm" [formGroup]="paperForm" (ngSubmit)="onSubmit()">
                         <div class="form-group"
                              [ngClass]="{'has-error':
-                        (!myForm.controls['citation'].valid ) &&
-                        (myForm.controls['citation'].touched || isSubmitted())}">
+                        (!paperForm.controls['citation'].valid ) &&
+                        (paperForm.controls['citation'].touched || submitted)}">
                             <label for="citation">
                                 Citation
                             </label>
                             <textarea
                                     id="citation"
                                     class="form-control"
-                                    [formControl]="myForm.controls['citation']"></textarea>
+                                    [formControl]="paperForm.controls['citation']"></textarea>
                             <div class="field-error"
-                                 *ngIf="(myForm.controls['citation'].hasError('required')) &&
-                            (myForm.controls['citation'].touched || isSubmitted())">
+                                 *ngIf="(paperForm.controls['citation'].hasError('required')) &&
+                            (paperForm.controls['citation'].touched || submitted)">
                                 Field is required.
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                                     type="url"
                                     id="url"
                                     class="form-control"
-                                    [formControl]="myForm.controls['url']">
+                                    [formControl]="paperForm.controls['url']">
                         </div>
                         <div align="right">
                             <div align="right">
@@ -137,28 +137,27 @@
                         <td>{{ solution.room }}&nbsp;%</td>
                         <td>{{ solution.distr }}&nbsp;%</td>
                         <td>{{ solution.technique }}</td>
-                        <td>{{ solution.postDate | date:'medium' }}</td>
+                        <td>{{ solution.submissionTime | date:'medium' }}</td>
                         <td>
                             <button type="button" class="btn btn-success btn-xs" (click)="onDownload(solution)" title="Download">
                                 <span class="glyphicon glyphicon-download-alt"></span>
                             </button>
                         </td>
                         <td><button
-                                type="button"
-                                class="btn btn-primary btn-xs"
-                                title="View"
-                                [routerLink]="['/#solution/validatorinfo']"
-                                [queryParams]="{solutionId: solution.solutionId}">
-                            <i class="glyphicon glyphicon-search"></i>
+                                    type="button"
+                                    class="btn btn-primary btn-xs"
+                                    title="View"
+                                    [routerLink]="['/#solution/validatorinfo',solution.solutionId]">
+                                    <i class="glyphicon glyphicon-info-sign"></i>
                         </button>
                         </td>
                     </tr>
-                    <tr *ngIf="isShowPapers()">
+                    <tr *ngIf="showPapers">
                         <td></td>
                         <td><strong>Citation: </strong></td>
                         <td colspan="10" id="paper">{{ solution.paper?.citation}}</td>
                     </tr>
-                    <tr *ngIf="isShowPapers()">
+                    <tr *ngIf="showPapers">
                         <td></td>
                         <td><strong>Url: </strong></td>
                         <td colspan="10" id="paper"><a href="{{solution.paper?.url}}">{{ solution.paper?.url}}</a></td>

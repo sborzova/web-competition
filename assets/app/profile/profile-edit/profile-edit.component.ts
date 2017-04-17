@@ -5,17 +5,16 @@ import { Router } from "@angular/router";
 import { User } from "../user.model";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { UserService } from "../../shared/user.service";
-import { AuthService } from "../../auth/auth.service";
 import {SessionStorageService} from "../../shared/session-storage.service";
 
 @Component({
     selector: 'app-profile-edit',
-    templateUrl: 'profile-edit.component.html'
+    templateUrl: './profile-edit.component.html'
 })
 export class ProfileEditComponent implements OnInit {
-    myForm: FormGroup;
-    private user : User;
-    private submitted: boolean = false;
+    userForm: FormGroup;
+    user : User;
+    submitted: boolean = false;
 
     constructor(private userService: UserService,
                 private sessionStorageService: SessionStorageService,
@@ -24,10 +23,10 @@ export class ProfileEditComponent implements OnInit {
 
     onSubmit(){
         this.submitted = true;
-        if (this.myForm.valid){
-            this.user.firstName = this.myForm.value.firstName;
-            this.user.lastName = this.myForm.value.lastName;
-            this.user.email = this.myForm.value.email;
+        if (this.userForm.valid){
+            this.user.firstName = this.userForm.value.firstName;
+            this.user.lastName = this.userForm.value.lastName;
+            this.user.email = this.userForm.value.email;
 
             this.userService.updateUser(this.user)
                 .subscribe(
@@ -46,17 +45,13 @@ export class ProfileEditComponent implements OnInit {
             .subscribe(
                 (user: User ) => {
                     this.user = user;
-                    this.myForm = new FormGroup({
+                    this.userForm = new FormGroup({
                         firstName: new FormControl(this.user.firstName, Validators.required),
                         lastName: new FormControl(this.user.lastName, Validators.required),
                         email: new FormControl(this.user.email, Validators.required),
                     });
                 }
             );
-    }
-
-    isSubmitted(){
-        return this.submitted;
     }
 
     private navigateBack() {

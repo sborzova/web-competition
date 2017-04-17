@@ -727,7 +727,7 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
   detectChangesInternal(throwOnChange:boolean):void {
     var changes:{[key: string]:import7.SimpleChange} = (null as any);
     changes = (null as any);
-    const currVal_3:any = this.context.myForm;
+    const currVal_3:any = this.context.signupForm;
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
       this._FormGroupDirective_14_3.form = currVal_3;
       if ((changes === (null as any))) { (changes = {}); }
@@ -740,14 +740,14 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
       this._NgClass_16_3.klass = currVal_10;
       this._expr_10 = currVal_10;
     }
-    const currVal_11:any = this._map_0((!this.context.myForm.controls['firstName'].valid && (this.context.myForm.controls['firstName'].touched || this.context.isSubmitted())));
+    const currVal_11:any = this._map_0((!this.context.signupForm.controls['firstName'].valid && (this.context.signupForm.controls['firstName'].touched || this.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
       this._NgClass_16_3.ngClass = currVal_11;
       this._expr_11 = currVal_11;
     }
     if (!throwOnChange) { this._NgClass_16_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_14:any = this.context.myForm.controls['firstName'];
+    const currVal_14:any = this.context.signupForm.controls['firstName'];
     if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
       this._FormControlDirective_21_5.form = currVal_14;
       if ((changes === (null as any))) { (changes = {}); }
@@ -755,12 +755,12 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
       this._expr_14 = currVal_14;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_21_5.ngOnChanges(changes); }
-    const currVal_21:any = (this.context.myForm.controls['firstName'].hasError('required') && (this.context.myForm.controls['firstName'].touched || this.context.isSubmitted()));
+    const currVal_21:any = (this.context.signupForm.controls['firstName'].hasError('required') && (this.context.signupForm.controls['firstName'].touched || this.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_21,currVal_21)) {
       this._NgIf_23_6.ngIf = currVal_21;
       this._expr_21 = currVal_21;
     }
-    const currVal_22:any = (this.context.myForm.controls['firstName'].hasError('maxlength') && (this.context.myForm.controls['firstName'].touched || this.context.isSubmitted()));
+    const currVal_22:any = (this.context.signupForm.controls['firstName'].hasError('maxlength') && (this.context.signupForm.controls['firstName'].touched || this.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_22,currVal_22)) {
       this._NgIf_25_6.ngIf = currVal_22;
       this._expr_22 = currVal_22;
@@ -770,14 +770,14 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
       this._NgClass_28_3.klass = currVal_23;
       this._expr_23 = currVal_23;
     }
-    const currVal_24:any = this._map_1((!this.context.myForm.controls['lastName'].valid && (this.context.myForm.controls['lastName'].touched || this.context.isSubmitted())));
+    const currVal_24:any = this._map_1((!this.context.signupForm.controls['lastName'].valid && (this.context.signupForm.controls['lastName'].touched || this.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_24,currVal_24)) {
       this._NgClass_28_3.ngClass = currVal_24;
       this._expr_24 = currVal_24;
     }
     if (!throwOnChange) { this._NgClass_28_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_27:any = this.context.myForm.controls['lastName'];
+    const currVal_27:any = this.context.signupForm.controls['lastName'];
     if (import4.checkBinding(throwOnChange,this._expr_27,currVal_27)) {
       this._FormControlDirective_33_5.form = currVal_27;
       if ((changes === (null as any))) { (changes = {}); }
@@ -785,12 +785,12 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
       this._expr_27 = currVal_27;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_33_5.ngOnChanges(changes); }
-    const currVal_34:any = (this.context.myForm.controls['lastName'].hasError('required') && (this.context.myForm.controls['lastName'].touched || this.context.isSubmitted()));
+    const currVal_34:any = (this.context.signupForm.controls['lastName'].hasError('required') && (this.context.signupForm.controls['lastName'].touched || this.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_34,currVal_34)) {
       this._NgIf_35_6.ngIf = currVal_34;
       this._expr_34 = currVal_34;
     }
-    const currVal_35:any = (this.context.myForm.controls['lastName'].hasError('maxlength') && (this.context.myForm.controls['lastName'].touched || this.context.isSubmitted()));
+    const currVal_35:any = (this.context.signupForm.controls['lastName'].hasError('maxlength') && (this.context.signupForm.controls['lastName'].touched || this.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_35,currVal_35)) {
       this._NgIf_37_6.ngIf = currVal_35;
       this._expr_35 = currVal_35;
@@ -800,14 +800,14 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
       this._NgClass_40_3.klass = currVal_36;
       this._expr_36 = currVal_36;
     }
-    const currVal_37:any = this._map_2((!this.context.myForm.controls['email'].valid && (this.context.myForm.controls['email'].touched || this.context.isSubmitted())));
+    const currVal_37:any = this._map_2((!this.context.signupForm.controls['email'].valid && (this.context.signupForm.controls['email'].touched || this.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_37,currVal_37)) {
       this._NgClass_40_3.ngClass = currVal_37;
       this._expr_37 = currVal_37;
     }
     if (!throwOnChange) { this._NgClass_40_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_40:any = this.context.myForm.controls['email'];
+    const currVal_40:any = this.context.signupForm.controls['email'];
     if (import4.checkBinding(throwOnChange,this._expr_40,currVal_40)) {
       this._FormControlDirective_45_5.form = currVal_40;
       if ((changes === (null as any))) { (changes = {}); }
@@ -815,7 +815,7 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
       this._expr_40 = currVal_40;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_45_5.ngOnChanges(changes); }
-    const currVal_47:boolean = (!this.context.myForm.controls['email'].valid && (this.context.myForm.controls['email'].touched || this.context.isSubmitted()));
+    const currVal_47:boolean = (!this.context.signupForm.controls['email'].valid && (this.context.signupForm.controls['email'].touched || this.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_47,currVal_47)) {
       this._NgIf_47_6.ngIf = currVal_47;
       this._expr_47 = currVal_47;
@@ -825,14 +825,14 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
       this._NgClass_50_3.klass = currVal_48;
       this._expr_48 = currVal_48;
     }
-    const currVal_49:any = this._map_3((!this.context.myForm.controls['password'].valid && (this.context.myForm.controls['password'].touched || this.context.isSubmitted())));
+    const currVal_49:any = this._map_3((!this.context.signupForm.controls['password'].valid && (this.context.signupForm.controls['password'].touched || this.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_49,currVal_49)) {
       this._NgClass_50_3.ngClass = currVal_49;
       this._expr_49 = currVal_49;
     }
     if (!throwOnChange) { this._NgClass_50_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_52:any = this.context.myForm.controls['password'];
+    const currVal_52:any = this.context.signupForm.controls['password'];
     if (import4.checkBinding(throwOnChange,this._expr_52,currVal_52)) {
       this._FormControlDirective_55_7.form = currVal_52;
       if ((changes === (null as any))) { (changes = {}); }
@@ -840,17 +840,17 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
       this._expr_52 = currVal_52;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_55_7.ngOnChanges(changes); }
-    const currVal_59:any = (this.context.myForm.controls['password'].hasError('required') && (this.context.myForm.controls['password'].touched || this.context.isSubmitted()));
+    const currVal_59:any = (this.context.signupForm.controls['password'].hasError('required') && (this.context.signupForm.controls['password'].touched || this.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_59,currVal_59)) {
       this._NgIf_57_6.ngIf = currVal_59;
       this._expr_59 = currVal_59;
     }
-    const currVal_60:any = (this.context.myForm.controls['password'].hasError('minlength') && (this.context.myForm.controls['password'].touched || this.context.isSubmitted()));
+    const currVal_60:any = (this.context.signupForm.controls['password'].hasError('minlength') && (this.context.signupForm.controls['password'].touched || this.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_60,currVal_60)) {
       this._NgIf_59_6.ngIf = currVal_60;
       this._expr_60 = currVal_60;
     }
-    const currVal_61:any = (this.context.myForm.controls['password'].hasError('maxlength') && (this.context.myForm.controls['password'].touched || this.context.isSubmitted()));
+    const currVal_61:any = (this.context.signupForm.controls['password'].hasError('maxlength') && (this.context.signupForm.controls['password'].touched || this.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_61,currVal_61)) {
       this._NgIf_61_6.ngIf = currVal_61;
       this._expr_61 = currVal_61;
@@ -860,14 +860,14 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
       this._NgClass_64_3.klass = currVal_62;
       this._expr_62 = currVal_62;
     }
-    const currVal_63:any = this._map_4((!this.context.myForm.controls['confirmPassword'].valid && (this.context.myForm.controls['confirmPassword'].touched || this.context.isSubmitted())));
+    const currVal_63:any = this._map_4((!this.context.signupForm.controls['confirmPassword'].valid && (this.context.signupForm.controls['confirmPassword'].touched || this.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_63,currVal_63)) {
       this._NgClass_64_3.ngClass = currVal_63;
       this._expr_63 = currVal_63;
     }
     if (!throwOnChange) { this._NgClass_64_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_66:any = this.context.myForm.controls['confirmPassword'];
+    const currVal_66:any = this.context.signupForm.controls['confirmPassword'];
     if (import4.checkBinding(throwOnChange,this._expr_66,currVal_66)) {
       this._FormControlDirective_69_7.form = currVal_66;
       if ((changes === (null as any))) { (changes = {}); }
@@ -875,7 +875,7 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
       this._expr_66 = currVal_66;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_69_7.ngOnChanges(changes); }
-    const currVal_73:boolean = (!this.context.myForm.controls['confirmPassword'].valid && (this.context.myForm.controls['confirmPassword'].touched || this.context.isSubmitted()));
+    const currVal_73:boolean = (!this.context.signupForm.controls['confirmPassword'].valid && (this.context.signupForm.controls['confirmPassword'].touched || this.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_73,currVal_73)) {
       this._NgIf_71_6.ngIf = currVal_73;
       this._expr_73 = currVal_73;

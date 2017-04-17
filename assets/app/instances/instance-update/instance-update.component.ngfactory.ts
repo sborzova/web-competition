@@ -60,9 +60,6 @@ class _View_InstanceEditComponent_Host0 extends import1.AppView<any> {
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
-  destroyInternal():void {
-    this._InstanceEditComponent_0_4.ngOnDestroy();
-  }
 }
 function viewFactory_InstanceEditComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
   if ((renderType_InstanceEditComponent_Host === (null as any))) { (renderType_InstanceEditComponent_Host = viewUtils.createRenderComponentType('',0,import12.ViewEncapsulation.None,[],{})); }
@@ -72,7 +69,7 @@ export const InstanceEditComponentNgFactory:import13.ComponentFactory<import3.In
 const styles_InstanceEditComponent:any[] = [];
 var renderType_InstanceEditComponent:import0.RenderComponentType = (null as any);
 class _View_InstanceEditComponent0 extends import1.AppView<import3.InstanceEditComponent> {
-  _viewQuery_stats_0:import14.QueryList<any>;
+  _viewQuery_status_0:import14.QueryList<any>;
   _viewQuery_data_1:import14.QueryList<any>;
   _el_0:any;
   _text_1:any;
@@ -102,7 +99,7 @@ class _View_InstanceEditComponent0 extends import1.AppView<import3.InstanceEditC
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-    this._viewQuery_stats_0 = new import14.QueryList<any>();
+    this._viewQuery_status_0 = new import14.QueryList<any>();
     this._viewQuery_data_1 = new import14.QueryList<any>();
     this._el_0 = this.renderer.createElement(parentRenderNode,'div',(null as any));
     this.renderer.setElementAttribute(this._el_0,'class','container');
@@ -163,7 +160,7 @@ class _View_InstanceEditComponent0 extends import1.AppView<import3.InstanceEditC
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_0:any = this.context.myForm;
+    const currVal_0:any = this.context.instanceForm;
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
       this._NgIf_14_6.ngIf = currVal_0;
       this._expr_0 = currVal_0;
@@ -171,11 +168,11 @@ class _View_InstanceEditComponent0 extends import1.AppView<import3.InstanceEditC
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
     if (!throwOnChange) {
-      if (this._viewQuery_stats_0.dirty) {
-          this._viewQuery_stats_0.reset([this._appEl_14.mapNestedViews(_View_InstanceEditComponent1,(nestedView:_View_InstanceEditComponent1):any => {
+      if (this._viewQuery_status_0.dirty) {
+          this._viewQuery_status_0.reset([this._appEl_14.mapNestedViews(_View_InstanceEditComponent1,(nestedView:_View_InstanceEditComponent1):any => {
             return [new import17.ElementRef(nestedView._el_40)];
         })]);
-        this.context.statsElem = this._viewQuery_stats_0.first;
+        this.context.statusElem = this._viewQuery_status_0.first;
       }
       if (this._viewQuery_data_1.dirty) {
           this._viewQuery_data_1.reset([this._appEl_14.mapNestedViews(_View_InstanceEditComponent1,(nestedView:_View_InstanceEditComponent1):any => {
@@ -415,11 +412,11 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_35,'class','form-group');
     this._text_36 = this.renderer.createText(this._el_35,'\n                        ',(null as any));
     this._el_37 = this.renderer.createElement(this._el_35,'label',(null as any));
-    this.renderer.setElementAttribute(this._el_37,'for','stats');
+    this.renderer.setElementAttribute(this._el_37,'for','status');
     this._text_38 = this.renderer.createText(this._el_37,'\n                            Status\n                        ',(null as any));
     this._text_39 = this.renderer.createText(this._el_35,'\n                        ',(null as any));
     this._el_40 = this.renderer.createElement(this._el_35,'input',(null as any));
-    this.renderer.setElementAttribute(this._el_40,'id','stats');
+    this.renderer.setElementAttribute(this._el_40,'id','status');
     this.renderer.setElementAttribute(this._el_40,'type','file');
     this._text_41 = this.renderer.createText(this._el_35,'\n                    ',(null as any));
     this._text_42 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
@@ -618,7 +615,7 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
   detectChangesInternal(throwOnChange:boolean):void {
     var changes:{[key: string]:import7.SimpleChange} = (null as any);
     changes = (null as any);
-    const currVal_3:any = this.parent.context.myForm;
+    const currVal_3:any = this.parent.context.instanceForm;
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
       this._FormGroupDirective_0_3.form = currVal_3;
       if ((changes === (null as any))) { (changes = {}); }
@@ -631,14 +628,14 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
       this._NgClass_2_3.klass = currVal_10;
       this._expr_10 = currVal_10;
     }
-    const currVal_11:any = this._map_0((!this.parent.context.myForm.controls['order'].valid && (this.parent.context.myForm.controls['order'].touched || this.parent.context.isSubmitted())));
+    const currVal_11:any = this._map_0((!this.parent.context.instanceForm.controls['order'].valid && (this.parent.context.instanceForm.controls['order'].touched || this.parent.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
       this._NgClass_2_3.ngClass = currVal_11;
       this._expr_11 = currVal_11;
     }
     if (!throwOnChange) { this._NgClass_2_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_17:any = this.parent.context.myForm.controls['order'];
+    const currVal_17:any = this.parent.context.instanceForm.controls['order'];
     if (import4.checkBinding(throwOnChange,this._expr_17,currVal_17)) {
       this._FormControlDirective_7_6.form = currVal_17;
       if ((changes === (null as any))) { (changes = {}); }
@@ -646,7 +643,7 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
       this._expr_17 = currVal_17;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_7_6.ngOnChanges(changes); }
-    const currVal_24:boolean = (!this.parent.context.myForm.controls['order'].valid && (this.parent.context.myForm.controls['order'].touched || this.parent.context.isSubmitted()));
+    const currVal_24:boolean = (!this.parent.context.instanceForm.controls['order'].valid && (this.parent.context.instanceForm.controls['order'].touched || this.parent.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_24,currVal_24)) {
       this._NgIf_9_6.ngIf = currVal_24;
       this._expr_24 = currVal_24;
@@ -656,14 +653,14 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
       this._NgClass_12_3.klass = currVal_25;
       this._expr_25 = currVal_25;
     }
-    const currVal_26:any = this._map_1((!this.parent.context.myForm.controls['name'].valid && (this.parent.context.myForm.controls['name'].touched || this.parent.context.isSubmitted())));
+    const currVal_26:any = this._map_1((!this.parent.context.instanceForm.controls['name'].valid && (this.parent.context.instanceForm.controls['name'].touched || this.parent.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_26,currVal_26)) {
       this._NgClass_12_3.ngClass = currVal_26;
       this._expr_26 = currVal_26;
     }
     if (!throwOnChange) { this._NgClass_12_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_29:any = this.parent.context.myForm.controls['name'];
+    const currVal_29:any = this.parent.context.instanceForm.controls['name'];
     if (import4.checkBinding(throwOnChange,this._expr_29,currVal_29)) {
       this._FormControlDirective_17_5.form = currVal_29;
       if ((changes === (null as any))) { (changes = {}); }
@@ -671,7 +668,7 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
       this._expr_29 = currVal_29;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_17_5.ngOnChanges(changes); }
-    const currVal_36:any = (this.parent.context.myForm.controls['name'].hasError('required') && (this.parent.context.myForm.controls['name'].touched || this.parent.context.isSubmitted()));
+    const currVal_36:any = (this.parent.context.instanceForm.controls['name'].hasError('required') && (this.parent.context.instanceForm.controls['name'].touched || this.parent.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_36,currVal_36)) {
       this._NgIf_19_6.ngIf = currVal_36;
       this._expr_36 = currVal_36;
@@ -681,14 +678,14 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
       this._NgClass_22_3.klass = currVal_37;
       this._expr_37 = currVal_37;
     }
-    const currVal_38:any = this._map_2((!this.parent.context.myForm.controls['description'].valid && (this.parent.context.myForm.controls['description'].touched || this.parent.context.isSubmitted())));
+    const currVal_38:any = this._map_2((!this.parent.context.instanceForm.controls['description'].valid && (this.parent.context.instanceForm.controls['description'].touched || this.parent.context.submitted)));
     if (import4.checkBinding(throwOnChange,this._expr_38,currVal_38)) {
       this._NgClass_22_3.ngClass = currVal_38;
       this._expr_38 = currVal_38;
     }
     if (!throwOnChange) { this._NgClass_22_3.ngDoCheck(); }
     changes = (null as any);
-    const currVal_41:any = this.parent.context.myForm.controls['description'];
+    const currVal_41:any = this.parent.context.instanceForm.controls['description'];
     if (import4.checkBinding(throwOnChange,this._expr_41,currVal_41)) {
       this._FormControlDirective_27_5.form = currVal_41;
       if ((changes === (null as any))) { (changes = {}); }
@@ -696,7 +693,7 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
       this._expr_41 = currVal_41;
     }
     if ((changes !== (null as any))) { this._FormControlDirective_27_5.ngOnChanges(changes); }
-    const currVal_48:any = (this.parent.context.myForm.controls['description'].hasError('required') && (this.parent.context.myForm.controls['description'].touched || this.parent.context.isSubmitted()));
+    const currVal_48:any = (this.parent.context.instanceForm.controls['description'].hasError('required') && (this.parent.context.instanceForm.controls['description'].touched || this.parent.context.submitted));
     if (import4.checkBinding(throwOnChange,this._expr_48,currVal_48)) {
       this._NgIf_29_6.ngIf = currVal_48;
       this._expr_48 = currVal_48;
@@ -825,7 +822,7 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
     this.detectViewChildrenChanges(throwOnChange);
   }
   dirtyParentQueriesInternal():void {
-    (<_View_InstanceEditComponent0>this.parent)._viewQuery_stats_0.setDirty();
+    (<_View_InstanceEditComponent0>this.parent)._viewQuery_status_0.setDirty();
     (<_View_InstanceEditComponent0>this.parent)._viewQuery_data_1.setDirty();
   }
   private _handle_ngSubmit_0_0($event:any):boolean {

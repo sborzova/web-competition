@@ -6,11 +6,11 @@
                 <div class="text-center">
                     <h2>Edit profile</h2>
                 </div>
-                <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <form *ngIf="userForm" [formGroup]="userForm" (ngSubmit)="onSubmit()">
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                        (!myForm.controls['firstName'].valid ) &&
-                        (myForm.controls['firstName'].touched || isSubmitted())}">
+                        (!userForm.controls['firstName'].valid ) &&
+                        (userForm.controls['firstName'].touched || submitted)}">
                         <label for="firstName">
                             First name
                         </label>
@@ -18,22 +18,22 @@
                                 type="text"
                                 id="firstName"
                                 class="form-control"
-                                [formControl]="myForm.controls['firstName']">
+                                [formControl]="userForm.controls['firstName']">
                         <div class="field-error"
-                             *ngIf="(myForm.controls['firstName'].hasError('required')) &&
-                            (myForm.controls['firstName'].touched || isSubmitted())">
+                             *ngIf="(userForm.controls['firstName'].hasError('required')) &&
+                            (userForm.controls['firstName'].touched || submitted)">
                             Field is required.
                         </div>
                         <div class="field-error"
-                             *ngIf="(myForm.controls['firstName'].hasError('maxlength')) &&
-                            (myForm.controls['firstName'].touched || isSubmitted())">
+                             *ngIf="(userForm.controls['firstName'].hasError('maxlength')) &&
+                            (userForm.controls['firstName'].touched || submitted)">
                             Field can have max 100 characters.
                         </div>
                     </div>
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                        (!myForm.controls['lastName'].valid) &&
-                        (myForm.controls['lastName'].touched || isSubmitted())}">
+                        (!userForm.controls['lastName'].valid) &&
+                        (userForm.controls['lastName'].touched || submitted)}">
                         <label for="lastName">
                             Last name
                         </label>
@@ -41,22 +41,22 @@
                                 type="text"
                                 id="lastName"
                                 class="form-control"
-                                [formControl]="myForm.controls['lastName']">
+                                [formControl]="userForm.controls['lastName']">
                         <div class="field-error"
-                             *ngIf="(myForm.controls['lastName'].hasError('required')) &&
-                            (myForm.controls['lastName'].touched || isSubmitted())">
+                             *ngIf="(userForm.controls['lastName'].hasError('required')) &&
+                            (userForm.controls['lastName'].touched || submitted)">
                             Field is required.
                         </div>
                         <div class="field-error"
-                             *ngIf="(myForm.controls['lastName'].hasError('maxlength')) &&
-                            (myForm.controls['lastName'].touched || isSubmitted())">
+                             *ngIf="(userForm.controls['lastName'].hasError('maxlength')) &&
+                            (userForm.controls['lastName'].touched || submitted)">
                             Field can have max 100 characters.
                         </div>
                     </div>
                     <div class="form-group"
                          [ngClass]="{'has-error':
-                    !myForm.controls['email'].valid &&
-                    (myForm.controls['email'].touched || isSubmitted())}">
+                    !userForm.controls['email'].valid &&
+                    (userForm.controls['email'].touched || submitted)}">
                         <label for="email">
                             Email address
                         </label>
@@ -64,10 +64,10 @@
                                 type="email"
                                 id="email"
                                 class="form-control"
-                                [formControl]="myForm.controls['email']">
+                                [formControl]="userForm.controls['email']">
                         <div class="field-error"
-                             *ngIf="!myForm.controls['email'].valid &&
-                        (myForm.controls['email'].touched || isSubmitted())">
+                             *ngIf="!userForm.controls['email'].valid &&
+                        (userForm.controls['email'].touched || isSubmitted())">
                             Email has to be valid e.g. john@gmail.com.
                         </div>
                     </div>

@@ -20,9 +20,9 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     validation: Validation;
     display = 'none';
     subscription: Subscription;
-    myForm: FormGroup;
-    private submitted: boolean = false;
-    private citationMissing: boolean = false;
+    solutionForm: FormGroup;
+    submitted: boolean = false;
+    citationMissing: boolean = false;
 
     constructor(private solutionService: SolutionService,
                 private sessionStorageService: SessionStorageService,
@@ -32,7 +32,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
             .subscribe(
                 () => {
                     this.display = 'none';
-                    this.myForm.reset();
+                    this.solutionForm.reset();
                     this.submitted = false;
                     this.citationMissing = false;
                 }
@@ -40,7 +40,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(){
-        this.myForm = new FormGroup({
+        this.solutionForm = new FormGroup({
             technique: new FormControl(null, Validators.required),
             citation: new FormControl(null),
             url: new FormControl(null)
@@ -56,11 +56,11 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
 
     onSubmit(){
         this.submitted = true;
-        if (this.myForm.value.url && !this.myForm.value.citation){
+        if (this.solutionForm.value.url && !this.solutionForm.value.citation){
             this.citationMissing = true;
             return;
         }
-        if (this.myForm.valid){
+        if (this.solutionForm.valid){
             this.solutionService.findDuplicateSolution(
                 new Solution(
                     this.validation.unassigned,
@@ -69,19 +69,20 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
                     this.validation.time,
                     this.validation.room,
                     this.validation.distr,
-                    this.myForm.value.technique,
+                    this.solutionForm.value.technique,
                     '',
                     null,
                     null,
                     new Instance(this.validation.instanceName))
                 ).subscribe(
                 (solution: Solution) => {
-                    if (solution.postDate) {
+                    if (solution) {
+                        let date = new Date(solution.submissionTime);
                         this.flashMessageService.showMessage(
                             'Solution has the same unassigned variables, total cost, time preferences, ' +
                             'room preferences, distribution preferences and technique as your other ' +
-                            'solution uploaded to the system ' + ', it is not ' +
-                            'uploaded.', 'info');
+                            'solution uploaded to the system on ' + this.getDateTime(date) +
+                            ', it is not ' + 'uploaded.', 'info');
                         return;
                     }else {
                         this.solutionService.uploadSolution(
@@ -93,10 +94,10 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
                                 this.validation.room,
                                 this.validation.distr,
                                 this.validation.info,
-                                this.myForm.value.technique,
+                                this.solutionForm.value.technique,
                                 this.validation.instanceName),
-                            this.myForm.value.citation,
-                            this.myForm.value.url,
+                            this.solutionForm.value.citation,
+                            this.solutionForm.value.url,
                             );
                         }
                     },
@@ -110,15 +111,57 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
         this.solutionService.setSolutionFile(null);
     }
 
-    isSubmitted(){
-        return this.submitted;
-    }
-
-    isCitationMissing(){
-        return this.citationMissing;
-    }
-
     competitionIsOn(){
         return this.sessionStorageService.getCompetitionIsOn();
+    }
+
+    getDateTime(date: Date){
+        let result = this.getNameOfMonth(date.getMonth()) + ' ' + date.getDate() + ', ' + date.getFullYear() + ' at ';
+        const hours = date.getHours();
+        if (hours < 12){
+            result += date.getHours() + ':' + this.fulfillZero(date.getMinutes()) + ':' + this.fulfillZero(date.getSeconds()) + ' AM';
+        }else if (hours == 12){
+            result += date.getHours() + ':' + this.fulfillZero(date.getMinutes()) + ':' + this.fulfillZero(date.getSeconds()) + ' PM'
+        }else {
+            result += date.getHours()-10 + ':' + this.fulfillZero(date.getMinutes()) + ':' + this.fulfillZero(date.getSeconds()) + ' PM'
+        }
+        return result;
+    }
+
+    fulfillZero(number: number){
+        if (number < 10){
+            return '0' + number;
+        }else {
+            return number.toString();
+        }
+    }
+
+    getNameOfMonth(number: number){
+        switch (number){
+            case 0 :
+                return 'Jan';
+            case 1:
+                return 'Feb';
+            case 2:
+                return 'Mar';
+            case 3:
+                return 'Apr';
+            case 4:
+                return 'May';
+            case 5:
+                return 'Jun';
+            case 6:
+                return 'Jul';
+            case 7:
+                return 'Aug';
+            case 8:
+                return 'Sep';
+            case 9:
+                return 'Oct';
+            case 10:
+                return 'Nov';
+            case 11:
+                return 'Dec';
+        }
     }
 }

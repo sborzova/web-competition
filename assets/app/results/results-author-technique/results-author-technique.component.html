@@ -1,8 +1,8 @@
 <div *ngIf="solutions" class="results">
     <h4>Solutions of <strong>{{ solutions[0].author.firstName}} {{ solutions[0].author.lastName}}</strong>
         with the technique <strong> {{ solutions[0].technique }}</strong></h4>
-    <button *ngIf="!isShowPapers()" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
-    <button *ngIf="isShowPapers()" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
+    <button *ngIf="!showPapers" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
+    <button *ngIf="showPapers" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
     <table class="table">
         <thead>
         <tr>
@@ -37,7 +37,9 @@
                 <span (click)="onSubmissionTimeAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
                 <span (click)="onSubmissionTimeDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
             </th>
-            <th rowspan="2">Download</th>
+            <th rowspan="2"></th>
+            <th rowspan="2"></th>
+            <th rowspan="2"></th>
         </tr>
         <tr>
             <th>Unassigned variables</th>
@@ -53,23 +55,34 @@
             <td>{{ solution.time }}&nbsp;%</td>
             <td>{{ solution.room }}&nbsp;%</td>
             <td>{{ solution.distr }}&nbsp;%</td>
-            <td>{{ solution.postDate | date:'medium' }}</td>
+            <td>{{ solution.submissionTime | date:'medium' }}</td>
             <td>
-                <button type="button" class="btn btn-success btn-xs" (click)="onDownload(solution)" title="Download">
-                    <i class="glyphicon glyphicon-download-alt"></i>
+                <button
+                        type="button"
+                        class="btn btn-success btn-xs"
+                        (click)="onDownload(solution)"
+                        title="Download solution">
+                    <span class="glyphicon glyphicon-download-alt"></span>
                 </button>
             </td>
             <td><button
-                    type="button"
-                    class="btn btn-primary btn-xs"
-                    title="View"
-                    [routerLink]="['/#solution/validatorinfo']"
-                    [queryParams]="{solutionId: solution.solutionId}">
-                <i class="glyphicon glyphicon-search"></i>
-            </button>
+                        type="button"
+                        class="btn btn-primary btn-xs"
+                        title="View validator info"
+                        [routerLink]="['/#solution/validatorinfo', solution.solutionId]">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                </button>
+            </td>
+            <td>
+                <button
+                        class="btn btn-danger btn-xs"
+                        title="Delete solution"
+                        (click)="onDelete(solution)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                </button>
             </td>
         </tr>
-        <tr *ngIf="isShowPapers() && solution.paper" class="paper">
+        <tr *ngIf="showPapers && solution.paper" class="paper">
             <td style="border: none; background-color: white"></td>
             <td style="border: none" colspan="11" id="paper">
                 <strong>Citation: </strong>{{ solution.paper?.citation}}

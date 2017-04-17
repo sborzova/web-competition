@@ -10,14 +10,14 @@ import {Solution} from "../shared/solution.model";
 
 @Component({
     selector: 'app-user-solutions',
-    templateUrl: 'user-solutions.component.html',
+    templateUrl: './user-solutions.component.html',
     styleUrls: ['user-solutions.component.css']
 })
 export class UserSolutionsComponent implements OnInit, OnDestroy {
     solutions: Solution[];
     papers: Paper[];
     editedPaper: Paper;
-    myForm: FormGroup;
+    paperForm: FormGroup;
     showPaperForm: boolean = false;
     showPapers: boolean = false;
     submitted: boolean = false;
@@ -58,7 +58,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
             return;
         this.disabled = true;
         const solutions = this.selectedSolutions;
-        this.myForm = new FormGroup({
+        this.paperForm = new FormGroup({
             citation: new FormControl(null, Validators.required),
             url: new FormControl(null)
         });
@@ -126,7 +126,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
             }
             this.isEdited = true;
             this.submitted = false;
-            this.myForm = new FormGroup({
+            this.paperForm = new FormGroup({
                 citation: new FormControl(this.editedPaper.citation, Validators.required),
                 url: new FormControl(this.editedPaper.url)
             });
@@ -137,10 +137,10 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
 
     onSubmit(){
         this.submitted = true;
-        if (this.myForm.valid){
+        if (this.paperForm.valid){
             if (this.isEdited){
-                this.editedPaper.citation = this.myForm.value.citation;
-                this.editedPaper.url = this.myForm.value.url;
+                this.editedPaper.citation = this.paperForm.value.citation;
+                this.editedPaper.url = this.paperForm.value.url;
                 this.paperService.updatePaper(this.editedPaper)
                     .subscribe(
                         () => {
@@ -156,8 +156,8 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
                     )
             }else {
                 const paper = new Paper(
-                    this.myForm.value.citation,
-                    this.myForm.value.url
+                    this.paperForm.value.citation,
+                    this.paperForm.value.url
                 );
                 this.paperService.savePaper(paper)
                     .subscribe(
@@ -189,15 +189,6 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
         return this.solutions.filter(s => s.isChecked);
     }
 
-
-    isShowPaperForm(){
-        return this.showPaperForm;
-    }
-
-    isShowPapers(){
-        return this.showPapers;
-    }
-
     onShowPapers(){
         this.showPapers = true;
     }
@@ -210,10 +201,6 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
         this.uncheckSelected();
         this.disabled = false;
         this.showPaperForm = false;
-    }
-
-    isSubmitted(){
-        return this.submitted;
     }
 
     onQualityAsc(){

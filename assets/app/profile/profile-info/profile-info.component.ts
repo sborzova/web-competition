@@ -6,7 +6,7 @@ import { UserService } from "../../shared/user.service";
 
 @Component({
     selector: 'app-profile-info',
-    templateUrl: 'profile-info.component.html'
+    templateUrl: './profile-info.component.html'
 })
 export class ProfileInfoComponent implements OnInit {
     user: User;

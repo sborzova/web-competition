@@ -9,15 +9,15 @@ import { FlashMessageService } from "../../flash-message/flash-messages.service"
 
 @Component({
     selector: 'app-instance-new',
-    templateUrl: 'instance-new.component.html'
+    templateUrl: './instance-new.component.html'
 })
 export class InstanceCreateComponent implements OnInit {
-    myForm: FormGroup;
+    instanceForm: FormGroup;
     defaultOrder: number;
-    private submitted: boolean = false;
-    private statsInvalid: boolean = false;
-    private dataInvalid: boolean = false;
-    @ViewChild('stats') statsElem;
+    submitted: boolean = false;
+    statusInvalid: boolean = false;
+    dataInvalid: boolean = false;
+    @ViewChild('status') statusElem;
     @ViewChild('data') dataElem;
 
     constructor(private router: Router,
@@ -46,24 +46,24 @@ export class InstanceCreateComponent implements OnInit {
 
     onSubmit(){
         this.submitted = true;
-        let statsInput = this.statsElem.nativeElement;
+        let statusInput = this.statusElem.nativeElement;
         let dataInput = this.dataElem.nativeElement;
 
-        if (!(statsInput.files && statsInput.files[0])){
-            this.statsInvalid = true;
+        if (!(statusInput.files && statusInput.files[0])){
+            this.statusInvalid = true;
         }else {
-            this.statsInvalid = false;
+            this.statusInvalid = false;
         }
         if (!(dataInput.files && dataInput.files[0])){
             return this.dataInvalid = true;
         }else {
             this.dataInvalid = false;
         }
-        if (this.myForm.valid){
+        if (this.instanceForm.valid){
             const instance = new Instance(
-                this.myForm.value.order,
-                this.myForm.value.name,
-                this.myForm.value.description
+                this.instanceForm.value.order,
+                this.instanceForm.value.name,
+                this.instanceForm.value.description
             );
 
             this.instancesService.saveInstance(instance)
@@ -71,7 +71,7 @@ export class InstanceCreateComponent implements OnInit {
                     data => {
                         let id = data.instanceId;
                         let fd = new FormData();
-                        fd.append('stats', statsInput.files[0], statsInput.files[0].name);
+                        fd.append('status', statusInput.files[0], statusInput.files[0].name);
                         fd.append('data', dataInput.files[0], dataInput.files[0].name);
 
                         this.navigateBack();
@@ -92,23 +92,11 @@ export class InstanceCreateComponent implements OnInit {
     }
 
     setForm(){
-        this.myForm = new FormGroup({
+        this.instanceForm = new FormGroup({
             order: new FormControl(this.defaultOrder, [Validators.required, minValue(1)]),
             name: new FormControl(null, Validators.required),
             description: new FormControl(null, Validators.required)
         });
-    }
-
-    isSubmitted(){
-        return this.submitted;
-    }
-
-    isStatsInvalid(){
-        return this.statsInvalid;
-    }
-
-    isDataInvalid(){
-        return this.dataInvalid;
     }
 
     onCancel(){

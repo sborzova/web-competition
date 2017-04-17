@@ -5,7 +5,7 @@ var iconv = require('iconv-lite');
 
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
-var fileUpload = upload.fields([{ name: 'stats', maxCount: 1 }, { name: 'data', maxCount: 1 }]);
+var fileUpload = upload.fields([{ name: 'status', maxCount: 1 }, { name: 'data', maxCount: 1 }]);
 
 var Instance = require('../models/instance');
 
@@ -59,8 +59,8 @@ router.post('/files/:id', function (req, res, next) {
                 });
             }
 
-            if (req.files['stats'] && req.files['stats'][0]){
-                instance.stats = req.files['stats'][0].buffer.toString();
+            if (req.files['status'] && req.files['status'][0]){
+                instance.status = req.files['status'][0].buffer.toString();
             }
             if (req.files['data'] && req.files['data'][0]){
                 instance.data = iconv.decode(req.files['data'][0].buffer, 'utf-8', {addBom : false});

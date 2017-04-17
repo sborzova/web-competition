@@ -578,14 +578,10 @@ class _View_UsersComponent3 extends import1.AppView<any> {
   _text_15:any;
   _text_16:any;
   _text_17:any;
-  _map_0:any;
-  /*private*/ _expr_1:any;
   _arr_0:any;
-  /*private*/ _expr_2:any;
-  _map_1:any;
-  /*private*/ _expr_4:any;
+  /*private*/ _expr_1:any;
   _arr_1:any;
-  /*private*/ _expr_5:any;
+  /*private*/ _expr_3:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_UsersComponent3,renderType_UsersComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -622,23 +618,23 @@ class _View_UsersComponent3 extends import1.AppView<any> {
     this._text_16 = this.renderer.createText(this._el_12,'\n                            ',(null as any));
     this._text_17 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
-    this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
-      return {userId: p0};
+    this._arr_0 = import4.pureProxy2((p0:any,p1:any):any[] => {
+      return [
+        p0,
+        p1
+      ]
+      ;
     });
     this._expr_1 = import7.UNINITIALIZED;
-    this._arr_0 = import4.pureProxy1((p0:any):any[] => {
-      return [p0];
-    });
-    this._expr_2 = import7.UNINITIALIZED;
     var disposable_1:Function = this.renderer.listen(this._el_7,'click',this.eventHandler(this._handle_click_7_0.bind(this)));
-    this._map_1 = import4.pureProxy1((p0:any):{[key: string]:any} => {
-      return {userId: p0};
+    this._arr_1 = import4.pureProxy2((p0:any,p1:any):any[] => {
+      return [
+        p0,
+        p1
+      ]
+      ;
     });
-    this._expr_4 = import7.UNINITIALIZED;
-    this._arr_1 = import4.pureProxy1((p0:any):any[] => {
-      return [p0];
-    });
-    this._expr_5 = import7.UNINITIALIZED;
+    this._expr_3 = import7.UNINITIALIZED;
     var disposable_2:Function = this.renderer.listen(this._el_12,'click',this.eventHandler(this._handle_click_12_0.bind(this)));
     this.init([].concat([this._el_0]),[
       this._el_0,
@@ -674,25 +670,15 @@ class _View_UsersComponent3 extends import1.AppView<any> {
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_1:any = this._map_0(this.parent.context.$implicit.userId);
+    const currVal_1:any = this._arr_0('/#users/edit',this.parent.context.$implicit.userId);
     if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
-      this._RouterLink_2_3.queryParams = currVal_1;
+      this._RouterLink_2_3.routerLink = currVal_1;
       this._expr_1 = currVal_1;
     }
-    const currVal_2:any = this._arr_0('/#users/edit');
-    if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
-      this._RouterLink_2_3.routerLink = currVal_2;
-      this._expr_2 = currVal_2;
-    }
-    const currVal_4:any = this._map_1(this.parent.context.$implicit.userId);
-    if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
-      this._RouterLink_7_3.queryParams = currVal_4;
-      this._expr_4 = currVal_4;
-    }
-    const currVal_5:any = this._arr_1('/#users/editpass');
-    if (import4.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
-      this._RouterLink_7_3.routerLink = currVal_5;
-      this._expr_5 = currVal_5;
+    const currVal_3:any = this._arr_1('/#users/editpass',this.parent.context.$implicit.userId);
+    if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
+      this._RouterLink_7_3.routerLink = currVal_3;
+      this._expr_3 = currVal_3;
     }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
@@ -731,14 +717,10 @@ class _View_UsersComponent4 extends import1.AppView<any> {
   _el_9:any;
   _text_10:any;
   _text_11:any;
-  _map_0:any;
-  /*private*/ _expr_1:any;
   _arr_0:any;
-  /*private*/ _expr_2:any;
-  _map_1:any;
-  /*private*/ _expr_4:any;
+  /*private*/ _expr_1:any;
   _arr_1:any;
-  /*private*/ _expr_5:any;
+  /*private*/ _expr_3:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_UsersComponent4,renderType_UsersComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -766,23 +748,23 @@ class _View_UsersComponent4 extends import1.AppView<any> {
     this._text_10 = this.renderer.createText(this._el_7,' Password\n                            ',(null as any));
     this._text_11 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
-    this._map_0 = import4.pureProxy1((p0:any):{[key: string]:any} => {
-      return {userId: p0};
+    this._arr_0 = import4.pureProxy2((p0:any,p1:any):any[] => {
+      return [
+        p0,
+        p1
+      ]
+      ;
     });
     this._expr_1 = import7.UNINITIALIZED;
-    this._arr_0 = import4.pureProxy1((p0:any):any[] => {
-      return [p0];
-    });
-    this._expr_2 = import7.UNINITIALIZED;
     var disposable_1:Function = this.renderer.listen(this._el_7,'click',this.eventHandler(this._handle_click_7_0.bind(this)));
-    this._map_1 = import4.pureProxy1((p0:any):{[key: string]:any} => {
-      return {userId: p0};
+    this._arr_1 = import4.pureProxy2((p0:any,p1:any):any[] => {
+      return [
+        p0,
+        p1
+      ]
+      ;
     });
-    this._expr_4 = import7.UNINITIALIZED;
-    this._arr_1 = import4.pureProxy1((p0:any):any[] => {
-      return [p0];
-    });
-    this._expr_5 = import7.UNINITIALIZED;
+    this._expr_3 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -810,25 +792,15 @@ class _View_UsersComponent4 extends import1.AppView<any> {
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_1:any = this._map_0(this.parent.context.$implicit.userId);
+    const currVal_1:any = this._arr_0('/#profile/edit',this.parent.context.$implicit.userId);
     if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
-      this._RouterLink_2_3.queryParams = currVal_1;
+      this._RouterLink_2_3.routerLink = currVal_1;
       this._expr_1 = currVal_1;
     }
-    const currVal_2:any = this._arr_0('/#profile/edit');
-    if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
-      this._RouterLink_2_3.routerLink = currVal_2;
-      this._expr_2 = currVal_2;
-    }
-    const currVal_4:any = this._map_1(this.parent.context.$implicit.userId);
-    if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
-      this._RouterLink_7_3.queryParams = currVal_4;
-      this._expr_4 = currVal_4;
-    }
-    const currVal_5:any = this._arr_1('/#profile/editpass');
-    if (import4.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
-      this._RouterLink_7_3.routerLink = currVal_5;
-      this._expr_5 = currVal_5;
+    const currVal_3:any = this._arr_1('/#profile/editpass',this.parent.context.$implicit.userId);
+    if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
+      this._RouterLink_7_3.routerLink = currVal_3;
+      this._expr_3 = currVal_3;
     }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);

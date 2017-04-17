@@ -11,7 +11,7 @@ export class Solution {
                 public distr?: number,
                 public technique?: string,
                 public info?: string,
-                public postDate?: Date,
+                public submissionTime?: Date,
                 public data?: Buffer,
                 public instance?: Instance,
                 public paper?: Paper,

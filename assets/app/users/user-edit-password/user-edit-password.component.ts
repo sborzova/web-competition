@@ -8,13 +8,12 @@ import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
 @Component({
     selector: 'app-user-edit-password',
-    templateUrl: 'user-edit-password.component.html'
+    templateUrl: './user-edit-password.component.html'
 })
-export class UserEditPasswordComponent{
-    myForm: FormGroup;
+export class UserEditPasswordComponent implements OnInit{
+    passwordForm: FormGroup;
     user: User;
-    private submitted: boolean = false;
-    private subscription: Subscription;
+    submitted: boolean = false;
 
     constructor(private router: Router,
                 private usersService: UsersService,
@@ -24,29 +23,22 @@ export class UserEditPasswordComponent{
     }
 
     ngOnInit(){
-        this.subscription = this.activatedRoute.queryParams
-            .subscribe((params: Params) => {
-                let userId = params['userId'];
-                this.usersService.getUser(userId)
-                    .subscribe(
-                        (user: User) => {
-                            this.user = user;
-                            this.myForm = new FormGroup({
-                                password: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(100)]),
-                                confirmPassword: new FormControl(null, Validators.required)
-                            });
-                        });
-            });
-    }
-
-    ngOnDestroy(){
-        this.subscription.unsubscribe();
+        let id = this.activatedRoute.snapshot.params['id'];
+        this.usersService.getUser(id)
+            .subscribe(
+                (user: User) => {
+                    this.user = user;
+                    this.passwordForm = new FormGroup({
+                        password: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(100)]),
+                        confirmPassword: new FormControl(null, Validators.required)
+                    });
+                });
     }
 
     onSubmit(){
         this.submitted = true;
-        if (this.myForm.valid){
-            this.user.password = this.myForm.value.password;
+        if (this.passwordForm.valid){
+            this.user.password = this.passwordForm.value.password;
 
             this.usersService.updateUserPassword(this.user)
                 .subscribe(
@@ -57,10 +49,6 @@ export class UserEditPasswordComponent{
                     error => console.error(error)
                 );
         }
-    }
-
-    isSubmitted(){
-        return this.submitted;
     }
 
     onCancel(){

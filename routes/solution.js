@@ -385,7 +385,6 @@ router.get('/solutionsByLoggedUser', function (req, res, next) {
 
 router.post('/duplicateSolution', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
-    console.log(req.body);
     Instance.findOne({name: req.body.instance.name}, function (err, instance) {
         if (err) {
             return res.status(500).json({
@@ -417,9 +416,8 @@ router.post('/duplicateSolution', function (req, res, next) {
                     });
                 }
                 if (!solution) {
-                    return res.status(500).json({
+                    return res.status(200).json({
                         title: 'No Solution Found!',
-                        error: {message: 'Solution not found'}
                     });
                 }
                 res.status(200).json({

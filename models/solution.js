@@ -17,7 +17,8 @@ var schema = new Schema({
     instance: {type: Schema.Types.ObjectId, ref: 'Instance', required: true},
     user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     paper: {type: Schema.Types.ObjectId, ref: 'Paper'},
-    postDate: {type: Date, default: Date.now, required: true}
+    submissionTime: {type: Date, default: Date.now, required: true},
+    visible: {type: Boolean, default: true, required: true}
 });
 
 schema.plugin(mongooseUniqueValidator);

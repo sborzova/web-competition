@@ -8,8 +8,8 @@ var schema = new Schema({
     order: {type: Number, min: 1, required: true},
     name: {type: String, unique: true, required: true},
     description: {type: String, required: true},
-    postDate: {type: Date, default: Date.now, required: true},
-    stats: {type: String},
+    submissionTime: {type: Date, default: Date.now, required: true},
+    status: {type: String},
     data: {type: Buffer},
 });
 

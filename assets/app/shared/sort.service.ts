@@ -17,8 +17,8 @@ export class SortService {
             let bUnassigned = b.unassigned;
             let aTotal = a.total;
             let bTotal = b.total;
-            let aSubmissionTime = a.postDate;
-            let bSubmissionTime = b.postDate;
+            let aSubmissionTime = a.submissionTime;
+            let bSubmissionTime = b.submissionTime;
 
             if (aUnassigned == bUnassigned){
                 if (aTotal == bTotal){
@@ -38,8 +38,8 @@ export class SortService {
             let bUnassigned = b.unassigned;
             let aTotal = a.total;
             let bTotal = b.total;
-            let aSubmissionTime = a.postDate;
-            let bSubmissionTime = b.postDate;
+            let aSubmissionTime = a.submissionTime;
+            let bSubmissionTime = b.submissionTime;
 
             if (aUnassigned == bUnassigned){
                 if (aTotal == bTotal){
@@ -155,9 +155,9 @@ export class SortService {
 
     sortSubmissionTimeAsc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
-            if (a.postDate < b.postDate)
+            if (a.submissionTime < b.submissionTime)
                 return -1;
-            if (a.postDate > b.postDate)
+            if (a.submissionTime > b.submissionTime)
                 return 1;
             return 0;
         })
@@ -165,9 +165,9 @@ export class SortService {
 
     sortSubmissionTimeDesc(solutions: Solution[]){
         return solutions.sort(function compare(a,b) {
-            if (a.postDate < b.postDate)
+            if (a.submissionTime < b.submissionTime)
                 return 1;
-            if (a.postDate > b.postDate)
+            if (a.submissionTime > b.submissionTime)
                 return -1;
             return 0;
         })

@@ -6,11 +6,9 @@ import {InstancesComponent} from "./instances.component";
 import {InstanceListComponent} from "./instance-list/instance-list.component";
 import {InstanceCreateComponent} from "./instance-new/instance-new.component";
 import {InstanceEditComponent} from "./instance-update/instance-update.component";
-import {InstanceStatsComponent} from "./instance-stats/instance-stats.component";
+import {InstanceStatusComponent} from "./instance-status/instance-status.component";
 import {OrderByModule} from "../order-by.module";
-import {EscapeHtmlModule} from "../escape-html.module";
 import {InstanceService} from "../shared/instance.service";
-import {FlashMessageService} from "../flash-message/flash-messages.service";
 
 @NgModule({
     declarations: [
@@ -18,13 +16,12 @@ import {FlashMessageService} from "../flash-message/flash-messages.service";
         InstanceListComponent,
         InstanceCreateComponent,
         InstanceEditComponent,
-        InstanceStatsComponent,
+        InstanceStatusComponent,
     ],
     imports: [
         ReactiveFormsModule,
         CommonModule,
         OrderByModule,
-        EscapeHtmlModule,
         instanceRouting,
     ],
     providers: [

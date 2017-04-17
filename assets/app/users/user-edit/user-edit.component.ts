@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Subscription } from "rxjs";
 import { Router, ActivatedRoute, Params } from "@angular/router";
@@ -9,15 +9,14 @@ import { FlashMessageService } from "../../flash-message/flash-messages.service"
 
 @Component({
     selector: 'app-user-edit',
-    templateUrl: 'user-edit.component.html'
+    templateUrl: './user-edit.component.html'
 })
-export class UserEditComponent implements OnInit, OnDestroy {
-    myForm: FormGroup;
+export class UserEditComponent implements OnInit {
+    userForm: FormGroup;
     user: User;
     roles: string[] = [];
     selectedRole: string;
-    private submitted: boolean = false;
-    private subscription: Subscription;
+    submitted: boolean = false;
 
     constructor(private router: Router,
                 private usersService: UsersService,
@@ -27,34 +26,27 @@ export class UserEditComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(){
-        this.subscription = this.activatedRoute.queryParams
-            .subscribe((params: Params) => {
-                let userId = params['userId'];
-                this.usersService.getUser(userId)
-                    .subscribe(
-                        (user: User) => {
-                            this.user = user;
-                            this.roles.push('admin', 'user');
-                            this.selectedRole = this.user.role;
-                            this.myForm = new FormGroup({
-                                firstName: new FormControl(this.user.firstName, Validators.required),
-                                lastName: new FormControl(this.user.lastName, Validators.required),
-                                email: new FormControl(this.user.email, Validators.required)
-                            });
-                        });
-            });
-    }
-
-    ngOnDestroy(){
-        this.subscription.unsubscribe();
+        let userId = this.activatedRoute.snapshot.params['id'];
+        this.usersService.getUser(userId)
+            .subscribe(
+                (user: User) => {
+                    this.user = user;
+                    this.roles.push('admin', 'user');
+                    this.selectedRole = this.user.role;
+                    this.userForm = new FormGroup({
+                        firstName: new FormControl(this.user.firstName, Validators.required),
+                        lastName: new FormControl(this.user.lastName, Validators.required),
+                        email: new FormControl(this.user.email, Validators.required)
+                    });
+                });
     }
 
     onSubmit(){
         this.submitted = true;
-        if (this.myForm.valid){
-            this.user.firstName = this.myForm.value.firstName;
-            this.user.lastName = this.myForm.value.lastName;
-            this.user.email = this.myForm.value.email;
+        if (this.userForm.valid){
+            this.user.firstName = this.userForm.value.firstName;
+            this.user.lastName = this.userForm.value.lastName;
+            this.user.email = this.userForm.value.email;
             this.user.role = this.selectedRole;
 
             this.usersService.updateUser(this.user)
@@ -66,10 +58,6 @@ export class UserEditComponent implements OnInit, OnDestroy {
                     error => console.error(error)
                 );
         }
-    }
-
-    isSubmitted(){
-        return this.submitted;
     }
 
     onCancel(){
