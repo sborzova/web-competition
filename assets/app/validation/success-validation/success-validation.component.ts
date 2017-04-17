@@ -81,7 +81,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
                         this.flashMessageService.showMessage(
                             'Solution has the same unassigned variables, total cost, time preferences, ' +
                             'room preferences, distribution preferences and technique as your other ' +
-                            'solution uploaded to the system on ' + this.getDateTime(date) +
+                            'solution uploaded to the system at ' + this.getDateTime(date) +
                             ', it is not ' + 'uploaded.', 'info');
                         return;
                     }else {
@@ -116,24 +116,8 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     }
 
     getDateTime(date: Date){
-        let result = this.getNameOfMonth(date.getMonth()) + ' ' + date.getDate() + ', ' + date.getFullYear() + ' at ';
-        const hours = date.getHours();
-        if (hours < 12){
-            result += date.getHours() + ':' + this.fulfillZero(date.getMinutes()) + ':' + this.fulfillZero(date.getSeconds()) + ' AM';
-        }else if (hours == 12){
-            result += date.getHours() + ':' + this.fulfillZero(date.getMinutes()) + ':' + this.fulfillZero(date.getSeconds()) + ' PM'
-        }else {
-            result += date.getHours()-10 + ':' + this.fulfillZero(date.getMinutes()) + ':' + this.fulfillZero(date.getSeconds()) + ' PM'
-        }
-        return result;
-    }
-
-    fulfillZero(number: number){
-        if (number < 10){
-            return '0' + number;
-        }else {
-            return number.toString();
-        }
+        return  date.toLocaleTimeString() + ' on ' + this.getNameOfMonth(date.getMonth()) +
+            ' ' + date.getDate() + ', ' + date.getFullYear();
     }
 
     getNameOfMonth(number: number){

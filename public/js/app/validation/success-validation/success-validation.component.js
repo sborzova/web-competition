@@ -49,7 +49,7 @@ export var SuccessValidationComponent = (function () {
                     var date = new Date(solution.submissionTime);
                     _this.flashMessageService.showMessage('Solution has the same unassigned variables, total cost, time preferences, ' +
                         'room preferences, distribution preferences and technique as your other ' +
-                        'solution uploaded to the system on ' + _this.getDateTime(date) +
+                        'solution uploaded to the system at ' + _this.getDateTime(date) +
                         ', it is not ' + 'uploaded.', 'info');
                     return;
                 }
@@ -67,26 +67,8 @@ export var SuccessValidationComponent = (function () {
         return this.sessionStorageService.getCompetitionIsOn();
     };
     SuccessValidationComponent.prototype.getDateTime = function (date) {
-        var result = this.getNameOfMonth(date.getMonth()) + ' ' + date.getDate() + ', ' + date.getFullYear() + ' at ';
-        var hours = date.getHours();
-        if (hours < 12) {
-            result += date.getHours() + ':' + this.fulfillZero(date.getMinutes()) + ':' + this.fulfillZero(date.getSeconds()) + ' AM';
-        }
-        else if (hours == 12) {
-            result += date.getHours() + ':' + this.fulfillZero(date.getMinutes()) + ':' + this.fulfillZero(date.getSeconds()) + ' PM';
-        }
-        else {
-            result += date.getHours() - 10 + ':' + this.fulfillZero(date.getMinutes()) + ':' + this.fulfillZero(date.getSeconds()) + ' PM';
-        }
-        return result;
-    };
-    SuccessValidationComponent.prototype.fulfillZero = function (number) {
-        if (number < 10) {
-            return '0' + number;
-        }
-        else {
-            return number.toString();
-        }
+        return date.toLocaleTimeString() + ' on ' + this.getNameOfMonth(date.getMonth()) +
+            ' ' + date.getDate() + ', ' + date.getFullYear();
     };
     SuccessValidationComponent.prototype.getNameOfMonth = function (number) {
         switch (number) {
