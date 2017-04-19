@@ -3,17 +3,25 @@ import { SolutionService } from "../../shared/solution.service";
 import { InstanceService } from "../../shared/instance.service";
 import { SortService } from "../../shared/sort.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import { SessionStorageService } from "../../shared/session-storage.service";
 export var ResultsBestComponent = (function () {
-    function ResultsBestComponent(solutionService, instanceService, resultsService, flashMessageService) {
+    function ResultsBestComponent(solutionService, instanceService, resultsService, sessionStorageService, flashMessageService) {
         var _this = this;
         this.solutionService = solutionService;
         this.instanceService = instanceService;
         this.resultsService = resultsService;
+        this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
         this.solutionsAll = [];
         this.showPapers = false;
-        this.subscription = solutionService.solutionDelete$.subscribe(function (solution) {
+        this.subscriptionDelete = solutionService.solutionDelete$.subscribe(function (solution) {
             _this.onDelete(solution);
+        });
+        this.subscriptionSetVisible = solutionService.solutionSetVisible$.subscribe(function (solution) {
+            _this.onSetVisible(solution);
+        });
+        this.subscriptionSetNotVisible = solutionService.solutionSetNotVisible$.subscribe(function (solution) {
+            _this.onSetNotVisible(solution);
         });
     }
     ResultsBestComponent.prototype.ngOnInit = function () {
@@ -36,7 +44,12 @@ export var ResultsBestComponent = (function () {
         }, function (error) { return console.error(error); });
     };
     ResultsBestComponent.prototype.ngOnDestroy = function () {
-        this.subscription.unsubscribe();
+        this.subscriptionDelete.unsubscribe();
+        this.subscriptionSetVisible.unsubscribe();
+        this.subscriptionSetNotVisible.unsubscribe();
+    };
+    ResultsBestComponent.prototype.isAdmin = function () {
+        return this.sessionStorageService.isAdmin();
     };
     ResultsBestComponent.prototype.onDelete = function (solution) {
         this.solution = solution;
@@ -44,6 +57,18 @@ export var ResultsBestComponent = (function () {
     };
     ResultsBestComponent.prototype.onDownload = function (solution) {
         this.resultsService.download(solution);
+    };
+    ResultsBestComponent.prototype.onSetVisible = function (solution) {
+        var _this = this;
+        solution.visible = true;
+        this.solutionService.updateSolutionVisibility(solution)
+            .subscribe(function (data) { return _this.flashMessageService.showMessage('Solution was updated to visible', 'success'); }, function (error) { return console.error(error); });
+    };
+    ResultsBestComponent.prototype.onSetNotVisible = function (solution) {
+        var _this = this;
+        solution.visible = false;
+        this.solutionService.updateSolutionVisibility(solution)
+            .subscribe(function (data) { return _this.flashMessageService.showMessage('Solution was updated to not visible', 'success'); }, function (error) { return console.error(error); });
     };
     ResultsBestComponent.prototype.onAuthor = function (authorId) {
         this.solutionsInstance = null;
@@ -87,6 +112,7 @@ export var ResultsBestComponent = (function () {
         { type: SolutionService, },
         { type: InstanceService, },
         { type: SortService, },
+        { type: SessionStorageService, },
         { type: FlashMessageService, },
     ];
     return ResultsBestComponent;

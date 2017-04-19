@@ -6,6 +6,7 @@ import {SortService} from "../../shared/sort.service";
 import {Solution} from "../../shared/solution.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {Subscription} from "rxjs/Subscription";
+import {SessionStorageService} from "../../shared/session-storage.service";
 
 @Component({
     selector: 'app-results-best',
@@ -18,16 +19,27 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     solutionsAuthor: Solution[];
     solution: Solution;
     showPapers: boolean = false;
-    subscription: Subscription;
+    subscriptionDelete: Subscription;
+    subscriptionSetVisible: Subscription;
+    subscriptionSetNotVisible: Subscription;
 
     constructor(private solutionService: SolutionService,
                 private instanceService: InstanceService,
                 private resultsService: SortService,
+                private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService){
 
-    this.subscription = solutionService.solutionDelete$.subscribe(
+    this.subscriptionDelete = solutionService.solutionDelete$.subscribe(
             solution => {
                 this.onDelete(solution);
+            });
+    this.subscriptionSetVisible = solutionService.solutionSetVisible$.subscribe(
+            solution => {
+                this.onSetVisible(solution);
+            });
+    this.subscriptionSetNotVisible = solutionService.solutionSetNotVisible$.subscribe(
+            solution => {
+                this.onSetNotVisible(solution);
             });
     }
 
@@ -56,7 +68,13 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy(){
-        this.subscription.unsubscribe();
+        this.subscriptionDelete.unsubscribe();
+        this.subscriptionSetVisible.unsubscribe();
+        this.subscriptionSetNotVisible.unsubscribe();
+    }
+
+    isAdmin(){
+        return this.sessionStorageService.isAdmin();
     }
 
     onDelete(solution: Solution){
@@ -66,6 +84,24 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
 
     onDownload(solution: Solution){
         this.resultsService.download(solution);
+    }
+
+    onSetVisible(solution){
+        solution.visible = true;
+        this.solutionService.updateSolutionVisibility(solution)
+            .subscribe(
+                data => this.flashMessageService.showMessage('Solution was updated to visible', 'success'),
+                error => console.error(error)
+            )
+    }
+
+    onSetNotVisible(solution){
+        solution.visible = false;
+        this.solutionService.updateSolutionVisibility(solution)
+            .subscribe(
+                data => this.flashMessageService.showMessage('Solution was updated to not visible', 'success'),
+                error => console.error(error)
+            )
     }
 
     onAuthor(authorId: string){

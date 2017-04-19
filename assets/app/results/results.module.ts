@@ -13,6 +13,8 @@ import {SolutionService} from "../shared/solution.service";
 import {SortService} from "../shared/sort.service";
 import {ResultsAuthorInstanceComponent} from "./results-author-instance/results-author-instance.component";
 import {ResultsAuthorInstanceTechniqueComponent} from "./results-author-instance-technique/results-author-instance-technique.component";
+import {FileService} from "../shared/file.service";
+import {SessionStorageService} from "../shared/session-storage.service";
 
 @NgModule({
     declarations: [
@@ -33,6 +35,8 @@ import {ResultsAuthorInstanceTechniqueComponent} from "./results-author-instance
         InstanceService,
         SolutionService,
         SortService,
+        FileService,
+        SessionStorageService
     ]
 })
 export class ResultsModule {}

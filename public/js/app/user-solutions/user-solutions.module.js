@@ -8,6 +8,7 @@ import { EscapeHtmlModule } from "../escape-html.module";
 import { PaperService } from "../shared/paper.service";
 import { SolutionService } from "../shared/solution.service";
 import { SortService } from "../shared/sort.service";
+import { FileService } from "../shared/file.service";
 export var UserSolutionsModule = (function () {
     function UserSolutionsModule() {
     }
@@ -27,7 +28,8 @@ export var UserSolutionsModule = (function () {
                     providers: [
                         PaperService,
                         SolutionService,
-                        SortService
+                        SortService,
+                        FileService
                     ]
                 },] },
     ];

@@ -14,6 +14,6 @@ var APP_ROUTES = [
     { path: '#preferences', loadChildren: '../app/preference/preference.module#PreferenceModule' },
     { path: '#solution/validatorinfo/:id', loadChildren: '../app/validator-info/validator-info.module#ValidatorInfoModule' },
 ];
-// export const hostUrl = 'http://localhost:3000/';
-export var hostUrl = 'https://test-cttcompetition.herokuapp.com/';
+export var hostUrl = 'http://localhost:3000/';
+// export const hostUrl = 'https://test-cttcompetition.herokuapp.com/';
 export var routing = RouterModule.forRoot(APP_ROUTES);

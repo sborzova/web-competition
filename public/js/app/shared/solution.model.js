@@ -1,5 +1,5 @@
 export var Solution = (function () {
-    function Solution(unassigned, total, sc, time, room, distr, technique, info, submissionTime, data, instance, paper, author, solutionId, isChecked) {
+    function Solution(unassigned, total, sc, time, room, distr, technique, info, submissionTime, visible, data, instance, paper, author, solutionId, isChecked) {
         this.unassigned = unassigned;
         this.total = total;
         this.sc = sc;
@@ -9,6 +9,7 @@ export var Solution = (function () {
         this.technique = technique;
         this.info = info;
         this.submissionTime = submissionTime;
+        this.visible = visible;
         this.data = data;
         this.instance = instance;
         this.paper = paper;

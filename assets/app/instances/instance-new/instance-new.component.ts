@@ -6,6 +6,8 @@ import { InstanceService } from "../../shared/instance.service";
 import { Instance } from "../instance.model";
 import { minValue } from "../min-value.validator";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import {FileService} from "../../shared/file.service";
+import {InstanceCreate} from "../instance-create.model";
 
 @Component({
     selector: 'app-instance-new',
@@ -21,12 +23,13 @@ export class InstanceCreateComponent implements OnInit {
     @ViewChild('data') dataElem;
 
     constructor(private router: Router,
+                private fileService: FileService,
                 private flashMessageService: FlashMessageService,
                 private instancesService: InstanceService) {
 
     }
 
-    ngOnInit(): void {
+    ngOnInit(){
         this.instancesService.getInstances()
             .subscribe(
                 (instances: Instance[]) => {
@@ -60,35 +63,47 @@ export class InstanceCreateComponent implements OnInit {
             this.dataInvalid = false;
         }
         if (this.instanceForm.valid){
-            const instance = new Instance(
-                this.instanceForm.value.order,
-                this.instanceForm.value.name,
-                this.instanceForm.value.description
-            );
-
-            this.instancesService.saveInstance(instance)
-                .subscribe(
-                    data => {
-                        let id = data.instanceId;
-                        let fd = new FormData();
-                        fd.append('status', statusInput.files[0], statusInput.files[0].name);
-                        fd.append('data', dataInput.files[0], dataInput.files[0].name);
-
-                        this.navigateBack();
-                        this.instancesService.saveFiles(fd, id)
-                            .subscribe(
-                                () => {
-                                    this.flashMessageService.showMessage('Instance was created.', 'success' );
-                                },
-                                error => {
-                                    console.error(error);
-                                }
-                            );
-                    },
-                    error => console.error(error)
-                );
-
+            this.saveInstance(statusInput.files[0], dataInput.files[0]);
         }
+    }
+
+    saveInstance(status: Buffer, data: Buffer){
+        let idStatus;
+        let idData;
+        this.fileService.saveFile(status)
+            .subscribe(
+                status => {
+                    idStatus = JSON.parse(status).id;
+                    this.fileService.saveFile(data)
+                        .subscribe(
+                            data => {
+                                idData = JSON.parse(data).id;
+                                this.instancesService.saveInstance(new InstanceCreate(
+                                            this.instanceForm.value.order,
+                                            this.instanceForm.value.name,
+                                            this.instanceForm.value.description,
+                                            idStatus,
+                                            idData
+                                    )).subscribe(
+                                           data => {
+                                               this.navigateBack();
+                                               this.flashMessageService.showMessage('Instance was created', 'success');
+                                           },
+                                            error => {
+                                               console.error(error);
+                                               this.fileService.deleteFile(idData);
+                                               this.fileService.deleteFile(idStatus);
+                                            }
+                                        )
+                            },
+                            error => {
+                                this.fileService.deleteFile(idStatus);
+                                console.error(error);
+                            }
+                        )
+                },
+                error => console.error(error)
+            )
     }
 
     setForm(){
@@ -98,6 +113,7 @@ export class InstanceCreateComponent implements OnInit {
             description: new FormControl(null, Validators.required)
         });
     }
+
 
     onCancel(){
         this.navigateBack();

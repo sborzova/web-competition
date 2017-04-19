@@ -18,6 +18,7 @@ import * as import10 from '@angular/core/src/metadata/view';
 import * as import11 from '@angular/core/src/linker/component_factory';
 import * as import12 from '@angular/common/src/directives/ng_if';
 import * as import13 from '@angular/core/src/linker/template_ref';
+import * as import14 from '@angular/core/src/security';
 var renderType_InstanceStatusComponent_Host:import0.RenderComponentType = (null as any);
 class _View_InstanceStatusComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -131,26 +132,32 @@ export function viewFactory_InstanceStatusComponent0(viewUtils:import4.ViewUtils
 class _View_InstanceStatusComponent1 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
+  _el_2:any;
+  _text_3:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_InstanceStatusComponent1,renderType_InstanceStatusComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
-    this._text_1 = this.renderer.createText(this._el_0,'',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this._text_3 = this.renderer.createText(this._el_0,'\n               ',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
-      this._text_1
+      this._text_1,
+      this._el_2,
+      this._text_3
     ]
     ,[],[]);
     return (null as any);
   }
   detectChangesInternal(throwOnChange:boolean):void {
     this.detectContentChildrenChanges(throwOnChange);
-    const currVal_0:any = import4.interpolate(1,'\n                    ',this.parent.context.instance.status,'\n               ');
+    const currVal_0:any = this.parent.context.instance.status.content;
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this.renderer.setText(this._text_1,currVal_0);
+      this.renderer.setElementProperty(this._el_2,'innerHTML',this.viewUtils.sanitizer.sanitize(import14.SecurityContext.HTML,currVal_0));
       this._expr_0 = currVal_0;
     }
     this.detectViewChildrenChanges(throwOnChange);

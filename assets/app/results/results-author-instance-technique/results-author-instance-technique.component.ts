@@ -4,6 +4,7 @@ import {SortService} from "../../shared/sort.service";
 import {Solution} from "../../shared/solution.model";
 import {SolutionService} from "../../shared/solution.service";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
+import {SessionStorageService} from "../../shared/session-storage.service";
 
 @Component({
     selector: 'app-results-author-instance-technique',
@@ -15,6 +16,7 @@ export class ResultsAuthorInstanceTechniqueComponent{
     solution: Solution;
 
     constructor(private resultsService: SortService,
+                private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService,
                 private solutionService: SolutionService){}
 
@@ -22,8 +24,20 @@ export class ResultsAuthorInstanceTechniqueComponent{
         this.resultsService.download(solution);
     }
 
+    isAdmin(){
+        return this.sessionStorageService.isAdmin();
+    }
+
     onDelete(solution: Solution) {
         this.solutionService.deleteSolutionObservable(solution);
+    }
+
+    onSetVisible(solution: Solution){
+        this.solutionService.setVisibleObservable(solution);
+    }
+
+    onSetNotVisible(solution: Solution){
+        this.solutionService.setNotVisibleObservable(solution);
     }
 
     onShowPapers(){

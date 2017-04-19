@@ -6,16 +6,25 @@ import { Author } from "./author.model";
 import { Instance } from "./instance.model";
 import { Paper } from "./paper.model";
 import { Solution } from "./solution.model";
+import { FileService } from "./file.service";
+import { PaperService } from "./paper.service";
+import { FileModel } from "../instances/file.model";
+import { Visibility } from "../results/visibility.model";
 export var SolutionService = (function () {
-    function SolutionService(http, flashMessageService) {
+    function SolutionService(http, paperService, flashMessageService, fileService) {
         this.http = http;
+        this.paperService = paperService;
         this.flashMessageService = flashMessageService;
-        // private solutions: Solution[] = [];
+        this.fileService = fileService;
         this.successValidation = new EventEmitter();
         this.successValidationDeleteSource = new Subject();
         this.solutionDeleteSource = new Subject();
+        this.solutionSetVisibleSource = new Subject();
+        this.solutionSetNotVisibleSource = new Subject();
         this.successValidationDelete$ = this.successValidationDeleteSource.asObservable();
         this.solutionDelete$ = this.solutionDeleteSource.asObservable();
+        this.solutionSetVisible$ = this.solutionSetVisibleSource.asObservable();
+        this.solutionSetNotVisible$ = this.solutionSetNotVisibleSource.asObservable();
         var routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
@@ -46,27 +55,33 @@ export var SolutionService = (function () {
             this.savePaper(new Paper(paperCitation, paperUrl))
                 .subscribe(function (paperId) {
                 solution.paperId = paperId;
-                _this.saveSolution(solution);
+                _this.saveSolutionAndFile(solution);
             }, function (error) {
                 console.error(error);
             });
         }
         else {
-            this.saveSolution(solution);
+            this.saveSolutionAndFile(solution);
         }
     };
-    SolutionService.prototype.saveSolution = function (solution) {
+    SolutionService.prototype.saveSolutionAndFile = function (solution) {
         var _this = this;
-        this.saveSolutionWithoutFile(solution)
-            .subscribe(function (solutionId) {
-            _this.saveFileSolution(solutionId)
-                .subscribe(function () {
+        var idFile;
+        this.fileService.saveFile(this.solutionFile)
+            .subscribe(function (file) {
+            idFile = JSON.parse(file).id;
+            solution.fileId = idFile;
+            _this.saveSolution(solution)
+                .subscribe(function (data) {
                 _this.flashMessageService.showMessage('Solution was uploaded.', 'success');
                 _this.successValidationHideResult();
             }, function (error) {
+                _this.paperService.deletePaper(solution.paperId);
+                _this.fileService.deleteFile(solution.fileId);
                 console.error(error);
             });
         }, function (error) {
+            _this.paperService.deletePaper(solution.paperId);
             console.error(error);
         });
     };
@@ -80,7 +95,7 @@ export var SolutionService = (function () {
             .map(function (response) {
             if (response.json().obj) {
                 var solution_1 = response.json().obj;
-                return new Solution(solution_1.unassigned, solution_1.total, solution_1.sc, solution_1.time, solution_1.room, solution_1.distr, solution_1.technique, solution_1.info, solution_1.submissionTime, solution_1.data, solution_1.instance, solution_1.paper ? new Paper(solution_1.paper.citation, solution_1.paper.url, solution_1.paper._id) : null, null, solution_1._id, false);
+                return new Solution(solution_1.unassigned, solution_1.total, solution_1.sc, solution_1.time, solution_1.room, solution_1.distr, solution_1.technique, solution_1.info, solution_1.submissionTime, solution_1.visible, null, solution_1.instance, solution_1.paper ? new Paper(solution_1.paper.citation, solution_1.paper.url, solution_1.paper._id) : null, null, solution_1._id, false);
             }
             else {
                 return null;
@@ -97,7 +112,7 @@ export var SolutionService = (function () {
         })
             .catch(function (error) { return Observable.throw(error); });
     };
-    SolutionService.prototype.saveSolutionWithoutFile = function (solution) {
+    SolutionService.prototype.saveSolution = function (solution) {
         var _this = this;
         var body = JSON.stringify(solution);
         var token = sessionStorage.getItem('token')
@@ -117,7 +132,7 @@ export var SolutionService = (function () {
         return this.http.get(this.hostUrl.concat('solution/' + solutionId))
             .map(function (response) {
             var solution = response.json().obj;
-            return new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, new Buffer(solution.data.data), solution.instance, solution.paper, null, solution._id, false);
+            return new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, solution.visible, new FileModel(new Buffer(solution.data.content), solution.data._id), solution.instance, solution.paper, null, solution._id, false);
         })
             .catch(function (error) {
             return Observable.throw(error);
@@ -134,7 +149,7 @@ export var SolutionService = (function () {
             var transformedSolutions = [];
             for (var _i = 0, solutions_1 = solutions; _i < solutions_1.length; _i++) {
                 var solution = solutions_1[_i];
-                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, new Buffer(solution.data.data), solution.instance, solution.paper ? new Paper(solution.paper.citation, solution.paper.url, solution.paper._id) : null, null, solution._id, false));
+                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, solution.visible, null, solution.instance, solution.paper ? new Paper(solution.paper.citation, solution.paper.url, solution.paper._id) : null, null, solution._id, false));
             }
             return transformedSolutions;
         })
@@ -147,7 +162,7 @@ export var SolutionService = (function () {
             var transformedSolutions = [];
             for (var _i = 0, solutions_2 = solutions; _i < solutions_2.length; _i++) {
                 var solution = solutions_2[_i];
-                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, new Buffer(solution.data.data), new Instance(solution.instance.name, solution.instance._id, solution.instance.order), solution.paper, new Author(solution.user.firstName, solution.user.lastName, solution.user._id), solution._id));
+                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, solution.visible, new FileModel(new Buffer(solution.data.content), solution.data._id), new Instance(solution.instance.name, solution.instance._id, solution.instance.order), solution.paper, new Author(solution.user.firstName, solution.user.lastName, solution.user._id), solution._id));
             }
             return transformedSolutions;
         })
@@ -160,7 +175,7 @@ export var SolutionService = (function () {
             var transformedSolutions = [];
             for (var _i = 0, solutions_3 = solutions; _i < solutions_3.length; _i++) {
                 var solution = solutions_3[_i];
-                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, new Buffer(solution.data.data), new Instance(solution.instance.name, solution.instance._id, solution.instance.order), solution.paper, new Author(solution.user.firstName, solution.user.lastName, solution.user._id), solution._id));
+                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, solution.visible, new FileModel(new Buffer(solution.data.content), solution.data._id), new Instance(solution.instance.name, solution.instance._id, solution.instance.order), solution.paper, new Author(solution.user.firstName, solution.user.lastName, solution.user._id), solution._id));
             }
             return transformedSolutions;
         })
@@ -184,31 +199,14 @@ export var SolutionService = (function () {
     SolutionService.prototype.deleteSolutionObservable = function (solution) {
         this.solutionDeleteSource.next(solution);
     };
+    SolutionService.prototype.setVisibleObservable = function (solution) {
+        this.solutionSetVisibleSource.next(solution);
+    };
+    SolutionService.prototype.setNotVisibleObservable = function (solution) {
+        this.solutionSetNotVisibleSource.next(solution);
+    };
     SolutionService.prototype.setSolutionFile = function (file) {
         this.solutionFile = file;
-    };
-    SolutionService.prototype.saveFileSolution = function (solutionId) {
-        var _this = this;
-        this.xmlHttp = new XMLHttpRequest();
-        return Observable.create(function (observer) {
-            var headers = new Headers({ 'Content-Type': 'multipart/form-data' });
-            _this.xmlHttp.onreadystatechange = function () {
-                if (_this.xmlHttp.readyState === 4) {
-                    if (_this.xmlHttp.status === 200) {
-                        observer.next(_this.xmlHttp.response);
-                        observer.complete();
-                    }
-                    else {
-                        observer.error(_this.xmlHttp.response);
-                    }
-                }
-            };
-            var fd = new FormData();
-            fd.append('solution', _this.solutionFile);
-            _this.xmlHttp.open("POST", _this.hostUrl.concat('solutionFile/') + solutionId);
-            _this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
-            _this.xmlHttp.send(fd);
-        });
     };
     SolutionService.prototype.updateSolutionPaper = function (solution) {
         var body = JSON.stringify(solution);
@@ -217,6 +215,19 @@ export var SolutionService = (function () {
             : '';
         var headers = new Headers({ 'Content-Type': 'application/json' });
         return this.http.patch(this.hostUrl.concat('solutionAddPaper/') + solution.solutionId, body, { headers: headers })
+            .map(function (response) {
+            return response.json();
+        })
+            .catch(function (error) { return Observable.throw(error); });
+    };
+    SolutionService.prototype.updateSolutionVisibility = function (solution) {
+        var visibility = new Visibility(solution.visible);
+        var body = JSON.stringify(visibility);
+        var token = sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
+            : '';
+        var headers = new Headers({ 'Content-Type': 'application/json' });
+        return this.http.patch(this.hostUrl.concat('solutionVisibility/') + solution.solutionId, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -231,26 +242,15 @@ export var SolutionService = (function () {
             return Observable.throw(error.json());
         });
     };
-    SolutionService.prototype.deleteSolutions = function (solutions) {
-        for (var _i = 0, solutions_4 = solutions; _i < solutions_4.length; _i++) {
-            var s = solutions_4[_i];
-            this.deleteSolution(s)
-                .subscribe(function () { }, function (error) { return console.error(error); });
-        }
-        if (solutions.length == 1) {
-            this.flashMessageService.showMessage('Solution was deleted.', 'success');
-        }
-        else {
-            this.flashMessageService.showMessage('Solutions were deleted.', 'success');
-        }
-    };
     SolutionService.decorators = [
         { type: Injectable },
     ];
     /** @nocollapse */
     SolutionService.ctorParameters = [
         { type: Http, },
+        { type: PaperService, },
         { type: FlashMessageService, },
+        { type: FileService, },
     ];
     return SolutionService;
 }());

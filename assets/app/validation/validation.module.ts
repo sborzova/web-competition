@@ -8,6 +8,7 @@ import {SuccessValidationComponent} from "./success-validation/success-validatio
 import {EscapeHtmlModule} from "../escape-html.module";
 import {PaperService} from "../shared/paper.service";
 import {SolutionService} from "../shared/solution.service";
+import {FileService} from "../shared/file.service";
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import {SolutionService} from "../shared/solution.service";
     providers: [
         PaperService,
         SolutionService,
+        FileService
     ]
 })
 export class ValidationModule {}

@@ -2,10 +2,12 @@ import { Component, Input } from "@angular/core";
 import { SortService } from "../../shared/sort.service";
 import { SolutionService } from "../../shared/solution.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import { SessionStorageService } from "../../shared/session-storage.service";
 export var ResultsAuthorComponent = (function () {
-    function ResultsAuthorComponent(sortService, solutionService, flashMessageService) {
+    function ResultsAuthorComponent(sortService, solutionService, sessionStorageService, flashMessageService) {
         this.sortService = sortService;
         this.solutionService = solutionService;
+        this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
         this.showPapers = false;
     }
@@ -13,11 +15,20 @@ export var ResultsAuthorComponent = (function () {
         this.solutionsAuthorInstance = null;
         this.solutionsAuthorTechnique = null;
     };
+    ResultsAuthorComponent.prototype.isAdmin = function () {
+        return this.sessionStorageService.isAdmin();
+    };
     ResultsAuthorComponent.prototype.onDownload = function (solution) {
         this.sortService.download(solution);
     };
     ResultsAuthorComponent.prototype.onDelete = function (solution) {
         this.solutionService.deleteSolutionObservable(solution);
+    };
+    ResultsAuthorComponent.prototype.onSetVisible = function (solution) {
+        this.solutionService.setVisibleObservable(solution);
+    };
+    ResultsAuthorComponent.prototype.onSetNotVisible = function (solution) {
+        this.solutionService.setNotVisibleObservable(solution);
     };
     ResultsAuthorComponent.prototype.onShowPapers = function () {
         this.showPapers = true;
@@ -83,6 +94,7 @@ export var ResultsAuthorComponent = (function () {
     ResultsAuthorComponent.ctorParameters = [
         { type: SortService, },
         { type: SolutionService, },
+        { type: SessionStorageService, },
         { type: FlashMessageService, },
     ];
     ResultsAuthorComponent.propDecorators = {

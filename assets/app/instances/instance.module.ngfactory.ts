@@ -15,19 +15,20 @@ import * as import7 from '@angular/forms/src/form_builder';
 import * as import8 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import9 from '@angular/common/src/localization';
 import * as import10 from '../shared/instance.service';
-import * as import11 from '@angular/core/src/di/injector';
-import * as import12 from './instances.component.ngfactory';
-import * as import13 from './instance-new/instance-new.component.ngfactory';
-import * as import14 from './instance-update/instance-update.component.ngfactory';
-import * as import15 from './instance-status/instance-status.component.ngfactory';
-import * as import16 from '@angular/core/src/i18n/tokens';
-import * as import17 from './instances.component';
-import * as import18 from './instance-new/instance-new.component';
-import * as import19 from './instance-update/instance-update.component';
-import * as import20 from './instance-status/instance-status.component';
-import * as import21 from '@angular/http/src/http';
-import * as import22 from '../flash-message/flash-messages.service';
-import * as import23 from '@angular/router/src/router_config_loader';
+import * as import11 from '../shared/file.service';
+import * as import12 from '@angular/core/src/di/injector';
+import * as import13 from './instances.component.ngfactory';
+import * as import14 from './instance-new/instance-new.component.ngfactory';
+import * as import15 from './instance-update/instance-update.component.ngfactory';
+import * as import16 from './instance-status/instance-status.component.ngfactory';
+import * as import17 from '@angular/core/src/i18n/tokens';
+import * as import18 from './instances.component';
+import * as import19 from './instance-new/instance-new.component';
+import * as import20 from './instance-update/instance-update.component';
+import * as import21 from './instance-status/instance-status.component';
+import * as import22 from '@angular/http/src/http';
+import * as import23 from '../flash-message/flash-messages.service';
+import * as import24 from '@angular/router/src/router_config_loader';
 class InstanceModuleInjector extends import0.NgModuleInjector<import1.InstanceModule> {
   _InternalFormsSharedModule_0:import2.InternalFormsSharedModule;
   _ReactiveFormsModule_1:import3.ReactiveFormsModule;
@@ -40,12 +41,13 @@ class InstanceModuleInjector extends import0.NgModuleInjector<import1.InstanceMo
   __NgLocalization_8:import9.NgLocaleLocalization;
   __ROUTES_9:any[];
   __InstanceService_10:import10.InstanceService;
-  constructor(parent:import11.Injector) {
+  __FileService_11:import11.FileService;
+  constructor(parent:import12.Injector) {
     super(parent,[
-      import12.InstancesComponentNgFactory,
-      import13.InstanceCreateComponentNgFactory,
-      import14.InstanceEditComponentNgFactory,
-      import15.InstanceStatusComponentNgFactory
+      import13.InstancesComponentNgFactory,
+      import14.InstanceCreateComponentNgFactory,
+      import15.InstanceEditComponentNgFactory,
+      import16.InstanceStatusComponentNgFactory
     ]
     ,[]);
   }
@@ -58,7 +60,7 @@ class InstanceModuleInjector extends import0.NgModuleInjector<import1.InstanceMo
     return this.__RadioControlRegistry_7;
   }
   get _NgLocalization_8():import9.NgLocaleLocalization {
-    if ((this.__NgLocalization_8 == (null as any))) { (this.__NgLocalization_8 = new import9.NgLocaleLocalization(this.parent.get(import16.LOCALE_ID))); }
+    if ((this.__NgLocalization_8 == (null as any))) { (this.__NgLocalization_8 = new import9.NgLocaleLocalization(this.parent.get(import17.LOCALE_ID))); }
     return this.__NgLocalization_8;
   }
   get _ROUTES_9():any[] {
@@ -73,22 +75,22 @@ class InstanceModuleInjector extends import0.NgModuleInjector<import1.InstanceMo
             ,
             {
               path: 'all',
-              component: import17.InstancesComponent
+              component: import18.InstancesComponent
             }
             ,
             {
               path: 'create',
-              component: import18.InstanceCreateComponent
+              component: import19.InstanceCreateComponent
             }
             ,
             {
               path: 'edit/:id',
-              component: import19.InstanceEditComponent
+              component: import20.InstanceEditComponent
             }
             ,
             {
               path: 'status/:id',
-              component: import20.InstanceStatusComponent
+              component: import21.InstanceStatusComponent
             }
 
           ]
@@ -98,8 +100,12 @@ class InstanceModuleInjector extends import0.NgModuleInjector<import1.InstanceMo
     return this.__ROUTES_9;
   }
   get _InstanceService_10():import10.InstanceService {
-    if ((this.__InstanceService_10 == (null as any))) { (this.__InstanceService_10 = new import10.InstanceService(this.parent.get(import21.Http),this.parent.get(import22.FlashMessageService))); }
+    if ((this.__InstanceService_10 == (null as any))) { (this.__InstanceService_10 = new import10.InstanceService(this.parent.get(import22.Http),this.parent.get(import23.FlashMessageService))); }
     return this.__InstanceService_10;
+  }
+  get _FileService_11():import11.FileService {
+    if ((this.__FileService_11 == (null as any))) { (this.__FileService_11 = new import11.FileService(this.parent.get(import22.Http))); }
+    return this.__FileService_11;
   }
   createInternal():import1.InstanceModule {
     this._InternalFormsSharedModule_0 = new import2.InternalFormsSharedModule();
@@ -120,8 +126,9 @@ class InstanceModuleInjector extends import0.NgModuleInjector<import1.InstanceMo
     if ((token === import7.FormBuilder)) { return this._FormBuilder_6; }
     if ((token === import8.RadioControlRegistry)) { return this._RadioControlRegistry_7; }
     if ((token === import9.NgLocalization)) { return this._NgLocalization_8; }
-    if ((token === import23.ROUTES)) { return this._ROUTES_9; }
+    if ((token === import24.ROUTES)) { return this._ROUTES_9; }
     if ((token === import10.InstanceService)) { return this._InstanceService_10; }
+    if ((token === import11.FileService)) { return this._FileService_11; }
     return notFoundResult;
   }
   destroyInternal():void {

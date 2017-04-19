@@ -15,25 +15,26 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from '@angular/router/src/router';
-import * as import9 from '../../flash-message/flash-messages.service';
-import * as import10 from '../../shared/instance.service';
-import * as import11 from '@angular/core/src/metadata/view';
-import * as import12 from '@angular/core/src/linker/component_factory';
-import * as import13 from '@angular/core/src/linker/query_list';
-import * as import14 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
-import * as import15 from '@angular/forms/src/directives/ng_control_status';
-import * as import16 from '@angular/common/src/directives/ng_class';
-import * as import17 from '@angular/forms/src/directives/default_value_accessor';
-import * as import18 from '@angular/forms/src/directives/number_value_accessor';
-import * as import19 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
-import * as import20 from '@angular/common/src/directives/ng_if';
-import * as import21 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import22 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import23 from '@angular/core/src/linker/element_ref';
-import * as import24 from '@angular/core/src/linker/template_ref';
-import * as import25 from '@angular/forms/src/directives/control_value_accessor';
-import * as import26 from '@angular/forms/src/directives/ng_control';
-import * as import27 from '@angular/forms/src/directives/control_container';
+import * as import9 from '../../shared/file.service';
+import * as import10 from '../../flash-message/flash-messages.service';
+import * as import11 from '../../shared/instance.service';
+import * as import12 from '@angular/core/src/metadata/view';
+import * as import13 from '@angular/core/src/linker/component_factory';
+import * as import14 from '@angular/core/src/linker/query_list';
+import * as import15 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
+import * as import16 from '@angular/forms/src/directives/ng_control_status';
+import * as import17 from '@angular/common/src/directives/ng_class';
+import * as import18 from '@angular/forms/src/directives/default_value_accessor';
+import * as import19 from '@angular/forms/src/directives/number_value_accessor';
+import * as import20 from '@angular/forms/src/directives/reactive_directives/form_control_directive';
+import * as import21 from '@angular/common/src/directives/ng_if';
+import * as import22 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import23 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import24 from '@angular/core/src/linker/element_ref';
+import * as import25 from '@angular/core/src/linker/template_ref';
+import * as import26 from '@angular/forms/src/directives/control_value_accessor';
+import * as import27 from '@angular/forms/src/directives/ng_control';
+import * as import28 from '@angular/forms/src/directives/control_container';
 var renderType_InstanceCreateComponent_Host = null;
 var _View_InstanceCreateComponent_Host0 = (function (_super) {
     __extends(_View_InstanceCreateComponent_Host0, _super);
@@ -44,7 +45,7 @@ var _View_InstanceCreateComponent_Host0 = (function (_super) {
         this._el_0 = this.selectOrCreateHostElement('app-instance-new', rootSelector, null);
         this._appEl_0 = new import2.AppElement(0, null, this, this._el_0);
         var compView_0 = viewFactory_InstanceCreateComponent0(this.viewUtils, this.injector(0), this._appEl_0);
-        this._InstanceCreateComponent_0_4 = new import3.InstanceCreateComponent(this.parentInjector.get(import8.Router), this.parentInjector.get(import9.FlashMessageService), this.parentInjector.get(import10.InstanceService));
+        this._InstanceCreateComponent_0_4 = new import3.InstanceCreateComponent(this.parentInjector.get(import8.Router), this.parentInjector.get(import9.FileService), this.parentInjector.get(import10.FlashMessageService), this.parentInjector.get(import11.InstanceService));
         this._appEl_0.initComponent(this._InstanceCreateComponent_0_4, [], compView_0);
         compView_0.create(this._InstanceCreateComponent_0_4, this.projectableNodes, null);
         this.init([].concat([this._el_0]), [this._el_0], [], []);
@@ -67,11 +68,11 @@ var _View_InstanceCreateComponent_Host0 = (function (_super) {
 }(import1.AppView));
 function viewFactory_InstanceCreateComponent_Host0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_InstanceCreateComponent_Host === null)) {
-        (renderType_InstanceCreateComponent_Host = viewUtils.createRenderComponentType('', 0, import11.ViewEncapsulation.None, [], {}));
+        (renderType_InstanceCreateComponent_Host = viewUtils.createRenderComponentType('', 0, import12.ViewEncapsulation.None, [], {}));
     }
     return new _View_InstanceCreateComponent_Host0(viewUtils, parentInjector, declarationEl);
 }
-export var InstanceCreateComponentNgFactory = new import12.ComponentFactory('app-instance-new', viewFactory_InstanceCreateComponent_Host0, import3.InstanceCreateComponent);
+export var InstanceCreateComponentNgFactory = new import13.ComponentFactory('app-instance-new', viewFactory_InstanceCreateComponent_Host0, import3.InstanceCreateComponent);
 var styles_InstanceCreateComponent = [];
 var renderType_InstanceCreateComponent = null;
 var _View_InstanceCreateComponent0 = (function (_super) {
@@ -81,8 +82,8 @@ var _View_InstanceCreateComponent0 = (function (_super) {
     }
     _View_InstanceCreateComponent0.prototype.createInternal = function (rootSelector) {
         var parentRenderNode = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-        this._viewQuery_status_0 = new import13.QueryList();
-        this._viewQuery_data_1 = new import13.QueryList();
+        this._viewQuery_status_0 = new import14.QueryList();
+        this._viewQuery_data_1 = new import14.QueryList();
         this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'container');
         this.renderer.setElementAttribute(this._el_0, 'style', 'margin-top: 3%');
@@ -104,13 +105,13 @@ var _View_InstanceCreateComponent0 = (function (_super) {
         this._text_12 = this.renderer.createText(this._el_8, '\n                ', null);
         this._text_13 = this.renderer.createText(this._el_6, '\n                ', null);
         this._el_14 = this.renderer.createElement(this._el_6, 'form', null);
-        this._FormGroupDirective_14_3 = new import14.FormGroupDirective(null, null);
+        this._FormGroupDirective_14_3 = new import15.FormGroupDirective(null, null);
         this._ControlContainer_14_4 = this._FormGroupDirective_14_3;
-        this._NgControlStatusGroup_14_5 = new import15.NgControlStatusGroup(this._ControlContainer_14_4);
+        this._NgControlStatusGroup_14_5 = new import16.NgControlStatusGroup(this._ControlContainer_14_4);
         this._text_15 = this.renderer.createText(this._el_14, '\n                    ', null);
         this._el_16 = this.renderer.createElement(this._el_14, 'div', null);
         this.renderer.setElementAttribute(this._el_16, 'class', 'form-group');
-        this._NgClass_16_3 = new import16.NgClass(this.parentInjector.get(import21.IterableDiffers), this.parentInjector.get(import22.KeyValueDiffers), new import23.ElementRef(this._el_16), this.renderer);
+        this._NgClass_16_3 = new import17.NgClass(this.parentInjector.get(import22.IterableDiffers), this.parentInjector.get(import23.KeyValueDiffers), new import24.ElementRef(this._el_16), this.renderer);
         this._text_17 = this.renderer.createText(this._el_16, '\n                        ', null);
         this._el_18 = this.renderer.createElement(this._el_16, 'label', null);
         this.renderer.setElementAttribute(this._el_18, 'for', 'order');
@@ -120,25 +121,25 @@ var _View_InstanceCreateComponent0 = (function (_super) {
         this.renderer.setElementAttribute(this._el_21, 'class', 'form-control');
         this.renderer.setElementAttribute(this._el_21, 'id', 'order');
         this.renderer.setElementAttribute(this._el_21, 'type', 'number');
-        this._DefaultValueAccessor_21_3 = new import17.DefaultValueAccessor(this.renderer, new import23.ElementRef(this._el_21));
-        this._NumberValueAccessor_21_4 = new import18.NumberValueAccessor(this.renderer, new import23.ElementRef(this._el_21));
+        this._DefaultValueAccessor_21_3 = new import18.DefaultValueAccessor(this.renderer, new import24.ElementRef(this._el_21));
+        this._NumberValueAccessor_21_4 = new import19.NumberValueAccessor(this.renderer, new import24.ElementRef(this._el_21));
         this._NG_VALUE_ACCESSOR_21_5 = [
             this._DefaultValueAccessor_21_3,
             this._NumberValueAccessor_21_4
         ];
-        this._FormControlDirective_21_6 = new import19.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_21_5);
+        this._FormControlDirective_21_6 = new import20.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_21_5);
         this._NgControl_21_7 = this._FormControlDirective_21_6;
-        this._NgControlStatus_21_8 = new import15.NgControlStatus(this._NgControl_21_7);
+        this._NgControlStatus_21_8 = new import16.NgControlStatus(this._NgControl_21_7);
         this._text_22 = this.renderer.createText(this._el_16, '\n                        ', null);
         this._anchor_23 = this.renderer.createTemplateAnchor(this._el_16, null);
         this._appEl_23 = new import2.AppElement(23, 16, this, this._anchor_23);
-        this._TemplateRef_23_5 = new import24.TemplateRef_(this._appEl_23, viewFactory_InstanceCreateComponent1);
-        this._NgIf_23_6 = new import20.NgIf(this._appEl_23.vcRef, this._TemplateRef_23_5);
+        this._TemplateRef_23_5 = new import25.TemplateRef_(this._appEl_23, viewFactory_InstanceCreateComponent1);
+        this._NgIf_23_6 = new import21.NgIf(this._appEl_23.vcRef, this._TemplateRef_23_5);
         this._text_24 = this.renderer.createText(this._el_16, '\n                    ', null);
         this._text_25 = this.renderer.createText(this._el_14, '\n                    ', null);
         this._el_26 = this.renderer.createElement(this._el_14, 'div', null);
         this.renderer.setElementAttribute(this._el_26, 'class', 'form-group');
-        this._NgClass_26_3 = new import16.NgClass(this.parentInjector.get(import21.IterableDiffers), this.parentInjector.get(import22.KeyValueDiffers), new import23.ElementRef(this._el_26), this.renderer);
+        this._NgClass_26_3 = new import17.NgClass(this.parentInjector.get(import22.IterableDiffers), this.parentInjector.get(import23.KeyValueDiffers), new import24.ElementRef(this._el_26), this.renderer);
         this._text_27 = this.renderer.createText(this._el_26, '\n                        ', null);
         this._el_28 = this.renderer.createElement(this._el_26, 'label', null);
         this.renderer.setElementAttribute(this._el_28, 'for', 'name');
@@ -148,21 +149,21 @@ var _View_InstanceCreateComponent0 = (function (_super) {
         this.renderer.setElementAttribute(this._el_31, 'class', 'form-control');
         this.renderer.setElementAttribute(this._el_31, 'id', 'name');
         this.renderer.setElementAttribute(this._el_31, 'type', 'text');
-        this._DefaultValueAccessor_31_3 = new import17.DefaultValueAccessor(this.renderer, new import23.ElementRef(this._el_31));
+        this._DefaultValueAccessor_31_3 = new import18.DefaultValueAccessor(this.renderer, new import24.ElementRef(this._el_31));
         this._NG_VALUE_ACCESSOR_31_4 = [this._DefaultValueAccessor_31_3];
-        this._FormControlDirective_31_5 = new import19.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_31_4);
+        this._FormControlDirective_31_5 = new import20.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_31_4);
         this._NgControl_31_6 = this._FormControlDirective_31_5;
-        this._NgControlStatus_31_7 = new import15.NgControlStatus(this._NgControl_31_6);
+        this._NgControlStatus_31_7 = new import16.NgControlStatus(this._NgControl_31_6);
         this._text_32 = this.renderer.createText(this._el_26, '\n                        ', null);
         this._anchor_33 = this.renderer.createTemplateAnchor(this._el_26, null);
         this._appEl_33 = new import2.AppElement(33, 26, this, this._anchor_33);
-        this._TemplateRef_33_5 = new import24.TemplateRef_(this._appEl_33, viewFactory_InstanceCreateComponent2);
-        this._NgIf_33_6 = new import20.NgIf(this._appEl_33.vcRef, this._TemplateRef_33_5);
+        this._TemplateRef_33_5 = new import25.TemplateRef_(this._appEl_33, viewFactory_InstanceCreateComponent2);
+        this._NgIf_33_6 = new import21.NgIf(this._appEl_33.vcRef, this._TemplateRef_33_5);
         this._text_34 = this.renderer.createText(this._el_26, '\n                    ', null);
         this._text_35 = this.renderer.createText(this._el_14, '\n                    ', null);
         this._el_36 = this.renderer.createElement(this._el_14, 'div', null);
         this.renderer.setElementAttribute(this._el_36, 'class', 'form-group');
-        this._NgClass_36_3 = new import16.NgClass(this.parentInjector.get(import21.IterableDiffers), this.parentInjector.get(import22.KeyValueDiffers), new import23.ElementRef(this._el_36), this.renderer);
+        this._NgClass_36_3 = new import17.NgClass(this.parentInjector.get(import22.IterableDiffers), this.parentInjector.get(import23.KeyValueDiffers), new import24.ElementRef(this._el_36), this.renderer);
         this._text_37 = this.renderer.createText(this._el_36, '\n                        ', null);
         this._el_38 = this.renderer.createElement(this._el_36, 'label', null);
         this.renderer.setElementAttribute(this._el_38, 'for', 'name');
@@ -172,21 +173,21 @@ var _View_InstanceCreateComponent0 = (function (_super) {
         this.renderer.setElementAttribute(this._el_41, 'class', 'form-control');
         this.renderer.setElementAttribute(this._el_41, 'id', 'description');
         this.renderer.setElementAttribute(this._el_41, 'type', 'text');
-        this._DefaultValueAccessor_41_3 = new import17.DefaultValueAccessor(this.renderer, new import23.ElementRef(this._el_41));
+        this._DefaultValueAccessor_41_3 = new import18.DefaultValueAccessor(this.renderer, new import24.ElementRef(this._el_41));
         this._NG_VALUE_ACCESSOR_41_4 = [this._DefaultValueAccessor_41_3];
-        this._FormControlDirective_41_5 = new import19.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_41_4);
+        this._FormControlDirective_41_5 = new import20.FormControlDirective(null, null, this._NG_VALUE_ACCESSOR_41_4);
         this._NgControl_41_6 = this._FormControlDirective_41_5;
-        this._NgControlStatus_41_7 = new import15.NgControlStatus(this._NgControl_41_6);
+        this._NgControlStatus_41_7 = new import16.NgControlStatus(this._NgControl_41_6);
         this._text_42 = this.renderer.createText(this._el_36, '\n                        ', null);
         this._anchor_43 = this.renderer.createTemplateAnchor(this._el_36, null);
         this._appEl_43 = new import2.AppElement(43, 36, this, this._anchor_43);
-        this._TemplateRef_43_5 = new import24.TemplateRef_(this._appEl_43, viewFactory_InstanceCreateComponent3);
-        this._NgIf_43_6 = new import20.NgIf(this._appEl_43.vcRef, this._TemplateRef_43_5);
+        this._TemplateRef_43_5 = new import25.TemplateRef_(this._appEl_43, viewFactory_InstanceCreateComponent3);
+        this._NgIf_43_6 = new import21.NgIf(this._appEl_43.vcRef, this._TemplateRef_43_5);
         this._text_44 = this.renderer.createText(this._el_36, '\n                    ', null);
         this._text_45 = this.renderer.createText(this._el_14, '\n                    ', null);
         this._el_46 = this.renderer.createElement(this._el_14, 'div', null);
         this.renderer.setElementAttribute(this._el_46, 'class', 'form-group');
-        this._NgClass_46_3 = new import16.NgClass(this.parentInjector.get(import21.IterableDiffers), this.parentInjector.get(import22.KeyValueDiffers), new import23.ElementRef(this._el_46), this.renderer);
+        this._NgClass_46_3 = new import17.NgClass(this.parentInjector.get(import22.IterableDiffers), this.parentInjector.get(import23.KeyValueDiffers), new import24.ElementRef(this._el_46), this.renderer);
         this._text_47 = this.renderer.createText(this._el_46, '\n                        ', null);
         this._el_48 = this.renderer.createElement(this._el_46, 'label', null);
         this.renderer.setElementAttribute(this._el_48, 'for', 'status');
@@ -198,13 +199,13 @@ var _View_InstanceCreateComponent0 = (function (_super) {
         this._text_52 = this.renderer.createText(this._el_46, '\n                        ', null);
         this._anchor_53 = this.renderer.createTemplateAnchor(this._el_46, null);
         this._appEl_53 = new import2.AppElement(53, 46, this, this._anchor_53);
-        this._TemplateRef_53_5 = new import24.TemplateRef_(this._appEl_53, viewFactory_InstanceCreateComponent4);
-        this._NgIf_53_6 = new import20.NgIf(this._appEl_53.vcRef, this._TemplateRef_53_5);
+        this._TemplateRef_53_5 = new import25.TemplateRef_(this._appEl_53, viewFactory_InstanceCreateComponent4);
+        this._NgIf_53_6 = new import21.NgIf(this._appEl_53.vcRef, this._TemplateRef_53_5);
         this._text_54 = this.renderer.createText(this._el_46, '\n                    ', null);
         this._text_55 = this.renderer.createText(this._el_14, '\n                    ', null);
         this._el_56 = this.renderer.createElement(this._el_14, 'div', null);
         this.renderer.setElementAttribute(this._el_56, 'class', 'form-group');
-        this._NgClass_56_3 = new import16.NgClass(this.parentInjector.get(import21.IterableDiffers), this.parentInjector.get(import22.KeyValueDiffers), new import23.ElementRef(this._el_56), this.renderer);
+        this._NgClass_56_3 = new import17.NgClass(this.parentInjector.get(import22.IterableDiffers), this.parentInjector.get(import23.KeyValueDiffers), new import24.ElementRef(this._el_56), this.renderer);
         this._text_57 = this.renderer.createText(this._el_56, '\n                        ', null);
         this._el_58 = this.renderer.createElement(this._el_56, 'label', null);
         this.renderer.setElementAttribute(this._el_58, 'for', 'data');
@@ -216,8 +217,8 @@ var _View_InstanceCreateComponent0 = (function (_super) {
         this._text_62 = this.renderer.createText(this._el_56, '\n                        ', null);
         this._anchor_63 = this.renderer.createTemplateAnchor(this._el_56, null);
         this._appEl_63 = new import2.AppElement(63, 56, this, this._anchor_63);
-        this._TemplateRef_63_5 = new import24.TemplateRef_(this._appEl_63, viewFactory_InstanceCreateComponent5);
-        this._NgIf_63_6 = new import20.NgIf(this._appEl_63.vcRef, this._TemplateRef_63_5);
+        this._TemplateRef_63_5 = new import25.TemplateRef_(this._appEl_63, viewFactory_InstanceCreateComponent5);
+        this._NgIf_63_6 = new import21.NgIf(this._appEl_63.vcRef, this._TemplateRef_63_5);
         this._text_64 = this.renderer.createText(this._el_56, '\n                    ', null);
         this._text_65 = this.renderer.createText(this._el_14, '\n                    ', null);
         this._el_66 = this.renderer.createElement(this._el_14, 'div', null);
@@ -307,9 +308,9 @@ var _View_InstanceCreateComponent0 = (function (_super) {
         this._expr_53 = import7.UNINITIALIZED;
         this._expr_54 = import7.UNINITIALIZED;
         var disposable_10 = this.renderer.listen(this._el_71, 'click', this.eventHandler(this._handle_click_71_0.bind(this)));
-        this._viewQuery_status_0.reset([new import23.ElementRef(this._el_51)]);
+        this._viewQuery_status_0.reset([new import24.ElementRef(this._el_51)]);
         this.context.statusElem = this._viewQuery_status_0.first;
-        this._viewQuery_data_1.reset([new import23.ElementRef(this._el_61)]);
+        this._viewQuery_data_1.reset([new import24.ElementRef(this._el_61)]);
         this.context.dataElem = this._viewQuery_data_1.first;
         this.init([], [
             this._el_0,
@@ -407,106 +408,106 @@ var _View_InstanceCreateComponent0 = (function (_super) {
         return null;
     };
     _View_InstanceCreateComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import17.DefaultValueAccessor) && (21 === requestNodeIndex))) {
+        if (((token === import18.DefaultValueAccessor) && (21 === requestNodeIndex))) {
             return this._DefaultValueAccessor_21_3;
         }
-        if (((token === import18.NumberValueAccessor) && (21 === requestNodeIndex))) {
+        if (((token === import19.NumberValueAccessor) && (21 === requestNodeIndex))) {
             return this._NumberValueAccessor_21_4;
         }
-        if (((token === import25.NG_VALUE_ACCESSOR) && (21 === requestNodeIndex))) {
+        if (((token === import26.NG_VALUE_ACCESSOR) && (21 === requestNodeIndex))) {
             return this._NG_VALUE_ACCESSOR_21_5;
         }
-        if (((token === import19.FormControlDirective) && (21 === requestNodeIndex))) {
+        if (((token === import20.FormControlDirective) && (21 === requestNodeIndex))) {
             return this._FormControlDirective_21_6;
         }
-        if (((token === import26.NgControl) && (21 === requestNodeIndex))) {
+        if (((token === import27.NgControl) && (21 === requestNodeIndex))) {
             return this._NgControl_21_7;
         }
-        if (((token === import15.NgControlStatus) && (21 === requestNodeIndex))) {
+        if (((token === import16.NgControlStatus) && (21 === requestNodeIndex))) {
             return this._NgControlStatus_21_8;
         }
-        if (((token === import24.TemplateRef) && (23 === requestNodeIndex))) {
+        if (((token === import25.TemplateRef) && (23 === requestNodeIndex))) {
             return this._TemplateRef_23_5;
         }
-        if (((token === import20.NgIf) && (23 === requestNodeIndex))) {
+        if (((token === import21.NgIf) && (23 === requestNodeIndex))) {
             return this._NgIf_23_6;
         }
-        if (((token === import16.NgClass) && ((16 <= requestNodeIndex) && (requestNodeIndex <= 24)))) {
+        if (((token === import17.NgClass) && ((16 <= requestNodeIndex) && (requestNodeIndex <= 24)))) {
             return this._NgClass_16_3;
         }
-        if (((token === import17.DefaultValueAccessor) && (31 === requestNodeIndex))) {
+        if (((token === import18.DefaultValueAccessor) && (31 === requestNodeIndex))) {
             return this._DefaultValueAccessor_31_3;
         }
-        if (((token === import25.NG_VALUE_ACCESSOR) && (31 === requestNodeIndex))) {
+        if (((token === import26.NG_VALUE_ACCESSOR) && (31 === requestNodeIndex))) {
             return this._NG_VALUE_ACCESSOR_31_4;
         }
-        if (((token === import19.FormControlDirective) && (31 === requestNodeIndex))) {
+        if (((token === import20.FormControlDirective) && (31 === requestNodeIndex))) {
             return this._FormControlDirective_31_5;
         }
-        if (((token === import26.NgControl) && (31 === requestNodeIndex))) {
+        if (((token === import27.NgControl) && (31 === requestNodeIndex))) {
             return this._NgControl_31_6;
         }
-        if (((token === import15.NgControlStatus) && (31 === requestNodeIndex))) {
+        if (((token === import16.NgControlStatus) && (31 === requestNodeIndex))) {
             return this._NgControlStatus_31_7;
         }
-        if (((token === import24.TemplateRef) && (33 === requestNodeIndex))) {
+        if (((token === import25.TemplateRef) && (33 === requestNodeIndex))) {
             return this._TemplateRef_33_5;
         }
-        if (((token === import20.NgIf) && (33 === requestNodeIndex))) {
+        if (((token === import21.NgIf) && (33 === requestNodeIndex))) {
             return this._NgIf_33_6;
         }
-        if (((token === import16.NgClass) && ((26 <= requestNodeIndex) && (requestNodeIndex <= 34)))) {
+        if (((token === import17.NgClass) && ((26 <= requestNodeIndex) && (requestNodeIndex <= 34)))) {
             return this._NgClass_26_3;
         }
-        if (((token === import17.DefaultValueAccessor) && (41 === requestNodeIndex))) {
+        if (((token === import18.DefaultValueAccessor) && (41 === requestNodeIndex))) {
             return this._DefaultValueAccessor_41_3;
         }
-        if (((token === import25.NG_VALUE_ACCESSOR) && (41 === requestNodeIndex))) {
+        if (((token === import26.NG_VALUE_ACCESSOR) && (41 === requestNodeIndex))) {
             return this._NG_VALUE_ACCESSOR_41_4;
         }
-        if (((token === import19.FormControlDirective) && (41 === requestNodeIndex))) {
+        if (((token === import20.FormControlDirective) && (41 === requestNodeIndex))) {
             return this._FormControlDirective_41_5;
         }
-        if (((token === import26.NgControl) && (41 === requestNodeIndex))) {
+        if (((token === import27.NgControl) && (41 === requestNodeIndex))) {
             return this._NgControl_41_6;
         }
-        if (((token === import15.NgControlStatus) && (41 === requestNodeIndex))) {
+        if (((token === import16.NgControlStatus) && (41 === requestNodeIndex))) {
             return this._NgControlStatus_41_7;
         }
-        if (((token === import24.TemplateRef) && (43 === requestNodeIndex))) {
+        if (((token === import25.TemplateRef) && (43 === requestNodeIndex))) {
             return this._TemplateRef_43_5;
         }
-        if (((token === import20.NgIf) && (43 === requestNodeIndex))) {
+        if (((token === import21.NgIf) && (43 === requestNodeIndex))) {
             return this._NgIf_43_6;
         }
-        if (((token === import16.NgClass) && ((36 <= requestNodeIndex) && (requestNodeIndex <= 44)))) {
+        if (((token === import17.NgClass) && ((36 <= requestNodeIndex) && (requestNodeIndex <= 44)))) {
             return this._NgClass_36_3;
         }
-        if (((token === import24.TemplateRef) && (53 === requestNodeIndex))) {
+        if (((token === import25.TemplateRef) && (53 === requestNodeIndex))) {
             return this._TemplateRef_53_5;
         }
-        if (((token === import20.NgIf) && (53 === requestNodeIndex))) {
+        if (((token === import21.NgIf) && (53 === requestNodeIndex))) {
             return this._NgIf_53_6;
         }
-        if (((token === import16.NgClass) && ((46 <= requestNodeIndex) && (requestNodeIndex <= 54)))) {
+        if (((token === import17.NgClass) && ((46 <= requestNodeIndex) && (requestNodeIndex <= 54)))) {
             return this._NgClass_46_3;
         }
-        if (((token === import24.TemplateRef) && (63 === requestNodeIndex))) {
+        if (((token === import25.TemplateRef) && (63 === requestNodeIndex))) {
             return this._TemplateRef_63_5;
         }
-        if (((token === import20.NgIf) && (63 === requestNodeIndex))) {
+        if (((token === import21.NgIf) && (63 === requestNodeIndex))) {
             return this._NgIf_63_6;
         }
-        if (((token === import16.NgClass) && ((56 <= requestNodeIndex) && (requestNodeIndex <= 64)))) {
+        if (((token === import17.NgClass) && ((56 <= requestNodeIndex) && (requestNodeIndex <= 64)))) {
             return this._NgClass_56_3;
         }
-        if (((token === import14.FormGroupDirective) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 74)))) {
+        if (((token === import15.FormGroupDirective) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 74)))) {
             return this._FormGroupDirective_14_3;
         }
-        if (((token === import27.ControlContainer) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 74)))) {
+        if (((token === import28.ControlContainer) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 74)))) {
             return this._ControlContainer_14_4;
         }
-        if (((token === import15.NgControlStatusGroup) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 74)))) {
+        if (((token === import16.NgControlStatusGroup) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 74)))) {
             return this._NgControlStatusGroup_14_5;
         }
         return notFoundResult;
@@ -839,7 +840,7 @@ var _View_InstanceCreateComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_InstanceCreateComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_InstanceCreateComponent === null)) {
-        (renderType_InstanceCreateComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/instances/instance-new/instance-new.component.html', 0, import11.ViewEncapsulation.None, styles_InstanceCreateComponent, {}));
+        (renderType_InstanceCreateComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/instances/instance-new/instance-new.component.html', 0, import12.ViewEncapsulation.None, styles_InstanceCreateComponent, {}));
     }
     return new _View_InstanceCreateComponent0(viewUtils, parentInjector, declarationEl);
 }

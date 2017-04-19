@@ -9,6 +9,7 @@ import { InstanceEditComponent } from "./instance-update/instance-update.compone
 import { InstanceStatusComponent } from "./instance-status/instance-status.component";
 import { OrderByModule } from "../order-by.module";
 import { InstanceService } from "../shared/instance.service";
+import { FileService } from "../shared/file.service";
 export var InstanceModule = (function () {
     function InstanceModule() {
     }
@@ -29,6 +30,7 @@ export var InstanceModule = (function () {
                     ],
                     providers: [
                         InstanceService,
+                        FileService
                     ]
                 },] },
     ];

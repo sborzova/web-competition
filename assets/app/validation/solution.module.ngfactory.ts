@@ -8,26 +8,33 @@ import * as import0 from '@angular/core/src/linker/ng_module_factory';
 import * as import1 from './solution.module';
 import * as import2 from '@angular/common/src/common_module';
 import * as import3 from '@angular/common/src/localization';
-import * as import4 from '../shared/solution.service';
-import * as import5 from '@angular/core/src/di/injector';
-import * as import6 from '@angular/core/src/i18n/tokens';
-import * as import7 from '@angular/http/src/http';
-import * as import8 from '../flash-message/flash-messages.service';
+import * as import4 from '../shared/file.service';
+import * as import5 from '../shared/solution.service';
+import * as import6 from '@angular/core/src/di/injector';
+import * as import7 from '@angular/core/src/i18n/tokens';
+import * as import8 from '@angular/http/src/http';
+import * as import9 from '../shared/paper.service';
+import * as import10 from '../flash-message/flash-messages.service';
 class SolutionModuleInjector extends import0.NgModuleInjector<import1.SolutionModule> {
   _CommonModule_0:import2.CommonModule;
   _SolutionModule_1:import1.SolutionModule;
   __NgLocalization_2:import3.NgLocaleLocalization;
-  __SolutionService_3:import4.SolutionService;
-  constructor(parent:import5.Injector) {
+  __FileService_3:import4.FileService;
+  __SolutionService_4:import5.SolutionService;
+  constructor(parent:import6.Injector) {
     super(parent,[],[]);
   }
   get _NgLocalization_2():import3.NgLocaleLocalization {
-    if ((this.__NgLocalization_2 == (null as any))) { (this.__NgLocalization_2 = new import3.NgLocaleLocalization(this.parent.get(import6.LOCALE_ID))); }
+    if ((this.__NgLocalization_2 == (null as any))) { (this.__NgLocalization_2 = new import3.NgLocaleLocalization(this.parent.get(import7.LOCALE_ID))); }
     return this.__NgLocalization_2;
   }
-  get _SolutionService_3():import4.SolutionService {
-    if ((this.__SolutionService_3 == (null as any))) { (this.__SolutionService_3 = new import4.SolutionService(this.parent.get(import7.Http),this.parent.get(import8.FlashMessageService))); }
-    return this.__SolutionService_3;
+  get _FileService_3():import4.FileService {
+    if ((this.__FileService_3 == (null as any))) { (this.__FileService_3 = new import4.FileService(this.parent.get(import8.Http))); }
+    return this.__FileService_3;
+  }
+  get _SolutionService_4():import5.SolutionService {
+    if ((this.__SolutionService_4 == (null as any))) { (this.__SolutionService_4 = new import5.SolutionService(this.parent.get(import8.Http),this.parent.get(import9.PaperService),this.parent.get(import10.FlashMessageService),this._FileService_3)); }
+    return this.__SolutionService_4;
   }
   createInternal():import1.SolutionModule {
     this._CommonModule_0 = new import2.CommonModule();
@@ -38,7 +45,8 @@ class SolutionModuleInjector extends import0.NgModuleInjector<import1.SolutionMo
     if ((token === import2.CommonModule)) { return this._CommonModule_0; }
     if ((token === import1.SolutionModule)) { return this._SolutionModule_1; }
     if ((token === import3.NgLocalization)) { return this._NgLocalization_2; }
-    if ((token === import4.SolutionService)) { return this._SolutionService_3; }
+    if ((token === import4.FileService)) { return this._FileService_3; }
+    if ((token === import5.SolutionService)) { return this._SolutionService_4; }
     return notFoundResult;
   }
   destroyInternal():void {

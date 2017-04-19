@@ -5,6 +5,8 @@ import {EscapeHtmlModule} from "../escape-html.module";
 import {ValidatorInfoComponent} from "./validator-info.component";
 import {validatorInfoRouting} from "./validator-info.routing";
 import {SolutionService} from "../shared/solution.service";
+import {PaperService} from "../shared/paper.service";
+import {FileService} from "../shared/file.service";
 
 @NgModule({
     declarations: [
@@ -15,6 +17,10 @@ import {SolutionService} from "../shared/solution.service";
         EscapeHtmlModule,
         validatorInfoRouting
     ],
-    providers: [SolutionService]
+    providers: [
+        SolutionService,
+        PaperService,
+        FileService
+    ]
 })
 export class ValidatorInfoModule {}

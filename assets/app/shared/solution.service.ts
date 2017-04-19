@@ -5,28 +5,36 @@ import { Observable, Subject } from "rxjs";
 import { SolutionCreate } from "../validation/solution-create.model";
 import { Validation } from "../validation/validation.model";
 import { SolutionPaper } from "../user-solutions/solution-paper.model";
-import { SolutionFindWorse } from "../validation/solution-find-worse.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { Author } from "./author.model";
 import { Instance } from "./instance.model";
 import {Paper} from "./paper.model";
 import {Solution} from "./solution.model";
+import {FileService} from "./file.service";
+import {PaperService} from "./paper.service";
+import {FileModel} from "../instances/file.model";
+import {Visibility} from "../results/visibility.model";
 
 @Injectable()
 export class SolutionService {
     private hostUrl : string;
     private xmlHttp;
     private solutionFile;
-    // private solutions: Solution[] = [];
     successValidation = new EventEmitter<Validation>();
     private successValidationDeleteSource = new Subject();
     private solutionDeleteSource = new Subject<Solution>();
+    private solutionSetVisibleSource = new Subject<Solution>();
+    private solutionSetNotVisibleSource = new Subject<Solution>();
 
     successValidationDelete$ = this.successValidationDeleteSource.asObservable();
     solutionDelete$ = this.solutionDeleteSource.asObservable();
+    solutionSetVisible$ = this.solutionSetVisibleSource.asObservable();
+    solutionSetNotVisible$ = this.solutionSetNotVisibleSource.asObservable();
 
     constructor(private http: Http,
-                private flashMessageService: FlashMessageService){
+                private paperService: PaperService,
+                private flashMessageService: FlashMessageService,
+                private fileService: FileService){
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
@@ -62,36 +70,42 @@ export class SolutionService {
                 .subscribe(
                     paperId => {
                         solution.paperId = paperId;
-                        this.saveSolution(solution);
+                        this.saveSolutionAndFile(solution);
                     },
                     error => {
                         console.error(error);
                     }
                 );
         } else {
-            this.saveSolution(solution);
+            this.saveSolutionAndFile(solution);
         }
     }
 
-    saveSolution(solution: SolutionCreate){
-        this.saveSolutionWithoutFile(solution)
+    saveSolutionAndFile(solution: SolutionCreate){
+        let idFile;
+        this.fileService.saveFile(this.solutionFile)
             .subscribe(
-                solutionId => {
-                    this.saveFileSolution(solutionId)
+                file => {
+                    idFile = JSON.parse(file).id;
+                    solution.fileId = idFile;
+                    this.saveSolution(solution)
                         .subscribe(
-                            () => {
+                            data => {
                                 this.flashMessageService.showMessage('Solution was uploaded.', 'success' );
                                 this.successValidationHideResult();
                             },
                             error => {
-                                console.error(error);
+                                this.paperService.deletePaper(solution.paperId);
+                                this.fileService.deleteFile(solution.fileId);
+                                console.error(error)
                             }
-                        );
+                        )
                 },
                 error => {
-                    console.error(error);
+                    this.paperService.deletePaper(solution.paperId);
+                    console.error(error)
                 }
-            );
+            )
     }
 
     findDuplicateSolution(solution: Solution){
@@ -114,7 +128,8 @@ export class SolutionService {
                             solution.technique,
                             solution.info,
                             solution.submissionTime,
-                            solution.data,
+                            solution.visible,
+                            null,
                             solution.instance,
                             solution.paper ? new Paper(
                                 solution.paper.citation,
@@ -142,7 +157,7 @@ export class SolutionService {
                 .catch((error: Response) => Observable.throw(error));
     }
 
-    saveSolutionWithoutFile(solution: SolutionCreate){
+    saveSolution(solution: SolutionCreate){
         const body = JSON.stringify(solution);
         const token = sessionStorage.getItem('token')
             ? '?token=' + sessionStorage.getItem('token')
@@ -172,7 +187,8 @@ export class SolutionService {
                     solution.technique,
                     solution.info,
                     solution.submissionTime,
-                    new Buffer(solution.data.data),
+                    solution.visible,
+                    new FileModel(new Buffer(solution.data.content), solution.data._id),
                     solution.instance,
                     solution.paper,
                     null,
@@ -205,7 +221,8 @@ export class SolutionService {
                         solution.technique,
                         solution.info,
                         solution.submissionTime,
-                        new Buffer(solution.data.data),
+                        solution.visible,
+                        null,
                         solution.instance,
                         solution.paper ? new Paper(
                                 solution.paper.citation,
@@ -238,7 +255,8 @@ export class SolutionService {
                         solution.technique,
                         solution.info,
                         solution.submissionTime,
-                        new Buffer(solution.data.data),
+                        solution.visible,
+                        new FileModel(new Buffer(solution.data.content), solution.data._id),
                         new Instance(
                             solution.instance.name,
                             solution.instance._id,
@@ -272,7 +290,8 @@ export class SolutionService {
                         solution.technique,
                         solution.info,
                         solution.submissionTime,
-                        new Buffer(solution.data.data),
+                        solution.visible,
+                        new FileModel(new Buffer(solution.data.content), solution.data._id),
                         new Instance(
                             solution.instance.name,
                             solution.instance._id,
@@ -312,33 +331,16 @@ export class SolutionService {
         this.solutionDeleteSource.next(solution);
     }
 
-    setSolutionFile(file: any){
-        this.solutionFile = file;
+    setVisibleObservable(solution: Solution){
+        this.solutionSetVisibleSource.next(solution);
     }
 
-    saveFileSolution(solutionId: string) {
-        this.xmlHttp = new XMLHttpRequest();
-        return Observable.create(observer => {
-            const headers = new Headers({'Content-Type': 'multipart/form-data'});
+    setNotVisibleObservable(solution: Solution){
+        this.solutionSetNotVisibleSource.next(solution);
+    }
 
-            this.xmlHttp.onreadystatechange = () => {
-                if (this.xmlHttp.readyState === 4) {
-                    if (this.xmlHttp.status === 200) {
-                        observer.next(this.xmlHttp.response);
-                        observer.complete();
-                    } else {
-                        observer.error(this.xmlHttp.response);
-                    }
-                }
-            };
-
-            let fd = new FormData();
-            fd.append('solution', this.solutionFile);
-
-            this.xmlHttp.open("POST", this.hostUrl.concat('solutionFile/') + solutionId);
-            this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
-            this.xmlHttp.send(fd);
-        });
+    setSolutionFile(file: any){
+        this.solutionFile = file;
     }
 
     updateSolutionPaper(solution: SolutionPaper){
@@ -354,6 +356,20 @@ export class SolutionService {
             .catch((error: Response) => Observable.throw(error));
     }
 
+    updateSolutionVisibility(solution: Solution){
+        let visibility = new Visibility(solution.visible);
+        const body = JSON.stringify(visibility);
+        const token = sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
+            : '';
+        const headers = new Headers({'Content-Type': 'application/json'});
+        return this.http.patch(this.hostUrl.concat('solutionVisibility/') +  solution.solutionId, body, {headers: headers})
+            .map((response: Response) => {
+                return response.json();
+            })
+            .catch((error: Response) => Observable.throw(error));
+    }
+
     deleteSolution(solution: Solution){
         return this.http.delete(
             this.hostUrl.concat('solution/') + solution.solutionId)
@@ -363,19 +379,5 @@ export class SolutionService {
             .catch((error: Response) => {
                 return Observable.throw(error.json());
             });
-    }
-
-    deleteSolutions(solutions: Solution[]) {
-        for (let s of solutions){
-            this.deleteSolution(s)
-                .subscribe(
-                    () => {},
-                    error => console.error(error))
-        }
-        if (solutions.length == 1){
-            this.flashMessageService.showMessage('Solution was deleted.', 'success');
-        }else {
-            this.flashMessageService.showMessage('Solutions were deleted.', 'success');
-        }
     }
 }

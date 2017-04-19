@@ -4,6 +4,7 @@ import {SortService} from "../../shared/sort.service";
 import {Solution} from "../../shared/solution.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {SolutionService} from "../../shared/solution.service";
+import {SessionStorageService} from "../../shared/session-storage.service";
 
 @Component({
     selector: 'app-results-instance',
@@ -17,14 +18,27 @@ export class ResultsInstanceComponent implements OnChanges {
 
     constructor(private sortService: SortService,
                 private solutionService: SolutionService,
+                private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService){}
 
     ngOnChanges(changes: SimpleChanges){
        this.solutionsAuthorInstance = null;
     }
 
+    isAdmin(){
+        return this.sessionStorageService.isAdmin();
+    }
+
     onDelete(solution: Solution) {
         this.solutionService.deleteSolutionObservable(solution);
+    }
+
+    onSetVisible(solution: Solution){
+        this.solutionService.setVisibleObservable(solution);
+    }
+
+    onSetNotVisible(solution: Solution){
+        this.solutionService.setNotVisibleObservable(solution);
     }
 
     onDownload(solution: Solution){

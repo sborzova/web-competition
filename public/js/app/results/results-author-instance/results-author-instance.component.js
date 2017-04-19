@@ -2,9 +2,11 @@ import { Component, Input } from "@angular/core";
 import { SolutionService } from "../../shared/solution.service";
 import { SortService } from "../../shared/sort.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import { SessionStorageService } from "../../shared/session-storage.service";
 export var ResultsAuthorInstanceComponent = (function () {
-    function ResultsAuthorInstanceComponent(solutionService, flashMessageService, resultsService) {
+    function ResultsAuthorInstanceComponent(solutionService, sessionStorageService, flashMessageService, resultsService) {
         this.solutionService = solutionService;
+        this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
         this.resultsService = resultsService;
         this.showPapers = false;
@@ -12,11 +14,20 @@ export var ResultsAuthorInstanceComponent = (function () {
     ResultsAuthorInstanceComponent.prototype.ngOnChanges = function (changes) {
         this.solutionsAuthorInstanceTechnique = null;
     };
+    ResultsAuthorInstanceComponent.prototype.isAdmin = function () {
+        return this.sessionStorageService.isAdmin();
+    };
     ResultsAuthorInstanceComponent.prototype.onDownload = function (solution) {
         this.resultsService.download(solution);
     };
     ResultsAuthorInstanceComponent.prototype.onDelete = function (solution) {
         this.solutionService.deleteSolutionObservable(solution);
+    };
+    ResultsAuthorInstanceComponent.prototype.onSetVisible = function (solution) {
+        this.solutionService.setVisibleObservable(solution);
+    };
+    ResultsAuthorInstanceComponent.prototype.onSetNotVisible = function (solution) {
+        this.solutionService.setNotVisibleObservable(solution);
     };
     ResultsAuthorInstanceComponent.prototype.onShowPapers = function () {
         this.showPapers = true;
@@ -78,6 +89,7 @@ export var ResultsAuthorInstanceComponent = (function () {
     /** @nocollapse */
     ResultsAuthorInstanceComponent.ctorParameters = [
         { type: SolutionService, },
+        { type: SessionStorageService, },
         { type: FlashMessageService, },
         { type: SortService, },
     ];

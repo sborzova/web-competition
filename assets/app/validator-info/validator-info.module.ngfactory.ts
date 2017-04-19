@@ -10,14 +10,16 @@ import * as import2 from '@angular/common/src/common_module';
 import * as import3 from '../escape-html.module';
 import * as import4 from '@angular/router/src/router_module';
 import * as import5 from '@angular/common/src/localization';
-import * as import6 from '../shared/solution.service';
-import * as import7 from '@angular/core/src/di/injector';
-import * as import8 from './validator-info.component.ngfactory';
-import * as import9 from '@angular/core/src/i18n/tokens';
-import * as import10 from './validator-info.component';
-import * as import11 from '@angular/http/src/http';
-import * as import12 from '../flash-message/flash-messages.service';
-import * as import13 from '@angular/router/src/router_config_loader';
+import * as import6 from '../shared/paper.service';
+import * as import7 from '../shared/file.service';
+import * as import8 from '../shared/solution.service';
+import * as import9 from '@angular/core/src/di/injector';
+import * as import10 from './validator-info.component.ngfactory';
+import * as import11 from '@angular/core/src/i18n/tokens';
+import * as import12 from './validator-info.component';
+import * as import13 from '@angular/http/src/http';
+import * as import14 from '../flash-message/flash-messages.service';
+import * as import15 from '@angular/router/src/router_config_loader';
 class ValidatorInfoModuleInjector extends import0.NgModuleInjector<import1.ValidatorInfoModule> {
   _CommonModule_0:import2.CommonModule;
   _EscapeHtmlModule_1:import3.EscapeHtmlModule;
@@ -25,12 +27,14 @@ class ValidatorInfoModuleInjector extends import0.NgModuleInjector<import1.Valid
   _ValidatorInfoModule_3:import1.ValidatorInfoModule;
   __NgLocalization_4:import5.NgLocaleLocalization;
   __ROUTES_5:any[];
-  __SolutionService_6:import6.SolutionService;
-  constructor(parent:import7.Injector) {
-    super(parent,[import8.ValidatorInfoComponentNgFactory],[]);
+  __PaperService_6:import6.PaperService;
+  __FileService_7:import7.FileService;
+  __SolutionService_8:import8.SolutionService;
+  constructor(parent:import9.Injector) {
+    super(parent,[import10.ValidatorInfoComponentNgFactory],[]);
   }
   get _NgLocalization_4():import5.NgLocaleLocalization {
-    if ((this.__NgLocalization_4 == (null as any))) { (this.__NgLocalization_4 = new import5.NgLocaleLocalization(this.parent.get(import9.LOCALE_ID))); }
+    if ((this.__NgLocalization_4 == (null as any))) { (this.__NgLocalization_4 = new import5.NgLocaleLocalization(this.parent.get(import11.LOCALE_ID))); }
     return this.__NgLocalization_4;
   }
   get _ROUTES_5():any[] {
@@ -38,16 +42,24 @@ class ValidatorInfoModuleInjector extends import0.NgModuleInjector<import1.Valid
           path: '',
             children: [{
               path: '',
-              component: import10.ValidatorInfoComponent
+              component: import12.ValidatorInfoComponent
             }
           ]
         }
     ]]); }
     return this.__ROUTES_5;
   }
-  get _SolutionService_6():import6.SolutionService {
-    if ((this.__SolutionService_6 == (null as any))) { (this.__SolutionService_6 = new import6.SolutionService(this.parent.get(import11.Http),this.parent.get(import12.FlashMessageService))); }
-    return this.__SolutionService_6;
+  get _PaperService_6():import6.PaperService {
+    if ((this.__PaperService_6 == (null as any))) { (this.__PaperService_6 = new import6.PaperService(this.parent.get(import13.Http))); }
+    return this.__PaperService_6;
+  }
+  get _FileService_7():import7.FileService {
+    if ((this.__FileService_7 == (null as any))) { (this.__FileService_7 = new import7.FileService(this.parent.get(import13.Http))); }
+    return this.__FileService_7;
+  }
+  get _SolutionService_8():import8.SolutionService {
+    if ((this.__SolutionService_8 == (null as any))) { (this.__SolutionService_8 = new import8.SolutionService(this.parent.get(import13.Http),this._PaperService_6,this.parent.get(import14.FlashMessageService),this._FileService_7)); }
+    return this.__SolutionService_8;
   }
   createInternal():import1.ValidatorInfoModule {
     this._CommonModule_0 = new import2.CommonModule();
@@ -62,8 +74,10 @@ class ValidatorInfoModuleInjector extends import0.NgModuleInjector<import1.Valid
     if ((token === import4.RouterModule)) { return this._RouterModule_2; }
     if ((token === import1.ValidatorInfoModule)) { return this._ValidatorInfoModule_3; }
     if ((token === import5.NgLocalization)) { return this._NgLocalization_4; }
-    if ((token === import13.ROUTES)) { return this._ROUTES_5; }
-    if ((token === import6.SolutionService)) { return this._SolutionService_6; }
+    if ((token === import15.ROUTES)) { return this._ROUTES_5; }
+    if ((token === import6.PaperService)) { return this._PaperService_6; }
+    if ((token === import7.FileService)) { return this._FileService_7; }
+    if ((token === import8.SolutionService)) { return this._SolutionService_8; }
     return notFoundResult;
   }
   destroyInternal():void {

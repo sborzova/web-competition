@@ -12,6 +12,7 @@ export var InstanceStatusComponent = (function () {
         this.instanceService.getInstance(id)
             .subscribe(function (instance) {
             _this.instance = instance;
+            console.log(instance);
         });
     };
     InstanceStatusComponent.decorators = [

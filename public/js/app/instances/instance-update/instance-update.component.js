@@ -4,10 +4,14 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { InstanceService } from "../../shared/instance.service";
 import { minValue } from "../min-value.validator";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import { FileService } from "../../shared/file.service";
+import { FileModel } from "../file.model";
+import { InstanceUpdate } from "../instance-update.model";
 export var InstanceEditComponent = (function () {
-    function InstanceEditComponent(router, instanceService, route, flashMessageService) {
+    function InstanceEditComponent(router, instanceService, fileService, route, flashMessageService) {
         this.router = router;
         this.instanceService = instanceService;
+        this.fileService = fileService;
         this.route = route;
         this.flashMessageService = flashMessageService;
         this.submitted = false;
@@ -17,6 +21,7 @@ export var InstanceEditComponent = (function () {
         var id = this.route.snapshot.params['id'];
         this.instanceService.getInstance(id)
             .subscribe(function (instance) {
+            console.log(instance);
             _this.instance = instance;
             _this.instanceForm = new FormGroup({
                 order: new FormControl(_this.instance.order, [Validators.required, minValue(0)]),
@@ -29,10 +34,8 @@ export var InstanceEditComponent = (function () {
         var _this = this;
         this.submitted = true;
         if (this.instanceForm.valid) {
-            this.instance.order = this.instanceForm.value.order;
-            this.instance.name = this.instanceForm.value.name;
-            this.instance.description = this.instanceForm.value.description;
-            this.instanceService.updateInstanceTextFields(this.instance)
+            var updateInstance = new InstanceUpdate(this.instanceForm.value.order, this.instanceForm.value.name, this.instanceForm.value.description, this.instance.instanceId);
+            this.instanceService.updateInstanceTextFields(updateInstance)
                 .subscribe(function (data) {
                 _this.navigateBack();
                 _this.flashMessageService.showMessage('Instance was updated', 'success');
@@ -41,27 +44,16 @@ export var InstanceEditComponent = (function () {
         }
     };
     InstanceEditComponent.prototype.saveFiles = function () {
+        var _this = this;
         var statusInput = this.statusElem.nativeElement;
         var dataInput = this.dataElem.nativeElement;
-        var fd = new FormData();
-        var updateFiles = false;
         if (statusInput.files && statusInput.files[0]) {
-            fd.append('status', statusInput.files[0], statusInput.files[0].name);
-            updateFiles = true;
-        }
-        else {
-            fd.append('status', null);
+            this.fileService.updateFile(new FileModel(statusInput.files[0], this.instance.status.id))
+                .subscribe(function (data) { }, function (error) { return _this.flashMessageService.showMessage('Something went wrong', 'danger'); });
         }
         if (dataInput.files && dataInput.files[0]) {
-            fd.append('data', dataInput.files[0], dataInput.files[0].name);
-            updateFiles = true;
-        }
-        else {
-            fd.append('data', null);
-        }
-        if (updateFiles) {
-            this.instanceService.saveFiles(fd, this.instance.instanceId)
-                .subscribe(function () { return console.log("Data was saved"); }, function (error) { return console.error(error); });
+            this.fileService.updateFile(new FileModel(dataInput.files[0], this.instance.data.id))
+                .subscribe(function (data) { }, function (error) { return _this.flashMessageService.showMessage('Something went wrong', 'danger'); });
         }
     };
     InstanceEditComponent.prototype.onCancel = function () {
@@ -80,6 +72,7 @@ export var InstanceEditComponent = (function () {
     InstanceEditComponent.ctorParameters = [
         { type: Router, },
         { type: InstanceService, },
+        { type: FileService, },
         { type: ActivatedRoute, },
         { type: FlashMessageService, },
     ];

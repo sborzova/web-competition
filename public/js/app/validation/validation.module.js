@@ -7,6 +7,7 @@ import { SuccessValidationComponent } from "./success-validation/success-validat
 import { EscapeHtmlModule } from "../escape-html.module";
 import { PaperService } from "../shared/paper.service";
 import { SolutionService } from "../shared/solution.service";
+import { FileService } from "../shared/file.service";
 export var ValidationModule = (function () {
     function ValidationModule() {
     }
@@ -26,6 +27,7 @@ export var ValidationModule = (function () {
                     providers: [
                         PaperService,
                         SolutionService,
+                        FileService
                     ]
                 },] },
     ];

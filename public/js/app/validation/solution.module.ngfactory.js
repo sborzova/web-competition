@@ -12,10 +12,12 @@ import * as import0 from '@angular/core/src/linker/ng_module_factory';
 import * as import1 from './solution.module';
 import * as import2 from '@angular/common/src/common_module';
 import * as import3 from '@angular/common/src/localization';
-import * as import4 from '../shared/solution.service';
-import * as import6 from '@angular/core/src/i18n/tokens';
-import * as import7 from '@angular/http/src/http';
-import * as import8 from '../flash-message/flash-messages.service';
+import * as import4 from '../shared/file.service';
+import * as import5 from '../shared/solution.service';
+import * as import7 from '@angular/core/src/i18n/tokens';
+import * as import8 from '@angular/http/src/http';
+import * as import9 from '../shared/paper.service';
+import * as import10 from '../flash-message/flash-messages.service';
 var SolutionModuleInjector = (function (_super) {
     __extends(SolutionModuleInjector, _super);
     function SolutionModuleInjector(parent) {
@@ -24,19 +26,29 @@ var SolutionModuleInjector = (function (_super) {
     Object.defineProperty(SolutionModuleInjector.prototype, "_NgLocalization_2", {
         get: function () {
             if ((this.__NgLocalization_2 == null)) {
-                (this.__NgLocalization_2 = new import3.NgLocaleLocalization(this.parent.get(import6.LOCALE_ID)));
+                (this.__NgLocalization_2 = new import3.NgLocaleLocalization(this.parent.get(import7.LOCALE_ID)));
             }
             return this.__NgLocalization_2;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(SolutionModuleInjector.prototype, "_SolutionService_3", {
+    Object.defineProperty(SolutionModuleInjector.prototype, "_FileService_3", {
         get: function () {
-            if ((this.__SolutionService_3 == null)) {
-                (this.__SolutionService_3 = new import4.SolutionService(this.parent.get(import7.Http), this.parent.get(import8.FlashMessageService)));
+            if ((this.__FileService_3 == null)) {
+                (this.__FileService_3 = new import4.FileService(this.parent.get(import8.Http)));
             }
-            return this.__SolutionService_3;
+            return this.__FileService_3;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SolutionModuleInjector.prototype, "_SolutionService_4", {
+        get: function () {
+            if ((this.__SolutionService_4 == null)) {
+                (this.__SolutionService_4 = new import5.SolutionService(this.parent.get(import8.Http), this.parent.get(import9.PaperService), this.parent.get(import10.FlashMessageService), this._FileService_3));
+            }
+            return this.__SolutionService_4;
         },
         enumerable: true,
         configurable: true
@@ -56,8 +68,11 @@ var SolutionModuleInjector = (function (_super) {
         if ((token === import3.NgLocalization)) {
             return this._NgLocalization_2;
         }
-        if ((token === import4.SolutionService)) {
-            return this._SolutionService_3;
+        if ((token === import4.FileService)) {
+            return this._FileService_3;
+        }
+        if ((token === import5.SolutionService)) {
+            return this._SolutionService_4;
         }
         return notFoundResult;
     };

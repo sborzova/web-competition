@@ -3,6 +3,7 @@ import { Http, Headers } from "@angular/http";
 import { Observable } from "rxjs";
 import { Instance } from "../instances/instance.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
+import { FileModel } from "../instances/file.model";
 export var InstanceService = (function () {
     function InstanceService(http, flashMessageService) {
         this.http = http;
@@ -30,32 +31,11 @@ export var InstanceService = (function () {
             return Observable.throw(error);
         });
     };
-    InstanceService.prototype.saveFiles = function (fd, id) {
-        var _this = this;
-        this.xmlHttp = new XMLHttpRequest();
-        return Observable.create(function (observer) {
-            var headers = new Headers({ 'Content-Type': 'multipart/form-data' });
-            _this.xmlHttp.onreadystatechange = function () {
-                if (_this.xmlHttp.readyState === 4) {
-                    if (_this.xmlHttp.status === 200) {
-                        observer.next(_this.xmlHttp.response);
-                        observer.complete();
-                    }
-                    else {
-                        observer.error(_this.xmlHttp.response);
-                    }
-                }
-            };
-            _this.xmlHttp.open("POST", _this.hostUrl.concat('files/') + id);
-            _this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
-            _this.xmlHttp.send(fd);
-        });
-    };
     InstanceService.prototype.getInstance = function (id) {
         return this.http.get(this.hostUrl.concat('instance/' + id))
             .map(function (response) {
             var instance = response.json().obj;
-            return new Instance(instance.order, instance.name, instance.description, instance.status, new Buffer(instance.data.data), instance.submissionTime, instance._id);
+            return new Instance(instance.order, instance.name, instance.description, new FileModel(new Buffer(instance.status.content), instance.status._id), new FileModel(new Buffer(instance.data.content), instance.data._id), instance.submissionTime, instance._id);
         })
             .catch(function (error) {
             return Observable.throw(error);
@@ -63,10 +43,9 @@ export var InstanceService = (function () {
     };
     InstanceService.prototype.updateInstanceTextFields = function (instance) {
         var _this = this;
-        instance = this.simplify(instance);
         var body = JSON.stringify(instance);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('instanceTextFields/') + instance.instanceId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('instance/') + instance.instanceId, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -103,12 +82,8 @@ export var InstanceService = (function () {
         });
     };
     InstanceService.prototype.download = function (instance) {
-        var file = new File([String.fromCharCode.apply(null, instance.data)], instance.name + '.xml', { type: "text/xml;charset=utf-8" });
+        var file = new File([String.fromCharCode.apply(null, instance.data.content)], instance.name + '.xml', { type: "text/xml;charset=utf-8" });
         this.fileSaver.saveAs(file);
-    };
-    InstanceService.prototype.simplify = function (instance) {
-        instance.data = null;
-        return instance;
     };
     InstanceService.decorators = [
         { type: Injectable },

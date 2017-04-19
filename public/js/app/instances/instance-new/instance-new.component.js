@@ -2,12 +2,14 @@ import { Component, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { InstanceService } from "../../shared/instance.service";
-import { Instance } from "../instance.model";
 import { minValue } from "../min-value.validator";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import { FileService } from "../../shared/file.service";
+import { InstanceCreate } from "../instance-create.model";
 export var InstanceCreateComponent = (function () {
-    function InstanceCreateComponent(router, flashMessageService, instancesService) {
+    function InstanceCreateComponent(router, fileService, flashMessageService, instancesService) {
         this.router = router;
+        this.fileService = fileService;
         this.flashMessageService = flashMessageService;
         this.instancesService = instancesService;
         this.submitted = false;
@@ -31,7 +33,6 @@ export var InstanceCreateComponent = (function () {
         this.setForm();
     };
     InstanceCreateComponent.prototype.onSubmit = function () {
-        var _this = this;
         this.submitted = true;
         var statusInput = this.statusElem.nativeElement;
         var dataInput = this.dataElem.nativeElement;
@@ -48,22 +49,32 @@ export var InstanceCreateComponent = (function () {
             this.dataInvalid = false;
         }
         if (this.instanceForm.valid) {
-            var instance = new Instance(this.instanceForm.value.order, this.instanceForm.value.name, this.instanceForm.value.description);
-            this.instancesService.saveInstance(instance)
+            this.saveInstance(statusInput.files[0], dataInput.files[0]);
+        }
+    };
+    InstanceCreateComponent.prototype.saveInstance = function (status, data) {
+        var _this = this;
+        var idStatus;
+        var idData;
+        this.fileService.saveFile(status)
+            .subscribe(function (status) {
+            idStatus = JSON.parse(status).id;
+            _this.fileService.saveFile(data)
                 .subscribe(function (data) {
-                var id = data.instanceId;
-                var fd = new FormData();
-                fd.append('status', statusInput.files[0], statusInput.files[0].name);
-                fd.append('data', dataInput.files[0], dataInput.files[0].name);
-                _this.navigateBack();
-                _this.instancesService.saveFiles(fd, id)
-                    .subscribe(function () {
-                    _this.flashMessageService.showMessage('Instance was created.', 'success');
+                idData = JSON.parse(data).id;
+                _this.instancesService.saveInstance(new InstanceCreate(_this.instanceForm.value.order, _this.instanceForm.value.name, _this.instanceForm.value.description, idStatus, idData)).subscribe(function (data) {
+                    _this.navigateBack();
+                    _this.flashMessageService.showMessage('Instance was created', 'success');
                 }, function (error) {
                     console.error(error);
+                    _this.fileService.deleteFile(idData);
+                    _this.fileService.deleteFile(idStatus);
                 });
-            }, function (error) { return console.error(error); });
-        }
+            }, function (error) {
+                _this.fileService.deleteFile(idStatus);
+                console.error(error);
+            });
+        }, function (error) { return console.error(error); });
     };
     InstanceCreateComponent.prototype.setForm = function () {
         this.instanceForm = new FormGroup({
@@ -87,6 +98,7 @@ export var InstanceCreateComponent = (function () {
     /** @nocollapse */
     InstanceCreateComponent.ctorParameters = [
         { type: Router, },
+        { type: FileService, },
         { type: FlashMessageService, },
         { type: InstanceService, },
     ];

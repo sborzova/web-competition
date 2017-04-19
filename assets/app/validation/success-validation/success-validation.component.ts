@@ -4,12 +4,10 @@ import { Subscription} from "rxjs";
 
 import { SolutionService } from "../../shared/solution.service";
 import { Validation } from "../validation.model";
-import { SolutionFindWorse } from "../solution-find-worse.model";
 import { SolutionCreate } from "../solution-create.model";
 import {SessionStorageService} from "../../shared/session-storage.service";
 import {Solution} from "../../shared/solution.model";
 import {Instance} from "../instance.model";
-import {Author} from "../../shared/author.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
 @Component({
@@ -72,6 +70,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
                     this.solutionForm.value.technique,
                     '',
                     null,
+                    false,
                     null,
                     new Instance(this.validation.instanceName))
                 ).subscribe(

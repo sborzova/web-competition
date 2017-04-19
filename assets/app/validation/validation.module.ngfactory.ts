@@ -15,14 +15,15 @@ import * as import7 from '@angular/forms/src/form_builder';
 import * as import8 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import9 from '@angular/common/src/localization';
 import * as import10 from '../shared/paper.service';
-import * as import11 from '../shared/solution.service';
-import * as import12 from '@angular/core/src/di/injector';
-import * as import13 from './validation.component.ngfactory';
-import * as import14 from '@angular/core/src/i18n/tokens';
-import * as import15 from './validation.component';
-import * as import16 from '@angular/http/src/http';
-import * as import17 from '../flash-message/flash-messages.service';
-import * as import18 from '@angular/router/src/router_config_loader';
+import * as import11 from '../shared/file.service';
+import * as import12 from '../shared/solution.service';
+import * as import13 from '@angular/core/src/di/injector';
+import * as import14 from './validation.component.ngfactory';
+import * as import15 from '@angular/core/src/i18n/tokens';
+import * as import16 from './validation.component';
+import * as import17 from '@angular/http/src/http';
+import * as import18 from '../flash-message/flash-messages.service';
+import * as import19 from '@angular/router/src/router_config_loader';
 class ValidationModuleInjector extends import0.NgModuleInjector<import1.ValidationModule> {
   _InternalFormsSharedModule_0:import2.InternalFormsSharedModule;
   _ReactiveFormsModule_1:import3.ReactiveFormsModule;
@@ -36,9 +37,10 @@ class ValidationModuleInjector extends import0.NgModuleInjector<import1.Validati
   __NgLocalization_9:import9.NgLocaleLocalization;
   __ROUTES_10:any[];
   __PaperService_11:import10.PaperService;
-  __SolutionService_12:import11.SolutionService;
-  constructor(parent:import12.Injector) {
-    super(parent,[import13.ValidationComponentNgFactory],[]);
+  __FileService_12:import11.FileService;
+  __SolutionService_13:import12.SolutionService;
+  constructor(parent:import13.Injector) {
+    super(parent,[import14.ValidationComponentNgFactory],[]);
   }
   get _FormBuilder_7():import7.FormBuilder {
     if ((this.__FormBuilder_7 == (null as any))) { (this.__FormBuilder_7 = new import7.FormBuilder()); }
@@ -49,7 +51,7 @@ class ValidationModuleInjector extends import0.NgModuleInjector<import1.Validati
     return this.__RadioControlRegistry_8;
   }
   get _NgLocalization_9():import9.NgLocaleLocalization {
-    if ((this.__NgLocalization_9 == (null as any))) { (this.__NgLocalization_9 = new import9.NgLocaleLocalization(this.parent.get(import14.LOCALE_ID))); }
+    if ((this.__NgLocalization_9 == (null as any))) { (this.__NgLocalization_9 = new import9.NgLocaleLocalization(this.parent.get(import15.LOCALE_ID))); }
     return this.__NgLocalization_9;
   }
   get _ROUTES_10():any[] {
@@ -57,7 +59,7 @@ class ValidationModuleInjector extends import0.NgModuleInjector<import1.Validati
           path: '',
             children: [{
               path: '',
-              component: import15.ValidationComponent
+              component: import16.ValidationComponent
             }
           ]
         }
@@ -65,12 +67,16 @@ class ValidationModuleInjector extends import0.NgModuleInjector<import1.Validati
     return this.__ROUTES_10;
   }
   get _PaperService_11():import10.PaperService {
-    if ((this.__PaperService_11 == (null as any))) { (this.__PaperService_11 = new import10.PaperService(this.parent.get(import16.Http))); }
+    if ((this.__PaperService_11 == (null as any))) { (this.__PaperService_11 = new import10.PaperService(this.parent.get(import17.Http))); }
     return this.__PaperService_11;
   }
-  get _SolutionService_12():import11.SolutionService {
-    if ((this.__SolutionService_12 == (null as any))) { (this.__SolutionService_12 = new import11.SolutionService(this.parent.get(import16.Http),this.parent.get(import17.FlashMessageService))); }
-    return this.__SolutionService_12;
+  get _FileService_12():import11.FileService {
+    if ((this.__FileService_12 == (null as any))) { (this.__FileService_12 = new import11.FileService(this.parent.get(import17.Http))); }
+    return this.__FileService_12;
+  }
+  get _SolutionService_13():import12.SolutionService {
+    if ((this.__SolutionService_13 == (null as any))) { (this.__SolutionService_13 = new import12.SolutionService(this.parent.get(import17.Http),this._PaperService_11,this.parent.get(import18.FlashMessageService),this._FileService_12)); }
+    return this.__SolutionService_13;
   }
   createInternal():import1.ValidationModule {
     this._InternalFormsSharedModule_0 = new import2.InternalFormsSharedModule();
@@ -93,9 +99,10 @@ class ValidationModuleInjector extends import0.NgModuleInjector<import1.Validati
     if ((token === import7.FormBuilder)) { return this._FormBuilder_7; }
     if ((token === import8.RadioControlRegistry)) { return this._RadioControlRegistry_8; }
     if ((token === import9.NgLocalization)) { return this._NgLocalization_9; }
-    if ((token === import18.ROUTES)) { return this._ROUTES_10; }
+    if ((token === import19.ROUTES)) { return this._ROUTES_10; }
     if ((token === import10.PaperService)) { return this._PaperService_11; }
-    if ((token === import11.SolutionService)) { return this._SolutionService_12; }
+    if ((token === import11.FileService)) { return this._FileService_12; }
+    if ((token === import12.SolutionService)) { return this._SolutionService_13; }
     return notFoundResult;
   }
   destroyInternal():void {

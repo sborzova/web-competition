@@ -2,21 +2,32 @@ import { Component, Input } from "@angular/core";
 import { SortService } from "../../shared/sort.service";
 import { SolutionService } from "../../shared/solution.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import { SessionStorageService } from "../../shared/session-storage.service";
 export var ResultsAuthorTechniqueComponent = (function () {
-    function ResultsAuthorTechniqueComponent(resultsService, flashMessageService, solutionService) {
+    function ResultsAuthorTechniqueComponent(resultsService, flashMessageService, sessionStorageService, solutionService) {
         this.resultsService = resultsService;
         this.flashMessageService = flashMessageService;
+        this.sessionStorageService = sessionStorageService;
         this.solutionService = solutionService;
         this.showPapers = false;
     }
     ResultsAuthorTechniqueComponent.prototype.ngOnChanges = function (changes) {
         this.solutionsAuthorInstanceTechnique = null;
     };
+    ResultsAuthorTechniqueComponent.prototype.isAdmin = function () {
+        return this.sessionStorageService.isAdmin();
+    };
     ResultsAuthorTechniqueComponent.prototype.onDownload = function (solution) {
         this.resultsService.download(solution);
     };
     ResultsAuthorTechniqueComponent.prototype.onDelete = function (solution) {
         this.solutionService.deleteSolutionObservable(solution);
+    };
+    ResultsAuthorTechniqueComponent.prototype.onSetVisible = function (solution) {
+        this.solutionService.setVisibleObservable(solution);
+    };
+    ResultsAuthorTechniqueComponent.prototype.onSetNotVisible = function (solution) {
+        this.solutionService.setNotVisibleObservable(solution);
     };
     ResultsAuthorTechniqueComponent.prototype.onShowPapers = function () {
         this.showPapers = true;
@@ -76,6 +87,7 @@ export var ResultsAuthorTechniqueComponent = (function () {
     ResultsAuthorTechniqueComponent.ctorParameters = [
         { type: SortService, },
         { type: FlashMessageService, },
+        { type: SessionStorageService, },
         { type: SolutionService, },
     ];
     ResultsAuthorTechniqueComponent.propDecorators = {

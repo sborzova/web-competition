@@ -12,6 +12,7 @@ var paperRoutes = require('./routes/paper');
 var solutionRoutes = require('./routes/solution');
 var preferenceRoutes = require('./routes/preference');
 var emailRoutes = require('./routes/email');
+var fileRoutes = require('./routes/file');
 
 var app = express();
 mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc');
@@ -92,6 +93,7 @@ app.use('/', paperRoutes);
 app.use('/', solutionRoutes);
 app.use('/', preferenceRoutes);
 app.use('/', emailRoutes);
+app.use('/', fileRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

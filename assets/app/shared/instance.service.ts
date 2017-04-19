@@ -4,12 +4,14 @@ import { Observable } from "rxjs";
 
 import { Instance } from "../instances/instance.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
+import {InstanceCreate} from "../instances/instance-create.model";
+import {FileModel} from "../instances/file.model";
+import {InstanceUpdate} from "../instances/instance-update.model";
 
 @Injectable()
 export class InstanceService {
     private instances: Instance[] = [];
     private hostUrl: string;
-    private xmlHttp;
     fileSaver = require('file-saver');
 
     constructor(private http: Http,
@@ -19,7 +21,7 @@ export class InstanceService {
         this.hostUrl = routeModule.hostUrl;
     }
 
-    saveInstance(instance: Instance){
+    saveInstance(instance: InstanceCreate){
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('instance'), body, {headers: headers})
@@ -44,29 +46,6 @@ export class InstanceService {
             });
     }
 
-    saveFiles(fd: FormData, id: string){
-        this.xmlHttp = new XMLHttpRequest();
-
-        return Observable.create(observer => {
-            const headers = new Headers({'Content-Type': 'multipart/form-data'});
-
-            this.xmlHttp.onreadystatechange = () => {
-                if (this.xmlHttp.readyState === 4) {
-                    if (this.xmlHttp.status === 200) {
-                        observer.next(this.xmlHttp.response);
-                        observer.complete();
-                    } else {
-                        observer.error(this.xmlHttp.response);
-                    }
-                }
-            };
-
-            this.xmlHttp.open("POST", this.hostUrl.concat('files/') + id);
-            this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
-            this.xmlHttp.send(fd);
-        });
-    }
-
     getInstance(id: string){
         return this.http.get(this.hostUrl.concat('instance/' + id))
             .map((response: Response) => {
@@ -75,8 +54,8 @@ export class InstanceService {
                     instance.order,
                     instance.name,
                     instance.description,
-                    instance.status,
-                    new Buffer(instance.data.data),
+                    new FileModel(new Buffer(instance.status.content), instance.status._id),
+                    new FileModel(new Buffer(instance.data.content), instance.data._id),
                     instance.submissionTime,
                     instance._id
                 );
@@ -86,12 +65,11 @@ export class InstanceService {
             });
     }
 
-    updateInstanceTextFields(instance: Instance){
-        instance = this.simplify(instance);
+    updateInstanceTextFields(instance: InstanceUpdate){
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(
-            this.hostUrl.concat('instanceTextFields/') + instance.instanceId, body, {headers: headers})
+            this.hostUrl.concat('instance/') + instance.instanceId, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -138,13 +116,9 @@ export class InstanceService {
     }
 
     download(instance: Instance){
-        let file = new File([String.fromCharCode.apply(null, instance.data)],
+        let file = new File([String.fromCharCode.apply(null, instance.data.content)],
             instance.name + '.xml', {type: "text/xml;charset=utf-8"});
         this.fileSaver.saveAs(file);
     }
 
-    simplify(instance: Instance){
-        instance.data = null;
-        return instance;
-    }
 }

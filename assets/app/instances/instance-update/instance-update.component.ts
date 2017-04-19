@@ -4,9 +4,11 @@ import { Router, ActivatedRoute, Params } from "@angular/router";
 
 import { InstanceService } from "../../shared/instance.service";
 import { Instance } from "../instance.model";
-import { Subscription } from "rxjs";
 import { minValue } from "../min-value.validator";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import {FileService} from "../../shared/file.service";
+import {FileModel} from "../file.model";
+import {InstanceUpdate} from "../instance-update.model";
 
 @Component({
     selector: 'app-instance-edit',
@@ -21,6 +23,7 @@ export class InstanceEditComponent implements OnInit {
 
     constructor(private router: Router,
                 private instanceService: InstanceService,
+                private fileService: FileService,
                 private route: ActivatedRoute,
                 private flashMessageService: FlashMessageService){
 
@@ -31,6 +34,7 @@ export class InstanceEditComponent implements OnInit {
         this.instanceService.getInstance(id)
             .subscribe(
                 (instance: Instance) => {
+                    console.log(instance);
                     this.instance = instance;
                     this.instanceForm = new FormGroup({
                         order: new FormControl(this.instance.order, [Validators.required, minValue(0)]),
@@ -44,11 +48,14 @@ export class InstanceEditComponent implements OnInit {
         this.submitted = true;
 
         if (this.instanceForm.valid){
-            this.instance.order = this.instanceForm.value.order;
-            this.instance.name = this.instanceForm.value.name;
-            this.instance.description = this.instanceForm.value.description;
+            let updateInstance = new InstanceUpdate(
+                this.instanceForm.value.order,
+                this.instanceForm.value.name,
+                this.instanceForm.value.description,
+                this.instance.instanceId
+            );
 
-            this.instanceService.updateInstanceTextFields(this.instance)
+            this.instanceService.updateInstanceTextFields(updateInstance)
                 .subscribe(
                     data => {
                         this.navigateBack();
@@ -63,29 +70,20 @@ export class InstanceEditComponent implements OnInit {
     saveFiles(){
         let statusInput = this.statusElem.nativeElement;
         let dataInput = this.dataElem.nativeElement;
-        let fd = new FormData();
-        let updateFiles : boolean = false;
-
-        if (statusInput.files && statusInput.files[0]){
-            fd.append('status', statusInput.files[0], statusInput.files[0].name);
-            updateFiles = true;
-        }else {
-            fd.append('status', null);
-        }
-
-        if (dataInput.files && dataInput.files[0]){
-            fd.append('data', dataInput.files[0], dataInput.files[0].name);
-            updateFiles = true;
-        }else {
-            fd.append('data', null);
-        }
-
-        if (updateFiles){
-            this.instanceService.saveFiles(fd, this.instance.instanceId)
+        if (statusInput.files && statusInput.files[0]) {
+            this.fileService.updateFile(new FileModel(statusInput.files[0], this.instance.status.id))
                 .subscribe(
-                    () => console.log("Data was saved"),
-                    error => console.error(error)
-                );
+                    data => {},
+                    error => this.flashMessageService.showMessage('Something went wrong', 'danger'),
+                )
+        }
+
+        if (dataInput.files && dataInput.files[0]) {
+            this.fileService.updateFile(new FileModel(dataInput.files[0], this.instance.data.id))
+                .subscribe(
+                    data => {},
+                    error => this.flashMessageService.showMessage('Something went wrong', 'danger'),
+                )
         }
     }
 

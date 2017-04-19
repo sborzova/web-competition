@@ -1,11 +1,17 @@
 import { Injectable } from "@angular/core";
+import { SolutionService } from "./solution.service";
 export var SortService = (function () {
-    function SortService() {
+    function SortService(solutionService) {
+        this.solutionService = solutionService;
         this.fileSaver = require('file-saver');
     }
     SortService.prototype.download = function (solution) {
-        var file = new File([String.fromCharCode.apply(null, solution.data)], 'solution-' + solution.instance.name + '.xml', { type: "text/xml;charset=utf-8" });
-        this.fileSaver.saveAs(file);
+        var _this = this;
+        this.solutionService.getSolution(solution.solutionId)
+            .subscribe(function (solution) {
+            var file = new File([String.fromCharCode.apply(null, solution.data.content)], 'solution-' + solution.instance.name + '.xml', { type: "text/xml;charset=utf-8" });
+            _this.fileSaver.saveAs(file);
+        }, function (error) { return console.error(error); });
     };
     SortService.prototype.sortQualityAsc = function (solutions) {
         return solutions.sort(function compare(a, b) {
@@ -189,6 +195,8 @@ export var SortService = (function () {
         { type: Injectable },
     ];
     /** @nocollapse */
-    SortService.ctorParameters = [];
+    SortService.ctorParameters = [
+        { type: SolutionService, },
+    ];
     return SortService;
 }());

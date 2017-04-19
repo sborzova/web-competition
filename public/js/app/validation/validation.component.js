@@ -1,6 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
 import { SolutionService } from "../shared/solution.service";
-import { SolutionCreate } from "./solution-create.model";
 import { Validation } from "./validation.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SessionStorageService } from "../shared/session-storage.service";
@@ -9,7 +8,6 @@ export var ValidationComponent = (function () {
         this.validationService = validationService;
         this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
-        this.solution = new SolutionCreate();
     }
     ValidationComponent.prototype.ngOnInit = function () {
         if (!this.showValidator()) {

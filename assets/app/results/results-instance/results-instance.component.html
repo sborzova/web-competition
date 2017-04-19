@@ -47,7 +47,8 @@
             </th>
             <th rowspan="2"></th>
             <th rowspan="2"></th>
-            <th rowspan="2"></th>
+            <th rowspan="2" *ngIf="isAdmin()"></th>
+            <th rowspan="2" *ngIf="isAdmin()"></th>
         </tr>
         <tr>
             <th>Unassigned variables</th>
@@ -85,6 +86,23 @@
             </td>
             <td>
                 <button
+                        *ngIf="isAdmin() && !solution.visible"
+                        (click)="onSetVisible(solution)"
+                        class="btn btn-default btn-xs"
+                        title="Hide solution">
+                    <i class="glyphicon glyphicon-eye-close"></i>
+                </button>
+                <button
+                        *ngIf="isAdmin() && solution.visible"
+                        (click)="onSetNotVisible(solution)"
+                        class="btn btn-default btn-xs"
+                        title="Show solution">
+                    <i class="glyphicon glyphicon-eye-open"></i>
+                </button>
+            </td>
+            <td>
+                <button
+                        *ngIf="isAdmin()"
                         class="btn btn-danger btn-xs"
                         title="Delete solution"
                         (click)="onDelete(solution)">

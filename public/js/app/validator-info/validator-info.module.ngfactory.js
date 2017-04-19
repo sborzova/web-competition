@@ -14,22 +14,24 @@ import * as import2 from '@angular/common/src/common_module';
 import * as import3 from '../escape-html.module';
 import * as import4 from '@angular/router/src/router_module';
 import * as import5 from '@angular/common/src/localization';
-import * as import6 from '../shared/solution.service';
-import * as import8 from './validator-info.component.ngfactory';
-import * as import9 from '@angular/core/src/i18n/tokens';
-import * as import10 from './validator-info.component';
-import * as import11 from '@angular/http/src/http';
-import * as import12 from '../flash-message/flash-messages.service';
-import * as import13 from '@angular/router/src/router_config_loader';
+import * as import6 from '../shared/paper.service';
+import * as import7 from '../shared/file.service';
+import * as import8 from '../shared/solution.service';
+import * as import10 from './validator-info.component.ngfactory';
+import * as import11 from '@angular/core/src/i18n/tokens';
+import * as import12 from './validator-info.component';
+import * as import13 from '@angular/http/src/http';
+import * as import14 from '../flash-message/flash-messages.service';
+import * as import15 from '@angular/router/src/router_config_loader';
 var ValidatorInfoModuleInjector = (function (_super) {
     __extends(ValidatorInfoModuleInjector, _super);
     function ValidatorInfoModuleInjector(parent) {
-        _super.call(this, parent, [import8.ValidatorInfoComponentNgFactory], []);
+        _super.call(this, parent, [import10.ValidatorInfoComponentNgFactory], []);
     }
     Object.defineProperty(ValidatorInfoModuleInjector.prototype, "_NgLocalization_4", {
         get: function () {
             if ((this.__NgLocalization_4 == null)) {
-                (this.__NgLocalization_4 = new import5.NgLocaleLocalization(this.parent.get(import9.LOCALE_ID)));
+                (this.__NgLocalization_4 = new import5.NgLocaleLocalization(this.parent.get(import11.LOCALE_ID)));
             }
             return this.__NgLocalization_4;
         },
@@ -43,7 +45,7 @@ var ValidatorInfoModuleInjector = (function (_super) {
                             path: '',
                             children: [{
                                     path: '',
-                                    component: import10.ValidatorInfoComponent
+                                    component: import12.ValidatorInfoComponent
                                 }
                             ]
                         }
@@ -54,12 +56,32 @@ var ValidatorInfoModuleInjector = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ValidatorInfoModuleInjector.prototype, "_SolutionService_6", {
+    Object.defineProperty(ValidatorInfoModuleInjector.prototype, "_PaperService_6", {
         get: function () {
-            if ((this.__SolutionService_6 == null)) {
-                (this.__SolutionService_6 = new import6.SolutionService(this.parent.get(import11.Http), this.parent.get(import12.FlashMessageService)));
+            if ((this.__PaperService_6 == null)) {
+                (this.__PaperService_6 = new import6.PaperService(this.parent.get(import13.Http)));
             }
-            return this.__SolutionService_6;
+            return this.__PaperService_6;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ValidatorInfoModuleInjector.prototype, "_FileService_7", {
+        get: function () {
+            if ((this.__FileService_7 == null)) {
+                (this.__FileService_7 = new import7.FileService(this.parent.get(import13.Http)));
+            }
+            return this.__FileService_7;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ValidatorInfoModuleInjector.prototype, "_SolutionService_8", {
+        get: function () {
+            if ((this.__SolutionService_8 == null)) {
+                (this.__SolutionService_8 = new import8.SolutionService(this.parent.get(import13.Http), this._PaperService_6, this.parent.get(import14.FlashMessageService), this._FileService_7));
+            }
+            return this.__SolutionService_8;
         },
         enumerable: true,
         configurable: true
@@ -87,11 +109,17 @@ var ValidatorInfoModuleInjector = (function (_super) {
         if ((token === import5.NgLocalization)) {
             return this._NgLocalization_4;
         }
-        if ((token === import13.ROUTES)) {
+        if ((token === import15.ROUTES)) {
             return this._ROUTES_5;
         }
-        if ((token === import6.SolutionService)) {
-            return this._SolutionService_6;
+        if ((token === import6.PaperService)) {
+            return this._PaperService_6;
+        }
+        if ((token === import7.FileService)) {
+            return this._FileService_7;
+        }
+        if ((token === import8.SolutionService)) {
+            return this._SolutionService_8;
         }
         return notFoundResult;
     };

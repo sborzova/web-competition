@@ -1,88 +1,56 @@
 var express = require('express');
 var router = express.Router();
-var multer = require('multer');
-var iconv = require('iconv-lite');
-
-var storage = multer.memoryStorage();
-var upload = multer({ storage: storage });
-var fileUpload = upload.fields([{ name: 'status', maxCount: 1 }, { name: 'data', maxCount: 1 }]);
 
 var Instance = require('../models/instance');
+var File = require('../models/file');
 
 router.post('/instance', function (req, res) {
-    try{
-        var instance = new Instance({
-            order: req.body.order,
-            name: req.body.name,
-            description: req.body.description
-        });
-    } catch (err){
-        return res.status(500).json({
-            title: 'An error occurred',
-            error: err
-        });
-    }
-    instance.save(function (err, result) {
-        if (err) {
-            return res.status(422).json({
-                title: 'An error occurred',
-                error: {message: 'Instance with this name is already in use', error: err}
-            });
-        }
-
-        res.status(201).json({
-            message: 'Saved instance',
-            obj: {message: 'Instance was created', data: result}
-        });
-    });
-});
-
-router.post('/files/:id', function (req, res, next) {
-    Instance.findById(req.params.id, function (err, instance) {
+    File.findById(req.body.dataId, function (err, data) {
         if (err) {
             return res.status(500).json({
                 title: 'An error occurred',
                 error: err
             });
         }
-        if (!instance) {
-            return res.status(500).json({
-                title: 'No Instance Found!',
-                error: {message: 'Instance not found'}
-            });
-        }
-        fileUpload(req, res, function(err) {
+        File.findById(req.body.statusId, function (err, status) {
             if (err) {
                 return res.status(500).json({
                     title: 'An error occurred',
                     error: err
                 });
             }
-
-            if (req.files['status'] && req.files['status'][0]){
-                instance.status = req.files['status'][0].buffer.toString();
+            try {
+                var instance = new Instance({
+                    order: req.body.order,
+                    name: req.body.name,
+                    description: req.body.description,
+                    data: data,
+                    status: status
+                });
+            } catch (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
             }
-            if (req.files['data'] && req.files['data'][0]){
-                instance.data = iconv.decode(req.files['data'][0].buffer, 'utf-8', {addBom : false});
-            }
-
             instance.save(function (err, result) {
                 if (err) {
-                    return res.status(500).json({
+                    return res.status(422).json({
                         title: 'An error occurred',
-                        error: err
+                        error: {message: 'Instance with this name is already in use', error: err}
                     });
                 }
-                res.status(200).json({
-                    message: 'Files saved',
-                    obj: result
+
+                res.status(201).json({
+                    message: 'Saved instance',
+                    obj: {message: 'Instance was created', data: result}
                 });
             });
         });
     });
 });
 
-router.patch('/instanceTextFields/:id', function (req, res, next) {
+router.patch('/instance/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
         if (err) {
             return res.status(500).json({
@@ -118,24 +86,27 @@ router.patch('/instanceTextFields/:id', function (req, res, next) {
 });
 
 router.get('/instance/:id', function(req, res, next) {
-    Instance.findById(req.params.id, function(err, instance) {
-        if (err) {
-            return res.status(500).json({
-                title: 'An error occurred',
-                error: err
+    Instance.findById(req.params.id)
+        .populate('status')
+        .populate('data')
+        .exec(function(err, instance){
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+            if (!instance) {
+                return res.status(500).json({
+                    title: 'No Instance Found!',
+                    error: {message: 'Instance not found'}
+                });
+            }
+            res.status(200).json({
+                message: 'Success',
+                obj: instance
             });
-        }
-        if (!instance) {
-            return res.status(500).json({
-                title: 'No Instance Found!',
-                error: {message: 'Instance not found'}
-            });
-        }
-        res.status(200).json({
-            message: 'Success',
-            obj: instance
         });
-    });
 });
 
 router.get('/instances', function(req, res, next) {

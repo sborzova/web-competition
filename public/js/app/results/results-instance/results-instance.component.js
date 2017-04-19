@@ -2,18 +2,29 @@ import { Component, Input } from "@angular/core";
 import { SortService } from "../../shared/sort.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { SolutionService } from "../../shared/solution.service";
+import { SessionStorageService } from "../../shared/session-storage.service";
 export var ResultsInstanceComponent = (function () {
-    function ResultsInstanceComponent(sortService, solutionService, flashMessageService) {
+    function ResultsInstanceComponent(sortService, solutionService, sessionStorageService, flashMessageService) {
         this.sortService = sortService;
         this.solutionService = solutionService;
+        this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
         this.showPapers = false;
     }
     ResultsInstanceComponent.prototype.ngOnChanges = function (changes) {
         this.solutionsAuthorInstance = null;
     };
+    ResultsInstanceComponent.prototype.isAdmin = function () {
+        return this.sessionStorageService.isAdmin();
+    };
     ResultsInstanceComponent.prototype.onDelete = function (solution) {
         this.solutionService.deleteSolutionObservable(solution);
+    };
+    ResultsInstanceComponent.prototype.onSetVisible = function (solution) {
+        this.solutionService.setVisibleObservable(solution);
+    };
+    ResultsInstanceComponent.prototype.onSetNotVisible = function (solution) {
+        this.solutionService.setNotVisibleObservable(solution);
     };
     ResultsInstanceComponent.prototype.onDownload = function (solution) {
         this.sortService.download(solution);
@@ -85,6 +96,7 @@ export var ResultsInstanceComponent = (function () {
     ResultsInstanceComponent.ctorParameters = [
         { type: SortService, },
         { type: SolutionService, },
+        { type: SessionStorageService, },
         { type: FlashMessageService, },
     ];
     ResultsInstanceComponent.propDecorators = {

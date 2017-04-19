@@ -2,9 +2,11 @@ import { Component, Input } from "@angular/core";
 import { SortService } from "../../shared/sort.service";
 import { SolutionService } from "../../shared/solution.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import { SessionStorageService } from "../../shared/session-storage.service";
 export var ResultsAuthorInstanceTechniqueComponent = (function () {
-    function ResultsAuthorInstanceTechniqueComponent(resultsService, flashMessageService, solutionService) {
+    function ResultsAuthorInstanceTechniqueComponent(resultsService, sessionStorageService, flashMessageService, solutionService) {
         this.resultsService = resultsService;
+        this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
         this.solutionService = solutionService;
         this.showPapers = false;
@@ -12,8 +14,17 @@ export var ResultsAuthorInstanceTechniqueComponent = (function () {
     ResultsAuthorInstanceTechniqueComponent.prototype.onDownload = function (solution) {
         this.resultsService.download(solution);
     };
+    ResultsAuthorInstanceTechniqueComponent.prototype.isAdmin = function () {
+        return this.sessionStorageService.isAdmin();
+    };
     ResultsAuthorInstanceTechniqueComponent.prototype.onDelete = function (solution) {
         this.solutionService.deleteSolutionObservable(solution);
+    };
+    ResultsAuthorInstanceTechniqueComponent.prototype.onSetVisible = function (solution) {
+        this.solutionService.setVisibleObservable(solution);
+    };
+    ResultsAuthorInstanceTechniqueComponent.prototype.onSetNotVisible = function (solution) {
+        this.solutionService.setNotVisibleObservable(solution);
     };
     ResultsAuthorInstanceTechniqueComponent.prototype.onShowPapers = function () {
         this.showPapers = true;
@@ -72,6 +83,7 @@ export var ResultsAuthorInstanceTechniqueComponent = (function () {
     /** @nocollapse */
     ResultsAuthorInstanceTechniqueComponent.ctorParameters = [
         { type: SortService, },
+        { type: SessionStorageService, },
         { type: FlashMessageService, },
         { type: SolutionService, },
     ];

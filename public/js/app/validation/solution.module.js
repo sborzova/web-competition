@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { SolutionService } from "../shared/solution.service";
+import { FileService } from "../shared/file.service";
 export var SolutionModule = (function () {
     function SolutionModule() {
     }
@@ -10,7 +11,7 @@ export var SolutionModule = (function () {
                     imports: [
                         CommonModule,
                     ],
-                    providers: [SolutionService]
+                    providers: [SolutionService, FileService]
                 },] },
     ];
     /** @nocollapse */

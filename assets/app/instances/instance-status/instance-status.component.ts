@@ -3,7 +3,6 @@ import { ActivatedRoute, Params } from "@angular/router";
 
 import { Instance } from "../instance.model";
 import { InstanceService } from "../../shared/instance.service";
-import { Subscription } from "rxjs";
 
 @Component({
     selector: 'app-instance-stats',
@@ -21,6 +20,7 @@ export class InstanceStatusComponent implements OnInit {
             .subscribe(
                 (instance: Instance) => {
                     this.instance = instance;
+                    console.log(instance)
             });
     }
 }

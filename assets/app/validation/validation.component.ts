@@ -11,7 +11,7 @@ import {SessionStorageService} from "../shared/session-storage.service";
     templateUrl: './validation.component.html'
 })
 export class ValidationComponent implements OnInit {
-    solution: SolutionCreate = new SolutionCreate();
+    // solution: SolutionCreate = new SolutionCreate();
     @ViewChild('solution') solutionElem;
 
     constructor(private validationService: SolutionService,

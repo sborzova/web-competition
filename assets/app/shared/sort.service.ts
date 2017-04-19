@@ -1,14 +1,23 @@
 import {Injectable} from "@angular/core";
 import {Solution} from "./solution.model";
+import {SolutionService} from "./solution.service";
 
 @Injectable()
 export class SortService {
     fileSaver = require('file-saver');
 
+    constructor(private solutionService: SolutionService){}
+
     download(solution: Solution){
-        let file = new File([String.fromCharCode.apply(null, solution.data)],
-            'solution-' + solution.instance.name + '.xml', {type: "text/xml;charset=utf-8"});
-        this.fileSaver.saveAs(file);
+        this.solutionService.getSolution(solution.solutionId)
+            .subscribe(
+                (solution: Solution) => {
+                    let file = new File([String.fromCharCode.apply(null, solution.data.content)],
+                        'solution-' + solution.instance.name + '.xml', {type: "text/xml;charset=utf-8"});
+                    this.fileSaver.saveAs(file);
+                },
+                error => console.error(error)
+            );
     }
 
     sortQualityAsc(solutions: Solution[]){

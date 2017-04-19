@@ -19,17 +19,18 @@ import * as import7 from '@angular/forms/src/form_builder';
 import * as import8 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import9 from '@angular/common/src/localization';
 import * as import10 from '../shared/paper.service';
-import * as import11 from '../shared/solution.service';
-import * as import13 from './validation.component.ngfactory';
-import * as import14 from '@angular/core/src/i18n/tokens';
-import * as import15 from './validation.component';
-import * as import16 from '@angular/http/src/http';
-import * as import17 from '../flash-message/flash-messages.service';
-import * as import18 from '@angular/router/src/router_config_loader';
+import * as import11 from '../shared/file.service';
+import * as import12 from '../shared/solution.service';
+import * as import14 from './validation.component.ngfactory';
+import * as import15 from '@angular/core/src/i18n/tokens';
+import * as import16 from './validation.component';
+import * as import17 from '@angular/http/src/http';
+import * as import18 from '../flash-message/flash-messages.service';
+import * as import19 from '@angular/router/src/router_config_loader';
 var ValidationModuleInjector = (function (_super) {
     __extends(ValidationModuleInjector, _super);
     function ValidationModuleInjector(parent) {
-        _super.call(this, parent, [import13.ValidationComponentNgFactory], []);
+        _super.call(this, parent, [import14.ValidationComponentNgFactory], []);
     }
     Object.defineProperty(ValidationModuleInjector.prototype, "_FormBuilder_7", {
         get: function () {
@@ -54,7 +55,7 @@ var ValidationModuleInjector = (function (_super) {
     Object.defineProperty(ValidationModuleInjector.prototype, "_NgLocalization_9", {
         get: function () {
             if ((this.__NgLocalization_9 == null)) {
-                (this.__NgLocalization_9 = new import9.NgLocaleLocalization(this.parent.get(import14.LOCALE_ID)));
+                (this.__NgLocalization_9 = new import9.NgLocaleLocalization(this.parent.get(import15.LOCALE_ID)));
             }
             return this.__NgLocalization_9;
         },
@@ -68,7 +69,7 @@ var ValidationModuleInjector = (function (_super) {
                             path: '',
                             children: [{
                                     path: '',
-                                    component: import15.ValidationComponent
+                                    component: import16.ValidationComponent
                                 }
                             ]
                         }
@@ -82,19 +83,29 @@ var ValidationModuleInjector = (function (_super) {
     Object.defineProperty(ValidationModuleInjector.prototype, "_PaperService_11", {
         get: function () {
             if ((this.__PaperService_11 == null)) {
-                (this.__PaperService_11 = new import10.PaperService(this.parent.get(import16.Http)));
+                (this.__PaperService_11 = new import10.PaperService(this.parent.get(import17.Http)));
             }
             return this.__PaperService_11;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ValidationModuleInjector.prototype, "_SolutionService_12", {
+    Object.defineProperty(ValidationModuleInjector.prototype, "_FileService_12", {
         get: function () {
-            if ((this.__SolutionService_12 == null)) {
-                (this.__SolutionService_12 = new import11.SolutionService(this.parent.get(import16.Http), this.parent.get(import17.FlashMessageService)));
+            if ((this.__FileService_12 == null)) {
+                (this.__FileService_12 = new import11.FileService(this.parent.get(import17.Http)));
             }
-            return this.__SolutionService_12;
+            return this.__FileService_12;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ValidationModuleInjector.prototype, "_SolutionService_13", {
+        get: function () {
+            if ((this.__SolutionService_13 == null)) {
+                (this.__SolutionService_13 = new import12.SolutionService(this.parent.get(import17.Http), this._PaperService_11, this.parent.get(import18.FlashMessageService), this._FileService_12));
+            }
+            return this.__SolutionService_13;
         },
         enumerable: true,
         configurable: true
@@ -140,14 +151,17 @@ var ValidationModuleInjector = (function (_super) {
         if ((token === import9.NgLocalization)) {
             return this._NgLocalization_9;
         }
-        if ((token === import18.ROUTES)) {
+        if ((token === import19.ROUTES)) {
             return this._ROUTES_10;
         }
         if ((token === import10.PaperService)) {
             return this._PaperService_11;
         }
-        if ((token === import11.SolutionService)) {
-            return this._SolutionService_12;
+        if ((token === import11.FileService)) {
+            return this._FileService_12;
+        }
+        if ((token === import12.SolutionService)) {
+            return this._SolutionService_13;
         }
         return notFoundResult;
     };

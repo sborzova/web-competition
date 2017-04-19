@@ -20,6 +20,7 @@ import * as import10 from '@angular/core/src/metadata/view';
 import * as import11 from '@angular/core/src/linker/component_factory';
 import * as import12 from '@angular/common/src/directives/ng_if';
 import * as import13 from '@angular/core/src/linker/template_ref';
+import * as import14 from '@angular/core/src/security';
 var renderType_InstanceStatusComponent_Host = null;
 var _View_InstanceStatusComponent_Host0 = (function (_super) {
     __extends(_View_InstanceStatusComponent_Host0, _super);
@@ -134,19 +135,23 @@ var _View_InstanceStatusComponent1 = (function (_super) {
     }
     _View_InstanceStatusComponent1.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
-        this._text_1 = this.renderer.createText(this._el_0, '', null);
+        this._text_1 = this.renderer.createText(this._el_0, '\n                    ', null);
+        this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
+        this._text_3 = this.renderer.createText(this._el_0, '\n               ', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [
             this._el_0,
-            this._text_1
+            this._text_1,
+            this._el_2,
+            this._text_3
         ], [], []);
         return null;
     };
     _View_InstanceStatusComponent1.prototype.detectChangesInternal = function (throwOnChange) {
         this.detectContentChildrenChanges(throwOnChange);
-        var currVal_0 = import4.interpolate(1, '\n                    ', this.parent.context.instance.status, '\n               ');
+        var currVal_0 = this.parent.context.instance.status.content;
         if (import4.checkBinding(throwOnChange, this._expr_0, currVal_0)) {
-            this.renderer.setText(this._text_1, currVal_0);
+            this.renderer.setElementProperty(this._el_2, 'innerHTML', this.viewUtils.sanitizer.sanitize(import14.SecurityContext.HTML, currVal_0));
             this._expr_0 = currVal_0;
         }
         this.detectViewChildrenChanges(throwOnChange);

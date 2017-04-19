@@ -3,9 +3,7 @@ var router = express.Router();
 var jwt = require('jsonwebtoken');
 var multer = require('multer');
 var https = require('https');
-var http = require('http');
 var iconv = require('iconv-lite');
-
 var storage = multer.memoryStorage();
 var fileUpload = multer({ storage: storage }).single('solution');
 
@@ -13,7 +11,7 @@ var Solution = require('../models/solution');
 var Instance = require('../models/instance');
 var User = require('../models/user');
 var Paper = require('../models/paper');
-
+var File = require('../models/file');
 
 router.post('/validator', function (req, res, next) {
     fileUpload(req, res, function (err) {
@@ -102,79 +100,52 @@ router.post('/solution', function (req, res, next) {
                         error: err
                     });
                 }
-                try{
-                    var solution = new Solution({
-                        unassigned: req.body.unassigned,
-                        total: req.body.total,
-                        sc: req.body.sc,
-                        time: req.body.time,
-                        room: req.body.room,
-                        distr: req.body.distr,
-                        technique: req.body.technique,
-                        info: req.body.info,
-                        instance: instance,
-                        user: user,
-                        paper: paper
-                    });
-                } catch (err){
-                    return res.status(500).json({
-                        title: 'An error occurred',
-                        error: err
-                    });
-                }
-                solution.save(function (err, solution) {
+                File.findById(req.body.fileId, function (err, data) {
                     if (err) {
                         return res.status(500).json({
                             title: 'An error occurred',
                             error: err
                         });
                     }
-                    res.status(201).json({
-                        message: 'Saved solution',
-                        obj: {message: 'Solution was created', data: solution}
+                    if (!data) {
+                        return res.status(500).json({
+                            title: 'No File Found!',
+                            error: {message: 'File not found'}
+                        });
+                    }
+                    try {
+                        var solution = new Solution({
+                            unassigned: req.body.unassigned,
+                            total: req.body.total,
+                            sc: req.body.sc,
+                            time: req.body.time,
+                            room: req.body.room,
+                            distr: req.body.distr,
+                            technique: req.body.technique,
+                            info: req.body.info,
+                            instance: instance,
+                            user: user,
+                            paper: paper,
+                            data: data
+                        });
+                    } catch (err) {
+                        return res.status(500).json({
+                            title: 'An error occurred',
+                            error: err
+                        });
+                    }
+                    solution.save(function (err, solution) {
+                        if (err) {
+                            return res.status(500).json({
+                                title: 'An error occurred',
+                                error: err
+                            });
+                        }
+                        res.status(201).json({
+                            message: 'Saved solution',
+                            obj: solution
+                        });
                     });
-                });
-            });
-        });
-    });
-});
-
-router.post('/solutionFile/:id', function (req, res, next) {
-    Solution.findById(req.params.id, function (err, solution) {
-        if (err) {
-            return res.status(500).json({
-                title: 'An error occurred',
-                error: err
-            });
-        }
-        if (!solution) {
-            return res.status(500).json({
-                title: 'No Solution Found!',
-                error: {message: 'Solution not found'}
-            });
-        }
-        fileUpload(req, res, function(err) {
-            if (err) {
-                return res.status(500).json({
-                    title: 'An error occurred',
-                    error: err
-                });
-            }
-
-            if (req.file.buffer){
-                solution.data = iconv.decode(req.file.buffer, 'utf-8', {addBom : false});
-            }
-
-            solution.save(function (err, result) {
-                if (err) {
-                    return res.status(500).json({
-                        title: 'An error occurred',
-                        error: err
-                    });
-                }
-                res.status(200).json({
-                    message: 'File to solution saved',
-                    obj: result
                 });
             });
         });
@@ -254,6 +225,38 @@ router.patch('/solutionAddPaper/:id', function (req, res, next) {
     });
 });
 
+router.patch('/solutionVisibility/:id', function (req, res, next) {
+    Solution.findById(req.params.id, function (err, solution) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!solution) {
+            return res.status(500).json({
+                title: 'No Solution Found!',
+                error: {message: 'Solution not found'}
+            });
+        }
+
+        solution.visible = req.body.visible;
+
+        solution.save(function (err, result) {
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+            res.status(200).json({
+                message: 'Updated solution',
+                obj: result
+            });
+        });
+    });
+});
+
 router.get('/solutions', function (req, res, next) {
     Solution.find()
         .populate('user')
@@ -282,6 +285,7 @@ router.get('/solutions', function (req, res, next) {
 router.get('/solution/:id', function (req, res, next) {
     Solution.findById(req.params.id)
         .populate('user')
+        .populate('data')
         .populate('instance')
         .populate('paper')
         .exec(function (err, solution) {
@@ -307,6 +311,7 @@ router.get('/solution/:id', function (req, res, next) {
 router.get('/solutionsByInstance/:id', function (req, res, next) {
     Solution.find()
         .populate('instance')
+        .populate('data')
         .populate('paper')
         .populate('user')
         .where('instance').equals(req.params.id)
@@ -335,6 +340,7 @@ router.get('/solutionsByUser/:id', function (req, res, next) {
         .populate('instance')
         .populate('paper')
         .populate('user')
+        .populate('data')
         .where('user').equals(req.params.id)
         .exec(function (err, solutions) {
             if (err) {
@@ -399,7 +405,6 @@ router.post('/duplicateSolution', function (req, res, next) {
             });
         }
         Solution.findOne()
-            .populate('paper')
             .where('user').equals(decoded.user._id)
             .where('instance').equals(instance._id)
             .where('technique').equals(req.body.technique)

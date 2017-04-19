@@ -9,6 +9,7 @@ import {InstanceEditComponent} from "./instance-update/instance-update.component
 import {InstanceStatusComponent} from "./instance-status/instance-status.component";
 import {OrderByModule} from "../order-by.module";
 import {InstanceService} from "../shared/instance.service";
+import {FileService} from "../shared/file.service";
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import {InstanceService} from "../shared/instance.service";
     ],
     providers: [
         InstanceService,
+        FileService
     ]
 })
 export class InstanceModule {}
