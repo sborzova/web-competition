@@ -15,5 +15,6 @@ var APP_ROUTES = [
     { path: '#solution/validatorinfo/:id', loadChildren: '../app/validator-info/validator-info.module#ValidatorInfoModule' },
 ];
 // export const hostUrl = 'http://localhost:3000/';
-export var hostUrl = 'https://test-cttcompetition.herokuapp.com/';
+// export const hostUrl = 'https://test-cttcompetition.herokuapp.com/';
+export var hostUrl = 'https://test-cttcompetition.azurewebsites.net//';
 export var routing = RouterModule.forRoot(APP_ROUTES);
