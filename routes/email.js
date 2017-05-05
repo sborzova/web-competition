@@ -37,7 +37,7 @@ router.post('/server/resetpassword', function (req, res, next) {
         var subject = 'Reset password';
         var content = new helper.Content('text/html',
             "<html><body>" +
-            "<h5>Dear user!</h5>" +
+            "<div>Dear user!</div>" +
             "<div>Your new password is: </div>"+
              newPassword +
             "<div>You can change it in your profile after login.</div>" +
