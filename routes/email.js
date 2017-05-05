@@ -35,9 +35,15 @@ router.post('/server/resetpassword', function (req, res, next) {
         var from_email = new helper.Email('no-reply@testcttcompetition.herokuapp.com');
         var to_email = new helper.Email(req.body.receiver);
         var subject = 'Reset password';
-        var content = new helper.Content('text/plain',
-            'Dear user!/n Your new password is: ' + newPassword + '/n You can change it in your profile after login./n'
-            + 'If you did not request this, please ignore this email.');
+        var content = new helper.Content('text/html',
+            "<html><body>" +
+            "<h5>Dear user!</h5>" +
+            "<div>Your new password is: </div>"+
+             newPassword +
+            "<div>You can change it in your profile after login.</div>" +
+            "<div></div>" +
+            "<div>If you did not request this, please ignore this email.</div> " +
+            "</body></html>");
         var mail = new helper.Mail(from_email, subject, to_email, content);
 
         var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
