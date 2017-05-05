@@ -10,11 +10,15 @@ export var EmailService = (function () {
         this.hostUrl = routeModule.hostUrl;
     }
     EmailService.prototype.sendEmailNewPassword = function (email) {
+        var _this = this;
         return this.http.post(this.hostUrl.concat('server/emailpassword/') + email, '')
             .map(function (response) {
             return response.json();
         })
             .catch(function (error) {
+            if (error.status === 422) {
+                _this.flashMessageService.showMessage('Account with this e-mail address does not exist.', 'danger');
+            }
             return Observable.throw(error);
         });
     };

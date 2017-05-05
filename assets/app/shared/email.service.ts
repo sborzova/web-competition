@@ -20,6 +20,9 @@ export class EmailService {
                 return response.json();
             })
             .catch((error: Response) => {
+                if (error.status === 422){
+                    this.flashMessageService.showMessage('Account with this e-mail address does not exist.', 'danger' );
+                }
                 return Observable.throw(error);
             });
     }

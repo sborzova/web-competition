@@ -45,13 +45,13 @@ export var SigninComponent = (function () {
         document.getElementById('openEmailForm').click();
     };
     SigninComponent.prototype.onSubmitEmail = function () {
+        var _this = this;
         this.submittedEmailForm = true;
         if (this.emailForm.valid) {
             document.getElementById('hideEmailForm').click();
             this.submittedEmailForm = false;
             this.emailService.sendEmailNewPassword(this.emailForm.value.email)
-                .subscribe(function () { }, function (error) { return console.error(error); });
-            this.flashMessageService.showMessage('Email with the new password was send.', 'success');
+                .subscribe(function () { return _this.flashMessageService.showMessage('Email with the new password was send.', 'success'); }, function (error) { return console.error(error); });
         }
     };
     SigninComponent.decorators = [

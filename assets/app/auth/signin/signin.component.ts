@@ -66,10 +66,10 @@ export class SigninComponent {
             this.submittedEmailForm = false;
             this.emailService.sendEmailNewPassword(this.emailForm.value.email)
                 .subscribe(
-                    () => {},
+                    () => this.flashMessageService.showMessage('Email with the new password was send.', 'success'),
                     error => console.error(error)
                 );
-            this.flashMessageService.showMessage('Email with the new password was send.', 'success');
+
         }
     }
 }

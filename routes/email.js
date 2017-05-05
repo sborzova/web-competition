@@ -4,7 +4,7 @@ var router = express.Router();
 var User = require('../models/user');
 
 /**
- *  change password when forgotten
+ *  Create new password, save it in the database and send email
  */
 
 router.post('/server/emailpassword/:email', function (req, res, next) {
@@ -16,7 +16,7 @@ router.post('/server/emailpassword/:email', function (req, res, next) {
             });
         }
         if (!user) {
-            return res.status(500).json({
+            return res.status(422).json({
                 title: 'No User Found!',
                 error: {message: 'User not found'}
             });
@@ -28,10 +28,10 @@ router.post('/server/emailpassword/:email', function (req, res, next) {
         for( var i=0; i < 10; i++ )
             newPassword += possible.charAt(Math.floor(Math.random() * possible.length));
 
-        // user.password = bcrypt.hashSync(newPassword, 10);
+        user.password = bcrypt.hashSync(newPassword, 10);
 
         var helper = require('sendgrid').mail;
-        var from_email = new helper.Email('no-reply@test-cttcompetition.com');
+        var from_email = new helper.Email('no-reply@testcttcompetition.com');
         var to_email = new helper.Email(req.params.email);
         var subject = 'Reset password';
         var content = new helper.Content('text/plain',
@@ -39,7 +39,7 @@ router.post('/server/emailpassword/:email', function (req, res, next) {
             + 'If you did not request this, please ignore this email.');
         var mail = new helper.Mail(from_email, subject, to_email, content);
 
-        var sg = require('sendgrid')();
+        var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
         var request = sg.emptyRequest({
             method: 'POST',
             path: '/v3/mail/send',
