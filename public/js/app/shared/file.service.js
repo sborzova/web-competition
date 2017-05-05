@@ -24,7 +24,7 @@ export var FileService = (function () {
             };
             var fd = new FormData();
             fd.append('file', file);
-            _this.xmlHttp.open("POST", _this.hostUrl.concat('file'));
+            _this.xmlHttp.open("POST", _this.hostUrl.concat('server/file'));
             _this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
             _this.xmlHttp.send(fd);
         });
@@ -46,13 +46,13 @@ export var FileService = (function () {
             };
             var fd = new FormData();
             fd.append('file', file.content);
-            _this.xmlHttp.open("POST", _this.hostUrl.concat('fileUpdate/') + file.id);
+            _this.xmlHttp.open("POST", _this.hostUrl.concat('server/fileUpdate/') + file.id);
             _this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
             _this.xmlHttp.send(fd);
         });
     };
     FileService.prototype.deleteFile = function (id) {
-        return this.http.delete(this.hostUrl.concat('delete/') + id)
+        return this.http.delete(this.hostUrl.concat('server/delete/') + id)
             .map(function (response) {
             return response.json();
         })

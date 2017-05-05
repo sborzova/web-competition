@@ -60,7 +60,7 @@ export var InstanceEditComponent = (function () {
         this.navigateBack();
     };
     InstanceEditComponent.prototype.navigateBack = function () {
-        this.router.navigate(['/#instances']);
+        this.router.navigate(['/instances']);
     };
     InstanceEditComponent.decorators = [
         { type: Component, args: [{

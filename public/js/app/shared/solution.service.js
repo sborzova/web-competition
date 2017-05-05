@@ -44,7 +44,7 @@ export var SolutionService = (function () {
                     }
                 }
             };
-            _this.xmlHttp.open("POST", _this.hostUrl.concat('validator/'));
+            _this.xmlHttp.open("POST", _this.hostUrl.concat('server/validator/'));
             _this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
             _this.xmlHttp.send(fd);
         });
@@ -86,12 +86,13 @@ export var SolutionService = (function () {
         });
     };
     SolutionService.prototype.findDuplicateSolution = function (solution) {
+        var _this = this;
         var body = JSON.stringify(solution);
         var token = sessionStorage.getItem('token')
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('duplicateSolution') + token, body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/duplicateSolution') + token, body, { headers: headers })
             .map(function (response) {
             if (response.json().obj) {
                 var solution_1 = response.json().obj;
@@ -101,35 +102,36 @@ export var SolutionService = (function () {
                 return null;
             }
         })
-            .catch(function (error) { return Observable.throw(error); });
+            .catch(function (error) {
+            _this.flashMessageService.showMessage('Invalid XML format.', 'danger');
+            return Observable.throw(error);
+        });
     };
     SolutionService.prototype.savePaper = function (paper) {
         var body = JSON.stringify(paper);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('paper'), body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/paper'), body, { headers: headers })
             .map(function (response) {
             return response.json().obj.data._id;
         })
             .catch(function (error) { return Observable.throw(error); });
     };
     SolutionService.prototype.saveSolution = function (solution) {
-        var _this = this;
         var body = JSON.stringify(solution);
         var token = sessionStorage.getItem('token')
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('solution') + token, body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/solution') + token, body, { headers: headers })
             .map(function (response) {
             return response.json().obj.data._id;
         })
             .catch(function (error) {
-            _this.flashMessageService.showMessage('Invalid XML format.', 'danger');
             return Observable.throw(error);
         });
     };
     SolutionService.prototype.getSolution = function (solutionId) {
-        return this.http.get(this.hostUrl.concat('solution/' + solutionId))
+        return this.http.get(this.hostUrl.concat('server/solution/' + solutionId))
             .map(function (response) {
             var solution = response.json().obj;
             return new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, solution.visible, new FileModel(new Buffer(solution.data.content), solution.data._id), solution.instance, solution.paper, null, solution._id, false);
@@ -143,7 +145,7 @@ export var SolutionService = (function () {
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.get(this.hostUrl.concat('solutionsByLoggedUser') + token, { headers: headers })
+        return this.http.get(this.hostUrl.concat('server/solutionsByLoggedUser') + token, { headers: headers })
             .map(function (response) {
             var solutions = response.json().obj;
             var transformedSolutions = [];
@@ -156,34 +158,55 @@ export var SolutionService = (function () {
             .catch(function (error) { return Observable.throw(error); });
     };
     SolutionService.prototype.getSolutionsByInstance = function (instanceId) {
-        return this.http.get(this.hostUrl.concat('solutionsByInstance/') + instanceId)
+        return this.http.get(this.hostUrl.concat('server/solutionsByInstance/') + instanceId)
             .map(function (response) {
             var solutions = response.json().obj;
             var transformedSolutions = [];
             for (var _i = 0, solutions_2 = solutions; _i < solutions_2.length; _i++) {
                 var solution = solutions_2[_i];
-                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, solution.visible, new FileModel(new Buffer(solution.data.content), solution.data._id), new Instance(solution.instance.name, solution.instance._id, solution.instance.order), solution.paper, new Author(solution.user.firstName, solution.user.lastName, solution.user._id), solution._id));
+                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, solution.visible, null, new Instance(solution.instance.name, solution.instance._id, solution.instance.order), solution.paper, new Author(solution.user.firstName, solution.user.lastName, solution.user._id), solution._id));
             }
             return transformedSolutions;
         })
             .catch(function (error) { return Observable.throw(error); });
     };
-    SolutionService.prototype.getSolutionsByUser = function (userId) {
-        return this.http.get(this.hostUrl.concat('solutionsByUser/') + userId)
-            .map(function (response) {
-            var solutions = response.json().obj;
-            var transformedSolutions = [];
-            for (var _i = 0, solutions_3 = solutions; _i < solutions_3.length; _i++) {
-                var solution = solutions_3[_i];
-                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, solution.visible, new FileModel(new Buffer(solution.data.content), solution.data._id), new Instance(solution.instance.name, solution.instance._id, solution.instance.order), solution.paper, new Author(solution.user.firstName, solution.user.lastName, solution.user._id), solution._id));
-            }
-            return transformedSolutions;
-        })
-            .catch(function (error) { return Observable.throw(error); });
-    };
+    // getSolutionsByUser(userId: string){
+    //     return this.http.get(this.hostUrl.concat('server/solutionsByUser/') + userId)
+    //         .map((response: Response) => {
+    //             const solutions = response.json().obj;
+    //             let transformedSolutions: Solution[] = [];
+    //             for (let solution of solutions) {
+    //                 transformedSolutions.push(new Solution(
+    //                     solution.unassigned,
+    //                     solution.total,
+    //                     solution.sc,
+    //                     solution.time,
+    //                     solution.room,
+    //                     solution.distr,
+    //                     solution.technique,
+    //                     solution.info,
+    //                     solution.submissionTime,
+    //                     solution.visible,
+    //                     new FileModel(new Buffer(solution.data.content), solution.data._id),
+    //                     new Instance(
+    //                         solution.instance.name,
+    //                         solution.instance._id,
+    //                         solution.instance.order),
+    //                     solution.paper,
+    //                     new Author(
+    //                         solution.user.firstName,
+    //                         solution.user.lastName,
+    //                         solution.user._id),
+    //                     solution._id)
+    //                 );
+    //             }
+    //             return transformedSolutions;
+    //         })
+    //         .catch((error: Response) => Observable.throw(error));
+    // }
     SolutionService.prototype.deletePaperFromSolution = function (solution) {
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('solutionRemovePaper/') + solution.solutionId, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/solutionRemovePaper/') + solution.solutionId, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -214,7 +237,7 @@ export var SolutionService = (function () {
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('solutionAddPaper/') + solution.solutionId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/solutionAddPaper/') + solution.solutionId, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -227,14 +250,14 @@ export var SolutionService = (function () {
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('solutionVisibility/') + solution.solutionId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/solutionVisibility/') + solution.solutionId, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
             .catch(function (error) { return Observable.throw(error); });
     };
     SolutionService.prototype.deleteSolution = function (solution) {
-        return this.http.delete(this.hostUrl.concat('solution/') + solution.solutionId)
+        return this.http.delete(this.hostUrl.concat('server/solution/') + solution.solutionId)
             .map(function (response) {
             return response.json();
         })

@@ -871,7 +871,7 @@ var _View_ResultsAuthorTechniqueComponent6 = (function (_super) {
     };
     _View_ResultsAuthorTechniqueComponent6.prototype.detectChangesInternal = function (throwOnChange) {
         var valUnwrapper = new import7.ValueUnwrapper();
-        var currVal_10 = this._arr_0('/#solution/validatorinfo', this.context.$implicit.solutionId);
+        var currVal_10 = this._arr_0('/solution/validatorinfo', this.context.$implicit.solutionId);
         if (import4.checkBinding(throwOnChange, this._expr_10, currVal_10)) {
             this._RouterLink_37_3.routerLink = currVal_10;
             this._expr_10 = currVal_10;
@@ -1130,6 +1130,7 @@ var _View_ResultsAuthorTechniqueComponent11 = (function (_super) {
     }
     _View_ResultsAuthorTechniqueComponent11.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'a', null);
+        this.renderer.setElementAttribute(this._el_0, 'target', '_blank');
         this._text_1 = this.renderer.createText(this._el_0, 'URL', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [

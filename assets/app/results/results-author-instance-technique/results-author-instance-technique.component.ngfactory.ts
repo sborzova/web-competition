@@ -1040,7 +1040,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
   }
   detectChangesInternal(throwOnChange:boolean):void {
     const valUnwrapper:any = new import7.ValueUnwrapper();
-    const currVal_9:any = this._arr_0('/#solution/validatorinfo',this.context.$implicit.solutionId);
+    const currVal_9:any = this._arr_0('/solution/validatorinfo',this.context.$implicit.solutionId);
     if (import4.checkBinding(throwOnChange,this._expr_9,currVal_9)) {
       this._RouterLink_35_3.routerLink = currVal_9;
       this._expr_9 = currVal_9;
@@ -1316,6 +1316,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent11 extends import1.AppView<an
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'a',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'target','_blank');
     this._text_1 = this.renderer.createText(this._el_0,'URL',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[

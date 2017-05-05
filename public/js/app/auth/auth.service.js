@@ -29,7 +29,7 @@ export var AuthService = (function () {
         var _this = this;
         var body = JSON.stringify(user);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('signin'), body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/signin'), body, { headers: headers })
             .map(function (response) { return response.json(); })
             .catch(function (error) {
             _this.flashMessageService.showMessage('Invalid login credentials.', 'danger');

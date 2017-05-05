@@ -17,7 +17,7 @@ export class PaperService {
     savePaper(paper: Paper){
         const body = JSON.stringify(paper);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.hostUrl.concat('paper'), body, {headers: headers})
+        return this.http.post(this.hostUrl.concat('server/paper'), body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json().obj;
                 const paper = new Paper(
@@ -32,7 +32,7 @@ export class PaperService {
     }
 
     getPaper(paper: Paper){
-        return this.http.get(this.hostUrl.concat('paper/') + paper.paperId)
+        return this.http.get(this.hostUrl.concat('server/paper/') + paper.paperId)
             .map((response: Response) => {
                 const paper = response.json().obj;
                 return new Paper(
@@ -47,7 +47,7 @@ export class PaperService {
         const body = JSON.stringify(paper);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(
-            this.hostUrl.concat('paper/') + paper.paperId, body, {headers: headers})
+            this.hostUrl.concat('server/paper/') + paper.paperId, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -58,7 +58,7 @@ export class PaperService {
 
     deletePaper(paperId: string){
         return this.http.delete(
-            this.hostUrl.concat('paper/') + paperId)
+            this.hostUrl.concat('server/paper/') + paperId)
             .map((response: Response) => {
                 return response.json();
             })

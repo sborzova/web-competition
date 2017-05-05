@@ -202,7 +202,7 @@ class _View_ValidationComponent0 extends import1.AppView<import3.ValidationCompo
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_2:any = this._arr_0('/#signin');
+    const currVal_2:any = this._arr_0('/signin');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
       this._RouterLink_13_3.routerLink = currVal_2;
       this._expr_2 = currVal_2;

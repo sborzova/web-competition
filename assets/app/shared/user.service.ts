@@ -21,7 +21,7 @@ export class UserService{
         const token = sessionStorage.getItem('token')
             ? '?token=' + sessionStorage.getItem('token')
             : '';
-        return this.http.get(this.hostUrl.concat('user') + token)
+        return this.http.get(this.hostUrl.concat('server/user') + token)
             .map((response: Response) => {
                 return response.json().obj;
             })
@@ -34,7 +34,7 @@ export class UserService{
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('user') + token, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/user') + token, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -53,7 +53,7 @@ export class UserService{
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('password') + token, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/password') + token, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })

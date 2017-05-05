@@ -1,7 +1,6 @@
 import { Routes, RouterModule } from "@angular/router";
 
 import { UserSolutionsComponent } from "./user-solutions.component";
-import { ValidatorInfoComponent } from "../validator-info/validator-info.component";
 
 const USER_SOLUTIONS_ROUTES: Routes = [
     { path: '', children: [

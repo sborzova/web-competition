@@ -7,14 +7,14 @@ export var HeaderComponent = (function () {
         this.router = router;
     }
     HeaderComponent.prototype.ngOnInit = function () {
-        this.sessionStorageService.setSessionStorageCompetitionIsOn();
+        this.sessionStorageService.setSessionStorageCompetition();
     };
     HeaderComponent.prototype.isLoggedIn = function () {
         return this.sessionStorageService.isLoggedIn();
     };
     HeaderComponent.prototype.onLogout = function () {
         this.sessionStorageService.logout();
-        this.router.navigate(['/#home']);
+        this.router.navigate(['/home']);
     };
     HeaderComponent.prototype.isAdmin = function () {
         return this.sessionStorageService.isAdmin();

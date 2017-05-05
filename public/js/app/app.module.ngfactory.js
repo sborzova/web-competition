@@ -401,51 +401,51 @@ var AppModuleInjector = (function (_super) {
                 (this.__ROUTES_43 = [[
                         {
                             path: '',
-                            redirectTo: '#home',
+                            redirectTo: 'home',
                             pathMatch: 'full'
                         },
                         {
-                            path: '#home',
+                            path: 'home',
                             component: import40.HomeComponent
                         },
                         {
-                            path: '#users',
+                            path: 'users',
                             loadChildren: '../app/users/users.module#UsersModule'
                         },
                         {
-                            path: '#results',
+                            path: 'results',
                             loadChildren: '../app/results/results.module#ResultsModule'
                         },
                         {
-                            path: '#validator',
+                            path: 'validator',
                             loadChildren: '../app/validation/validation.module#ValidationModule'
                         },
                         {
-                            path: '#mysolutions',
+                            path: 'mysolutions',
                             loadChildren: '../app/user-solutions/user-solutions.module#UserSolutionsModule'
                         },
                         {
-                            path: '#signin',
+                            path: 'signin',
                             loadChildren: '../app/auth/signin/signin.module#SigninModule'
                         },
                         {
-                            path: '#signup',
+                            path: 'signup',
                             loadChildren: '../app/auth/signup/signup.module#SignupModule'
                         },
                         {
-                            path: '#instances',
+                            path: 'instances',
                             loadChildren: '../app/instances/instance.module#InstanceModule'
                         },
                         {
-                            path: '#profile',
+                            path: 'profile',
                             loadChildren: '../app/profile/profile.module#ProfileModule'
                         },
                         {
-                            path: '#preferences',
+                            path: 'preferences',
                             loadChildren: '../app/preference/preference.module#PreferenceModule'
                         },
                         {
-                            path: '#solution/validatorinfo/:id',
+                            path: 'solution/validatorinfo/:id',
                             loadChildren: '../app/validator-info/validator-info.module#ValidatorInfoModule'
                         }
                     ]

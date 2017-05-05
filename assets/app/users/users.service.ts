@@ -18,7 +18,7 @@ export class UsersService {
     }
 
     getUsers(){
-        return this.http.get(this.hostUrl.concat('users'))
+        return this.http.get(this.hostUrl.concat('server/users'))
             .map((response: Response) => {
                 const users = response.json().obj;
                 let transformedUsers: User[] = [];
@@ -39,7 +39,7 @@ export class UsersService {
     }
 
     getUser(userId: string) {
-        return this.http.get(this.hostUrl.concat('user/') + userId)
+        return this.http.get(this.hostUrl.concat('server/user/') + userId)
             .map((response: Response) => {
                 let user = response.json().obj;
                 return new User(
@@ -57,7 +57,7 @@ export class UsersService {
     updateUser(user: User){
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('user/') + user.userId, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/user/') + user.userId, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -72,7 +72,7 @@ export class UsersService {
     updateUserPassword(user: User){
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('password/') + user.userId, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -84,7 +84,7 @@ export class UsersService {
     updatePassword(user: User){
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('password/') + user.userId, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -97,7 +97,7 @@ export class UsersService {
     deleteUser(user: User){
         this.users.splice(this.users.indexOf(user), 1);
         return this.http.delete(
-            this.hostUrl.concat('user/') + user.userId)
+            this.hostUrl.concat('server/user/') + user.userId)
             .map((response: Response) => {
                 return response.json();
             })

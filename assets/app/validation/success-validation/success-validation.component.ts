@@ -1,10 +1,10 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Subscription} from "rxjs";
+import {Component, OnInit, OnDestroy} from "@angular/core";
+import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {Subscription} from "rxjs";
 
-import { SolutionService } from "../../shared/solution.service";
-import { Validation } from "../validation.model";
-import { SolutionCreate } from "../solution-create.model";
+import {SolutionService} from "../../shared/solution.service";
+import {Validation} from "../validation.model";
+import {SolutionCreate} from "../solution-create.model";
 import {SessionStorageService} from "../../shared/session-storage.service";
 import {Solution} from "../../shared/solution.model";
 import {Instance} from "../instance.model";
@@ -19,6 +19,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     display = 'none';
     subscription: Subscription;
     solutionForm: FormGroup;
+    showUploadForm: boolean;
     submitted: boolean = false;
     citationMissing: boolean = false;
 
@@ -33,6 +34,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
                     this.solutionForm.reset();
                     this.submitted = false;
                     this.citationMissing = false;
+                    this.setShowUploadForm();
                 }
             );
     }
@@ -110,9 +112,13 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
         this.solutionService.setSolutionFile(null);
     }
 
-    competitionIsOn(){
-        return this.sessionStorageService.getCompetitionIsOn();
+    setShowUploadForm(){
+        this.showUploadForm = this.sessionStorageService.isLoggedIn();
     }
+
+    // competitionIsOn(){
+    //     return
+    // }
 
     getDateTime(date: Date){
         return  date.toLocaleTimeString() + ' on ' + this.getNameOfMonth(date.getMonth()) +

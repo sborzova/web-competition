@@ -3,7 +3,7 @@ var router = express.Router();
 
 var Preference = require('../models/preference');
 
-router.post('/preference', function (req, res) {
+router.post('/server/preference', function (req, res) {
     try{
         var preference = new Preference({
             name: req.body.name,
@@ -29,7 +29,7 @@ router.post('/preference', function (req, res) {
     });
 });
 
-router.patch('/preference', function (req, res, next) {
+router.patch('/server/preference', function (req, res, next) {
     Preference.findOne({name: 'competitionIsOn'}, function (err, preference) {
         if (err) {
             return res.status(500).json({
@@ -61,7 +61,7 @@ router.patch('/preference', function (req, res, next) {
     });
 });
 
-router.get('/preference', function(req, res, next) {
+router.get('/server/preference', function(req, res, next) {
     Preference.findOne({name: 'competitionIsOn'}, function(err, preference) {
         if (err) {
             return res.status(500).json({

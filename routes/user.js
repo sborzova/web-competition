@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken');
 
 var User = require('../models/user');
 
-router.post('/', function (req, res, next) {
+router.post('/server/', function (req, res, next) {
     try{
         var user = new User({
             firstName: req.body.firstName,
@@ -34,7 +34,7 @@ router.post('/', function (req, res, next) {
     });
 });
 
-router.post('/signin', function(req, res, next) {
+router.post('/server/signin', function(req, res, next) {
     User.findOne({email: req.body.email}, function(err, user) {
         if (err) {
             return res.status(500).json({
@@ -75,7 +75,7 @@ router.post('/signin', function(req, res, next) {
     });
 });
 
-router.get('/user', function(req, res, next) {
+router.get('/server/user', function(req, res, next) {
     var decoded = jwt.decode(req.query.token);
     User.findOne({email: decoded.user.email}, function(err, user) {
         if (err) {
@@ -97,7 +97,7 @@ router.get('/user', function(req, res, next) {
     });
 });
 
-router.get('/user/:id', function(req, res, next) {
+router.get('/server/user/:id', function(req, res, next) {
     User.findById(req.params.id, function(err, user) {
         if (err) {
             return res.status(500).json({
@@ -118,7 +118,7 @@ router.get('/user/:id', function(req, res, next) {
     });
 });
 
-router.get('/users', function(req, res, next) {
+router.get('/server/users', function(req, res, next) {
     User.find(function(err, users) {
         if (err) {
             return res.status(500).json({
@@ -139,7 +139,7 @@ router.get('/users', function(req, res, next) {
     });
 });
 
-router.delete('/user/:id', function (req, res, next) {
+router.delete('/server/user/:id', function (req, res, next) {
     User.findById(req.params.id, function (err, user) {
         if (err) {
             return res.status(500).json({
@@ -168,7 +168,7 @@ router.delete('/user/:id', function (req, res, next) {
     });
 });
 
-router.patch('/user', function (req, res, next) {
+router.patch('/server/user', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
     User.findOne({email: decoded.user.email}, function(err, user) {
         if (err) {
@@ -222,7 +222,7 @@ router.patch('/user', function (req, res, next) {
  * admin update user
  */
 
-router.patch('/user/:id', function (req, res, next) {
+router.patch('/server/user/:id', function (req, res, next) {
     User.findById(req.params.id, function(err, user) {
         if (err) {
             return res.status(500).json({
@@ -258,7 +258,7 @@ router.patch('/user/:id', function (req, res, next) {
     });
 });
 
-router.patch('/password', function (req, res, next) {
+router.patch('/server/password', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
     User.findOne({email: decoded.user.email}, function(err, user) {
         if (err) {
@@ -300,7 +300,7 @@ router.patch('/password', function (req, res, next) {
 /**
  *  admin update password
  */
-router.patch('/password/:id', function (req, res, next) {
+router.patch('/server/password/:id', function (req, res, next) {
     User.findById(req.params.id, function(err, user) {
         if (err) {
             return res.status(500).json({

@@ -70,7 +70,7 @@
                         type="button"
                         class="btn btn-primary btn-xs"
                         title="View validator info"
-                        [routerLink]="['/#solution/validatorinfo',solution.solutionId]">
+                        [routerLink]="['/solution/validatorinfo',solution.solutionId]">
                         <i class="glyphicon glyphicon-info-sign"></i>
                 </button>
             </td>
@@ -104,7 +104,7 @@
             <td style="border: none; background-color: white"></td>
             <td style="border: none" colspan="11" id="paper">
                 <strong>Citation: </strong>{{ solution.paper?.citation}}
-                <a *ngIf="solution.paper?.url" href="{{solution.paper?.url}}">URL</a>
+                <a *ngIf="solution.paper?.url" href="{{solution.paper?.url}}" target="_blank">URL</a>
             </td>
         </tr>
         </tbody>

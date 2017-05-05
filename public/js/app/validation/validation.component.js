@@ -15,10 +15,10 @@ export var ValidationComponent = (function () {
         }
     };
     ValidationComponent.prototype.showValidator = function () {
-        var loggedIn = this.sessionStorageService.isLoggedIn();
+        var isLoggedIn = this.sessionStorageService.isLoggedIn();
         var competitionIsOn = this.sessionStorageService.getCompetitionIsOn();
         var isAdmin = this.sessionStorageService.isAdmin();
-        return !(!loggedIn && competitionIsOn) || isAdmin;
+        return !competitionIsOn || isAdmin || (competitionIsOn && isLoggedIn);
     };
     ValidationComponent.prototype.onValidate = function () {
         var _this = this;

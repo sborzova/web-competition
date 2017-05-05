@@ -1526,7 +1526,7 @@ var _View_UserSolutionsComponent7 = (function (_super) {
         if ((changes !== null)) {
             this._NgModel_5_5.ngOnChanges(changes);
         }
-        var currVal_22 = this._arr_0('/#solution/validatorinfo', this.context.$implicit.solutionId);
+        var currVal_22 = this._arr_0('/solution/validatorinfo', this.context.$implicit.solutionId);
         if (import4.checkBinding(throwOnChange, this._expr_22, currVal_22)) {
             this._RouterLink_43_3.routerLink = currVal_22;
             this._expr_22 = currVal_22;
@@ -1720,6 +1720,7 @@ var _View_UserSolutionsComponent9 = (function (_super) {
         this.renderer.setElementAttribute(this._el_8, 'colspan', '10');
         this.renderer.setElementAttribute(this._el_8, 'id', 'paper');
         this._el_9 = this.renderer.createElement(this._el_8, 'a', null);
+        this.renderer.setElementAttribute(this._el_9, 'target', '_blank');
         this._text_10 = this.renderer.createText(this._el_9, '', null);
         this._text_11 = this.renderer.createText(this._el_0, '\n                    ', null);
         this._expr_0 = import7.UNINITIALIZED;

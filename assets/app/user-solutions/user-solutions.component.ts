@@ -1,10 +1,10 @@
-import {Component, OnInit, Input, OnDestroy} from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Paper } from "../shared/paper.model";
-import { SolutionService } from "../shared/solution.service";
-import { PaperService } from "../shared/paper.service";
-import { FlashMessageService } from "../flash-message/flash-messages.service";
-import { SolutionPaper } from "./solution-paper.model";
+import {Component, OnInit, OnDestroy} from "@angular/core";
+import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {Paper} from "../shared/paper.model";
+import {SolutionService} from "../shared/solution.service";
+import {PaperService} from "../shared/paper.service";
+import {FlashMessageService} from "../flash-message/flash-messages.service";
+import {SolutionPaper} from "./solution-paper.model";
 import {SortService} from "../shared/sort.service";
 import {Solution} from "../shared/solution.model";
 

@@ -1,13 +1,13 @@
-import { Injectable, EventEmitter } from "@angular/core";
-import { Headers, Http, Response } from "@angular/http";
-import { Observable, Subject } from "rxjs";
+import {Injectable, EventEmitter} from "@angular/core";
+import {Headers, Http, Response} from "@angular/http";
+import {Observable, Subject} from "rxjs";
 
-import { SolutionCreate } from "../validation/solution-create.model";
-import { Validation } from "../validation/validation.model";
-import { SolutionPaper } from "../user-solutions/solution-paper.model";
-import { FlashMessageService } from "../flash-message/flash-messages.service";
-import { Author } from "./author.model";
-import { Instance } from "./instance.model";
+import {SolutionCreate} from "../validation/solution-create.model";
+import {Validation} from "../validation/validation.model";
+import {SolutionPaper} from "../user-solutions/solution-paper.model";
+import {FlashMessageService} from "../flash-message/flash-messages.service";
+import {Author} from "./author.model";
+import {Instance} from "./instance.model";
 import {Paper} from "./paper.model";
 import {Solution} from "./solution.model";
 import {FileService} from "./file.service";
@@ -55,7 +55,7 @@ export class SolutionService {
                 }
             };
 
-            this.xmlHttp.open("POST", this.hostUrl.concat('validator/'));
+            this.xmlHttp.open("POST", this.hostUrl.concat('server/validator/'));
             this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
             this.xmlHttp.send(fd);
         });
@@ -114,7 +114,7 @@ export class SolutionService {
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.hostUrl.concat('duplicateSolution') + token, body, {headers: headers})
+        return this.http.post(this.hostUrl.concat('server/duplicateSolution') + token, body, {headers: headers})
             .map((response: Response) => {
                 if (response.json().obj){
                     const solution = response.json().obj;
@@ -144,13 +144,16 @@ export class SolutionService {
                     return null;
                 }
             })
-            .catch((error: Response) => Observable.throw(error));
+            .catch((error: Response) => {
+                this.flashMessageService.showMessage('Invalid XML format.', 'danger' );
+                return Observable.throw(error)
+            });
     }
 
     savePaper(paper: Paper){
             const body = JSON.stringify(paper);
             const headers = new Headers({'Content-Type': 'application/json'});
-            return this.http.post(this.hostUrl.concat('paper'), body, {headers: headers})
+            return this.http.post(this.hostUrl.concat('server/paper'), body, {headers: headers})
                 .map((response: Response) => {
                     return response.json().obj.data._id;
                 })
@@ -163,18 +166,17 @@ export class SolutionService {
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.hostUrl.concat('solution') + token, body, {headers: headers})
+        return this.http.post(this.hostUrl.concat('server/solution') + token, body, {headers: headers})
             .map((response: Response) => {
                 return response.json().obj.data._id;
             })
             .catch((error: Response) => {
-                this.flashMessageService.showMessage('Invalid XML format.', 'danger' );
-                return Observable.throw(error)
-        });
+                 return Observable.throw(error)
+            });
     }
 
     getSolution(solutionId: string){
-        return this.http.get(this.hostUrl.concat('solution/' + solutionId))
+        return this.http.get(this.hostUrl.concat('server/solution/' + solutionId))
             .map((response: Response) => {
                 const solution = response.json().obj;
                 return new Solution(
@@ -206,7 +208,7 @@ export class SolutionService {
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.get(this.hostUrl.concat('solutionsByLoggedUser') + token, {headers: headers})
+        return this.http.get(this.hostUrl.concat('server/solutionsByLoggedUser') + token, {headers: headers})
             .map((response: Response) => {
                 const solutions = response.json().obj;
                 let transformedSolutions: Solution[] = [];
@@ -240,7 +242,7 @@ export class SolutionService {
     }
 
     getSolutionsByInstance(instanceId: string){
-        return this.http.get(this.hostUrl.concat('solutionsByInstance/') + instanceId)
+        return this.http.get(this.hostUrl.concat('server/solutionsByInstance/') + instanceId)
             .map((response: Response) => {
                 const solutions = response.json().obj;
                 let transformedSolutions: Solution[] = [];
@@ -256,7 +258,7 @@ export class SolutionService {
                         solution.info,
                         solution.submissionTime,
                         solution.visible,
-                        new FileModel(new Buffer(solution.data.content), solution.data._id),
+                        null,
                         new Instance(
                             solution.instance.name,
                             solution.instance._id,
@@ -274,44 +276,44 @@ export class SolutionService {
             .catch((error: Response) => Observable.throw(error));
     }
 
-    getSolutionsByUser(userId: string){
-        return this.http.get(this.hostUrl.concat('solutionsByUser/') + userId)
-            .map((response: Response) => {
-                const solutions = response.json().obj;
-                let transformedSolutions: Solution[] = [];
-                for (let solution of solutions) {
-                    transformedSolutions.push(new Solution(
-                        solution.unassigned,
-                        solution.total,
-                        solution.sc,
-                        solution.time,
-                        solution.room,
-                        solution.distr,
-                        solution.technique,
-                        solution.info,
-                        solution.submissionTime,
-                        solution.visible,
-                        new FileModel(new Buffer(solution.data.content), solution.data._id),
-                        new Instance(
-                            solution.instance.name,
-                            solution.instance._id,
-                            solution.instance.order),
-                        solution.paper,
-                        new Author(
-                            solution.user.firstName,
-                            solution.user.lastName,
-                            solution.user._id),
-                        solution._id)
-                    );
-                }
-                return transformedSolutions;
-            })
-            .catch((error: Response) => Observable.throw(error));
-    }
+    // getSolutionsByUser(userId: string){
+    //     return this.http.get(this.hostUrl.concat('server/solutionsByUser/') + userId)
+    //         .map((response: Response) => {
+    //             const solutions = response.json().obj;
+    //             let transformedSolutions: Solution[] = [];
+    //             for (let solution of solutions) {
+    //                 transformedSolutions.push(new Solution(
+    //                     solution.unassigned,
+    //                     solution.total,
+    //                     solution.sc,
+    //                     solution.time,
+    //                     solution.room,
+    //                     solution.distr,
+    //                     solution.technique,
+    //                     solution.info,
+    //                     solution.submissionTime,
+    //                     solution.visible,
+    //                     new FileModel(new Buffer(solution.data.content), solution.data._id),
+    //                     new Instance(
+    //                         solution.instance.name,
+    //                         solution.instance._id,
+    //                         solution.instance.order),
+    //                     solution.paper,
+    //                     new Author(
+    //                         solution.user.firstName,
+    //                         solution.user.lastName,
+    //                         solution.user._id),
+    //                     solution._id)
+    //                 );
+    //             }
+    //             return transformedSolutions;
+    //         })
+    //         .catch((error: Response) => Observable.throw(error));
+    // }
 
     deletePaperFromSolution(solution: Solution){
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('solutionRemovePaper/') + solution.solutionId, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/solutionRemovePaper/') + solution.solutionId, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -349,7 +351,7 @@ export class SolutionService {
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('solutionAddPaper/') +  solution.solutionId, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/solutionAddPaper/') +  solution.solutionId, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -363,7 +365,7 @@ export class SolutionService {
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('solutionVisibility/') +  solution.solutionId, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/solutionVisibility/') +  solution.solutionId, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -372,7 +374,7 @@ export class SolutionService {
 
     deleteSolution(solution: Solution){
         return this.http.delete(
-            this.hostUrl.concat('solution/') + solution.solutionId)
+            this.hostUrl.concat('server/solution/') + solution.solutionId)
             .map((response: Response) => {
                 return response.json();
             })

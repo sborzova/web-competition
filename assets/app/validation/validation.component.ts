@@ -11,7 +11,6 @@ import {SessionStorageService} from "../shared/session-storage.service";
     templateUrl: './validation.component.html'
 })
 export class ValidationComponent implements OnInit {
-    // solution: SolutionCreate = new SolutionCreate();
     @ViewChild('solution') solutionElem;
 
     constructor(private validationService: SolutionService,
@@ -25,10 +24,11 @@ export class ValidationComponent implements OnInit {
     }
 
     showValidator(){
-        let loggedIn = this.sessionStorageService.isLoggedIn();
+        let isLoggedIn = this.sessionStorageService.isLoggedIn();
         let competitionIsOn = this.sessionStorageService.getCompetitionIsOn();
         let isAdmin = this.sessionStorageService.isAdmin();
-        return !(!loggedIn && competitionIsOn) || isAdmin;
+
+        return !competitionIsOn || isAdmin || (competitionIsOn && isLoggedIn);
     }
 
     onValidate(){

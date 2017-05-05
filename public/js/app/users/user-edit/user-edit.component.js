@@ -46,7 +46,7 @@ export var UserEditComponent = (function () {
         this.navigateBack();
     };
     UserEditComponent.prototype.navigateBack = function () {
-        this.router.navigate(['/#users']);
+        this.router.navigate(['/users']);
     };
     UserEditComponent.prototype.getValue = function (role) {
         this.selectedRole = this.roles.filter(function (r) { return r == role; })[0];

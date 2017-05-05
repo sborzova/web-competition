@@ -30,6 +30,18 @@ export var SessionStorageService = (function () {
             sessionStorage.setItem('isAdmin', 'true');
         }
     };
+    SessionStorageService.prototype.setSessionStorageCompetition = function () {
+        var _this = this;
+        this.preferenceService.getValueCompetitionIsOn()
+            .subscribe(function (state) {
+            if (state == true) {
+                _this.setSessionStorageCompetitionIsOn();
+            }
+            else {
+                _this.setSessionStorageCompetitionIsOff();
+            }
+        }, function (error) { return console.error(error); });
+    };
     SessionStorageService.prototype.setSessionStorageCompetitionIsOn = function () {
         sessionStorage.setItem('competitionIsOn', 'true');
     };

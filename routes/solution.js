@@ -13,7 +13,7 @@ var User = require('../models/user');
 var Paper = require('../models/paper');
 var File = require('../models/file');
 
-router.post('/validator', function (req, res, next) {
+router.post('/server/validator', function (req, res, next) {
     fileUpload(req, res, function (err) {
         if (err) {
             return res.status(500).json({
@@ -65,7 +65,7 @@ router.post('/validator', function (req, res, next) {
     });
 });
 
-router.post('/solution', function (req, res, next) {
+router.post('/server/solution', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
     Instance.findOne({name: req.body.instanceName}, function (err, instance) {
         if (err) {
@@ -152,7 +152,7 @@ router.post('/solution', function (req, res, next) {
     });
 });
 
-router.patch('/solutionRemovePaper/:id', function (req, res, next) {
+router.patch('/server/solutionRemovePaper/:id', function (req, res, next) {
     Solution.findById(req.params.id, function (err, solution) {
         if (err) {
             return res.status(500).json({
@@ -184,7 +184,7 @@ router.patch('/solutionRemovePaper/:id', function (req, res, next) {
     });
 });
 
-router.patch('/solutionAddPaper/:id', function (req, res, next) {
+router.patch('/server/solutionAddPaper/:id', function (req, res, next) {
     Solution.findById(req.params.id, function (err, solution) {
         if (err) {
             return res.status(500).json({
@@ -225,7 +225,7 @@ router.patch('/solutionAddPaper/:id', function (req, res, next) {
     });
 });
 
-router.patch('/solutionVisibility/:id', function (req, res, next) {
+router.patch('/server/solutionVisibility/:id', function (req, res, next) {
     Solution.findById(req.params.id, function (err, solution) {
         if (err) {
             return res.status(500).json({
@@ -257,7 +257,7 @@ router.patch('/solutionVisibility/:id', function (req, res, next) {
     });
 });
 
-router.get('/solutions', function (req, res, next) {
+router.get('/server/solutions', function (req, res, next) {
     Solution.find()
         .populate('user')
         .populate('instance')
@@ -282,7 +282,7 @@ router.get('/solutions', function (req, res, next) {
         });
 });
 
-router.get('/solution/:id', function (req, res, next) {
+router.get('/server/solution/:id', function (req, res, next) {
     Solution.findById(req.params.id)
         .populate('user')
         .populate('data')
@@ -308,10 +308,9 @@ router.get('/solution/:id', function (req, res, next) {
         });
 });
 
-router.get('/solutionsByInstance/:id', function (req, res, next) {
+router.get('/server/solutionsByInstance/:id', function (req, res, next) {
     Solution.find()
         .populate('instance')
-        .populate('data')
         .populate('paper')
         .populate('user')
         .where('instance').equals(req.params.id)
@@ -335,34 +334,33 @@ router.get('/solutionsByInstance/:id', function (req, res, next) {
         });
 });
 
-router.get('/solutionsByUser/:id', function (req, res, next) {
-    Solution.find()
-        .populate('instance')
-        .populate('paper')
-        .populate('user')
-        .populate('data')
-        .where('user').equals(req.params.id)
-        .exec(function (err, solutions) {
-            if (err) {
-                return res.status(500).json({
-                    title: 'An error occurred',
-                    error: err
-                });
-            }
-            if (!solutions) {
-                return res.status(500).json({
-                    title: 'No Solution Found!',
-                    error: {message: 'Solution not found'}
-                });
-            }
-            res.status(200).json({
-                message: 'Success',
-                obj: solutions
-            });
-        });
-});
+// router.get('/server/solutionsByUser/:id', function (req, res, next) {
+//     Solution.find()
+//         .populate('instance')
+//         .populate('paper')
+//         .populate('user')
+//         .where('user').equals(req.params.id)
+//         .exec(function (err, solutions) {
+//             if (err) {
+//                 return res.status(500).json({
+//                     title: 'An error occurred',
+//                     error: err
+//                 });
+//             }
+//             if (!solutions) {
+//                 return res.status(500).json({
+//                     title: 'No Solution Found!',
+//                     error: {message: 'Solution not found'}
+//                 });
+//             }
+//             res.status(200).json({
+//                 message: 'Success',
+//                 obj: solutions
+//             });
+//         });
+// });
 
-router.get('/solutionsByLoggedUser', function (req, res, next) {
+router.get('/server/solutionsByLoggedUser', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
     Solution.find()
         .populate('instance')
@@ -389,7 +387,7 @@ router.get('/solutionsByLoggedUser', function (req, res, next) {
 });
 
 
-router.post('/duplicateSolution', function (req, res, next) {
+router.post('/server/duplicateSolution', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
     Instance.findOne({name: req.body.instance.name}, function (err, instance) {
         if (err) {
@@ -433,7 +431,7 @@ router.post('/duplicateSolution', function (req, res, next) {
     });
 });
 
-router.delete('/solution/:id', function (req, res, next) {
+router.delete('/server/solution/:id', function (req, res, next) {
     Solution.findById(req.params.id, function (err, solution) {
         if (err) {
             return res.status(500).json({

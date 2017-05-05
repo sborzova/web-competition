@@ -9,7 +9,7 @@ export var PreferenceService = (function () {
         this.hostUrl = routeModule.hostUrl;
     }
     PreferenceService.prototype.getValueCompetitionIsOn = function () {
-        return this.http.get(this.hostUrl.concat('preference'))
+        return this.http.get(this.hostUrl.concat('server/preference'))
             .map(function (response) {
             return response.json().obj.state;
         })
@@ -18,7 +18,7 @@ export var PreferenceService = (function () {
     PreferenceService.prototype.updateValueCompetitionIsOn = function (state) {
         var body = JSON.stringify(new Preference(state));
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('preference'), body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/preference'), body, { headers: headers })
             .map(function (response) {
             return response.json();
         })

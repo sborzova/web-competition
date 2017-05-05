@@ -55,6 +55,6 @@ export class ProfileEditComponent implements OnInit {
     }
 
     private navigateBack() {
-        this.router.navigate(['/#profile/info']);
+        this.router.navigate(['/profile/info']);
     }
 }

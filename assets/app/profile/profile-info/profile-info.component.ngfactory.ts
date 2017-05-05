@@ -213,12 +213,12 @@ class _View_ProfileInfoComponent0 extends import1.AppView<import3.ProfileInfoCom
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_1:any = this._arr_0('/#profile/edit');
+    const currVal_1:any = this._arr_0('/profile/edit');
     if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
       this._RouterLink_14_3.routerLink = currVal_1;
       this._expr_1 = currVal_1;
     }
-    const currVal_3:any = this._arr_1('/#profile/editpass');
+    const currVal_3:any = this._arr_1('/profile/editpass');
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
       this._RouterLink_19_3.routerLink = currVal_3;
       this._expr_3 = currVal_3;

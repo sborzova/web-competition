@@ -39,7 +39,7 @@ export var UserEditPasswordComponent = (function () {
         this.navigateBack();
     };
     UserEditPasswordComponent.prototype.navigateBack = function () {
-        this.router.navigate(['/#users']);
+        this.router.navigate(['/users']);
     };
     UserEditPasswordComponent.decorators = [
         { type: Component, args: [{

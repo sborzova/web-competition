@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import {ActivatedRoute, ActivatedRouteSnapshot, Params} from "@angular/router";
-import { Subscription } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 import {SolutionService} from "../shared/solution.service";
 import {Solution} from "../shared/solution.model";

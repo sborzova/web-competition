@@ -36,7 +36,7 @@ export class AuthService{
     signin(user: User) {
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.hostUrl.concat('signin'), body, {headers: headers})
+        return this.http.post(this.hostUrl.concat('server/signin'), body, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => {
                 this.flashMessageService.showMessage('Invalid login credentials.', 'danger' );

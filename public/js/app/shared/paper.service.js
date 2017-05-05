@@ -11,7 +11,7 @@ export var PaperService = (function () {
     PaperService.prototype.savePaper = function (paper) {
         var body = JSON.stringify(paper);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('paper'), body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/paper'), body, { headers: headers })
             .map(function (response) {
             var result = response.json().obj;
             var paper = new Paper(result.data.citation, result.data.url, result.data._id);
@@ -22,7 +22,7 @@ export var PaperService = (function () {
         });
     };
     PaperService.prototype.getPaper = function (paper) {
-        return this.http.get(this.hostUrl.concat('paper/') + paper.paperId)
+        return this.http.get(this.hostUrl.concat('server/paper/') + paper.paperId)
             .map(function (response) {
             var paper = response.json().obj;
             return new Paper(paper.citation, paper.url, paper._id);
@@ -32,7 +32,7 @@ export var PaperService = (function () {
     PaperService.prototype.updatePaper = function (paper) {
         var body = JSON.stringify(paper);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('paper/') + paper.paperId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/paper/') + paper.paperId, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -41,7 +41,7 @@ export var PaperService = (function () {
         });
     };
     PaperService.prototype.deletePaper = function (paperId) {
-        return this.http.delete(this.hostUrl.concat('paper/') + paperId)
+        return this.http.delete(this.hostUrl.concat('server/paper/') + paperId)
             .map(function (response) {
             return response.json();
         })

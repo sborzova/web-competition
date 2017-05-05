@@ -7,7 +7,7 @@ var fileUpload = multer({ storage: storage }).single('file');
 
 var File = require('../models/file');
 
-router.post('/file', function (req, res) {
+router.post('/server/file', function (req, res) {
     fileUpload(req, res, function(err) {
         if (err) {
             return res.status(500).json({
@@ -40,7 +40,7 @@ router.post('/file', function (req, res) {
     });
 });
 
-router.post('/fileUpdate/:id', function (req, res, next) {
+router.post('/server/fileUpdate/:id', function (req, res, next) {
     fileUpload(req, res, function(err) {
         if (err) {
             return res.status(500).json({
@@ -79,7 +79,7 @@ router.post('/fileUpdate/:id', function (req, res, next) {
     });
 });
 
-router.get('/file/:id', function(req, res, next) {
+router.get('/server/file/:id', function(req, res, next) {
     File.findById(req.params.id, function(err, file) {
         if (err) {
             return res.status(500).json({
@@ -100,7 +100,7 @@ router.get('/file/:id', function(req, res, next) {
     });
 });
 
-router.delete('/file/:id', function (req, res, next) {
+router.delete('/server/file/:id', function (req, res, next) {
     File.findById(req.params.id, function (err, file) {
         if (err) {
             return res.status(500).json({

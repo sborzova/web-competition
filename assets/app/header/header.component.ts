@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
                 private router: Router) {}
 
     ngOnInit(){
-        this.sessionStorageService.setSessionStorageCompetitionIsOn();
+        this.sessionStorageService.setSessionStorageCompetition();
     }
 
     isLoggedIn() {
@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
 
     onLogout(){
         this.sessionStorageService.logout();
-        this.router.navigate(['/#home']);
+        this.router.navigate(['/home']);
     }
 
     isAdmin(){

@@ -185,12 +185,12 @@ var _View_ProfileInfoComponent0 = (function (_super) {
         return notFoundResult;
     };
     _View_ProfileInfoComponent0.prototype.detectChangesInternal = function (throwOnChange) {
-        var currVal_1 = this._arr_0('/#profile/edit');
+        var currVal_1 = this._arr_0('/profile/edit');
         if (import4.checkBinding(throwOnChange, this._expr_1, currVal_1)) {
             this._RouterLink_14_3.routerLink = currVal_1;
             this._expr_1 = currVal_1;
         }
-        var currVal_3 = this._arr_1('/#profile/editpass');
+        var currVal_3 = this._arr_1('/profile/editpass');
         if (import4.checkBinding(throwOnChange, this._expr_3, currVal_3)) {
             this._RouterLink_19_3.routerLink = currVal_3;
             this._expr_3 = currVal_3;

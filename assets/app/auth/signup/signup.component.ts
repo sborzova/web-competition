@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
                     .subscribe(
                         user => {
                             this.flashMessageService.showMessage('Account created.', 'success'  );
-                            this.router.navigateByUrl('#home');
+                            this.router.navigateByUrl('home');
                         } ,
                         error => console.error(error)
                     );

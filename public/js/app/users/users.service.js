@@ -13,7 +13,7 @@ export var UsersService = (function () {
     }
     UsersService.prototype.getUsers = function () {
         var _this = this;
-        return this.http.get(this.hostUrl.concat('users'))
+        return this.http.get(this.hostUrl.concat('server/users'))
             .map(function (response) {
             var users = response.json().obj;
             var transformedUsers = [];
@@ -27,7 +27,7 @@ export var UsersService = (function () {
             .catch(function (error) { return Observable.throw(error); });
     };
     UsersService.prototype.getUser = function (userId) {
-        return this.http.get(this.hostUrl.concat('user/') + userId)
+        return this.http.get(this.hostUrl.concat('server/user/') + userId)
             .map(function (response) {
             var user = response.json().obj;
             return new User(user.email, user.firstName, user.lastName, user.password, user.role, user._id);
@@ -38,7 +38,7 @@ export var UsersService = (function () {
         var _this = this;
         var body = JSON.stringify(user);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('user/') + user.userId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/user/') + user.userId, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -52,7 +52,7 @@ export var UsersService = (function () {
     UsersService.prototype.updateUserPassword = function (user) {
         var body = JSON.stringify(user);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('password/') + user.userId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -63,7 +63,7 @@ export var UsersService = (function () {
     UsersService.prototype.updatePassword = function (user) {
         var body = JSON.stringify(user);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('password/') + user.userId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -73,7 +73,7 @@ export var UsersService = (function () {
     };
     UsersService.prototype.deleteUser = function (user) {
         this.users.splice(this.users.indexOf(user), 1);
-        return this.http.delete(this.hostUrl.concat('user/') + user.userId)
+        return this.http.delete(this.hostUrl.concat('server/user/') + user.userId)
             .map(function (response) {
             return response.json();
         })

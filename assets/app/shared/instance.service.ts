@@ -24,7 +24,7 @@ export class InstanceService {
     saveInstance(instance: InstanceCreate){
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.hostUrl.concat('instance'), body, {headers: headers})
+        return this.http.post(this.hostUrl.concat('server/instance'), body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json().obj.data;
                 const instance = new Instance(
@@ -47,7 +47,7 @@ export class InstanceService {
     }
 
     getInstance(id: string){
-        return this.http.get(this.hostUrl.concat('instance/' + id))
+        return this.http.get(this.hostUrl.concat('server/instance/' + id))
             .map((response: Response) => {
                 const instance = response.json().obj;
                 return new Instance(
@@ -69,7 +69,7 @@ export class InstanceService {
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(
-            this.hostUrl.concat('instance/') + instance.instanceId, body, {headers: headers})
+            this.hostUrl.concat('server/instance/') + instance.instanceId, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -82,7 +82,7 @@ export class InstanceService {
     }
 
     getInstances(){
-        return this.http.get(this.hostUrl.concat('instances'))
+        return this.http.get(this.hostUrl.concat('server/instances'))
             .map((response: Response) => {
                 const instances = response.json().obj;
                 let transformedInstances: Instance[] = [];
@@ -106,7 +106,7 @@ export class InstanceService {
     deleteInstance(instance: Instance){
         this.instances.splice(this.instances.indexOf(instance), 1);
         return this.http.delete(
-            this.hostUrl.concat('instance/') + instance.instanceId)
+            this.hostUrl.concat('server/instance/') + instance.instanceId)
             .map((response: Response) => {
                 return response.json();
             })

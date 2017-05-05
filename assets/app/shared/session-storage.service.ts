@@ -39,6 +39,21 @@ export class SessionStorageService {
         }
     }
 
+    setSessionStorageCompetition(){
+        this.preferenceService.getValueCompetitionIsOn()
+            .subscribe(
+                state => {
+                    if (state == true){
+                        this.setSessionStorageCompetitionIsOn();
+                    }else {
+                        this.setSessionStorageCompetitionIsOff();
+                    }
+
+                },
+                error => console.error(error)
+            )
+    }
+
     setSessionStorageCompetitionIsOn(){
         sessionStorage.setItem('competitionIsOn', 'true');
     }

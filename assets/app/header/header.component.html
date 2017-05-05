@@ -6,24 +6,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" [routerLink]="['#home']" data-toggle="collapse" data-target=".navbar-collapse.in">Home</a>
+            <a class="navbar-brand" [routerLink]="['home']" data-toggle="collapse" data-target=".navbar-collapse.in">Home</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav  navbar-left">
                 <li routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.in">
-                    <a [routerLink]="['#instances']">Instances</a>
+                    <a [routerLink]="['instances']">Instances</a>
                 </li>
                 <li routerLinkActive="active" *ngIf="isAdmin() || !competitionIsOn()" data-toggle="collapse" data-target=".navbar-collapse.in">
-                    <a [routerLink]="['#results']">Results</a>
+                    <a [routerLink]="['results']">Results</a>
                 </li>
                 <li routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.in">
-                    <a [routerLink]="['#validator']">Validate & Insert solution</a>
+                    <a [routerLink]="['validator']">Validate & Insert solution</a>
                 </li>
                 <li routerLinkActive="active" *ngIf="isAdmin()" data-toggle="collapse" data-target=".navbar-collapse.in">
-                    <a [routerLink]="['#users']">User management</a>
+                    <a [routerLink]="['users']">User management</a>
                 </li>
                 <li routerLinkActive="active" *ngIf="isLoggedIn()" data-toggle="collapse" data-target=".navbar-collapse.in">
-                    <a [routerLink]="['#mysolutions']">My solutions</a>
+                    <a [routerLink]="['mysolutions']">My solutions</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav  navbar-right">
@@ -33,16 +33,16 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li routerLinkActive="active" *ngIf="!isLoggedIn()" data-toggle="collapse" data-target=".navbar-collapse.in">
-                            <a [routerLink]="['#signup']">Sign up</a>
+                            <a [routerLink]="['signup']">Sign up</a>
                         </li>
                         <li routerLinkActive="active" *ngIf="!isLoggedIn()" data-toggle="collapse" data-target=".navbar-collapse.in">
-                            <a [routerLink]="['#signin']">Log in</a>
+                            <a [routerLink]="['signin']">Log in</a>
                         </li>
                         <li routerLinkActive="active" *ngIf="isLoggedIn()" data-toggle="collapse" data-target=".navbar-collapse.in">
-                            <a [routerLink]="['#profile']">My profile</a>
+                            <a [routerLink]="['profile']">Profile</a>
                         </li>
                         <li routerLinkActive="active" *ngIf="isAdmin()" data-toggle="collapse" data-target=".navbar-collapse.in">
-                            <a [routerLink]="['#preferences']">Preferences</a>
+                            <a [routerLink]="['preferences']">Preferences</a>
                         </li>
                         <li *ngIf="isLoggedIn()" class="divider"></li>
                         <li *ngIf="isLoggedIn()"  data-toggle="collapse" data-target=".navbar-collapse.in">

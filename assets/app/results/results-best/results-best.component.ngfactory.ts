@@ -1034,7 +1034,7 @@ class _View_ResultsBestComponent7 extends import1.AppView<any> {
   }
   detectChangesInternal(throwOnChange:boolean):void {
     const valUnwrapper:any = new import7.ValueUnwrapper();
-    const currVal_14:any = this._arr_0('/#solution/validatorinfo',this.parent.context.$implicit.solutionId);
+    const currVal_14:any = this._arr_0('/solution/validatorinfo',this.parent.context.$implicit.solutionId);
     if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
       this._RouterLink_44_3.routerLink = currVal_14;
       this._expr_14 = currVal_14;
@@ -1330,6 +1330,7 @@ class _View_ResultsBestComponent12 extends import1.AppView<any> {
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'a',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'target','_blank');
     this._text_1 = this.renderer.createText(this._el_0,'URL',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[

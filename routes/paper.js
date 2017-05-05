@@ -3,7 +3,7 @@ var router = express.Router();
 
 var Paper = require('../models/paper');
 
-router.post('/paper', function (req, res) {
+router.post('/server/paper', function (req, res) {
     try{
         var paper = new Paper({
             citation: req.body.citation,
@@ -29,7 +29,7 @@ router.post('/paper', function (req, res) {
     });
 });
 
-router.patch('/paper/:id', function (req, res, next) {
+router.patch('/server/paper/:id', function (req, res, next) {
     Paper.findById(req.params.id, function (err, paper) {
         if (err) {
             return res.status(500).json({
@@ -62,7 +62,7 @@ router.patch('/paper/:id', function (req, res, next) {
     });
 });
 
-router.get('/paper/:id', function(req, res, next) {
+router.get('/server/paper/:id', function(req, res, next) {
     Paper.findById(req.params.id, function(err, paper) {
         if (err) {
             return res.status(500).json({
@@ -83,7 +83,7 @@ router.get('/paper/:id', function(req, res, next) {
     });
 });
 
-router.get('/papers', function(req, res, next) {
+router.get('/server/papers', function(req, res, next) {
     Paper.find(function(err, papers) {
         if (err) {
             return res.status(500).json({
@@ -104,7 +104,7 @@ router.get('/papers', function(req, res, next) {
     });
 });
 
-router.delete('/paper/:id', function (req, res, next) {
+router.delete('/server/paper/:id', function (req, res, next) {
     Paper.findById(req.params.id, function (err, paper) {
         if (err) {
             return res.status(500).json({

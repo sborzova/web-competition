@@ -65,7 +65,7 @@ export class UserEditComponent implements OnInit {
     }
 
     navigateBack(){
-        this.router.navigate(['/#users']);
+        this.router.navigate(['/users']);
     }
 
     getValue(role: string) {

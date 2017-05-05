@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
 import { instanceRouting } from "./instance.routing";
 import { InstancesComponent } from "./instances.component";
-import { InstanceListComponent } from "./instance-list/instance-list.component";
 import { InstanceCreateComponent } from "./instance-new/instance-new.component";
 import { InstanceEditComponent } from "./instance-update/instance-update.component";
 import { InstanceStatusComponent } from "./instance-status/instance-status.component";
@@ -17,7 +16,6 @@ export var InstanceModule = (function () {
         { type: NgModule, args: [{
                     declarations: [
                         InstancesComponent,
-                        InstanceListComponent,
                         InstanceCreateComponent,
                         InstanceEditComponent,
                         InstanceStatusComponent,

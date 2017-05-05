@@ -21,6 +21,7 @@ export var SuccessValidationComponent = (function () {
             _this.solutionForm.reset();
             _this.submitted = false;
             _this.citationMissing = false;
+            _this.setShowUploadForm();
         });
     }
     SuccessValidationComponent.prototype.ngOnInit = function () {
@@ -63,9 +64,12 @@ export var SuccessValidationComponent = (function () {
         this.subscription.unsubscribe();
         this.solutionService.setSolutionFile(null);
     };
-    SuccessValidationComponent.prototype.competitionIsOn = function () {
-        return this.sessionStorageService.getCompetitionIsOn();
+    SuccessValidationComponent.prototype.setShowUploadForm = function () {
+        this.showUploadForm = this.sessionStorageService.isLoggedIn();
     };
+    // competitionIsOn(){
+    //     return
+    // }
     SuccessValidationComponent.prototype.getDateTime = function (date) {
         return date.toLocaleTimeString() + ' on ' + this.getNameOfMonth(date.getMonth()) +
             ' ' + date.getDate() + ', ' + date.getFullYear();

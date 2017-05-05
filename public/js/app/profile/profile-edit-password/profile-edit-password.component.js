@@ -36,7 +36,7 @@ export var ProfileEditPasswordComponent = (function () {
         });
     };
     ProfileEditPasswordComponent.prototype.navigateBack = function () {
-        this.router.navigate(['/#profile/info']);
+        this.router.navigate(['/profile/info']);
     };
     ProfileEditPasswordComponent.decorators = [
         { type: Component, args: [{

@@ -404,7 +404,7 @@ var _View_HeaderComponent0 = (function (_super) {
             changes['target'] = new import7.SimpleChange(this._expr_1, currVal_1);
             this._expr_1 = currVal_1;
         }
-        var currVal_2 = this._arr_0('#home');
+        var currVal_2 = this._arr_0('home');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
             this._RouterLinkWithHref_15_3.routerLink = currVal_2;
             if ((changes === null)) {
@@ -430,7 +430,7 @@ var _View_HeaderComponent0 = (function (_super) {
             this._RouterLinkActive_23_3.ngOnChanges(changes);
         }
         changes = null;
-        var currVal_6 = this._arr_1('#instances');
+        var currVal_6 = this._arr_1('instances');
         if (import4.checkBinding(throwOnChange, this._expr_6, currVal_6)) {
             this._RouterLinkWithHref_25_3.routerLink = currVal_6;
             if ((changes === null)) {
@@ -461,7 +461,7 @@ var _View_HeaderComponent0 = (function (_super) {
             this._RouterLinkActive_31_3.ngOnChanges(changes);
         }
         changes = null;
-        var currVal_11 = this._arr_2('#validator');
+        var currVal_11 = this._arr_2('validator');
         if (import4.checkBinding(throwOnChange, this._expr_11, currVal_11)) {
             this._RouterLinkWithHref_33_3.routerLink = currVal_11;
             if ((changes === null)) {
@@ -653,7 +653,7 @@ var _View_HeaderComponent1 = (function (_super) {
             this._RouterLinkActive_0_3.ngOnChanges(changes);
         }
         changes = null;
-        var currVal_2 = this._arr_0('#results');
+        var currVal_2 = this._arr_0('results');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
             this._RouterLinkWithHref_2_3.routerLink = currVal_2;
             if ((changes === null)) {
@@ -761,7 +761,7 @@ var _View_HeaderComponent2 = (function (_super) {
             this._RouterLinkActive_0_3.ngOnChanges(changes);
         }
         changes = null;
-        var currVal_2 = this._arr_0('#users');
+        var currVal_2 = this._arr_0('users');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
             this._RouterLinkWithHref_2_3.routerLink = currVal_2;
             if ((changes === null)) {
@@ -869,7 +869,7 @@ var _View_HeaderComponent3 = (function (_super) {
             this._RouterLinkActive_0_3.ngOnChanges(changes);
         }
         changes = null;
-        var currVal_2 = this._arr_0('#mysolutions');
+        var currVal_2 = this._arr_0('mysolutions');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
             this._RouterLinkWithHref_2_3.routerLink = currVal_2;
             if ((changes === null)) {
@@ -977,7 +977,7 @@ var _View_HeaderComponent4 = (function (_super) {
             this._RouterLinkActive_0_3.ngOnChanges(changes);
         }
         changes = null;
-        var currVal_2 = this._arr_0('#signup');
+        var currVal_2 = this._arr_0('signup');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
             this._RouterLinkWithHref_2_3.routerLink = currVal_2;
             if ((changes === null)) {
@@ -1085,7 +1085,7 @@ var _View_HeaderComponent5 = (function (_super) {
             this._RouterLinkActive_0_3.ngOnChanges(changes);
         }
         changes = null;
-        var currVal_2 = this._arr_0('#signin');
+        var currVal_2 = this._arr_0('signin');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
             this._RouterLinkWithHref_2_3.routerLink = currVal_2;
             if ((changes === null)) {
@@ -1150,7 +1150,7 @@ var _View_HeaderComponent6 = (function (_super) {
         this._text_1 = this.renderer.createText(this._el_0, '\n                            ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'a', null);
         this._RouterLinkWithHref_2_3 = new import12.RouterLinkWithHref(this.parent.parentInjector.get(import9.Router), this.parent.parentInjector.get(import16.ActivatedRoute), this.parent.parentInjector.get(import17.LocationStrategy));
-        this._text_3 = this.renderer.createText(this._el_2, 'My profile', null);
+        this._text_3 = this.renderer.createText(this._el_2, 'Profile', null);
         this._text_4 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._expr_0 = import7.UNINITIALIZED;
         var disposable_0 = this.renderer.listen(this._el_2, 'click', this.eventHandler(this._handle_click_2_0.bind(this)));
@@ -1193,7 +1193,7 @@ var _View_HeaderComponent6 = (function (_super) {
             this._RouterLinkActive_0_3.ngOnChanges(changes);
         }
         changes = null;
-        var currVal_2 = this._arr_0('#profile');
+        var currVal_2 = this._arr_0('profile');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
             this._RouterLinkWithHref_2_3.routerLink = currVal_2;
             if ((changes === null)) {
@@ -1301,7 +1301,7 @@ var _View_HeaderComponent7 = (function (_super) {
             this._RouterLinkActive_0_3.ngOnChanges(changes);
         }
         changes = null;
-        var currVal_2 = this._arr_0('#preferences');
+        var currVal_2 = this._arr_0('preferences');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
             this._RouterLinkWithHref_2_3.routerLink = currVal_2;
             if ((changes === null)) {

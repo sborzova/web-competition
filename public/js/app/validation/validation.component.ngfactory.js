@@ -179,7 +179,7 @@ var _View_ValidationComponent0 = (function (_super) {
         return notFoundResult;
     };
     _View_ValidationComponent0.prototype.detectChangesInternal = function (throwOnChange) {
-        var currVal_2 = this._arr_0('/#signin');
+        var currVal_2 = this._arr_0('/signin');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
             this._RouterLink_13_3.routerLink = currVal_2;
             this._expr_2 = currVal_2;

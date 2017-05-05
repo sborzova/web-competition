@@ -36,7 +36,7 @@ export class SigninComponent {
                 .subscribe(
                     data => {
                         this.sessionStorageService.setSessionStorageAuth(data);
-                        this.router.navigate(['/#home']);
+                        this.router.navigate(['/home']);
                     },
                     error => {
                         console.error(error);
@@ -64,7 +64,6 @@ export class SigninComponent {
         if (this.emailForm.valid){
             document.getElementById('hideEmailForm').click();
             this.submittedEmailForm = false;
-            console.log(this.emailForm.value.email);
             this.emailService.sendEmailNewPassword(this.emailForm.value.email)
                 .subscribe(
                     () => {},

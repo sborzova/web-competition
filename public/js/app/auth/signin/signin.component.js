@@ -26,7 +26,7 @@ export var SigninComponent = (function () {
             this.authService.signin(user)
                 .subscribe(function (data) {
                 _this.sessionStorageService.setSessionStorageAuth(data);
-                _this.router.navigate(['/#home']);
+                _this.router.navigate(['/home']);
             }, function (error) {
                 console.error(error);
             });
@@ -49,7 +49,6 @@ export var SigninComponent = (function () {
         if (this.emailForm.valid) {
             document.getElementById('hideEmailForm').click();
             this.submittedEmailForm = false;
-            console.log(this.emailForm.value.email);
             this.emailService.sendEmailNewPassword(this.emailForm.value.email)
                 .subscribe(function () { }, function (error) { return console.error(error); });
             this.flashMessageService.showMessage('Email with the new password was send.', 'success');

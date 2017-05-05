@@ -14,7 +14,7 @@ export var UserService = (function () {
         var token = sessionStorage.getItem('token')
             ? '?token=' + sessionStorage.getItem('token')
             : '';
-        return this.http.get(this.hostUrl.concat('user') + token)
+        return this.http.get(this.hostUrl.concat('server/user') + token)
             .map(function (response) {
             return response.json().obj;
         })
@@ -27,7 +27,7 @@ export var UserService = (function () {
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('user') + token, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/user') + token, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -45,7 +45,7 @@ export var UserService = (function () {
             ? '?token=' + sessionStorage.getItem('token')
             : '';
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('password') + token, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/password') + token, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })

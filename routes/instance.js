@@ -4,7 +4,7 @@ var router = express.Router();
 var Instance = require('../models/instance');
 var File = require('../models/file');
 
-router.post('/instance', function (req, res) {
+router.post('/server/instance', function (req, res) {
     File.findById(req.body.dataId, function (err, data) {
         if (err) {
             return res.status(500).json({
@@ -50,7 +50,7 @@ router.post('/instance', function (req, res) {
     });
 });
 
-router.patch('/instance/:id', function (req, res, next) {
+router.patch('/server/instance/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
         if (err) {
             return res.status(500).json({
@@ -85,7 +85,7 @@ router.patch('/instance/:id', function (req, res, next) {
     });
 });
 
-router.get('/instance/:id', function(req, res, next) {
+router.get('/server/instance/:id', function(req, res, next) {
     Instance.findById(req.params.id)
         .populate('status')
         .populate('data')
@@ -109,7 +109,7 @@ router.get('/instance/:id', function(req, res, next) {
         });
 });
 
-router.get('/instances', function(req, res, next) {
+router.get('/server/instances', function(req, res, next) {
     Instance.find(function(err, instances) {
         if (err) {
             return res.status(500).json({
@@ -130,7 +130,7 @@ router.get('/instances', function(req, res, next) {
     });
 });
 
-router.delete('/instance/:id', function (req, res, next) {
+router.delete('/server/instance/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
         if (err) {
             return res.status(500).json({

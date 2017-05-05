@@ -1780,7 +1780,7 @@ class _View_UserSolutionsComponent7 extends import1.AppView<any> {
       this._expr_4 = currVal_4;
     }
     if ((changes !== (null as any))) { this._NgModel_5_5.ngOnChanges(changes); }
-    const currVal_22:any = this._arr_0('/#solution/validatorinfo',this.context.$implicit.solutionId);
+    const currVal_22:any = this._arr_0('/solution/validatorinfo',this.context.$implicit.solutionId);
     if (import4.checkBinding(throwOnChange,this._expr_22,currVal_22)) {
       this._RouterLink_43_3.routerLink = currVal_22;
       this._expr_22 = currVal_22;
@@ -1997,6 +1997,7 @@ class _View_UserSolutionsComponent9 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_8,'colspan','10');
     this.renderer.setElementAttribute(this._el_8,'id','paper');
     this._el_9 = this.renderer.createElement(this._el_8,'a',(null as any));
+    this.renderer.setElementAttribute(this._el_9,'target','_blank');
     this._text_10 = this.renderer.createText(this._el_9,'',(null as any));
     this._text_11 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
     this._expr_0 = import7.UNINITIALIZED;

@@ -40,7 +40,7 @@ export var ProfileEditComponent = (function () {
         });
     };
     ProfileEditComponent.prototype.navigateBack = function () {
-        this.router.navigate(['/#profile/info']);
+        this.router.navigate(['/profile/info']);
     };
     ProfileEditComponent.decorators = [
         { type: Component, args: [{

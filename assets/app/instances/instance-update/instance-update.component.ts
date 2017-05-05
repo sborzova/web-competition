@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, Input } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 
@@ -92,6 +92,6 @@ export class InstanceEditComponent implements OnInit {
     }
 
     private navigateBack() {
-        this.router.navigate(['/#instances']);
+        this.router.navigate(['/instances']);
     }
 }

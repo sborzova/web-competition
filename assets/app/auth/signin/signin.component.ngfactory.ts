@@ -582,7 +582,7 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
       this._expr_35 = currVal_35;
     }
     changes = (null as any);
-    const currVal_37:any = this._arr_0('/#signup');
+    const currVal_37:any = this._arr_0('/signup');
     if (import4.checkBinding(throwOnChange,this._expr_37,currVal_37)) {
       this._RouterLinkWithHref_67_3.routerLink = currVal_37;
       if ((changes === (null as any))) { (changes = {}); }

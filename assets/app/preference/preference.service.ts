@@ -13,7 +13,7 @@ export class PreferenceService {
     }
 
     getValueCompetitionIsOn() {
-        return this.http.get(this.hostUrl.concat('preference'))
+        return this.http.get(this.hostUrl.concat('server/preference'))
             .map((response: Response) => {
                 return response.json().obj.state;
             })
@@ -23,7 +23,7 @@ export class PreferenceService {
     updateValueCompetitionIsOn(state: boolean){
         const body = JSON.stringify(new Preference(state));
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('preference'), body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/preference'), body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })

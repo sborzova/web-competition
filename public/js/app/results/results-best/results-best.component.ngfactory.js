@@ -876,7 +876,7 @@ var _View_ResultsBestComponent7 = (function (_super) {
     };
     _View_ResultsBestComponent7.prototype.detectChangesInternal = function (throwOnChange) {
         var valUnwrapper = new import7.ValueUnwrapper();
-        var currVal_14 = this._arr_0('/#solution/validatorinfo', this.parent.context.$implicit.solutionId);
+        var currVal_14 = this._arr_0('/solution/validatorinfo', this.parent.context.$implicit.solutionId);
         if (import4.checkBinding(throwOnChange, this._expr_14, currVal_14)) {
             this._RouterLink_44_3.routerLink = currVal_14;
             this._expr_14 = currVal_14;
@@ -1150,6 +1150,7 @@ var _View_ResultsBestComponent12 = (function (_super) {
     }
     _View_ResultsBestComponent12.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'a', null);
+        this.renderer.setElementAttribute(this._el_0, 'target', '_blank');
         this._text_1 = this.renderer.createText(this._el_0, 'URL', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [

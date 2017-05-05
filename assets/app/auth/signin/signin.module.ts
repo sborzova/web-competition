@@ -4,7 +4,6 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import {signinRouting} from "./signin.routing";
 import {AuthService} from "../auth.service";
-import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {EmailService} from "../../shared/email.service";
 
 @NgModule({

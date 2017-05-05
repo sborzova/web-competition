@@ -512,7 +512,7 @@ var _View_SigninComponent0 = (function (_super) {
             this._expr_35 = currVal_35;
         }
         changes = null;
-        var currVal_37 = this._arr_0('/#signup');
+        var currVal_37 = this._arr_0('/signup');
         if (import4.checkBinding(throwOnChange, this._expr_37, currVal_37)) {
             this._RouterLinkWithHref_67_3.routerLink = currVal_37;
             if ((changes === null)) {

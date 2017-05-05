@@ -7,7 +7,7 @@ var User = require('../models/user');
  *  change password when forgotten
  */
 
-router.post('/emailpassword/:email', function (req, res, next) {
+router.post('/server/emailpassword/:email', function (req, res, next) {
     User.findOne({email: req.params.email}, function(err, user) {
         if (err) {
             return res.status(500).json({

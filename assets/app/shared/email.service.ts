@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
-import {Http, Headers, Response } from "@angular/http";
+import {Http, Response } from "@angular/http";
 import {FlashMessageService} from "../flash-message/flash-messages.service";
-import {Email} from "./email.model";
 import {Observable} from "rxjs";
 
 @Injectable()
@@ -16,7 +15,7 @@ export class EmailService {
     }
 
     sendEmailNewPassword(email: string){
-        return this.http.post(this.hostUrl.concat('emailpassword/') + email,'')
+        return this.http.post(this.hostUrl.concat('server/emailpassword/') + email,'')
             .map((response: Response) => {
                 return response.json();
             })

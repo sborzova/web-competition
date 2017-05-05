@@ -19,7 +19,7 @@ export var SignupComponent = (function () {
             this.authService.signup(user)
                 .subscribe(function (user) {
                 _this.flashMessageService.showMessage('Account created.', 'success');
-                _this.router.navigateByUrl('#home');
+                _this.router.navigateByUrl('home');
             }, function (error) { return console.error(error); });
         }
     };

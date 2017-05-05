@@ -953,7 +953,7 @@ var _View_ResultsInstanceComponent6 = (function (_super) {
     };
     _View_ResultsInstanceComponent6.prototype.detectChangesInternal = function (throwOnChange) {
         var valUnwrapper = new import7.ValueUnwrapper();
-        var currVal_12 = this._arr_0('/#solution/validatorinfo', this.context.$implicit.solutionId);
+        var currVal_12 = this._arr_0('/solution/validatorinfo', this.context.$implicit.solutionId);
         if (import4.checkBinding(throwOnChange, this._expr_12, currVal_12)) {
             this._RouterLink_42_3.routerLink = currVal_12;
             this._expr_12 = currVal_12;
@@ -1222,6 +1222,7 @@ var _View_ResultsInstanceComponent11 = (function (_super) {
     }
     _View_ResultsInstanceComponent11.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'a', null);
+        this.renderer.setElementAttribute(this._el_0, 'target', '_blank');
         this._text_1 = this.renderer.createText(this._el_0, 'URL', null);
         this._expr_0 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [

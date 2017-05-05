@@ -10,7 +10,7 @@ export var EmailService = (function () {
         this.hostUrl = routeModule.hostUrl;
     }
     EmailService.prototype.sendEmailNewPassword = function (email) {
-        return this.http.post(this.hostUrl.concat('emailpassword/') + email, '')
+        return this.http.post(this.hostUrl.concat('server/emailpassword/') + email, '')
             .map(function (response) {
             return response.json();
         })

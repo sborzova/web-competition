@@ -17,7 +17,7 @@ export var InstanceService = (function () {
         var _this = this;
         var body = JSON.stringify(instance);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('instance'), body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/instance'), body, { headers: headers })
             .map(function (response) {
             var result = response.json().obj.data;
             var instance = new Instance(result.order, result.name, result.description, null, null, result.submissionTime, result._id);
@@ -32,7 +32,7 @@ export var InstanceService = (function () {
         });
     };
     InstanceService.prototype.getInstance = function (id) {
-        return this.http.get(this.hostUrl.concat('instance/' + id))
+        return this.http.get(this.hostUrl.concat('server/instance/' + id))
             .map(function (response) {
             var instance = response.json().obj;
             return new Instance(instance.order, instance.name, instance.description, new FileModel(new Buffer(instance.status.content), instance.status._id), new FileModel(new Buffer(instance.data.content), instance.data._id), instance.submissionTime, instance._id);
@@ -45,7 +45,7 @@ export var InstanceService = (function () {
         var _this = this;
         var body = JSON.stringify(instance);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('instance/') + instance.instanceId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/instance/') + instance.instanceId, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -58,7 +58,7 @@ export var InstanceService = (function () {
     };
     InstanceService.prototype.getInstances = function () {
         var _this = this;
-        return this.http.get(this.hostUrl.concat('instances'))
+        return this.http.get(this.hostUrl.concat('server/instances'))
             .map(function (response) {
             var instances = response.json().obj;
             var transformedInstances = [];
@@ -73,7 +73,7 @@ export var InstanceService = (function () {
     };
     InstanceService.prototype.deleteInstance = function (instance) {
         this.instances.splice(this.instances.indexOf(instance), 1);
-        return this.http.delete(this.hostUrl.concat('instance/') + instance.instanceId)
+        return this.http.delete(this.hostUrl.concat('server/instance/') + instance.instanceId)
             .map(function (response) {
             return response.json();
         })

@@ -1,8 +1,7 @@
-import { Component, OnInit, Input } from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {User} from "../user.model";
-import {Subscription} from "rxjs";
-import {Router, ActivatedRoute, Params} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 import {UsersService} from "../users.service";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
@@ -56,6 +55,6 @@ export class UserEditPasswordComponent implements OnInit{
     }
 
     navigateBack(){
-        this.router.navigate(['/#users']);
+        this.router.navigate(['/users']);
     }
 }

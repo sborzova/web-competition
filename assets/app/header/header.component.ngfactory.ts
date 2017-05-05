@@ -479,7 +479,7 @@ class _View_HeaderComponent0 extends import1.AppView<import3.HeaderComponent> {
       changes['target'] = new import7.SimpleChange(this._expr_1,currVal_1);
       this._expr_1 = currVal_1;
     }
-    const currVal_2:any = this._arr_0('#home');
+    const currVal_2:any = this._arr_0('home');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
       this._RouterLinkWithHref_15_3.routerLink = currVal_2;
       if ((changes === (null as any))) { (changes = {}); }
@@ -497,7 +497,7 @@ class _View_HeaderComponent0 extends import1.AppView<import3.HeaderComponent> {
     }
     if ((changes !== (null as any))) { this._RouterLinkActive_23_3.ngOnChanges(changes); }
     changes = (null as any);
-    const currVal_6:any = this._arr_1('#instances');
+    const currVal_6:any = this._arr_1('instances');
     if (import4.checkBinding(throwOnChange,this._expr_6,currVal_6)) {
       this._RouterLinkWithHref_25_3.routerLink = currVal_6;
       if ((changes === (null as any))) { (changes = {}); }
@@ -520,7 +520,7 @@ class _View_HeaderComponent0 extends import1.AppView<import3.HeaderComponent> {
     }
     if ((changes !== (null as any))) { this._RouterLinkActive_31_3.ngOnChanges(changes); }
     changes = (null as any);
-    const currVal_11:any = this._arr_2('#validator');
+    const currVal_11:any = this._arr_2('validator');
     if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
       this._RouterLinkWithHref_33_3.routerLink = currVal_11;
       if ((changes === (null as any))) { (changes = {}); }
@@ -706,7 +706,7 @@ class _View_HeaderComponent1 extends import1.AppView<any> {
     }
     if ((changes !== (null as any))) { this._RouterLinkActive_0_3.ngOnChanges(changes); }
     changes = (null as any);
-    const currVal_2:any = this._arr_0('#results');
+    const currVal_2:any = this._arr_0('results');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
       this._RouterLinkWithHref_2_3.routerLink = currVal_2;
       if ((changes === (null as any))) { (changes = {}); }
@@ -812,7 +812,7 @@ class _View_HeaderComponent2 extends import1.AppView<any> {
     }
     if ((changes !== (null as any))) { this._RouterLinkActive_0_3.ngOnChanges(changes); }
     changes = (null as any);
-    const currVal_2:any = this._arr_0('#users');
+    const currVal_2:any = this._arr_0('users');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
       this._RouterLinkWithHref_2_3.routerLink = currVal_2;
       if ((changes === (null as any))) { (changes = {}); }
@@ -918,7 +918,7 @@ class _View_HeaderComponent3 extends import1.AppView<any> {
     }
     if ((changes !== (null as any))) { this._RouterLinkActive_0_3.ngOnChanges(changes); }
     changes = (null as any);
-    const currVal_2:any = this._arr_0('#mysolutions');
+    const currVal_2:any = this._arr_0('mysolutions');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
       this._RouterLinkWithHref_2_3.routerLink = currVal_2;
       if ((changes === (null as any))) { (changes = {}); }
@@ -1024,7 +1024,7 @@ class _View_HeaderComponent4 extends import1.AppView<any> {
     }
     if ((changes !== (null as any))) { this._RouterLinkActive_0_3.ngOnChanges(changes); }
     changes = (null as any);
-    const currVal_2:any = this._arr_0('#signup');
+    const currVal_2:any = this._arr_0('signup');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
       this._RouterLinkWithHref_2_3.routerLink = currVal_2;
       if ((changes === (null as any))) { (changes = {}); }
@@ -1130,7 +1130,7 @@ class _View_HeaderComponent5 extends import1.AppView<any> {
     }
     if ((changes !== (null as any))) { this._RouterLinkActive_0_3.ngOnChanges(changes); }
     changes = (null as any);
-    const currVal_2:any = this._arr_0('#signin');
+    const currVal_2:any = this._arr_0('signin');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
       this._RouterLinkWithHref_2_3.routerLink = currVal_2;
       if ((changes === (null as any))) { (changes = {}); }
@@ -1200,7 +1200,7 @@ class _View_HeaderComponent6 extends import1.AppView<any> {
     this._text_1 = this.renderer.createText(this._el_0,'\n                            ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'a',(null as any));
     this._RouterLinkWithHref_2_3 = new import12.RouterLinkWithHref(this.parent.parentInjector.get(import9.Router),this.parent.parentInjector.get(import16.ActivatedRoute),this.parent.parentInjector.get(import17.LocationStrategy));
-    this._text_3 = this.renderer.createText(this._el_2,'My profile',(null as any));
+    this._text_3 = this.renderer.createText(this._el_2,'Profile',(null as any));
     this._text_4 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     var disposable_0:Function = this.renderer.listen(this._el_2,'click',this.eventHandler(this._handle_click_2_0.bind(this)));
@@ -1236,7 +1236,7 @@ class _View_HeaderComponent6 extends import1.AppView<any> {
     }
     if ((changes !== (null as any))) { this._RouterLinkActive_0_3.ngOnChanges(changes); }
     changes = (null as any);
-    const currVal_2:any = this._arr_0('#profile');
+    const currVal_2:any = this._arr_0('profile');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
       this._RouterLinkWithHref_2_3.routerLink = currVal_2;
       if ((changes === (null as any))) { (changes = {}); }
@@ -1342,7 +1342,7 @@ class _View_HeaderComponent7 extends import1.AppView<any> {
     }
     if ((changes !== (null as any))) { this._RouterLinkActive_0_3.ngOnChanges(changes); }
     changes = (null as any);
-    const currVal_2:any = this._arr_0('#preferences');
+    const currVal_2:any = this._arr_0('preferences');
     if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
       this._RouterLinkWithHref_2_3.routerLink = currVal_2;
       if ((changes === (null as any))) { (changes = {}); }

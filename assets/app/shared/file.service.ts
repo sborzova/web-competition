@@ -31,7 +31,7 @@ export class FileService {
             let fd = new FormData();
             fd.append('file', file);
 
-            this.xmlHttp.open("POST", this.hostUrl.concat('file'));
+            this.xmlHttp.open("POST", this.hostUrl.concat('server/file'));
             this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
             this.xmlHttp.send(fd);
         });
@@ -54,7 +54,7 @@ export class FileService {
             let fd = new FormData();
             fd.append('file', file.content);
 
-            this.xmlHttp.open("POST", this.hostUrl.concat('fileUpdate/') + file.id);
+            this.xmlHttp.open("POST", this.hostUrl.concat('server/fileUpdate/') + file.id);
             this.xmlHttp.setRequestHeader("enctype", "multipart/form-data");
             this.xmlHttp.send(fd);
         });
@@ -62,7 +62,7 @@ export class FileService {
 
     deleteFile(id: string){
         return this.http.delete(
-            this.hostUrl.concat('delete/') + id)
+            this.hostUrl.concat('server/delete/') + id)
             .map((response: Response) => {
                 return response.json();
             })

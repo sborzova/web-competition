@@ -147,7 +147,7 @@
                                     type="button"
                                     class="btn btn-primary btn-xs"
                                     title="View"
-                                    [routerLink]="['/#solution/validatorinfo',solution.solutionId]">
+                                    [routerLink]="['/solution/validatorinfo',solution.solutionId]">
                                     <i class="glyphicon glyphicon-info-sign"></i>
                         </button>
                         </td>
@@ -160,7 +160,7 @@
                     <tr *ngIf="showPapers">
                         <td></td>
                         <td><strong>Url: </strong></td>
-                        <td colspan="10" id="paper"><a href="{{solution.paper?.url}}">{{ solution.paper?.url}}</a></td>
+                        <td colspan="10" id="paper"><a href="{{solution.paper?.url}}" target="_blank">{{ solution.paper?.url}}</a></td>
                     </tr>
                     </tbody>
                 </table>

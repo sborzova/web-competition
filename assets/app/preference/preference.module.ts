@@ -5,7 +5,6 @@ import {FormsModule} from "@angular/forms";
 import {PreferenceComponent} from "./preference.component";
 import {preferenceRouting} from "./preference.routing";
 import {PreferenceService} from "./preference.service";
-import {FlashMessageService} from "../flash-message/flash-messages.service";
 
 @NgModule({
     declarations: [
