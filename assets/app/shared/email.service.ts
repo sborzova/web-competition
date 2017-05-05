@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import { Http, Response, Headers } from "@angular/http";
 import {FlashMessageService} from "../flash-message/flash-messages.service";
 import {Observable} from "rxjs";
+import {Email} from "./email.model";
 
 @Injectable()
 export class EmailService {
@@ -14,7 +15,8 @@ export class EmailService {
         this.hostUrl = routeModule.hostUrl;
     }
 
-    sendEmailNewPassword(email: string){
+    sendEmailNewPassword(receiver: string){
+        let email = new Email(receiver);
         const body = JSON.stringify(email);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.post(this.hostUrl.concat('server/resetpassword'), body, {headers: headers})

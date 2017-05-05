@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Http, Headers } from "@angular/http";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { Observable } from "rxjs";
+import { Email } from "./email.model";
 export var EmailService = (function () {
     function EmailService(http, flashMessageService) {
         this.http = http;
@@ -9,8 +10,9 @@ export var EmailService = (function () {
         var routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
-    EmailService.prototype.sendEmailNewPassword = function (email) {
+    EmailService.prototype.sendEmailNewPassword = function (receiver) {
         var _this = this;
+        var email = new Email(receiver);
         var body = JSON.stringify(email);
         var headers = new Headers({ 'Content-Type': 'application/json' });
         return this.http.post(this.hostUrl.concat('server/resetpassword'), body, { headers: headers })
