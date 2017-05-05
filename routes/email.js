@@ -7,8 +7,8 @@ var User = require('../models/user');
  *  Create new password, save it in the database and send email
  */
 
-router.post('/server/emailpassword/:email', function (req, res, next) {
-    User.findOne({email: req.params.email}, function(err, user) {
+router.post('/server/resetpassword', function (req, res, next) {
+    User.findOne({email: req.body.receiver}, function(err, user) {
         if (err) {
             return res.status(500).json({
                 title: 'An error occurred',
@@ -31,8 +31,8 @@ router.post('/server/emailpassword/:email', function (req, res, next) {
         user.password = bcrypt.hashSync(newPassword, 10);
 
         var helper = require('sendgrid').mail;
-        var from_email = new helper.Email('no-reply@testcttcompetition.com');
-        var to_email = new helper.Email(req.params.email);
+        var from_email = new helper.Email('no-reply@testcttcompetition.herokuapp.com');
+        var to_email = new helper.Email(req.body.receiver);
         var subject = 'Reset password';
         var content = new helper.Content('text/plain',
             'Dear user!/n Your new password is: ' + newPassword + '/n You can change it in your profile after login./n'
