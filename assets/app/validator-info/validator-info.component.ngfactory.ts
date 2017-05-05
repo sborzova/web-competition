@@ -127,7 +127,7 @@ class _View_ValidatorInfoComponent0 extends import1.AppView<import3.ValidatorInf
   }
 }
 export function viewFactory_ValidatorInfoComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ValidatorInfoComponent> {
-  if ((renderType_ValidatorInfoComponent === (null as any))) { (renderType_ValidatorInfoComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/validator-info/validator-info.component.html',0,import10.ViewEncapsulation.None,styles_ValidatorInfoComponent,{})); }
+  if ((renderType_ValidatorInfoComponent === (null as any))) { (renderType_ValidatorInfoComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/validator-info/validator-info.component.html',0,import10.ViewEncapsulation.None,styles_ValidatorInfoComponent,{})); }
   return new _View_ValidatorInfoComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_ValidatorInfoComponent1 extends import1.AppView<any> {

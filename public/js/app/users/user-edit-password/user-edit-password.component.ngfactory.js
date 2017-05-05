@@ -156,7 +156,7 @@ var _View_UserEditPasswordComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_UserEditPasswordComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_UserEditPasswordComponent === null)) {
-        (renderType_UserEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/users/user-edit-password/user-edit-password.component.html', 0, import12.ViewEncapsulation.None, styles_UserEditPasswordComponent, {}));
+        (renderType_UserEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/users/user-edit-password/user-edit-password.component.html', 0, import12.ViewEncapsulation.None, styles_UserEditPasswordComponent, {}));
     }
     return new _View_UserEditPasswordComponent0(viewUtils, parentInjector, declarationEl);
 }

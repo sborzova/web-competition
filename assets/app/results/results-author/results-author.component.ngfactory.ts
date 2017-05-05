@@ -100,7 +100,7 @@ class _View_ResultsAuthorComponent0 extends import1.AppView<import3.ResultsAutho
   }
 }
 export function viewFactory_ResultsAuthorComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ResultsAuthorComponent> {
-  if ((renderType_ResultsAuthorComponent === (null as any))) { (renderType_ResultsAuthorComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/results/results-author/results-author.component.html',0,import12.ViewEncapsulation.None,styles_ResultsAuthorComponent,{})); }
+  if ((renderType_ResultsAuthorComponent === (null as any))) { (renderType_ResultsAuthorComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/results/results-author/results-author.component.html',0,import12.ViewEncapsulation.None,styles_ResultsAuthorComponent,{})); }
   return new _View_ResultsAuthorComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_ResultsAuthorComponent1 extends import1.AppView<any> {

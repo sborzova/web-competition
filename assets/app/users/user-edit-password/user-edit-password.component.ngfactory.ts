@@ -166,7 +166,7 @@ class _View_UserEditPasswordComponent0 extends import1.AppView<import3.UserEditP
   }
 }
 export function viewFactory_UserEditPasswordComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UserEditPasswordComponent> {
-  if ((renderType_UserEditPasswordComponent === (null as any))) { (renderType_UserEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/users/user-edit-password/user-edit-password.component.html',0,import12.ViewEncapsulation.None,styles_UserEditPasswordComponent,{})); }
+  if ((renderType_UserEditPasswordComponent === (null as any))) { (renderType_UserEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/users/user-edit-password/user-edit-password.component.html',0,import12.ViewEncapsulation.None,styles_UserEditPasswordComponent,{})); }
   return new _View_UserEditPasswordComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_UserEditPasswordComponent1 extends import1.AppView<any> {

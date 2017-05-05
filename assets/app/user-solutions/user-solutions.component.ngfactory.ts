@@ -398,7 +398,7 @@ class _View_UserSolutionsComponent0 extends import1.AppView<import3.UserSolution
   }
 }
 export function viewFactory_UserSolutionsComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UserSolutionsComponent> {
-  if ((renderType_UserSolutionsComponent === (null as any))) { (renderType_UserSolutionsComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/user-solutions/user-solutions.component.html',0,import12.ViewEncapsulation.Emulated,styles_UserSolutionsComponent,{})); }
+  if ((renderType_UserSolutionsComponent === (null as any))) { (renderType_UserSolutionsComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/user-solutions/user-solutions.component.html',0,import12.ViewEncapsulation.Emulated,styles_UserSolutionsComponent,{})); }
   return new _View_UserSolutionsComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_UserSolutionsComponent1 extends import1.AppView<any> {

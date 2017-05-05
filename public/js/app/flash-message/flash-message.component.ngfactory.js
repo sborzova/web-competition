@@ -155,7 +155,7 @@ var _View_FlashMessageComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_FlashMessageComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_FlashMessageComponent === null)) {
-        (renderType_FlashMessageComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/flash-message/flash-message.component.html', 0, import9.ViewEncapsulation.Emulated, styles_FlashMessageComponent, {}));
+        (renderType_FlashMessageComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/flash-message/flash-message.component.html', 0, import9.ViewEncapsulation.Emulated, styles_FlashMessageComponent, {}));
     }
     return new _View_FlashMessageComponent0(viewUtils, parentInjector, declarationEl);
 }

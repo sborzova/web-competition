@@ -115,7 +115,7 @@ var _View_SuccessValidationComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_SuccessValidationComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_SuccessValidationComponent === null)) {
-        (renderType_SuccessValidationComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/validation/success-validation/success-validation.component.html', 0, import11.ViewEncapsulation.None, styles_SuccessValidationComponent, {}));
+        (renderType_SuccessValidationComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/validation/success-validation/success-validation.component.html', 0, import11.ViewEncapsulation.None, styles_SuccessValidationComponent, {}));
     }
     return new _View_SuccessValidationComponent0(viewUtils, parentInjector, declarationEl);
 }

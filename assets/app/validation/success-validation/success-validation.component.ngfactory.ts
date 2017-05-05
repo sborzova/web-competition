@@ -106,7 +106,7 @@ class _View_SuccessValidationComponent0 extends import1.AppView<import3.SuccessV
   }
 }
 export function viewFactory_SuccessValidationComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.SuccessValidationComponent> {
-  if ((renderType_SuccessValidationComponent === (null as any))) { (renderType_SuccessValidationComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/validation/success-validation/success-validation.component.html',0,import11.ViewEncapsulation.None,styles_SuccessValidationComponent,{})); }
+  if ((renderType_SuccessValidationComponent === (null as any))) { (renderType_SuccessValidationComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/validation/success-validation/success-validation.component.html',0,import11.ViewEncapsulation.None,styles_SuccessValidationComponent,{})); }
   return new _View_SuccessValidationComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_SuccessValidationComponent1 extends import1.AppView<any> {

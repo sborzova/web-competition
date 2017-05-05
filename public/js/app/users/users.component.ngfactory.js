@@ -228,7 +228,7 @@ var _View_UsersComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_UsersComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_UsersComponent === null)) {
-        (renderType_UsersComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/users/users.component.html', 0, import11.ViewEncapsulation.None, styles_UsersComponent, {}));
+        (renderType_UsersComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/users/users.component.html', 0, import11.ViewEncapsulation.None, styles_UsersComponent, {}));
     }
     return new _View_UsersComponent0(viewUtils, parentInjector, declarationEl);
 }

@@ -155,7 +155,7 @@ var _View_ProfileEditPasswordComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_ProfileEditPasswordComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_ProfileEditPasswordComponent === null)) {
-        (renderType_ProfileEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-edit-password/profile-edit-password.component.html', 0, import11.ViewEncapsulation.None, styles_ProfileEditPasswordComponent, {}));
+        (renderType_ProfileEditPasswordComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/profile/profile-edit-password/profile-edit-password.component.html', 0, import11.ViewEncapsulation.None, styles_ProfileEditPasswordComponent, {}));
     }
     return new _View_ProfileEditPasswordComponent0(viewUtils, parentInjector, declarationEl);
 }

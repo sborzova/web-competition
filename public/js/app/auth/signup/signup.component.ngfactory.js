@@ -1068,7 +1068,7 @@ var _View_SignupComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_SignupComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_SignupComponent === null)) {
-        (renderType_SignupComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/signup/signup.component.html', 0, import11.ViewEncapsulation.None, styles_SignupComponent, {}));
+        (renderType_SignupComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/auth/signup/signup.component.html', 0, import11.ViewEncapsulation.None, styles_SignupComponent, {}));
     }
     return new _View_SignupComponent0(viewUtils, parentInjector, declarationEl);
 }

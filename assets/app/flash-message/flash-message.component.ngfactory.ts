@@ -171,6 +171,6 @@ class _View_FlashMessageComponent0 extends import1.AppView<import3.FlashMessageC
   }
 }
 export function viewFactory_FlashMessageComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.FlashMessageComponent> {
-  if ((renderType_FlashMessageComponent === (null as any))) { (renderType_FlashMessageComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/flash-message/flash-message.component.html',0,import9.ViewEncapsulation.Emulated,styles_FlashMessageComponent,{})); }
+  if ((renderType_FlashMessageComponent === (null as any))) { (renderType_FlashMessageComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/flash-message/flash-message.component.html',0,import9.ViewEncapsulation.Emulated,styles_FlashMessageComponent,{})); }
   return new _View_FlashMessageComponent0(viewUtils,parentInjector,declarationEl);
 }

@@ -283,7 +283,7 @@ class _View_ResultsBestComponent0 extends import1.AppView<import3.ResultsBestCom
   }
 }
 export function viewFactory_ResultsBestComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ResultsBestComponent> {
-  if ((renderType_ResultsBestComponent === (null as any))) { (renderType_ResultsBestComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/results/results-best/results-best.component.html',0,import13.ViewEncapsulation.None,styles_ResultsBestComponent,{})); }
+  if ((renderType_ResultsBestComponent === (null as any))) { (renderType_ResultsBestComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/results/results-best/results-best.component.html',0,import13.ViewEncapsulation.None,styles_ResultsBestComponent,{})); }
   return new _View_ResultsBestComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_ResultsBestComponent1 extends import1.AppView<any> {

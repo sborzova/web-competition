@@ -907,7 +907,7 @@ class _View_InstanceCreateComponent0 extends import1.AppView<import3.InstanceCre
   }
 }
 export function viewFactory_InstanceCreateComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.InstanceCreateComponent> {
-  if ((renderType_InstanceCreateComponent === (null as any))) { (renderType_InstanceCreateComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/instances/instance-new/instance-new.component.html',0,import12.ViewEncapsulation.None,styles_InstanceCreateComponent,{})); }
+  if ((renderType_InstanceCreateComponent === (null as any))) { (renderType_InstanceCreateComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/instances/instance-new/instance-new.component.html',0,import12.ViewEncapsulation.None,styles_InstanceCreateComponent,{})); }
   return new _View_InstanceCreateComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_InstanceCreateComponent1 extends import1.AppView<any> {

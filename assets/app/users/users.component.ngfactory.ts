@@ -259,7 +259,7 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
   }
 }
 export function viewFactory_UsersComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UsersComponent> {
-  if ((renderType_UsersComponent === (null as any))) { (renderType_UsersComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/users/users.component.html',0,import11.ViewEncapsulation.None,styles_UsersComponent,{})); }
+  if ((renderType_UsersComponent === (null as any))) { (renderType_UsersComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/users/users.component.html',0,import11.ViewEncapsulation.None,styles_UsersComponent,{})); }
   return new _View_UsersComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_UsersComponent1 extends import1.AppView<any> {

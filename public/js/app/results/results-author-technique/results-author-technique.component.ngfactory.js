@@ -104,7 +104,7 @@ var _View_ResultsAuthorTechniqueComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_ResultsAuthorTechniqueComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_ResultsAuthorTechniqueComponent === null)) {
-        (renderType_ResultsAuthorTechniqueComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/results/results-author-technique/results-author-technique.component.html', 0, import12.ViewEncapsulation.None, styles_ResultsAuthorTechniqueComponent, {}));
+        (renderType_ResultsAuthorTechniqueComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/results/results-author-technique/results-author-technique.component.html', 0, import12.ViewEncapsulation.None, styles_ResultsAuthorTechniqueComponent, {}));
     }
     return new _View_ResultsAuthorTechniqueComponent0(viewUtils, parentInjector, declarationEl);
 }

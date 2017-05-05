@@ -156,7 +156,7 @@ var _View_ProfileEditComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_ProfileEditComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_ProfileEditComponent === null)) {
-        (renderType_ProfileEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-edit/profile-edit.component.html', 0, import12.ViewEncapsulation.None, styles_ProfileEditComponent, {}));
+        (renderType_ProfileEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/profile/profile-edit/profile-edit.component.html', 0, import12.ViewEncapsulation.None, styles_ProfileEditComponent, {}));
     }
     return new _View_ProfileEditComponent0(viewUtils, parentInjector, declarationEl);
 }

@@ -216,7 +216,7 @@ class _View_PreferenceComponent0 extends import1.AppView<import3.PreferenceCompo
   }
 }
 export function viewFactory_PreferenceComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.PreferenceComponent> {
-  if ((renderType_PreferenceComponent === (null as any))) { (renderType_PreferenceComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/preference/preference.component.html',0,import10.ViewEncapsulation.Emulated,styles_PreferenceComponent,{})); }
+  if ((renderType_PreferenceComponent === (null as any))) { (renderType_PreferenceComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/preference/preference.component.html',0,import10.ViewEncapsulation.Emulated,styles_PreferenceComponent,{})); }
   return new _View_PreferenceComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_PreferenceComponent1 extends import1.AppView<any> {

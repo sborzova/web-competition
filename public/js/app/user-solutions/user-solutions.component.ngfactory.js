@@ -347,7 +347,7 @@ var _View_UserSolutionsComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_UserSolutionsComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_UserSolutionsComponent === null)) {
-        (renderType_UserSolutionsComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/user-solutions/user-solutions.component.html', 0, import12.ViewEncapsulation.Emulated, styles_UserSolutionsComponent, {}));
+        (renderType_UserSolutionsComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/user-solutions/user-solutions.component.html', 0, import12.ViewEncapsulation.Emulated, styles_UserSolutionsComponent, {}));
     }
     return new _View_UserSolutionsComponent0(viewUtils, parentInjector, declarationEl);
 }

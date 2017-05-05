@@ -155,7 +155,7 @@ var _View_UserEditComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_UserEditComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_UserEditComponent === null)) {
-        (renderType_UserEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/users/user-edit/user-edit.component.html', 0, import12.ViewEncapsulation.None, styles_UserEditComponent, {}));
+        (renderType_UserEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/users/user-edit/user-edit.component.html', 0, import12.ViewEncapsulation.None, styles_UserEditComponent, {}));
     }
     return new _View_UserEditComponent0(viewUtils, parentInjector, declarationEl);
 }

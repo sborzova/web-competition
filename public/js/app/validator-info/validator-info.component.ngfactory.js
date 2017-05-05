@@ -125,7 +125,7 @@ var _View_ValidatorInfoComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_ValidatorInfoComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_ValidatorInfoComponent === null)) {
-        (renderType_ValidatorInfoComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/validator-info/validator-info.component.html', 0, import10.ViewEncapsulation.None, styles_ValidatorInfoComponent, {}));
+        (renderType_ValidatorInfoComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/validator-info/validator-info.component.html', 0, import10.ViewEncapsulation.None, styles_ValidatorInfoComponent, {}));
     }
     return new _View_ValidatorInfoComponent0(viewUtils, parentInjector, declarationEl);
 }

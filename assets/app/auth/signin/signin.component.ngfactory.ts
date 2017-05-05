@@ -743,7 +743,7 @@ class _View_SigninComponent0 extends import1.AppView<import3.SigninComponent> {
   }
 }
 export function viewFactory_SigninComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.SigninComponent> {
-  if ((renderType_SigninComponent === (null as any))) { (renderType_SigninComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/signin/signin.component.html',0,import13.ViewEncapsulation.None,styles_SigninComponent,{})); }
+  if ((renderType_SigninComponent === (null as any))) { (renderType_SigninComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/auth/signin/signin.component.html',0,import13.ViewEncapsulation.None,styles_SigninComponent,{})); }
   return new _View_SigninComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_SigninComponent1 extends import1.AppView<any> {

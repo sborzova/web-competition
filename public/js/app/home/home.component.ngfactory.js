@@ -75,7 +75,7 @@ var _View_HomeComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_HomeComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_HomeComponent === null)) {
-        (renderType_HomeComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/home/home.component.html', 0, import8.ViewEncapsulation.None, styles_HomeComponent, {}));
+        (renderType_HomeComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/home/home.component.html', 0, import8.ViewEncapsulation.None, styles_HomeComponent, {}));
     }
     return new _View_HomeComponent0(viewUtils, parentInjector, declarationEl);
 }

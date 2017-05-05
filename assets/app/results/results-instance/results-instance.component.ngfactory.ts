@@ -98,7 +98,7 @@ class _View_ResultsInstanceComponent0 extends import1.AppView<import3.ResultsIns
   }
 }
 export function viewFactory_ResultsInstanceComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ResultsInstanceComponent> {
-  if ((renderType_ResultsInstanceComponent === (null as any))) { (renderType_ResultsInstanceComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/results/results-instance/results-instance.component.html',0,import12.ViewEncapsulation.None,styles_ResultsInstanceComponent,{})); }
+  if ((renderType_ResultsInstanceComponent === (null as any))) { (renderType_ResultsInstanceComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/results/results-instance/results-instance.component.html',0,import12.ViewEncapsulation.None,styles_ResultsInstanceComponent,{})); }
   return new _View_ResultsInstanceComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_ResultsInstanceComponent1 extends import1.AppView<any> {

@@ -165,7 +165,7 @@ class _View_UserEditComponent0 extends import1.AppView<import3.UserEditComponent
   }
 }
 export function viewFactory_UserEditComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.UserEditComponent> {
-  if ((renderType_UserEditComponent === (null as any))) { (renderType_UserEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/users/user-edit/user-edit.component.html',0,import12.ViewEncapsulation.None,styles_UserEditComponent,{})); }
+  if ((renderType_UserEditComponent === (null as any))) { (renderType_UserEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/users/user-edit/user-edit.component.html',0,import12.ViewEncapsulation.None,styles_UserEditComponent,{})); }
   return new _View_UserEditComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_UserEditComponent1 extends import1.AppView<any> {

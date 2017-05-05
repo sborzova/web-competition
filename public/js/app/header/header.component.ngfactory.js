@@ -590,7 +590,7 @@ var _View_HeaderComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_HeaderComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_HeaderComponent === null)) {
-        (renderType_HeaderComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/header/header.component.html', 0, import10.ViewEncapsulation.None, styles_HeaderComponent, {}));
+        (renderType_HeaderComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/header/header.component.html', 0, import10.ViewEncapsulation.None, styles_HeaderComponent, {}));
     }
     return new _View_HeaderComponent0(viewUtils, parentInjector, declarationEl);
 }

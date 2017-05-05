@@ -1130,7 +1130,7 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
   }
 }
 export function viewFactory_SignupComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.SignupComponent> {
-  if ((renderType_SignupComponent === (null as any))) { (renderType_SignupComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/auth/signup/signup.component.html',0,import11.ViewEncapsulation.None,styles_SignupComponent,{})); }
+  if ((renderType_SignupComponent === (null as any))) { (renderType_SignupComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/auth/signup/signup.component.html',0,import11.ViewEncapsulation.None,styles_SignupComponent,{})); }
   return new _View_SignupComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_SignupComponent1 extends import1.AppView<any> {

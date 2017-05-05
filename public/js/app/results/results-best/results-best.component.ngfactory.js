@@ -263,7 +263,7 @@ var _View_ResultsBestComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_ResultsBestComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_ResultsBestComponent === null)) {
-        (renderType_ResultsBestComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/results/results-best/results-best.component.html', 0, import13.ViewEncapsulation.None, styles_ResultsBestComponent, {}));
+        (renderType_ResultsBestComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/results/results-best/results-best.component.html', 0, import13.ViewEncapsulation.None, styles_ResultsBestComponent, {}));
     }
     return new _View_ResultsBestComponent0(viewUtils, parentInjector, declarationEl);
 }

@@ -127,7 +127,7 @@ var _View_AppComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_AppComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_AppComponent === null)) {
-        (renderType_AppComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/app.component.html', 0, import8.ViewEncapsulation.None, styles_AppComponent, {}));
+        (renderType_AppComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/app.component.html', 0, import8.ViewEncapsulation.None, styles_AppComponent, {}));
     }
     return new _View_AppComponent0(viewUtils, parentInjector, declarationEl);
 }

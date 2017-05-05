@@ -185,7 +185,7 @@ class _View_InstanceEditComponent0 extends import1.AppView<import3.InstanceEditC
   }
 }
 export function viewFactory_InstanceEditComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.InstanceEditComponent> {
-  if ((renderType_InstanceEditComponent === (null as any))) { (renderType_InstanceEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/instances/instance-update/instance-update.component.html',0,import13.ViewEncapsulation.None,styles_InstanceEditComponent,{})); }
+  if ((renderType_InstanceEditComponent === (null as any))) { (renderType_InstanceEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/instances/instance-update/instance-update.component.html',0,import13.ViewEncapsulation.None,styles_InstanceEditComponent,{})); }
   return new _View_InstanceEditComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_InstanceEditComponent1 extends import1.AppView<any> {

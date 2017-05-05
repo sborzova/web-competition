@@ -200,7 +200,7 @@ var _View_PreferenceComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_PreferenceComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_PreferenceComponent === null)) {
-        (renderType_PreferenceComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/preference/preference.component.html', 0, import10.ViewEncapsulation.Emulated, styles_PreferenceComponent, {}));
+        (renderType_PreferenceComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/preference/preference.component.html', 0, import10.ViewEncapsulation.Emulated, styles_PreferenceComponent, {}));
     }
     return new _View_PreferenceComponent0(viewUtils, parentInjector, declarationEl);
 }

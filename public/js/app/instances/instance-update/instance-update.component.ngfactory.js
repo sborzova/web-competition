@@ -173,7 +173,7 @@ var _View_InstanceEditComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_InstanceEditComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_InstanceEditComponent === null)) {
-        (renderType_InstanceEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/instances/instance-update/instance-update.component.html', 0, import13.ViewEncapsulation.None, styles_InstanceEditComponent, {}));
+        (renderType_InstanceEditComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/instances/instance-update/instance-update.component.html', 0, import13.ViewEncapsulation.None, styles_InstanceEditComponent, {}));
     }
     return new _View_InstanceEditComponent0(viewUtils, parentInjector, declarationEl);
 }

@@ -309,7 +309,7 @@ var _View_InstancesComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_InstancesComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_InstancesComponent === null)) {
-        (renderType_InstancesComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/instances/instances.component.html', 0, import11.ViewEncapsulation.None, styles_InstancesComponent, {}));
+        (renderType_InstancesComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/instances/instances.component.html', 0, import11.ViewEncapsulation.None, styles_InstancesComponent, {}));
     }
     return new _View_InstancesComponent0(viewUtils, parentInjector, declarationEl);
 }

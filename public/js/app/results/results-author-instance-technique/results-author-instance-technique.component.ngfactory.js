@@ -104,7 +104,7 @@ var _View_ResultsAuthorInstanceTechniqueComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_ResultsAuthorInstanceTechniqueComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_ResultsAuthorInstanceTechniqueComponent === null)) {
-        (renderType_ResultsAuthorInstanceTechniqueComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.html', 0, import12.ViewEncapsulation.None, styles_ResultsAuthorInstanceTechniqueComponent, {}));
+        (renderType_ResultsAuthorInstanceTechniqueComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.html', 0, import12.ViewEncapsulation.None, styles_ResultsAuthorInstanceTechniqueComponent, {}));
     }
     return new _View_ResultsAuthorInstanceTechniqueComponent0(viewUtils, parentInjector, declarationEl);
 }

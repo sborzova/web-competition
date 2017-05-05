@@ -243,7 +243,7 @@ class _View_ProfileInfoComponent0 extends import1.AppView<import3.ProfileInfoCom
   }
 }
 export function viewFactory_ProfileInfoComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ProfileInfoComponent> {
-  if ((renderType_ProfileInfoComponent === (null as any))) { (renderType_ProfileInfoComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bakalárka/Project/assets/app/profile/profile-info/profile-info.component.html',0,import9.ViewEncapsulation.None,styles_ProfileInfoComponent,{})); }
+  if ((renderType_ProfileInfoComponent === (null as any))) { (renderType_ProfileInfoComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/profile/profile-info/profile-info.component.html',0,import9.ViewEncapsulation.None,styles_ProfileInfoComponent,{})); }
   return new _View_ProfileInfoComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_ProfileInfoComponent1 extends import1.AppView<any> {
