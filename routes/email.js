@@ -9,7 +9,7 @@ var User = require('../models/user');
  */
 
 router.post('/server/resetpassword', function (req, res, next) {
-    mongoose.User.findOne({email: req.body.receiver}, function(err, user) {
+     User.findOne({email: req.body.receiver}, function(err, user) {
         if (err) {
             return res.status(500).json({
                 title: 'An error occurred',

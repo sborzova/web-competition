@@ -4,6 +4,7 @@
     <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/email.js" afterPath="$PROJECT_DIR$/routes/email.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,8 +35,8 @@
       <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+            <state relative-caret-position="184">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,8 +45,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="51">
+              <caret line="19" column="82" lean-forward="false" selection-start-line="19" selection-start-column="82" selection-end-line="19" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -64,8 +65,8 @@
       <file leaf-file-name="email.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/email.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="50" column="65" lean-forward="false" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="65" />
+            <state relative-caret-position="238">
+              <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -225,7 +226,6 @@
         <option value="$PROJECT_DIR$/assets/app/shared/email.model.ts" />
         <option value="$PROJECT_DIR$/routes/instance.js" />
         <option value="$PROJECT_DIR$/assets/app/shared/email.service.ts" />
-        <option value="$PROJECT_DIR$/routes/email.js" />
         <option value="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.html" />
         <option value="$PROJECT_DIR$/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.html" />
         <option value="$PROJECT_DIR$/assets/app/results/results-author-instance/results-author-instance.component.html" />
@@ -239,10 +239,11 @@
         <option value="$PROJECT_DIR$/models/paper.js" />
         <option value="$PROJECT_DIR$/models/preference.js" />
         <option value="$PROJECT_DIR$/models/solution.js" />
-        <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/assets/app/home/home.component.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/email.js" />
+        <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
       </list>
     </option>
   </component>
@@ -292,6 +293,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web-competition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web-competition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web-competition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -535,14 +554,7 @@
       <workItem from="1493986615701" duration="974000" />
       <workItem from="1493998231236" duration="11290000" />
       <workItem from="1494057267187" duration="11787000" />
-      <workItem from="1494145740102" duration="12733000" />
-    </task>
-    <task id="LOCAL-00077" summary="turn on/off button">
-      <created>1489953697076</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1489953697076</updated>
+      <workItem from="1494145740102" duration="14355000" />
     </task>
     <task id="LOCAL-00078" summary="during/after competition, filter solutions, body padding, edit citation view, flash-message button,">
       <created>1490523366592</created>
@@ -880,11 +892,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494161117445</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="heroku env for connect db">
+      <created>1494164745541</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1494164745541</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1427790000" />
+    <option name="totallyTimeSpent" value="1429412000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -906,7 +925,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2454955" sideWeight="0.24722221" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24851191" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1697479" sideWeight="0.48214287" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45210084" sideWeight="0.48214287" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -967,7 +986,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="email" />
     <MESSAGE value="email route" />
     <MESSAGE value="hide worse solutions, password length, textarea resize" />
     <MESSAGE value="catch instance not found" />
@@ -992,7 +1010,8 @@
     <MESSAGE value="delete node-pre-gyp" />
     <MESSAGE value="build heroku try" />
     <MESSAGE value="delete gyp, pre-gyp, zopfli" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete gyp, pre-gyp, zopfli" />
+    <MESSAGE value="heroku env for connect db" />
+    <option name="LAST_COMMIT_MESSAGE" value="heroku env for connect db" />
   </component>
   <component name="WindowStateProjectService">
     <state width="264" height="278" key="Git.Branch.Popup" />
@@ -1244,7 +1263,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-            <marker date="1494164595722" expanded="true" signature="44843:44876" ph="{...}" />
+            <marker date="1494165845089" expanded="true" signature="44843:44876" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1365,24 +1384,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/email.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="50" column="65" lean-forward="false" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="65" />
+        <state relative-caret-position="238">
+          <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        <state relative-caret-position="51">
+          <caret line="19" column="82" lean-forward="false" selection-start-line="19" selection-start-column="82" selection-end-line="19" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+        <state relative-caret-position="184">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
