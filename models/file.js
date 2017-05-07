@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
 
 var Schema = mongoose.Schema;
+var Promise = require('bluebird');
+Promise.promisifyAll(mongoose);
 
 var schema = new Schema({
     content: {type: Buffer}

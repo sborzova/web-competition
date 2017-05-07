@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
+var mongooseUniqueValidator = require('mongoose-unique-validator');
 
 var Schema = mongoose.Schema;
-var mongooseUniqueValidator = require('mongoose-unique-validator');
+var Promise = require('bluebird');
+Promise.promisifyAll(mongoose);
 
 var Solution = require('./solution');
 var File = require('./file');
