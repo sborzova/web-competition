@@ -49,7 +49,7 @@
         </thead>
         <tbody  *ngFor="let solution of solutions">
         <tr>
-            <td>{{ solution.instance.name }}</td>
+            <td><a (click)="onInstance(solution.instance.instanceId)">{{ solution.instance.name }}</a></td>
             <td>{{ solution.unassigned }}&nbsp;%</td>
             <td>{{ solution.total }}</td>
             <td>{{ solution.sc }}&nbsp;%</td>

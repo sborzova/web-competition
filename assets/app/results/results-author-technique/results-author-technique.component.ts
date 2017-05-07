@@ -53,6 +53,10 @@ export class ResultsAuthorTechniqueComponent implements OnChanges{
         this.showPapers = false;
     }
 
+    onInstance(instanceId: string){
+        this.solutionsAuthorInstanceTechnique = this.solutions.filter( s => s.instance.instanceId == instanceId);
+    }
+
     onQualityAsc(){
         this.solutions = this.resultsService.sortQualityAsc(this.solutions);
     }

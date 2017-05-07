@@ -24,7 +24,7 @@ export class InstanceService {
     saveInstance(instance: InstanceCreate){
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.hostUrl.concat('server/instance'), body, {headers: headers})
+        return this.http.post(this.hostUrl.concat('server/instance') + this.token, body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json().obj.data;
                 const instance = new Instance(
@@ -69,7 +69,7 @@ export class InstanceService {
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(
-            this.hostUrl.concat('server/instance/') + instance.instanceId, body, {headers: headers})
+            this.hostUrl.concat('server/instance/') + instance.instanceId + this.token, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -106,7 +106,7 @@ export class InstanceService {
     deleteInstance(instance: Instance){
         this.instances.splice(this.instances.indexOf(instance), 1);
         return this.http.delete(
-            this.hostUrl.concat('server/instance/') + instance.instanceId)
+            this.hostUrl.concat('server/instance/') + instance.instanceId + this.token)
             .map((response: Response) => {
                 return response.json();
             })
@@ -121,4 +121,9 @@ export class InstanceService {
         this.fileSaver.saveAs(file);
     }
 
+    get token(){
+        return sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
+            : '';
+    }
 }

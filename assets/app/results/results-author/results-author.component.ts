@@ -55,10 +55,12 @@ export class ResultsAuthorComponent implements OnChanges {
     }
 
     onInstance(instanceId: string){
+        this.solutionsAuthorTechnique = null;
         this.solutionsAuthorInstance = this.solutions.filter( s => s.instance.instanceId == instanceId);
     }
 
     onTechnique(technique: string){
+        this.solutionsAuthorInstance = null;
         this.solutionsAuthorTechnique = this.solutions.filter(s => s.technique === technique);
     }
 

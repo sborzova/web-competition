@@ -35,6 +35,9 @@ export var ResultsAuthorTechniqueComponent = (function () {
     ResultsAuthorTechniqueComponent.prototype.onHidePapers = function () {
         this.showPapers = false;
     };
+    ResultsAuthorTechniqueComponent.prototype.onInstance = function (instanceId) {
+        this.solutionsAuthorInstanceTechnique = this.solutions.filter(function (s) { return s.instance.instanceId == instanceId; });
+    };
     ResultsAuthorTechniqueComponent.prototype.onQualityAsc = function () {
         this.solutions = this.resultsService.sortQualityAsc(this.solutions);
     };

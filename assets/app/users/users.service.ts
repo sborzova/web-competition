@@ -18,7 +18,7 @@ export class UsersService {
     }
 
     getUsers(){
-        return this.http.get(this.hostUrl.concat('server/users'))
+        return this.http.get(this.hostUrl.concat('server/users') + this.token)
             .map((response: Response) => {
                 const users = response.json().obj;
                 let transformedUsers: User[] = [];
@@ -57,7 +57,7 @@ export class UsersService {
     updateUser(user: User){
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('server/user/') + user.userId, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/user/') + user.userId + this.token, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -72,7 +72,7 @@ export class UsersService {
     updateUserPassword(user: User){
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId + this.token, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -84,7 +84,7 @@ export class UsersService {
     updatePassword(user: User){
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId, body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId + this.token, body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })
@@ -97,12 +97,18 @@ export class UsersService {
     deleteUser(user: User){
         this.users.splice(this.users.indexOf(user), 1);
         return this.http.delete(
-            this.hostUrl.concat('server/user/') + user.userId)
+            this.hostUrl.concat('server/user/') + user.userId + this.token)
             .map((response: Response) => {
                 return response.json();
             })
             .catch((error: Response) => {
                 return Observable.throw(error);
             });
+    }
+
+    get token(){
+        return sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
+            : '';
     }
 }

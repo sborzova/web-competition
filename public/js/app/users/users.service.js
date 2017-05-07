@@ -13,7 +13,7 @@ export var UsersService = (function () {
     }
     UsersService.prototype.getUsers = function () {
         var _this = this;
-        return this.http.get(this.hostUrl.concat('server/users'))
+        return this.http.get(this.hostUrl.concat('server/users') + this.token)
             .map(function (response) {
             var users = response.json().obj;
             var transformedUsers = [];
@@ -38,7 +38,7 @@ export var UsersService = (function () {
         var _this = this;
         var body = JSON.stringify(user);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('server/user/') + user.userId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/user/') + user.userId + this.token, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -52,7 +52,7 @@ export var UsersService = (function () {
     UsersService.prototype.updateUserPassword = function (user) {
         var body = JSON.stringify(user);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId + this.token, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -63,7 +63,7 @@ export var UsersService = (function () {
     UsersService.prototype.updatePassword = function (user) {
         var body = JSON.stringify(user);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId + this.token, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -73,7 +73,7 @@ export var UsersService = (function () {
     };
     UsersService.prototype.deleteUser = function (user) {
         this.users.splice(this.users.indexOf(user), 1);
-        return this.http.delete(this.hostUrl.concat('server/user/') + user.userId)
+        return this.http.delete(this.hostUrl.concat('server/user/') + user.userId + this.token)
             .map(function (response) {
             return response.json();
         })
@@ -81,6 +81,15 @@ export var UsersService = (function () {
             return Observable.throw(error);
         });
     };
+    Object.defineProperty(UsersService.prototype, "token", {
+        get: function () {
+            return sessionStorage.getItem('token')
+                ? '?token=' + sessionStorage.getItem('token')
+                : '';
+        },
+        enumerable: true,
+        configurable: true
+    });
     UsersService.decorators = [
         { type: Injectable },
     ];

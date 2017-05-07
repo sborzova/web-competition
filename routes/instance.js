@@ -4,6 +4,10 @@ var router = express.Router();
 var Instance = require('../models/instance');
 var File = require('../models/file');
 
+router.use('/server/instance', function (req, res, next) {
+    verify(req, res)
+});
+
 router.post('/server/instance', function (req, res) {
     File.findById(req.body.dataId, function (err, data) {
         if (err) {
@@ -48,6 +52,10 @@ router.post('/server/instance', function (req, res) {
             });
         });
     });
+});
+
+router.use('/server/instance/:id', function (req, res, next) {
+    verify(req, res)
 });
 
 router.patch('/server/instance/:id', function (req, res, next) {
@@ -130,6 +138,10 @@ router.get('/server/instances', function(req, res, next) {
     });
 });
 
+router.use('/server/instance/:id', function (req, res, next) {
+    verify(req, res)
+});
+
 router.delete('/server/instance/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
         if (err) {
@@ -158,5 +170,18 @@ router.delete('/server/instance/:id', function (req, res, next) {
         });
     });
 });
+
+
+function verify(req, res) {
+    jwt.verify(req.query.token, 'admin', function (err, decoded) {
+        if (err) {
+            return res.status(401).json({
+                title: 'Not Authenticated Admin',
+                error: err
+            });
+        }
+        next();
+    })
+}
 
 module.exports = router;

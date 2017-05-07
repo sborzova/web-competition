@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
 
 var User = require('../models/user');
 
 /**
  *  Create new password, save it in the database and send email
  */
+
 
 router.post('/server/resetpassword', function (req, res, next) {
      User.findOne({email: req.body.receiver}, function(err, user) {
@@ -36,14 +38,14 @@ router.post('/server/resetpassword', function (req, res, next) {
         var to_email = new helper.Email(req.body.receiver);
         var subject = 'Reset password';
         var content = new helper.Content('text/html',
-            "<html><br>" +
+            "<html><body>" +
             "<div>Dear user!</div>" +
             "<div>Your new password is: </div>"+ newPassword +
-            "</br>" +
+            "<br/>" +
             "<div>You can change it in your profile after login.</div>" +
             "<div></div>" +
-            "</br>" +
-            "</br>" +
+            "<br/>" +
+            "<br/>" +
             "<div>If you did not request this, please ignore this email.</div> " +
             "</body></html>");
         var mail = new helper.Mail(from_email, subject, to_email, content);

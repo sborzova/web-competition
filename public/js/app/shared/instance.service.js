@@ -17,7 +17,7 @@ export var InstanceService = (function () {
         var _this = this;
         var body = JSON.stringify(instance);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('server/instance'), body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/instance') + this.token, body, { headers: headers })
             .map(function (response) {
             var result = response.json().obj.data;
             var instance = new Instance(result.order, result.name, result.description, null, null, result.submissionTime, result._id);
@@ -45,7 +45,7 @@ export var InstanceService = (function () {
         var _this = this;
         var body = JSON.stringify(instance);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('server/instance/') + instance.instanceId, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/instance/') + instance.instanceId + this.token, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -73,7 +73,7 @@ export var InstanceService = (function () {
     };
     InstanceService.prototype.deleteInstance = function (instance) {
         this.instances.splice(this.instances.indexOf(instance), 1);
-        return this.http.delete(this.hostUrl.concat('server/instance/') + instance.instanceId)
+        return this.http.delete(this.hostUrl.concat('server/instance/') + instance.instanceId + this.token)
             .map(function (response) {
             return response.json();
         })
@@ -85,6 +85,15 @@ export var InstanceService = (function () {
         var file = new File([String.fromCharCode.apply(null, instance.data.content)], instance.name + '.xml', { type: "text/xml;charset=utf-8" });
         this.fileSaver.saveAs(file);
     };
+    Object.defineProperty(InstanceService.prototype, "token", {
+        get: function () {
+            return sessionStorage.getItem('token')
+                ? '?token=' + sessionStorage.getItem('token')
+                : '';
+        },
+        enumerable: true,
+        configurable: true
+    });
     InstanceService.decorators = [
         { type: Injectable },
     ];

@@ -37,9 +37,11 @@ export var ResultsAuthorComponent = (function () {
         this.showPapers = false;
     };
     ResultsAuthorComponent.prototype.onInstance = function (instanceId) {
+        this.solutionsAuthorTechnique = null;
         this.solutionsAuthorInstance = this.solutions.filter(function (s) { return s.instance.instanceId == instanceId; });
     };
     ResultsAuthorComponent.prototype.onTechnique = function (technique) {
+        this.solutionsAuthorInstance = null;
         this.solutionsAuthorTechnique = this.solutions.filter(function (s) { return s.technique === technique; });
     };
     ResultsAuthorComponent.prototype.onQualityAsc = function () {

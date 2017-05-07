@@ -54,9 +54,11 @@ router.post('/server/signin', function(req, res, next) {
                 error: err
             });
         }
-        var token = jwt.sign({user: user}, 'secret', {expiresIn: 7200});
 
         if (user.role === 'admin'){
+
+            var token = jwt.sign({user: user}, 'admin', {expiresIn: '1h'});
+
             return res.status(200).json({
                 message: 'Successfully logged in',
                 token: token,
@@ -65,6 +67,9 @@ router.post('/server/signin', function(req, res, next) {
                 email: req.body.email
             });
         }
+
+        var token = jwt.sign({user: user}, 'user', {expiresIn: '1h'});
+
         res.status(200).json({
             message: 'Successfully logged in',
             token: token,
@@ -118,56 +123,6 @@ router.get('/server/user/:id', function(req, res, next) {
     });
 });
 
-router.get('/server/users', function(req, res, next) {
-    User.find(function(err, users) {
-        if (err) {
-            return res.status(500).json({
-                title: 'An error occurred',
-                error: err
-            });
-        }
-        if (!users) {
-            return res.status(500).json({
-                title: 'No Users Found!',
-                error: {message: 'User not found'}
-            });
-        }
-        res.status(200).json({
-            message: 'Success',
-            obj: users
-        });
-    });
-});
-
-router.delete('/server/user/:id', function (req, res, next) {
-    User.findById(req.params.id, function (err, user) {
-        if (err) {
-            return res.status(500).json({
-                title: 'An error occurred',
-                error: err
-            });
-        }
-        if (!user) {
-            return res.status(500).json({
-                title: 'No User Found!',
-                error: {message: 'User not found'}
-            });
-        }
-        user.remove(function (err, result) {
-            if (err) {
-                return res.status(500).json({
-                    title: 'An error occurred',
-                    error: {message: "User can not be deleted", error: err}
-                });
-            }
-            res.status(200).json({
-                message: 'Deleted profile-info',
-                obj: {message: 'User ' + user.email + ' was deleted'}
-            });
-        });
-    });
-});
-
 router.patch('/server/user', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
     User.findOne({email: decoded.user.email}, function(err, user) {
@@ -196,9 +151,9 @@ router.patch('/server/user', function (req, res, next) {
                 });
             }
 
-            var token = jwt.sign({user: user}, 'secret', {expiresIn: 7200});
-
             if (user.role === 'admin'){
+                var token = jwt.sign({user: user}, 'admin', {expiresIn: '1h'});
+
                 return res.status(200).json({
                     message: 'Updated user',
                     token: token,
@@ -207,52 +162,15 @@ router.patch('/server/user', function (req, res, next) {
                     email: req.body.email
                 });
             }
+
+            var token = jwt.sign({user: user}, 'user', {expiresIn: '1h'});
+
             res.status(200).json({
                 message: 'Updated user',
                 token: token,
                 userId: user._id,
                 isAdmin: 'false',
                 email: req.body.email
-            });
-        });
-    });
-});
-
-/**
- * admin update user
- */
-
-router.patch('/server/user/:id', function (req, res, next) {
-    User.findById(req.params.id, function(err, user) {
-        if (err) {
-            return res.status(500).json({
-                title: 'An error occurred',
-                error: err
-            });
-        }
-        if (!user) {
-            return res.status(500).json({
-                title: 'No User Found!',
-                error: {message: 'User not found'}
-            });
-        }
-
-        user.firstName = req.body.firstName;
-        user.lastName = req.body.lastName;
-        user.email = req.body.email;
-        user.role = req.body.role;
-
-        user.save(function (err, user) {
-            if (err) {
-                return res.status(422).json({
-                    title: 'An error occurred',
-                    error: {message: 'Email address is already taken'}
-                });
-            }
-
-            res.status(200).json({
-                message: 'Updated user',
-                obj: user
             });
         });
     });
@@ -297,9 +215,82 @@ router.patch('/server/password', function (req, res, next) {
     });
 });
 
+router.use('/server/users', function (req, res, next) {
+    verify(req, res, next);
+});
+
+router.get('/server/users', function(req, res, next) {
+    User.find(function(err, users) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!users) {
+            return res.status(500).json({
+                title: 'No Users Found!',
+                error: {message: 'User not found'}
+            });
+        }
+        res.status(200).json({
+            message: 'Success',
+            obj: users
+        });
+    });
+});
+
+/**
+ * admin update user
+ */
+router.use('/server/user/:id', function (req, res, next) {
+    verify(req, res, next)
+});
+
+router.patch('/server/user/:id', function (req, res, next) {
+    User.findById(req.params.id, function(err, user) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!user) {
+            return res.status(500).json({
+                title: 'No User Found!',
+                error: {message: 'User not found'}
+            });
+        }
+
+        user.firstName = req.body.firstName;
+        user.lastName = req.body.lastName;
+        user.email = req.body.email;
+        user.role = req.body.role;
+
+        user.save(function (err, user) {
+            if (err) {
+                return res.status(422).json({
+                    title: 'An error occurred',
+                    error: {message: 'Email address is already taken'}
+                });
+            }
+
+            res.status(200).json({
+                message: 'Updated user',
+                obj: user
+            });
+        });
+    });
+});
+
 /**
  *  admin update password
  */
+
+router.use('/server/password/:id', function (req, res, next) {
+    verify(req, res, next)
+});
+
 router.patch('/server/password/:id', function (req, res, next) {
     User.findById(req.params.id, function(err, user) {
         if (err) {
@@ -331,5 +322,50 @@ router.patch('/server/password/:id', function (req, res, next) {
         });
     });
 });
+
+router.use('/server/user/:id', function (req, res, next) {
+    verify(req, res, next)
+});
+
+router.delete('/server/user/:id', function (req, res, next) {
+    User.findById(req.params.id, function (err, user) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!user) {
+            return res.status(500).json({
+                title: 'No User Found!',
+                error: {message: 'User not found'}
+            });
+        }
+        user.remove(function (err, result) {
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: {message: "User can not be deleted", error: err}
+                });
+            }
+            res.status(200).json({
+                message: 'Deleted profile-info',
+                obj: {message: 'User ' + user.email + ' was deleted'}
+            });
+        });
+    });
+});
+
+function verify(req, res, next) {
+    jwt.verify(req.query.token, 'admin', function (err, decoded) {
+        if (err) {
+            return res.status(401).json({
+                title: 'Not Authenticated Admin',
+                error: err
+            });
+        }
+        next();
+    })
+}
 
 module.exports = router;

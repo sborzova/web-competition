@@ -334,32 +334,6 @@ router.get('/server/solutionsByInstance/:id', function (req, res, next) {
         });
 });
 
-// router.get('/server/solutionsByUser/:id', function (req, res, next) {
-//     Solution.find()
-//         .populate('instance')
-//         .populate('paper')
-//         .populate('user')
-//         .where('user').equals(req.params.id)
-//         .exec(function (err, solutions) {
-//             if (err) {
-//                 return res.status(500).json({
-//                     title: 'An error occurred',
-//                     error: err
-//                 });
-//             }
-//             if (!solutions) {
-//                 return res.status(500).json({
-//                     title: 'No Solution Found!',
-//                     error: {message: 'Solution not found'}
-//                 });
-//             }
-//             res.status(200).json({
-//                 message: 'Success',
-//                 obj: solutions
-//             });
-//         });
-// });
-
 router.get('/server/solutionsByLoggedUser', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
     Solution.find()
