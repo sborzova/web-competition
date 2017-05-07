@@ -76,15 +76,15 @@
             </td>
             <td>
                 <button
-                        *ngIf="isAdmin() && !solution.visible"
-                        (click)="onSetVisible(solution)"
+                        *ngIf="isAdmin() && solution.visible"
+                        (click)="onSetNotVisible(solution)"
                         class="btn btn-default btn-xs"
                         title="Hide solution">
                     <i class="glyphicon glyphicon-eye-close"></i>
                 </button>
                 <button
-                        *ngIf="isAdmin() && solution.visible"
-                        (click)="onSetNotVisible(solution)"
+                        *ngIf="isAdmin() && !solution.visible"
+                        (click)="onSetVisible(solution)"
                         class="btn btn-default btn-xs"
                         title="Show solution">
                     <i class="glyphicon glyphicon-eye-open"></i>

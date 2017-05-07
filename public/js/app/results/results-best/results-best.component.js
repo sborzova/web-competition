@@ -34,14 +34,35 @@ export var ResultsBestComponent = (function () {
                 _this.solutionService.getSolutionsByInstance(instance.instanceId)
                     .subscribe(function (solutions) {
                     if (solutions.length != 0) {
+                        solutions = _this.filterByVisibility(solutions);
                         solutions = _this.resultsService.sortQualityAsc(solutions);
-                        results.push(solutions[0]);
+                        results.push(_this.setBestSolution(solutions));
                         _this.solutionsAll = _this.solutionsAll.concat(solutions);
                     }
                 }, function (error) { return console.error(error); });
             }
             _this.results = results;
         }, function (error) { return console.error(error); });
+    };
+    ResultsBestComponent.prototype.setBestSolution = function (solutions) {
+        if (this.isAdmin()) {
+            return solutions[0];
+        }
+        else {
+            var i = 0;
+            while (!solutions[i].visible) {
+                i++;
+            }
+            return solutions[i];
+        }
+    };
+    ResultsBestComponent.prototype.filterByVisibility = function (solutions) {
+        if (this.isAdmin()) {
+            return solutions;
+        }
+        else {
+            return solutions.filter(function (s) { return s.visible; });
+        }
     };
     ResultsBestComponent.prototype.ngOnDestroy = function () {
         this.subscriptionDelete.unsubscribe();

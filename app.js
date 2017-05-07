@@ -16,8 +16,7 @@ var fileRoutes = require('./routes/file');
 
 var app = express();
 
-
-mongoose.Promise = global.Promise;
+mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc');
 
 

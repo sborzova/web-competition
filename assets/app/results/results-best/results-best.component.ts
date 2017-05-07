@@ -53,8 +53,9 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
                             .subscribe(
                                 (solutions: Solution[] )=> {
                                     if (solutions.length != 0){
+                                        solutions = this.filterByVisibility(solutions);
                                         solutions = this.resultsService.sortQualityAsc(solutions);
-                                        results.push(solutions[0]);
+                                        results.push(this.setBestSolution(solutions));
                                         this.solutionsAll = this.solutionsAll.concat(solutions);
                                     }
                                 },
@@ -65,6 +66,26 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
                 },
                 error => console.error(error)
             )
+    }
+
+    setBestSolution(solutions: Solution[]){
+        if (this.isAdmin()){
+            return solutions[0];
+        }else {
+            let i = 0;
+            while (!solutions[i].visible){
+                i++;
+            }
+            return solutions[i];
+        }
+    }
+
+    filterByVisibility(solutions: Solution[]){
+        if (this.isAdmin()){
+            return solutions;
+        }else {
+            return solutions.filter(s => s.visible);
+        }
     }
 
     ngOnDestroy(){

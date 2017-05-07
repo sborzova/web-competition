@@ -915,12 +915,12 @@ var _View_ResultsAuthorInstanceComponent6 = (function (_super) {
             this._RouterLink_39_3.routerLink = currVal_11;
             this._expr_11 = currVal_11;
         }
-        var currVal_12 = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
+        var currVal_12 = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
         if (import4.checkBinding(throwOnChange, this._expr_12, currVal_12)) {
             this._NgIf_47_6.ngIf = currVal_12;
             this._expr_12 = currVal_12;
         }
-        var currVal_13 = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
+        var currVal_13 = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
         if (import4.checkBinding(throwOnChange, this._expr_13, currVal_13)) {
             this._NgIf_49_6.ngIf = currVal_13;
             this._expr_13 = currVal_13;
@@ -1023,7 +1023,7 @@ var _View_ResultsAuthorInstanceComponent7 = (function (_super) {
     };
     _View_ResultsAuthorInstanceComponent7.prototype._handle_click_0_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this.parent.parent.parent.context.onSetVisible(this.parent.context.$implicit) !== false);
+        var pd_0 = (this.parent.parent.parent.context.onSetNotVisible(this.parent.context.$implicit) !== false);
         return (true && pd_0);
     };
     return _View_ResultsAuthorInstanceComponent7;
@@ -1055,7 +1055,7 @@ var _View_ResultsAuthorInstanceComponent8 = (function (_super) {
     };
     _View_ResultsAuthorInstanceComponent8.prototype._handle_click_0_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this.parent.parent.parent.context.onSetNotVisible(this.parent.context.$implicit) !== false);
+        var pd_0 = (this.parent.parent.parent.context.onSetVisible(this.parent.context.$implicit) !== false);
         return (true && pd_0);
     };
     return _View_ResultsAuthorInstanceComponent8;

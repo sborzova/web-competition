@@ -884,12 +884,12 @@ var _View_ResultsAuthorInstanceTechniqueComponent6 = (function (_super) {
             this._RouterLink_35_3.routerLink = currVal_9;
             this._expr_9 = currVal_9;
         }
-        var currVal_10 = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
+        var currVal_10 = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
         if (import4.checkBinding(throwOnChange, this._expr_10, currVal_10)) {
             this._NgIf_43_6.ngIf = currVal_10;
             this._expr_10 = currVal_10;
         }
-        var currVal_11 = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
+        var currVal_11 = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
         if (import4.checkBinding(throwOnChange, this._expr_11, currVal_11)) {
             this._NgIf_45_6.ngIf = currVal_11;
             this._expr_11 = currVal_11;
@@ -982,7 +982,7 @@ var _View_ResultsAuthorInstanceTechniqueComponent7 = (function (_super) {
     };
     _View_ResultsAuthorInstanceTechniqueComponent7.prototype._handle_click_0_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this.parent.parent.parent.context.onSetVisible(this.parent.context.$implicit) !== false);
+        var pd_0 = (this.parent.parent.parent.context.onSetNotVisible(this.parent.context.$implicit) !== false);
         return (true && pd_0);
     };
     return _View_ResultsAuthorInstanceTechniqueComponent7;
@@ -1014,7 +1014,7 @@ var _View_ResultsAuthorInstanceTechniqueComponent8 = (function (_super) {
     };
     _View_ResultsAuthorInstanceTechniqueComponent8.prototype._handle_click_0_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this.parent.parent.parent.context.onSetNotVisible(this.parent.context.$implicit) !== false);
+        var pd_0 = (this.parent.parent.parent.context.onSetVisible(this.parent.context.$implicit) !== false);
         return (true && pd_0);
     };
     return _View_ResultsAuthorInstanceTechniqueComponent8;

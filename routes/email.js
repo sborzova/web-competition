@@ -9,7 +9,7 @@ var User = require('../models/user');
  */
 
 router.post('/server/resetpassword', function (req, res, next) {
-    User.findOne({email: req.body.receiver}, function(err, user) {
+    mongoose.User.findOne({email: req.body.receiver}, function(err, user) {
         if (err) {
             return res.status(500).json({
                 title: 'An error occurred',
@@ -36,12 +36,14 @@ router.post('/server/resetpassword', function (req, res, next) {
         var to_email = new helper.Email(req.body.receiver);
         var subject = 'Reset password';
         var content = new helper.Content('text/html',
-            "<html><body>" +
+            "<html><br>" +
             "<div>Dear user!</div>" +
-            "<div>Your new password is: </div>"+
-             newPassword +
+            "<div>Your new password is: </div>"+ newPassword +
+            "</br>" +
             "<div>You can change it in your profile after login.</div>" +
             "<div></div>" +
+            "</br>" +
+            "</br>" +
             "<div>If you did not request this, please ignore this email.</div> " +
             "</body></html>");
         var mail = new helper.Mail(from_email, subject, to_email, content);

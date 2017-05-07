@@ -1043,12 +1043,12 @@ class _View_ResultsAuthorTechniqueComponent6 extends import1.AppView<any> {
       this._RouterLink_37_3.routerLink = currVal_10;
       this._expr_10 = currVal_10;
     }
-    const currVal_11:any = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
+    const currVal_11:any = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
     if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
       this._NgIf_45_6.ngIf = currVal_11;
       this._expr_11 = currVal_11;
     }
-    const currVal_12:any = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
+    const currVal_12:any = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
     if (import4.checkBinding(throwOnChange,this._expr_12,currVal_12)) {
       this._NgIf_47_6.ngIf = currVal_12;
       this._expr_12 = currVal_12;
@@ -1149,7 +1149,7 @@ class _View_ResultsAuthorTechniqueComponent7 extends import1.AppView<any> {
   }
   private _handle_click_0_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.parent.parent.parent.context.onSetVisible(this.parent.context.$implicit)) !== false);
+    const pd_0:any = ((<any>this.parent.parent.parent.context.onSetNotVisible(this.parent.context.$implicit)) !== false);
     return (true && pd_0);
   }
 }
@@ -1184,7 +1184,7 @@ class _View_ResultsAuthorTechniqueComponent8 extends import1.AppView<any> {
   }
   private _handle_click_0_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.parent.parent.parent.context.onSetNotVisible(this.parent.context.$implicit)) !== false);
+    const pd_0:any = ((<any>this.parent.parent.parent.context.onSetVisible(this.parent.context.$implicit)) !== false);
     return (true && pd_0);
   }
 }

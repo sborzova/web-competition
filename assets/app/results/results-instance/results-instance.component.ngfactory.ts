@@ -1140,12 +1140,12 @@ class _View_ResultsInstanceComponent6 extends import1.AppView<any> {
       this._RouterLink_42_3.routerLink = currVal_12;
       this._expr_12 = currVal_12;
     }
-    const currVal_13:any = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
+    const currVal_13:any = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
     if (import4.checkBinding(throwOnChange,this._expr_13,currVal_13)) {
       this._NgIf_50_6.ngIf = currVal_13;
       this._expr_13 = currVal_13;
     }
-    const currVal_14:any = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
+    const currVal_14:any = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
     if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
       this._NgIf_52_6.ngIf = currVal_14;
       this._expr_14 = currVal_14;
@@ -1256,7 +1256,7 @@ class _View_ResultsInstanceComponent7 extends import1.AppView<any> {
   }
   private _handle_click_0_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.parent.parent.parent.context.onSetVisible(this.parent.context.$implicit)) !== false);
+    const pd_0:any = ((<any>this.parent.parent.parent.context.onSetNotVisible(this.parent.context.$implicit)) !== false);
     return (true && pd_0);
   }
 }
@@ -1291,7 +1291,7 @@ class _View_ResultsInstanceComponent8 extends import1.AppView<any> {
   }
   private _handle_click_0_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.parent.parent.parent.context.onSetNotVisible(this.parent.context.$implicit)) !== false);
+    const pd_0:any = ((<any>this.parent.parent.parent.context.onSetVisible(this.parent.context.$implicit)) !== false);
     return (true && pd_0);
   }
 }
@@ -1362,7 +1362,7 @@ class _View_ResultsInstanceComponent10 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_2,'style','border: none; background-color: white');
     this._text_3 = this.renderer.createText(this._el_0,'\n            ',(null as any));
     this._el_4 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this.renderer.setElementAttribute(this._el_4,'colspan','11');
+    this.renderer.setElementAttribute(this._el_4,'colspan','12');
     this.renderer.setElementAttribute(this._el_4,'id','paper');
     this.renderer.setElementAttribute(this._el_4,'style','border: none');
     this._text_5 = this.renderer.createText(this._el_4,'\n                ',(null as any));
