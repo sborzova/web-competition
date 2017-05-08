@@ -100,7 +100,7 @@ router.get('/server/user', function(req, res, next) {
  *
  *  Parameter id - user's id.
  */
-router.get('/server/user/:id', function(req, res, next) {
+router.get('/server/admin/user/:id', function(req, res, next) {
     User.findById(req.params.id, function(err, user) {
         if (err) {
             return res.status(500).json({
@@ -207,7 +207,7 @@ router.patch('/server/password', function (req, res, next) {
 /**
  * Get all users from database.
  */
-router.get('/server/users', function(req, res, next) {
+router.get('/server/admin/users', function(req, res, next) {
     User.find(function(err, users) {
         if (err) {
             return res.status(500).json({
@@ -234,7 +234,7 @@ router.get('/server/users', function(req, res, next) {
  * Parameter id - user's id.
  * Request body contains updated user.
  */
-router.patch('/server/user/:id', function (req, res, next) {
+router.patch('/server/admin/user/:id', function (req, res, next) {
     User.findById(req.params.id, function(err, user) {
         if (err) {
             return res.status(500).json({
@@ -276,7 +276,7 @@ router.patch('/server/user/:id', function (req, res, next) {
  *  Parameter id - user's id.
  *  Request body contains new password.
  */
-router.patch('/server/password/:id', function (req, res, next) {
+router.patch('/server/admin/password/:id', function (req, res, next) {
     User.findById(req.params.id, function(err, user) {
         if (err) {
             return res.status(500).json({
@@ -313,7 +313,7 @@ router.patch('/server/password/:id', function (req, res, next) {
  *
  *  Parameter id - user's id.
  */
-router.delete('/server/user/:id', function (req, res, next) {
+router.delete('/server/admin/user/:id', function (req, res, next) {
     User.findById(req.params.id, function (err, user) {
         if (err) {
             return res.status(500).json({
