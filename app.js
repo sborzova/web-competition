@@ -17,7 +17,6 @@ var fileRoutes = require('./routes/file');
 var app = express();
 
 mongoose.Promise = require('bluebird');
-// mongoose.connect('mongodb://user:' + process.env.MLAB_USER + '.mlab.com:' + process.env.MLAB_DATABASE);
 
 // var uri = 'mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc';
 var uri = 'mongodb://user:' + process.env.MLAB_USER + '.mlab.com:' + process.env.MLAB_DATABASE;

@@ -14,6 +14,12 @@ export class FileService {
         this.hostUrl = routeModule.hostUrl;
     }
 
+    /**
+     * Send request to server to save new file.
+     *
+     * @param file
+     * @returns {response} response with status 200 if success, other way error
+     */
     saveFile(file: Buffer){
         this.xmlHttp = new XMLHttpRequest();
         return Observable.create(observer => {
@@ -37,6 +43,12 @@ export class FileService {
         });
     }
 
+    /**
+     * Send request to server to update new file.
+     *
+     * @param file
+     * @returns {response} response with status 200 if success, other way error
+     */
     updateFile(file: FileModel){
         this.xmlHttp = new XMLHttpRequest();
         return Observable.create(observer => {
@@ -60,6 +72,12 @@ export class FileService {
         });
     }
 
+    /**
+     * Send request to server to delete file by id.
+     *
+     * @param id
+     * @returns {Observable<Response>} response contains file if success, other way error
+     */
     deleteFile(id: string){
         return this.http.delete(
             this.hostUrl.concat('server/delete/') + id)

@@ -7,6 +7,12 @@ export var FileService = (function () {
         var routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
+    /**
+     * Send request to server to save new file.
+     *
+     * @param file
+     * @returns {response} response with status 200 if success, other way error
+     */
     FileService.prototype.saveFile = function (file) {
         var _this = this;
         this.xmlHttp = new XMLHttpRequest();
@@ -29,6 +35,12 @@ export var FileService = (function () {
             _this.xmlHttp.send(fd);
         });
     };
+    /**
+     * Send request to server to update new file.
+     *
+     * @param file
+     * @returns {response} response with status 200 if success, other way error
+     */
     FileService.prototype.updateFile = function (file) {
         var _this = this;
         this.xmlHttp = new XMLHttpRequest();
@@ -51,6 +63,12 @@ export var FileService = (function () {
             _this.xmlHttp.send(fd);
         });
     };
+    /**
+     * Send request to server to delete file by id.
+     *
+     * @param id
+     * @returns {Observable<Response>} response contains file if success, other way error
+     */
     FileService.prototype.deleteFile = function (id) {
         return this.http.delete(this.hostUrl.concat('server/delete/') + id)
             .map(function (response) {

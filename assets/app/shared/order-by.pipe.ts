@@ -1,11 +1,9 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({ name: "orderBy", pure: false })
-
 export class OrderByPipe implements PipeTransform {
 
     value:string[] =[];
-
     static _orderByComparator(a:any, b:any):number{
 
         if(a === null || typeof a === 'undefined') a = 0;
@@ -26,11 +24,9 @@ export class OrderByPipe implements PipeTransform {
     }
 
     transform(input:any, config:string = '+'): any {
-
         //invalid input given
         if(!input) return input;
 
-        //make a copy of the input's reference
         this.value = [...input];
         let value = this.value;
 
@@ -40,7 +36,6 @@ export class OrderByPipe implements PipeTransform {
             let propertyToCheck:string = !Array.isArray(config) ? config : config[0];
             let desc = propertyToCheck.substr(0, 1) == '-';
 
-            //Basic array
             if(!propertyToCheck || propertyToCheck == '-' || propertyToCheck == '+'){
                 return !desc ? value.sort() : value.sort().reverse();
             }
@@ -71,7 +66,6 @@ export class OrderByPipe implements PipeTransform {
             }
         }
         else {
-            //Loop over property of the array in order and sort
             return value.sort(function(a:any,b:any){
                 for(let i:number = 0; i < config.length; i++){
                     let desc = config[i].substr(0, 1) == '-';
@@ -100,7 +94,6 @@ export class OrderByPipe implements PipeTransform {
                     //Don't return 0 yet in case of needing to sort by next property
                     if(comparison != 0) return comparison;
                 }
-
                 return 0; //equal each other
             });
         }

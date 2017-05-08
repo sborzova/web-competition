@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { Http, Response, Headers } from "@angular/http";
-import { Observable } from "rxjs";
+import {Injectable} from "@angular/core";
+import {Http, Response, Headers} from "@angular/http";
+import {Observable} from "rxjs";
 
-import { Instance } from "../instances/instance.model";
-import { FlashMessageService } from "../flash-message/flash-messages.service";
+import {Instance} from "../instances/instance.model";
+import {FlashMessageService} from "../flash-message/flash-messages.service";
 import {InstanceCreate} from "../instances/instance-create.model";
 import {FileModel} from "../instances/file.model";
 import {InstanceUpdate} from "../instances/instance-update.model";
@@ -12,7 +12,7 @@ import {InstanceUpdate} from "../instances/instance-update.model";
 export class InstanceService {
     private instances: Instance[] = [];
     private hostUrl: string;
-    fileSaver = require('file-saver');
+    private fileSaver = require('file-saver');
 
     constructor(private http: Http,
                 private flashMessageService: FlashMessageService) {
@@ -21,10 +21,16 @@ export class InstanceService {
         this.hostUrl = routeModule.hostUrl;
     }
 
+    /**
+     * Send request to server to save new instance.
+     *
+     * @param instance
+     * @returns {Observable<Response>} response contains instance if success, other way error
+     */
     saveInstance(instance: InstanceCreate){
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.hostUrl.concat('server/instance') + this.token, body, {headers: headers})
+        return this.http.post(this.hostUrl.concat('server/instance') + this.getToken(), body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json().obj.data;
                 const instance = new Instance(
@@ -46,6 +52,12 @@ export class InstanceService {
             });
     }
 
+    /**
+     * Send request to server to get instance by id.
+     *
+     * @param id
+     * @returns {Observable<Response>} response contains instance if success, other way error
+     */
     getInstance(id: string){
         return this.http.get(this.hostUrl.concat('server/instance/' + id))
             .map((response: Response) => {
@@ -65,11 +77,15 @@ export class InstanceService {
             });
     }
 
+    /**
+     * Send request to server to update instance.
+     *
+     * @param instance
+     * @returns {Observable<Response>} response contains instance if success, other way error
+     */
     updateInstanceTextFields(instance: InstanceUpdate){
-        const body = JSON.stringify(instance);
-        const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(
-            this.hostUrl.concat('server/instance/') + instance.instanceId + this.token, body, {headers: headers})
+            this.hostUrl.concat('server/instance/') + instance.instanceId + this.getToken(), this.stringifyObject(instance), {headers: this.getHeaders()})
             .map((response: Response) => {
                 return response.json();
             })
@@ -81,6 +97,11 @@ export class InstanceService {
             });
     }
 
+    /**
+     * Send request to server to get all instances.
+     *
+     * @returns {Observable<Response>} response contains instances if success, other way error
+     */
     getInstances(){
         return this.http.get(this.hostUrl.concat('server/instances'))
             .map((response: Response) => {
@@ -103,10 +124,16 @@ export class InstanceService {
             .catch((error: Response) => Observable.throw(error));
     }
 
+    /**
+     * Send request to server to delete instance by id.
+     *
+     * @param instance
+     * @returns {Observable<Response>} response contains instance if success, other way error
+     */
     deleteInstance(instance: Instance){
         this.instances.splice(this.instances.indexOf(instance), 1);
         return this.http.delete(
-            this.hostUrl.concat('server/instance/') + instance.instanceId + this.token)
+            this.hostUrl.concat('server/instance/') + instance.instanceId + this.getToken())
             .map((response: Response) => {
                 return response.json();
             })
@@ -115,15 +142,44 @@ export class InstanceService {
             });
     }
 
+    /**
+     * Download instance.
+     *
+     * @param instance
+     */
     download(instance: Instance){
         let file = new File([String.fromCharCode.apply(null, instance.data.content)],
             instance.name + '.xml', {type: "text/xml;charset=utf-8"});
         this.fileSaver.saveAs(file);
     }
 
-    get token(){
+    /**
+     * Get token from session storage.
+     *
+     * @returns {string} token
+     */
+    getToken(){
         return sessionStorage.getItem('token')
             ? '?token=' + sessionStorage.getItem('token')
             : '';
+    }
+
+    /**
+     * Return headers with set content-type.
+     *
+     * @returns {Headers} headers
+     */
+    getHeaders (){
+        return new Headers({'Content-Type': 'application/json'});
+    }
+
+    /**
+     * Stringify object.
+     *
+     * @param object
+     * @returns {string} stringified object
+     */
+    stringifyObject(object){
+        return JSON.stringify(object);
     }
 }

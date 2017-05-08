@@ -12,6 +12,11 @@ export class PreferenceService {
         this.hostUrl = routeModule.hostUrl;
     }
 
+    /**
+     * Send request to server to get preference state of competition
+     *
+     * @returns {Observable<Response>} response contains state of competition if success, other way error
+     */
     getValueCompetitionIsOn() {
         return this.http.get(this.hostUrl.concat('server/preference'))
             .map((response: Response) => {
@@ -20,10 +25,16 @@ export class PreferenceService {
             .catch((error: Response) => Observable.throw(error));
     }
 
+    /**
+     * Send request to server to update preference state of competition.
+     *
+     * @param state
+     * @returns {Observable<Response>} response with preference if success, other way error
+     */
     updateValueCompetitionIsOn(state: boolean){
         const body = JSON.stringify(new Preference(state));
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('server/preference'), body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/preferenceUpdate'), body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })

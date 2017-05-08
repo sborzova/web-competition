@@ -1,8 +1,14 @@
 var express = require('express');
 var router = express.Router();
+var jwt = require('jsonwebtoken');
 
 var Preference = require('../models/preference');
 
+/**
+ * Save new preference to database.
+ *
+ * Request body contains preference.
+ */
 router.post('/server/preference', function (req, res) {
     try{
         var preference = new Preference({
@@ -24,12 +30,24 @@ router.post('/server/preference', function (req, res) {
         }
         res.status(201).json({
             message: 'Saved preference',
-            obj: {message: 'Preference was created', data: preference}
+            obj: preference
         });
     });
 });
 
-router.patch('/server/preference', function (req, res, next) {
+/*
+ * Verify route if logged in user is admin.
+ */
+router.use('/server/preferenceUpdate', function (req, res, next) {
+    verify(req, res, next)
+});
+
+/**
+ * Update preference with name competitionIsOn in database.
+ *
+ * Request body contains preference.
+ */
+router.patch('/server/preferenceUpdate', function (req, res, next) {
     Preference.findOne({name: 'competitionIsOn'}, function (err, preference) {
         if (err) {
             return res.status(500).json({
@@ -43,7 +61,6 @@ router.patch('/server/preference', function (req, res, next) {
                 error: {message: 'Preference not found'}
             });
         }
-
         preference.state = req.body.state;
 
         preference.save(function (err, preference) {
@@ -61,6 +78,9 @@ router.patch('/server/preference', function (req, res, next) {
     });
 });
 
+/**
+ *  Get preference with name competitionIsOn from database.
+ */
 router.get('/server/preference', function(req, res, next) {
     Preference.findOne({name: 'competitionIsOn'}, function(err, preference) {
         if (err) {
@@ -81,5 +101,24 @@ router.get('/server/preference', function(req, res, next) {
         });
     });
 });
+
+/**
+ * Verify route if logged in user is admin.
+ *
+ * @param req request
+ * @param res response
+ * @param next next
+ */
+function verify(req, res, next) {
+    jwt.verify(req.query.token, 'admin', function (err) {
+        if (err) {
+            return res.status(401).json({
+                title: 'Not Authenticated Admin',
+                error: err
+            });
+        }
+        next();
+    })
+}
 
 module.exports = router;

@@ -29,7 +29,6 @@ export var OrderByPipe = (function () {
         //invalid input given
         if (!input)
             return input;
-        //make a copy of the input's reference
         this.value = input.slice();
         var value = this.value;
         if (!Array.isArray(value))
@@ -37,7 +36,6 @@ export var OrderByPipe = (function () {
         if (!Array.isArray(config) || (Array.isArray(config) && config.length == 1)) {
             var propertyToCheck = !Array.isArray(config) ? config : config[0];
             var desc_1 = propertyToCheck.substr(0, 1) == '-';
-            //Basic array
             if (!propertyToCheck || propertyToCheck == '-' || propertyToCheck == '+') {
                 return !desc_1 ? value.sort() : value.sort().reverse();
             }
@@ -64,7 +62,6 @@ export var OrderByPipe = (function () {
             }
         }
         else {
-            //Loop over property of the array in order and sort
             return value.sort(function (a, b) {
                 for (var i = 0; i < config.length; i++) {
                     var desc = config[i].substr(0, 1) == '-';

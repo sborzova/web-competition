@@ -14,6 +14,9 @@ export class PreferenceComponent implements OnInit {
     constructor(private preferenceService: PreferenceService,
                 private sessionStorageService: SessionStorageService){}
 
+    /**
+     * Set to variable compeitionOn competition state.
+     */
     ngOnInit(){
         this.preferenceService.getValueCompetitionIsOn()
             .subscribe(
@@ -24,6 +27,9 @@ export class PreferenceComponent implements OnInit {
             )
     }
 
+    /**
+     * Set competition state to during is on.
+     */
     onTurnOn(){
         this.competitionOn = true;
         this.preferenceService.updateValueCompetitionIsOn(this.competitionOn)
@@ -35,6 +41,9 @@ export class PreferenceComponent implements OnInit {
             )
     }
 
+    /**
+     * Set competition state to during is off.
+     */
     onTurnOff(){
         this.competitionOn = false;
         this.preferenceService.updateValueCompetitionIsOn(this.competitionOn)

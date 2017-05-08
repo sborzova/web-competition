@@ -3,6 +3,11 @@ var router = express.Router();
 
 var Paper = require('../models/paper');
 
+/**
+ * Save new paper to database.
+ *
+ * Request body contains paper.
+ */
 router.post('/server/paper', function (req, res) {
     try{
         var paper = new Paper({
@@ -24,11 +29,17 @@ router.post('/server/paper', function (req, res) {
         }
         res.status(201).json({
             message: 'Saved paper',
-            obj: {message: 'Paper was created', data: result}
+            obj: result
         });
     });
 });
 
+/**
+ * Update paper in database by id.
+ *
+ * Parameter id - paper's id.
+ * Request body contains updated paper.
+ */
 router.patch('/server/paper/:id', function (req, res, next) {
     Paper.findById(req.params.id, function (err, paper) {
         if (err) {
@@ -62,6 +73,11 @@ router.patch('/server/paper/:id', function (req, res, next) {
     });
 });
 
+/**
+ * Get paper from database by id.
+ *
+ * Parameter id - paper's id.
+ */
 router.get('/server/paper/:id', function(req, res, next) {
     Paper.findById(req.params.id, function(err, paper) {
         if (err) {
@@ -83,6 +99,9 @@ router.get('/server/paper/:id', function(req, res, next) {
     });
 });
 
+/**
+ * Get all papers from database.
+ */
 router.get('/server/papers', function(req, res, next) {
     Paper.find(function(err, papers) {
         if (err) {
@@ -104,6 +123,11 @@ router.get('/server/papers', function(req, res, next) {
     });
 });
 
+/**
+ * Delete paper from database by id.
+ *
+ * Parameter id - paper's id.
+ */
 router.delete('/server/paper/:id', function (req, res, next) {
     Paper.findById(req.params.id, function (err, paper) {
         if (err) {

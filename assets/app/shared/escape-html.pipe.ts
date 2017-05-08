@@ -1,5 +1,8 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
+/**
+ * Pipe to replace enter and tab space.
+ */
 @Pipe({ name: 'escapeHtml', pure: false })
 export class EscapeHtmlPipe implements PipeTransform {
 

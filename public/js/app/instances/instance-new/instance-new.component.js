@@ -16,6 +16,9 @@ export var InstanceCreateComponent = (function () {
         this.statusInvalid = false;
         this.dataInvalid = false;
     }
+    /**
+     * Set variable defaultOrder for new instance.
+     */
     InstanceCreateComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.instancesService.getInstances()
@@ -32,6 +35,9 @@ export var InstanceCreateComponent = (function () {
         }, function (error) { return console.error(error); });
         this.setForm();
     };
+    /**
+     * Check if submitted form is valid.
+     */
     InstanceCreateComponent.prototype.onSubmit = function () {
         this.submitted = true;
         var statusInput = this.statusElem.nativeElement;
@@ -49,33 +55,33 @@ export var InstanceCreateComponent = (function () {
             this.dataInvalid = false;
         }
         if (this.instanceForm.valid) {
-            this.saveInstance(statusInput.files[0], dataInput.files[0]);
+            this.saveInstanceFiles(statusInput.files[0], dataInput.files[0]);
         }
     };
-    InstanceCreateComponent.prototype.saveInstance = function (status, data) {
+    /**
+     * Save instance status file and instance status data.
+     *
+     * @param status
+     * @param data
+     */
+    InstanceCreateComponent.prototype.saveInstanceFiles = function (status, data) {
         var _this = this;
         var idStatus;
-        var idData;
         this.fileService.saveFile(status)
             .subscribe(function (status) {
             idStatus = JSON.parse(status).id;
             _this.fileService.saveFile(data)
                 .subscribe(function (data) {
-                idData = JSON.parse(data).id;
-                _this.instancesService.saveInstance(new InstanceCreate(_this.instanceForm.value.order, _this.instanceForm.value.name, _this.instanceForm.value.description, idStatus, idData)).subscribe(function (data) {
-                    _this.navigateBack();
-                    _this.flashMessageService.showMessage('Instance was created', 'success');
-                }, function (error) {
-                    console.error(error);
-                    _this.fileService.deleteFile(idData);
-                    _this.fileService.deleteFile(idStatus);
-                });
+                _this.saveInstance(data, idStatus);
             }, function (error) {
                 _this.fileService.deleteFile(idStatus);
                 console.error(error);
             });
         }, function (error) { return console.error(error); });
     };
+    /**
+     * Create new instance form.
+     */
     InstanceCreateComponent.prototype.setForm = function () {
         this.instanceForm = new FormGroup({
             order: new FormControl(this.defaultOrder, [Validators.required, minValue(1)]),
@@ -83,11 +89,32 @@ export var InstanceCreateComponent = (function () {
             description: new FormControl(null, Validators.required)
         });
     };
+    /**
+     * Save instance with status's id and data's id
+     *
+     * @param data
+     * @param idStatus
+     */
+    InstanceCreateComponent.prototype.saveInstance = function (data, idStatus) {
+        var _this = this;
+        var idData = JSON.parse(data).id;
+        this.instancesService.saveInstance(new InstanceCreate(this.instanceForm.value.order, this.instanceForm.value.name, this.instanceForm.value.description, idStatus, idData)).subscribe(function (data) {
+            _this.navigateBack();
+            _this.flashMessageService.showMessage('Instance was created', 'success');
+        }, function (error) {
+            console.error(error);
+            _this.fileService.deleteFile(idData);
+            _this.fileService.deleteFile(idStatus);
+        });
+    };
+    /**
+     *  Navigate to route Instances.
+     */
+    InstanceCreateComponent.prototype.navigateBack = function () {
+        this.router.navigate(['/instances']);
+    };
     InstanceCreateComponent.prototype.onCancel = function () {
         this.navigateBack();
-    };
-    InstanceCreateComponent.prototype.navigateBack = function () {
-        this.router.navigate(['/#instances']);
     };
     InstanceCreateComponent.decorators = [
         { type: Component, args: [{

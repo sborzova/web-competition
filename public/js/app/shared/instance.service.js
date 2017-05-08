@@ -13,11 +13,17 @@ export var InstanceService = (function () {
         var routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
+    /**
+     * Send request to server to save new instance.
+     *
+     * @param instance
+     * @returns {Observable<Response>} response contains instance if success, other way error
+     */
     InstanceService.prototype.saveInstance = function (instance) {
         var _this = this;
         var body = JSON.stringify(instance);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('server/instance') + this.token, body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/instance') + this.getToken(), body, { headers: headers })
             .map(function (response) {
             var result = response.json().obj.data;
             var instance = new Instance(result.order, result.name, result.description, null, null, result.submissionTime, result._id);
@@ -31,6 +37,12 @@ export var InstanceService = (function () {
             return Observable.throw(error);
         });
     };
+    /**
+     * Send request to server to get instance by id.
+     *
+     * @param id
+     * @returns {Observable<Response>} response contains instance if success, other way error
+     */
     InstanceService.prototype.getInstance = function (id) {
         return this.http.get(this.hostUrl.concat('server/instance/' + id))
             .map(function (response) {
@@ -41,11 +53,15 @@ export var InstanceService = (function () {
             return Observable.throw(error);
         });
     };
+    /**
+     * Send request to server to update instance.
+     *
+     * @param instance
+     * @returns {Observable<Response>} response contains instance if success, other way error
+     */
     InstanceService.prototype.updateInstanceTextFields = function (instance) {
         var _this = this;
-        var body = JSON.stringify(instance);
-        var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('server/instance/') + instance.instanceId + this.token, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/instance/') + instance.instanceId + this.getToken(), this.stringifyObject(instance), { headers: this.getHeaders() })
             .map(function (response) {
             return response.json();
         })
@@ -56,6 +72,11 @@ export var InstanceService = (function () {
             return Observable.throw(error);
         });
     };
+    /**
+     * Send request to server to get all instances.
+     *
+     * @returns {Observable<Response>} response contains instances if success, other way error
+     */
     InstanceService.prototype.getInstances = function () {
         var _this = this;
         return this.http.get(this.hostUrl.concat('server/instances'))
@@ -71,9 +92,15 @@ export var InstanceService = (function () {
         })
             .catch(function (error) { return Observable.throw(error); });
     };
+    /**
+     * Send request to server to delete instance by id.
+     *
+     * @param instance
+     * @returns {Observable<Response>} response contains instance if success, other way error
+     */
     InstanceService.prototype.deleteInstance = function (instance) {
         this.instances.splice(this.instances.indexOf(instance), 1);
-        return this.http.delete(this.hostUrl.concat('server/instance/') + instance.instanceId + this.token)
+        return this.http.delete(this.hostUrl.concat('server/instance/') + instance.instanceId + this.getToken())
             .map(function (response) {
             return response.json();
         })
@@ -81,19 +108,42 @@ export var InstanceService = (function () {
             return Observable.throw(error);
         });
     };
+    /**
+     * Download instance.
+     *
+     * @param instance
+     */
     InstanceService.prototype.download = function (instance) {
         var file = new File([String.fromCharCode.apply(null, instance.data.content)], instance.name + '.xml', { type: "text/xml;charset=utf-8" });
         this.fileSaver.saveAs(file);
     };
-    Object.defineProperty(InstanceService.prototype, "token", {
-        get: function () {
-            return sessionStorage.getItem('token')
-                ? '?token=' + sessionStorage.getItem('token')
-                : '';
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /**
+     * Get token from session storage.
+     *
+     * @returns {string} token
+     */
+    InstanceService.prototype.getToken = function () {
+        return sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
+            : '';
+    };
+    /**
+     * Return headers with set content-type.
+     *
+     * @returns {Headers} headers
+     */
+    InstanceService.prototype.getHeaders = function () {
+        return new Headers({ 'Content-Type': 'application/json' });
+    };
+    /**
+     * Stringify object.
+     *
+     * @param object
+     * @returns {string} stringified object
+     */
+    InstanceService.prototype.stringifyObject = function (object) {
+        return JSON.stringify(object);
+    };
     InstanceService.decorators = [
         { type: Injectable },
     ];

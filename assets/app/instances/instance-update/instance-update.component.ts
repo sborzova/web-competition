@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Router, ActivatedRoute, Params } from "@angular/router";
+import {Component, OnInit, ViewChild} from "@angular/core";
+import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {Router, ActivatedRoute} from "@angular/router";
 
-import { InstanceService } from "../../shared/instance.service";
-import { Instance } from "../instance.model";
-import { minValue } from "../min-value.validator";
-import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import {InstanceService} from "../../shared/instance.service";
+import {Instance} from "../instance.model";
+import {minValue} from "../min-value.validator";
+import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {FileService} from "../../shared/file.service";
 import {FileModel} from "../file.model";
 import {InstanceUpdate} from "../instance-update.model";
@@ -16,8 +16,8 @@ import {InstanceUpdate} from "../instance-update.model";
 })
 export class InstanceEditComponent implements OnInit {
     instanceForm: FormGroup;
-    instance: Instance;
-    submitted: boolean = false;
+    private instance: Instance;
+    private submitted: boolean = false;
     @ViewChild('status') statusElem;
     @ViewChild('data') dataElem;
 
@@ -25,16 +25,17 @@ export class InstanceEditComponent implements OnInit {
                 private instanceService: InstanceService,
                 private fileService: FileService,
                 private route: ActivatedRoute,
-                private flashMessageService: FlashMessageService){
+                private flashMessageService: FlashMessageService){}
 
-    }
-
+    /**
+     * Set to variable instance instance by id.
+     * Create instance edit form.
+     */
     ngOnInit(){
         let id = this.route.snapshot.params['id'];
         this.instanceService.getInstance(id)
             .subscribe(
                 (instance: Instance) => {
-                    console.log(instance);
                     this.instance = instance;
                     this.instanceForm = new FormGroup({
                         order: new FormControl(this.instance.order, [Validators.required, minValue(0)]),
@@ -44,9 +45,11 @@ export class InstanceEditComponent implements OnInit {
                 });
     }
 
+    /**
+     * Submit instance edit form.
+     */
     onSubmit(){
         this.submitted = true;
-
         if (this.instanceForm.valid){
             let updateInstance = new InstanceUpdate(
                 this.instanceForm.value.order,
@@ -54,7 +57,6 @@ export class InstanceEditComponent implements OnInit {
                 this.instanceForm.value.description,
                 this.instance.instanceId
             );
-
             this.instanceService.updateInstanceTextFields(updateInstance)
                 .subscribe(
                     data => {
@@ -67,6 +69,9 @@ export class InstanceEditComponent implements OnInit {
         }
     }
 
+    /**
+     * Update instance status file and instance data file.
+     */
     saveFiles(){
         let statusInput = this.statusElem.nativeElement;
         let dataInput = this.dataElem.nativeElement;
@@ -87,11 +92,15 @@ export class InstanceEditComponent implements OnInit {
         }
     }
 
+    /**
+     * Navigate to router Instances.
+     */
+    navigateBack() {
+        this.router.navigate(['/instances']);
+    }
+
     onCancel() {
         this.navigateBack();
     }
 
-    private navigateBack() {
-        this.router.navigate(['/instances']);
-    }
 }

@@ -48,8 +48,8 @@ export var SuccessValidationComponent = (function () {
             this.solutionService.findDuplicateSolution(new Solution(this.validation.unassigned, this.validation.total, this.validation.sc, this.validation.time, this.validation.room, this.validation.distr, this.solutionForm.value.technique, '', null, false, null, new Instance(this.validation.instanceName))).subscribe(function (solution) {
                 if (solution) {
                     var date = new Date(solution.submissionTime);
-                    _this.flashMessageService.showMessage('Solution has the same unassigned variables, total cost, time preferences, ' +
-                        'room preferences, distribution preferences and technique as your other ' +
+                    _this.flashMessageService.showMessage('Solution has the same unassigned variables, total cost, student conflicts, ' +
+                        'time preferences, room preferences, distribution preferences and technique as your other ' +
                         'solution uploaded to the system at ' + _this.getDateTime(date) +
                         ', it is not ' + 'uploaded.', 'info');
                     return;

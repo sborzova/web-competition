@@ -6,6 +6,9 @@ export var PreferenceComponent = (function () {
         this.preferenceService = preferenceService;
         this.sessionStorageService = sessionStorageService;
     }
+    /**
+     * Set to variable compeitionOn competition state.
+     */
     PreferenceComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.preferenceService.getValueCompetitionIsOn()
@@ -13,6 +16,9 @@ export var PreferenceComponent = (function () {
             _this.competitionOn = value;
         }, function (error) { return console.error(error); });
     };
+    /**
+     * Set competition state to during is on.
+     */
     PreferenceComponent.prototype.onTurnOn = function () {
         var _this = this;
         this.competitionOn = true;
@@ -21,6 +27,9 @@ export var PreferenceComponent = (function () {
             _this.sessionStorageService.setSessionStorageCompetitionIsOn();
         }, function (error) { return console.error(error); });
     };
+    /**
+     * Set competition state to during is off.
+     */
     PreferenceComponent.prototype.onTurnOff = function () {
         var _this = this;
         this.competitionOn = false;

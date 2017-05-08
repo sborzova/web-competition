@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { ActivatedRoute, Params } from "@angular/router";
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
 
-import { Instance } from "../instance.model";
-import { InstanceService } from "../../shared/instance.service";
+import {Instance} from "../instance.model";
+import {InstanceService } from "../../shared/instance.service";
 
 @Component({
     selector: 'app-instance-stats',
@@ -14,13 +14,15 @@ export class InstanceStatusComponent implements OnInit {
     constructor(private instanceService: InstanceService,
                 private route: ActivatedRoute){}
 
+    /**
+     * Set to variable instance instance by id.
+     */
     ngOnInit(){
         let id = this.route.snapshot.params['id'];
         this.instanceService.getInstance(id)
             .subscribe(
                 (instance: Instance) => {
                     this.instance = instance;
-                    console.log(instance)
             });
     }
 }

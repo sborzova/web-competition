@@ -24,7 +24,6 @@ export class UserEditComponent implements OnInit {
 
     }
 
-
     /**
      *  Set to variable user user by id.
      *  Create edit user form.

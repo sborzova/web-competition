@@ -6,9 +6,9 @@ var jwt = require('jsonwebtoken');
 var User = require('../models/user');
 
 /**
- *  Reset password
+ *  Reset password for user.
  *
- *  req.body.receiver contains email of user
+ *  Request body contains email of user.
  */
 router.post('/server/resetpassword', function (req, res, next) {
      User.findOne({email: req.body.receiver}, function(err, user) {

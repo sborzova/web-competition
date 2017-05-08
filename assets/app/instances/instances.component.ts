@@ -11,13 +11,15 @@ import {FlashMessageService} from "../flash-message/flash-messages.service";
 })
 export class InstancesComponent implements OnInit{
     instances: Instance[];
-    defaultOrder: number;
-    instance: Instance;
+    private instance: Instance;
 
     constructor(private sessionStorageService: SessionStorageService,
                 private instanceService: InstanceService,
                 private flashMessageService: FlashMessageService){}
 
+    /**
+     * Set to variable instances all instances.
+     */
     ngOnInit(){
         if (!this.showInstances()){
             document.getElementById('openModalNotView').click();
@@ -26,18 +28,17 @@ export class InstancesComponent implements OnInit{
                 .subscribe(
                     (instances: Instance[]) => {
                         this.instances = instances;
-                        let max = 0;
-                        for (let instance of instances){
-                            if (instance.order > max){
-                                max = instance.order;
-                            }
-                        }
-                        this.defaultOrder = max + 1;
                     }
                 );
         }
     }
 
+    /**
+     * Check if instances can be shown.
+     *
+     * @returns {boolean} true if logged in user is admin or competition state is off
+     *  or (competition state is on and user is logged in), other way false
+     */
     showInstances(){
         let isLoggedIn = this.isLoggedIn();
         let competitionIsOn = this.competitionIsOn();
@@ -46,23 +47,21 @@ export class InstancesComponent implements OnInit{
         return !competitionIsOn || isAdmin || (competitionIsOn && isLoggedIn);
     }
 
-    isAdmin(){
-       return this.sessionStorageService.isAdmin();
-    }
-
-    isLoggedIn(){
-        return this.sessionStorageService.isLoggedIn();
-    }
-
-    competitionIsOn(){
-        return this.sessionStorageService.getCompetitionIsOn();
-    }
-
+    /**
+     * Open modal dialog to show delete ensure question.
+     *
+     * @param instance
+     */
     onDelete(instance: Instance) {
         this.instance = instance;
         document.getElementById('openModalDelete').click();
     }
 
+    /**
+     * Get instance with all data and download instance's data.
+     *
+     * @param instance
+     */
     onDownload(instance: Instance){
         this.instanceService.getInstance(instance.instanceId)
             .subscribe(
@@ -72,6 +71,9 @@ export class InstancesComponent implements OnInit{
                 error => console.log("Error downloading the file."))
     }
 
+    /**
+     * Delete instance in variable instance.
+     */
     onOk(){
         this.instanceService.deleteInstance(this.instance)
             .subscribe(
@@ -81,5 +83,17 @@ export class InstancesComponent implements OnInit{
                 },
                 error => console.error(error)
             );
+    }
+
+    isAdmin(){
+        return this.sessionStorageService.isAdmin();
+    }
+
+    isLoggedIn(){
+        return this.sessionStorageService.isLoggedIn();
+    }
+
+    competitionIsOn(){
+        return this.sessionStorageService.getCompetitionIsOn();
     }
 }

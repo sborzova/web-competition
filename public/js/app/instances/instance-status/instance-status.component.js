@@ -6,13 +6,15 @@ export var InstanceStatusComponent = (function () {
         this.instanceService = instanceService;
         this.route = route;
     }
+    /**
+     * Set to variable instance instance by id.
+     */
     InstanceStatusComponent.prototype.ngOnInit = function () {
         var _this = this;
         var id = this.route.snapshot.params['id'];
         this.instanceService.getInstance(id)
             .subscribe(function (instance) {
             _this.instance = instance;
-            console.log(instance);
         });
     };
     InstanceStatusComponent.decorators = [

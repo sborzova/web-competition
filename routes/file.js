@@ -7,6 +7,11 @@ var fileUpload = multer({ storage: storage }).single('file');
 
 var File = require('../models/file');
 
+/**
+ * Save new file to database.
+ *
+ * Request contains file.
+ **/
 router.post('/server/file', function (req, res) {
     fileUpload(req, res, function(err) {
         if (err) {
@@ -40,6 +45,12 @@ router.post('/server/file', function (req, res) {
     });
 });
 
+/**
+ * Update file in database by id.
+ *
+ * Parameter id - file's id.
+ * Request contains updated file.
+ **/
 router.post('/server/fileUpdate/:id', function (req, res, next) {
     fileUpload(req, res, function(err) {
         if (err) {
@@ -79,6 +90,11 @@ router.post('/server/fileUpdate/:id', function (req, res, next) {
     });
 });
 
+/**
+ * Get file from database by id.
+ *
+ * Parameter id - file's id.
+ */
 router.get('/server/file/:id', function(req, res, next) {
     File.findById(req.params.id, function(err, file) {
         if (err) {
@@ -100,6 +116,11 @@ router.get('/server/file/:id', function(req, res, next) {
     });
 });
 
+/**
+ * Delete file from database by id.
+ *
+ * Parameter id - file's id.
+ */
 router.delete('/server/file/:id', function (req, res, next) {
     File.findById(req.params.id, function (err, file) {
         if (err) {
