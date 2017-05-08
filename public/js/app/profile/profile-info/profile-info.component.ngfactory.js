@@ -14,7 +14,7 @@ import * as import3 from './profile-info.component';
 import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../../shared/user.service';
+import * as import8 from '../profile.service';
 import * as import9 from '@angular/core/src/metadata/view';
 import * as import10 from '@angular/core/src/linker/component_factory';
 import * as import11 from '@angular/router/src/directives/router_link';
@@ -33,7 +33,7 @@ var _View_ProfileInfoComponent_Host0 = (function (_super) {
         this._el_0 = this.selectOrCreateHostElement('app-profile-info', rootSelector, null);
         this._appEl_0 = new import2.AppElement(0, null, this, this._el_0);
         var compView_0 = viewFactory_ProfileInfoComponent0(this.viewUtils, this.injector(0), this._appEl_0);
-        this._ProfileInfoComponent_0_4 = new import3.ProfileInfoComponent(this.parentInjector.get(import8.UserService));
+        this._ProfileInfoComponent_0_4 = new import3.ProfileInfoComponent(this.parentInjector.get(import8.ProfileService));
         this._appEl_0.initComponent(this._ProfileInfoComponent_0_4, [], compView_0);
         compView_0.create(this._ProfileInfoComponent_0_4, this.projectableNodes, null);
         this.init([].concat([this._el_0]), [this._el_0], [], []);

@@ -12,7 +12,7 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../../shared/user.service';
+import * as import8 from '../profile.service';
 import * as import9 from '../../flash-message/flash-messages.service';
 import * as import10 from '@angular/router/src/router';
 import * as import11 from '@angular/core/src/metadata/view';
@@ -44,7 +44,7 @@ class _View_ProfileEditPasswordComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-profile-edit-password',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_ProfileEditPasswordComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._ProfileEditPasswordComponent_0_4 = new import3.ProfileEditPasswordComponent(this.parentInjector.get(import8.UserService),this.parentInjector.get(import9.FlashMessageService),this.parentInjector.get(import10.Router));
+    this._ProfileEditPasswordComponent_0_4 = new import3.ProfileEditPasswordComponent(this.parentInjector.get(import8.ProfileService),this.parentInjector.get(import9.FlashMessageService),this.parentInjector.get(import10.Router));
     this._appEl_0.initComponent(this._ProfileEditPasswordComponent_0_4,[],compView_0);
     compView_0.create(this._ProfileEditPasswordComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);

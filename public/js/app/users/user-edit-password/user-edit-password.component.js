@@ -11,6 +11,10 @@ export var UserEditPasswordComponent = (function () {
         this.flashMessageService = flashMessageService;
         this.submitted = false;
     }
+    /**
+     *  Set to variable user user by id.
+     *  Create edit user's password form.
+     */
     UserEditPasswordComponent.prototype.ngOnInit = function () {
         var _this = this;
         var id = this.activatedRoute.snapshot.params['id'];
@@ -23,6 +27,9 @@ export var UserEditPasswordComponent = (function () {
             });
         });
     };
+    /**
+     * Submit edit user's password form.
+     */
     UserEditPasswordComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
@@ -38,6 +45,9 @@ export var UserEditPasswordComponent = (function () {
     UserEditPasswordComponent.prototype.onCancel = function () {
         this.navigateBack();
     };
+    /**
+     * Navigate to route Users Management.
+     */
     UserEditPasswordComponent.prototype.navigateBack = function () {
         this.router.navigate(['/users']);
     };

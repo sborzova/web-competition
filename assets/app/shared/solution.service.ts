@@ -276,41 +276,6 @@ export class SolutionService {
             .catch((error: Response) => Observable.throw(error));
     }
 
-    // getSolutionsByUser(userId: string){
-    //     return this.http.get(this.hostUrl.concat('server/solutionsByUser/') + userId)
-    //         .map((response: Response) => {
-    //             const solutions = response.json().obj;
-    //             let transformedSolutions: Solution[] = [];
-    //             for (let solution of solutions) {
-    //                 transformedSolutions.push(new Solution(
-    //                     solution.unassigned,
-    //                     solution.total,
-    //                     solution.sc,
-    //                     solution.time,
-    //                     solution.room,
-    //                     solution.distr,
-    //                     solution.technique,
-    //                     solution.info,
-    //                     solution.submissionTime,
-    //                     solution.visible,
-    //                     new FileModel(new Buffer(solution.data.content), solution.data._id),
-    //                     new Instance(
-    //                         solution.instance.name,
-    //                         solution.instance._id,
-    //                         solution.instance.order),
-    //                     solution.paper,
-    //                     new Author(
-    //                         solution.user.firstName,
-    //                         solution.user.lastName,
-    //                         solution.user._id),
-    //                     solution._id)
-    //                 );
-    //             }
-    //             return transformedSolutions;
-    //         })
-    //         .catch((error: Response) => Observable.throw(error));
-    // }
-
     deletePaperFromSolution(solution: Solution){
         const headers = new Headers({'Content-Type': 'application/json'});
         return this.http.patch(this.hostUrl.concat('server/solutionRemovePaper/') + solution.solutionId, {headers: headers})

@@ -1,13 +1,22 @@
 var express = require('express');
 var router = express.Router();
+var jwt = require('jsonwebtoken');
 
 var Instance = require('../models/instance');
 var File = require('../models/file');
 
+/*
+ * Verify route if logged user is admin
+ */
 router.use('/server/instance', function (req, res, next) {
     verify(req, res)
 });
 
+/**
+ * Save new instance to database.
+ *
+ * Request body contains instance.
+ */
 router.post('/server/instance', function (req, res) {
     File.findById(req.body.dataId, function (err, data) {
         if (err) {
@@ -47,17 +56,25 @@ router.post('/server/instance', function (req, res) {
 
                 res.status(201).json({
                     message: 'Saved instance',
-                    obj: {message: 'Instance was created', data: result}
+                    obj: result
                 });
             });
         });
     });
 });
 
+/*
+ * Verify route if logged in user is admin.
+ */
 router.use('/server/instance/:id', function (req, res, next) {
-    verify(req, res)
+    verify(req, res, next)
 });
 
+/**
+ * Update instance in database.
+ *
+ * Request body contains updated instance.
+ */
 router.patch('/server/instance/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
         if (err) {
@@ -87,12 +104,17 @@ router.patch('/server/instance/:id', function (req, res, next) {
 
             res.status(200).json({
                 message: 'Updated instance',
-                obj: {message: 'Instance was updated', data: result}
+                obj: result
             });
         });
     });
 });
 
+/**
+ *  Get instance from database by id. Populate status and data.
+ *
+ *  Parameter id - instance's id.
+ */
 router.get('/server/instance/:id', function(req, res, next) {
     Instance.findById(req.params.id)
         .populate('status')
@@ -117,6 +139,9 @@ router.get('/server/instance/:id', function(req, res, next) {
         });
 });
 
+/**
+ * Get all instances from database.
+ */
 router.get('/server/instances', function(req, res, next) {
     Instance.find(function(err, instances) {
         if (err) {
@@ -138,10 +163,18 @@ router.get('/server/instances', function(req, res, next) {
     });
 });
 
+/*
+ * Verify route if logged in user is admin.
+ */
 router.use('/server/instance/:id', function (req, res, next) {
     verify(req, res)
 });
 
+/**
+ *  Delete instance from database by id.
+ *
+ *  Parameter id - instance's id.
+ */
 router.delete('/server/instance/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
         if (err) {
@@ -165,15 +198,21 @@ router.delete('/server/instance/:id', function (req, res, next) {
             }
             res.status(200).json({
                 message: 'Deleted instance',
-                obj: {message: 'Instance was deleted', data: result}
+                obj: result
             });
         });
     });
 });
 
-
-function verify(req, res) {
-    jwt.verify(req.query.token, 'admin', function (err, decoded) {
+/**
+ * Verify route if logged user is admin
+ *
+ * @param req request
+ * @param res response
+ * @param next next
+ */
+function verify(req, res, next) {
+    jwt.verify(req.query.token, 'admin', function (err) {
         if (err) {
             return res.status(401).json({
                 title: 'Not Authenticated Admin',

@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from "@angular/core";
 
-import { SolutionService } from "../../shared/solution.service";
-import { InstanceService } from "../../shared/instance.service";
+import {SolutionService} from "../../shared/solution.service";
+import {InstanceService} from "../../shared/instance.service";
 import {SortService} from "../../shared/sort.service";
 import {Solution} from "../../shared/solution.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";

@@ -12,6 +12,10 @@ export var UserEditComponent = (function () {
         this.roles = [];
         this.submitted = false;
     }
+    /**
+     *  Set to variable user user by id.
+     *  Create edit user form.
+     */
     UserEditComponent.prototype.ngOnInit = function () {
         var _this = this;
         var userId = this.activatedRoute.snapshot.params['id'];
@@ -27,6 +31,9 @@ export var UserEditComponent = (function () {
             });
         });
     };
+    /**
+     * Submit user edit form.
+     */
     UserEditComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
@@ -45,9 +52,17 @@ export var UserEditComponent = (function () {
     UserEditComponent.prototype.onCancel = function () {
         this.navigateBack();
     };
+    /**
+     * Navigate to route Users Management.
+     */
     UserEditComponent.prototype.navigateBack = function () {
         this.router.navigate(['/users']);
     };
+    /**
+     * Get selected role from edit user form.
+     *
+     * @param role
+     */
     UserEditComponent.prototype.getValue = function (role) {
         this.selectedRole = this.roles.filter(function (r) { return r == role; })[0];
     };

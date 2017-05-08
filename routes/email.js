@@ -6,10 +6,10 @@ var jwt = require('jsonwebtoken');
 var User = require('../models/user');
 
 /**
- *  Create new password, save it in the database and send email
+ *  Reset password
+ *
+ *  req.body.receiver contains email of user
  */
-
-
 router.post('/server/resetpassword', function (req, res, next) {
      User.findOne({email: req.body.receiver}, function(err, user) {
         if (err) {
@@ -25,46 +25,9 @@ router.post('/server/resetpassword', function (req, res, next) {
             });
         }
 
-        var newPassword = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-        for( var i=0; i < 10; i++ )
-            newPassword += possible.charAt(Math.floor(Math.random() * possible.length));
-
+        var newPassword = createPassword();
         user.password = bcrypt.hashSync(newPassword, 10);
-
-        var helper = require('sendgrid').mail;
-        var from_email = new helper.Email('no-reply@testcttcompetition.herokuapp.com');
-        var to_email = new helper.Email(req.body.receiver);
-        var subject = 'Reset password';
-        var content = new helper.Content('text/html',
-            "<html><body>" +
-            "<div>Dear user!</div>" +
-            "<div>Your new password is: </div>"+ newPassword +
-            "<br/>" +
-            "<div>You can change it in your profile after login.</div>" +
-            "<div></div>" +
-            "<br/>" +
-            "<br/>" +
-            "<div>If you did not request this, please ignore this email.</div> " +
-            "</body></html>");
-        var mail = new helper.Mail(from_email, subject, to_email, content);
-
-        var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-        var request = sg.emptyRequest({
-            method: 'POST',
-            path: '/v3/mail/send',
-            body: mail.toJSON(),
-        });
-
-        sg.API(request, function(error, response) {
-            if (error){
-                return res.status(500).json({
-                    title: 'An error occurred',
-                    error: err
-                });
-            }
-        });
+        sendEmail(newPassword, res, req.body.receiver);
 
         user.save(function (err, result) {
             if (err) {
@@ -75,10 +38,65 @@ router.post('/server/resetpassword', function (req, res, next) {
             }
             res.status(200).json({
                 message: 'Updated user and email send',
-                obj: {message: 'Password was updated', data: result}
+                obj: result
             });
         });
     });
 });
+
+/**
+ * Create password
+ * @returns {string} password
+ */
+function createPassword() {
+    var newPassword = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i = 0; i < 10; i++ )
+        newPassword += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return newPassword;
+}
+
+/**
+ * Send email to receiver with password
+ * @param password - password to send
+ * @param res - respond
+ * @param receiver - receiver
+ */
+function sendEmail(password, res, receiver) {
+    var helper = require('sendgrid').mail;
+    var from = new helper.Email('no-reply@testcttcompetition.herokuapp.com');
+    var to = new helper.Email(receiver);
+    var subject = 'Reset password';
+    var content = new helper.Content('text/html',
+        "<html><body>" +
+        "<div>Dear user!</div>" +
+        "<div></div>" +
+        "<div>Your new password is: </div>"+ password +
+        "<div></div>" +
+        "<div>You can change it in your profile after login.</div>" +
+        "<div></div>" +
+        "<div></div>" +
+        "<div>If you did not request this, please ignore this email.</div> " +
+        "</body></html>");
+    var mail = new helper.Mail(from, subject, to, content);
+
+    var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+    var request = sg.emptyRequest({
+        method: 'POST',
+        path: '/v3/mail/send',
+        body: mail.toJSON(),
+    });
+
+    sg.API(request, function(error, response) {
+        if (error){
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+    });
+}
 
 module.exports = router;

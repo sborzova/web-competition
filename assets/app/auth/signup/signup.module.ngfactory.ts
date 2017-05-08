@@ -21,8 +21,7 @@ import * as import13 from '@angular/core/src/i18n/tokens';
 import * as import14 from './signup.component';
 import * as import15 from '@angular/http/src/http';
 import * as import16 from '../../flash-message/flash-messages.service';
-import * as import17 from '../../preference/preference.service';
-import * as import18 from '@angular/router/src/router_config_loader';
+import * as import17 from '@angular/router/src/router_config_loader';
 class SignupModuleInjector extends import0.NgModuleInjector<import1.SignupModule> {
   _InternalFormsSharedModule_0:import2.InternalFormsSharedModule;
   _ReactiveFormsModule_1:import3.ReactiveFormsModule;
@@ -63,7 +62,7 @@ class SignupModuleInjector extends import0.NgModuleInjector<import1.SignupModule
     return this.__ROUTES_9;
   }
   get _AuthService_10():import10.AuthService {
-    if ((this.__AuthService_10 == (null as any))) { (this.__AuthService_10 = new import10.AuthService(this.parent.get(import15.Http),this.parent.get(import16.FlashMessageService),this.parent.get(import17.PreferenceService))); }
+    if ((this.__AuthService_10 == (null as any))) { (this.__AuthService_10 = new import10.AuthService(this.parent.get(import15.Http),this.parent.get(import16.FlashMessageService))); }
     return this.__AuthService_10;
   }
   createInternal():import1.SignupModule {
@@ -85,7 +84,7 @@ class SignupModuleInjector extends import0.NgModuleInjector<import1.SignupModule
     if ((token === import7.FormBuilder)) { return this._FormBuilder_6; }
     if ((token === import8.RadioControlRegistry)) { return this._RadioControlRegistry_7; }
     if ((token === import9.NgLocalization)) { return this._NgLocalization_8; }
-    if ((token === import18.ROUTES)) { return this._ROUTES_9; }
+    if ((token === import17.ROUTES)) { return this._ROUTES_9; }
     if ((token === import10.AuthService)) { return this._AuthService_10; }
     return notFoundResult;
   }

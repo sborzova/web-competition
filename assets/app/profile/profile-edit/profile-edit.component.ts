@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl } from "@angular/forms";
-import { Router } from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, Validators, FormControl} from "@angular/forms";
+import {Router} from "@angular/router";
 
-import { User } from "../user.model";
-import { FlashMessageService } from "../../flash-message/flash-messages.service";
-import { UserService } from "../../shared/user.service";
+import {ProfileUser} from "../profile.model";
+import {FlashMessageService} from "../../flash-message/flash-messages.service";
+import {ProfileService} from "../profile.service";
 import {SessionStorageService} from "../../shared/session-storage.service";
 
 @Component({
@@ -13,37 +13,22 @@ import {SessionStorageService} from "../../shared/session-storage.service";
 })
 export class ProfileEditComponent implements OnInit {
     userForm: FormGroup;
-    user : User;
-    submitted: boolean = false;
+    private user : ProfileUser;
+    private submitted: boolean = false;
 
-    constructor(private userService: UserService,
+    constructor(private userService: ProfileService,
                 private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService,
                 private router: Router) {}
 
-    onSubmit(){
-        this.submitted = true;
-        if (this.userForm.valid){
-            this.user.firstName = this.userForm.value.firstName;
-            this.user.lastName = this.userForm.value.lastName;
-            this.user.email = this.userForm.value.email;
-
-            this.userService.updateUser(this.user)
-                .subscribe(
-                    (data) => {
-                        this.sessionStorageService.setSessionStorageAuth(data);
-                        this.flashMessageService.showMessage('Profile was updated.', 'success' );
-                        this.navigateBack();
-                    },
-                    error => console.error(error)
-                );
-        }
-    }
-
+    /**
+     * Set to variable user logged in user.
+     * Create edit user form.
+     */
     ngOnInit(){
-        this.userService.getUser()
+        this.userService.getLoggedInUser()
             .subscribe(
-                (user: User ) => {
+                (user: ProfileUser ) => {
                     this.user = user;
                     this.userForm = new FormGroup({
                         firstName: new FormControl(this.user.firstName, Validators.required),
@@ -54,7 +39,25 @@ export class ProfileEditComponent implements OnInit {
             );
     }
 
-    private navigateBack() {
-        this.router.navigate(['/profile/info']);
+    /**
+     * Submit update user form.
+     */
+    onSubmit(){
+        this.submitted = true;
+        if (this.userForm.valid){
+            this.user.firstName = this.userForm.value.firstName;
+            this.user.lastName = this.userForm.value.lastName;
+            this.user.email = this.userForm.value.email;
+
+            this.userService.updateLoggedInUser(this.user)
+                .subscribe(
+                    (data) => {
+                        this.sessionStorageService.setSessionStorageAuth(data);
+                        this.flashMessageService.showMessage('Profile was updated.', 'success' );
+                        this.router.navigate(['/profile/info']);
+                    },
+                    error => console.error(error)
+                );
+        }
     }
 }

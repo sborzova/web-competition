@@ -24,6 +24,10 @@ var schema = new Schema({
     visible: {type: Boolean, default: true, required: true}
 });
 
+/**
+ * When deleting solution, remove file which contains solution's id.
+ * Removes also paper which contains solution's id if no other solution contains the paper id's.
+ */
 schema.post('remove', function (solution) {
     if (solution.paper){
         var solutionModel = mongoose.model('Solution', schema);

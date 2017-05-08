@@ -1,11 +1,10 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Subscription } from "rxjs";
-import { Router, ActivatedRoute, Params } from "@angular/router";
+import {Component, OnInit} from "@angular/core";
+import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {Router, ActivatedRoute} from "@angular/router";
 
-import { User } from "../user.model";
-import { UsersService } from "../users.service";
-import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import {User} from "../user.model";
+import {UsersService} from "../users.service";
+import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
 @Component({
     selector: 'app-user-edit',
@@ -13,10 +12,10 @@ import { FlashMessageService } from "../../flash-message/flash-messages.service"
 })
 export class UserEditComponent implements OnInit {
     userForm: FormGroup;
-    user: User;
-    roles: string[] = [];
-    selectedRole: string;
-    submitted: boolean = false;
+    private user: User;
+    private roles: string[] = [];
+    private selectedRole: string;
+    private submitted: boolean = false;
 
     constructor(private router: Router,
                 private usersService: UsersService,
@@ -25,6 +24,11 @@ export class UserEditComponent implements OnInit {
 
     }
 
+
+    /**
+     *  Set to variable user user by id.
+     *  Create edit user form.
+     */
     ngOnInit(){
         let userId = this.activatedRoute.snapshot.params['id'];
         this.usersService.getUser(userId)
@@ -41,6 +45,9 @@ export class UserEditComponent implements OnInit {
                 });
     }
 
+    /**
+     * Submit user edit form.
+     */
     onSubmit(){
         this.submitted = true;
         if (this.userForm.valid){
@@ -64,11 +71,19 @@ export class UserEditComponent implements OnInit {
         this.navigateBack();
     }
 
+    /**
+     * Navigate to route Users Management.
+     */
     navigateBack(){
         this.router.navigate(['/users']);
     }
 
+    /**
+     * Get selected role from edit user form.
+     *
+     * @param role
+     */
     getValue(role: string) {
-        this.selectedRole = this.roles.filter((r)=> r == role)[0];
+        this.selectedRole = this.roles.filter( r => r == role)[0];
     }
 }

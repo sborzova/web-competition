@@ -1,8 +1,8 @@
-import { Injectable } from "@angular/core";
+import {Injectable} from "@angular/core";
 import {Http, Response, Headers} from "@angular/http";
-import { Observable } from "rxjs";
+import {Observable} from "rxjs";
 
-import { User } from "./user.model";
+import {User} from "./user.model";
 import {FlashMessageService} from "../flash-message/flash-messages.service";
 
 @Injectable()
@@ -17,8 +17,13 @@ export class UsersService {
         this.hostUrl = routeModule.hostUrl;
     }
 
+    /**
+     * Send request to server to get all users.
+     *
+     * @returns {Observable<Response>} response contains users if success, other way error
+     */
     getUsers(){
-        return this.http.get(this.hostUrl.concat('server/users') + this.token)
+        return this.http.get(this.hostUrl.concat('server/users') + this.getToken())
             .map((response: Response) => {
                 const users = response.json().obj;
                 let transformedUsers: User[] = [];
@@ -38,6 +43,12 @@ export class UsersService {
             .catch((error: Response) => Observable.throw(error));
     }
 
+    /**
+     * Send request to server to get user by id.
+     *
+     * @param userId
+     * @returns {Observable<Response>} response contains user if success, other way error
+     */
     getUser(userId: string) {
         return this.http.get(this.hostUrl.concat('server/user/') + userId)
             .map((response: Response) => {
@@ -54,10 +65,15 @@ export class UsersService {
             .catch((error: Response) => Observable.throw(error));
     }
 
+    /**
+     * Send request to server to update user.
+     *
+     * @param user
+     * @returns {Observable<Response>} response contains user if success, other way error
+     */
     updateUser(user: User){
-        const body = JSON.stringify(user);
-        const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('server/user/') + user.userId + this.token, body, {headers: headers})
+        return this.http.patch(
+            this.hostUrl.concat('server/user/') + user.userId + this.getToken(), this.stringifyObject(user), {headers: this.getHeaders()})
             .map((response: Response) => {
                 return response.json();
             })
@@ -69,10 +85,15 @@ export class UsersService {
             });
     }
 
+    /**
+     * Send request to server to update user's password.
+     *
+     * @param user
+     * @returns {Observable<Response>} response contains user if success, other way error
+     */
     updateUserPassword(user: User){
-        const body = JSON.stringify(user);
-        const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId + this.token, body, {headers: headers})
+        return this.http.patch(
+            this.hostUrl.concat('server/password/') + user.userId + this.getToken(), this.stringifyObject(user), {headers: this.getHeaders()})
             .map((response: Response) => {
                 return response.json();
             })
@@ -81,23 +102,16 @@ export class UsersService {
             });
     }
 
-    updatePassword(user: User){
-        const body = JSON.stringify(user);
-        const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId + this.token, body, {headers: headers})
-            .map((response: Response) => {
-                return response.json();
-            })
-            .catch((error: Response) => {
-                return Observable.throw(error);
-            })
-
-    }
-
+    /**
+     * Send request to server to delete user by id.
+     *
+     * @param user
+     * @returns {Observable<Response>} response contains user if success, other way error
+     */
     deleteUser(user: User){
         this.users.splice(this.users.indexOf(user), 1);
         return this.http.delete(
-            this.hostUrl.concat('server/user/') + user.userId + this.token)
+            this.hostUrl.concat('server/user/') + user.userId + this.getToken())
             .map((response: Response) => {
                 return response.json();
             })
@@ -106,9 +120,33 @@ export class UsersService {
             });
     }
 
-    get token(){
+    /**
+     * Get token from session storage.
+     *
+     * @returns {string} token
+     */
+    getToken(){
         return sessionStorage.getItem('token')
             ? '?token=' + sessionStorage.getItem('token')
             : '';
+    }
+
+    /**
+     * Return headers with set content-type.
+     *
+     * @returns {Headers} headers
+     */
+    getHeaders (){
+        return new Headers({'Content-Type': 'application/json'});
+    }
+
+    /**
+     * Stringify object.
+     *
+     * @param object
+     * @returns {string} stringified object
+     */
+    stringifyObject(object){
+        return JSON.stringify(object);
     }
 }

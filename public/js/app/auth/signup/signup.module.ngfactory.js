@@ -24,8 +24,7 @@ import * as import13 from '@angular/core/src/i18n/tokens';
 import * as import14 from './signup.component';
 import * as import15 from '@angular/http/src/http';
 import * as import16 from '../../flash-message/flash-messages.service';
-import * as import17 from '../../preference/preference.service';
-import * as import18 from '@angular/router/src/router_config_loader';
+import * as import17 from '@angular/router/src/router_config_loader';
 var SignupModuleInjector = (function (_super) {
     __extends(SignupModuleInjector, _super);
     function SignupModuleInjector(parent) {
@@ -82,7 +81,7 @@ var SignupModuleInjector = (function (_super) {
     Object.defineProperty(SignupModuleInjector.prototype, "_AuthService_10", {
         get: function () {
             if ((this.__AuthService_10 == null)) {
-                (this.__AuthService_10 = new import10.AuthService(this.parent.get(import15.Http), this.parent.get(import16.FlashMessageService), this.parent.get(import17.PreferenceService)));
+                (this.__AuthService_10 = new import10.AuthService(this.parent.get(import15.Http), this.parent.get(import16.FlashMessageService)));
             }
             return this.__AuthService_10;
         },
@@ -126,7 +125,7 @@ var SignupModuleInjector = (function (_super) {
         if ((token === import9.NgLocalization)) {
             return this._NgLocalization_8;
         }
-        if ((token === import18.ROUTES)) {
+        if ((token === import17.ROUTES)) {
             return this._ROUTES_9;
         }
         if ((token === import10.AuthService)) {

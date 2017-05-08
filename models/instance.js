@@ -19,6 +19,10 @@ var schema = new Schema({
 
 schema.plugin(mongooseUniqueValidator);
 
+/**
+ * When deleting instance, remove all files which contain instance's id.
+ * Removes also all solutions which contain instance's id.
+ */
 schema.post('remove', function (instance) {
     Solution.find()
         .where('instance').equals(instance)

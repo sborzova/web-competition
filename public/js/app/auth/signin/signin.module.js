@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { signinRouting } from "./signin.routing";
 import { AuthService } from "../auth.service";
-import { EmailService } from "../../shared/email.service";
+import { EmailService } from "./email.service";
 export var SigninModule = (function () {
     function SigninModule() {
     }

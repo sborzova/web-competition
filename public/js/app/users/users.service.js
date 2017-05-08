@@ -11,9 +11,14 @@ export var UsersService = (function () {
         var routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
+    /**
+     * Send request to server to get all users.
+     *
+     * @returns {Observable<Response>} response contains users if success, other way error
+     */
     UsersService.prototype.getUsers = function () {
         var _this = this;
-        return this.http.get(this.hostUrl.concat('server/users') + this.token)
+        return this.http.get(this.hostUrl.concat('server/users') + this.getToken())
             .map(function (response) {
             var users = response.json().obj;
             var transformedUsers = [];
@@ -26,6 +31,12 @@ export var UsersService = (function () {
         })
             .catch(function (error) { return Observable.throw(error); });
     };
+    /**
+     * Send request to server to get user by id.
+     *
+     * @param userId
+     * @returns {Observable<Response>} response contains user if success, other way error
+     */
     UsersService.prototype.getUser = function (userId) {
         return this.http.get(this.hostUrl.concat('server/user/') + userId)
             .map(function (response) {
@@ -34,11 +45,15 @@ export var UsersService = (function () {
         })
             .catch(function (error) { return Observable.throw(error); });
     };
+    /**
+     * Send request to server to update user.
+     *
+     * @param user
+     * @returns {Observable<Response>} response contains user if success, other way error
+     */
     UsersService.prototype.updateUser = function (user) {
         var _this = this;
-        var body = JSON.stringify(user);
-        var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('server/user/') + user.userId + this.token, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/user/') + user.userId + this.getToken(), this.stringifyObject(user), { headers: this.getHeaders() })
             .map(function (response) {
             return response.json();
         })
@@ -49,10 +64,14 @@ export var UsersService = (function () {
             return Observable.throw(error);
         });
     };
+    /**
+     * Send request to server to update user's password.
+     *
+     * @param user
+     * @returns {Observable<Response>} response contains user if success, other way error
+     */
     UsersService.prototype.updateUserPassword = function (user) {
-        var body = JSON.stringify(user);
-        var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId + this.token, body, { headers: headers })
+        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId + this.getToken(), this.stringifyObject(user), { headers: this.getHeaders() })
             .map(function (response) {
             return response.json();
         })
@@ -60,20 +79,15 @@ export var UsersService = (function () {
             return Observable.throw(error);
         });
     };
-    UsersService.prototype.updatePassword = function (user) {
-        var body = JSON.stringify(user);
-        var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId + this.token, body, { headers: headers })
-            .map(function (response) {
-            return response.json();
-        })
-            .catch(function (error) {
-            return Observable.throw(error);
-        });
-    };
+    /**
+     * Send request to server to delete user by id.
+     *
+     * @param user
+     * @returns {Observable<Response>} response contains user if success, other way error
+     */
     UsersService.prototype.deleteUser = function (user) {
         this.users.splice(this.users.indexOf(user), 1);
-        return this.http.delete(this.hostUrl.concat('server/user/') + user.userId + this.token)
+        return this.http.delete(this.hostUrl.concat('server/user/') + user.userId + this.getToken())
             .map(function (response) {
             return response.json();
         })
@@ -81,15 +95,33 @@ export var UsersService = (function () {
             return Observable.throw(error);
         });
     };
-    Object.defineProperty(UsersService.prototype, "token", {
-        get: function () {
-            return sessionStorage.getItem('token')
-                ? '?token=' + sessionStorage.getItem('token')
-                : '';
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /**
+     * Get token from session storage.
+     *
+     * @returns {string} token
+     */
+    UsersService.prototype.getToken = function () {
+        return sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
+            : '';
+    };
+    /**
+     * Return headers with set content-type.
+     *
+     * @returns {Headers} headers
+     */
+    UsersService.prototype.getHeaders = function () {
+        return new Headers({ 'Content-Type': 'application/json' });
+    };
+    /**
+     * Stringify object.
+     *
+     * @param object
+     * @returns {string} stringified object
+     */
+    UsersService.prototype.stringifyObject = function (object) {
+        return JSON.stringify(object);
+    };
     UsersService.decorators = [
         { type: Injectable },
     ];

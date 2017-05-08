@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, Validators, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
-import { UserService } from "../../shared/user.service";
+import { ProfileService } from "../profile.service";
 export var ProfileEditPasswordComponent = (function () {
     function ProfileEditPasswordComponent(userService, flashMessageService, router) {
         this.userService = userService;
@@ -10,22 +10,13 @@ export var ProfileEditPasswordComponent = (function () {
         this.router = router;
         this.submitted = false;
     }
-    ProfileEditPasswordComponent.prototype.onSubmit = function () {
-        var _this = this;
-        this.submitted = true;
-        if (this.passwordForm.valid) {
-            this.user.confirmPassword = this.passwordForm.value.current;
-            this.user.newPassword = this.passwordForm.value.newPassword;
-            this.userService.updatePassword(this.user)
-                .subscribe(function () {
-                _this.flashMessageService.showMessage('Password was updated.', 'success');
-                _this.navigateBack();
-            }, function (error) { return console.error(error); });
-        }
-    };
+    /**
+     * Set to variable user logged in user.
+     * Create new password form.
+     */
     ProfileEditPasswordComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userService.getUser()
+        this.userService.getLoggedInUser()
             .subscribe(function (user) {
             _this.user = user;
             _this.passwordForm = new FormGroup({
@@ -35,8 +26,21 @@ export var ProfileEditPasswordComponent = (function () {
             });
         });
     };
-    ProfileEditPasswordComponent.prototype.navigateBack = function () {
-        this.router.navigate(['/profile/info']);
+    /**
+     * Submit new password form.
+     */
+    ProfileEditPasswordComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.submitted = true;
+        if (this.passwordForm.valid) {
+            this.user.confirmPassword = this.passwordForm.value.current;
+            this.user.newPassword = this.passwordForm.value.newPassword;
+            this.userService.updatePassword(this.user)
+                .subscribe(function () {
+                _this.flashMessageService.showMessage('Password was updated.', 'success');
+                _this.router.navigate(['/profile/info']);
+            }, function (error) { return console.error(error); });
+        }
     };
     ProfileEditPasswordComponent.decorators = [
         { type: Component, args: [{
@@ -46,7 +50,7 @@ export var ProfileEditPasswordComponent = (function () {
     ];
     /** @nocollapse */
     ProfileEditPasswordComponent.ctorParameters = [
-        { type: UserService, },
+        { type: ProfileService, },
         { type: FlashMessageService, },
         { type: Router, },
     ];

@@ -11,8 +11,8 @@ import {FlashMessageService} from "../../flash-message/flash-messages.service";
 })
 export class UserEditPasswordComponent implements OnInit{
     passwordForm: FormGroup;
-    user: User;
-    submitted: boolean = false;
+    private user: User;
+    private submitted: boolean = false;
 
     constructor(private router: Router,
                 private usersService: UsersService,
@@ -21,6 +21,10 @@ export class UserEditPasswordComponent implements OnInit{
 
     }
 
+    /**
+     *  Set to variable user user by id.
+     *  Create edit user's password form.
+     */
     ngOnInit(){
         let id = this.activatedRoute.snapshot.params['id'];
         this.usersService.getUser(id)
@@ -34,6 +38,9 @@ export class UserEditPasswordComponent implements OnInit{
                 });
     }
 
+    /**
+     * Submit edit user's password form.
+     */
     onSubmit(){
         this.submitted = true;
         if (this.passwordForm.valid){
@@ -54,6 +61,9 @@ export class UserEditPasswordComponent implements OnInit{
         this.navigateBack();
     }
 
+    /**
+     * Navigate to route Users Management.
+     */
     navigateBack(){
         this.router.navigate(['/users']);
     }

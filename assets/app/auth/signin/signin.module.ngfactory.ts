@@ -14,15 +14,14 @@ import * as import6 from '@angular/forms/src/form_builder';
 import * as import7 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import8 from '@angular/common/src/localization';
 import * as import9 from '../auth.service';
-import * as import10 from '../../shared/email.service';
+import * as import10 from './email.service';
 import * as import11 from '@angular/core/src/di/injector';
 import * as import12 from './signin.component.ngfactory';
 import * as import13 from '@angular/core/src/i18n/tokens';
 import * as import14 from './signin.component';
 import * as import15 from '@angular/http/src/http';
 import * as import16 from '../../flash-message/flash-messages.service';
-import * as import17 from '../../preference/preference.service';
-import * as import18 from '@angular/router/src/router_config_loader';
+import * as import17 from '@angular/router/src/router_config_loader';
 class SigninModuleInjector extends import0.NgModuleInjector<import1.SigninModule> {
   _InternalFormsSharedModule_0:import2.InternalFormsSharedModule;
   _ReactiveFormsModule_1:import3.ReactiveFormsModule;
@@ -63,7 +62,7 @@ class SigninModuleInjector extends import0.NgModuleInjector<import1.SigninModule
     return this.__ROUTES_8;
   }
   get _AuthService_9():import9.AuthService {
-    if ((this.__AuthService_9 == (null as any))) { (this.__AuthService_9 = new import9.AuthService(this.parent.get(import15.Http),this.parent.get(import16.FlashMessageService),this.parent.get(import17.PreferenceService))); }
+    if ((this.__AuthService_9 == (null as any))) { (this.__AuthService_9 = new import9.AuthService(this.parent.get(import15.Http),this.parent.get(import16.FlashMessageService))); }
     return this.__AuthService_9;
   }
   get _EmailService_10():import10.EmailService {
@@ -87,7 +86,7 @@ class SigninModuleInjector extends import0.NgModuleInjector<import1.SigninModule
     if ((token === import6.FormBuilder)) { return this._FormBuilder_5; }
     if ((token === import7.RadioControlRegistry)) { return this._RadioControlRegistry_6; }
     if ((token === import8.NgLocalization)) { return this._NgLocalization_7; }
-    if ((token === import18.ROUTES)) { return this._ROUTES_8; }
+    if ((token === import17.ROUTES)) { return this._ROUTES_8; }
     if ((token === import9.AuthService)) { return this._AuthService_9; }
     if ((token === import10.EmailService)) { return this._EmailService_10; }
     return notFoundResult;

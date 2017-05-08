@@ -3,20 +3,22 @@ import { Http, Headers } from "@angular/http";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
-import { PreferenceService } from "../preference/preference.service";
 export var AuthService = (function () {
-    function AuthService(http, flashMessageService, preferenceService) {
+    function AuthService(http, flashMessageService) {
         this.http = http;
         this.flashMessageService = flashMessageService;
-        this.preferenceService = preferenceService;
         var routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
+    /**
+     * Send request to server with new user to save
+     *
+     * @param user
+     * @returns {Observable<Response>} response contains user if success, other way error
+     */
     AuthService.prototype.signup = function (user) {
         var _this = this;
-        var body = JSON.stringify(user);
-        var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl, body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/user'), this.stringifyObject(user), { headers: this.getHeaders() })
             .map(function (response) { return response.json(); })
             .catch(function (error) {
             if (error.status === 422) {
@@ -25,16 +27,37 @@ export var AuthService = (function () {
             return Observable.throw(error);
         });
     };
+    /**
+     * Send request to server with user's login credentials to sign in.
+     *
+     * @param user
+     * @returns {Observable<Response>} response contains user if success, other way error
+     */
     AuthService.prototype.signin = function (user) {
         var _this = this;
-        var body = JSON.stringify(user);
-        var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('server/signin'), body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/signin'), this.stringifyObject(user), { headers: this.getHeaders() })
             .map(function (response) { return response.json(); })
             .catch(function (error) {
             _this.flashMessageService.showMessage('Invalid login credentials.', 'danger');
             return Observable.throw(error);
         });
+    };
+    /**
+     * Return headers with set content-type.
+     *
+     * @returns {Headers} headers
+     */
+    AuthService.prototype.getHeaders = function () {
+        return new Headers({ 'Content-Type': 'application/json' });
+    };
+    /**
+     * Stringify object.
+     *
+     * @param object
+     * @returns {string} stringified object
+     */
+    AuthService.prototype.stringifyObject = function (object) {
+        return JSON.stringify(object);
     };
     AuthService.decorators = [
         { type: Injectable },
@@ -43,7 +66,6 @@ export var AuthService = (function () {
     AuthService.ctorParameters = [
         { type: Http, },
         { type: FlashMessageService, },
-        { type: PreferenceService, },
     ];
     return AuthService;
 }());

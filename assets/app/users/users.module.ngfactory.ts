@@ -16,7 +16,7 @@ import * as import8 from '@angular/forms/src/form_builder';
 import * as import9 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import10 from '@angular/common/src/localization';
 import * as import11 from './users.service';
-import * as import12 from '../shared/email.service';
+import * as import12 from '../auth/signin/email.service';
 import * as import13 from '@angular/core/src/di/injector';
 import * as import14 from './users.component.ngfactory';
 import * as import15 from './user-edit/user-edit.component.ngfactory';

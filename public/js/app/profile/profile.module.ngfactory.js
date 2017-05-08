@@ -18,7 +18,7 @@ import * as import6 from '../equal-validator.module';
 import * as import7 from '@angular/forms/src/form_builder';
 import * as import8 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import9 from '@angular/common/src/localization';
-import * as import10 from '../shared/user.service';
+import * as import10 from './profile.service';
 import * as import12 from './profile-edit/profile-edit.component.ngfactory';
 import * as import13 from './profile-edit-password/profile-edit-password.component.ngfactory';
 import * as import14 from './profile-info/profile-info.component.ngfactory';
@@ -100,12 +100,12 @@ var ProfileModuleInjector = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ProfileModuleInjector.prototype, "_UserService_10", {
+    Object.defineProperty(ProfileModuleInjector.prototype, "_ProfileService_10", {
         get: function () {
-            if ((this.__UserService_10 == null)) {
-                (this.__UserService_10 = new import10.UserService(this.parent.get(import19.Http), this.parent.get(import20.FlashMessageService)));
+            if ((this.__ProfileService_10 == null)) {
+                (this.__ProfileService_10 = new import10.ProfileService(this.parent.get(import19.Http), this.parent.get(import20.FlashMessageService)));
             }
-            return this.__UserService_10;
+            return this.__ProfileService_10;
         },
         enumerable: true,
         configurable: true
@@ -150,8 +150,8 @@ var ProfileModuleInjector = (function (_super) {
         if ((token === import21.ROUTES)) {
             return this._ROUTES_9;
         }
-        if ((token === import10.UserService)) {
-            return this._UserService_10;
+        if ((token === import10.ProfileService)) {
+            return this._ProfileService_10;
         }
         return notFoundResult;
     };

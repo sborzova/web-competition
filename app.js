@@ -17,25 +17,25 @@ var fileRoutes = require('./routes/file');
 var app = express();
 
 mongoose.Promise = require('bluebird');
-// mongoose.connect('mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc');
 // mongoose.connect('mongodb://user:' + process.env.MLAB_USER + '.mlab.com:' + process.env.MLAB_DATABASE);
 
-var uri = 'mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc';
+// var uri = 'mongodb://user:cervikcerv@ds151228.mlab.com:51228/database_bc';
+var uri = 'mongodb://user:' + process.env.MLAB_USER + '.mlab.com:' + process.env.MLAB_DATABASE;
 mongoose.connect(uri);
 
 /*
  *  Uncomment on first deploy on server
  */
 
-// var User = require('./models/user');
+// var ProfileUser = require('./models/user');
 // var emailAdmin = 'hanka@fi.muni.cz';
 //
-// User.findOne({email: emailAdmin}, function(err, admin) {
+// ProfileUser.findOne({email: emailAdmin}, function(err, admin) {
 //     if (err)
 //       console.error(err);
 //     if (!admin){
 //         var bcrypt = require('bcryptjs');
-//         var user = new User({
+//         var user = new ProfileUser({
 //             firstName: 'Hana',
 //             lastName: 'Rudová',
 //             password: bcrypt.hashSync('1234', 10),

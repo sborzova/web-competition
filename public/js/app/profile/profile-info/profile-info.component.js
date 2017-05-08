@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { UserService } from "../../shared/user.service";
+import { ProfileService } from "../profile.service";
 export var ProfileInfoComponent = (function () {
     function ProfileInfoComponent(userService) {
         this.userService = userService;
     }
+    /**
+     *  Set to variable user logged in user.
+     */
     ProfileInfoComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userService.getUser()
+        this.userService.getLoggedInUser()
             .subscribe(function (user) {
             _this.user = user;
         }, function (error) { return console.error(error); });
@@ -19,7 +22,7 @@ export var ProfileInfoComponent = (function () {
     ];
     /** @nocollapse */
     ProfileInfoComponent.ctorParameters = [
-        { type: UserService, },
+        { type: ProfileService, },
     ];
     return ProfileInfoComponent;
 }());

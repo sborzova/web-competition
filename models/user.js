@@ -17,11 +17,14 @@ var schema = new Schema({
 
 schema.plugin(mongooseUniqueValidator);
 
+/**
+ * When deleting user, remove all solutions which contain user's id
+ */
 schema.post('remove', function (user) {
    Solution.find()
        .where('user').equals(user)
        .exec(function (err, solutions){
-           for (var i=0; i<solutions.length; i++){
+           for (var i = 0; i <solutions.length; i++){
                solutions[i].remove();
            }
        });

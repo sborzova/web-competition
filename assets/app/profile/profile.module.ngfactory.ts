@@ -14,7 +14,7 @@ import * as import6 from '../equal-validator.module';
 import * as import7 from '@angular/forms/src/form_builder';
 import * as import8 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import9 from '@angular/common/src/localization';
-import * as import10 from '../shared/user.service';
+import * as import10 from './profile.service';
 import * as import11 from '@angular/core/src/di/injector';
 import * as import12 from './profile-edit/profile-edit.component.ngfactory';
 import * as import13 from './profile-edit-password/profile-edit-password.component.ngfactory';
@@ -37,7 +37,7 @@ class ProfileModuleInjector extends import0.NgModuleInjector<import1.ProfileModu
   __RadioControlRegistry_7:import8.RadioControlRegistry;
   __NgLocalization_8:import9.NgLocaleLocalization;
   __ROUTES_9:any[];
-  __UserService_10:import10.UserService;
+  __ProfileService_10:import10.ProfileService;
   constructor(parent:import11.Injector) {
     super(parent,[
       import12.ProfileEditComponentNgFactory,
@@ -89,9 +89,9 @@ class ProfileModuleInjector extends import0.NgModuleInjector<import1.ProfileModu
     ]]); }
     return this.__ROUTES_9;
   }
-  get _UserService_10():import10.UserService {
-    if ((this.__UserService_10 == (null as any))) { (this.__UserService_10 = new import10.UserService(this.parent.get(import19.Http),this.parent.get(import20.FlashMessageService))); }
-    return this.__UserService_10;
+  get _ProfileService_10():import10.ProfileService {
+    if ((this.__ProfileService_10 == (null as any))) { (this.__ProfileService_10 = new import10.ProfileService(this.parent.get(import19.Http),this.parent.get(import20.FlashMessageService))); }
+    return this.__ProfileService_10;
   }
   createInternal():import1.ProfileModule {
     this._InternalFormsSharedModule_0 = new import2.InternalFormsSharedModule();
@@ -113,7 +113,7 @@ class ProfileModuleInjector extends import0.NgModuleInjector<import1.ProfileModu
     if ((token === import8.RadioControlRegistry)) { return this._RadioControlRegistry_7; }
     if ((token === import9.NgLocalization)) { return this._NgLocalization_8; }
     if ((token === import21.ROUTES)) { return this._ROUTES_9; }
-    if ((token === import10.UserService)) { return this._UserService_10; }
+    if ((token === import10.ProfileService)) { return this._ProfileService_10; }
     return notFoundResult;
   }
   destroyInternal():void {

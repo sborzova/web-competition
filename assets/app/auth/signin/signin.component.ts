@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
+import {Component} from '@angular/core';
+import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
-import { User } from "../user.model";
-import { AuthService } from "../auth.service";
-import { SessionStorageService } from "../../shared/session-storage.service";
-import { EmailService } from "../../shared/email.service";
-import { FlashMessageService } from "../../flash-message/flash-messages.service";
+import {AuthService} from "../auth.service";
+import {SessionStorageService} from "../../shared/session-storage.service";
+import {EmailService} from "./email.service";
+import {FlashMessageService} from "../../flash-message/flash-messages.service";
+import {SigninUser} from "./signin.model";
+import {Email} from "./email.model";
 
 @Component({
     selector: 'app-signin',
@@ -16,8 +17,8 @@ export class SigninComponent {
     signinForm: FormGroup;
     emailForm: FormGroup;
     submittedForm: boolean = false;
-    submittedEmailForm: boolean = false;
-    emailRegex: string = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@" +
+    private submittedEmailForm: boolean = false;
+    private emailRegex: string = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@" +
                             "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
 
     constructor(private authService: AuthService,
@@ -26,10 +27,23 @@ export class SigninComponent {
                 private flashMessageService: FlashMessageService,
                 private router: Router) {}
 
+    /**
+     *  Create sign in form
+     */
+    ngOnInit() {
+        this.signinForm = new FormGroup({
+            email: new FormControl(null, [Validators.required, Validators.pattern(this.emailRegex)]),
+            password: new FormControl(null, Validators.required)
+        });
+    }
+
+    /**
+     * Submit sign in form
+     */
     onSubmit() {
         this.submittedForm = true;
         if (this.signinForm.valid){
-            const user = new User(
+            const user = new SigninUser(
                 this.signinForm.value.email,
                 this.signinForm.value.password);
             this.authService.signin(user)
@@ -45,13 +59,9 @@ export class SigninComponent {
         }
     }
 
-    ngOnInit() {
-        this.signinForm = new FormGroup({
-            email: new FormControl(null, [Validators.required, Validators.pattern(this.emailRegex)]),
-            password: new FormControl(null, Validators.required)
-        });
-    }
-
+    /**
+     * Create new password form
+     */
     onShowForm(){
         this.emailForm = new FormGroup({
             email: new FormControl(null, [Validators.required, Validators.pattern(this.emailRegex)])
@@ -59,12 +69,16 @@ export class SigninComponent {
         document.getElementById('openEmailForm').click();
     }
 
+    /**
+     * Submit new password form
+     */
     onSubmitEmail(){
         this.submittedEmailForm = true;
         if (this.emailForm.valid){
             document.getElementById('hideEmailForm').click();
             this.submittedEmailForm = false;
-            this.emailService.sendEmailNewPassword(this.emailForm.value.email)
+            const email = new Email(this.emailForm.value.email);
+            this.emailService.sendEmailNewPassword(email)
                 .subscribe(
                     () => this.flashMessageService.showMessage('Email with the new password was send.', 'success'),
                     error => console.error(error)
