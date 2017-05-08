@@ -41,7 +41,7 @@ schema.post('remove', function (solution) {
                 }
             })
     }
-    File.findById(instance.data, function (err, file) {
+    File.findById(solution.data, function (err, file) {
         file.remove();
     });
 });

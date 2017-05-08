@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 import {SolutionService} from "../shared/solution.service";
@@ -14,6 +14,9 @@ export class ValidatorInfoComponent implements OnInit {
     constructor(private solutionService: SolutionService,
                 private route: ActivatedRoute){}
 
+    /**
+     * Set to variable solution solution by route parameter's id.
+     */
     ngOnInit(){
         let id = this.route.snapshot.params['id'];
         this.solutionService.getSolution(id)
@@ -24,4 +27,5 @@ export class ValidatorInfoComponent implements OnInit {
                 error => console.error(error)
             );
     }
+
 }

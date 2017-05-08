@@ -20,11 +20,11 @@ export class SolutionService {
     private hostUrl : string;
     private xmlHttp;
     private solutionFile;
-    successValidation = new EventEmitter<Validation>();
     private successValidationDeleteSource = new Subject();
     private solutionDeleteSource = new Subject<Solution>();
     private solutionSetVisibleSource = new Subject<Solution>();
     private solutionSetNotVisibleSource = new Subject<Solution>();
+    successValidation = new EventEmitter<Validation>();
 
     successValidationDelete$ = this.successValidationDeleteSource.asObservable();
     solutionDelete$ = this.solutionDeleteSource.asObservable();

@@ -6,6 +6,9 @@ export var ValidatorInfoComponent = (function () {
         this.solutionService = solutionService;
         this.route = route;
     }
+    /**
+     * Set to variable solution solution by route parameter's id.
+     */
     ValidatorInfoComponent.prototype.ngOnInit = function () {
         var _this = this;
         var id = this.route.snapshot.params['id'];
