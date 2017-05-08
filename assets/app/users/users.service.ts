@@ -50,7 +50,7 @@ export class UsersService {
      * @returns {Observable<Response>} response contains user if success, other way error
      */
     getUser(userId: string) {
-        return this.http.get(this.hostUrl.concat('server/admin/user/') + userId)
+        return this.http.get(this.hostUrl.concat('server/admin/user/') + userId + this.getToken())
             .map((response: Response) => {
                 let user = response.json().obj;
                 return new User(

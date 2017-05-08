@@ -38,7 +38,7 @@ export var UsersService = (function () {
      * @returns {Observable<Response>} response contains user if success, other way error
      */
     UsersService.prototype.getUser = function (userId) {
-        return this.http.get(this.hostUrl.concat('server/admin/user/') + userId)
+        return this.http.get(this.hostUrl.concat('server/admin/user/') + userId + this.getToken())
             .map(function (response) {
             var user = response.json().obj;
             return new User(user.email, user.firstName, user.lastName, user.password, user.role, user._id);
