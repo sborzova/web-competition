@@ -23,7 +23,7 @@ export class UsersService {
      * @returns {Observable<Response>} response contains users if success, other way error
      */
     getUsers(){
-        return this.http.get(this.hostUrl.concat('server/users') + this.getToken())
+        return this.http.get(this.hostUrl.concat('server/admin/users') + this.getToken())
             .map((response: Response) => {
                 const users = response.json().obj;
                 let transformedUsers: User[] = [];
@@ -50,7 +50,7 @@ export class UsersService {
      * @returns {Observable<Response>} response contains user if success, other way error
      */
     getUser(userId: string) {
-        return this.http.get(this.hostUrl.concat('server/user/') + userId)
+        return this.http.get(this.hostUrl.concat('server/admin/user/') + userId)
             .map((response: Response) => {
                 let user = response.json().obj;
                 return new User(
@@ -73,7 +73,7 @@ export class UsersService {
      */
     updateUser(user: User){
         return this.http.patch(
-            this.hostUrl.concat('server/user/') + user.userId + this.getToken(), this.stringifyObject(user), {headers: this.getHeaders()})
+            this.hostUrl.concat('server/admin/user/') + user.userId + this.getToken(), this.stringifyObject(user), {headers: this.getHeaders()})
             .map((response: Response) => {
                 return response.json();
             })
@@ -93,7 +93,7 @@ export class UsersService {
      */
     updateUserPassword(user: User){
         return this.http.patch(
-            this.hostUrl.concat('server/password/') + user.userId + this.getToken(), this.stringifyObject(user), {headers: this.getHeaders()})
+            this.hostUrl.concat('server/admin/password/') + user.userId + this.getToken(), this.stringifyObject(user), {headers: this.getHeaders()})
             .map((response: Response) => {
                 return response.json();
             })
@@ -111,7 +111,7 @@ export class UsersService {
     deleteUser(user: User){
         this.users.splice(this.users.indexOf(user), 1);
         return this.http.delete(
-            this.hostUrl.concat('server/user/') + user.userId + this.getToken())
+            this.hostUrl.concat('server/admin/user/') + user.userId + this.getToken())
             .map((response: Response) => {
                 return response.json();
             })

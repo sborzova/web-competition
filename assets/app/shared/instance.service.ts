@@ -30,7 +30,7 @@ export class InstanceService {
     saveInstance(instance: InstanceCreate){
         const body = JSON.stringify(instance);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.hostUrl.concat('server/instance') + this.getToken(), body, {headers: headers})
+        return this.http.post(this.hostUrl.concat('server/admin/instance') + this.getToken(), body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json().obj.data;
                 const instance = new Instance(
@@ -85,7 +85,7 @@ export class InstanceService {
      */
     updateInstanceTextFields(instance: InstanceUpdate){
         return this.http.patch(
-            this.hostUrl.concat('server/instance/') + instance.instanceId + this.getToken(), this.stringifyObject(instance), {headers: this.getHeaders()})
+            this.hostUrl.concat('server/admin/instance/') + instance.instanceId + this.getToken(), this.stringifyObject(instance), {headers: this.getHeaders()})
             .map((response: Response) => {
                 return response.json();
             })
@@ -133,7 +133,7 @@ export class InstanceService {
     deleteInstance(instance: Instance){
         this.instances.splice(this.instances.indexOf(instance), 1);
         return this.http.delete(
-            this.hostUrl.concat('server/instance/') + instance.instanceId + this.getToken())
+            this.hostUrl.concat('server/admin/instance/') + instance.instanceId + this.getToken())
             .map((response: Response) => {
                 return response.json();
             })

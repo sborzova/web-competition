@@ -204,13 +204,6 @@ router.patch('/server/password', function (req, res, next) {
     });
 });
 
-/*
- * Verify route if logged in user is admin.
- */
-router.use('/server/users', function (req, res, next) {
-    verify(req, res, next);
-});
-
 /**
  * Get all users from database.
  */
@@ -233,13 +226,6 @@ router.get('/server/users', function(req, res, next) {
             obj: users
         });
     });
-});
-
-/*
- * Verify route if logged in user is admin.
- */
-router.use('/server/user/:id', function (req, res, next) {
-    verify(req, res, next)
 });
 
 /**
@@ -284,13 +270,6 @@ router.patch('/server/user/:id', function (req, res, next) {
     });
 });
 
-/*
- * Verify route if logged in user is admin.
- */
-router.use('/server/password/:id', function (req, res, next) {
-    verify(req, res, next)
-});
-
 /**
  *  Admin update user's password in database by id.
  *
@@ -329,13 +308,6 @@ router.patch('/server/password/:id', function (req, res, next) {
     });
 });
 
-/*
- * Verify route if logged in user is admin.
- */
-router.use('/server/user/:id', function (req, res, next) {
-    verify(req, res, next)
-});
-
 /**
  *  Delete user from database by id.
  *
@@ -369,25 +341,6 @@ router.delete('/server/user/:id', function (req, res, next) {
         });
     });
 });
-
-/**
- * Verify route if logged in user is admin.
- *
- * @param req request
- * @param res response
- * @param next next
- */
-function verify(req, res, next) {
-    jwt.verify(req.query.token, 'admin', function (err) {
-        if (err) {
-            return res.status(401).json({
-                title: 'Not Authenticated Admin',
-                error: err
-            });
-        }
-        next();
-    })
-}
 
 /**
  * Sign user in JWT according to user'role as admin or user.

@@ -34,7 +34,7 @@ export class PreferenceService {
     updateValueCompetitionIsOn(state: boolean){
         const body = JSON.stringify(new Preference(state));
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.patch(this.hostUrl.concat('server/preferenceUpdate'), body, {headers: headers})
+        return this.http.patch(this.hostUrl.concat('server/admin/preferenceUpdate'), body, {headers: headers})
             .map((response: Response) => {
                 return response.json();
             })

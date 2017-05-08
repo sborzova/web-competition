@@ -35,13 +35,6 @@ router.post('/server/preference', function (req, res) {
     });
 });
 
-/*
- * Verify route if logged in user is admin.
- */
-router.use('/server/preferenceUpdate', function (req, res, next) {
-    verify(req, res, next)
-});
-
 /**
  * Update preference with name competitionIsOn in database.
  *
@@ -101,24 +94,5 @@ router.get('/server/preference', function(req, res, next) {
         });
     });
 });
-
-/**
- * Verify route if logged in user is admin.
- *
- * @param req request
- * @param res response
- * @param next next
- */
-function verify(req, res, next) {
-    jwt.verify(req.query.token, 'admin', function (err) {
-        if (err) {
-            return res.status(401).json({
-                title: 'Not Authenticated Admin',
-                error: err
-            });
-        }
-        next();
-    })
-}
 
 module.exports = router;

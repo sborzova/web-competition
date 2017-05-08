@@ -5,19 +5,12 @@ var jwt = require('jsonwebtoken');
 var Instance = require('../models/instance');
 var File = require('../models/file');
 
-/*
- * Verify route if logged user is admin
- */
-router.use('/server/instance', function (req, res, next) {
-    verify(req, res)
-});
-
 /**
  * Save new instance to database.
  *
  * Request body contains instance.
  */
-router.post('/server/instance', function (req, res) {
+router.post('/server/admin/instance', function (req, res) {
     File.findById(req.body.dataId, function (err, data) {
         if (err) {
             return res.status(500).json({
@@ -63,19 +56,12 @@ router.post('/server/instance', function (req, res) {
     });
 });
 
-/*
- * Verify route if logged in user is admin.
- */
-router.use('/server/instance/:id', function (req, res, next) {
-    verify(req, res, next)
-});
-
 /**
  * Update instance in database.
  *
  * Request body contains updated instance.
  */
-router.patch('/server/instance/:id', function (req, res, next) {
+router.patch('/server/admin/instance/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
         if (err) {
             return res.status(500).json({
@@ -163,19 +149,12 @@ router.get('/server/instances', function(req, res, next) {
     });
 });
 
-/*
- * Verify route if logged in user is admin.
- */
-router.use('/server/instance/:id', function (req, res, next) {
-    verify(req, res)
-});
-
 /**
  *  Delete instance from database by id.
  *
  *  Parameter id - instance's id.
  */
-router.delete('/server/instance/:id', function (req, res, next) {
+router.delete('/server/admin/instance/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
         if (err) {
             return res.status(500).json({
@@ -203,24 +182,5 @@ router.delete('/server/instance/:id', function (req, res, next) {
         });
     });
 });
-
-/**
- * Verify route if logged user is admin
- *
- * @param req request
- * @param res response
- * @param next next
- */
-function verify(req, res, next) {
-    jwt.verify(req.query.token, 'admin', function (err) {
-        if (err) {
-            return res.status(401).json({
-                title: 'Not Authenticated Admin',
-                error: err
-            });
-        }
-        next();
-    })
-}
 
 module.exports = router;

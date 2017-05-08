@@ -23,7 +23,7 @@ export var InstanceService = (function () {
         var _this = this;
         var body = JSON.stringify(instance);
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('server/instance') + this.getToken(), body, { headers: headers })
+        return this.http.post(this.hostUrl.concat('server/admin/instance') + this.getToken(), body, { headers: headers })
             .map(function (response) {
             var result = response.json().obj.data;
             var instance = new Instance(result.order, result.name, result.description, null, null, result.submissionTime, result._id);
@@ -61,7 +61,7 @@ export var InstanceService = (function () {
      */
     InstanceService.prototype.updateInstanceTextFields = function (instance) {
         var _this = this;
-        return this.http.patch(this.hostUrl.concat('server/instance/') + instance.instanceId + this.getToken(), this.stringifyObject(instance), { headers: this.getHeaders() })
+        return this.http.patch(this.hostUrl.concat('server/admin/instance/') + instance.instanceId + this.getToken(), this.stringifyObject(instance), { headers: this.getHeaders() })
             .map(function (response) {
             return response.json();
         })
@@ -100,7 +100,7 @@ export var InstanceService = (function () {
      */
     InstanceService.prototype.deleteInstance = function (instance) {
         this.instances.splice(this.instances.indexOf(instance), 1);
-        return this.http.delete(this.hostUrl.concat('server/instance/') + instance.instanceId + this.getToken())
+        return this.http.delete(this.hostUrl.concat('server/admin/instance/') + instance.instanceId + this.getToken())
             .map(function (response) {
             return response.json();
         })

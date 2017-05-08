@@ -18,7 +18,7 @@ export var UsersService = (function () {
      */
     UsersService.prototype.getUsers = function () {
         var _this = this;
-        return this.http.get(this.hostUrl.concat('server/users') + this.getToken())
+        return this.http.get(this.hostUrl.concat('server/admin/users') + this.getToken())
             .map(function (response) {
             var users = response.json().obj;
             var transformedUsers = [];
@@ -38,7 +38,7 @@ export var UsersService = (function () {
      * @returns {Observable<Response>} response contains user if success, other way error
      */
     UsersService.prototype.getUser = function (userId) {
-        return this.http.get(this.hostUrl.concat('server/user/') + userId)
+        return this.http.get(this.hostUrl.concat('server/admin/user/') + userId)
             .map(function (response) {
             var user = response.json().obj;
             return new User(user.email, user.firstName, user.lastName, user.password, user.role, user._id);
@@ -53,7 +53,7 @@ export var UsersService = (function () {
      */
     UsersService.prototype.updateUser = function (user) {
         var _this = this;
-        return this.http.patch(this.hostUrl.concat('server/user/') + user.userId + this.getToken(), this.stringifyObject(user), { headers: this.getHeaders() })
+        return this.http.patch(this.hostUrl.concat('server/admin/user/') + user.userId + this.getToken(), this.stringifyObject(user), { headers: this.getHeaders() })
             .map(function (response) {
             return response.json();
         })
@@ -71,7 +71,7 @@ export var UsersService = (function () {
      * @returns {Observable<Response>} response contains user if success, other way error
      */
     UsersService.prototype.updateUserPassword = function (user) {
-        return this.http.patch(this.hostUrl.concat('server/password/') + user.userId + this.getToken(), this.stringifyObject(user), { headers: this.getHeaders() })
+        return this.http.patch(this.hostUrl.concat('server/admin/password/') + user.userId + this.getToken(), this.stringifyObject(user), { headers: this.getHeaders() })
             .map(function (response) {
             return response.json();
         })
@@ -87,7 +87,7 @@ export var UsersService = (function () {
      */
     UsersService.prototype.deleteUser = function (user) {
         this.users.splice(this.users.indexOf(user), 1);
-        return this.http.delete(this.hostUrl.concat('server/user/') + user.userId + this.getToken())
+        return this.http.delete(this.hostUrl.concat('server/admin/user/') + user.userId + this.getToken())
             .map(function (response) {
             return response.json();
         })
