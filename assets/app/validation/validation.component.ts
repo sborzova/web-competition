@@ -1,9 +1,8 @@
-import { Component, ViewChild, OnInit } from "@angular/core";
+import {Component, ViewChild, OnInit} from "@angular/core";
 
-import { SolutionService } from "../shared/solution.service";
-import { SolutionCreate } from "./solution-create.model";
-import { Validation } from "./validation.model";
-import { FlashMessageService } from "../flash-message/flash-messages.service";
+import {SolutionService} from "../shared/solution.service";
+import {Validation} from "./validation.model";
+import {FlashMessageService} from "../flash-message/flash-messages.service";
 import {SessionStorageService} from "../shared/session-storage.service";
 
 @Component({
@@ -17,12 +16,21 @@ export class ValidationComponent implements OnInit {
                 private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService){}
 
+    /**
+     * Check if validation component can be shown.
+     */
     ngOnInit(){
         if (!this.showValidator()){
             document.getElementById('openModalNotView').click();
         }
     }
 
+    /**
+     * Return true if validation component can be shown, other way false.
+     *
+     * @returns {boolean} true if logged in user is admin or competition state is off
+     *  or (competition state is on and user is logged in), other way false
+     */
     showValidator(){
         let isLoggedIn = this.sessionStorageService.isLoggedIn();
         let competitionIsOn = this.sessionStorageService.getCompetitionIsOn();
@@ -31,69 +39,92 @@ export class ValidationComponent implements OnInit {
         return !competitionIsOn || isAdmin || (competitionIsOn && isLoggedIn);
     }
 
+    /**
+     * Check if input for solution is empty.
+     */
     onValidate(){
         this.validationService.successValidationHideResult();
-        let solutionInput= this.solutionElem.nativeElement;
-
+        let solutionInput = this.solutionElem.nativeElement;
         if (solutionInput.files && solutionInput.files[0]){
-            let fd = new FormData();
-            fd.append('solution', solutionInput.files[0], solutionInput.files[0].name);
-            this.validationService.validate(fd)
-                .subscribe(
-                    data => {
-                        let result = JSON.parse(data);
-                        if (result.status == 400){
-                                this.flashMessageService.showMessage('Invalid XML format.', 'danger' );
-                        }else {
-                            let info = "";
-                            let logs : string[] = result.obj.log;
-                            for (let log of logs){
-                                info += log + "\n";
-                            }
-                            let instanceName = result.obj.instance;
-                            let property = result.obj.property;
-                            for (let p of property){
-                                let value : number = parseFloat(p.value);
-                                switch (p.name){
-                                    case 'Assigned Variables' :
-                                        var assigned = value;
-                                        break;
-                                    case 'Room Preferences' :
-                                        var room = value;
-                                        break;
-                                    case 'Time Preferences' :
-                                        var time = value;
-                                        break;
-                                    case 'Student Conflicts' :
-                                        var sc = value;
-                                        break;
-                                    case 'Distribution Preferences' :
-                                        var distr = value;
-                                        break;
-                                    case 'Total Cost' :
-                                        var total = value;
-                                        break;
-                                }
-                            }
-                            let validation = new Validation(
-                                parseFloat((100 - assigned).toFixed(2)),
-                                total,
-                                sc,
-                                time,
-                                room,
-                                distr,
-                                info,
-                                instanceName
-                            );
-                            this.validationService.successValidationShowResult(validation, solutionInput.files[0]);
-                        }
-                    },
-                    error => console.error(error)
-                )
+            this.validateSolution(solutionInput.files[0]);
         }
         else {
             this.flashMessageService.showMessage('Insert file.', 'info' );
         }
+    }
+
+    /**
+     *  Validate solution and show result.
+     *
+     * @param file - solution's file to save
+     */
+    validateSolution(file: any){
+        let fd = new FormData();
+        fd.append('solution', file, file.name);
+        this.validationService.validate(fd)
+            .subscribe(
+                data => {
+                    let result = JSON.parse(data);
+                    if (result.status == 400){
+                        this.flashMessageService.showMessage('Invalid XML format.', 'danger' );
+                    }else {
+                        let validation = this.createValidationWithProperties(result);
+                        this.validationService.successValidationShowResult(validation, file);
+                    }
+                },
+                error => console.error(error)
+            )
+    }
+
+    /**
+     * Fill validation model with result.
+     *
+     * @param result - result of validation
+     * @returns {Validation} validation model
+     */
+    createValidationWithProperties(result){
+        let info = "";
+        let logs : string[] = result.obj.log;
+        for (let log of logs){
+            info += log + "\n";
+        }
+        let instanceName = result.obj.instance;
+        let property = result.obj.property;
+        for (let p of property){
+            let value : number = parseFloat(p.value);
+            switch (p.name){
+                case 'Assigned Variables' :
+                    var assigned = value;
+                    break;
+                case 'Room Preferences' :
+                    var room = value;
+                    break;
+                case 'Time Preferences' :
+                    var time = value;
+                    break;
+                case 'Student Conflicts' :
+                    var sc = value;
+                    break;
+                case 'Distribution Preferences' :
+                    var distr = value;
+                    break;
+                case 'Total Cost' :
+                    var total = value;
+                    break;
+            }
+        }
+        let validation = new Validation(
+            parseFloat((100 - assigned).toFixed(2)),
+            total,
+            sc,
+            time,
+            room,
+            distr,
+            info,
+            instanceName
+        );
+
+        return validation;
     }
 
 }

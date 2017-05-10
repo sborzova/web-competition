@@ -24,6 +24,9 @@ export var SuccessValidationComponent = (function () {
             _this.setShowUploadForm();
         });
     }
+    /**
+     * Show result of validation. Create upload solution form.
+     */
     SuccessValidationComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.solutionForm = new FormGroup({
@@ -37,6 +40,16 @@ export var SuccessValidationComponent = (function () {
             _this.display = 'block';
         });
     };
+    /**
+     *  When component destroy, unsubscribe subscription.
+     */
+    SuccessValidationComponent.prototype.ngOnDestroy = function () {
+        this.subscription.unsubscribe();
+        this.solutionService.setSolutionFile(null);
+    };
+    /**
+     * Submit upload solution form.
+     */
     SuccessValidationComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
@@ -46,34 +59,51 @@ export var SuccessValidationComponent = (function () {
         }
         if (this.solutionForm.valid) {
             this.solutionService.findDuplicateSolution(new Solution(this.validation.unassigned, this.validation.total, this.validation.sc, this.validation.time, this.validation.room, this.validation.distr, this.solutionForm.value.technique, '', null, false, null, new Instance(this.validation.instanceName))).subscribe(function (solution) {
-                if (solution) {
-                    var date = new Date(solution.submissionTime);
-                    _this.flashMessageService.showMessage('Solution has the same unassigned variables, total cost, student conflicts, ' +
-                        'time preferences, room preferences, distribution preferences and technique as your other ' +
-                        'solution uploaded to the system at ' + _this.getDateTime(date) +
-                        ', it is not ' + 'uploaded.', 'info');
-                    return;
-                }
-                else {
-                    _this.solutionService.uploadSolution(new SolutionCreate(_this.validation.unassigned, _this.validation.total, _this.validation.sc, _this.validation.time, _this.validation.room, _this.validation.distr, _this.validation.info, _this.solutionForm.value.technique, _this.validation.instanceName), _this.solutionForm.value.citation, _this.solutionForm.value.url);
-                }
+                _this.handleDuplicateSolution(solution);
             }, function (error) { return console.log(error); });
         }
     };
-    SuccessValidationComponent.prototype.ngOnDestroy = function () {
-        this.subscription.unsubscribe();
-        this.solutionService.setSolutionFile(null);
+    /**
+     *  If solution is not null show flash message with its properties, other way upload solution from
+     *  variable validation.
+     *
+     * @param solution - duplicate solution
+     */
+    SuccessValidationComponent.prototype.handleDuplicateSolution = function (solution) {
+        if (solution) {
+            var date = new Date(solution.submissionTime);
+            this.flashMessageService.showMessage('Solution has the same unassigned variables, total cost, student conflicts, ' +
+                'time preferences, room preferences, distribution preferences and technique as your other ' +
+                'solution uploaded to the system at ' + this.getDateTime(date) +
+                ', it is not ' + 'uploaded.', 'info');
+            return;
+        }
+        else {
+            this.solutionService.uploadSolution(new SolutionCreate(this.validation.unassigned, this.validation.total, this.validation.sc, this.validation.time, this.validation.room, this.validation.distr, this.validation.info, this.solutionForm.value.technique, this.validation.instanceName), this.solutionForm.value.citation, this.solutionForm.value.url);
+        }
     };
+    /**
+     *  Set variable showUploadForm.
+     */
     SuccessValidationComponent.prototype.setShowUploadForm = function () {
         this.showUploadForm = this.sessionStorageService.isLoggedIn();
     };
-    // competitionIsOn(){
-    //     return
-    // }
+    /**
+     * Format date to string.
+     *
+     * @param date
+     * @returns {string} formatted date
+     */
     SuccessValidationComponent.prototype.getDateTime = function (date) {
         return date.toLocaleTimeString() + ' on ' + this.getNameOfMonth(date.getMonth()) +
             ' ' + date.getDate() + ', ' + date.getFullYear();
     };
+    /**
+     * Get name of month by number.
+     *
+     * @param number
+     * @returns {string} name of month
+     */
     SuccessValidationComponent.prototype.getNameOfMonth = function (number) {
         switch (number) {
             case 0:

@@ -9,71 +9,101 @@ export var ValidationComponent = (function () {
         this.sessionStorageService = sessionStorageService;
         this.flashMessageService = flashMessageService;
     }
+    /**
+     * Check if validation component can be shown.
+     */
     ValidationComponent.prototype.ngOnInit = function () {
         if (!this.showValidator()) {
             document.getElementById('openModalNotView').click();
         }
     };
+    /**
+     * Return true if validation component can be shown, other way false.
+     *
+     * @returns {boolean} true if logged in user is admin or competition state is off
+     *  or (competition state is on and user is logged in), other way false
+     */
     ValidationComponent.prototype.showValidator = function () {
         var isLoggedIn = this.sessionStorageService.isLoggedIn();
         var competitionIsOn = this.sessionStorageService.getCompetitionIsOn();
         var isAdmin = this.sessionStorageService.isAdmin();
         return !competitionIsOn || isAdmin || (competitionIsOn && isLoggedIn);
     };
+    /**
+     * Check if input for solution is empty.
+     */
     ValidationComponent.prototype.onValidate = function () {
-        var _this = this;
         this.validationService.successValidationHideResult();
         var solutionInput = this.solutionElem.nativeElement;
         if (solutionInput.files && solutionInput.files[0]) {
-            var fd = new FormData();
-            fd.append('solution', solutionInput.files[0], solutionInput.files[0].name);
-            this.validationService.validate(fd)
-                .subscribe(function (data) {
-                var result = JSON.parse(data);
-                if (result.status == 400) {
-                    _this.flashMessageService.showMessage('Invalid XML format.', 'danger');
-                }
-                else {
-                    var info = "";
-                    var logs = result.obj.log;
-                    for (var _i = 0, logs_1 = logs; _i < logs_1.length; _i++) {
-                        var log_1 = logs_1[_i];
-                        info += log_1 + "\n";
-                    }
-                    var instanceName = result.obj.instance;
-                    var property = result.obj.property;
-                    for (var _a = 0, property_1 = property; _a < property_1.length; _a++) {
-                        var p = property_1[_a];
-                        var value = parseFloat(p.value);
-                        switch (p.name) {
-                            case 'Assigned Variables':
-                                var assigned = value;
-                                break;
-                            case 'Room Preferences':
-                                var room = value;
-                                break;
-                            case 'Time Preferences':
-                                var time = value;
-                                break;
-                            case 'Student Conflicts':
-                                var sc = value;
-                                break;
-                            case 'Distribution Preferences':
-                                var distr = value;
-                                break;
-                            case 'Total Cost':
-                                var total = value;
-                                break;
-                        }
-                    }
-                    var validation = new Validation(parseFloat((100 - assigned).toFixed(2)), total, sc, time, room, distr, info, instanceName);
-                    _this.validationService.successValidationShowResult(validation, solutionInput.files[0]);
-                }
-            }, function (error) { return console.error(error); });
+            this.validateSolution(solutionInput.files[0]);
         }
         else {
             this.flashMessageService.showMessage('Insert file.', 'info');
         }
+    };
+    /**
+     *  Validate solution and show result.
+     *
+     * @param file - solution's file to save
+     */
+    ValidationComponent.prototype.validateSolution = function (file) {
+        var _this = this;
+        var fd = new FormData();
+        fd.append('solution', file, file.name);
+        this.validationService.validate(fd)
+            .subscribe(function (data) {
+            var result = JSON.parse(data);
+            if (result.status == 400) {
+                _this.flashMessageService.showMessage('Invalid XML format.', 'danger');
+            }
+            else {
+                var validation = _this.createValidationWithProperties(result);
+                _this.validationService.successValidationShowResult(validation, file);
+            }
+        }, function (error) { return console.error(error); });
+    };
+    /**
+     * Fill validation model with result.
+     *
+     * @param result - result of validation
+     * @returns {Validation} validation model
+     */
+    ValidationComponent.prototype.createValidationWithProperties = function (result) {
+        var info = "";
+        var logs = result.obj.log;
+        for (var _i = 0, logs_1 = logs; _i < logs_1.length; _i++) {
+            var log_1 = logs_1[_i];
+            info += log_1 + "\n";
+        }
+        var instanceName = result.obj.instance;
+        var property = result.obj.property;
+        for (var _a = 0, property_1 = property; _a < property_1.length; _a++) {
+            var p = property_1[_a];
+            var value = parseFloat(p.value);
+            switch (p.name) {
+                case 'Assigned Variables':
+                    var assigned = value;
+                    break;
+                case 'Room Preferences':
+                    var room = value;
+                    break;
+                case 'Time Preferences':
+                    var time = value;
+                    break;
+                case 'Student Conflicts':
+                    var sc = value;
+                    break;
+                case 'Distribution Preferences':
+                    var distr = value;
+                    break;
+                case 'Total Cost':
+                    var total = value;
+                    break;
+            }
+        }
+        var validation = new Validation(parseFloat((100 - assigned).toFixed(2)), total, sc, time, room, distr, info, instanceName);
+        return validation;
     };
     ValidationComponent.decorators = [
         { type: Component, args: [{

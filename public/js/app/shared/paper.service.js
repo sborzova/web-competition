@@ -14,7 +14,7 @@ export var PaperService = (function () {
         return this.http.post(this.hostUrl.concat('server/paper'), body, { headers: headers })
             .map(function (response) {
             var result = response.json().obj;
-            var paper = new Paper(result.data.citation, result.data.url, result.data._id);
+            var paper = new Paper(result.citation, result.url, result._id);
             return paper;
         })
             .catch(function (error) {

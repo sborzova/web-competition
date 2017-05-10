@@ -21,9 +21,9 @@ export class PaperService {
             .map((response: Response) => {
                 const result = response.json().obj;
                 const paper = new Paper(
-                    result.data.citation,
-                    result.data.url,
-                    result.data._id);
+                    result.citation,
+                    result.url,
+                    result._id);
                 return paper;
             })
             .catch((error: Response) => {

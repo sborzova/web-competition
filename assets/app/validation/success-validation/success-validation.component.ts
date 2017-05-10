@@ -15,13 +15,13 @@ import {FlashMessageService} from "../../flash-message/flash-messages.service";
     templateUrl: './success-validation.component.html'
 })
 export class SuccessValidationComponent implements OnInit, OnDestroy {
+    private display = 'none';
+    private subscription: Subscription;
+    private submitted: boolean = false;
+    private citationMissing: boolean = false;
     validation: Validation;
-    display = 'none';
-    subscription: Subscription;
     solutionForm: FormGroup;
     showUploadForm: boolean;
-    submitted: boolean = false;
-    citationMissing: boolean = false;
 
     constructor(private solutionService: SolutionService,
                 private sessionStorageService: SessionStorageService,
@@ -39,6 +39,9 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
             );
     }
 
+    /**
+     * Show result of validation. Create upload solution form.
+     */
     ngOnInit(){
         this.solutionForm = new FormGroup({
             technique: new FormControl(null, Validators.required),
@@ -54,6 +57,17 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
             );
     }
 
+    /**
+     *  When component destroy, unsubscribe subscription.
+     */
+    ngOnDestroy(){
+        this.subscription.unsubscribe();
+        this.solutionService.setSolutionFile(null);
+    }
+
+    /**
+     * Submit upload solution form.
+     */
     onSubmit(){
         this.submitted = true;
         if (this.solutionForm.value.url && !this.solutionForm.value.citation){
@@ -77,54 +91,70 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
                     new Instance(this.validation.instanceName))
                 ).subscribe(
                 (solution: Solution) => {
-                    if (solution) {
-                        let date = new Date(solution.submissionTime);
-                        this.flashMessageService.showMessage(
-                            'Solution has the same unassigned variables, total cost, student conflicts, ' +
-                            'time preferences, room preferences, distribution preferences and technique as your other ' +
-                            'solution uploaded to the system at ' + this.getDateTime(date) +
-                            ', it is not ' + 'uploaded.', 'info');
-                        return;
-                    }else {
-                        this.solutionService.uploadSolution(
-                            new SolutionCreate(
-                                this.validation.unassigned,
-                                this.validation.total,
-                                this.validation.sc,
-                                this.validation.time,
-                                this.validation.room,
-                                this.validation.distr,
-                                this.validation.info,
-                                this.solutionForm.value.technique,
-                                this.validation.instanceName),
-                            this.solutionForm.value.citation,
-                            this.solutionForm.value.url,
-                            );
-                        }
+                    this.handleDuplicateSolution(solution);
                     },
                     error => console.log(error)
             );
         }
     }
 
-    ngOnDestroy(){
-        this.subscription.unsubscribe();
-        this.solutionService.setSolutionFile(null);
+    /**
+     *  If solution is not null show flash message with its properties, other way upload solution from
+     *  variable validation.
+     *
+     * @param solution - duplicate solution
+     */
+    handleDuplicateSolution(solution){
+        if (solution) {
+            let date = new Date(solution.submissionTime);
+            this.flashMessageService.showMessage(
+                'Solution has the same unassigned variables, total cost, student conflicts, ' +
+                'time preferences, room preferences, distribution preferences and technique as your other ' +
+                'solution uploaded to the system at ' + this.getDateTime(date) +
+                ', it is not ' + 'uploaded.', 'info');
+            return;
+        }else {
+            this.solutionService.uploadSolution(
+                new SolutionCreate(
+                    this.validation.unassigned,
+                    this.validation.total,
+                    this.validation.sc,
+                    this.validation.time,
+                    this.validation.room,
+                    this.validation.distr,
+                    this.validation.info,
+                    this.solutionForm.value.technique,
+                    this.validation.instanceName),
+                this.solutionForm.value.citation,
+                this.solutionForm.value.url,
+            );
+        }
     }
 
+    /**
+     *  Set variable showUploadForm.
+     */
     setShowUploadForm(){
         this.showUploadForm = this.sessionStorageService.isLoggedIn();
     }
 
-    // competitionIsOn(){
-    //     return
-    // }
-
+    /**
+     * Format date to string.
+     *
+     * @param date
+     * @returns {string} formatted date
+     */
     getDateTime(date: Date){
         return  date.toLocaleTimeString() + ' on ' + this.getNameOfMonth(date.getMonth()) +
             ' ' + date.getDate() + ', ' + date.getFullYear();
     }
 
+    /**
+     * Get name of month by number.
+     *
+     * @param number
+     * @returns {string} name of month
+     */
     getNameOfMonth(number: number){
         switch (number){
             case 0 :

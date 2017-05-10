@@ -28,6 +28,12 @@ export var SolutionService = (function () {
         var routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;
     }
+    /**
+     *  Send request to server to validate solution file.
+     *
+     * @param fd - FormData contains solution file
+     * @returns {Observer<Response>} response contains validation result, other way error
+     */
     SolutionService.prototype.validate = function (fd) {
         var _this = this;
         this.xmlHttp = new XMLHttpRequest();
@@ -49,12 +55,21 @@ export var SolutionService = (function () {
             _this.xmlHttp.send(fd);
         });
     };
+    /**
+     * Save paper when paper citation is not null.
+     * Save solution with validation info.
+     * Save solution file.
+     *
+     * @param solution
+     * @param paperCitation
+     * @param paperUrl
+     */
     SolutionService.prototype.uploadSolution = function (solution, paperCitation, paperUrl) {
         var _this = this;
-        if (paperCitation || paperUrl) {
-            this.savePaper(new Paper(paperCitation, paperUrl))
-                .subscribe(function (paperId) {
-                solution.paperId = paperId;
+        if (paperCitation) {
+            this.paperService.savePaper(new Paper(paperCitation, paperUrl))
+                .subscribe(function (paper) {
+                solution.paperId = paper.paperId;
                 _this.saveSolutionAndFile(solution);
             }, function (error) {
                 console.error(error);
@@ -107,15 +122,15 @@ export var SolutionService = (function () {
             return Observable.throw(error);
         });
     };
-    SolutionService.prototype.savePaper = function (paper) {
-        var body = JSON.stringify(paper);
-        var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.hostUrl.concat('server/paper'), body, { headers: headers })
-            .map(function (response) {
-            return response.json().obj.data._id;
-        })
-            .catch(function (error) { return Observable.throw(error); });
-    };
+    // savePaper(paper: Paper){
+    //         const body = JSON.stringify(paper);
+    //         const headers = new Headers({'Content-Type': 'application/json'});
+    //         return this.http.post(this.hostUrl.concat('server/paper'), body, {headers: headers})
+    //             .map((response: Response) => {
+    //                 return response.json().obj.data._id;
+    //             })
+    //             .catch((error: Response) => Observable.throw(error));
+    // }
     SolutionService.prototype.saveSolution = function (solution) {
         var body = JSON.stringify(solution);
         var token = sessionStorage.getItem('token')
@@ -178,25 +193,6 @@ export var SolutionService = (function () {
         })
             .catch(function (error) { return Observable.throw(error); });
     };
-    SolutionService.prototype.successValidationShowResult = function (validation, file) {
-        this.setSolutionFile(file);
-        this.successValidation.emit(validation);
-    };
-    SolutionService.prototype.successValidationHideResult = function () {
-        this.successValidationDeleteSource.next();
-    };
-    SolutionService.prototype.deleteSolutionObservable = function (solution) {
-        this.solutionDeleteSource.next(solution);
-    };
-    SolutionService.prototype.setVisibleObservable = function (solution) {
-        this.solutionSetVisibleSource.next(solution);
-    };
-    SolutionService.prototype.setNotVisibleObservable = function (solution) {
-        this.solutionSetNotVisibleSource.next(solution);
-    };
-    SolutionService.prototype.setSolutionFile = function (file) {
-        this.solutionFile = file;
-    };
     SolutionService.prototype.updateSolutionPaper = function (solution) {
         var body = JSON.stringify(solution);
         var token = sessionStorage.getItem('token')
@@ -230,6 +226,25 @@ export var SolutionService = (function () {
             .catch(function (error) {
             return Observable.throw(error.json());
         });
+    };
+    SolutionService.prototype.successValidationShowResult = function (validation, file) {
+        this.setSolutionFile(file);
+        this.successValidation.emit(validation);
+    };
+    SolutionService.prototype.successValidationHideResult = function () {
+        this.successValidationDeleteSource.next();
+    };
+    SolutionService.prototype.deleteSolutionObservable = function (solution) {
+        this.solutionDeleteSource.next(solution);
+    };
+    SolutionService.prototype.setVisibleObservable = function (solution) {
+        this.solutionSetVisibleSource.next(solution);
+    };
+    SolutionService.prototype.setNotVisibleObservable = function (solution) {
+        this.solutionSetNotVisibleSource.next(solution);
+    };
+    SolutionService.prototype.setSolutionFile = function (file) {
+        this.solutionFile = file;
     };
     SolutionService.decorators = [
         { type: Injectable },

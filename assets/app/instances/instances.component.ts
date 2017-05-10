@@ -18,7 +18,7 @@ export class InstancesComponent implements OnInit{
                 private flashMessageService: FlashMessageService){}
 
     /**
-     * Set to variable instances all instances.
+     * Set to variable instances all instances. Check if instance component can be shown.
      */
     ngOnInit(){
         if (!this.showInstances()){
@@ -34,7 +34,7 @@ export class InstancesComponent implements OnInit{
     }
 
     /**
-     * Check if instances can be shown.
+     * Return true if instance component can be shown, other way false.
      *
      * @returns {boolean} true if logged in user is admin or competition state is off
      *  or (competition state is on and user is logged in), other way false
