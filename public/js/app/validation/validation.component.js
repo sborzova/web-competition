@@ -1,8 +1,8 @@
 import { Component, ViewChild } from "@angular/core";
-import { SolutionService } from "../shared/solution.service";
+import { SolutionService } from "../shared/services/solution.service";
 import { Validation } from "./validation.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
-import { SessionStorageService } from "../shared/session-storage.service";
+import { SessionStorageService } from "../shared/services/session-storage.service";
 export var ValidationComponent = (function () {
     function ValidationComponent(validationService, sessionStorageService, flashMessageService) {
         this.validationService = validationService;

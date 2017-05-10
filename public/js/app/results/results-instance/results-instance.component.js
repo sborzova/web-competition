@@ -1,18 +1,29 @@
 import { Component, Input } from "@angular/core";
-import { SortService } from "../../shared/sort.service";
-import { FlashMessageService } from "../../flash-message/flash-messages.service";
-import { SolutionService } from "../../shared/solution.service";
-import { SessionStorageService } from "../../shared/session-storage.service";
+import { SortDownloadSolutionService } from "../../shared/services/sort-download-solution.service";
+import { SolutionService } from "../../shared/services/solution.service";
+import { SessionStorageService } from "../../shared/services/session-storage.service";
 export var ResultsInstanceComponent = (function () {
-    function ResultsInstanceComponent(sortService, solutionService, sessionStorageService, flashMessageService) {
+    function ResultsInstanceComponent(sortService, solutionService, sessionStorageService) {
         this.sortService = sortService;
         this.solutionService = solutionService;
         this.sessionStorageService = sessionStorageService;
-        this.flashMessageService = flashMessageService;
         this.showPapers = false;
     }
+    /**
+     * When variable solutions change, set variable solutionsAuthorInstance null.
+     *
+     * @param changes
+     */
     ResultsInstanceComponent.prototype.ngOnChanges = function (changes) {
         this.solutionsAuthorInstance = null;
+    };
+    /**
+     * Filter solutions by author.
+     *
+     * @param authorId
+     */
+    ResultsInstanceComponent.prototype.onAuthor = function (authorId) {
+        this.solutionsAuthorInstance = this.solutions.filter(function (s) { return s.author.authorId == authorId; });
     };
     ResultsInstanceComponent.prototype.isAdmin = function () {
         return this.sessionStorageService.isAdmin();
@@ -28,9 +39,6 @@ export var ResultsInstanceComponent = (function () {
     };
     ResultsInstanceComponent.prototype.onDownload = function (solution) {
         this.sortService.download(solution);
-    };
-    ResultsInstanceComponent.prototype.onAuthor = function (authorId) {
-        this.solutionsAuthorInstance = this.solutions.filter(function (s) { return s.author.authorId == authorId; });
     };
     ResultsInstanceComponent.prototype.onShowPapers = function () {
         this.showPapers = true;
@@ -94,10 +102,9 @@ export var ResultsInstanceComponent = (function () {
     ];
     /** @nocollapse */
     ResultsInstanceComponent.ctorParameters = [
-        { type: SortService, },
+        { type: SortDownloadSolutionService, },
         { type: SolutionService, },
         { type: SessionStorageService, },
-        { type: FlashMessageService, },
     ];
     ResultsInstanceComponent.propDecorators = {
         'solutions': [{ type: Input },],

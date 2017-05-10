@@ -6,7 +6,7 @@ import { ProfileEditComponent } from "./profile-edit/profile-edit.component";
 import { ProfileEditPasswordComponent } from "./profile-edit-password/profile-edit-password.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ProfileService } from "./profile.service";
-import { EqualValidatorModule } from "../equal-validator.module";
+import { EqualValidatorModule } from "../shared/directives/equal-validator.module";
 export var ProfileModule = (function () {
     function ProfileModule() {
     }

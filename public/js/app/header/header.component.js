@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { SessionStorageService } from "../shared/session-storage.service";
+import { SessionStorageService } from "../shared/services/session-storage.service";
 export var HeaderComponent = (function () {
     function HeaderComponent(sessionStorageService, router) {
         this.sessionStorageService = sessionStorageService;

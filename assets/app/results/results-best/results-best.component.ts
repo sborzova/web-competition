@@ -1,12 +1,12 @@
 import {Component, OnDestroy, OnInit} from "@angular/core";
 
-import {SolutionService} from "../../shared/solution.service";
-import {InstanceService} from "../../shared/instance.service";
-import {SortService} from "../../shared/sort.service";
-import {Solution} from "../../shared/solution.model";
+import {SolutionService} from "../../shared/services/solution.service";
+import {InstanceService} from "../../shared/services/instance.service";
+import {SortDownloadSolutionService} from "../../shared/services/sort-download-solution.service";
+import {Solution} from "../../shared/models/solution.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {Subscription} from "rxjs/Subscription";
-import {SessionStorageService} from "../../shared/session-storage.service";
+import {SessionStorageService} from "../../shared/services/session-storage.service";
 
 @Component({
     selector: 'app-results-best',
@@ -14,18 +14,18 @@ import {SessionStorageService} from "../../shared/session-storage.service";
 })
 export class ResultsBestComponent implements OnInit, OnDestroy {
     results: Solution[];
-    solutionsAll: Solution[] = [];
     solutionsInstance: Solution[];
     solutionsAuthor: Solution[];
-    solution: Solution;
-    showPapers: boolean = false;
-    subscriptionDelete: Subscription;
-    subscriptionSetVisible: Subscription;
-    subscriptionSetNotVisible: Subscription;
+    private solutionsAll: Solution[] = [];
+    private solution: Solution;
+    private showPapers: boolean = false;
+    private subscriptionDelete: Subscription;
+    private subscriptionSetVisible: Subscription;
+    private subscriptionSetNotVisible: Subscription;
 
     constructor(private solutionService: SolutionService,
                 private instanceService: InstanceService,
-                private resultsService: SortService,
+                private sortDownloadSolutionService: SortDownloadSolutionService,
                 private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService){
 
@@ -43,6 +43,10 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
             });
     }
 
+    /**
+     * Set to variable solutionsAll all solutions.
+     * Set to variable result best solutions.
+     */
     ngOnInit(){
         this.instanceService.getInstances()
             .subscribe(
@@ -54,7 +58,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
                                 (solutions: Solution[] )=> {
                                     if (solutions.length != 0){
                                         solutions = this.filterByVisibility(solutions);
-                                        solutions = this.resultsService.sortQualityAsc(solutions);
+                                        solutions = this.sortDownloadSolutionService.sortQualityAsc(solutions);
                                         results.push(this.setBestSolution(solutions));
                                         this.solutionsAll = this.solutionsAll.concat(solutions);
                                     }
@@ -68,6 +72,12 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
             )
     }
 
+    /**
+     * Return first solution from sorted solutions if admin, other way return first visible solution.
+     *
+     * @param solutions
+     * @returns {Solution} best solution
+     */
     setBestSolution(solutions: Solution[]){
         if (this.isAdmin()){
             return solutions[0];
@@ -80,6 +90,12 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
         }
     }
 
+    /**
+     *  Return visible solutions from solutions.
+     *
+     * @param solutions
+     * @returns {Solution[]} visible solutions
+     */
     filterByVisibility(solutions: Solution[]){
         if (this.isAdmin()){
             return solutions;
@@ -88,25 +104,30 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
         }
     }
 
+    /**
+     * When destroy component, unsubscribe all subscriptions.
+     */
     ngOnDestroy(){
         this.subscriptionDelete.unsubscribe();
         this.subscriptionSetVisible.unsubscribe();
         this.subscriptionSetNotVisible.unsubscribe();
     }
 
-    isAdmin(){
-        return this.sessionStorageService.isAdmin();
-    }
-
+    /**
+     * Open modal dialog to show delete ensure question.
+     *
+     * @param solution
+     */
     onDelete(solution: Solution){
         this.solution = solution;
         document.getElementById('openModalDelete').click();
     }
 
-    onDownload(solution: Solution){
-        this.resultsService.download(solution);
-    }
-
+    /**
+     * Set solution as visible.
+     *
+     * @param solution
+     */
     onSetVisible(solution){
         solution.visible = true;
         this.solutionService.updateSolutionVisibility(solution)
@@ -116,6 +137,11 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
             )
     }
 
+    /**
+     * Set solution as invisible.
+     *
+     * @param solution
+     */
     onSetNotVisible(solution){
         solution.visible = false;
         this.solutionService.updateSolutionVisibility(solution)
@@ -125,16 +151,29 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
             )
     }
 
+    /**
+     *  Filter by author.
+     *
+     * @param authorId
+     */
     onAuthor(authorId: string){
         this.solutionsInstance = null;
         this.solutionsAuthor = this.solutionsAll.filter( s => s.author.authorId == authorId);
     }
 
+    /**
+     * Filter by instance.
+     *
+     * @param instanceId
+     */
     onInstance(instanceId: string){
         this.solutionsAuthor = null;
         this.solutionsInstance = this.solutionsAll.filter( s => s.instance.instanceId == instanceId);
     }
 
+    /**
+     *  Delete solution and refresh best solutions.
+     */
     onOk(){
         this.solutionService.deleteSolution(this.solution)
             .subscribe(
@@ -143,7 +182,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
                     if (this.results.includes(this.solution)){
                         this.results.splice(this.results.indexOf(this.solution), 1);
                         let solutionsInstance = this.solutionsAll.filter(s => s.instance.instanceId = this.solution.instance.instanceId);
-                        let solutionsInstanceSorted = this.resultsService.sortQualityAsc(solutionsInstance);
+                        let solutionsInstanceSorted = this.sortDownloadSolutionService.sortQualityAsc(solutionsInstance);
                         this.results.push(solutionsInstanceSorted[0]);
                     }
                     this.solutionsInstance = null;
@@ -155,11 +194,19 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
             );
     }
 
+    onDownload(solution: Solution){
+        this.sortDownloadSolutionService.download(solution);
+    }
+
     onShowPapers(){
         this.showPapers = true;
     }
 
     onHidePapers(){
         this.showPapers = false;
+    }
+
+    isAdmin(){
+        return this.sessionStorageService.isAdmin();
     }
 }

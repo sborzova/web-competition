@@ -32,7 +32,7 @@ import * as import24 from '@angular/router/src/url_tree';
 import * as import25 from '@angular/router/src/router_outlet_map';
 import * as import26 from '@angular/core/src/linker/system_js_ng_module_factory_loader';
 import * as import27 from './preference/preference.service';
-import * as import28 from './shared/session-storage.service';
+import * as import28 from './shared/services/session-storage.service';
 import * as import29 from './flash-message/flash-messages.service';
 import * as import30 from '@angular/core/src/di/injector';
 import * as import31 from './home/home.component.ngfactory';

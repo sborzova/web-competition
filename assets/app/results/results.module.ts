@@ -6,15 +6,15 @@ import {ResultsInstanceComponent} from "./results-instance/results-instance.comp
 import {ResultsAuthorComponent} from "./results-author/results-author.component";
 import {ResultsAuthorTechniqueComponent} from "./results-author-technique/results-author-technique.component";
 import {resultsRouting} from "./results.routing";
-import {OrderByModule} from "../order-by.module";
-import {PaperService} from "../shared/paper.service";
-import {InstanceService} from "../shared/instance.service";
-import {SolutionService} from "../shared/solution.service";
-import {SortService} from "../shared/sort.service";
+import {OrderByModule} from "../shared/pipes/order-by.module";
+import {PaperService} from "../shared/services/paper.service";
+import {InstanceService} from "../shared/services/instance.service";
+import {SolutionService} from "../shared/services/solution.service";
+import {SortDownloadSolutionService} from "../shared/services/sort-download-solution.service";
 import {ResultsAuthorInstanceComponent} from "./results-author-instance/results-author-instance.component";
 import {ResultsAuthorInstanceTechniqueComponent} from "./results-author-instance-technique/results-author-instance-technique.component";
-import {FileService} from "../shared/file.service";
-import {SessionStorageService} from "../shared/session-storage.service";
+import {FileService} from "../shared/services/file.service";
+import {SessionStorageService} from "../shared/services/session-storage.service";
 
 @NgModule({
     declarations: [
@@ -34,7 +34,7 @@ import {SessionStorageService} from "../shared/session-storage.service";
         PaperService,
         InstanceService,
         SolutionService,
-        SortService,
+        SortDownloadSolutionService,
         FileService,
         SessionStorageService
     ]

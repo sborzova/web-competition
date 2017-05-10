@@ -4,12 +4,12 @@ import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 
 import {userSolutionsRouting} from "./user-solutions.routing";
 import {UserSolutionsComponent} from "./user-solutions.component";
-import {OrderByModule} from "../order-by.module";
-import {EscapeHtmlModule} from "../escape-html.module";
-import {PaperService} from "../shared/paper.service";
-import {SolutionService} from "../shared/solution.service";
-import {SortService} from "../shared/sort.service";
-import {FileService} from "../shared/file.service";
+import {OrderByModule} from "../shared/pipes/order-by.module";
+import {EscapeHtmlModule} from "../shared/pipes/escape-html.module";
+import {PaperService} from "../shared/services/paper.service";
+import {SolutionService} from "../shared/services/solution.service";
+import {SortDownloadSolutionService} from "../shared/services/sort-download-solution.service";
+import {FileService} from "../shared/services/file.service";
 
 @NgModule({
     declarations: [
@@ -26,7 +26,7 @@ import {FileService} from "../shared/file.service";
     providers: [
         PaperService,
         SolutionService,
-        SortService,
+        SortDownloadSolutionService,
         FileService
     ]
 })

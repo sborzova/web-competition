@@ -8,12 +8,12 @@ import * as import0 from '@angular/core/src/linker/ng_module_factory';
 import * as import1 from './solution.module';
 import * as import2 from '@angular/common/src/common_module';
 import * as import3 from '@angular/common/src/localization';
-import * as import4 from '../shared/file.service';
-import * as import5 from '../shared/solution.service';
+import * as import4 from '../shared/services/file.service';
+import * as import5 from '../shared/services/solution.service';
 import * as import6 from '@angular/core/src/di/injector';
 import * as import7 from '@angular/core/src/i18n/tokens';
 import * as import8 from '@angular/http/src/http';
-import * as import9 from '../shared/paper.service';
+import * as import9 from '../shared/services/paper.service';
 import * as import10 from '../flash-message/flash-messages.service';
 class SolutionModuleInjector extends import0.NgModuleInjector<import1.SolutionModule> {
   _CommonModule_0:import2.CommonModule;

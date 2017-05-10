@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
-import {SolutionService} from "../shared/solution.service";
-import {Solution} from "../shared/solution.model";
+import {SolutionService} from "../shared/services/solution.service";
+import {Solution} from "../shared/models/solution.model";
 
 @Component({
     selector: 'app-solution-validator-info',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PreferenceService } from "./preference.service";
-import { SessionStorageService } from "../shared/session-storage.service";
+import { SessionStorageService } from "../shared/services/session-storage.service";
 export var PreferenceComponent = (function () {
     function PreferenceComponent(preferenceService, sessionStorageService) {
         this.preferenceService = preferenceService;

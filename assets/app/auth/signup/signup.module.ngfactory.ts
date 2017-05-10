@@ -10,7 +10,7 @@ import * as import2 from '@angular/forms/src/directives';
 import * as import3 from '@angular/forms/src/form_providers';
 import * as import4 from '@angular/common/src/common_module';
 import * as import5 from '@angular/router/src/router_module';
-import * as import6 from '../../equal-validator.module';
+import * as import6 from '../../shared/directives/equal-validator.module';
 import * as import7 from '@angular/forms/src/form_builder';
 import * as import8 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import9 from '@angular/common/src/localization';

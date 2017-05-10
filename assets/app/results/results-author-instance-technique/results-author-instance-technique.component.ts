@@ -1,10 +1,9 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core";
+import {Component, Input} from "@angular/core";
 
-import {SortService} from "../../shared/sort.service";
-import {Solution} from "../../shared/solution.model";
-import {SolutionService} from "../../shared/solution.service";
-import {FlashMessageService} from "../../flash-message/flash-messages.service";
-import {SessionStorageService} from "../../shared/session-storage.service";
+import {SortDownloadSolutionService} from "../../shared/services/sort-download-solution.service";
+import {Solution} from "../../shared/models/solution.model";
+import {SolutionService} from "../../shared/services/solution.service";
+import {SessionStorageService} from "../../shared/services/session-storage.service";
 
 @Component({
     selector: 'app-results-author-instance-technique',
@@ -12,16 +11,15 @@ import {SessionStorageService} from "../../shared/session-storage.service";
 })
 export class ResultsAuthorInstanceTechniqueComponent{
     @Input() solutions: Solution[];
-    showPapers: boolean = false;
     solution: Solution;
+    private showPapers: boolean = false;
 
-    constructor(private resultsService: SortService,
+    constructor(private sortDownloadSolutionService: SortDownloadSolutionService,
                 private sessionStorageService: SessionStorageService,
-                private flashMessageService: FlashMessageService,
                 private solutionService: SolutionService){}
 
     onDownload(solution: Solution){
-        this.resultsService.download(solution);
+        this.sortDownloadSolutionService.download(solution);
     }
 
     isAdmin(){
@@ -49,57 +47,57 @@ export class ResultsAuthorInstanceTechniqueComponent{
     }
 
     onQualityAsc(){
-        this.solutions = this.resultsService.sortQualityAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortQualityAsc(this.solutions);
     }
 
     onQualityDesc(){
-        this.solutions = this.resultsService.sortQualityDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortQualityDesc(this.solutions);
     }
 
     onScAsc(){
-        this.solutions = this.resultsService.sortScAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortScAsc(this.solutions);
     }
 
     onScDesc(){
-        this.solutions = this.resultsService.sortScDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortScDesc(this.solutions);
     }
 
     onTimeAsc(){
-        this.solutions = this.resultsService.sortTimeAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortTimeAsc(this.solutions);
     }
 
     onTimeDesc(){
-        this.solutions = this.resultsService.sortTimeDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortTimeDesc(this.solutions);
     }
     onRoomAsc(){
-        this.solutions = this.resultsService.sortRoomAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortRoomAsc(this.solutions);
     }
 
     onRoomDesc(){
-        this.solutions = this.resultsService.sortRoomDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortRoomDesc(this.solutions);
     }
 
     onDistributionAsc(){
-        this.solutions = this.resultsService.sortDistributionAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortDistributionAsc(this.solutions);
     }
 
     onDistributionDesc(){
-        this.solutions = this.resultsService.sortDistributionDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortDistributionDesc(this.solutions);
     }
 
     onTechniqueAsc(){
-        this.solutions = this.resultsService.sortTechniqueAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortTechniqueAsc(this.solutions);
     }
 
     onTechniqueDesc(){
-        this.solutions = this.resultsService.sortTechniqueDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortTechniqueDesc(this.solutions);
     }
 
     onSubmissionTimeAsc(){
-        this.solutions = this.resultsService.sortSubmissionTimeAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortSubmissionTimeAsc(this.solutions);
     }
 
     onSubmissionTimeDesc(){
-        this.solutions = this.resultsService.sortSubmissionTimeDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortSubmissionTimeDesc(this.solutions);
     }
 }

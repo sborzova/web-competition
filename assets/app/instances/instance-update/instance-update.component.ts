@@ -2,11 +2,11 @@ import {Component, OnInit, ViewChild} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {Router, ActivatedRoute} from "@angular/router";
 
-import {InstanceService} from "../../shared/instance.service";
+import {InstanceService} from "../../shared/services/instance.service";
 import {Instance} from "../instance.model";
 import {minValue} from "../min-value.validator";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
-import {FileService} from "../../shared/file.service";
+import {FileService} from "../../shared/services/file.service";
 import {FileModel} from "../file.model";
 import {InstanceUpdate} from "../instance-update.model";
 
@@ -57,7 +57,7 @@ export class InstanceEditComponent implements OnInit {
                 this.instanceForm.value.description,
                 this.instance.instanceId
             );
-            this.instanceService.updateInstanceTextFields(updateInstance)
+            this.instanceService.updateInstance(updateInstance)
                 .subscribe(
                     data => {
                         this.navigateBack();

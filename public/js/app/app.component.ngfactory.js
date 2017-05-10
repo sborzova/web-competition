@@ -21,7 +21,7 @@ import * as import12 from '@angular/router/src/directives/router_outlet';
 import * as import13 from './flash-message/flash-message.component.ngfactory';
 import * as import14 from './flash-message/flash-messages.service';
 import * as import15 from './header/header.component.ngfactory';
-import * as import16 from './shared/session-storage.service';
+import * as import16 from './shared/services/session-storage.service';
 import * as import17 from '@angular/router/src/router';
 import * as import18 from '@angular/router/src/router_outlet_map';
 import * as import19 from '@angular/core/src/linker/component_factory_resolver';

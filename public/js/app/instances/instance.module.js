@@ -6,9 +6,9 @@ import { InstancesComponent } from "./instances.component";
 import { InstanceCreateComponent } from "./instance-new/instance-new.component";
 import { InstanceEditComponent } from "./instance-update/instance-update.component";
 import { InstanceStatusComponent } from "./instance-status/instance-status.component";
-import { OrderByModule } from "../order-by.module";
-import { InstanceService } from "../shared/instance.service";
-import { FileService } from "../shared/file.service";
+import { OrderByModule } from "../shared/pipes/order-by.module";
+import { InstanceService } from "../shared/services/instance.service";
+import { FileService } from "../shared/services/file.service";
 export var InstanceModule = (function () {
     function InstanceModule() {
     }

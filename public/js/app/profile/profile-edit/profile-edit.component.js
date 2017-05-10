@@ -3,7 +3,7 @@ import { FormGroup, Validators, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { ProfileService } from "../profile.service";
-import { SessionStorageService } from "../../shared/session-storage.service";
+import { SessionStorageService } from "../../shared/services/session-storage.service";
 export var ProfileEditComponent = (function () {
     function ProfileEditComponent(userService, sessionStorageService, flashMessageService, router) {
         this.userService = userService;

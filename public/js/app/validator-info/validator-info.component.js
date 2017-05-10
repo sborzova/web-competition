@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { SolutionService } from "../shared/solution.service";
+import { SolutionService } from "../shared/services/solution.service";
 export var ValidatorInfoComponent = (function () {
     function ValidatorInfoComponent(solutionService, route) {
         this.solutionService = solutionService;

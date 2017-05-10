@@ -13,16 +13,16 @@ import * as import1 from './user-solutions.module';
 import * as import2 from '@angular/forms/src/directives';
 import * as import3 from '@angular/forms/src/form_providers';
 import * as import4 from '@angular/common/src/common_module';
-import * as import5 from '../order-by.module';
-import * as import6 from '../escape-html.module';
+import * as import5 from '../shared/pipes/order-by.module';
+import * as import6 from '../shared/pipes/escape-html.module';
 import * as import7 from '@angular/router/src/router_module';
 import * as import8 from '@angular/forms/src/form_builder';
 import * as import9 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import10 from '@angular/common/src/localization';
-import * as import11 from '../shared/paper.service';
-import * as import12 from '../shared/file.service';
-import * as import13 from '../shared/solution.service';
-import * as import14 from '../shared/sort.service';
+import * as import11 from '../shared/services/paper.service';
+import * as import12 from '../shared/services/file.service';
+import * as import13 from '../shared/services/solution.service';
+import * as import14 from '../shared/services/sort-download-solution.service';
 import * as import16 from './user-solutions.component.ngfactory';
 import * as import17 from '@angular/core/src/i18n/tokens';
 import * as import18 from './user-solutions.component';
@@ -118,12 +118,12 @@ var UserSolutionsModuleInjector = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(UserSolutionsModuleInjector.prototype, "_SortService_15", {
+    Object.defineProperty(UserSolutionsModuleInjector.prototype, "_SortDownloadSolutionService_15", {
         get: function () {
-            if ((this.__SortService_15 == null)) {
-                (this.__SortService_15 = new import14.SortService(this._SolutionService_14));
+            if ((this.__SortDownloadSolutionService_15 == null)) {
+                (this.__SortDownloadSolutionService_15 = new import14.SortDownloadSolutionService(this._SolutionService_14));
             }
-            return this.__SortService_15;
+            return this.__SortDownloadSolutionService_15;
         },
         enumerable: true,
         configurable: true
@@ -185,8 +185,8 @@ var UserSolutionsModuleInjector = (function (_super) {
         if ((token === import13.SolutionService)) {
             return this._SolutionService_14;
         }
-        if ((token === import14.SortService)) {
-            return this._SortService_15;
+        if ((token === import14.SortDownloadSolutionService)) {
+            return this._SortDownloadSolutionService_15;
         }
         return notFoundResult;
     };

@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 
 import {Instance} from "../instance.model";
-import {InstanceService } from "../../shared/instance.service";
+import {InstanceService } from "../../shared/services/instance.service";
 
 @Component({
     selector: 'app-instance-stats',

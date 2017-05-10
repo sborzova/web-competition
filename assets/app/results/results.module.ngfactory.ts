@@ -7,15 +7,15 @@
 import * as import0 from '@angular/core/src/linker/ng_module_factory';
 import * as import1 from './results.module';
 import * as import2 from '@angular/common/src/common_module';
-import * as import3 from '../order-by.module';
+import * as import3 from '../shared/pipes/order-by.module';
 import * as import4 from '@angular/router/src/router_module';
 import * as import5 from '@angular/common/src/localization';
-import * as import6 from '../shared/paper.service';
-import * as import7 from '../shared/instance.service';
-import * as import8 from '../shared/file.service';
-import * as import9 from '../shared/solution.service';
-import * as import10 from '../shared/sort.service';
-import * as import11 from '../shared/session-storage.service';
+import * as import6 from '../shared/services/paper.service';
+import * as import7 from '../shared/services/instance.service';
+import * as import8 from '../shared/services/file.service';
+import * as import9 from '../shared/services/solution.service';
+import * as import10 from '../shared/services/sort-download-solution.service';
+import * as import11 from '../shared/services/session-storage.service';
 import * as import12 from '@angular/core/src/di/injector';
 import * as import13 from './results-best/results-best.component.ngfactory';
 import * as import14 from '@angular/core/src/i18n/tokens';
@@ -35,7 +35,7 @@ class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModu
   __InstanceService_7:import7.InstanceService;
   __FileService_8:import8.FileService;
   __SolutionService_9:import9.SolutionService;
-  __SortService_10:import10.SortService;
+  __SortDownloadSolutionService_10:import10.SortDownloadSolutionService;
   __SessionStorageService_11:import11.SessionStorageService;
   constructor(parent:import12.Injector) {
     super(parent,[import13.ResultsBestComponentNgFactory],[]);
@@ -72,9 +72,9 @@ class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModu
     if ((this.__SolutionService_9 == (null as any))) { (this.__SolutionService_9 = new import9.SolutionService(this.parent.get(import16.Http),this._PaperService_6,this.parent.get(import17.FlashMessageService),this._FileService_8)); }
     return this.__SolutionService_9;
   }
-  get _SortService_10():import10.SortService {
-    if ((this.__SortService_10 == (null as any))) { (this.__SortService_10 = new import10.SortService(this._SolutionService_9)); }
-    return this.__SortService_10;
+  get _SortDownloadSolutionService_10():import10.SortDownloadSolutionService {
+    if ((this.__SortDownloadSolutionService_10 == (null as any))) { (this.__SortDownloadSolutionService_10 = new import10.SortDownloadSolutionService(this._SolutionService_9)); }
+    return this.__SortDownloadSolutionService_10;
   }
   get _SessionStorageService_11():import11.SessionStorageService {
     if ((this.__SessionStorageService_11 == (null as any))) { (this.__SessionStorageService_11 = new import11.SessionStorageService(this.parent.get(import18.PreferenceService))); }
@@ -98,7 +98,7 @@ class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModu
     if ((token === import7.InstanceService)) { return this._InstanceService_7; }
     if ((token === import8.FileService)) { return this._FileService_8; }
     if ((token === import9.SolutionService)) { return this._SolutionService_9; }
-    if ((token === import10.SortService)) { return this._SortService_10; }
+    if ((token === import10.SortDownloadSolutionService)) { return this._SortDownloadSolutionService_10; }
     if ((token === import11.SessionStorageService)) { return this._SessionStorageService_11; }
     return notFoundResult;
   }

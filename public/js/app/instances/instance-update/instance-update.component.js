@@ -1,10 +1,10 @@
 import { Component, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
-import { InstanceService } from "../../shared/instance.service";
+import { InstanceService } from "../../shared/services/instance.service";
 import { minValue } from "../min-value.validator";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
-import { FileService } from "../../shared/file.service";
+import { FileService } from "../../shared/services/file.service";
 import { FileModel } from "../file.model";
 import { InstanceUpdate } from "../instance-update.model";
 export var InstanceEditComponent = (function () {
@@ -41,7 +41,7 @@ export var InstanceEditComponent = (function () {
         this.submitted = true;
         if (this.instanceForm.valid) {
             var updateInstance = new InstanceUpdate(this.instanceForm.value.order, this.instanceForm.value.name, this.instanceForm.value.description, this.instance.instanceId);
-            this.instanceService.updateInstanceTextFields(updateInstance)
+            this.instanceService.updateInstance(updateInstance)
                 .subscribe(function (data) {
                 _this.navigateBack();
                 _this.flashMessageService.showMessage('Instance was updated', 'success');

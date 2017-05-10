@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
-import {SessionStorageService} from "../shared/session-storage.service";
+import {SessionStorageService} from "../shared/services/session-storage.service";
 import {Instance} from "./instance.model";
-import {InstanceService} from "../shared/instance.service";
+import {InstanceService} from "../shared/services/instance.service";
 import {FlashMessageService} from "../flash-message/flash-messages.service";
 
 @Component({

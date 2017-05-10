@@ -12,25 +12,24 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../../shared/sort.service';
-import * as import9 from '../../shared/session-storage.service';
-import * as import10 from '../../flash-message/flash-messages.service';
-import * as import11 from '../../shared/solution.service';
-import * as import12 from '@angular/core/src/metadata/view';
-import * as import13 from '@angular/core/src/linker/component_factory';
-import * as import14 from '@angular/common/src/directives/ng_if';
-import * as import15 from '@angular/common/src/pipes/date_pipe';
-import * as import16 from '@angular/core/src/linker/template_ref';
-import * as import17 from '@angular/core/src/i18n/tokens';
-import * as import18 from '@angular/common/src/directives/ng_for';
-import * as import19 from '../results-author-instance/results-author-instance.component';
-import * as import20 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import21 from '../results-author-instance/results-author-instance.component.ngfactory';
-import * as import22 from '@angular/router/src/directives/router_link';
-import * as import23 from '@angular/router/src/router';
-import * as import24 from '@angular/router/src/router_state';
-import * as import25 from '@angular/common/src/location/location_strategy';
-import * as import26 from '@angular/core/src/security';
+import * as import8 from '../../shared/services/sort-download-solution.service';
+import * as import9 from '../../shared/services/session-storage.service';
+import * as import10 from '../../shared/services/solution.service';
+import * as import11 from '@angular/core/src/metadata/view';
+import * as import12 from '@angular/core/src/linker/component_factory';
+import * as import13 from '@angular/common/src/directives/ng_if';
+import * as import14 from '@angular/common/src/pipes/date_pipe';
+import * as import15 from '@angular/core/src/linker/template_ref';
+import * as import16 from '@angular/core/src/i18n/tokens';
+import * as import17 from '@angular/common/src/directives/ng_for';
+import * as import18 from '../results-author-instance/results-author-instance.component';
+import * as import19 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import20 from '../results-author-instance/results-author-instance.component.ngfactory';
+import * as import21 from '@angular/router/src/directives/router_link';
+import * as import22 from '@angular/router/src/router';
+import * as import23 from '@angular/router/src/router_state';
+import * as import24 from '@angular/common/src/location/location_strategy';
+import * as import25 from '@angular/core/src/security';
 var renderType_ResultsAuthorInstanceTechniqueComponent_Host:import0.RenderComponentType = (null as any);
 class _View_ResultsAuthorInstanceTechniqueComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -43,7 +42,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent_Host0 extends import1.AppVie
     this._el_0 = this.selectOrCreateHostElement('app-results-author-instance-technique',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_ResultsAuthorInstanceTechniqueComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._ResultsAuthorInstanceTechniqueComponent_0_4 = new import3.ResultsAuthorInstanceTechniqueComponent(this.parentInjector.get(import8.SortService),this.parentInjector.get(import9.SessionStorageService),this.parentInjector.get(import10.FlashMessageService),this.parentInjector.get(import11.SolutionService));
+    this._ResultsAuthorInstanceTechniqueComponent_0_4 = new import3.ResultsAuthorInstanceTechniqueComponent(this.parentInjector.get(import8.SortDownloadSolutionService),this.parentInjector.get(import9.SessionStorageService),this.parentInjector.get(import10.SolutionService));
     this._appEl_0.initComponent(this._ResultsAuthorInstanceTechniqueComponent_0_4,[],compView_0);
     compView_0.create(this._ResultsAuthorInstanceTechniqueComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -55,19 +54,19 @@ class _View_ResultsAuthorInstanceTechniqueComponent_Host0 extends import1.AppVie
   }
 }
 function viewFactory_ResultsAuthorInstanceTechniqueComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_ResultsAuthorInstanceTechniqueComponent_Host === (null as any))) { (renderType_ResultsAuthorInstanceTechniqueComponent_Host = viewUtils.createRenderComponentType('',0,import12.ViewEncapsulation.None,[],{})); }
+  if ((renderType_ResultsAuthorInstanceTechniqueComponent_Host === (null as any))) { (renderType_ResultsAuthorInstanceTechniqueComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,[],{})); }
   return new _View_ResultsAuthorInstanceTechniqueComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const ResultsAuthorInstanceTechniqueComponentNgFactory:import13.ComponentFactory<import3.ResultsAuthorInstanceTechniqueComponent> = new import13.ComponentFactory<import3.ResultsAuthorInstanceTechniqueComponent>('app-results-author-instance-technique',viewFactory_ResultsAuthorInstanceTechniqueComponent_Host0,import3.ResultsAuthorInstanceTechniqueComponent);
+export const ResultsAuthorInstanceTechniqueComponentNgFactory:import12.ComponentFactory<import3.ResultsAuthorInstanceTechniqueComponent> = new import12.ComponentFactory<import3.ResultsAuthorInstanceTechniqueComponent>('app-results-author-instance-technique',viewFactory_ResultsAuthorInstanceTechniqueComponent_Host0,import3.ResultsAuthorInstanceTechniqueComponent);
 const styles_ResultsAuthorInstanceTechniqueComponent:any[] = [];
 var renderType_ResultsAuthorInstanceTechniqueComponent:import0.RenderComponentType = (null as any);
 class _View_ResultsAuthorInstanceTechniqueComponent0 extends import1.AppView<import3.ResultsAuthorInstanceTechniqueComponent> {
   _anchor_0:any;
   /*private*/ _appEl_0:import2.AppElement;
   _TemplateRef_0_5:any;
-  _NgIf_0_6:import14.NgIf;
+  _NgIf_0_6:import13.NgIf;
   /*private*/ _expr_0:any;
-  _pipe_date_0:import15.DatePipe;
+  _pipe_date_0:import14.DatePipe;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_ResultsAuthorInstanceTechniqueComponent0,renderType_ResultsAuthorInstanceTechniqueComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -75,16 +74,16 @@ class _View_ResultsAuthorInstanceTechniqueComponent0 extends import1.AppView<imp
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
     this._anchor_0 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._anchor_0);
-    this._TemplateRef_0_5 = new import16.TemplateRef_(this._appEl_0,viewFactory_ResultsAuthorInstanceTechniqueComponent1);
-    this._NgIf_0_6 = new import14.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
+    this._TemplateRef_0_5 = new import15.TemplateRef_(this._appEl_0,viewFactory_ResultsAuthorInstanceTechniqueComponent1);
+    this._NgIf_0_6 = new import13.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
     this._expr_0 = import7.UNINITIALIZED;
-    this._pipe_date_0 = new import15.DatePipe(this.parentInjector.get(import17.LOCALE_ID));
+    this._pipe_date_0 = new import14.DatePipe(this.parentInjector.get(import16.LOCALE_ID));
     this.init([],[this._anchor_0],[],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import16.TemplateRef) && (0 === requestNodeIndex))) { return this._TemplateRef_0_5; }
-    if (((token === import14.NgIf) && (0 === requestNodeIndex))) { return this._NgIf_0_6; }
+    if (((token === import15.TemplateRef) && (0 === requestNodeIndex))) { return this._TemplateRef_0_5; }
+    if (((token === import13.NgIf) && (0 === requestNodeIndex))) { return this._NgIf_0_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -98,7 +97,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent0 extends import1.AppView<imp
   }
 }
 export function viewFactory_ResultsAuthorInstanceTechniqueComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ResultsAuthorInstanceTechniqueComponent> {
-  if ((renderType_ResultsAuthorInstanceTechniqueComponent === (null as any))) { (renderType_ResultsAuthorInstanceTechniqueComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.html',0,import12.ViewEncapsulation.None,styles_ResultsAuthorInstanceTechniqueComponent,{})); }
+  if ((renderType_ResultsAuthorInstanceTechniqueComponent === (null as any))) { (renderType_ResultsAuthorInstanceTechniqueComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.html',0,import11.ViewEncapsulation.None,styles_ResultsAuthorInstanceTechniqueComponent,{})); }
   return new _View_ResultsAuthorInstanceTechniqueComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_ResultsAuthorInstanceTechniqueComponent1 extends import1.AppView<any> {
@@ -118,12 +117,12 @@ class _View_ResultsAuthorInstanceTechniqueComponent1 extends import1.AppView<any
   _anchor_13:any;
   /*private*/ _appEl_13:import2.AppElement;
   _TemplateRef_13_5:any;
-  _NgIf_13_6:import14.NgIf;
+  _NgIf_13_6:import13.NgIf;
   _text_14:any;
   _anchor_15:any;
   /*private*/ _appEl_15:import2.AppElement;
   _TemplateRef_15_5:any;
-  _NgIf_15_6:import14.NgIf;
+  _NgIf_15_6:import13.NgIf;
   _text_16:any;
   _el_17:any;
   _text_18:any;
@@ -198,12 +197,12 @@ class _View_ResultsAuthorInstanceTechniqueComponent1 extends import1.AppView<any
   _anchor_87:any;
   /*private*/ _appEl_87:import2.AppElement;
   _TemplateRef_87_5:any;
-  _NgIf_87_6:import14.NgIf;
+  _NgIf_87_6:import13.NgIf;
   _text_88:any;
   _anchor_89:any;
   /*private*/ _appEl_89:import2.AppElement;
   _TemplateRef_89_5:any;
-  _NgIf_89_6:import14.NgIf;
+  _NgIf_89_6:import13.NgIf;
   _text_90:any;
   _text_91:any;
   _el_92:any;
@@ -219,12 +218,12 @@ class _View_ResultsAuthorInstanceTechniqueComponent1 extends import1.AppView<any
   _anchor_102:any;
   /*private*/ _appEl_102:import2.AppElement;
   _TemplateRef_102_5:any;
-  _NgFor_102_6:import18.NgFor;
+  _NgFor_102_6:import17.NgFor;
   _text_103:any;
   _text_104:any;
   _el_105:any;
   /*private*/ _appEl_105:import2.AppElement;
-  _ResultsAuthorInstanceComponent_105_4:import19.ResultsAuthorInstanceComponent;
+  _ResultsAuthorInstanceComponent_105_4:import18.ResultsAuthorInstanceComponent;
   _text_106:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
@@ -255,13 +254,13 @@ class _View_ResultsAuthorInstanceTechniqueComponent1 extends import1.AppView<any
     this._text_12 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._anchor_13 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
     this._appEl_13 = new import2.AppElement(13,0,this,this._anchor_13);
-    this._TemplateRef_13_5 = new import16.TemplateRef_(this._appEl_13,viewFactory_ResultsAuthorInstanceTechniqueComponent2);
-    this._NgIf_13_6 = new import14.NgIf(this._appEl_13.vcRef,this._TemplateRef_13_5);
+    this._TemplateRef_13_5 = new import15.TemplateRef_(this._appEl_13,viewFactory_ResultsAuthorInstanceTechniqueComponent2);
+    this._NgIf_13_6 = new import13.NgIf(this._appEl_13.vcRef,this._TemplateRef_13_5);
     this._text_14 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._anchor_15 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
     this._appEl_15 = new import2.AppElement(15,0,this,this._anchor_15);
-    this._TemplateRef_15_5 = new import16.TemplateRef_(this._appEl_15,viewFactory_ResultsAuthorInstanceTechniqueComponent3);
-    this._NgIf_15_6 = new import14.NgIf(this._appEl_15.vcRef,this._TemplateRef_15_5);
+    this._TemplateRef_15_5 = new import15.TemplateRef_(this._appEl_15,viewFactory_ResultsAuthorInstanceTechniqueComponent3);
+    this._NgIf_15_6 = new import13.NgIf(this._appEl_15.vcRef,this._TemplateRef_15_5);
     this._text_16 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._el_17 = this.renderer.createElement(this._el_0,'table',(null as any));
     this.renderer.setElementAttribute(this._el_17,'class','table');
@@ -374,13 +373,13 @@ class _View_ResultsAuthorInstanceTechniqueComponent1 extends import1.AppView<any
     this._text_86 = this.renderer.createText(this._el_21,'\n            ',(null as any));
     this._anchor_87 = this.renderer.createTemplateAnchor(this._el_21,(null as any));
     this._appEl_87 = new import2.AppElement(87,21,this,this._anchor_87);
-    this._TemplateRef_87_5 = new import16.TemplateRef_(this._appEl_87,viewFactory_ResultsAuthorInstanceTechniqueComponent4);
-    this._NgIf_87_6 = new import14.NgIf(this._appEl_87.vcRef,this._TemplateRef_87_5);
+    this._TemplateRef_87_5 = new import15.TemplateRef_(this._appEl_87,viewFactory_ResultsAuthorInstanceTechniqueComponent4);
+    this._NgIf_87_6 = new import13.NgIf(this._appEl_87.vcRef,this._TemplateRef_87_5);
     this._text_88 = this.renderer.createText(this._el_21,'\n            ',(null as any));
     this._anchor_89 = this.renderer.createTemplateAnchor(this._el_21,(null as any));
     this._appEl_89 = new import2.AppElement(89,21,this,this._anchor_89);
-    this._TemplateRef_89_5 = new import16.TemplateRef_(this._appEl_89,viewFactory_ResultsAuthorInstanceTechniqueComponent5);
-    this._NgIf_89_6 = new import14.NgIf(this._appEl_89.vcRef,this._TemplateRef_89_5);
+    this._TemplateRef_89_5 = new import15.TemplateRef_(this._appEl_89,viewFactory_ResultsAuthorInstanceTechniqueComponent5);
+    this._NgIf_89_6 = new import13.NgIf(this._appEl_89.vcRef,this._TemplateRef_89_5);
     this._text_90 = this.renderer.createText(this._el_21,'\n        ',(null as any));
     this._text_91 = this.renderer.createText(this._el_19,'\n        ',(null as any));
     this._el_92 = this.renderer.createElement(this._el_19,'tr',(null as any));
@@ -395,14 +394,14 @@ class _View_ResultsAuthorInstanceTechniqueComponent1 extends import1.AppView<any
     this._text_101 = this.renderer.createText(this._el_17,'\n        ',(null as any));
     this._anchor_102 = this.renderer.createTemplateAnchor(this._el_17,(null as any));
     this._appEl_102 = new import2.AppElement(102,17,this,this._anchor_102);
-    this._TemplateRef_102_5 = new import16.TemplateRef_(this._appEl_102,viewFactory_ResultsAuthorInstanceTechniqueComponent6);
-    this._NgFor_102_6 = new import18.NgFor(this._appEl_102.vcRef,this._TemplateRef_102_5,this.parentInjector.get(import20.IterableDiffers),this.parent.ref);
+    this._TemplateRef_102_5 = new import15.TemplateRef_(this._appEl_102,viewFactory_ResultsAuthorInstanceTechniqueComponent6);
+    this._NgFor_102_6 = new import17.NgFor(this._appEl_102.vcRef,this._TemplateRef_102_5,this.parentInjector.get(import19.IterableDiffers),this.parent.ref);
     this._text_103 = this.renderer.createText(this._el_17,'\n    ',(null as any));
     this._text_104 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._el_105 = this.renderer.createElement(this._el_0,'app-results-author-instance',(null as any));
     this._appEl_105 = new import2.AppElement(105,0,this,this._el_105);
-    var compView_105:any = import21.viewFactory_ResultsAuthorInstanceComponent0(this.viewUtils,this.injector(105),this._appEl_105);
-    this._ResultsAuthorInstanceComponent_105_4 = new import19.ResultsAuthorInstanceComponent(this.parentInjector.get(import11.SolutionService),this.parentInjector.get(import9.SessionStorageService),this.parentInjector.get(import10.FlashMessageService),this.parentInjector.get(import8.SortService));
+    var compView_105:any = import20.viewFactory_ResultsAuthorInstanceComponent0(this.viewUtils,this.injector(105),this._appEl_105);
+    this._ResultsAuthorInstanceComponent_105_4 = new import18.ResultsAuthorInstanceComponent(this.parentInjector.get(import10.SolutionService),this.parentInjector.get(import9.SessionStorageService),this.parentInjector.get(import8.SortDownloadSolutionService));
     this._appEl_105.initComponent(this._ResultsAuthorInstanceComponent_105_4,[],compView_105);
     compView_105.create(this._ResultsAuthorInstanceComponent_105_4,[],(null as any));
     this._text_106 = this.renderer.createText(this._el_0,'\n',(null as any));
@@ -554,17 +553,17 @@ class _View_ResultsAuthorInstanceTechniqueComponent1 extends import1.AppView<any
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import16.TemplateRef) && (13 === requestNodeIndex))) { return this._TemplateRef_13_5; }
-    if (((token === import14.NgIf) && (13 === requestNodeIndex))) { return this._NgIf_13_6; }
-    if (((token === import16.TemplateRef) && (15 === requestNodeIndex))) { return this._TemplateRef_15_5; }
-    if (((token === import14.NgIf) && (15 === requestNodeIndex))) { return this._NgIf_15_6; }
-    if (((token === import16.TemplateRef) && (87 === requestNodeIndex))) { return this._TemplateRef_87_5; }
-    if (((token === import14.NgIf) && (87 === requestNodeIndex))) { return this._NgIf_87_6; }
-    if (((token === import16.TemplateRef) && (89 === requestNodeIndex))) { return this._TemplateRef_89_5; }
-    if (((token === import14.NgIf) && (89 === requestNodeIndex))) { return this._NgIf_89_6; }
-    if (((token === import16.TemplateRef) && (102 === requestNodeIndex))) { return this._TemplateRef_102_5; }
-    if (((token === import18.NgFor) && (102 === requestNodeIndex))) { return this._NgFor_102_6; }
-    if (((token === import19.ResultsAuthorInstanceComponent) && (105 === requestNodeIndex))) { return this._ResultsAuthorInstanceComponent_105_4; }
+    if (((token === import15.TemplateRef) && (13 === requestNodeIndex))) { return this._TemplateRef_13_5; }
+    if (((token === import13.NgIf) && (13 === requestNodeIndex))) { return this._NgIf_13_6; }
+    if (((token === import15.TemplateRef) && (15 === requestNodeIndex))) { return this._TemplateRef_15_5; }
+    if (((token === import13.NgIf) && (15 === requestNodeIndex))) { return this._NgIf_15_6; }
+    if (((token === import15.TemplateRef) && (87 === requestNodeIndex))) { return this._TemplateRef_87_5; }
+    if (((token === import13.NgIf) && (87 === requestNodeIndex))) { return this._NgIf_87_6; }
+    if (((token === import15.TemplateRef) && (89 === requestNodeIndex))) { return this._TemplateRef_89_5; }
+    if (((token === import13.NgIf) && (89 === requestNodeIndex))) { return this._NgIf_89_6; }
+    if (((token === import15.TemplateRef) && (102 === requestNodeIndex))) { return this._TemplateRef_102_5; }
+    if (((token === import17.NgFor) && (102 === requestNodeIndex))) { return this._NgFor_102_6; }
+    if (((token === import18.ResultsAuthorInstanceComponent) && (105 === requestNodeIndex))) { return this._ResultsAuthorInstanceComponent_105_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -811,7 +810,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
   _el_33:any;
   _text_34:any;
   _el_35:any;
-  _RouterLink_35_3:import22.RouterLink;
+  _RouterLink_35_3:import21.RouterLink;
   _text_36:any;
   _el_37:any;
   _text_38:any;
@@ -822,12 +821,12 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
   _anchor_43:any;
   /*private*/ _appEl_43:import2.AppElement;
   _TemplateRef_43_5:any;
-  _NgIf_43_6:import14.NgIf;
+  _NgIf_43_6:import13.NgIf;
   _text_44:any;
   _anchor_45:any;
   /*private*/ _appEl_45:import2.AppElement;
   _TemplateRef_45_5:any;
-  _NgIf_45_6:import14.NgIf;
+  _NgIf_45_6:import13.NgIf;
   _text_46:any;
   _text_47:any;
   _el_48:any;
@@ -835,14 +834,14 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
   _anchor_50:any;
   /*private*/ _appEl_50:import2.AppElement;
   _TemplateRef_50_5:any;
-  _NgIf_50_6:import14.NgIf;
+  _NgIf_50_6:import13.NgIf;
   _text_51:any;
   _text_52:any;
   _text_53:any;
   _anchor_54:any;
   /*private*/ _appEl_54:import2.AppElement;
   _TemplateRef_54_5:any;
-  _NgIf_54_6:import14.NgIf;
+  _NgIf_54_6:import13.NgIf;
   _text_55:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
@@ -905,7 +904,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
     this.renderer.setElementAttribute(this._el_35,'class','btn btn-primary btn-xs');
     this.renderer.setElementAttribute(this._el_35,'title','View validator info');
     this.renderer.setElementAttribute(this._el_35,'type','button');
-    this._RouterLink_35_3 = new import22.RouterLink(this.parent.parentInjector.get(import23.Router),this.parent.parentInjector.get(import24.ActivatedRoute),this.parent.parentInjector.get(import25.LocationStrategy));
+    this._RouterLink_35_3 = new import21.RouterLink(this.parent.parentInjector.get(import22.Router),this.parent.parentInjector.get(import23.ActivatedRoute),this.parent.parentInjector.get(import24.LocationStrategy));
     this._text_36 = this.renderer.createText(this._el_35,'\n                        ',(null as any));
     this._el_37 = this.renderer.createElement(this._el_35,'i',(null as any));
     this.renderer.setElementAttribute(this._el_37,'class','glyphicon glyphicon-info-sign');
@@ -916,28 +915,28 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
     this._text_42 = this.renderer.createText(this._el_41,'\n                ',(null as any));
     this._anchor_43 = this.renderer.createTemplateAnchor(this._el_41,(null as any));
     this._appEl_43 = new import2.AppElement(43,41,this,this._anchor_43);
-    this._TemplateRef_43_5 = new import16.TemplateRef_(this._appEl_43,viewFactory_ResultsAuthorInstanceTechniqueComponent7);
-    this._NgIf_43_6 = new import14.NgIf(this._appEl_43.vcRef,this._TemplateRef_43_5);
+    this._TemplateRef_43_5 = new import15.TemplateRef_(this._appEl_43,viewFactory_ResultsAuthorInstanceTechniqueComponent7);
+    this._NgIf_43_6 = new import13.NgIf(this._appEl_43.vcRef,this._TemplateRef_43_5);
     this._text_44 = this.renderer.createText(this._el_41,'\n                ',(null as any));
     this._anchor_45 = this.renderer.createTemplateAnchor(this._el_41,(null as any));
     this._appEl_45 = new import2.AppElement(45,41,this,this._anchor_45);
-    this._TemplateRef_45_5 = new import16.TemplateRef_(this._appEl_45,viewFactory_ResultsAuthorInstanceTechniqueComponent8);
-    this._NgIf_45_6 = new import14.NgIf(this._appEl_45.vcRef,this._TemplateRef_45_5);
+    this._TemplateRef_45_5 = new import15.TemplateRef_(this._appEl_45,viewFactory_ResultsAuthorInstanceTechniqueComponent8);
+    this._NgIf_45_6 = new import13.NgIf(this._appEl_45.vcRef,this._TemplateRef_45_5);
     this._text_46 = this.renderer.createText(this._el_41,'\n            ',(null as any));
     this._text_47 = this.renderer.createText(this._el_2,'\n            ',(null as any));
     this._el_48 = this.renderer.createElement(this._el_2,'td',(null as any));
     this._text_49 = this.renderer.createText(this._el_48,'\n                ',(null as any));
     this._anchor_50 = this.renderer.createTemplateAnchor(this._el_48,(null as any));
     this._appEl_50 = new import2.AppElement(50,48,this,this._anchor_50);
-    this._TemplateRef_50_5 = new import16.TemplateRef_(this._appEl_50,viewFactory_ResultsAuthorInstanceTechniqueComponent9);
-    this._NgIf_50_6 = new import14.NgIf(this._appEl_50.vcRef,this._TemplateRef_50_5);
+    this._TemplateRef_50_5 = new import15.TemplateRef_(this._appEl_50,viewFactory_ResultsAuthorInstanceTechniqueComponent9);
+    this._NgIf_50_6 = new import13.NgIf(this._appEl_50.vcRef,this._TemplateRef_50_5);
     this._text_51 = this.renderer.createText(this._el_48,'\n            ',(null as any));
     this._text_52 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._text_53 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._anchor_54 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
     this._appEl_54 = new import2.AppElement(54,0,this,this._anchor_54);
-    this._TemplateRef_54_5 = new import16.TemplateRef_(this._appEl_54,viewFactory_ResultsAuthorInstanceTechniqueComponent10);
-    this._NgIf_54_6 = new import14.NgIf(this._appEl_54.vcRef,this._TemplateRef_54_5);
+    this._TemplateRef_54_5 = new import15.TemplateRef_(this._appEl_54,viewFactory_ResultsAuthorInstanceTechniqueComponent10);
+    this._NgIf_54_6 = new import13.NgIf(this._appEl_54.vcRef,this._TemplateRef_54_5);
     this._text_55 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this._expr_1 = import7.UNINITIALIZED;
@@ -1027,15 +1026,15 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import22.RouterLink) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 38)))) { return this._RouterLink_35_3; }
-    if (((token === import16.TemplateRef) && (43 === requestNodeIndex))) { return this._TemplateRef_43_5; }
-    if (((token === import14.NgIf) && (43 === requestNodeIndex))) { return this._NgIf_43_6; }
-    if (((token === import16.TemplateRef) && (45 === requestNodeIndex))) { return this._TemplateRef_45_5; }
-    if (((token === import14.NgIf) && (45 === requestNodeIndex))) { return this._NgIf_45_6; }
-    if (((token === import16.TemplateRef) && (50 === requestNodeIndex))) { return this._TemplateRef_50_5; }
-    if (((token === import14.NgIf) && (50 === requestNodeIndex))) { return this._NgIf_50_6; }
-    if (((token === import16.TemplateRef) && (54 === requestNodeIndex))) { return this._TemplateRef_54_5; }
-    if (((token === import14.NgIf) && (54 === requestNodeIndex))) { return this._NgIf_54_6; }
+    if (((token === import21.RouterLink) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 38)))) { return this._RouterLink_35_3; }
+    if (((token === import15.TemplateRef) && (43 === requestNodeIndex))) { return this._TemplateRef_43_5; }
+    if (((token === import13.NgIf) && (43 === requestNodeIndex))) { return this._NgIf_43_6; }
+    if (((token === import15.TemplateRef) && (45 === requestNodeIndex))) { return this._TemplateRef_45_5; }
+    if (((token === import13.NgIf) && (45 === requestNodeIndex))) { return this._NgIf_45_6; }
+    if (((token === import15.TemplateRef) && (50 === requestNodeIndex))) { return this._TemplateRef_50_5; }
+    if (((token === import13.NgIf) && (50 === requestNodeIndex))) { return this._NgIf_50_6; }
+    if (((token === import15.TemplateRef) && (54 === requestNodeIndex))) { return this._TemplateRef_54_5; }
+    if (((token === import13.NgIf) && (54 === requestNodeIndex))) { return this._NgIf_54_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -1236,7 +1235,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent10 extends import1.AppView<an
   _anchor_9:any;
   /*private*/ _appEl_9:import2.AppElement;
   _TemplateRef_9_5:any;
-  _NgIf_9_6:import14.NgIf;
+  _NgIf_9_6:import13.NgIf;
   _text_10:any;
   _text_11:any;
   /*private*/ _expr_0:any;
@@ -1261,8 +1260,8 @@ class _View_ResultsAuthorInstanceTechniqueComponent10 extends import1.AppView<an
     this._text_8 = this.renderer.createText(this._el_4,'',(null as any));
     this._anchor_9 = this.renderer.createTemplateAnchor(this._el_4,(null as any));
     this._appEl_9 = new import2.AppElement(9,4,this,this._anchor_9);
-    this._TemplateRef_9_5 = new import16.TemplateRef_(this._appEl_9,viewFactory_ResultsAuthorInstanceTechniqueComponent11);
-    this._NgIf_9_6 = new import14.NgIf(this._appEl_9.vcRef,this._TemplateRef_9_5);
+    this._TemplateRef_9_5 = new import15.TemplateRef_(this._appEl_9,viewFactory_ResultsAuthorInstanceTechniqueComponent11);
+    this._NgIf_9_6 = new import13.NgIf(this._appEl_9.vcRef,this._TemplateRef_9_5);
     this._text_10 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._text_11 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
@@ -1285,8 +1284,8 @@ class _View_ResultsAuthorInstanceTechniqueComponent10 extends import1.AppView<an
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import16.TemplateRef) && (9 === requestNodeIndex))) { return this._TemplateRef_9_5; }
-    if (((token === import14.NgIf) && (9 === requestNodeIndex))) { return this._NgIf_9_6; }
+    if (((token === import15.TemplateRef) && (9 === requestNodeIndex))) { return this._TemplateRef_9_5; }
+    if (((token === import13.NgIf) && (9 === requestNodeIndex))) { return this._NgIf_9_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -1330,7 +1329,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent11 extends import1.AppView<an
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_0:any = import4.interpolate(1,'',((this.parent.parent.context.$implicit.paper == (null as any))? (null as any): this.parent.parent.context.$implicit.paper.url),'');
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this.renderer.setElementProperty(this._el_0,'href',this.viewUtils.sanitizer.sanitize(import26.SecurityContext.URL,currVal_0));
+      this.renderer.setElementProperty(this._el_0,'href',this.viewUtils.sanitizer.sanitize(import25.SecurityContext.URL,currVal_0));
       this._expr_0 = currVal_0;
     }
     this.detectViewChildrenChanges(throwOnChange);

@@ -3,7 +3,7 @@ import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 
 import {AuthService} from "../auth.service";
-import {SessionStorageService} from "../../shared/session-storage.service";
+import {SessionStorageService} from "../../shared/services/session-storage.service";
 import {EmailService} from "./email.service";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {SigninUser} from "./signin.model";

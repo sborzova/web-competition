@@ -2,11 +2,11 @@ import {Component, OnInit, OnDestroy} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 
-import {SolutionService} from "../../shared/solution.service";
+import {SolutionService} from "../../shared/services/solution.service";
 import {Validation} from "../validation.model";
 import {SolutionCreate} from "../solution-create.model";
-import {SessionStorageService} from "../../shared/session-storage.service";
-import {Solution} from "../../shared/solution.model";
+import {SessionStorageService} from "../../shared/services/session-storage.service";
+import {Solution} from "../../shared/models/solution.model";
 import {Instance} from "../instance.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 

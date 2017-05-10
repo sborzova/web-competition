@@ -7,12 +7,12 @@
 import * as import0 from '@angular/core/src/linker/ng_module_factory';
 import * as import1 from './validator-info.module';
 import * as import2 from '@angular/common/src/common_module';
-import * as import3 from '../escape-html.module';
+import * as import3 from '../shared/pipes/escape-html.module';
 import * as import4 from '@angular/router/src/router_module';
 import * as import5 from '@angular/common/src/localization';
-import * as import6 from '../shared/paper.service';
-import * as import7 from '../shared/file.service';
-import * as import8 from '../shared/solution.service';
+import * as import6 from '../shared/services/paper.service';
+import * as import7 from '../shared/services/file.service';
+import * as import8 from '../shared/services/solution.service';
 import * as import9 from '@angular/core/src/di/injector';
 import * as import10 from './validator-info.component.ngfactory';
 import * as import11 from '@angular/core/src/i18n/tokens';

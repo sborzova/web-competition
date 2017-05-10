@@ -14,10 +14,10 @@ import * as import3 from './user-solutions.component';
 import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../shared/solution.service';
-import * as import9 from '../shared/paper.service';
+import * as import8 from '../shared/services/solution.service';
+import * as import9 from '../shared/services/paper.service';
 import * as import10 from '../flash-message/flash-messages.service';
-import * as import11 from '../shared/sort.service';
+import * as import11 from '../shared/services/sort-download-solution.service';
 import * as import12 from '@angular/core/src/metadata/view';
 import * as import13 from '@angular/core/src/linker/component_factory';
 import * as import14 from './user-solutions.component.css.shim';
@@ -54,7 +54,7 @@ var _View_UserSolutionsComponent_Host0 = (function (_super) {
         this._el_0 = this.selectOrCreateHostElement('app-user-solutions', rootSelector, null);
         this._appEl_0 = new import2.AppElement(0, null, this, this._el_0);
         var compView_0 = viewFactory_UserSolutionsComponent0(this.viewUtils, this.injector(0), this._appEl_0);
-        this._UserSolutionsComponent_0_4 = new import3.UserSolutionsComponent(this.parentInjector.get(import8.SolutionService), this.parentInjector.get(import9.PaperService), this.parentInjector.get(import10.FlashMessageService), this.parentInjector.get(import11.SortService));
+        this._UserSolutionsComponent_0_4 = new import3.UserSolutionsComponent(this.parentInjector.get(import8.SolutionService), this.parentInjector.get(import9.PaperService), this.parentInjector.get(import10.FlashMessageService), this.parentInjector.get(import11.SortDownloadSolutionService));
         this._appEl_0.initComponent(this._UserSolutionsComponent_0_4, [], compView_0);
         compView_0.create(this._UserSolutionsComponent_0_4, this.projectableNodes, null);
         this.init([].concat([this._el_0]), [this._el_0], [], []);
@@ -340,7 +340,7 @@ var _View_UserSolutionsComponent0 = (function (_super) {
     };
     _View_UserSolutionsComponent0.prototype._handle_click_47_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
-        var pd_0 = (this.context.onRemovePaper() !== false);
+        var pd_0 = (this.context.onDeletePaper() !== false);
         return (true && pd_0);
     };
     return _View_UserSolutionsComponent0;

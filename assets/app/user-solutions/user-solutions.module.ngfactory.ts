@@ -9,16 +9,16 @@ import * as import1 from './user-solutions.module';
 import * as import2 from '@angular/forms/src/directives';
 import * as import3 from '@angular/forms/src/form_providers';
 import * as import4 from '@angular/common/src/common_module';
-import * as import5 from '../order-by.module';
-import * as import6 from '../escape-html.module';
+import * as import5 from '../shared/pipes/order-by.module';
+import * as import6 from '../shared/pipes/escape-html.module';
 import * as import7 from '@angular/router/src/router_module';
 import * as import8 from '@angular/forms/src/form_builder';
 import * as import9 from '@angular/forms/src/directives/radio_control_value_accessor';
 import * as import10 from '@angular/common/src/localization';
-import * as import11 from '../shared/paper.service';
-import * as import12 from '../shared/file.service';
-import * as import13 from '../shared/solution.service';
-import * as import14 from '../shared/sort.service';
+import * as import11 from '../shared/services/paper.service';
+import * as import12 from '../shared/services/file.service';
+import * as import13 from '../shared/services/solution.service';
+import * as import14 from '../shared/services/sort-download-solution.service';
 import * as import15 from '@angular/core/src/di/injector';
 import * as import16 from './user-solutions.component.ngfactory';
 import * as import17 from '@angular/core/src/i18n/tokens';
@@ -42,7 +42,7 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
   __PaperService_12:import11.PaperService;
   __FileService_13:import12.FileService;
   __SolutionService_14:import13.SolutionService;
-  __SortService_15:import14.SortService;
+  __SortDownloadSolutionService_15:import14.SortDownloadSolutionService;
   constructor(parent:import15.Injector) {
     super(parent,[import16.UserSolutionsComponentNgFactory],[]);
   }
@@ -91,9 +91,9 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
     if ((this.__SolutionService_14 == (null as any))) { (this.__SolutionService_14 = new import13.SolutionService(this.parent.get(import19.Http),this._PaperService_12,this.parent.get(import20.FlashMessageService),this._FileService_13)); }
     return this.__SolutionService_14;
   }
-  get _SortService_15():import14.SortService {
-    if ((this.__SortService_15 == (null as any))) { (this.__SortService_15 = new import14.SortService(this._SolutionService_14)); }
-    return this.__SortService_15;
+  get _SortDownloadSolutionService_15():import14.SortDownloadSolutionService {
+    if ((this.__SortDownloadSolutionService_15 == (null as any))) { (this.__SortDownloadSolutionService_15 = new import14.SortDownloadSolutionService(this._SolutionService_14)); }
+    return this.__SortDownloadSolutionService_15;
   }
   createInternal():import1.UserSolutionsModule {
     this._InternalFormsSharedModule_0 = new import2.InternalFormsSharedModule();
@@ -122,7 +122,7 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
     if ((token === import11.PaperService)) { return this._PaperService_12; }
     if ((token === import12.FileService)) { return this._FileService_13; }
     if ((token === import13.SolutionService)) { return this._SolutionService_14; }
-    if ((token === import14.SortService)) { return this._SortService_15; }
+    if ((token === import14.SortDownloadSolutionService)) { return this._SortDownloadSolutionService_15; }
     return notFoundResult;
   }
   destroyInternal():void {

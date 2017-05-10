@@ -4,7 +4,7 @@ import { CommonModule } from "@angular/common";
 import { SignupComponent } from "./signup.component";
 import { signupRouting } from "./signup.routing";
 import { AuthService } from "../auth.service";
-import { EqualValidatorModule } from "../../equal-validator.module";
+import { EqualValidatorModule } from "../../shared/directives/equal-validator.module";
 export var SignupModule = (function () {
     function SignupModule() {
     }

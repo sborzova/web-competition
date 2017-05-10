@@ -1,10 +1,9 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from "@angular/core";
+import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 
-import {SortService} from "../../shared/sort.service";
-import {Solution} from "../../shared/solution.model";
-import {FlashMessageService} from "../../flash-message/flash-messages.service";
-import {SolutionService} from "../../shared/solution.service";
-import {SessionStorageService} from "../../shared/session-storage.service";
+import {SortDownloadSolutionService} from "../../shared/services/sort-download-solution.service";
+import {Solution} from "../../shared/models/solution.model";
+import {SolutionService} from "../../shared/services/solution.service";
+import {SessionStorageService} from "../../shared/services/session-storage.service";
 
 @Component({
     selector: 'app-results-instance',
@@ -12,17 +11,30 @@ import {SessionStorageService} from "../../shared/session-storage.service";
 })
 export class ResultsInstanceComponent implements OnChanges {
     @Input() solutions: Solution[];
-    solution: Solution;
     solutionsAuthorInstance: Solution[];
-    showPapers: boolean = false;
+    solution: Solution;
+    private showPapers: boolean = false;
 
-    constructor(private sortService: SortService,
+    constructor(private sortService: SortDownloadSolutionService,
                 private solutionService: SolutionService,
-                private sessionStorageService: SessionStorageService,
-                private flashMessageService: FlashMessageService){}
+                private sessionStorageService: SessionStorageService){}
 
+    /**
+     * When variable solutions change, set variable solutionsAuthorInstance null.
+     *
+     * @param changes
+     */
     ngOnChanges(changes: SimpleChanges){
        this.solutionsAuthorInstance = null;
+    }
+
+    /**
+     * Filter solutions by author.
+     *
+     * @param authorId
+     */
+    onAuthor(authorId: string){
+        this.solutionsAuthorInstance = this.solutions.filter( s => s.author.authorId == authorId);
     }
 
     isAdmin(){
@@ -43,10 +55,6 @@ export class ResultsInstanceComponent implements OnChanges {
 
     onDownload(solution: Solution){
         this.sortService.download(solution);
-    }
-
-    onAuthor(authorId: string){
-        this.solutionsAuthorInstance = this.solutions.filter( s => s.author.authorId == authorId);
     }
 
     onShowPapers(){

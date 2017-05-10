@@ -5,7 +5,7 @@ import {Router} from "@angular/router";
 import {ProfileUser} from "../profile.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {ProfileService} from "../profile.service";
-import {SessionStorageService} from "../../shared/session-storage.service";
+import {SessionStorageService} from "../../shared/services/session-storage.service";
 
 @Component({
     selector: 'app-profile-edit',

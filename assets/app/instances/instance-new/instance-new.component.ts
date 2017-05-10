@@ -2,11 +2,11 @@ import {Component, OnInit, ViewChild} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {Router } from "@angular/router";
 
-import {InstanceService} from "../../shared/instance.service";
+import {InstanceService} from "../../shared/services/instance.service";
 import {Instance} from "../instance.model";
 import {minValue} from "../min-value.validator";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
-import {FileService} from "../../shared/file.service";
+import {FileService} from "../../shared/services/file.service";
 import {InstanceCreate} from "../instance-create.model";
 
 @Component({

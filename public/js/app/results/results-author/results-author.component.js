@@ -1,25 +1,46 @@
 import { Component, Input } from "@angular/core";
-import { SortService } from "../../shared/sort.service";
-import { SolutionService } from "../../shared/solution.service";
-import { FlashMessageService } from "../../flash-message/flash-messages.service";
-import { SessionStorageService } from "../../shared/session-storage.service";
+import { SortDownloadSolutionService } from "../../shared/services/sort-download-solution.service";
+import { SolutionService } from "../../shared/services/solution.service";
+import { SessionStorageService } from "../../shared/services/session-storage.service";
 export var ResultsAuthorComponent = (function () {
-    function ResultsAuthorComponent(sortService, solutionService, sessionStorageService, flashMessageService) {
-        this.sortService = sortService;
+    function ResultsAuthorComponent(sortDownloadSolutionService, solutionService, sessionStorageService) {
+        this.sortDownloadSolutionService = sortDownloadSolutionService;
         this.solutionService = solutionService;
         this.sessionStorageService = sessionStorageService;
-        this.flashMessageService = flashMessageService;
         this.showPapers = false;
     }
+    /**
+     * When variable solutions change, set variable solutionsAuthorInstance and solutionsAuthorTechnique null.
+     *
+     * @param changes
+     */
     ResultsAuthorComponent.prototype.ngOnChanges = function (changes) {
         this.solutionsAuthorInstance = null;
         this.solutionsAuthorTechnique = null;
+    };
+    /**
+     * Filter solutions by instance.
+     *
+     * @param instanceId
+     */
+    ResultsAuthorComponent.prototype.onInstance = function (instanceId) {
+        this.solutionsAuthorTechnique = null;
+        this.solutionsAuthorInstance = this.solutions.filter(function (s) { return s.instance.instanceId == instanceId; });
+    };
+    /**
+     * Filter solutions by technique.
+     *
+     * @param technique
+     */
+    ResultsAuthorComponent.prototype.onTechnique = function (technique) {
+        this.solutionsAuthorInstance = null;
+        this.solutionsAuthorTechnique = this.solutions.filter(function (s) { return s.technique === technique; });
     };
     ResultsAuthorComponent.prototype.isAdmin = function () {
         return this.sessionStorageService.isAdmin();
     };
     ResultsAuthorComponent.prototype.onDownload = function (solution) {
-        this.sortService.download(solution);
+        this.sortDownloadSolutionService.download(solution);
     };
     ResultsAuthorComponent.prototype.onDelete = function (solution) {
         this.solutionService.deleteSolutionObservable(solution);
@@ -36,55 +57,47 @@ export var ResultsAuthorComponent = (function () {
     ResultsAuthorComponent.prototype.onHidePapers = function () {
         this.showPapers = false;
     };
-    ResultsAuthorComponent.prototype.onInstance = function (instanceId) {
-        this.solutionsAuthorTechnique = null;
-        this.solutionsAuthorInstance = this.solutions.filter(function (s) { return s.instance.instanceId == instanceId; });
-    };
-    ResultsAuthorComponent.prototype.onTechnique = function (technique) {
-        this.solutionsAuthorInstance = null;
-        this.solutionsAuthorTechnique = this.solutions.filter(function (s) { return s.technique === technique; });
-    };
     ResultsAuthorComponent.prototype.onQualityAsc = function () {
-        this.solutions = this.sortService.sortQualityAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortQualityAsc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onQualityDesc = function () {
-        this.solutions = this.sortService.sortQualityDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortQualityDesc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onScAsc = function () {
-        this.solutions = this.sortService.sortScAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortScAsc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onScDesc = function () {
-        this.solutions = this.sortService.sortScDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortScDesc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onTimeAsc = function () {
-        this.solutions = this.sortService.sortTimeAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortTimeAsc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onTimeDesc = function () {
-        this.solutions = this.sortService.sortTimeDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortTimeDesc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onRoomAsc = function () {
-        this.solutions = this.sortService.sortRoomAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortRoomAsc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onRoomDesc = function () {
-        this.solutions = this.sortService.sortRoomDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortRoomDesc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onDistributionAsc = function () {
-        this.solutions = this.sortService.sortDistributionAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortDistributionAsc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onDistributionDesc = function () {
-        this.solutions = this.sortService.sortDistributionDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortDistributionDesc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onTechniqueAsc = function () {
-        this.solutions = this.sortService.sortTechniqueAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortTechniqueAsc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onTechniqueDesc = function () {
-        this.solutions = this.sortService.sortTechniqueDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortTechniqueDesc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onSubmissionTimeAsc = function () {
-        this.solutions = this.sortService.sortSubmissionTimeAsc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortSubmissionTimeAsc(this.solutions);
     };
     ResultsAuthorComponent.prototype.onSubmissionTimeDesc = function () {
-        this.solutions = this.sortService.sortSubmissionTimeDesc(this.solutions);
+        this.solutions = this.sortDownloadSolutionService.sortSubmissionTimeDesc(this.solutions);
     };
     ResultsAuthorComponent.decorators = [
         { type: Component, args: [{
@@ -94,10 +107,9 @@ export var ResultsAuthorComponent = (function () {
     ];
     /** @nocollapse */
     ResultsAuthorComponent.ctorParameters = [
-        { type: SortService, },
+        { type: SortDownloadSolutionService, },
         { type: SolutionService, },
         { type: SessionStorageService, },
-        { type: FlashMessageService, },
     ];
     ResultsAuthorComponent.propDecorators = {
         'solutions': [{ type: Input },],

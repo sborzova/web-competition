@@ -7,7 +7,7 @@ import { HeaderComponent } from "./header/header.component";
 import { routing } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
 import {PreferenceService} from "./preference/preference.service";
-import {SessionStorageService} from "./shared/session-storage.service";
+import {SessionStorageService} from "./shared/services/session-storage.service";
 import {FlashMessageComponent} from "./flash-message/flash-message.component";
 import {FlashMessageService} from "./flash-message/flash-messages.service";
 

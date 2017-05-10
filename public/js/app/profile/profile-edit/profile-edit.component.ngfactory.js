@@ -15,7 +15,7 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from '../profile.service';
-import * as import9 from '../../shared/session-storage.service';
+import * as import9 from '../../shared/services/session-storage.service';
 import * as import10 from '../../flash-message/flash-messages.service';
 import * as import11 from '@angular/router/src/router';
 import * as import12 from '@angular/core/src/metadata/view';

@@ -5,9 +5,9 @@ import { usersRouting } from "./users.routing";
 import { UsersComponent } from "./users.component";
 import { UserEditPasswordComponent } from "./user-edit-password/user-edit-password.component";
 import { UserEditComponent } from "./user-edit/user-edit.component";
-import { OrderByModule } from "../order-by.module";
+import { OrderByModule } from "../shared/pipes/order-by.module";
 import { UsersService } from "./users.service";
-import { EqualValidatorModule } from "../equal-validator.module";
+import { EqualValidatorModule } from "../shared/directives/equal-validator.module";
 import { EmailService } from "../auth/signin/email.service";
 export var UsersModule = (function () {
     function UsersModule() {

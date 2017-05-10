@@ -5,10 +5,10 @@ import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import {validationRouting} from "./validation.routing";
 import {ValidationComponent} from "./validation.component";
 import {SuccessValidationComponent} from "./success-validation/success-validation.component";
-import {EscapeHtmlModule} from "../escape-html.module";
-import {PaperService} from "../shared/paper.service";
-import {SolutionService} from "../shared/solution.service";
-import {FileService} from "../shared/file.service";
+import {EscapeHtmlModule} from "../shared/pipes/escape-html.module";
+import {PaperService} from "../shared/services/paper.service";
+import {SolutionService} from "../shared/services/solution.service";
+import {FileService} from "../shared/services/file.service";
 
 @NgModule({
     declarations: [
