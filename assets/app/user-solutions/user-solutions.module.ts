@@ -10,6 +10,7 @@ import {PaperService} from "../shared/services/paper.service";
 import {SolutionService} from "../shared/services/solution.service";
 import {SortDownloadSolutionService} from "../shared/services/sort-download-solution.service";
 import {FileService} from "../shared/services/file.service";
+import {DateFormatModule} from "../shared/pipes/date-format.module";
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import {FileService} from "../shared/services/file.service";
         CommonModule,
         OrderByModule,
         EscapeHtmlModule,
+        DateFormatModule,
         userSolutionsRouting,
     ],
     providers: [

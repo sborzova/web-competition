@@ -39,7 +39,7 @@
         <div *ngIf="showInstances()">
             <div *ngIf="instances" class="col-xs-12">
                 <div class="table-responsive">
-                <table class="table">
+                    <table class="table">
                     <thead>
                     <tr>
                         <th><div *ngIf="isAdmin()">Order</div></th>
@@ -63,7 +63,7 @@
                             <i class="glyphicon glyphicon-info-sign"></i>
                         </button>
                         </td>
-                        <td>{{ instance.submissionTime | date }}</td>
+                        <td>{{ instance.submissionTime | dateFormat }}</td>
                         <td>
                             <button type="button" class="btn btn-success btn-xs" (click)="onDownload(instance)" title="Download">
                                 <i class="glyphicon glyphicon-download-alt"></i>

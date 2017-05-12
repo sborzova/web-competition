@@ -8,98 +8,102 @@ import * as import0 from '@angular/core/src/linker/ng_module_factory';
 import * as import1 from './results.module';
 import * as import2 from '@angular/common/src/common_module';
 import * as import3 from '../shared/pipes/order-by.module';
-import * as import4 from '@angular/router/src/router_module';
-import * as import5 from '@angular/common/src/localization';
-import * as import6 from '../shared/services/paper.service';
-import * as import7 from '../shared/services/instance.service';
-import * as import8 from '../shared/services/file.service';
-import * as import9 from '../shared/services/solution.service';
-import * as import10 from '../shared/services/sort-download-solution.service';
-import * as import11 from '../shared/services/session-storage.service';
-import * as import12 from '@angular/core/src/di/injector';
-import * as import13 from './results-best/results-best.component.ngfactory';
-import * as import14 from '@angular/core/src/i18n/tokens';
-import * as import15 from './results-best/results-best.component';
-import * as import16 from '@angular/http/src/http';
-import * as import17 from '../flash-message/flash-messages.service';
-import * as import18 from '../preference/preference.service';
-import * as import19 from '@angular/router/src/router_config_loader';
+import * as import4 from '../shared/pipes/date-format.module';
+import * as import5 from '@angular/router/src/router_module';
+import * as import6 from '@angular/common/src/localization';
+import * as import7 from '../shared/services/paper.service';
+import * as import8 from '../shared/services/instance.service';
+import * as import9 from '../shared/services/file.service';
+import * as import10 from '../shared/services/solution.service';
+import * as import11 from '../shared/services/sort-download-solution.service';
+import * as import12 from '../shared/services/session-storage.service';
+import * as import13 from '@angular/core/src/di/injector';
+import * as import14 from './results-best/results-best.component.ngfactory';
+import * as import15 from '@angular/core/src/i18n/tokens';
+import * as import16 from './results-best/results-best.component';
+import * as import17 from '@angular/http/src/http';
+import * as import18 from '../flash-message/flash-messages.service';
+import * as import19 from '../preference/preference.service';
+import * as import20 from '@angular/router/src/router_config_loader';
 class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModule> {
   _CommonModule_0:import2.CommonModule;
   _OrderByModule_1:import3.OrderByModule;
-  _RouterModule_2:import4.RouterModule;
-  _ResultsModule_3:import1.ResultsModule;
-  __NgLocalization_4:import5.NgLocaleLocalization;
-  __ROUTES_5:any[];
-  __PaperService_6:import6.PaperService;
-  __InstanceService_7:import7.InstanceService;
-  __FileService_8:import8.FileService;
-  __SolutionService_9:import9.SolutionService;
-  __SortDownloadSolutionService_10:import10.SortDownloadSolutionService;
-  __SessionStorageService_11:import11.SessionStorageService;
-  constructor(parent:import12.Injector) {
-    super(parent,[import13.ResultsBestComponentNgFactory],[]);
+  _DateFormatModule_2:import4.DateFormatModule;
+  _RouterModule_3:import5.RouterModule;
+  _ResultsModule_4:import1.ResultsModule;
+  __NgLocalization_5:import6.NgLocaleLocalization;
+  __ROUTES_6:any[];
+  __PaperService_7:import7.PaperService;
+  __InstanceService_8:import8.InstanceService;
+  __FileService_9:import9.FileService;
+  __SolutionService_10:import10.SolutionService;
+  __SortDownloadSolutionService_11:import11.SortDownloadSolutionService;
+  __SessionStorageService_12:import12.SessionStorageService;
+  constructor(parent:import13.Injector) {
+    super(parent,[import14.ResultsBestComponentNgFactory],[]);
   }
-  get _NgLocalization_4():import5.NgLocaleLocalization {
-    if ((this.__NgLocalization_4 == (null as any))) { (this.__NgLocalization_4 = new import5.NgLocaleLocalization(this.parent.get(import14.LOCALE_ID))); }
-    return this.__NgLocalization_4;
+  get _NgLocalization_5():import6.NgLocaleLocalization {
+    if ((this.__NgLocalization_5 == (null as any))) { (this.__NgLocalization_5 = new import6.NgLocaleLocalization(this.parent.get(import15.LOCALE_ID))); }
+    return this.__NgLocalization_5;
   }
-  get _ROUTES_5():any[] {
-        if ((this.__ROUTES_5 == (null as any))) { (this.__ROUTES_5 = [[{
+  get _ROUTES_6():any[] {
+        if ((this.__ROUTES_6 == (null as any))) { (this.__ROUTES_6 = [[{
           path: '',
             children: [{
               path: '',
-              component: import15.ResultsBestComponent
+              component: import16.ResultsBestComponent
             }
           ]
         }
     ]]); }
-    return this.__ROUTES_5;
+    return this.__ROUTES_6;
   }
-  get _PaperService_6():import6.PaperService {
-    if ((this.__PaperService_6 == (null as any))) { (this.__PaperService_6 = new import6.PaperService(this.parent.get(import16.Http))); }
-    return this.__PaperService_6;
+  get _PaperService_7():import7.PaperService {
+    if ((this.__PaperService_7 == (null as any))) { (this.__PaperService_7 = new import7.PaperService(this.parent.get(import17.Http))); }
+    return this.__PaperService_7;
   }
-  get _InstanceService_7():import7.InstanceService {
-    if ((this.__InstanceService_7 == (null as any))) { (this.__InstanceService_7 = new import7.InstanceService(this.parent.get(import16.Http),this.parent.get(import17.FlashMessageService))); }
-    return this.__InstanceService_7;
+  get _InstanceService_8():import8.InstanceService {
+    if ((this.__InstanceService_8 == (null as any))) { (this.__InstanceService_8 = new import8.InstanceService(this.parent.get(import17.Http),this.parent.get(import18.FlashMessageService))); }
+    return this.__InstanceService_8;
   }
-  get _FileService_8():import8.FileService {
-    if ((this.__FileService_8 == (null as any))) { (this.__FileService_8 = new import8.FileService(this.parent.get(import16.Http))); }
-    return this.__FileService_8;
+  get _FileService_9():import9.FileService {
+    if ((this.__FileService_9 == (null as any))) { (this.__FileService_9 = new import9.FileService(this.parent.get(import17.Http))); }
+    return this.__FileService_9;
   }
-  get _SolutionService_9():import9.SolutionService {
-    if ((this.__SolutionService_9 == (null as any))) { (this.__SolutionService_9 = new import9.SolutionService(this.parent.get(import16.Http),this._PaperService_6,this.parent.get(import17.FlashMessageService),this._FileService_8)); }
-    return this.__SolutionService_9;
+  get _SolutionService_10():import10.SolutionService {
+    if ((this.__SolutionService_10 == (null as any))) { (this.__SolutionService_10 = new import10.SolutionService(this.parent.get(import17.Http),this._PaperService_7,this.parent.get(import18.FlashMessageService),this._FileService_9)); }
+    return this.__SolutionService_10;
   }
-  get _SortDownloadSolutionService_10():import10.SortDownloadSolutionService {
-    if ((this.__SortDownloadSolutionService_10 == (null as any))) { (this.__SortDownloadSolutionService_10 = new import10.SortDownloadSolutionService(this._SolutionService_9)); }
-    return this.__SortDownloadSolutionService_10;
+  get _SortDownloadSolutionService_11():import11.SortDownloadSolutionService {
+    if ((this.__SortDownloadSolutionService_11 == (null as any))) { (this.__SortDownloadSolutionService_11 = new import11.SortDownloadSolutionService(this._SolutionService_10)); }
+    return this.__SortDownloadSolutionService_11;
   }
-  get _SessionStorageService_11():import11.SessionStorageService {
-    if ((this.__SessionStorageService_11 == (null as any))) { (this.__SessionStorageService_11 = new import11.SessionStorageService(this.parent.get(import18.PreferenceService))); }
-    return this.__SessionStorageService_11;
+  get _SessionStorageService_12():import12.SessionStorageService {
+    if ((this.__SessionStorageService_12 == (null as any))) { (this.__SessionStorageService_12 = new import12.SessionStorageService(this.parent.get(import19.PreferenceService))); }
+    return this.__SessionStorageService_12;
   }
   createInternal():import1.ResultsModule {
     this._CommonModule_0 = new import2.CommonModule();
     this._OrderByModule_1 = new import3.OrderByModule();
-    this._RouterModule_2 = new import4.RouterModule(this.parent.get(import4.ROUTER_FORROOT_GUARD,(null as any)));
-    this._ResultsModule_3 = new import1.ResultsModule();
-    return this._ResultsModule_3;
+    this._DateFormatModule_2 = new import4.DateFormatModule();
+    this._RouterModule_3 = new import5.RouterModule(this.parent.get(import5.ROUTER_FORROOT_GUARD,(null as any)));
+    this._ResultsModule_4 = new import1.ResultsModule();
+    return this._ResultsModule_4;
   }
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.CommonModule)) { return this._CommonModule_0; }
     if ((token === import3.OrderByModule)) { return this._OrderByModule_1; }
-    if ((token === import4.RouterModule)) { return this._RouterModule_2; }
-    if ((token === import1.ResultsModule)) { return this._ResultsModule_3; }
-    if ((token === import5.NgLocalization)) { return this._NgLocalization_4; }
-    if ((token === import19.ROUTES)) { return this._ROUTES_5; }
-    if ((token === import6.PaperService)) { return this._PaperService_6; }
-    if ((token === import7.InstanceService)) { return this._InstanceService_7; }
-    if ((token === import8.FileService)) { return this._FileService_8; }
-    if ((token === import9.SolutionService)) { return this._SolutionService_9; }
-    if ((token === import10.SortDownloadSolutionService)) { return this._SortDownloadSolutionService_10; }
-    if ((token === import11.SessionStorageService)) { return this._SessionStorageService_11; }
+    if ((token === import4.DateFormatModule)) { return this._DateFormatModule_2; }
+    if ((token === import5.RouterModule)) { return this._RouterModule_3; }
+    if ((token === import1.ResultsModule)) { return this._ResultsModule_4; }
+    if ((token === import6.NgLocalization)) { return this._NgLocalization_5; }
+    if ((token === import20.ROUTES)) { return this._ROUTES_6; }
+    if ((token === import7.PaperService)) { return this._PaperService_7; }
+    if ((token === import8.InstanceService)) { return this._InstanceService_8; }
+    if ((token === import9.FileService)) { return this._FileService_9; }
+    if ((token === import10.SolutionService)) { return this._SolutionService_10; }
+    if ((token === import11.SortDownloadSolutionService)) { return this._SortDownloadSolutionService_11; }
+    if ((token === import12.SessionStorageService)) { return this._SessionStorageService_12; }
     return notFoundResult;
   }
   destroyInternal():void {

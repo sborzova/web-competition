@@ -2,7 +2,8 @@
     <h4>Solutions for instance <strong>{{ solutions[0]?.instance.name}}</strong></h4>
     <button *ngIf="!showPapers" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
     <button *ngIf="showPapers" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
-    <table class="table">
+    <div class="table-responsive">
+        <table class="table">
         <thead>
         <tr>
             <th colspan="2">
@@ -65,7 +66,7 @@
             <td>{{ solution.distr }}&nbsp;%</td>
             <td><a (click)="onAuthor(solution.author.authorId)">{{ solution.author.firstName }} {{ solution.author.lastName }}</a></td>
             <td>{{ solution.technique }}</td>
-            <td>{{ solution.submissionTime | date:'medium' }}</td>
+            <td>{{ solution.submissionTime | dateFormat }}</td>
             <td>
                 <button
                         type="button"
@@ -119,5 +120,6 @@
         </tr>
         </tbody>
     </table>
+    </div>
     <app-results-author-instance [solutions]="solutionsAuthorInstance"></app-results-author-instance>
 </div>

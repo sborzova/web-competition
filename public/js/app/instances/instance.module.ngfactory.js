@@ -15,67 +15,68 @@ import * as import3 from '@angular/forms/src/form_providers';
 import * as import4 from '@angular/common/src/common_module';
 import * as import5 from '../shared/pipes/order-by.module';
 import * as import6 from '@angular/router/src/router_module';
-import * as import7 from '@angular/forms/src/form_builder';
-import * as import8 from '@angular/forms/src/directives/radio_control_value_accessor';
-import * as import9 from '@angular/common/src/localization';
-import * as import10 from '../shared/services/instance.service';
-import * as import11 from '../shared/services/file.service';
-import * as import13 from './instances.component.ngfactory';
-import * as import14 from './instance-new/instance-new.component.ngfactory';
-import * as import15 from './instance-update/instance-update.component.ngfactory';
-import * as import16 from './instance-status/instance-status.component.ngfactory';
-import * as import17 from '@angular/core/src/i18n/tokens';
-import * as import18 from './instances.component';
-import * as import19 from './instance-new/instance-new.component';
-import * as import20 from './instance-update/instance-update.component';
-import * as import21 from './instance-status/instance-status.component';
-import * as import22 from '@angular/http/src/http';
-import * as import23 from '../flash-message/flash-messages.service';
-import * as import24 from '@angular/router/src/router_config_loader';
+import * as import7 from '../shared/pipes/date-format.module';
+import * as import8 from '@angular/forms/src/form_builder';
+import * as import9 from '@angular/forms/src/directives/radio_control_value_accessor';
+import * as import10 from '@angular/common/src/localization';
+import * as import11 from '../shared/services/instance.service';
+import * as import12 from '../shared/services/file.service';
+import * as import14 from './instances.component.ngfactory';
+import * as import15 from './instance-new/instance-new.component.ngfactory';
+import * as import16 from './instance-update/instance-update.component.ngfactory';
+import * as import17 from './instance-status/instance-status.component.ngfactory';
+import * as import18 from '@angular/core/src/i18n/tokens';
+import * as import19 from './instances.component';
+import * as import20 from './instance-new/instance-new.component';
+import * as import21 from './instance-update/instance-update.component';
+import * as import22 from './instance-status/instance-status.component';
+import * as import23 from '@angular/http/src/http';
+import * as import24 from '../flash-message/flash-messages.service';
+import * as import25 from '@angular/router/src/router_config_loader';
 var InstanceModuleInjector = (function (_super) {
     __extends(InstanceModuleInjector, _super);
     function InstanceModuleInjector(parent) {
         _super.call(this, parent, [
-            import13.InstancesComponentNgFactory,
-            import14.InstanceCreateComponentNgFactory,
-            import15.InstanceEditComponentNgFactory,
-            import16.InstanceStatusComponentNgFactory
+            import14.InstancesComponentNgFactory,
+            import15.InstanceCreateComponentNgFactory,
+            import16.InstanceEditComponentNgFactory,
+            import17.InstanceStatusComponentNgFactory
         ], []);
     }
-    Object.defineProperty(InstanceModuleInjector.prototype, "_FormBuilder_6", {
+    Object.defineProperty(InstanceModuleInjector.prototype, "_FormBuilder_7", {
         get: function () {
-            if ((this.__FormBuilder_6 == null)) {
-                (this.__FormBuilder_6 = new import7.FormBuilder());
+            if ((this.__FormBuilder_7 == null)) {
+                (this.__FormBuilder_7 = new import8.FormBuilder());
             }
-            return this.__FormBuilder_6;
+            return this.__FormBuilder_7;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(InstanceModuleInjector.prototype, "_RadioControlRegistry_7", {
+    Object.defineProperty(InstanceModuleInjector.prototype, "_RadioControlRegistry_8", {
         get: function () {
-            if ((this.__RadioControlRegistry_7 == null)) {
-                (this.__RadioControlRegistry_7 = new import8.RadioControlRegistry());
+            if ((this.__RadioControlRegistry_8 == null)) {
+                (this.__RadioControlRegistry_8 = new import9.RadioControlRegistry());
             }
-            return this.__RadioControlRegistry_7;
+            return this.__RadioControlRegistry_8;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(InstanceModuleInjector.prototype, "_NgLocalization_8", {
+    Object.defineProperty(InstanceModuleInjector.prototype, "_NgLocalization_9", {
         get: function () {
-            if ((this.__NgLocalization_8 == null)) {
-                (this.__NgLocalization_8 = new import9.NgLocaleLocalization(this.parent.get(import17.LOCALE_ID)));
+            if ((this.__NgLocalization_9 == null)) {
+                (this.__NgLocalization_9 = new import10.NgLocaleLocalization(this.parent.get(import18.LOCALE_ID)));
             }
-            return this.__NgLocalization_8;
+            return this.__NgLocalization_9;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(InstanceModuleInjector.prototype, "_ROUTES_9", {
+    Object.defineProperty(InstanceModuleInjector.prototype, "_ROUTES_10", {
         get: function () {
-            if ((this.__ROUTES_9 == null)) {
-                (this.__ROUTES_9 = [[{
+            if ((this.__ROUTES_10 == null)) {
+                (this.__ROUTES_10 = [[{
                             path: '',
                             children: [
                                 {
@@ -85,45 +86,45 @@ var InstanceModuleInjector = (function (_super) {
                                 },
                                 {
                                     path: 'all',
-                                    component: import18.InstancesComponent
+                                    component: import19.InstancesComponent
                                 },
                                 {
                                     path: 'create',
-                                    component: import19.InstanceCreateComponent
+                                    component: import20.InstanceCreateComponent
                                 },
                                 {
                                     path: 'edit/:id',
-                                    component: import20.InstanceEditComponent
+                                    component: import21.InstanceEditComponent
                                 },
                                 {
                                     path: 'status/:id',
-                                    component: import21.InstanceStatusComponent
+                                    component: import22.InstanceStatusComponent
                                 }
                             ]
                         }
                     ]]);
             }
-            return this.__ROUTES_9;
+            return this.__ROUTES_10;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(InstanceModuleInjector.prototype, "_InstanceService_10", {
+    Object.defineProperty(InstanceModuleInjector.prototype, "_InstanceService_11", {
         get: function () {
-            if ((this.__InstanceService_10 == null)) {
-                (this.__InstanceService_10 = new import10.InstanceService(this.parent.get(import22.Http), this.parent.get(import23.FlashMessageService)));
+            if ((this.__InstanceService_11 == null)) {
+                (this.__InstanceService_11 = new import11.InstanceService(this.parent.get(import23.Http), this.parent.get(import24.FlashMessageService)));
             }
-            return this.__InstanceService_10;
+            return this.__InstanceService_11;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(InstanceModuleInjector.prototype, "_FileService_11", {
+    Object.defineProperty(InstanceModuleInjector.prototype, "_FileService_12", {
         get: function () {
-            if ((this.__FileService_11 == null)) {
-                (this.__FileService_11 = new import11.FileService(this.parent.get(import22.Http)));
+            if ((this.__FileService_12 == null)) {
+                (this.__FileService_12 = new import12.FileService(this.parent.get(import23.Http)));
             }
-            return this.__FileService_11;
+            return this.__FileService_12;
         },
         enumerable: true,
         configurable: true
@@ -134,8 +135,9 @@ var InstanceModuleInjector = (function (_super) {
         this._CommonModule_2 = new import4.CommonModule();
         this._OrderByModule_3 = new import5.OrderByModule();
         this._RouterModule_4 = new import6.RouterModule(this.parent.get(import6.ROUTER_FORROOT_GUARD, null));
-        this._InstanceModule_5 = new import1.InstanceModule();
-        return this._InstanceModule_5;
+        this._DateFormatModule_5 = new import7.DateFormatModule();
+        this._InstanceModule_6 = new import1.InstanceModule();
+        return this._InstanceModule_6;
     };
     InstanceModuleInjector.prototype.getInternal = function (token, notFoundResult) {
         if ((token === import2.InternalFormsSharedModule)) {
@@ -153,26 +155,29 @@ var InstanceModuleInjector = (function (_super) {
         if ((token === import6.RouterModule)) {
             return this._RouterModule_4;
         }
+        if ((token === import7.DateFormatModule)) {
+            return this._DateFormatModule_5;
+        }
         if ((token === import1.InstanceModule)) {
-            return this._InstanceModule_5;
+            return this._InstanceModule_6;
         }
-        if ((token === import7.FormBuilder)) {
-            return this._FormBuilder_6;
+        if ((token === import8.FormBuilder)) {
+            return this._FormBuilder_7;
         }
-        if ((token === import8.RadioControlRegistry)) {
-            return this._RadioControlRegistry_7;
+        if ((token === import9.RadioControlRegistry)) {
+            return this._RadioControlRegistry_8;
         }
-        if ((token === import9.NgLocalization)) {
-            return this._NgLocalization_8;
+        if ((token === import10.NgLocalization)) {
+            return this._NgLocalization_9;
         }
-        if ((token === import24.ROUTES)) {
-            return this._ROUTES_9;
+        if ((token === import25.ROUTES)) {
+            return this._ROUTES_10;
         }
-        if ((token === import10.InstanceService)) {
-            return this._InstanceService_10;
+        if ((token === import11.InstanceService)) {
+            return this._InstanceService_11;
         }
-        if ((token === import11.FileService)) {
-            return this._FileService_11;
+        if ((token === import12.FileService)) {
+            return this._FileService_12;
         }
         return notFoundResult;
     };

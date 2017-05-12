@@ -3,7 +3,8 @@
         with the technique <strong> {{ solutions[0].technique }}</strong></h4>
     <button *ngIf="!showPapers" class="btn btn-info btn-xs" (click)="onShowPapers()">Show papers</button>
     <button *ngIf="showPapers" class="btn btn-info btn-xs" (click)="onHidePapers()">Hide papers</button>
-    <table class="table">
+    <div class="table-responsive">
+        <table class="table">
         <thead>
         <tr>
             <th rowspan="2">Instance</th>
@@ -56,7 +57,7 @@
             <td>{{ solution.time }}&nbsp;%</td>
             <td>{{ solution.room }}&nbsp;%</td>
             <td>{{ solution.distr }}&nbsp;%</td>
-            <td>{{ solution.submissionTime | date:'medium' }}</td>
+            <td>{{ solution.submissionTime | dateFormat }}</td>
             <td>
                 <button
                         type="button"
@@ -109,5 +110,6 @@
         </tr>
         </tbody>
     </table>
+    </div>
     <app-results-author-instance-technique [solutions]="solutionsAuthorInstanceTechnique"></app-results-author-instance-technique>
 </div>

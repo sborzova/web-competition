@@ -11,21 +11,22 @@ import * as import3 from '@angular/forms/src/form_providers';
 import * as import4 from '@angular/common/src/common_module';
 import * as import5 from '../shared/pipes/order-by.module';
 import * as import6 from '../shared/pipes/escape-html.module';
-import * as import7 from '@angular/router/src/router_module';
-import * as import8 from '@angular/forms/src/form_builder';
-import * as import9 from '@angular/forms/src/directives/radio_control_value_accessor';
-import * as import10 from '@angular/common/src/localization';
-import * as import11 from '../shared/services/paper.service';
-import * as import12 from '../shared/services/file.service';
-import * as import13 from '../shared/services/solution.service';
-import * as import14 from '../shared/services/sort-download-solution.service';
-import * as import15 from '@angular/core/src/di/injector';
-import * as import16 from './user-solutions.component.ngfactory';
-import * as import17 from '@angular/core/src/i18n/tokens';
-import * as import18 from './user-solutions.component';
-import * as import19 from '@angular/http/src/http';
-import * as import20 from '../flash-message/flash-messages.service';
-import * as import21 from '@angular/router/src/router_config_loader';
+import * as import7 from '../shared/pipes/date-format.module';
+import * as import8 from '@angular/router/src/router_module';
+import * as import9 from '@angular/forms/src/form_builder';
+import * as import10 from '@angular/forms/src/directives/radio_control_value_accessor';
+import * as import11 from '@angular/common/src/localization';
+import * as import12 from '../shared/services/paper.service';
+import * as import13 from '../shared/services/file.service';
+import * as import14 from '../shared/services/solution.service';
+import * as import15 from '../shared/services/sort-download-solution.service';
+import * as import16 from '@angular/core/src/di/injector';
+import * as import17 from './user-solutions.component.ngfactory';
+import * as import18 from '@angular/core/src/i18n/tokens';
+import * as import19 from './user-solutions.component';
+import * as import20 from '@angular/http/src/http';
+import * as import21 from '../flash-message/flash-messages.service';
+import * as import22 from '@angular/router/src/router_config_loader';
 class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserSolutionsModule> {
   _InternalFormsSharedModule_0:import2.InternalFormsSharedModule;
   _ReactiveFormsModule_1:import3.ReactiveFormsModule;
@@ -33,33 +34,34 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
   _CommonModule_3:import4.CommonModule;
   _OrderByModule_4:import5.OrderByModule;
   _EscapeHtmlModule_5:import6.EscapeHtmlModule;
-  _RouterModule_6:import7.RouterModule;
-  _UserSolutionsModule_7:import1.UserSolutionsModule;
-  __FormBuilder_8:import8.FormBuilder;
-  __RadioControlRegistry_9:import9.RadioControlRegistry;
-  __NgLocalization_10:import10.NgLocaleLocalization;
-  __ROUTES_11:any[];
-  __PaperService_12:import11.PaperService;
-  __FileService_13:import12.FileService;
-  __SolutionService_14:import13.SolutionService;
-  __SortDownloadSolutionService_15:import14.SortDownloadSolutionService;
-  constructor(parent:import15.Injector) {
-    super(parent,[import16.UserSolutionsComponentNgFactory],[]);
+  _DateFormatModule_6:import7.DateFormatModule;
+  _RouterModule_7:import8.RouterModule;
+  _UserSolutionsModule_8:import1.UserSolutionsModule;
+  __FormBuilder_9:import9.FormBuilder;
+  __RadioControlRegistry_10:import10.RadioControlRegistry;
+  __NgLocalization_11:import11.NgLocaleLocalization;
+  __ROUTES_12:any[];
+  __PaperService_13:import12.PaperService;
+  __FileService_14:import13.FileService;
+  __SolutionService_15:import14.SolutionService;
+  __SortDownloadSolutionService_16:import15.SortDownloadSolutionService;
+  constructor(parent:import16.Injector) {
+    super(parent,[import17.UserSolutionsComponentNgFactory],[]);
   }
-  get _FormBuilder_8():import8.FormBuilder {
-    if ((this.__FormBuilder_8 == (null as any))) { (this.__FormBuilder_8 = new import8.FormBuilder()); }
-    return this.__FormBuilder_8;
+  get _FormBuilder_9():import9.FormBuilder {
+    if ((this.__FormBuilder_9 == (null as any))) { (this.__FormBuilder_9 = new import9.FormBuilder()); }
+    return this.__FormBuilder_9;
   }
-  get _RadioControlRegistry_9():import9.RadioControlRegistry {
-    if ((this.__RadioControlRegistry_9 == (null as any))) { (this.__RadioControlRegistry_9 = new import9.RadioControlRegistry()); }
-    return this.__RadioControlRegistry_9;
+  get _RadioControlRegistry_10():import10.RadioControlRegistry {
+    if ((this.__RadioControlRegistry_10 == (null as any))) { (this.__RadioControlRegistry_10 = new import10.RadioControlRegistry()); }
+    return this.__RadioControlRegistry_10;
   }
-  get _NgLocalization_10():import10.NgLocaleLocalization {
-    if ((this.__NgLocalization_10 == (null as any))) { (this.__NgLocalization_10 = new import10.NgLocaleLocalization(this.parent.get(import17.LOCALE_ID))); }
-    return this.__NgLocalization_10;
+  get _NgLocalization_11():import11.NgLocaleLocalization {
+    if ((this.__NgLocalization_11 == (null as any))) { (this.__NgLocalization_11 = new import11.NgLocaleLocalization(this.parent.get(import18.LOCALE_ID))); }
+    return this.__NgLocalization_11;
   }
-  get _ROUTES_11():any[] {
-        if ((this.__ROUTES_11 == (null as any))) { (this.__ROUTES_11 = [[{
+  get _ROUTES_12():any[] {
+        if ((this.__ROUTES_12 == (null as any))) { (this.__ROUTES_12 = [[{
           path: '',
           children: [
             {
@@ -70,30 +72,30 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
             ,
             {
               path: 'all',
-              component: import18.UserSolutionsComponent
+              component: import19.UserSolutionsComponent
             }
 
           ]
 
         }
     ]]); }
-    return this.__ROUTES_11;
+    return this.__ROUTES_12;
   }
-  get _PaperService_12():import11.PaperService {
-    if ((this.__PaperService_12 == (null as any))) { (this.__PaperService_12 = new import11.PaperService(this.parent.get(import19.Http))); }
-    return this.__PaperService_12;
+  get _PaperService_13():import12.PaperService {
+    if ((this.__PaperService_13 == (null as any))) { (this.__PaperService_13 = new import12.PaperService(this.parent.get(import20.Http))); }
+    return this.__PaperService_13;
   }
-  get _FileService_13():import12.FileService {
-    if ((this.__FileService_13 == (null as any))) { (this.__FileService_13 = new import12.FileService(this.parent.get(import19.Http))); }
-    return this.__FileService_13;
+  get _FileService_14():import13.FileService {
+    if ((this.__FileService_14 == (null as any))) { (this.__FileService_14 = new import13.FileService(this.parent.get(import20.Http))); }
+    return this.__FileService_14;
   }
-  get _SolutionService_14():import13.SolutionService {
-    if ((this.__SolutionService_14 == (null as any))) { (this.__SolutionService_14 = new import13.SolutionService(this.parent.get(import19.Http),this._PaperService_12,this.parent.get(import20.FlashMessageService),this._FileService_13)); }
-    return this.__SolutionService_14;
+  get _SolutionService_15():import14.SolutionService {
+    if ((this.__SolutionService_15 == (null as any))) { (this.__SolutionService_15 = new import14.SolutionService(this.parent.get(import20.Http),this._PaperService_13,this.parent.get(import21.FlashMessageService),this._FileService_14)); }
+    return this.__SolutionService_15;
   }
-  get _SortDownloadSolutionService_15():import14.SortDownloadSolutionService {
-    if ((this.__SortDownloadSolutionService_15 == (null as any))) { (this.__SortDownloadSolutionService_15 = new import14.SortDownloadSolutionService(this._SolutionService_14)); }
-    return this.__SortDownloadSolutionService_15;
+  get _SortDownloadSolutionService_16():import15.SortDownloadSolutionService {
+    if ((this.__SortDownloadSolutionService_16 == (null as any))) { (this.__SortDownloadSolutionService_16 = new import15.SortDownloadSolutionService(this._SolutionService_15)); }
+    return this.__SortDownloadSolutionService_16;
   }
   createInternal():import1.UserSolutionsModule {
     this._InternalFormsSharedModule_0 = new import2.InternalFormsSharedModule();
@@ -102,9 +104,10 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
     this._CommonModule_3 = new import4.CommonModule();
     this._OrderByModule_4 = new import5.OrderByModule();
     this._EscapeHtmlModule_5 = new import6.EscapeHtmlModule();
-    this._RouterModule_6 = new import7.RouterModule(this.parent.get(import7.ROUTER_FORROOT_GUARD,(null as any)));
-    this._UserSolutionsModule_7 = new import1.UserSolutionsModule();
-    return this._UserSolutionsModule_7;
+    this._DateFormatModule_6 = new import7.DateFormatModule();
+    this._RouterModule_7 = new import8.RouterModule(this.parent.get(import8.ROUTER_FORROOT_GUARD,(null as any)));
+    this._UserSolutionsModule_8 = new import1.UserSolutionsModule();
+    return this._UserSolutionsModule_8;
   }
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.InternalFormsSharedModule)) { return this._InternalFormsSharedModule_0; }
@@ -113,16 +116,17 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
     if ((token === import4.CommonModule)) { return this._CommonModule_3; }
     if ((token === import5.OrderByModule)) { return this._OrderByModule_4; }
     if ((token === import6.EscapeHtmlModule)) { return this._EscapeHtmlModule_5; }
-    if ((token === import7.RouterModule)) { return this._RouterModule_6; }
-    if ((token === import1.UserSolutionsModule)) { return this._UserSolutionsModule_7; }
-    if ((token === import8.FormBuilder)) { return this._FormBuilder_8; }
-    if ((token === import9.RadioControlRegistry)) { return this._RadioControlRegistry_9; }
-    if ((token === import10.NgLocalization)) { return this._NgLocalization_10; }
-    if ((token === import21.ROUTES)) { return this._ROUTES_11; }
-    if ((token === import11.PaperService)) { return this._PaperService_12; }
-    if ((token === import12.FileService)) { return this._FileService_13; }
-    if ((token === import13.SolutionService)) { return this._SolutionService_14; }
-    if ((token === import14.SortDownloadSolutionService)) { return this._SortDownloadSolutionService_15; }
+    if ((token === import7.DateFormatModule)) { return this._DateFormatModule_6; }
+    if ((token === import8.RouterModule)) { return this._RouterModule_7; }
+    if ((token === import1.UserSolutionsModule)) { return this._UserSolutionsModule_8; }
+    if ((token === import9.FormBuilder)) { return this._FormBuilder_9; }
+    if ((token === import10.RadioControlRegistry)) { return this._RadioControlRegistry_10; }
+    if ((token === import11.NgLocalization)) { return this._NgLocalization_11; }
+    if ((token === import22.ROUTES)) { return this._ROUTES_12; }
+    if ((token === import12.PaperService)) { return this._PaperService_13; }
+    if ((token === import13.FileService)) { return this._FileService_14; }
+    if ((token === import14.SolutionService)) { return this._SolutionService_15; }
+    if ((token === import15.SortDownloadSolutionService)) { return this._SortDownloadSolutionService_16; }
     return notFoundResult;
   }
   destroyInternal():void {

@@ -9,6 +9,7 @@ import {InstanceStatusComponent} from "./instance-status/instance-status.compone
 import {OrderByModule} from "../shared/pipes/order-by.module";
 import {InstanceService} from "../shared/services/instance.service";
 import {FileService} from "../shared/services/file.service";
+import {DateFormatModule} from "../shared/pipes/date-format.module";
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import {FileService} from "../shared/services/file.service";
         CommonModule,
         OrderByModule,
         instanceRouting,
+        DateFormatModule,
     ],
     providers: [
         InstanceService,

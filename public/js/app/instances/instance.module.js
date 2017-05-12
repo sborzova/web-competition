@@ -9,6 +9,7 @@ import { InstanceStatusComponent } from "./instance-status/instance-status.compo
 import { OrderByModule } from "../shared/pipes/order-by.module";
 import { InstanceService } from "../shared/services/instance.service";
 import { FileService } from "../shared/services/file.service";
+import { DateFormatModule } from "../shared/pipes/date-format.module";
 export var InstanceModule = (function () {
     function InstanceModule() {
     }
@@ -25,6 +26,7 @@ export var InstanceModule = (function () {
                         CommonModule,
                         OrderByModule,
                         instanceRouting,
+                        DateFormatModule,
                     ],
                     providers: [
                         InstanceService,
