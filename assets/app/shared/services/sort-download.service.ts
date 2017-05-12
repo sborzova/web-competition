@@ -3,7 +3,7 @@ import {Solution} from "../models/solution.model";
 import {SolutionService} from "./solution.service";
 
 @Injectable()
-export class SortDownloadSolutionService {
+export class SortDownloadService {
     private fileSaver = require('file-saver');
 
     constructor(private solutionService: SolutionService){}
@@ -312,4 +312,37 @@ export class SortDownloadSolutionService {
             }
         })
     }
+
+    /**
+     * Sort solutions ascending by instance's order.
+     *
+     * @param solutions
+     * @returns {Solution[]} sorted solutions
+     */
+    sortInstanceAsc(solutions: Solution[]){
+        return solutions.sort(function compare(a,b) {
+            if (a.instance.order < b.instance.order)
+                return -1;
+            if (a.instance.order > b.instance.order)
+                return 1;
+            return 0;
+        })
+    }
+
+    /**
+     * Sort solutions descending by instance's order.
+     *
+     * @param solutions
+     * @returns {Solution[]} sorted solutions
+     */
+    sortInstanceDesc(solutions: Solution[]){
+        return solutions.sort(function compare(a,b) {
+            if (a.instance.order < b.instance.order)
+                return 1;
+            if (a.instance.order > b.instance.order)
+                return -1;
+            return 0;
+        })
+    }
+
 }

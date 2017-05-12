@@ -8,7 +8,7 @@ import {OrderByModule} from "../shared/pipes/order-by.module";
 import {EscapeHtmlModule} from "../shared/pipes/escape-html.module";
 import {PaperService} from "../shared/services/paper.service";
 import {SolutionService} from "../shared/services/solution.service";
-import {SortDownloadSolutionService} from "../shared/services/sort-download-solution.service";
+import {SortDownloadService} from "../shared/services/sort-download.service";
 import {FileService} from "../shared/services/file.service";
 import {DateFormatModule} from "../shared/pipes/date-format.module";
 
@@ -28,7 +28,7 @@ import {DateFormatModule} from "../shared/pipes/date-format.module";
     providers: [
         PaperService,
         SolutionService,
-        SortDownloadSolutionService,
+        SortDownloadService,
         FileService
     ]
 })

@@ -12,7 +12,7 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '../../shared/services/sort-download-solution.service';
+import * as import8 from '../../shared/services/sort-download.service';
 import * as import9 from '../../shared/services/session-storage.service';
 import * as import10 from '../../shared/services/solution.service';
 import * as import11 from '@angular/core/src/metadata/view';
@@ -41,7 +41,7 @@ class _View_ResultsAuthorTechniqueComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-results-author-technique',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_ResultsAuthorTechniqueComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._ResultsAuthorTechniqueComponent_0_4 = new import3.ResultsAuthorTechniqueComponent(this.parentInjector.get(import8.SortDownloadSolutionService),this.parentInjector.get(import9.SessionStorageService),this.parentInjector.get(import10.SolutionService));
+    this._ResultsAuthorTechniqueComponent_0_4 = new import3.ResultsAuthorTechniqueComponent(this.parentInjector.get(import8.SortDownloadService),this.parentInjector.get(import9.SessionStorageService),this.parentInjector.get(import10.SolutionService));
     this._appEl_0.initComponent(this._ResultsAuthorTechniqueComponent_0_4,[],compView_0);
     compView_0.create(this._ResultsAuthorTechniqueComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -405,7 +405,7 @@ class _View_ResultsAuthorTechniqueComponent1 extends import1.AppView<any> {
     this._el_108 = this.renderer.createElement(this._el_0,'app-results-author-instance-technique',(null as any));
     this._appEl_108 = new import2.AppElement(108,0,this,this._el_108);
     var compView_108:any = import18.viewFactory_ResultsAuthorInstanceTechniqueComponent0(this.viewUtils,this.injector(108),this._appEl_108);
-    this._ResultsAuthorInstanceTechniqueComponent_108_4 = new import16.ResultsAuthorInstanceTechniqueComponent(this.parentInjector.get(import8.SortDownloadSolutionService),this.parentInjector.get(import9.SessionStorageService),this.parentInjector.get(import10.SolutionService));
+    this._ResultsAuthorInstanceTechniqueComponent_108_4 = new import16.ResultsAuthorInstanceTechniqueComponent(this.parentInjector.get(import8.SortDownloadService),this.parentInjector.get(import9.SessionStorageService),this.parentInjector.get(import10.SolutionService));
     this._appEl_108.initComponent(this._ResultsAuthorInstanceTechniqueComponent_108_4,[],compView_108);
     compView_108.create(this._ResultsAuthorInstanceTechniqueComponent_108_4,[],(null as any));
     this._text_109 = this.renderer.createText(this._el_0,'\n',(null as any));

@@ -6,7 +6,11 @@
         <table class="table">
         <thead>
             <tr>
-                <th rowspan="2">Instance</th>
+                <th rowspan="2">
+                    <span style="float: left">Instance</span>
+                    <span (click)="onInstanceAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
+                    <span (click)="onInstanceDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
+                </th>
                 <th colspan="2">
                     <span style="float: left">Quality</span>
                     <span (click)="onQualityAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>

@@ -7,8 +7,8 @@ import {Validation} from "../validation.model";
 import {SolutionCreate} from "../solution-create.model";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
 import {Solution} from "../../shared/models/solution.model";
-import {Instance} from "../instance.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
+import {Instance} from "../../shared/models/instance.model";
 
 @Component({
     selector: 'app-success-validation',

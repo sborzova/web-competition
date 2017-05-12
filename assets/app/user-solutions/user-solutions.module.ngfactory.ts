@@ -19,7 +19,7 @@ import * as import11 from '@angular/common/src/localization';
 import * as import12 from '../shared/services/paper.service';
 import * as import13 from '../shared/services/file.service';
 import * as import14 from '../shared/services/solution.service';
-import * as import15 from '../shared/services/sort-download-solution.service';
+import * as import15 from '../shared/services/sort-download.service';
 import * as import16 from '@angular/core/src/di/injector';
 import * as import17 from './user-solutions.component.ngfactory';
 import * as import18 from '@angular/core/src/i18n/tokens';
@@ -44,7 +44,7 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
   __PaperService_13:import12.PaperService;
   __FileService_14:import13.FileService;
   __SolutionService_15:import14.SolutionService;
-  __SortDownloadSolutionService_16:import15.SortDownloadSolutionService;
+  __SortDownloadSolutionService_16:import15.SortDownloadService;
   constructor(parent:import16.Injector) {
     super(parent,[import17.UserSolutionsComponentNgFactory],[]);
   }
@@ -93,8 +93,8 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
     if ((this.__SolutionService_15 == (null as any))) { (this.__SolutionService_15 = new import14.SolutionService(this.parent.get(import20.Http),this._PaperService_13,this.parent.get(import21.FlashMessageService),this._FileService_14)); }
     return this.__SolutionService_15;
   }
-  get _SortDownloadSolutionService_16():import15.SortDownloadSolutionService {
-    if ((this.__SortDownloadSolutionService_16 == (null as any))) { (this.__SortDownloadSolutionService_16 = new import15.SortDownloadSolutionService(this._SolutionService_15)); }
+  get _SortDownloadSolutionService_16():import15.SortDownloadService {
+    if ((this.__SortDownloadSolutionService_16 == (null as any))) { (this.__SortDownloadSolutionService_16 = new import15.SortDownloadService(this._SolutionService_15)); }
     return this.__SortDownloadSolutionService_16;
   }
   createInternal():import1.UserSolutionsModule {
@@ -126,7 +126,7 @@ class UserSolutionsModuleInjector extends import0.NgModuleInjector<import1.UserS
     if ((token === import12.PaperService)) { return this._PaperService_13; }
     if ((token === import13.FileService)) { return this._FileService_14; }
     if ((token === import14.SolutionService)) { return this._SolutionService_15; }
-    if ((token === import15.SortDownloadSolutionService)) { return this._SortDownloadSolutionService_16; }
+    if ((token === import15.SortDownloadService)) { return this._SortDownloadSolutionService_16; }
     return notFoundResult;
   }
   destroyInternal():void {

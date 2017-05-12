@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from "@angular/core";
 
 import {SolutionService} from "../../shared/services/solution.service";
 import {InstanceService} from "../../shared/services/instance.service";
-import {SortDownloadSolutionService} from "../../shared/services/sort-download-solution.service";
+import {SortDownloadService} from "../../shared/services/sort-download.service";
 import {Solution} from "../../shared/models/solution.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {Subscription} from "rxjs/Subscription";
@@ -25,7 +25,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
 
     constructor(private solutionService: SolutionService,
                 private instanceService: InstanceService,
-                private sortDownloadSolutionService: SortDownloadSolutionService,
+                private sortDownloadService: SortDownloadService,
                 private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService){
 
@@ -58,7 +58,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
                                 (solutions: Solution[] )=> {
                                     if (solutions.length != 0){
                                         solutions = this.filterByVisibility(solutions);
-                                        solutions = this.sortDownloadSolutionService.sortQualityAsc(solutions);
+                                        solutions = this.sortDownloadService.sortQualityAsc(solutions);
                                         results.push(this.setBestSolution(solutions));
                                         this.solutionsAll = this.solutionsAll.concat(solutions);
                                     }
@@ -182,7 +182,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
                     if (this.results.includes(this.solution)){
                         this.results.splice(this.results.indexOf(this.solution), 1);
                         let solutionsInstance = this.solutionsAll.filter(s => s.instance.instanceId = this.solution.instance.instanceId);
-                        let solutionsInstanceSorted = this.sortDownloadSolutionService.sortQualityAsc(solutionsInstance);
+                        let solutionsInstanceSorted = this.sortDownloadService.sortQualityAsc(solutionsInstance);
                         this.results.push(solutionsInstanceSorted[0]);
                     }
                     this.solutionsInstance = null;
@@ -195,7 +195,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     }
 
     onDownload(solution: Solution){
-        this.sortDownloadSolutionService.download(solution);
+        this.sortDownloadService.download(solution);
     }
 
     onShowPapers(){

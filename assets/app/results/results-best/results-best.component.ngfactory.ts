@@ -14,7 +14,7 @@ import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from '../../shared/services/solution.service';
 import * as import9 from '../../shared/services/instance.service';
-import * as import10 from '../../shared/services/sort-download-solution.service';
+import * as import10 from '../../shared/services/sort-download.service';
 import * as import11 from '../../shared/services/session-storage.service';
 import * as import12 from '../../flash-message/flash-messages.service';
 import * as import13 from '@angular/core/src/metadata/view';
@@ -46,7 +46,7 @@ class _View_ResultsBestComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-results-best',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_ResultsBestComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._ResultsBestComponent_0_4 = new import3.ResultsBestComponent(this.parentInjector.get(import8.SolutionService),this.parentInjector.get(import9.InstanceService),this.parentInjector.get(import10.SortDownloadSolutionService),this.parentInjector.get(import11.SessionStorageService),this.parentInjector.get(import12.FlashMessageService));
+    this._ResultsBestComponent_0_4 = new import3.ResultsBestComponent(this.parentInjector.get(import8.SolutionService),this.parentInjector.get(import9.InstanceService),this.parentInjector.get(import10.SortDownloadService),this.parentInjector.get(import11.SessionStorageService),this.parentInjector.get(import12.FlashMessageService));
     this._appEl_0.initComponent(this._ResultsBestComponent_0_4,[],compView_0);
     compView_0.create(this._ResultsBestComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -177,7 +177,7 @@ class _View_ResultsBestComponent0 extends import1.AppView<import3.ResultsBestCom
     this._el_27 = this.renderer.createElement(this._el_23,'app-results-instance',(null as any));
     this._appEl_27 = new import2.AppElement(27,23,this,this._el_27);
     var compView_27:any = import19.viewFactory_ResultsInstanceComponent0(this.viewUtils,this.injector(27),this._appEl_27);
-    this._ResultsInstanceComponent_27_4 = new import16.ResultsInstanceComponent(this.parentInjector.get(import10.SortDownloadSolutionService),this.parentInjector.get(import8.SolutionService),this.parentInjector.get(import11.SessionStorageService));
+    this._ResultsInstanceComponent_27_4 = new import16.ResultsInstanceComponent(this.parentInjector.get(import10.SortDownloadService),this.parentInjector.get(import8.SolutionService),this.parentInjector.get(import11.SessionStorageService));
     this._appEl_27.initComponent(this._ResultsInstanceComponent_27_4,[],compView_27);
     this._text_28 = this.renderer.createText((null as any),'\n    ',(null as any));
     compView_27.create(this._ResultsInstanceComponent_27_4,[],(null as any));
@@ -185,7 +185,7 @@ class _View_ResultsBestComponent0 extends import1.AppView<import3.ResultsBestCom
     this._el_30 = this.renderer.createElement(this._el_23,'app-results-author',(null as any));
     this._appEl_30 = new import2.AppElement(30,23,this,this._el_30);
     var compView_30:any = import20.viewFactory_ResultsAuthorComponent0(this.viewUtils,this.injector(30),this._appEl_30);
-    this._ResultsAuthorComponent_30_4 = new import17.ResultsAuthorComponent(this.parentInjector.get(import10.SortDownloadSolutionService),this.parentInjector.get(import8.SolutionService),this.parentInjector.get(import11.SessionStorageService));
+    this._ResultsAuthorComponent_30_4 = new import17.ResultsAuthorComponent(this.parentInjector.get(import10.SortDownloadService),this.parentInjector.get(import8.SolutionService),this.parentInjector.get(import11.SessionStorageService));
     this._appEl_30.initComponent(this._ResultsAuthorComponent_30_4,[],compView_30);
     this._text_31 = this.renderer.createText((null as any),'\n    ',(null as any));
     compView_30.create(this._ResultsAuthorComponent_30_4,[],(null as any));

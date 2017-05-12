@@ -5,7 +5,7 @@ import {SolutionService} from "../shared/services/solution.service";
 import {PaperService} from "../shared/services/paper.service";
 import {FlashMessageService} from "../flash-message/flash-messages.service";
 import {SolutionPaper} from "./solution-paper.model";
-import {SortDownloadSolutionService} from "../shared/services/sort-download-solution.service";
+import {SortDownloadService} from "../shared/services/sort-download.service";
 import {Solution} from "../shared/models/solution.model";
 
 @Component({
@@ -27,7 +27,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     constructor(private solutionService: SolutionService,
                 private paperService: PaperService,
                 private flashMessageService: FlashMessageService,
-                private sortService: SortDownloadSolutionService){}
+                private sortDownloadService: SortDownloadService){}
 
     /**
      * Set to variable solutions all solutions by logged in user.
@@ -35,8 +35,8 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     ngOnInit(){
         this.solutionService.getSolutionsByLoggedUser()
             .subscribe(
-                solutions => {
-                    this.solutions = solutions;
+                (solutions: Solution[])=> {
+                    this.solutions = this.sortDownloadService.sortInstanceAsc(solutions);
                 },
                 error => console.error(error)
             )
@@ -288,7 +288,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     onDownload(solution: Solution){
-        this.sortService.download(solution);
+        this.sortDownloadService.download(solution);
     }
 
     onShowPapers(){
@@ -300,59 +300,67 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     onQualityAsc(){
-        this.solutions = this.sortService.sortQualityAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortQualityAsc(this.solutions);
     }
 
     onQualityDesc(){
-        this.solutions = this.sortService.sortQualityDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortQualityDesc(this.solutions);
     }
 
     onScAsc(){
-        this.solutions = this.sortService.sortScAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortScAsc(this.solutions);
     }
 
     onScDesc(){
-        this.solutions = this.sortService.sortScDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortScDesc(this.solutions);
     }
 
     onTimeAsc(){
-        this.solutions = this.sortService.sortTimeAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortTimeAsc(this.solutions);
     }
 
     onTimeDesc(){
-        this.solutions = this.sortService.sortTimeDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortTimeDesc(this.solutions);
     }
 
     onRoomAsc(){
-        this.solutions = this.sortService.sortRoomAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortRoomAsc(this.solutions);
     }
 
     onRoomDesc(){
-        this.solutions = this.sortService.sortRoomDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortRoomDesc(this.solutions);
     }
 
     onDistributionAsc(){
-        this.solutions = this.sortService.sortDistributionAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortDistributionAsc(this.solutions);
     }
 
     onDistributionDesc(){
-        this.solutions = this.sortService.sortDistributionDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortDistributionDesc(this.solutions);
     }
 
     onTechniqueAsc(){
-        this.solutions = this.sortService.sortTechniqueAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortTechniqueAsc(this.solutions);
     }
 
     onTechniqueDesc(){
-        this.solutions = this.sortService.sortTechniqueDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortTechniqueDesc(this.solutions);
     }
 
     onSubmissionTimeAsc(){
-        this.solutions = this.sortService.sortSubmissionTimeAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortSubmissionTimeAsc(this.solutions);
     }
 
     onSubmissionTimeDesc(){
-        this.solutions = this.sortService.sortSubmissionTimeDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortSubmissionTimeDesc(this.solutions);
+    }
+
+    onInstanceAsc(){
+        this.solutions = this.sortDownloadService.sortInstanceAsc(this.solutions);
+    }
+
+    onInstanceDesc(){
+        this.solutions = this.sortDownloadService.sortInstanceDesc(this.solutions);
     }
 
     ngOnDestroy(){
@@ -362,6 +370,5 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
         this.showPapers = false;
         this.editedPaper = null;
     }
-
 
 }

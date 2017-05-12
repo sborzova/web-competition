@@ -1,7 +1,7 @@
-import { Instance } from "../../validation/instance.model";
 import {Paper} from "./paper.model";
 import {Author} from "./author.model";
 import {FileModel} from "../../instances/file.model";
+import {Instance} from "./instance.model";
 
 export class Solution {
     constructor(public unassigned: number,

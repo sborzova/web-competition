@@ -1,4 +1,5 @@
 import {FileModel} from "./file.model";
+
 export class Instance {
     constructor(public order: number,
                 public name: string,

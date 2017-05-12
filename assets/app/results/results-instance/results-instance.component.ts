@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 
-import {SortDownloadSolutionService} from "../../shared/services/sort-download-solution.service";
+import {SortDownloadService} from "../../shared/services/sort-download.service";
 import {Solution} from "../../shared/models/solution.model";
 import {SolutionService} from "../../shared/services/solution.service";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
@@ -15,7 +15,7 @@ export class ResultsInstanceComponent implements OnChanges {
     solution: Solution;
     private showPapers: boolean = false;
 
-    constructor(private sortService: SortDownloadSolutionService,
+    constructor(private sortDownloadService: SortDownloadService,
                 private solutionService: SolutionService,
                 private sessionStorageService: SessionStorageService){}
 
@@ -54,7 +54,7 @@ export class ResultsInstanceComponent implements OnChanges {
     }
 
     onDownload(solution: Solution){
-        this.sortService.download(solution);
+        this.sortDownloadService.download(solution);
     }
 
     onShowPapers(){
@@ -66,65 +66,65 @@ export class ResultsInstanceComponent implements OnChanges {
     }
 
     onQualityAsc(){
-        this.solutions = this.sortService.sortQualityAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortQualityAsc(this.solutions);
     }
 
     onQualityDesc(){
-        this.solutions = this.sortService.sortQualityDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortQualityDesc(this.solutions);
     }
 
     onScAsc(){
-        this.solutions = this.sortService.sortScAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortScAsc(this.solutions);
     }
 
     onScDesc(){
-        this.solutions = this.sortService.sortScDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortScDesc(this.solutions);
     }
 
     onTimeAsc(){
-        this.solutions = this.sortService.sortTimeAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortTimeAsc(this.solutions);
     }
 
     onTimeDesc(){
-        this.solutions = this.sortService.sortTimeDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortTimeDesc(this.solutions);
     }
     onRoomAsc(){
-        this.solutions = this.sortService.sortRoomAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortRoomAsc(this.solutions);
     }
 
     onRoomDesc(){
-        this.solutions = this.sortService.sortRoomDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortRoomDesc(this.solutions);
     }
 
     onDistributionAsc(){
-        this.solutions = this.sortService.sortDistributionAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortDistributionAsc(this.solutions);
     }
 
     onDistributionDesc(){
-        this.solutions = this.sortService.sortDistributionDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortDistributionDesc(this.solutions);
     }
 
     onTechniqueAsc(){
-        this.solutions = this.sortService.sortTechniqueAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortTechniqueAsc(this.solutions);
     }
 
     onTechniqueDesc(){
-        this.solutions = this.sortService.sortTechniqueDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortTechniqueDesc(this.solutions);
     }
 
     onSubmissionTimeAsc(){
-        this.solutions = this.sortService.sortSubmissionTimeAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortSubmissionTimeAsc(this.solutions);
     }
 
     onSubmissionTimeDesc(){
-        this.solutions = this.sortService.sortSubmissionTimeDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortSubmissionTimeDesc(this.solutions);
     }
 
     onAuthorAsc(){
-        this.solutions = this.sortService.sortAuthorAsc(this.solutions);
+        this.solutions = this.sortDownloadService.sortAuthorAsc(this.solutions);
     }
 
     onAuthorDesc(){
-        this.solutions = this.sortService.sortAuthorDesc(this.solutions);
+        this.solutions = this.sortDownloadService.sortAuthorDesc(this.solutions);
     }
 }

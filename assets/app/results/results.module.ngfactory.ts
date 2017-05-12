@@ -15,7 +15,7 @@ import * as import7 from '../shared/services/paper.service';
 import * as import8 from '../shared/services/instance.service';
 import * as import9 from '../shared/services/file.service';
 import * as import10 from '../shared/services/solution.service';
-import * as import11 from '../shared/services/sort-download-solution.service';
+import * as import11 from '../shared/services/sort-download.service';
 import * as import12 from '../shared/services/session-storage.service';
 import * as import13 from '@angular/core/src/di/injector';
 import * as import14 from './results-best/results-best.component.ngfactory';
@@ -37,7 +37,7 @@ class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModu
   __InstanceService_8:import8.InstanceService;
   __FileService_9:import9.FileService;
   __SolutionService_10:import10.SolutionService;
-  __SortDownloadSolutionService_11:import11.SortDownloadSolutionService;
+  __SortDownloadSolutionService_11:import11.SortDownloadService;
   __SessionStorageService_12:import12.SessionStorageService;
   constructor(parent:import13.Injector) {
     super(parent,[import14.ResultsBestComponentNgFactory],[]);
@@ -74,8 +74,8 @@ class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModu
     if ((this.__SolutionService_10 == (null as any))) { (this.__SolutionService_10 = new import10.SolutionService(this.parent.get(import17.Http),this._PaperService_7,this.parent.get(import18.FlashMessageService),this._FileService_9)); }
     return this.__SolutionService_10;
   }
-  get _SortDownloadSolutionService_11():import11.SortDownloadSolutionService {
-    if ((this.__SortDownloadSolutionService_11 == (null as any))) { (this.__SortDownloadSolutionService_11 = new import11.SortDownloadSolutionService(this._SolutionService_10)); }
+  get _SortDownloadSolutionService_11():import11.SortDownloadService {
+    if ((this.__SortDownloadSolutionService_11 == (null as any))) { (this.__SortDownloadSolutionService_11 = new import11.SortDownloadService(this._SolutionService_10)); }
     return this.__SortDownloadSolutionService_11;
   }
   get _SessionStorageService_12():import12.SessionStorageService {
@@ -102,7 +102,7 @@ class ResultsModuleInjector extends import0.NgModuleInjector<import1.ResultsModu
     if ((token === import8.InstanceService)) { return this._InstanceService_8; }
     if ((token === import9.FileService)) { return this._FileService_9; }
     if ((token === import10.SolutionService)) { return this._SolutionService_10; }
-    if ((token === import11.SortDownloadSolutionService)) { return this._SortDownloadSolutionService_11; }
+    if ((token === import11.SortDownloadService)) { return this._SortDownloadSolutionService_11; }
     if ((token === import12.SessionStorageService)) { return this._SessionStorageService_12; }
     return notFoundResult;
   }

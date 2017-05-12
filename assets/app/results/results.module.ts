@@ -10,7 +10,7 @@ import {OrderByModule} from "../shared/pipes/order-by.module";
 import {PaperService} from "../shared/services/paper.service";
 import {InstanceService} from "../shared/services/instance.service";
 import {SolutionService} from "../shared/services/solution.service";
-import {SortDownloadSolutionService} from "../shared/services/sort-download-solution.service";
+import {SortDownloadService} from "../shared/services/sort-download.service";
 import {ResultsAuthorInstanceComponent} from "./results-author-instance/results-author-instance.component";
 import {ResultsAuthorInstanceTechniqueComponent} from "./results-author-instance-technique/results-author-instance-technique.component";
 import {FileService} from "../shared/services/file.service";
@@ -36,7 +36,7 @@ import {DateFormatModule} from "../shared/pipes/date-format.module";
         PaperService,
         InstanceService,
         SolutionService,
-        SortDownloadSolutionService,
+        SortDownloadService,
         FileService,
         SessionStorageService
     ]
