@@ -1,272 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/0.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/0.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/1.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/1.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/10.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/10.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/11.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/11.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/12.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/12.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/13.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/13.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/14.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/14.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/15.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/15.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/16.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/16.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/17.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/17.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/18.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/18.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/19.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/19.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/2.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/2.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/3.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/3.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/4.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/4.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/5.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/5.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/6.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/6.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/7.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/7.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/8.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/8.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/9.f30b6ed3bf8ff900ef12.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/9.f30b6ed3bf8ff900ef12.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/directives/equal-validator.directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/directives/equal-validator.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/directives/equal-validator.module.ngfactory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/author.model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/instance.model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/paper.model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/solution.model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/pipes/escape-html.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/pipes/escape-html.module.ngfactory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/pipes/escape-html.pipe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/pipes/order-by.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/pipes/order-by.module.ngfactory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/pipes/order-by.pipe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/services/file.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/services/instance.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/services/paper.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/services/session-storage.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/services/solution.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/services/sort-download-solution.service.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/equal-validator.module.ngfactory.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/escape-html.module.ngfactory.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/order-by.module.ngfactory.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/0.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/0.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/1.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/1.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/10.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/10.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/11.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/11.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/12.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/12.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/13.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/13.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/14.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/14.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/15.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/15.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/16.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/16.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/17.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/17.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/18.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/18.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/19.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/19.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/2.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/2.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/3.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/3.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/4.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/4.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/5.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/5.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/6.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/6.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/7.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/7.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/8.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/8.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/9.2cdbb8cdcc84fadd601b.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/9.2cdbb8cdcc84fadd601b.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/equal-validator.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/equal-validator.module.ngfactory.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/escape-html.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/escape-html.module.ngfactory.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/order-by.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/order-by.module.ngfactory.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/author.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/escape-html.pipe.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/file.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/instance.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/instance.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/order-by.pipe.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/paper.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/paper.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/session-storage.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/solution.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/solution.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/sort.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/validator-equal.directive.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/equal-validator.module.ts" afterPath="$PROJECT_DIR$/assets/app/shared/directives/equal-validator.module.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/escape-html.module.ts" afterPath="$PROJECT_DIR$/assets/app/shared/pipes/escape-html.module.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/order-by.module.ts" afterPath="$PROJECT_DIR$/assets/app/shared/pipes/order-by.module.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/author.model.ts" afterPath="$PROJECT_DIR$/assets/app/shared/models/author.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/escape-html.pipe.ts" afterPath="$PROJECT_DIR$/assets/app/shared/pipes/escape-html.pipe.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/file.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/file.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/instance.model.ts" afterPath="$PROJECT_DIR$/assets/app/shared/models/instance.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/instance.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/instance.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/order-by.pipe.ts" afterPath="$PROJECT_DIR$/assets/app/shared/pipes/order-by.pipe.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/paper.model.ts" afterPath="$PROJECT_DIR$/assets/app/shared/models/paper.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/paper.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/paper.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/session-storage.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/session-storage.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/solution.model.ts" afterPath="$PROJECT_DIR$/assets/app/shared/models/solution.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/solution.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/solution.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/sort.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/sort-download-solution.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/validator-equal.directive.ts" afterPath="$PROJECT_DIR$/assets/app/shared/directives/equal-validator.directive.ts" />
+    <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="refactoring, documentation">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/app.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signin/signin.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signin/signin.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signin/signin.component.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signin/signin.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signup/signup.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signup/signup.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signup/signup.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signup/signup.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signup/signup.module.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signup/signup.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/header/header.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/header/header.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/header/header.component.ts" afterPath="$PROJECT_DIR$/assets/app/header/header.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-new/instance-new.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-new/instance-new.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-new/instance-new.component.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-new/instance-new.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-status/instance-status.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-status/instance-status.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-status/instance-status.component.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-status/instance-status.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-update/instance-update.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-update/instance-update.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-update/instance-update.component.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-update/instance-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance.module.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instances.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instances.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instances.component.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instances.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/preference/preference.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/preference/preference.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/preference/preference.component.ts" afterPath="$PROJECT_DIR$/assets/app/preference/preference.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile.module.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author-instance/results-author-instance.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author-instance/results-author-instance.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author-instance/results-author-instance.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author-instance/results-author-instance.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/results/results.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results.module.ts" afterPath="$PROJECT_DIR$/assets/app/results/results.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.html" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.component.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.module.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/solution.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/validation/solution.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/solution.module.ts" afterPath="$PROJECT_DIR$/assets/app/validation/solution.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ts" afterPath="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/validation/validation.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.component.ts" afterPath="$PROJECT_DIR$/assets/app/validation/validation.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/validation/validation.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.module.ts" afterPath="$PROJECT_DIR$/assets/app/validation/validation.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validator-info/validator-info.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/validator-info/validator-info.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validator-info/validator-info.component.ts" afterPath="$PROJECT_DIR$/assets/app/validator-info/validator-info.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validator-info/validator-info.module.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/validator-info/validator-info.module.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validator-info/validator-info.module.ts" afterPath="$PROJECT_DIR$/assets/app/validator-info/validator-info.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/app.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.module.js" afterPath="$PROJECT_DIR$/public/js/app/app.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.module.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/app.module.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signin/signin.component.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/signin.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signin/signin.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/signin.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signup/signup.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signup/signup.module.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signup/signup.module.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.module.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js" afterPath="$PROJECT_DIR$/public/js/app/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js.gz" afterPath="$PROJECT_DIR$/public/js/app/bundle.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/header/header.component.js" afterPath="$PROJECT_DIR$/public/js/app/header/header.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/header/header.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/header/header.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-new/instance-new.component.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-new/instance-new.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-new/instance-new.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-new/instance-new.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-status/instance-status.component.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-status/instance-status.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-status/instance-status.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-status/instance-status.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-update/instance-update.component.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-update/instance-update.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-update/instance-update.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-update/instance-update.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance.module.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance.module.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance.module.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instances.component.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instances.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instances.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instances.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/preference/preference.component.js" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/preference/preference.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile-edit-password/profile-edit-password.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit-password/profile-edit-password.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile-edit/profile-edit.component.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit/profile-edit.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile-edit/profile-edit.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit/profile-edit.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile.module.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile.module.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile.module.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author-instance-technique/results-author-instance-technique.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-instance-technique/results-author-instance-technique.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author-instance-technique/results-author-instance-technique.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-instance-technique/results-author-instance-technique.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author-instance/results-author-instance.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-instance/results-author-instance.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author-instance/results-author-instance.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-instance/results-author-instance.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author-technique/results-author-technique.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-technique/results-author-technique.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author-technique/results-author-technique.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-technique/results-author-technique.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author/results-author.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author/results-author.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author/results-author.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author/results-author.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-best/results-best.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-best/results-best.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-best/results-best.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-best/results-best.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-instance/results-instance.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-instance/results-instance.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-instance/results-instance.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-instance/results-instance.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results.module.js" afterPath="$PROJECT_DIR$/public/js/app/results/results.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results.module.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/results/results.module.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.js" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.module.js" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.module.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.module.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/user-edit-password/user-edit-password.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/users/user-edit-password/user-edit-password.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/users.component.js" afterPath="$PROJECT_DIR$/public/js/app/users/users.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/users.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/users/users.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/users.module.js" afterPath="$PROJECT_DIR$/public/js/app/users/users.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/users.module.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/users/users.module.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/solution.module.js" afterPath="$PROJECT_DIR$/public/js/app/validation/solution.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/solution.module.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/validation/solution.module.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/success-validation/success-validation.component.js" afterPath="$PROJECT_DIR$/public/js/app/validation/success-validation/success-validation.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/success-validation/success-validation.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/validation/success-validation/success-validation.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/validation.component.js" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/validation.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/validation.module.js" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/validation.module.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.module.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.component.js" afterPath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.module.js" afterPath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.module.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.module.ngfactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -287,30 +24,18 @@
       <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="323">
               <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="results-author.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts">
+      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#73#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="instances.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/instances/instances.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="53" column="7" lean-forward="false" selection-start-line="49" selection-start-column="3" selection-end-line="53" selection-end-column="7" />
+            <state relative-caret-position="85">
+              <caret line="5" column="64" lean-forward="false" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -320,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+              <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -329,18 +54,8 @@
       <file leaf-file-name="instance.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/instance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
+            <state relative-caret-position="391">
               <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paper.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/paper.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -356,22 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user-solutions.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2581">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1494430604994" expanded="true" signature="1947:2107" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="solution.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/solution.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="612">
               <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="40" />
               <folding />
             </state>
@@ -381,7 +84,7 @@
       <file leaf-file-name="paper.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/paper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
+            <state relative-caret-position="1683">
               <caret line="99" column="3" lean-forward="false" selection-start-line="99" selection-start-column="3" selection-end-line="99" selection-end-column="3" />
               <folding />
             </state>
@@ -460,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/users/users.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.ts" />
@@ -509,8 +211,9 @@
         <option value="$PROJECT_DIR$/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" />
-        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/index.hbs" />
         <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -549,7 +252,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -565,6 +267,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -805,14 +508,10 @@
       <workItem from="1494057267187" duration="11787000" />
       <workItem from="1494145740102" duration="30792000" />
       <workItem from="1494226966206" duration="49605000" />
-      <workItem from="1494396075596" duration="23341000" />
-    </task>
-    <task id="LOCAL-00087" summary="sendgrid dependency">
-      <created>1491134575535</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1491134575535</updated>
+      <workItem from="1494396075596" duration="24406000" />
+      <workItem from="1494499386241" duration="2014000" />
+      <workItem from="1494507954074" duration="1231000" />
+      <workItem from="1494584596982" duration="2220000" />
     </task>
     <task id="LOCAL-00088" summary="send email try">
       <created>1491137147435</created>
@@ -1150,11 +849,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494417770862</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="refactoring, documentation">
+      <created>1494433748389</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1494433748389</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1518795000" />
+    <option name="totallyTimeSpent" value="1525325000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1169,15 +875,14 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5042017" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26339287" sideWeight="0.75277776" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26264882" sideWeight="0.75277776" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4420168" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26386556" sideWeight="0.51785713" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30252102" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5714286" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2454955" sideWeight="0.24722221" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24851191" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3815126" sideWeight="0.48214287" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13445379" sideWeight="0.48214287" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1187,6 +892,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30252102" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1237,7 +943,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dialog window, total cost sort, sort by tech/author/time, citation, solutions sort, duplicate solutin without concrete time, disable checkboxes" />
     <MESSAGE value="delete solution, refactoring, duplicate solution - added time in message, routing change, little refactoring" />
     <MESSAGE value="email route delete method" />
     <MESSAGE value="node modules delete some" />
@@ -1262,7 +967,8 @@
     <MESSAGE value="solution cascade delete fixed" />
     <MESSAGE value="route user" />
     <MESSAGE value="paper add fixed, refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="paper add fixed, refactoring" />
+    <MESSAGE value="refactoring, documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring, documentation" />
   </component>
   <component name="WindowStateProjectService">
     <state width="264" height="278" key="Git.Branch.Popup" />
@@ -1275,24 +981,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/models/paper.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/instances/instance-new/instance-new.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#59#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/email.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1324">
@@ -1325,7 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="36" column="65" lean-forward="false" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1340,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-78">
           <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1355,7 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3451">
           <caret line="203" column="7" lean-forward="false" selection-start-line="203" selection-start-column="7" selection-end-line="203" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1363,7 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1371,7 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1379,7 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1387,7 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1395,7 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1403,9 +1083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="58" lean-forward="false" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#59#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1413,9 +1090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="49" lean-forward="false" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#59#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1423,9 +1097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#65#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1433,9 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1443,7 +1111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1451,7 +1118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-442">
           <caret line="377" column="48" lean-forward="true" selection-start-line="377" selection-start-column="48" selection-end-line="377" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1459,7 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-68">
           <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1467,9 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="75" column="51" lean-forward="false" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1477,7 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1485,9 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#53#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1495,9 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1505,7 +1160,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
           <caret line="131" column="7" lean-forward="false" selection-start-line="126" selection-start-column="4" selection-end-line="131" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1513,9 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1523,9 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1394">
           <caret line="82" column="32" lean-forward="false" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1533,9 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="97" column="62" lean-forward="false" selection-start-line="97" selection-start-column="62" selection-end-line="97" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#55#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1543,7 +1188,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1551,7 +1195,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1559,9 +1202,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1569,153 +1209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1494433271836" expanded="true" signature="5215:16157" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="6524:13709" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="12985:13654" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="13790:14346" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="14399:15974" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="14587:14666" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="14822:15064" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="15317:15557" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="15809:15919" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="16024:16155" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="16348:16741" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="16805:31189" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="16897:16908" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="17023:17034" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="17713:17724" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="17844:17855" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="18145:18156" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="18276:18287" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="18303:18314" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="18330:18341" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="18357:18368" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="18424:18435" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="18557:18740" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="18798:28313" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="26958:28270" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="28394:29430" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="29483:31187" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="29745:29823" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="29950:30028" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="30154:30233" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="30359:30438" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="30721:30940" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="31348:31433" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="31497:32596" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="31635:31818" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="31876:32392" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="32293:32337" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="32441:32594" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="32755:32840" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="32904:34003" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="33042:33225" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="33283:33799" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="33700:33744" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="33848:34001" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="34162:34247" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="34311:34912" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="34434:34617" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="34675:34910" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="35071:35156" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="35220:35821" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="35343:35526" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="35584:35819" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="35980:36065" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="36129:39260" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="36178:36189" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="36304:36315" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="36413:36424" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="36440:36451" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="36573:36756" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="36814:38143" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="37972:38100" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="38224:38652" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="38705:39258" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="38825:38903" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="39071:39149" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="39419:39504" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="39568:57568" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="40412:40423" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="40543:40554" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="40720:40731" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="40984:40995" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="41011:41022" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="41038:41049" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="41065:41076" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="41115:41126" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="41157:41168" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="41185:41196" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="41213:41224" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="41241:41252" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="41375:41558" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="41616:51621" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="49953:50014" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="49968:50000" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="50227:51489" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="51495:51581" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="51702:52475" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="52528:56586" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="52767:52861" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="53047:53129" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="53316:53398" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="53541:53623" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="53846:53938" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="54106:54198" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="54359:54452" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="54612:54705" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="54867:54960" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="55122:55215" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="55378:55471" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="55693:55786" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="55954:56050" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="56435:56531" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="56635:56842" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="56892:57093" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="57143:57330" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="57380:57566" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="57727:57812" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="57876:59458" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="58042:58225" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="58283:59201" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="59064:59146" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="59250:59456" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="59617:59702" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="59766:61348" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="59932:60115" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="60173:61094" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="60957:61039" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="61143:61346" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="61507:61592" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="61657:63234" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="61823:62007" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="62065:62984" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="62847:62929" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="63033:63232" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="63394:63480" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="63545:67419" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="63693:63704" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="63819:63830" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="63846:63857" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="63979:64163" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="64221:66295" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="66010:66252" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="66376:66606" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="66659:67417" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="66869:66947" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="67270:67362" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="67579:67665" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="67730:69120" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="67762:67773" ph="/*...*/" />
-            <marker date="1494433271836" expanded="true" signature="67895:68079" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="68137:68531" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="68444:68488" ph="[...]" />
-            <marker date="1494433271836" expanded="true" signature="68584:69118" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="68891:69063" ph="{...}" />
-            <marker date="1494433271836" expanded="true" signature="69280:69366" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1723,7 +1216,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3043">
           <caret line="187" column="2" lean-forward="false" selection-start-line="187" selection-start-column="2" selection-end-line="187" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1731,9 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="25" column="7" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#73#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1741,15 +1230,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#73#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2581">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <marker date="1494430604994" expanded="true" signature="1947:2107" ph="{...}" />
@@ -1761,7 +1247,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1769,27 +1254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#73#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/instances/instances.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="53" column="7" lean-forward="false" selection-start-line="49" selection-start-column="3" selection-end-line="53" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1811,7 +1275,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/instance.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
+        <state relative-caret-position="391">
           <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding />
         </state>
@@ -1819,7 +1283,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/paper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
+        <state relative-caret-position="1683">
           <caret line="99" column="3" lean-forward="false" selection-start-line="99" selection-start-column="3" selection-end-line="99" selection-end-column="3" />
           <folding />
         </state>
@@ -1827,7 +1291,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/solution.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="612">
           <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="40" />
           <folding />
         </state>
@@ -1837,6 +1301,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1955">
           <caret line="123" column="19" lean-forward="false" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/instances/instances.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1844,14 +1315,40 @@
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/instances/instances.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="53" column="7" lean-forward="false" selection-start-line="49" selection-start-column="3" selection-end-line="53" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#73#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="64" lean-forward="false" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="323">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
