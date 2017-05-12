@@ -29,7 +29,10 @@ export var PreferenceService = (function () {
     PreferenceService.prototype.updateValueCompetitionIsOn = function (state) {
         var body = JSON.stringify(new Preference(state));
         var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.patch(this.hostUrl.concat('server/admin/preferenceUpdate'), body, { headers: headers })
+        var token = sessionStorage.getItem('token')
+            ? '?token=' + sessionStorage.getItem('token')
+            : '';
+        return this.http.patch(this.hostUrl.concat('server/admin/preferenceUpdate') + token, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })

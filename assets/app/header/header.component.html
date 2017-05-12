@@ -16,7 +16,10 @@
                 <li routerLinkActive="active" *ngIf="isAdmin() || !competitionIsOn()" data-toggle="collapse" data-target=".navbar-collapse.in">
                     <a [routerLink]="['results']">Results</a>
                 </li>
-                <li routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.in">
+                <li routerLinkActive="active" *ngIf="!isLoggedIn() && !competitionIsOn()"data-toggle="collapse" data-target=".navbar-collapse.in">
+                    <a [routerLink]="['validator']">Validate solution</a>
+                </li>
+                <li routerLinkActive="active" *ngIf="isLoggedIn() || competitionIsOn()" data-toggle="collapse" data-target=".navbar-collapse.in">
                     <a [routerLink]="['validator']">Validate & Insert solution</a>
                 </li>
                 <li routerLinkActive="active" *ngIf="isAdmin()" data-toggle="collapse" data-target=".navbar-collapse.in">

@@ -40,7 +40,7 @@ router.post('/server/preference', function (req, res) {
  *
  * Request body contains preference.
  */
-router.patch('/server/preferenceUpdate', function (req, res, next) {
+router.patch('/server/admin/preferenceUpdate', function (req, res, next) {
     Preference.findOne({name: 'competitionIsOn'}, function (err, preference) {
         if (err) {
             return res.status(500).json({

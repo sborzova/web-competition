@@ -80,7 +80,7 @@ export class SigninComponent {
             const email = new Email(this.emailForm.value.email);
             this.emailService.sendEmailNewPassword(email)
                 .subscribe(
-                    () => this.flashMessageService.showMessage('Email with the new password was send.', 'success'),
+                    () => this.flashMessageService.showMessage('Email with the new password was sent.', 'success'),
                     error => console.error(error)
                 );
 

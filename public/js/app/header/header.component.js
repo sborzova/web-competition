@@ -25,6 +25,12 @@ export var HeaderComponent = (function () {
     HeaderComponent.prototype.competitionIsOn = function () {
         return this.sessionStorageService.getCompetitionIsOn();
     };
+    HeaderComponent.prototype.showAlsoInsert = function () {
+        var isLoggedIn = this.sessionStorageService.isLoggedIn();
+        var competitionIsOn = this.sessionStorageService.getCompetitionIsOn();
+        var isAdmin = this.sessionStorageService.isAdmin();
+        return !competitionIsOn || isAdmin || (competitionIsOn && isLoggedIn);
+    };
     HeaderComponent.decorators = [
         { type: Component, args: [{
                     selector: 'app-header',

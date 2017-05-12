@@ -36,4 +36,12 @@ export class HeaderComponent implements OnInit {
     competitionIsOn(){
         return this.sessionStorageService.getCompetitionIsOn();
     }
+
+    showAlsoInsert(){
+        let isLoggedIn = this.sessionStorageService.isLoggedIn();
+        let competitionIsOn = this.sessionStorageService.getCompetitionIsOn();
+        let isAdmin = this.sessionStorageService.isAdmin();
+
+        return !competitionIsOn || isAdmin || (competitionIsOn && isLoggedIn);
+    }
 }

@@ -395,7 +395,6 @@ router.post('/server/duplicateSolution', function (req, res, next) {
         Solution.findOne()
             .where('user').equals(decoded.user._id)
             .where('instance').equals(instance._id)
-            .where('technique').equals(req.body.technique)
             .where('unassigned').equals(req.body.unassigned)
             .where('total').equals(req.body.total)
             .where('time').equals(req.body.time)

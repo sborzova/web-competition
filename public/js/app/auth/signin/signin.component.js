@@ -65,7 +65,7 @@ export var SigninComponent = (function () {
             this.submittedEmailForm = false;
             var email = new Email(this.emailForm.value.email);
             this.emailService.sendEmailNewPassword(email)
-                .subscribe(function () { return _this.flashMessageService.showMessage('Email with the new password was send.', 'success'); }, function (error) { return console.error(error); });
+                .subscribe(function () { return _this.flashMessageService.showMessage('Email with the new password was sent.', 'success'); }, function (error) { return console.error(error); });
         }
     };
     SigninComponent.decorators = [

@@ -109,7 +109,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
             let date = new Date(solution.submissionTime);
             this.flashMessageService.showMessage(
                 'Solution has the same unassigned variables, total cost, student conflicts, ' +
-                'time preferences, room preferences, distribution preferences and technique as your other ' +
+                'time preferences, room preferences and distribution preferences as your other ' +
                 'solution uploaded to the system at ' + this.getDateTime(date) +
                 ', it is not ' + 'uploaded.', 'info');
             return;
