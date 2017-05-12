@@ -476,37 +476,40 @@ class _View_InstancesComponent3 extends import1.AppView<any> {
   _el_6:any;
   _text_7:any;
   _el_8:any;
-  _anchor_9:any;
-  /*private*/ _appEl_9:import2.AppElement;
-  _TemplateRef_9_5:any;
-  _NgIf_9_6:import14.NgIf;
-  _text_10:any;
-  _el_11:any;
+  _text_9:any;
+  _el_10:any;
+  _anchor_11:any;
+  /*private*/ _appEl_11:import2.AppElement;
+  _TemplateRef_11_5:any;
+  _NgIf_11_6:import14.NgIf;
   _text_12:any;
-  _text_13:any;
-  _el_14:any;
+  _el_13:any;
+  _text_14:any;
   _text_15:any;
-  _text_16:any;
-  _el_17:any;
+  _el_16:any;
+  _text_17:any;
   _text_18:any;
-  _text_19:any;
-  _el_20:any;
+  _el_19:any;
+  _text_20:any;
   _text_21:any;
-  _text_22:any;
-  _el_23:any;
+  _el_22:any;
+  _text_23:any;
   _text_24:any;
-  _text_25:any;
+  _el_25:any;
   _text_26:any;
   _text_27:any;
-  _el_28:any;
+  _text_28:any;
   _text_29:any;
-  _anchor_30:any;
-  /*private*/ _appEl_30:import2.AppElement;
-  _TemplateRef_30_5:any;
-  _NgFor_30_6:import21.NgFor;
+  _el_30:any;
   _text_31:any;
-  _text_32:any;
+  _anchor_32:any;
+  /*private*/ _appEl_32:import2.AppElement;
+  _TemplateRef_32_5:any;
+  _NgFor_32_6:import21.NgFor;
   _text_33:any;
+  _text_34:any;
+  _text_35:any;
+  _text_36:any;
   /*private*/ _expr_0:any;
   _pipe_orderBy_0:import22.OrderByPipe;
   /*private*/ _expr_1:any;
@@ -517,45 +520,49 @@ class _View_InstancesComponent3 extends import1.AppView<any> {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
     this.renderer.setElementAttribute(this._el_0,'class','col-xs-12');
     this._text_1 = this.renderer.createText(this._el_0,'\n                ',(null as any));
-    this._el_2 = this.renderer.createElement(this._el_0,'table',(null as any));
-    this.renderer.setElementAttribute(this._el_2,'class','table');
-    this._text_3 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
-    this._el_4 = this.renderer.createElement(this._el_2,'thead',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_2,'class','table-responsive');
+    this._text_3 = this.renderer.createText(this._el_2,'\n                ',(null as any));
+    this._el_4 = this.renderer.createElement(this._el_2,'table',(null as any));
+    this.renderer.setElementAttribute(this._el_4,'class','table');
     this._text_5 = this.renderer.createText(this._el_4,'\n                    ',(null as any));
-    this._el_6 = this.renderer.createElement(this._el_4,'tr',(null as any));
-    this._text_7 = this.renderer.createText(this._el_6,'\n                        ',(null as any));
-    this._el_8 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._anchor_9 = this.renderer.createTemplateAnchor(this._el_8,(null as any));
-    this._appEl_9 = new import2.AppElement(9,8,this,this._anchor_9);
-    this._TemplateRef_9_5 = new import19.TemplateRef_(this._appEl_9,viewFactory_InstancesComponent4);
-    this._NgIf_9_6 = new import14.NgIf(this._appEl_9.vcRef,this._TemplateRef_9_5);
-    this._text_10 = this.renderer.createText(this._el_6,'\n                        ',(null as any));
-    this._el_11 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_12 = this.renderer.createText(this._el_11,'Name',(null as any));
-    this._text_13 = this.renderer.createText(this._el_6,'\n                        ',(null as any));
-    this._el_14 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_15 = this.renderer.createText(this._el_14,'Description',(null as any));
-    this._text_16 = this.renderer.createText(this._el_6,'\n                        ',(null as any));
-    this._el_17 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_18 = this.renderer.createText(this._el_17,'Status',(null as any));
-    this._text_19 = this.renderer.createText(this._el_6,'\n                        ',(null as any));
-    this._el_20 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_21 = this.renderer.createText(this._el_20,'Post date',(null as any));
-    this._text_22 = this.renderer.createText(this._el_6,'\n                        ',(null as any));
-    this._el_23 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_24 = this.renderer.createText(this._el_23,'Download',(null as any));
-    this._text_25 = this.renderer.createText(this._el_6,'\n                    ',(null as any));
-    this._text_26 = this.renderer.createText(this._el_4,'\n                    ',(null as any));
-    this._text_27 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
-    this._el_28 = this.renderer.createElement(this._el_2,'tbody',(null as any));
-    this._text_29 = this.renderer.createText(this._el_28,'\n                    ',(null as any));
-    this._anchor_30 = this.renderer.createTemplateAnchor(this._el_28,(null as any));
-    this._appEl_30 = new import2.AppElement(30,28,this,this._anchor_30);
-    this._TemplateRef_30_5 = new import19.TemplateRef_(this._appEl_30,viewFactory_InstancesComponent5);
-    this._NgFor_30_6 = new import21.NgFor(this._appEl_30.vcRef,this._TemplateRef_30_5,this.parent.parent.parentInjector.get(import23.IterableDiffers),this.parent.parent.ref);
-    this._text_31 = this.renderer.createText(this._el_28,'\n                    ',(null as any));
-    this._text_32 = this.renderer.createText(this._el_2,'\n                ',(null as any));
-    this._text_33 = this.renderer.createText(this._el_0,'\n            ',(null as any));
+    this._el_6 = this.renderer.createElement(this._el_4,'thead',(null as any));
+    this._text_7 = this.renderer.createText(this._el_6,'\n                    ',(null as any));
+    this._el_8 = this.renderer.createElement(this._el_6,'tr',(null as any));
+    this._text_9 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
+    this._el_10 = this.renderer.createElement(this._el_8,'th',(null as any));
+    this._anchor_11 = this.renderer.createTemplateAnchor(this._el_10,(null as any));
+    this._appEl_11 = new import2.AppElement(11,10,this,this._anchor_11);
+    this._TemplateRef_11_5 = new import19.TemplateRef_(this._appEl_11,viewFactory_InstancesComponent4);
+    this._NgIf_11_6 = new import14.NgIf(this._appEl_11.vcRef,this._TemplateRef_11_5);
+    this._text_12 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
+    this._el_13 = this.renderer.createElement(this._el_8,'th',(null as any));
+    this._text_14 = this.renderer.createText(this._el_13,'Name',(null as any));
+    this._text_15 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
+    this._el_16 = this.renderer.createElement(this._el_8,'th',(null as any));
+    this._text_17 = this.renderer.createText(this._el_16,'Description',(null as any));
+    this._text_18 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
+    this._el_19 = this.renderer.createElement(this._el_8,'th',(null as any));
+    this._text_20 = this.renderer.createText(this._el_19,'Status',(null as any));
+    this._text_21 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
+    this._el_22 = this.renderer.createElement(this._el_8,'th',(null as any));
+    this._text_23 = this.renderer.createText(this._el_22,'Post date',(null as any));
+    this._text_24 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
+    this._el_25 = this.renderer.createElement(this._el_8,'th',(null as any));
+    this._text_26 = this.renderer.createText(this._el_25,'Download',(null as any));
+    this._text_27 = this.renderer.createText(this._el_8,'\n                    ',(null as any));
+    this._text_28 = this.renderer.createText(this._el_6,'\n                    ',(null as any));
+    this._text_29 = this.renderer.createText(this._el_4,'\n                    ',(null as any));
+    this._el_30 = this.renderer.createElement(this._el_4,'tbody',(null as any));
+    this._text_31 = this.renderer.createText(this._el_30,'\n                    ',(null as any));
+    this._anchor_32 = this.renderer.createTemplateAnchor(this._el_30,(null as any));
+    this._appEl_32 = new import2.AppElement(32,30,this,this._anchor_32);
+    this._TemplateRef_32_5 = new import19.TemplateRef_(this._appEl_32,viewFactory_InstancesComponent5);
+    this._NgFor_32_6 = new import21.NgFor(this._appEl_32.vcRef,this._TemplateRef_32_5,this.parent.parent.parentInjector.get(import23.IterableDiffers),this.parent.parent.ref);
+    this._text_33 = this.renderer.createText(this._el_30,'\n                    ',(null as any));
+    this._text_34 = this.renderer.createText(this._el_4,'\n                ',(null as any));
+    this._text_35 = this.renderer.createText(this._el_2,'\n                ',(null as any));
+    this._text_36 = this.renderer.createText(this._el_0,'\n            ',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this._pipe_orderBy_0 = new import22.OrderByPipe();
     this._expr_1 = import7.UNINITIALIZED;
@@ -569,40 +576,43 @@ class _View_InstancesComponent3 extends import1.AppView<any> {
       this._el_6,
       this._text_7,
       this._el_8,
-      this._anchor_9,
-      this._text_10,
-      this._el_11,
+      this._text_9,
+      this._el_10,
+      this._anchor_11,
       this._text_12,
-      this._text_13,
-      this._el_14,
+      this._el_13,
+      this._text_14,
       this._text_15,
-      this._text_16,
-      this._el_17,
+      this._el_16,
+      this._text_17,
       this._text_18,
-      this._text_19,
-      this._el_20,
+      this._el_19,
+      this._text_20,
       this._text_21,
-      this._text_22,
-      this._el_23,
+      this._el_22,
+      this._text_23,
       this._text_24,
-      this._text_25,
+      this._el_25,
       this._text_26,
       this._text_27,
-      this._el_28,
+      this._text_28,
       this._text_29,
-      this._anchor_30,
+      this._el_30,
       this._text_31,
-      this._text_32,
-      this._text_33
+      this._anchor_32,
+      this._text_33,
+      this._text_34,
+      this._text_35,
+      this._text_36
     ]
     ,[],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import19.TemplateRef) && (9 === requestNodeIndex))) { return this._TemplateRef_9_5; }
-    if (((token === import14.NgIf) && (9 === requestNodeIndex))) { return this._NgIf_9_6; }
-    if (((token === import19.TemplateRef) && (30 === requestNodeIndex))) { return this._TemplateRef_30_5; }
-    if (((token === import21.NgFor) && (30 === requestNodeIndex))) { return this._NgFor_30_6; }
+    if (((token === import19.TemplateRef) && (11 === requestNodeIndex))) { return this._TemplateRef_11_5; }
+    if (((token === import14.NgIf) && (11 === requestNodeIndex))) { return this._NgIf_11_6; }
+    if (((token === import19.TemplateRef) && (32 === requestNodeIndex))) { return this._TemplateRef_32_5; }
+    if (((token === import21.NgFor) && (32 === requestNodeIndex))) { return this._NgFor_32_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -610,20 +620,20 @@ class _View_InstancesComponent3 extends import1.AppView<any> {
     const valUnwrapper:any = new import7.ValueUnwrapper();
     const currVal_0:any = this.parent.parent.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this._NgIf_9_6.ngIf = currVal_0;
+      this._NgIf_11_6.ngIf = currVal_0;
       this._expr_0 = currVal_0;
     }
     changes = (null as any);
     valUnwrapper.reset();
     const currVal_1:any = valUnwrapper.unwrap(this._pipe_orderBy_0.transform(this.parent.parent.context.instances,'order'));
     if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange,this._expr_1,currVal_1))) {
-      this._NgFor_30_6.ngForOf = currVal_1;
+      this._NgFor_32_6.ngForOf = currVal_1;
       if ((changes === (null as any))) { (changes = {}); }
       changes['ngForOf'] = new import7.SimpleChange(this._expr_1,currVal_1);
       this._expr_1 = currVal_1;
     }
-    if ((changes !== (null as any))) { this._NgFor_30_6.ngOnChanges(changes); }
-    if (!throwOnChange) { this._NgFor_30_6.ngDoCheck(); }
+    if ((changes !== (null as any))) { this._NgFor_32_6.ngOnChanges(changes); }
+    if (!throwOnChange) { this._NgFor_32_6.ngDoCheck(); }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
