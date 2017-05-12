@@ -275,7 +275,7 @@ class _View_ResultsBestComponent0 extends import1.AppView<import3.ResultsBestCom
   }
   private _handle_click_13_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.context.onOk()) !== false);
+    const pd_0:any = ((<any>this.context.onConfirmDelete()) !== false);
     return (true && pd_0);
   }
 }

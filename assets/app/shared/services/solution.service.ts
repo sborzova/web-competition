@@ -14,6 +14,7 @@ import {FileService} from "./file.service";
 import {PaperService} from "./paper.service";
 import {FileModel} from "../../instances/file.model";
 import {Visibility} from "../../results/visibility.model";
+import {Technique} from "../../results/technique.model";
 
 @Injectable()
 export class SolutionService {
@@ -22,11 +23,13 @@ export class SolutionService {
     private solutionFile;
     private successValidationDeleteSource = new Subject();
     private solutionDeleteSource = new Subject<Solution>();
+    private solutionEditTechniqueSource = new Subject<Solution>();
     private solutionSetVisibleSource = new Subject<Solution>();
     private solutionSetNotVisibleSource = new Subject<Solution>();
     successValidation = new EventEmitter<Validation>();
     successValidationDelete$ = this.successValidationDeleteSource.asObservable();
     solutionDelete$ = this.solutionDeleteSource.asObservable();
+    solutionEditTechnique$ = this.solutionEditTechniqueSource.asObservable();
     solutionSetVisible$ = this.solutionSetVisibleSource.asObservable();
     solutionSetNotVisible$ = this.solutionSetNotVisibleSource.asObservable();
 
@@ -341,7 +344,24 @@ export class SolutionService {
     updateSolutionVisibility(solution: Solution){
         let visibility = new Visibility(solution.visible);
         return this.http.patch(
-            this.hostUrl.concat('server/solutionVisibility/') +  solution.solutionId, this.stringifyObject(visibility), {headers: this.getHeaders()})
+            this.hostUrl.concat('server/admin/solutionVisibility/') +  solution.solutionId, this.stringifyObject(visibility), {headers: this.getHeaders()})
+            .map((response: Response) => {
+                return response.json();
+            })
+            .catch((error: Response) => Observable.throw(error));
+    }
+
+    /**
+     * Send request to server to update technique of solution.
+     *
+     * @param solution
+     * @returns {Observable<Response>} response contains solution if success, other way error
+     */
+    updateSolutionTechnique(solution: Solution){
+        let technique = new Technique(solution.technique);
+        return this.http.patch(
+            this.hostUrl.concat('server/admin/solutionTechnique/') +  solution.solutionId + this.getToken(),
+                this.stringifyObject(technique), {headers: this.getHeaders()})
             .map((response: Response) => {
                 return response.json();
             })
@@ -406,6 +426,10 @@ export class SolutionService {
 
     deleteSolutionObservable(solution: Solution){
         this.solutionDeleteSource.next(solution);
+    }
+
+    editSolutionTechniqueObservable(solution: Solution){
+        this.solutionEditTechniqueSource.next(solution);
     }
 
     setVisibleObservable(solution: Solution){

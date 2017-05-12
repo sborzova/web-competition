@@ -375,7 +375,7 @@ class _View_UserSolutionsComponent0 extends import1.AppView<import3.UserSolution
   }
   private _handle_click_13_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.context.onOk()) !== false);
+    const pd_0:any = ((<any>this.context.onConfirmDeletePaper()) !== false);
     return (true && pd_0);
   }
   private _handle_click_41_0($event:any):boolean {

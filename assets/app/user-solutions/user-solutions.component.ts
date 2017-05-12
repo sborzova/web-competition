@@ -1,5 +1,6 @@
 import {Component, OnInit, OnDestroy} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
+
 import {Paper} from "../shared/models/paper.model";
 import {SolutionService} from "../shared/services/solution.service";
 import {PaperService} from "../shared/services/paper.service";
@@ -7,6 +8,7 @@ import {FlashMessageService} from "../flash-message/flash-messages.service";
 import {SolutionPaper} from "./solution-paper.model";
 import {SortDownloadService} from "../shared/services/sort-download.service";
 import {Solution} from "../shared/models/solution.model";
+import {SessionStorageService} from "../shared/services/session-storage.service";
 
 @Component({
     selector: 'app-user-solutions',
@@ -19,6 +21,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     paperForm: FormGroup;
     showPaperForm: boolean = false;
     showPapers: boolean = false;
+    private solution: Solution;
     private editedPaper: Paper;
     private submitted: boolean = false;
     private isEdited: boolean = false;
@@ -27,7 +30,8 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     constructor(private solutionService: SolutionService,
                 private paperService: PaperService,
                 private flashMessageService: FlashMessageService,
-                private sortDownloadService: SortDownloadService){}
+                private sortDownloadService: SortDownloadService,
+                private sessionStorageService: SessionStorageService){}
 
     /**
      * Set to variable solutions all solutions by logged in user.
@@ -64,14 +68,14 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
      */
     onDeletePaper(){
         if (this.checkIfSelected()){
-            document.getElementById('openModalDelete').click();
+            document.getElementById('openModalDeletePaper').click();
         }
     }
 
     /**
      * Delete papers from selected solutions.
      */
-    onOk(){
+    onConfirmDeletePaper(){
         let paperIds = new Set<string>();
         for (let solution of this.selectedSolutions){
             if (solution.paper){
@@ -88,6 +92,21 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
                 )
         }
         this.removePaperFromDatabase(paperIds);
+    }
+
+    /**
+     *  Delete solution.
+     */
+    onConfirmDeleteSolution(){
+        this.solutionService.deleteSolution(this.solution)
+            .subscribe(
+                result => {
+                    this.solutions.splice(this.solutions.indexOf(this.solution), 1);
+                    this.solution = null;
+                    this.flashMessageService.showMessage('Solution was deleted.', 'success' );
+                },
+                error => console.error(error)
+            );
     }
 
     /**
@@ -281,6 +300,10 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
         return this.solutions.filter(s => s.isChecked);
     }
 
+    competitionIsOn(){
+        return this.sessionStorageService.getCompetitionIsOn();
+    }
+
     onHidePaperForm(){
         this.uncheckSelected();
         this.disabled = false;
@@ -289,6 +312,11 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
 
     onDownload(solution: Solution){
         this.sortDownloadService.download(solution);
+    }
+
+    onDelete(solution: Solution) {
+        this.solution = solution;
+        document.getElementById('openModalDeleteSolution').click();
     }
 
     onShowPapers(){

@@ -1,11 +1,12 @@
 import {Component, OnDestroy, OnInit} from "@angular/core";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Subscription} from "rxjs/Subscription";
 
 import {SolutionService} from "../../shared/services/solution.service";
 import {InstanceService} from "../../shared/services/instance.service";
 import {SortDownloadService} from "../../shared/services/sort-download.service";
 import {Solution} from "../../shared/models/solution.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
-import {Subscription} from "rxjs/Subscription";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
 
 @Component({
@@ -16,12 +17,15 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     results: Solution[];
     solutionsInstance: Solution[];
     solutionsAuthor: Solution[];
+    techniqueForm: FormGroup;
     private solutionsAll: Solution[] = [];
     private solution: Solution;
     private showPapers: boolean = false;
     private subscriptionDelete: Subscription;
+    private subscriptionEditTechnique: Subscription;
     private subscriptionSetVisible: Subscription;
     private subscriptionSetNotVisible: Subscription;
+    private submittedTechniqueForm: boolean = false;
 
     constructor(private solutionService: SolutionService,
                 private instanceService: InstanceService,
@@ -32,6 +36,10 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     this.subscriptionDelete = solutionService.solutionDelete$.subscribe(
             solution => {
                 this.onDelete(solution);
+            });
+    this.subscriptionEditTechnique = solutionService.solutionEditTechnique$.subscribe(
+            solution => {
+                this.onEditTechnique(solution);
             });
     this.subscriptionSetVisible = solutionService.solutionSetVisible$.subscribe(
             solution => {
@@ -124,6 +132,39 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     }
 
     /**
+     * Create and show form for edit technique
+     */
+    onEditTechnique(solution: Solution){
+        this.solution = solution;
+        this.techniqueForm = new FormGroup({
+            technique: new FormControl(solution.technique, Validators.required)
+        });
+        document.getElementById('openTechniqueForm').click();
+    }
+
+    /**
+     * Submit edit technique form
+     */
+    onSubmitTechnique(){
+        this.submittedTechniqueForm = true;
+        if (this.techniqueForm.valid){
+            document.getElementById('hideTechniqueForm').click();
+            this.submittedTechniqueForm = false;
+            this.solution.technique = this.techniqueForm.value.technique;
+            this.solutionService.updateSolutionTechnique(this.solution)
+                .subscribe(
+                    () => {
+                        this.solutionsInstance = null;
+                        this.solutionsAuthor= null;
+                        this.solution = null;
+                        this.flashMessageService.showMessage('Solution was updated.', 'success')
+                    },
+                    error => console.error(error)
+                );
+        }
+    }
+
+    /**
      * Set solution as visible.
      *
      * @param solution
@@ -174,7 +215,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     /**
      *  Delete solution and refresh best solutions.
      */
-    onOk(){
+    onConfirmDelete(){
         this.solutionService.deleteSolution(this.solution)
             .subscribe(
                 result => {

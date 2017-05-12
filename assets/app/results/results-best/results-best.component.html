@@ -1,4 +1,5 @@
 <button id="openModalDelete" [hidden]="true" data-toggle="modal" data-target="#deleteSolution"></button>
+<button id="openTechniqueForm" [hidden]="true" data-toggle="modal" data-target="#techniqueForm"></button>
 
 <div class="modal fade" id="deleteSolution" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -7,8 +8,41 @@
                 Are you sure you want to delete this solution?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onOk()">OK</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onConfirmDelete()">OK</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="techniqueForm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit technique</h4>
+            </div>
+            <div class="modal-body">
+                <form *ngIf="techniqueForm" [formGroup]="techniqueForm" (ngSubmit)="onSubmitTechnique()">
+                    <div class="form-group"
+                         [ngClass]="{'has-error':
+                                    (!techniqueForm.controls['technique'].valid ) &&
+                                    (techniqueForm.controls['technique'].touched || submittedTechniqueForm)}">
+                        <input
+                                type="text"
+                                id="technique"
+                                class="form-control"
+                                [formControl]="techniqueForm.controls['technique']">
+                        <div class="field-error"
+                             *ngIf="techniqueForm.controls['technique'].hasError('required') &&
+                            (techniqueForm.controls['technique'].touched || submittedTechniqueForm)">
+                            Field is required.
+                        </div>
+                    </div>
+                    <div align="right">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button id="hideTechniqueForm" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -34,6 +68,7 @@
                     <th rowspan="2">Submission time</th>
                     <th rowspan="2"></th>
                     <th rowspan="2"></th>
+                    <th rowspan="2" *ngIf="isAdmin()"></th>
                     <th rowspan="2" *ngIf="isAdmin()"></th>
                     <th rowspan="2" *ngIf="isAdmin()"></th>
                 </tr>
@@ -86,6 +121,15 @@
                                 class="btn btn-default btn-xs"
                                 title="Show solution">
                                 <i class="glyphicon glyphicon-eye-open"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button
+                                *ngIf="isAdmin()"
+                                class="btn btn-primary btn-xs"
+                                title="Edit technique"
+                                (click)="onEditTechnique(solution)">
+                            <i class="glyphicon glyphicon-pencil"></i>
                         </button>
                     </td>
                     <td>

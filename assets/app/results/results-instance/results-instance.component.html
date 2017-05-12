@@ -50,6 +50,7 @@
             <th rowspan="2"></th>
             <th rowspan="2" *ngIf="isAdmin()"></th>
             <th rowspan="2" *ngIf="isAdmin()"></th>
+            <th rowspan="2" *ngIf="isAdmin()"></th>
         </tr>
         <tr>
             <th>Unassigned variables</th>
@@ -99,6 +100,15 @@
                         class="btn btn-default btn-xs"
                         title="Show solution">
                     <i class="glyphicon glyphicon-eye-open"></i>
+                </button>
+            </td>
+            <td>
+                <button
+                        *ngIf="isAdmin()"
+                        class="btn btn-primary btn-xs"
+                        title="Edit technique"
+                        (click)="onEditTechnique(solution)">
+                    <i class="glyphicon glyphicon-pencil"></i>
                 </button>
             </td>
             <td>

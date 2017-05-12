@@ -217,7 +217,7 @@ router.patch('/server/solutionAddPaper/:id', function (req, res, next) {
  * Parameter id - solution's id.
  * Request contains updated visibility.
  */
-router.patch('/server/solutionVisibility/:id', function (req, res, next) {
+router.patch('/server/admin/solutionVisibility/:id', function (req, res, next) {
     Solution.findById(req.params.id, function (err, solution) {
         if (err) {
             return res.status(500).json({
@@ -233,6 +233,44 @@ router.patch('/server/solutionVisibility/:id', function (req, res, next) {
         }
 
         solution.visible = req.body.visible;
+
+        solution.save(function (err, result) {
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+            res.status(200).json({
+                message: 'Updated solution',
+                obj: result
+            });
+        });
+    });
+});
+
+/**
+ * Update solutions's technique in database by id.
+ *
+ * Parameter id - solution's id.
+ * Request contains updated technique.
+ */
+router.patch('/server/admin/solutionTechnique/:id', function (req, res, next) {
+    Solution.findById(req.params.id, function (err, solution) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!solution) {
+            return res.status(500).json({
+                title: 'No Solution Found!',
+                error: {message: 'Solution not found'}
+            });
+        }
+
+        solution.technique = req.body.technique;
 
         solution.save(function (err, result) {
             if (err) {

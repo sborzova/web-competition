@@ -16,6 +16,7 @@ import {ResultsAuthorInstanceTechniqueComponent} from "./results-author-instance
 import {FileService} from "../shared/services/file.service";
 import {SessionStorageService} from "../shared/services/session-storage.service";
 import {DateFormatModule} from "../shared/pipes/date-format.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import {DateFormatModule} from "../shared/pipes/date-format.module";
         CommonModule,
         OrderByModule,
         DateFormatModule,
+        ReactiveFormsModule,
         resultsRouting
     ],
     providers: [

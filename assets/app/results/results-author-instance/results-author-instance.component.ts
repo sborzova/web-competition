@@ -50,6 +50,10 @@ export class ResultsAuthorInstanceComponent implements OnChanges{
         this.solutionService.deleteSolutionObservable(solution);
     }
 
+    onEditTechnique(solution: Solution) {
+        this.solutionService.editSolutionTechniqueObservable(solution);
+    }
+
     onSetVisible(solution: Solution){
         this.solutionService.setVisibleObservable(solution);
     }
