@@ -45,7 +45,7 @@ export class InstanceService {
                 return instance;
             })
             .catch((error: Response) => {
-                if (error.status === 422){
+                if (error.json().error.name == 'ValidationError'){
                     this.flashMessageService.showMessage('The name is already in use.', 'danger' );
                 }
                 return Observable.throw(error);
@@ -90,7 +90,7 @@ export class InstanceService {
                 return response.json();
             })
             .catch((error: Response) => {
-                if (error.status === 422){
+                if (error.json().error.name == 'ValidationError'){
                     this.flashMessageService.showMessage('The name is already in use.', 'danger' );
                 }
                 return Observable.throw(error);

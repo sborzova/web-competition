@@ -817,7 +817,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
   _el_33:any;
   _text_34:any;
   _el_35:any;
-  _RouterLink_35_3:import19.RouterLink;
+  _RouterLinkWithHref_35_3:import19.RouterLinkWithHref;
   _text_36:any;
   _el_37:any;
   _text_38:any;
@@ -858,12 +858,14 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
   /*private*/ _expr_5:any;
   _pipe_dateFormat_0:import20.DateFormatPipe;
   /*private*/ _expr_6:any;
-  _arr_0:any;
   /*private*/ _expr_9:any;
+  _arr_0:any;
   /*private*/ _expr_10:any;
   /*private*/ _expr_11:any;
   /*private*/ _expr_12:any;
   /*private*/ _expr_13:any;
+  /*private*/ _expr_14:any;
+  /*private*/ _expr_15:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_ResultsAuthorInstanceTechniqueComponent6,renderType_ResultsAuthorInstanceTechniqueComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -907,12 +909,13 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
     this._text_32 = this.renderer.createText(this._el_2,'\n            ',(null as any));
     this._el_33 = this.renderer.createElement(this._el_2,'td',(null as any));
     this._text_34 = this.renderer.createText(this._el_33,'\n                ',(null as any));
-    this._el_35 = this.renderer.createElement(this._el_33,'button',(null as any));
+    this._el_35 = this.renderer.createElement(this._el_33,'a',(null as any));
     this.renderer.setElementAttribute(this._el_35,'class','btn btn-primary btn-xs');
+    this.renderer.setElementAttribute(this._el_35,'target','_blank');
     this.renderer.setElementAttribute(this._el_35,'title','View validator info');
     this.renderer.setElementAttribute(this._el_35,'type','button');
-    this._RouterLink_35_3 = new import19.RouterLink(this.parent.parentInjector.get(import21.Router),this.parent.parentInjector.get(import22.ActivatedRoute),this.parent.parentInjector.get(import23.LocationStrategy));
-    this._text_36 = this.renderer.createText(this._el_35,'\n                        ',(null as any));
+    this._RouterLinkWithHref_35_3 = new import19.RouterLinkWithHref(this.parent.parentInjector.get(import21.Router),this.parent.parentInjector.get(import22.ActivatedRoute),this.parent.parentInjector.get(import23.LocationStrategy));
+    this._text_36 = this.renderer.createText(this._el_35,'\n                    ',(null as any));
     this._el_37 = this.renderer.createElement(this._el_35,'i',(null as any));
     this.renderer.setElementAttribute(this._el_37,'class','glyphicon glyphicon-info-sign');
     this._text_38 = this.renderer.createText(this._el_35,'\n                ',(null as any));
@@ -955,6 +958,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
     this._expr_6 = import7.UNINITIALIZED;
     var disposable_0:Function = this.renderer.listen(this._el_27,'click',this.eventHandler(this._handle_click_27_0.bind(this)));
     var disposable_1:Function = this.renderer.listen(this._el_35,'click',this.eventHandler(this._handle_click_35_0.bind(this)));
+    this._expr_9 = import7.UNINITIALIZED;
     this._arr_0 = import4.pureProxy2((p0:any,p1:any):any[] => {
       return [
         p0,
@@ -962,11 +966,12 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
       ]
       ;
     });
-    this._expr_9 = import7.UNINITIALIZED;
     this._expr_10 = import7.UNINITIALIZED;
     this._expr_11 = import7.UNINITIALIZED;
     this._expr_12 = import7.UNINITIALIZED;
     this._expr_13 = import7.UNINITIALIZED;
+    this._expr_14 = import7.UNINITIALIZED;
+    this._expr_15 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -1033,7 +1038,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import19.RouterLink) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 38)))) { return this._RouterLink_35_3; }
+    if (((token === import19.RouterLinkWithHref) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 38)))) { return this._RouterLinkWithHref_35_3; }
     if (((token === import14.TemplateRef) && (43 === requestNodeIndex))) { return this._TemplateRef_43_5; }
     if (((token === import13.NgIf) && (43 === requestNodeIndex))) { return this._NgIf_43_6; }
     if (((token === import14.TemplateRef) && (45 === requestNodeIndex))) { return this._TemplateRef_45_5; }
@@ -1045,31 +1050,43 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
+    var changes:{[key: string]:import7.SimpleChange} = (null as any);
     const valUnwrapper:any = new import7.ValueUnwrapper();
-    const currVal_9:any = this._arr_0('/solution/validatorinfo',this.context.$implicit.solutionId);
+    changes = (null as any);
+    const currVal_9:any = '_blank';
     if (import4.checkBinding(throwOnChange,this._expr_9,currVal_9)) {
-      this._RouterLink_35_3.routerLink = currVal_9;
+      this._RouterLinkWithHref_35_3.target = currVal_9;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['target'] = new import7.SimpleChange(this._expr_9,currVal_9);
       this._expr_9 = currVal_9;
     }
-    const currVal_10:any = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
+    const currVal_10:any = this._arr_0('/solution/validatorinfo',this.context.$implicit.solutionId);
     if (import4.checkBinding(throwOnChange,this._expr_10,currVal_10)) {
-      this._NgIf_43_6.ngIf = currVal_10;
+      this._RouterLinkWithHref_35_3.routerLink = currVal_10;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['routerLink'] = new import7.SimpleChange(this._expr_10,currVal_10);
       this._expr_10 = currVal_10;
     }
-    const currVal_11:any = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
-    if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
-      this._NgIf_45_6.ngIf = currVal_11;
-      this._expr_11 = currVal_11;
-    }
-    const currVal_12:any = this.parent.parent.context.isAdmin();
+    if ((changes !== (null as any))) { this._RouterLinkWithHref_35_3.ngOnChanges(changes); }
+    const currVal_12:any = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
     if (import4.checkBinding(throwOnChange,this._expr_12,currVal_12)) {
-      this._NgIf_50_6.ngIf = currVal_12;
+      this._NgIf_43_6.ngIf = currVal_12;
       this._expr_12 = currVal_12;
     }
-    const currVal_13:any = (this.parent.parent.context.showPapers && this.context.$implicit.paper);
+    const currVal_13:any = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
     if (import4.checkBinding(throwOnChange,this._expr_13,currVal_13)) {
-      this._NgIf_54_6.ngIf = currVal_13;
+      this._NgIf_45_6.ngIf = currVal_13;
       this._expr_13 = currVal_13;
+    }
+    const currVal_14:any = this.parent.parent.context.isAdmin();
+    if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
+      this._NgIf_50_6.ngIf = currVal_14;
+      this._expr_14 = currVal_14;
+    }
+    const currVal_15:any = (this.parent.parent.context.showPapers && this.context.$implicit.paper);
+    if (import4.checkBinding(throwOnChange,this._expr_15,currVal_15)) {
+      this._NgIf_54_6.ngIf = currVal_15;
+      this._expr_15 = currVal_15;
     }
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_0:any = import4.interpolate(1,'',this.context.$implicit.unassigned,' %');
@@ -1108,7 +1125,15 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
       this.renderer.setText(this._text_23,currVal_6);
       this._expr_6 = currVal_6;
     }
+    const currVal_11:any = this._RouterLinkWithHref_35_3.href;
+    if (import4.checkBinding(throwOnChange,this._expr_11,currVal_11)) {
+      this.renderer.setElementProperty(this._el_35,'href',this.viewUtils.sanitizer.sanitize(import24.SecurityContext.URL,currVal_11));
+      this._expr_11 = currVal_11;
+    }
     this.detectViewChildrenChanges(throwOnChange);
+  }
+  destroyInternal():void {
+    this._RouterLinkWithHref_35_3.ngOnDestroy();
   }
   private _handle_click_27_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
@@ -1117,7 +1142,7 @@ class _View_ResultsAuthorInstanceTechniqueComponent6 extends import1.AppView<any
   }
   private _handle_click_35_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this._RouterLink_35_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    const pd_0:any = ((<any>this._RouterLinkWithHref_35_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
     return (true && pd_0);
   }
 }

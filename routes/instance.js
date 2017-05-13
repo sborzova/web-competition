@@ -41,9 +41,9 @@ router.post('/server/admin/instance', function (req, res) {
             }
             instance.save(function (err, result) {
                 if (err) {
-                    return res.status(422).json({
+                    return res.status(500).json({
                         title: 'An error occurred',
-                        error: {message: 'Instance with this name is already in use', error: err}
+                        error: err
                     });
                 }
 
@@ -82,9 +82,9 @@ router.patch('/server/admin/instance/:id', function (req, res, next) {
 
         instance.save(function (err, result) {
             if (err) {
-                return res.status(422).json({
+                return res.status(500).json({
                     title: 'An error occurred',
-                    error: {message: 'Instance with this name is already in use', error: err}
+                    error: err
                 });
             }
 

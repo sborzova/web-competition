@@ -28,7 +28,7 @@ export class AuthService{
         return this.http.post(this.hostUrl.concat('server/user'), this.stringifyObject(user), {headers: this.getHeaders()})
             .map((response: Response) => response.json())
             .catch((error: Response) => {
-                if (error.status === 422){
+                if (error.json().error.name == 'ValidationError'){
                     this.flashMessageService.showMessage('Email address is already in use.', 'danger' );
                 }
                 return Observable.throw(error);

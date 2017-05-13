@@ -79,7 +79,7 @@ export class UsersService {
                 return response.json();
             })
             .catch((error: Response) => {
-                if (error.status === 422){
+                if (error.json().error.name == 'ValidationError'){
                     this.flashMessageService.showMessage('Email address is already in use.', 'danger' );
                 }
                 if (error.status === 412){

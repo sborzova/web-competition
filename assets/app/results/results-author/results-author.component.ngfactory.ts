@@ -127,127 +127,140 @@ class _View_ResultsAuthorComponent1 extends import1.AppView<any> {
   _text_18:any;
   _el_19:any;
   _text_20:any;
-  _text_21:any;
-  _el_22:any;
+  _el_21:any;
+  _text_22:any;
   _text_23:any;
   _el_24:any;
   _text_25:any;
-  _text_26:any;
-  _el_27:any;
+  _el_26:any;
+  _text_27:any;
   _text_28:any;
   _el_29:any;
   _text_30:any;
-  _text_31:any;
-  _el_32:any;
+  _el_31:any;
+  _text_32:any;
   _text_33:any;
   _el_34:any;
   _text_35:any;
-  _text_36:any;
-  _el_37:any;
+  _el_36:any;
+  _text_37:any;
   _text_38:any;
   _el_39:any;
   _text_40:any;
-  _text_41:any;
-  _el_42:any;
+  _el_41:any;
+  _text_42:any;
   _text_43:any;
   _el_44:any;
   _text_45:any;
-  _text_46:any;
-  _el_47:any;
+  _el_46:any;
+  _text_47:any;
   _text_48:any;
   _el_49:any;
   _text_50:any;
-  _text_51:any;
-  _el_52:any;
+  _el_51:any;
+  _text_52:any;
   _text_53:any;
   _el_54:any;
   _text_55:any;
-  _text_56:any;
-  _el_57:any;
+  _el_56:any;
+  _text_57:any;
   _text_58:any;
   _el_59:any;
   _text_60:any;
-  _text_61:any;
-  _el_62:any;
+  _el_61:any;
+  _text_62:any;
   _text_63:any;
   _el_64:any;
   _text_65:any;
-  _text_66:any;
-  _el_67:any;
+  _el_66:any;
+  _text_67:any;
   _text_68:any;
   _el_69:any;
   _text_70:any;
-  _text_71:any;
-  _el_72:any;
+  _el_71:any;
+  _text_72:any;
   _text_73:any;
   _el_74:any;
   _text_75:any;
-  _text_76:any;
-  _el_77:any;
+  _el_76:any;
+  _text_77:any;
   _text_78:any;
   _el_79:any;
   _text_80:any;
-  _text_81:any;
-  _el_82:any;
+  _el_81:any;
+  _text_82:any;
   _text_83:any;
   _el_84:any;
   _text_85:any;
-  _text_86:any;
-  _el_87:any;
+  _el_86:any;
+  _text_87:any;
   _text_88:any;
   _el_89:any;
   _text_90:any;
-  _text_91:any;
-  _el_92:any;
+  _el_91:any;
+  _text_92:any;
   _text_93:any;
   _el_94:any;
   _text_95:any;
-  _anchor_96:any;
-  /*private*/ _appEl_96:import2.AppElement;
-  _TemplateRef_96_5:any;
-  _NgIf_96_6:import13.NgIf;
+  _el_96:any;
   _text_97:any;
-  _anchor_98:any;
-  /*private*/ _appEl_98:import2.AppElement;
-  _TemplateRef_98_5:any;
-  _NgIf_98_6:import13.NgIf;
-  _text_99:any;
+  _text_98:any;
+  _el_99:any;
   _text_100:any;
   _el_101:any;
   _text_102:any;
-  _el_103:any;
+  _anchor_103:any;
+  /*private*/ _appEl_103:import2.AppElement;
+  _TemplateRef_103_5:any;
+  _NgIf_103_6:import13.NgIf;
   _text_104:any;
-  _text_105:any;
-  _el_106:any;
-  _text_107:any;
+  _anchor_105:any;
+  /*private*/ _appEl_105:import2.AppElement;
+  _TemplateRef_105_5:any;
+  _NgIf_105_6:import13.NgIf;
+  _text_106:any;
+  _anchor_107:any;
+  /*private*/ _appEl_107:import2.AppElement;
+  _TemplateRef_107_5:any;
+  _NgIf_107_6:import13.NgIf;
   _text_108:any;
   _text_109:any;
-  _text_110:any;
-  _anchor_111:any;
-  /*private*/ _appEl_111:import2.AppElement;
-  _TemplateRef_111_5:any;
-  _NgFor_111_6:import15.NgFor;
-  _text_112:any;
+  _el_110:any;
+  _text_111:any;
+  _el_112:any;
   _text_113:any;
   _text_114:any;
   _el_115:any;
-  /*private*/ _appEl_115:import2.AppElement;
-  _ResultsAuthorInstanceComponent_115_4:import16.ResultsAuthorInstanceComponent;
   _text_116:any;
   _text_117:any;
-  _el_118:any;
-  /*private*/ _appEl_118:import2.AppElement;
-  _ResultsAuthorTechniqueComponent_118_4:import17.ResultsAuthorTechniqueComponent;
+  _text_118:any;
   _text_119:any;
-  _text_120:any;
+  _anchor_120:any;
+  /*private*/ _appEl_120:import2.AppElement;
+  _TemplateRef_120_5:any;
+  _NgFor_120_6:import15.NgFor;
+  _text_121:any;
+  _text_122:any;
+  _text_123:any;
+  _el_124:any;
+  /*private*/ _appEl_124:import2.AppElement;
+  _ResultsAuthorInstanceComponent_124_4:import16.ResultsAuthorInstanceComponent;
+  _text_125:any;
+  _text_126:any;
+  _el_127:any;
+  /*private*/ _appEl_127:import2.AppElement;
+  _ResultsAuthorTechniqueComponent_127_4:import17.ResultsAuthorTechniqueComponent;
+  _text_128:any;
+  _text_129:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   /*private*/ _expr_2:any;
-  /*private*/ _expr_17:any;
-  /*private*/ _expr_18:any;
   /*private*/ _expr_19:any;
   /*private*/ _expr_20:any;
   /*private*/ _expr_21:any;
+  /*private*/ _expr_22:any;
+  /*private*/ _expr_23:any;
+  /*private*/ _expr_24:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_ResultsAuthorComponent1,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -282,192 +295,212 @@ class _View_ResultsAuthorComponent1 extends import1.AppView<any> {
     this._text_18 = this.renderer.createText(this._el_17,'\n                ',(null as any));
     this._el_19 = this.renderer.createElement(this._el_17,'th',(null as any));
     this.renderer.setElementAttribute(this._el_19,'rowspan','2');
-    this._text_20 = this.renderer.createText(this._el_19,'Instance',(null as any));
-    this._text_21 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._el_22 = this.renderer.createElement(this._el_17,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_22,'colspan','2');
-    this._text_23 = this.renderer.createText(this._el_22,'\n                    ',(null as any));
-    this._el_24 = this.renderer.createElement(this._el_22,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_24,'style','float: left');
-    this._text_25 = this.renderer.createText(this._el_24,'Quality',(null as any));
-    this._text_26 = this.renderer.createText(this._el_22,'\n                    ',(null as any));
-    this._el_27 = this.renderer.createElement(this._el_22,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_27,'class','glyphicon glyphicon-triangle-top');
-    this.renderer.setElementAttribute(this._el_27,'style','font-size: 18px; float: right;');
-    this._text_28 = this.renderer.createText(this._el_22,'\n                    ',(null as any));
-    this._el_29 = this.renderer.createElement(this._el_22,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_29,'class','glyphicon glyphicon-triangle-bottom');
-    this.renderer.setElementAttribute(this._el_29,'style','font-size: 18px; float: right;');
-    this._text_30 = this.renderer.createText(this._el_22,'\n                ',(null as any));
-    this._text_31 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._el_32 = this.renderer.createElement(this._el_17,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_32,'rowspan','2');
-    this._text_33 = this.renderer.createText(this._el_32,'\n                    ',(null as any));
-    this._el_34 = this.renderer.createElement(this._el_32,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_34,'style','float: left');
-    this._text_35 = this.renderer.createText(this._el_34,'Student conflict',(null as any));
-    this._text_36 = this.renderer.createText(this._el_32,'\n                    ',(null as any));
-    this._el_37 = this.renderer.createElement(this._el_32,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_37,'class','glyphicon glyphicon-triangle-top');
-    this.renderer.setElementAttribute(this._el_37,'style','font-size: 18px; float: right;');
-    this._text_38 = this.renderer.createText(this._el_32,'\n                    ',(null as any));
-    this._el_39 = this.renderer.createElement(this._el_32,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_39,'class','glyphicon glyphicon-triangle-bottom');
-    this.renderer.setElementAttribute(this._el_39,'style','font-size: 18px; float: right;');
-    this._text_40 = this.renderer.createText(this._el_32,'\n                ',(null as any));
-    this._text_41 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._el_42 = this.renderer.createElement(this._el_17,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_42,'rowspan','2');
-    this._text_43 = this.renderer.createText(this._el_42,'\n                    ',(null as any));
-    this._el_44 = this.renderer.createElement(this._el_42,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_44,'style','float: left');
-    this._text_45 = this.renderer.createText(this._el_44,'Time preferences',(null as any));
-    this._text_46 = this.renderer.createText(this._el_42,'\n                    ',(null as any));
-    this._el_47 = this.renderer.createElement(this._el_42,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_47,'class','glyphicon glyphicon-triangle-top');
-    this.renderer.setElementAttribute(this._el_47,'style','font-size: 18px; float: right;');
-    this._text_48 = this.renderer.createText(this._el_42,'\n                    ',(null as any));
-    this._el_49 = this.renderer.createElement(this._el_42,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_49,'class','glyphicon glyphicon-triangle-bottom');
-    this.renderer.setElementAttribute(this._el_49,'style','font-size: 18px; float: right;');
-    this._text_50 = this.renderer.createText(this._el_42,'\n                ',(null as any));
-    this._text_51 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._el_52 = this.renderer.createElement(this._el_17,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_52,'rowspan','2');
-    this._text_53 = this.renderer.createText(this._el_52,'\n                    ',(null as any));
-    this._el_54 = this.renderer.createElement(this._el_52,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_54,'style','float: left');
-    this._text_55 = this.renderer.createText(this._el_54,'Room preferences',(null as any));
-    this._text_56 = this.renderer.createText(this._el_52,'\n                    ',(null as any));
-    this._el_57 = this.renderer.createElement(this._el_52,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_57,'class','glyphicon glyphicon-triangle-top');
-    this.renderer.setElementAttribute(this._el_57,'style','font-size: 18px; float: right;');
-    this._text_58 = this.renderer.createText(this._el_52,'\n                    ',(null as any));
-    this._el_59 = this.renderer.createElement(this._el_52,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_59,'class','glyphicon glyphicon-triangle-bottom');
-    this.renderer.setElementAttribute(this._el_59,'style','font-size: 18px; float: right;');
-    this._text_60 = this.renderer.createText(this._el_52,'\n                ',(null as any));
-    this._text_61 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._el_62 = this.renderer.createElement(this._el_17,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_62,'rowspan','2');
-    this._text_63 = this.renderer.createText(this._el_62,'\n                    ',(null as any));
-    this._el_64 = this.renderer.createElement(this._el_62,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_64,'style','float: left');
-    this._text_65 = this.renderer.createText(this._el_64,'Distribution preferences',(null as any));
-    this._text_66 = this.renderer.createText(this._el_62,'\n                    ',(null as any));
-    this._el_67 = this.renderer.createElement(this._el_62,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_67,'class','glyphicon glyphicon-triangle-top');
-    this.renderer.setElementAttribute(this._el_67,'style','font-size: 18px; float: right;');
-    this._text_68 = this.renderer.createText(this._el_62,'\n                    ',(null as any));
-    this._el_69 = this.renderer.createElement(this._el_62,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_69,'class','glyphicon glyphicon-triangle-bottom');
-    this.renderer.setElementAttribute(this._el_69,'style','font-size: 18px; float: right;');
-    this._text_70 = this.renderer.createText(this._el_62,'\n                ',(null as any));
-    this._text_71 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._el_72 = this.renderer.createElement(this._el_17,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_72,'rowspan','2');
-    this._text_73 = this.renderer.createText(this._el_72,'\n                    ',(null as any));
-    this._el_74 = this.renderer.createElement(this._el_72,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_74,'style','float: left');
-    this._text_75 = this.renderer.createText(this._el_74,'Technique   ',(null as any));
-    this._text_76 = this.renderer.createText(this._el_72,'\n                    ',(null as any));
-    this._el_77 = this.renderer.createElement(this._el_72,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_77,'class','glyphicon glyphicon-triangle-top');
-    this.renderer.setElementAttribute(this._el_77,'style','font-size: 18px; float: right;');
-    this._text_78 = this.renderer.createText(this._el_72,'\n                    ',(null as any));
-    this._el_79 = this.renderer.createElement(this._el_72,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_79,'class','glyphicon glyphicon-triangle-bottom');
-    this.renderer.setElementAttribute(this._el_79,'style','font-size: 18px; float: right;');
-    this._text_80 = this.renderer.createText(this._el_72,'\n                ',(null as any));
-    this._text_81 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._el_82 = this.renderer.createElement(this._el_17,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_82,'rowspan','2');
-    this._text_83 = this.renderer.createText(this._el_82,'\n                    ',(null as any));
-    this._el_84 = this.renderer.createElement(this._el_82,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_84,'style','float: left');
-    this._text_85 = this.renderer.createText(this._el_84,'Submission time',(null as any));
-    this._text_86 = this.renderer.createText(this._el_82,'\n                    ',(null as any));
-    this._el_87 = this.renderer.createElement(this._el_82,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_87,'class','glyphicon glyphicon-triangle-top');
-    this.renderer.setElementAttribute(this._el_87,'style','font-size: 18px; float: right;');
-    this._text_88 = this.renderer.createText(this._el_82,'\n                    ',(null as any));
-    this._el_89 = this.renderer.createElement(this._el_82,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_89,'class','glyphicon glyphicon-triangle-bottom');
-    this.renderer.setElementAttribute(this._el_89,'style','font-size: 18px; float: right;');
-    this._text_90 = this.renderer.createText(this._el_82,'\n                ',(null as any));
-    this._text_91 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._el_92 = this.renderer.createElement(this._el_17,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_92,'rowspan','2');
-    this._text_93 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._el_94 = this.renderer.createElement(this._el_17,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_94,'rowspan','2');
-    this._text_95 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._anchor_96 = this.renderer.createTemplateAnchor(this._el_17,(null as any));
-    this._appEl_96 = new import2.AppElement(96,17,this,this._anchor_96);
-    this._TemplateRef_96_5 = new import14.TemplateRef_(this._appEl_96,viewFactory_ResultsAuthorComponent4);
-    this._NgIf_96_6 = new import13.NgIf(this._appEl_96.vcRef,this._TemplateRef_96_5);
-    this._text_97 = this.renderer.createText(this._el_17,'\n                ',(null as any));
-    this._anchor_98 = this.renderer.createTemplateAnchor(this._el_17,(null as any));
-    this._appEl_98 = new import2.AppElement(98,17,this,this._anchor_98);
-    this._TemplateRef_98_5 = new import14.TemplateRef_(this._appEl_98,viewFactory_ResultsAuthorComponent5);
-    this._NgIf_98_6 = new import13.NgIf(this._appEl_98.vcRef,this._TemplateRef_98_5);
-    this._text_99 = this.renderer.createText(this._el_17,'\n            ',(null as any));
-    this._text_100 = this.renderer.createText(this._el_15,'\n            ',(null as any));
-    this._el_101 = this.renderer.createElement(this._el_15,'tr',(null as any));
-    this._text_102 = this.renderer.createText(this._el_101,'\n                ',(null as any));
-    this._el_103 = this.renderer.createElement(this._el_101,'th',(null as any));
-    this._text_104 = this.renderer.createText(this._el_103,'Unassigned variables',(null as any));
-    this._text_105 = this.renderer.createText(this._el_101,'\n                ',(null as any));
-    this._el_106 = this.renderer.createElement(this._el_101,'th',(null as any));
-    this._text_107 = this.renderer.createText(this._el_106,'Total cost',(null as any));
-    this._text_108 = this.renderer.createText(this._el_101,'\n            ',(null as any));
-    this._text_109 = this.renderer.createText(this._el_15,'\n        ',(null as any));
-    this._text_110 = this.renderer.createText(this._el_13,'\n        ',(null as any));
-    this._anchor_111 = this.renderer.createTemplateAnchor(this._el_13,(null as any));
-    this._appEl_111 = new import2.AppElement(111,13,this,this._anchor_111);
-    this._TemplateRef_111_5 = new import14.TemplateRef_(this._appEl_111,viewFactory_ResultsAuthorComponent6);
-    this._NgFor_111_6 = new import15.NgFor(this._appEl_111.vcRef,this._TemplateRef_111_5,this.parentInjector.get(import18.IterableDiffers),this.parent.ref);
-    this._text_112 = this.renderer.createText(this._el_13,'\n        ',(null as any));
-    this._text_113 = this.renderer.createText(this._el_11,'\n    ',(null as any));
-    this._text_114 = this.renderer.createText(this._el_0,'\n    ',(null as any));
-    this._el_115 = this.renderer.createElement(this._el_0,'app-results-author-instance',(null as any));
-    this._appEl_115 = new import2.AppElement(115,0,this,this._el_115);
-    var compView_115:any = import19.viewFactory_ResultsAuthorInstanceComponent0(this.viewUtils,this.injector(115),this._appEl_115);
-    this._ResultsAuthorInstanceComponent_115_4 = new import16.ResultsAuthorInstanceComponent(this.parentInjector.get(import9.SolutionService),this.parentInjector.get(import10.SessionStorageService),this.parentInjector.get(import8.SortDownloadService));
-    this._appEl_115.initComponent(this._ResultsAuthorInstanceComponent_115_4,[],compView_115);
-    this._text_116 = this.renderer.createText((null as any),'\n    ',(null as any));
-    compView_115.create(this._ResultsAuthorInstanceComponent_115_4,[],(null as any));
-    this._text_117 = this.renderer.createText(this._el_0,'\n    ',(null as any));
-    this._el_118 = this.renderer.createElement(this._el_0,'app-results-author-technique',(null as any));
-    this._appEl_118 = new import2.AppElement(118,0,this,this._el_118);
-    var compView_118:any = import20.viewFactory_ResultsAuthorTechniqueComponent0(this.viewUtils,this.injector(118),this._appEl_118);
-    this._ResultsAuthorTechniqueComponent_118_4 = new import17.ResultsAuthorTechniqueComponent(this.parentInjector.get(import8.SortDownloadService),this.parentInjector.get(import10.SessionStorageService),this.parentInjector.get(import9.SolutionService));
-    this._appEl_118.initComponent(this._ResultsAuthorTechniqueComponent_118_4,[],compView_118);
-    this._text_119 = this.renderer.createText((null as any),'\n    ',(null as any));
-    compView_118.create(this._ResultsAuthorTechniqueComponent_118_4,[],(null as any));
-    this._text_120 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_20 = this.renderer.createText(this._el_19,'\n                    ',(null as any));
+    this._el_21 = this.renderer.createElement(this._el_19,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_21,'style','float: left');
+    this._text_22 = this.renderer.createText(this._el_21,'Instance',(null as any));
+    this._text_23 = this.renderer.createText(this._el_19,'\n                    ',(null as any));
+    this._el_24 = this.renderer.createElement(this._el_19,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_24,'class','glyphicon glyphicon-triangle-top');
+    this.renderer.setElementAttribute(this._el_24,'style','font-size: 18px; float: right;');
+    this._text_25 = this.renderer.createText(this._el_19,'\n                    ',(null as any));
+    this._el_26 = this.renderer.createElement(this._el_19,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_26,'class','glyphicon glyphicon-triangle-bottom');
+    this.renderer.setElementAttribute(this._el_26,'style','font-size: 18px; float: right;');
+    this._text_27 = this.renderer.createText(this._el_19,'\n                ',(null as any));
+    this._text_28 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._el_29 = this.renderer.createElement(this._el_17,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_29,'colspan','2');
+    this._text_30 = this.renderer.createText(this._el_29,'\n                    ',(null as any));
+    this._el_31 = this.renderer.createElement(this._el_29,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_31,'style','float: left');
+    this._text_32 = this.renderer.createText(this._el_31,'Quality',(null as any));
+    this._text_33 = this.renderer.createText(this._el_29,'\n                    ',(null as any));
+    this._el_34 = this.renderer.createElement(this._el_29,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_34,'class','glyphicon glyphicon-triangle-top');
+    this.renderer.setElementAttribute(this._el_34,'style','font-size: 18px; float: right;');
+    this._text_35 = this.renderer.createText(this._el_29,'\n                    ',(null as any));
+    this._el_36 = this.renderer.createElement(this._el_29,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_36,'class','glyphicon glyphicon-triangle-bottom');
+    this.renderer.setElementAttribute(this._el_36,'style','font-size: 18px; float: right;');
+    this._text_37 = this.renderer.createText(this._el_29,'\n                ',(null as any));
+    this._text_38 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._el_39 = this.renderer.createElement(this._el_17,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_39,'rowspan','2');
+    this._text_40 = this.renderer.createText(this._el_39,'\n                    ',(null as any));
+    this._el_41 = this.renderer.createElement(this._el_39,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_41,'style','float: left');
+    this._text_42 = this.renderer.createText(this._el_41,'Student conflict',(null as any));
+    this._text_43 = this.renderer.createText(this._el_39,'\n                    ',(null as any));
+    this._el_44 = this.renderer.createElement(this._el_39,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_44,'class','glyphicon glyphicon-triangle-top');
+    this.renderer.setElementAttribute(this._el_44,'style','font-size: 18px; float: right;');
+    this._text_45 = this.renderer.createText(this._el_39,'\n                    ',(null as any));
+    this._el_46 = this.renderer.createElement(this._el_39,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_46,'class','glyphicon glyphicon-triangle-bottom');
+    this.renderer.setElementAttribute(this._el_46,'style','font-size: 18px; float: right;');
+    this._text_47 = this.renderer.createText(this._el_39,'\n                ',(null as any));
+    this._text_48 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._el_49 = this.renderer.createElement(this._el_17,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_49,'rowspan','2');
+    this._text_50 = this.renderer.createText(this._el_49,'\n                    ',(null as any));
+    this._el_51 = this.renderer.createElement(this._el_49,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_51,'style','float: left');
+    this._text_52 = this.renderer.createText(this._el_51,'Time preferences',(null as any));
+    this._text_53 = this.renderer.createText(this._el_49,'\n                    ',(null as any));
+    this._el_54 = this.renderer.createElement(this._el_49,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_54,'class','glyphicon glyphicon-triangle-top');
+    this.renderer.setElementAttribute(this._el_54,'style','font-size: 18px; float: right;');
+    this._text_55 = this.renderer.createText(this._el_49,'\n                    ',(null as any));
+    this._el_56 = this.renderer.createElement(this._el_49,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_56,'class','glyphicon glyphicon-triangle-bottom');
+    this.renderer.setElementAttribute(this._el_56,'style','font-size: 18px; float: right;');
+    this._text_57 = this.renderer.createText(this._el_49,'\n                ',(null as any));
+    this._text_58 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._el_59 = this.renderer.createElement(this._el_17,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_59,'rowspan','2');
+    this._text_60 = this.renderer.createText(this._el_59,'\n                    ',(null as any));
+    this._el_61 = this.renderer.createElement(this._el_59,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_61,'style','float: left');
+    this._text_62 = this.renderer.createText(this._el_61,'Room preferences',(null as any));
+    this._text_63 = this.renderer.createText(this._el_59,'\n                    ',(null as any));
+    this._el_64 = this.renderer.createElement(this._el_59,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_64,'class','glyphicon glyphicon-triangle-top');
+    this.renderer.setElementAttribute(this._el_64,'style','font-size: 18px; float: right;');
+    this._text_65 = this.renderer.createText(this._el_59,'\n                    ',(null as any));
+    this._el_66 = this.renderer.createElement(this._el_59,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_66,'class','glyphicon glyphicon-triangle-bottom');
+    this.renderer.setElementAttribute(this._el_66,'style','font-size: 18px; float: right;');
+    this._text_67 = this.renderer.createText(this._el_59,'\n                ',(null as any));
+    this._text_68 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._el_69 = this.renderer.createElement(this._el_17,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_69,'rowspan','2');
+    this._text_70 = this.renderer.createText(this._el_69,'\n                    ',(null as any));
+    this._el_71 = this.renderer.createElement(this._el_69,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_71,'style','float: left');
+    this._text_72 = this.renderer.createText(this._el_71,'Distribution preferences',(null as any));
+    this._text_73 = this.renderer.createText(this._el_69,'\n                    ',(null as any));
+    this._el_74 = this.renderer.createElement(this._el_69,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_74,'class','glyphicon glyphicon-triangle-top');
+    this.renderer.setElementAttribute(this._el_74,'style','font-size: 18px; float: right;');
+    this._text_75 = this.renderer.createText(this._el_69,'\n                    ',(null as any));
+    this._el_76 = this.renderer.createElement(this._el_69,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_76,'class','glyphicon glyphicon-triangle-bottom');
+    this.renderer.setElementAttribute(this._el_76,'style','font-size: 18px; float: right;');
+    this._text_77 = this.renderer.createText(this._el_69,'\n                ',(null as any));
+    this._text_78 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._el_79 = this.renderer.createElement(this._el_17,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_79,'rowspan','2');
+    this._text_80 = this.renderer.createText(this._el_79,'\n                    ',(null as any));
+    this._el_81 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_81,'style','float: left');
+    this._text_82 = this.renderer.createText(this._el_81,'Technique   ',(null as any));
+    this._text_83 = this.renderer.createText(this._el_79,'\n                    ',(null as any));
+    this._el_84 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_84,'class','glyphicon glyphicon-triangle-top');
+    this.renderer.setElementAttribute(this._el_84,'style','font-size: 18px; float: right;');
+    this._text_85 = this.renderer.createText(this._el_79,'\n                    ',(null as any));
+    this._el_86 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_86,'class','glyphicon glyphicon-triangle-bottom');
+    this.renderer.setElementAttribute(this._el_86,'style','font-size: 18px; float: right;');
+    this._text_87 = this.renderer.createText(this._el_79,'\n                ',(null as any));
+    this._text_88 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._el_89 = this.renderer.createElement(this._el_17,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_89,'rowspan','2');
+    this._text_90 = this.renderer.createText(this._el_89,'\n                    ',(null as any));
+    this._el_91 = this.renderer.createElement(this._el_89,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_91,'style','float: left');
+    this._text_92 = this.renderer.createText(this._el_91,'Submission time',(null as any));
+    this._text_93 = this.renderer.createText(this._el_89,'\n                    ',(null as any));
+    this._el_94 = this.renderer.createElement(this._el_89,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_94,'class','glyphicon glyphicon-triangle-top');
+    this.renderer.setElementAttribute(this._el_94,'style','font-size: 18px; float: right;');
+    this._text_95 = this.renderer.createText(this._el_89,'\n                    ',(null as any));
+    this._el_96 = this.renderer.createElement(this._el_89,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_96,'class','glyphicon glyphicon-triangle-bottom');
+    this.renderer.setElementAttribute(this._el_96,'style','font-size: 18px; float: right;');
+    this._text_97 = this.renderer.createText(this._el_89,'\n                ',(null as any));
+    this._text_98 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._el_99 = this.renderer.createElement(this._el_17,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_99,'rowspan','2');
+    this._text_100 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._el_101 = this.renderer.createElement(this._el_17,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_101,'rowspan','2');
+    this._text_102 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._anchor_103 = this.renderer.createTemplateAnchor(this._el_17,(null as any));
+    this._appEl_103 = new import2.AppElement(103,17,this,this._anchor_103);
+    this._TemplateRef_103_5 = new import14.TemplateRef_(this._appEl_103,viewFactory_ResultsAuthorComponent4);
+    this._NgIf_103_6 = new import13.NgIf(this._appEl_103.vcRef,this._TemplateRef_103_5);
+    this._text_104 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._anchor_105 = this.renderer.createTemplateAnchor(this._el_17,(null as any));
+    this._appEl_105 = new import2.AppElement(105,17,this,this._anchor_105);
+    this._TemplateRef_105_5 = new import14.TemplateRef_(this._appEl_105,viewFactory_ResultsAuthorComponent5);
+    this._NgIf_105_6 = new import13.NgIf(this._appEl_105.vcRef,this._TemplateRef_105_5);
+    this._text_106 = this.renderer.createText(this._el_17,'\n                ',(null as any));
+    this._anchor_107 = this.renderer.createTemplateAnchor(this._el_17,(null as any));
+    this._appEl_107 = new import2.AppElement(107,17,this,this._anchor_107);
+    this._TemplateRef_107_5 = new import14.TemplateRef_(this._appEl_107,viewFactory_ResultsAuthorComponent6);
+    this._NgIf_107_6 = new import13.NgIf(this._appEl_107.vcRef,this._TemplateRef_107_5);
+    this._text_108 = this.renderer.createText(this._el_17,'\n            ',(null as any));
+    this._text_109 = this.renderer.createText(this._el_15,'\n            ',(null as any));
+    this._el_110 = this.renderer.createElement(this._el_15,'tr',(null as any));
+    this._text_111 = this.renderer.createText(this._el_110,'\n                ',(null as any));
+    this._el_112 = this.renderer.createElement(this._el_110,'th',(null as any));
+    this._text_113 = this.renderer.createText(this._el_112,'Unassigned variables',(null as any));
+    this._text_114 = this.renderer.createText(this._el_110,'\n                ',(null as any));
+    this._el_115 = this.renderer.createElement(this._el_110,'th',(null as any));
+    this._text_116 = this.renderer.createText(this._el_115,'Total cost',(null as any));
+    this._text_117 = this.renderer.createText(this._el_110,'\n            ',(null as any));
+    this._text_118 = this.renderer.createText(this._el_15,'\n        ',(null as any));
+    this._text_119 = this.renderer.createText(this._el_13,'\n        ',(null as any));
+    this._anchor_120 = this.renderer.createTemplateAnchor(this._el_13,(null as any));
+    this._appEl_120 = new import2.AppElement(120,13,this,this._anchor_120);
+    this._TemplateRef_120_5 = new import14.TemplateRef_(this._appEl_120,viewFactory_ResultsAuthorComponent7);
+    this._NgFor_120_6 = new import15.NgFor(this._appEl_120.vcRef,this._TemplateRef_120_5,this.parentInjector.get(import18.IterableDiffers),this.parent.ref);
+    this._text_121 = this.renderer.createText(this._el_13,'\n        ',(null as any));
+    this._text_122 = this.renderer.createText(this._el_11,'\n    ',(null as any));
+    this._text_123 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this._el_124 = this.renderer.createElement(this._el_0,'app-results-author-instance',(null as any));
+    this._appEl_124 = new import2.AppElement(124,0,this,this._el_124);
+    var compView_124:any = import19.viewFactory_ResultsAuthorInstanceComponent0(this.viewUtils,this.injector(124),this._appEl_124);
+    this._ResultsAuthorInstanceComponent_124_4 = new import16.ResultsAuthorInstanceComponent(this.parentInjector.get(import9.SolutionService),this.parentInjector.get(import10.SessionStorageService),this.parentInjector.get(import8.SortDownloadService));
+    this._appEl_124.initComponent(this._ResultsAuthorInstanceComponent_124_4,[],compView_124);
+    this._text_125 = this.renderer.createText((null as any),'\n    ',(null as any));
+    compView_124.create(this._ResultsAuthorInstanceComponent_124_4,[],(null as any));
+    this._text_126 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this._el_127 = this.renderer.createElement(this._el_0,'app-results-author-technique',(null as any));
+    this._appEl_127 = new import2.AppElement(127,0,this,this._el_127);
+    var compView_127:any = import20.viewFactory_ResultsAuthorTechniqueComponent0(this.viewUtils,this.injector(127),this._appEl_127);
+    this._ResultsAuthorTechniqueComponent_127_4 = new import17.ResultsAuthorTechniqueComponent(this.parentInjector.get(import8.SortDownloadService),this.parentInjector.get(import10.SessionStorageService),this.parentInjector.get(import9.SolutionService));
+    this._appEl_127.initComponent(this._ResultsAuthorTechniqueComponent_127_4,[],compView_127);
+    this._text_128 = this.renderer.createText((null as any),'\n    ',(null as any));
+    compView_127.create(this._ResultsAuthorTechniqueComponent_127_4,[],(null as any));
+    this._text_129 = this.renderer.createText(this._el_0,'\n',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this._expr_1 = import7.UNINITIALIZED;
     this._expr_2 = import7.UNINITIALIZED;
-    var disposable_0:Function = this.renderer.listen(this._el_27,'click',this.eventHandler(this._handle_click_27_0.bind(this)));
-    var disposable_1:Function = this.renderer.listen(this._el_29,'click',this.eventHandler(this._handle_click_29_0.bind(this)));
-    var disposable_2:Function = this.renderer.listen(this._el_37,'click',this.eventHandler(this._handle_click_37_0.bind(this)));
-    var disposable_3:Function = this.renderer.listen(this._el_39,'click',this.eventHandler(this._handle_click_39_0.bind(this)));
-    var disposable_4:Function = this.renderer.listen(this._el_47,'click',this.eventHandler(this._handle_click_47_0.bind(this)));
-    var disposable_5:Function = this.renderer.listen(this._el_49,'click',this.eventHandler(this._handle_click_49_0.bind(this)));
-    var disposable_6:Function = this.renderer.listen(this._el_57,'click',this.eventHandler(this._handle_click_57_0.bind(this)));
-    var disposable_7:Function = this.renderer.listen(this._el_59,'click',this.eventHandler(this._handle_click_59_0.bind(this)));
-    var disposable_8:Function = this.renderer.listen(this._el_67,'click',this.eventHandler(this._handle_click_67_0.bind(this)));
-    var disposable_9:Function = this.renderer.listen(this._el_69,'click',this.eventHandler(this._handle_click_69_0.bind(this)));
-    var disposable_10:Function = this.renderer.listen(this._el_77,'click',this.eventHandler(this._handle_click_77_0.bind(this)));
-    var disposable_11:Function = this.renderer.listen(this._el_79,'click',this.eventHandler(this._handle_click_79_0.bind(this)));
-    var disposable_12:Function = this.renderer.listen(this._el_87,'click',this.eventHandler(this._handle_click_87_0.bind(this)));
-    var disposable_13:Function = this.renderer.listen(this._el_89,'click',this.eventHandler(this._handle_click_89_0.bind(this)));
-    this._expr_17 = import7.UNINITIALIZED;
-    this._expr_18 = import7.UNINITIALIZED;
+    var disposable_0:Function = this.renderer.listen(this._el_24,'click',this.eventHandler(this._handle_click_24_0.bind(this)));
+    var disposable_1:Function = this.renderer.listen(this._el_26,'click',this.eventHandler(this._handle_click_26_0.bind(this)));
+    var disposable_2:Function = this.renderer.listen(this._el_34,'click',this.eventHandler(this._handle_click_34_0.bind(this)));
+    var disposable_3:Function = this.renderer.listen(this._el_36,'click',this.eventHandler(this._handle_click_36_0.bind(this)));
+    var disposable_4:Function = this.renderer.listen(this._el_44,'click',this.eventHandler(this._handle_click_44_0.bind(this)));
+    var disposable_5:Function = this.renderer.listen(this._el_46,'click',this.eventHandler(this._handle_click_46_0.bind(this)));
+    var disposable_6:Function = this.renderer.listen(this._el_54,'click',this.eventHandler(this._handle_click_54_0.bind(this)));
+    var disposable_7:Function = this.renderer.listen(this._el_56,'click',this.eventHandler(this._handle_click_56_0.bind(this)));
+    var disposable_8:Function = this.renderer.listen(this._el_64,'click',this.eventHandler(this._handle_click_64_0.bind(this)));
+    var disposable_9:Function = this.renderer.listen(this._el_66,'click',this.eventHandler(this._handle_click_66_0.bind(this)));
+    var disposable_10:Function = this.renderer.listen(this._el_74,'click',this.eventHandler(this._handle_click_74_0.bind(this)));
+    var disposable_11:Function = this.renderer.listen(this._el_76,'click',this.eventHandler(this._handle_click_76_0.bind(this)));
+    var disposable_12:Function = this.renderer.listen(this._el_84,'click',this.eventHandler(this._handle_click_84_0.bind(this)));
+    var disposable_13:Function = this.renderer.listen(this._el_86,'click',this.eventHandler(this._handle_click_86_0.bind(this)));
+    var disposable_14:Function = this.renderer.listen(this._el_94,'click',this.eventHandler(this._handle_click_94_0.bind(this)));
+    var disposable_15:Function = this.renderer.listen(this._el_96,'click',this.eventHandler(this._handle_click_96_0.bind(this)));
     this._expr_19 = import7.UNINITIALIZED;
     this._expr_20 = import7.UNINITIALIZED;
     this._expr_21 = import7.UNINITIALIZED;
+    this._expr_22 = import7.UNINITIALIZED;
+    this._expr_23 = import7.UNINITIALIZED;
+    this._expr_24 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -490,106 +523,115 @@ class _View_ResultsAuthorComponent1 extends import1.AppView<any> {
       this._text_18,
       this._el_19,
       this._text_20,
-      this._text_21,
-      this._el_22,
+      this._el_21,
+      this._text_22,
       this._text_23,
       this._el_24,
       this._text_25,
-      this._text_26,
-      this._el_27,
+      this._el_26,
+      this._text_27,
       this._text_28,
       this._el_29,
       this._text_30,
-      this._text_31,
-      this._el_32,
+      this._el_31,
+      this._text_32,
       this._text_33,
       this._el_34,
       this._text_35,
-      this._text_36,
-      this._el_37,
+      this._el_36,
+      this._text_37,
       this._text_38,
       this._el_39,
       this._text_40,
-      this._text_41,
-      this._el_42,
+      this._el_41,
+      this._text_42,
       this._text_43,
       this._el_44,
       this._text_45,
-      this._text_46,
-      this._el_47,
+      this._el_46,
+      this._text_47,
       this._text_48,
       this._el_49,
       this._text_50,
-      this._text_51,
-      this._el_52,
+      this._el_51,
+      this._text_52,
       this._text_53,
       this._el_54,
       this._text_55,
-      this._text_56,
-      this._el_57,
+      this._el_56,
+      this._text_57,
       this._text_58,
       this._el_59,
       this._text_60,
-      this._text_61,
-      this._el_62,
+      this._el_61,
+      this._text_62,
       this._text_63,
       this._el_64,
       this._text_65,
-      this._text_66,
-      this._el_67,
+      this._el_66,
+      this._text_67,
       this._text_68,
       this._el_69,
       this._text_70,
-      this._text_71,
-      this._el_72,
+      this._el_71,
+      this._text_72,
       this._text_73,
       this._el_74,
       this._text_75,
-      this._text_76,
-      this._el_77,
+      this._el_76,
+      this._text_77,
       this._text_78,
       this._el_79,
       this._text_80,
-      this._text_81,
-      this._el_82,
+      this._el_81,
+      this._text_82,
       this._text_83,
       this._el_84,
       this._text_85,
-      this._text_86,
-      this._el_87,
+      this._el_86,
+      this._text_87,
       this._text_88,
       this._el_89,
       this._text_90,
-      this._text_91,
-      this._el_92,
+      this._el_91,
+      this._text_92,
       this._text_93,
       this._el_94,
       this._text_95,
-      this._anchor_96,
+      this._el_96,
       this._text_97,
-      this._anchor_98,
-      this._text_99,
+      this._text_98,
+      this._el_99,
       this._text_100,
       this._el_101,
       this._text_102,
-      this._el_103,
+      this._anchor_103,
       this._text_104,
-      this._text_105,
-      this._el_106,
-      this._text_107,
+      this._anchor_105,
+      this._text_106,
+      this._anchor_107,
       this._text_108,
       this._text_109,
-      this._text_110,
-      this._anchor_111,
-      this._text_112,
+      this._el_110,
+      this._text_111,
+      this._el_112,
       this._text_113,
       this._text_114,
       this._el_115,
       this._text_116,
       this._text_117,
-      this._el_118,
+      this._text_118,
       this._text_119,
-      this._text_120
+      this._anchor_120,
+      this._text_121,
+      this._text_122,
+      this._text_123,
+      this._el_124,
+      this._text_125,
+      this._text_126,
+      this._el_127,
+      this._text_128,
+      this._text_129
     ]
     ,[
       disposable_0,
@@ -605,7 +647,9 @@ class _View_ResultsAuthorComponent1 extends import1.AppView<any> {
       disposable_10,
       disposable_11,
       disposable_12,
-      disposable_13
+      disposable_13,
+      disposable_14,
+      disposable_15
     ]
     ,[]);
     return (null as any);
@@ -615,14 +659,16 @@ class _View_ResultsAuthorComponent1 extends import1.AppView<any> {
     if (((token === import13.NgIf) && (7 === requestNodeIndex))) { return this._NgIf_7_6; }
     if (((token === import14.TemplateRef) && (9 === requestNodeIndex))) { return this._TemplateRef_9_5; }
     if (((token === import13.NgIf) && (9 === requestNodeIndex))) { return this._NgIf_9_6; }
-    if (((token === import14.TemplateRef) && (96 === requestNodeIndex))) { return this._TemplateRef_96_5; }
-    if (((token === import13.NgIf) && (96 === requestNodeIndex))) { return this._NgIf_96_6; }
-    if (((token === import14.TemplateRef) && (98 === requestNodeIndex))) { return this._TemplateRef_98_5; }
-    if (((token === import13.NgIf) && (98 === requestNodeIndex))) { return this._NgIf_98_6; }
-    if (((token === import14.TemplateRef) && (111 === requestNodeIndex))) { return this._TemplateRef_111_5; }
-    if (((token === import15.NgFor) && (111 === requestNodeIndex))) { return this._NgFor_111_6; }
-    if (((token === import16.ResultsAuthorInstanceComponent) && ((115 <= requestNodeIndex) && (requestNodeIndex <= 116)))) { return this._ResultsAuthorInstanceComponent_115_4; }
-    if (((token === import17.ResultsAuthorTechniqueComponent) && ((118 <= requestNodeIndex) && (requestNodeIndex <= 119)))) { return this._ResultsAuthorTechniqueComponent_118_4; }
+    if (((token === import14.TemplateRef) && (103 === requestNodeIndex))) { return this._TemplateRef_103_5; }
+    if (((token === import13.NgIf) && (103 === requestNodeIndex))) { return this._NgIf_103_6; }
+    if (((token === import14.TemplateRef) && (105 === requestNodeIndex))) { return this._TemplateRef_105_5; }
+    if (((token === import13.NgIf) && (105 === requestNodeIndex))) { return this._NgIf_105_6; }
+    if (((token === import14.TemplateRef) && (107 === requestNodeIndex))) { return this._TemplateRef_107_5; }
+    if (((token === import13.NgIf) && (107 === requestNodeIndex))) { return this._NgIf_107_6; }
+    if (((token === import14.TemplateRef) && (120 === requestNodeIndex))) { return this._TemplateRef_120_5; }
+    if (((token === import15.NgFor) && (120 === requestNodeIndex))) { return this._NgFor_120_6; }
+    if (((token === import16.ResultsAuthorInstanceComponent) && ((124 <= requestNodeIndex) && (requestNodeIndex <= 125)))) { return this._ResultsAuthorInstanceComponent_124_4; }
+    if (((token === import17.ResultsAuthorTechniqueComponent) && ((127 <= requestNodeIndex) && (requestNodeIndex <= 128)))) { return this._ResultsAuthorTechniqueComponent_127_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -637,44 +683,49 @@ class _View_ResultsAuthorComponent1 extends import1.AppView<any> {
       this._NgIf_9_6.ngIf = currVal_2;
       this._expr_2 = currVal_2;
     }
-    const currVal_17:any = this.parent.context.isAdmin();
-    if (import4.checkBinding(throwOnChange,this._expr_17,currVal_17)) {
-      this._NgIf_96_6.ngIf = currVal_17;
-      this._expr_17 = currVal_17;
-    }
-    const currVal_18:any = this.parent.context.isAdmin();
-    if (import4.checkBinding(throwOnChange,this._expr_18,currVal_18)) {
-      this._NgIf_98_6.ngIf = currVal_18;
-      this._expr_18 = currVal_18;
-    }
-    changes = (null as any);
-    const currVal_19:any = this.parent.context.solutions;
+    const currVal_19:any = this.parent.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_19,currVal_19)) {
-      this._NgFor_111_6.ngForOf = currVal_19;
-      if ((changes === (null as any))) { (changes = {}); }
-      changes['ngForOf'] = new import7.SimpleChange(this._expr_19,currVal_19);
+      this._NgIf_103_6.ngIf = currVal_19;
       this._expr_19 = currVal_19;
     }
-    if ((changes !== (null as any))) { this._NgFor_111_6.ngOnChanges(changes); }
-    if (!throwOnChange) { this._NgFor_111_6.ngDoCheck(); }
-    changes = (null as any);
-    const currVal_20:any = this.parent.context.solutionsAuthorInstance;
+    const currVal_20:any = this.parent.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_20,currVal_20)) {
-      this._ResultsAuthorInstanceComponent_115_4.solutions = currVal_20;
-      if ((changes === (null as any))) { (changes = {}); }
-      changes['solutions'] = new import7.SimpleChange(this._expr_20,currVal_20);
+      this._NgIf_105_6.ngIf = currVal_20;
       this._expr_20 = currVal_20;
     }
-    if ((changes !== (null as any))) { this._ResultsAuthorInstanceComponent_115_4.ngOnChanges(changes); }
-    changes = (null as any);
-    const currVal_21:any = this.parent.context.solutionsAuthorTechnique;
+    const currVal_21:any = this.parent.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_21,currVal_21)) {
-      this._ResultsAuthorTechniqueComponent_118_4.solutions = currVal_21;
-      if ((changes === (null as any))) { (changes = {}); }
-      changes['solutions'] = new import7.SimpleChange(this._expr_21,currVal_21);
+      this._NgIf_107_6.ngIf = currVal_21;
       this._expr_21 = currVal_21;
     }
-    if ((changes !== (null as any))) { this._ResultsAuthorTechniqueComponent_118_4.ngOnChanges(changes); }
+    changes = (null as any);
+    const currVal_22:any = this.parent.context.solutions;
+    if (import4.checkBinding(throwOnChange,this._expr_22,currVal_22)) {
+      this._NgFor_120_6.ngForOf = currVal_22;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['ngForOf'] = new import7.SimpleChange(this._expr_22,currVal_22);
+      this._expr_22 = currVal_22;
+    }
+    if ((changes !== (null as any))) { this._NgFor_120_6.ngOnChanges(changes); }
+    if (!throwOnChange) { this._NgFor_120_6.ngDoCheck(); }
+    changes = (null as any);
+    const currVal_23:any = this.parent.context.solutionsAuthorInstance;
+    if (import4.checkBinding(throwOnChange,this._expr_23,currVal_23)) {
+      this._ResultsAuthorInstanceComponent_124_4.solutions = currVal_23;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['solutions'] = new import7.SimpleChange(this._expr_23,currVal_23);
+      this._expr_23 = currVal_23;
+    }
+    if ((changes !== (null as any))) { this._ResultsAuthorInstanceComponent_124_4.ngOnChanges(changes); }
+    changes = (null as any);
+    const currVal_24:any = this.parent.context.solutionsAuthorTechnique;
+    if (import4.checkBinding(throwOnChange,this._expr_24,currVal_24)) {
+      this._ResultsAuthorTechniqueComponent_127_4.solutions = currVal_24;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['solutions'] = new import7.SimpleChange(this._expr_24,currVal_24);
+      this._expr_24 = currVal_24;
+    }
+    if ((changes !== (null as any))) { this._ResultsAuthorTechniqueComponent_127_4.ngOnChanges(changes); }
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_0:any = import4.interpolate(2,'',((this.parent.context.solutions[0].author == (null as any))? (null as any): this.parent.context.solutions[0].author.firstName),' ',((this.parent.context.solutions[0].author == (null as any))? (null as any): this.parent.context.solutions[0].author.lastName),'');
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
@@ -683,72 +734,82 @@ class _View_ResultsAuthorComponent1 extends import1.AppView<any> {
     }
     this.detectViewChildrenChanges(throwOnChange);
   }
-  private _handle_click_27_0($event:any):boolean {
+  private _handle_click_24_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this.parent.context.onInstanceAsc()) !== false);
+    return (true && pd_0);
+  }
+  private _handle_click_26_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this.parent.context.onInstanceDesc()) !== false);
+    return (true && pd_0);
+  }
+  private _handle_click_34_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onQualityAsc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_29_0($event:any):boolean {
+  private _handle_click_36_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onQualityDesc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_37_0($event:any):boolean {
+  private _handle_click_44_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onScAsc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_39_0($event:any):boolean {
+  private _handle_click_46_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onScDesc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_47_0($event:any):boolean {
+  private _handle_click_54_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onTimeAsc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_49_0($event:any):boolean {
+  private _handle_click_56_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onTimeDesc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_57_0($event:any):boolean {
+  private _handle_click_64_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onRoomAsc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_59_0($event:any):boolean {
+  private _handle_click_66_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onRoomDesc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_67_0($event:any):boolean {
+  private _handle_click_74_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onDistributionAsc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_69_0($event:any):boolean {
+  private _handle_click_76_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onDistributionDesc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_77_0($event:any):boolean {
+  private _handle_click_84_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onTechniqueAsc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_79_0($event:any):boolean {
+  private _handle_click_86_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onTechniqueDesc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_87_0($event:any):boolean {
+  private _handle_click_94_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onSubmissionTimeAsc()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_89_0($event:any):boolean {
+  private _handle_click_96_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.parent.context.onSubmissionTimeDesc()) !== false);
     return (true && pd_0);
@@ -843,6 +904,21 @@ function viewFactory_ResultsAuthorComponent5(viewUtils:import4.ViewUtils,parentI
 }
 class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
   _el_0:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_ResultsAuthorComponent6,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'th',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'rowspan','2');
+    this.init([].concat([this._el_0]),[this._el_0],[],[]);
+    return (null as any);
+  }
+}
+function viewFactory_ResultsAuthorComponent6(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ResultsAuthorComponent6(viewUtils,parentInjector,declarationEl);
+}
+class _View_ResultsAuthorComponent7 extends import1.AppView<any> {
+  _el_0:any;
   _text_1:any;
   _el_2:any;
   _text_3:any;
@@ -886,7 +962,7 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
   _el_41:any;
   _text_42:any;
   _el_43:any;
-  _RouterLink_43_3:import21.RouterLink;
+  _RouterLinkWithHref_43_3:import21.RouterLinkWithHref;
   _text_44:any;
   _el_45:any;
   _text_46:any;
@@ -913,12 +989,20 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
   _NgIf_58_6:import13.NgIf;
   _text_59:any;
   _text_60:any;
-  _text_61:any;
-  _anchor_62:any;
-  /*private*/ _appEl_62:import2.AppElement;
-  _TemplateRef_62_5:any;
-  _NgIf_62_6:import13.NgIf;
-  _text_63:any;
+  _el_61:any;
+  _text_62:any;
+  _anchor_63:any;
+  /*private*/ _appEl_63:import2.AppElement;
+  _TemplateRef_63_5:any;
+  _NgIf_63_6:import13.NgIf;
+  _text_64:any;
+  _text_65:any;
+  _text_66:any;
+  _anchor_67:any;
+  /*private*/ _appEl_67:import2.AppElement;
+  _TemplateRef_67_5:any;
+  _NgIf_67_6:import13.NgIf;
+  _text_68:any;
   /*private*/ _expr_1:any;
   /*private*/ _expr_2:any;
   /*private*/ _expr_3:any;
@@ -929,14 +1013,17 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
   /*private*/ _expr_9:any;
   _pipe_dateFormat_0:import22.DateFormatPipe;
   /*private*/ _expr_10:any;
-  _arr_0:any;
   /*private*/ _expr_13:any;
+  _arr_0:any;
   /*private*/ _expr_14:any;
   /*private*/ _expr_15:any;
   /*private*/ _expr_16:any;
   /*private*/ _expr_17:any;
+  /*private*/ _expr_18:any;
+  /*private*/ _expr_19:any;
+  /*private*/ _expr_20:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ResultsAuthorComponent6,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_ResultsAuthorComponent7,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'tbody',(null as any));
@@ -986,12 +1073,13 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
     this._text_40 = this.renderer.createText(this._el_2,'\n                ',(null as any));
     this._el_41 = this.renderer.createElement(this._el_2,'td',(null as any));
     this._text_42 = this.renderer.createText(this._el_41,'\n                    ',(null as any));
-    this._el_43 = this.renderer.createElement(this._el_41,'button',(null as any));
+    this._el_43 = this.renderer.createElement(this._el_41,'a',(null as any));
     this.renderer.setElementAttribute(this._el_43,'class','btn btn-primary btn-xs');
+    this.renderer.setElementAttribute(this._el_43,'target','_blank');
     this.renderer.setElementAttribute(this._el_43,'title','View validator info');
     this.renderer.setElementAttribute(this._el_43,'type','button');
-    this._RouterLink_43_3 = new import21.RouterLink(this.parent.parentInjector.get(import23.Router),this.parent.parentInjector.get(import24.ActivatedRoute),this.parent.parentInjector.get(import25.LocationStrategy));
-    this._text_44 = this.renderer.createText(this._el_43,'\n                            ',(null as any));
+    this._RouterLinkWithHref_43_3 = new import21.RouterLinkWithHref(this.parent.parentInjector.get(import23.Router),this.parent.parentInjector.get(import24.ActivatedRoute),this.parent.parentInjector.get(import25.LocationStrategy));
+    this._text_44 = this.renderer.createText(this._el_43,'\n                        ',(null as any));
     this._el_45 = this.renderer.createElement(this._el_43,'i',(null as any));
     this.renderer.setElementAttribute(this._el_45,'class','glyphicon glyphicon-info-sign');
     this._text_46 = this.renderer.createText(this._el_43,'\n                    ',(null as any));
@@ -1001,12 +1089,12 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
     this._text_50 = this.renderer.createText(this._el_49,'\n                    ',(null as any));
     this._anchor_51 = this.renderer.createTemplateAnchor(this._el_49,(null as any));
     this._appEl_51 = new import2.AppElement(51,49,this,this._anchor_51);
-    this._TemplateRef_51_5 = new import14.TemplateRef_(this._appEl_51,viewFactory_ResultsAuthorComponent7);
+    this._TemplateRef_51_5 = new import14.TemplateRef_(this._appEl_51,viewFactory_ResultsAuthorComponent8);
     this._NgIf_51_6 = new import13.NgIf(this._appEl_51.vcRef,this._TemplateRef_51_5);
     this._text_52 = this.renderer.createText(this._el_49,'\n                    ',(null as any));
     this._anchor_53 = this.renderer.createTemplateAnchor(this._el_49,(null as any));
     this._appEl_53 = new import2.AppElement(53,49,this,this._anchor_53);
-    this._TemplateRef_53_5 = new import14.TemplateRef_(this._appEl_53,viewFactory_ResultsAuthorComponent8);
+    this._TemplateRef_53_5 = new import14.TemplateRef_(this._appEl_53,viewFactory_ResultsAuthorComponent9);
     this._NgIf_53_6 = new import13.NgIf(this._appEl_53.vcRef,this._TemplateRef_53_5);
     this._text_54 = this.renderer.createText(this._el_49,'\n                ',(null as any));
     this._text_55 = this.renderer.createText(this._el_2,'\n                ',(null as any));
@@ -1014,16 +1102,24 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
     this._text_57 = this.renderer.createText(this._el_56,'\n                    ',(null as any));
     this._anchor_58 = this.renderer.createTemplateAnchor(this._el_56,(null as any));
     this._appEl_58 = new import2.AppElement(58,56,this,this._anchor_58);
-    this._TemplateRef_58_5 = new import14.TemplateRef_(this._appEl_58,viewFactory_ResultsAuthorComponent9);
+    this._TemplateRef_58_5 = new import14.TemplateRef_(this._appEl_58,viewFactory_ResultsAuthorComponent10);
     this._NgIf_58_6 = new import13.NgIf(this._appEl_58.vcRef,this._TemplateRef_58_5);
     this._text_59 = this.renderer.createText(this._el_56,'\n                ',(null as any));
-    this._text_60 = this.renderer.createText(this._el_2,'\n            ',(null as any));
-    this._text_61 = this.renderer.createText(this._el_0,'\n            ',(null as any));
-    this._anchor_62 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
-    this._appEl_62 = new import2.AppElement(62,0,this,this._anchor_62);
-    this._TemplateRef_62_5 = new import14.TemplateRef_(this._appEl_62,viewFactory_ResultsAuthorComponent10);
-    this._NgIf_62_6 = new import13.NgIf(this._appEl_62.vcRef,this._TemplateRef_62_5);
-    this._text_63 = this.renderer.createText(this._el_0,'\n        ',(null as any));
+    this._text_60 = this.renderer.createText(this._el_2,'\n                ',(null as any));
+    this._el_61 = this.renderer.createElement(this._el_2,'td',(null as any));
+    this._text_62 = this.renderer.createText(this._el_61,'\n                    ',(null as any));
+    this._anchor_63 = this.renderer.createTemplateAnchor(this._el_61,(null as any));
+    this._appEl_63 = new import2.AppElement(63,61,this,this._anchor_63);
+    this._TemplateRef_63_5 = new import14.TemplateRef_(this._appEl_63,viewFactory_ResultsAuthorComponent11);
+    this._NgIf_63_6 = new import13.NgIf(this._appEl_63.vcRef,this._TemplateRef_63_5);
+    this._text_64 = this.renderer.createText(this._el_61,'\n                ',(null as any));
+    this._text_65 = this.renderer.createText(this._el_2,'\n            ',(null as any));
+    this._text_66 = this.renderer.createText(this._el_0,'\n            ',(null as any));
+    this._anchor_67 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
+    this._appEl_67 = new import2.AppElement(67,0,this,this._anchor_67);
+    this._TemplateRef_67_5 = new import14.TemplateRef_(this._appEl_67,viewFactory_ResultsAuthorComponent12);
+    this._NgIf_67_6 = new import13.NgIf(this._appEl_67.vcRef,this._TemplateRef_67_5);
+    this._text_68 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_5,'click',this.eventHandler(this._handle_click_5_0.bind(this)));
     this._expr_1 = import7.UNINITIALIZED;
     this._expr_2 = import7.UNINITIALIZED;
@@ -1038,6 +1134,7 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
     this._expr_10 = import7.UNINITIALIZED;
     var disposable_2:Function = this.renderer.listen(this._el_35,'click',this.eventHandler(this._handle_click_35_0.bind(this)));
     var disposable_3:Function = this.renderer.listen(this._el_43,'click',this.eventHandler(this._handle_click_43_0.bind(this)));
+    this._expr_13 = import7.UNINITIALIZED;
     this._arr_0 = import4.pureProxy2((p0:any,p1:any):any[] => {
       return [
         p0,
@@ -1045,11 +1142,13 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
       ]
       ;
     });
-    this._expr_13 = import7.UNINITIALIZED;
     this._expr_14 = import7.UNINITIALIZED;
     this._expr_15 = import7.UNINITIALIZED;
     this._expr_16 = import7.UNINITIALIZED;
     this._expr_17 = import7.UNINITIALIZED;
+    this._expr_18 = import7.UNINITIALIZED;
+    this._expr_19 = import7.UNINITIALIZED;
+    this._expr_20 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -1112,9 +1211,14 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
       this._anchor_58,
       this._text_59,
       this._text_60,
-      this._text_61,
-      this._anchor_62,
-      this._text_63
+      this._el_61,
+      this._text_62,
+      this._anchor_63,
+      this._text_64,
+      this._text_65,
+      this._text_66,
+      this._anchor_67,
+      this._text_68
     ]
     ,[
       disposable_0,
@@ -1126,43 +1230,62 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import21.RouterLink) && ((43 <= requestNodeIndex) && (requestNodeIndex <= 46)))) { return this._RouterLink_43_3; }
+    if (((token === import21.RouterLinkWithHref) && ((43 <= requestNodeIndex) && (requestNodeIndex <= 46)))) { return this._RouterLinkWithHref_43_3; }
     if (((token === import14.TemplateRef) && (51 === requestNodeIndex))) { return this._TemplateRef_51_5; }
     if (((token === import13.NgIf) && (51 === requestNodeIndex))) { return this._NgIf_51_6; }
     if (((token === import14.TemplateRef) && (53 === requestNodeIndex))) { return this._TemplateRef_53_5; }
     if (((token === import13.NgIf) && (53 === requestNodeIndex))) { return this._NgIf_53_6; }
     if (((token === import14.TemplateRef) && (58 === requestNodeIndex))) { return this._TemplateRef_58_5; }
     if (((token === import13.NgIf) && (58 === requestNodeIndex))) { return this._NgIf_58_6; }
-    if (((token === import14.TemplateRef) && (62 === requestNodeIndex))) { return this._TemplateRef_62_5; }
-    if (((token === import13.NgIf) && (62 === requestNodeIndex))) { return this._NgIf_62_6; }
+    if (((token === import14.TemplateRef) && (63 === requestNodeIndex))) { return this._TemplateRef_63_5; }
+    if (((token === import13.NgIf) && (63 === requestNodeIndex))) { return this._NgIf_63_6; }
+    if (((token === import14.TemplateRef) && (67 === requestNodeIndex))) { return this._TemplateRef_67_5; }
+    if (((token === import13.NgIf) && (67 === requestNodeIndex))) { return this._NgIf_67_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
+    var changes:{[key: string]:import7.SimpleChange} = (null as any);
     const valUnwrapper:any = new import7.ValueUnwrapper();
-    const currVal_13:any = this._arr_0('/solution/validatorinfo',this.context.$implicit.solutionId);
+    changes = (null as any);
+    const currVal_13:any = '_blank';
     if (import4.checkBinding(throwOnChange,this._expr_13,currVal_13)) {
-      this._RouterLink_43_3.routerLink = currVal_13;
+      this._RouterLinkWithHref_43_3.target = currVal_13;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['target'] = new import7.SimpleChange(this._expr_13,currVal_13);
       this._expr_13 = currVal_13;
     }
-    const currVal_14:any = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
+    const currVal_14:any = this._arr_0('/solution/validatorinfo',this.context.$implicit.solutionId);
     if (import4.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
-      this._NgIf_51_6.ngIf = currVal_14;
+      this._RouterLinkWithHref_43_3.routerLink = currVal_14;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['routerLink'] = new import7.SimpleChange(this._expr_14,currVal_14);
       this._expr_14 = currVal_14;
     }
-    const currVal_15:any = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
-    if (import4.checkBinding(throwOnChange,this._expr_15,currVal_15)) {
-      this._NgIf_53_6.ngIf = currVal_15;
-      this._expr_15 = currVal_15;
-    }
-    const currVal_16:any = this.parent.parent.context.isAdmin();
+    if ((changes !== (null as any))) { this._RouterLinkWithHref_43_3.ngOnChanges(changes); }
+    const currVal_16:any = (this.parent.parent.context.isAdmin() && this.context.$implicit.visible);
     if (import4.checkBinding(throwOnChange,this._expr_16,currVal_16)) {
-      this._NgIf_58_6.ngIf = currVal_16;
+      this._NgIf_51_6.ngIf = currVal_16;
       this._expr_16 = currVal_16;
     }
-    const currVal_17:any = (this.parent.parent.context.showPapers && this.context.$implicit.paper);
+    const currVal_17:any = (this.parent.parent.context.isAdmin() && !this.context.$implicit.visible);
     if (import4.checkBinding(throwOnChange,this._expr_17,currVal_17)) {
-      this._NgIf_62_6.ngIf = currVal_17;
+      this._NgIf_53_6.ngIf = currVal_17;
       this._expr_17 = currVal_17;
+    }
+    const currVal_18:any = this.parent.parent.context.isAdmin();
+    if (import4.checkBinding(throwOnChange,this._expr_18,currVal_18)) {
+      this._NgIf_58_6.ngIf = currVal_18;
+      this._expr_18 = currVal_18;
+    }
+    const currVal_19:any = this.parent.parent.context.isAdmin();
+    if (import4.checkBinding(throwOnChange,this._expr_19,currVal_19)) {
+      this._NgIf_63_6.ngIf = currVal_19;
+      this._expr_19 = currVal_19;
+    }
+    const currVal_20:any = (this.parent.parent.context.showPapers && this.context.$implicit.paper);
+    if (import4.checkBinding(throwOnChange,this._expr_20,currVal_20)) {
+      this._NgIf_67_6.ngIf = currVal_20;
+      this._expr_20 = currVal_20;
     }
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_1:any = import4.interpolate(1,'',this.context.$implicit.instance.name,'');
@@ -1211,7 +1334,15 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
       this.renderer.setText(this._text_31,currVal_10);
       this._expr_10 = currVal_10;
     }
+    const currVal_15:any = this._RouterLinkWithHref_43_3.href;
+    if (import4.checkBinding(throwOnChange,this._expr_15,currVal_15)) {
+      this.renderer.setElementProperty(this._el_43,'href',this.viewUtils.sanitizer.sanitize(import26.SecurityContext.URL,currVal_15));
+      this._expr_15 = currVal_15;
+    }
     this.detectViewChildrenChanges(throwOnChange);
+  }
+  destroyInternal():void {
+    this._RouterLinkWithHref_43_3.ngOnDestroy();
   }
   private _handle_click_5_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
@@ -1230,20 +1361,20 @@ class _View_ResultsAuthorComponent6 extends import1.AppView<any> {
   }
   private _handle_click_43_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this._RouterLink_43_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    const pd_0:any = ((<any>this._RouterLinkWithHref_43_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
     return (true && pd_0);
   }
 }
-function viewFactory_ResultsAuthorComponent6(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ResultsAuthorComponent6(viewUtils,parentInjector,declarationEl);
+function viewFactory_ResultsAuthorComponent7(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ResultsAuthorComponent7(viewUtils,parentInjector,declarationEl);
 }
-class _View_ResultsAuthorComponent7 extends import1.AppView<any> {
+class _View_ResultsAuthorComponent8 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
   _text_3:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ResultsAuthorComponent7,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_ResultsAuthorComponent8,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'button',(null as any));
@@ -1269,16 +1400,16 @@ class _View_ResultsAuthorComponent7 extends import1.AppView<any> {
     return (true && pd_0);
   }
 }
-function viewFactory_ResultsAuthorComponent7(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ResultsAuthorComponent7(viewUtils,parentInjector,declarationEl);
+function viewFactory_ResultsAuthorComponent8(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ResultsAuthorComponent8(viewUtils,parentInjector,declarationEl);
 }
-class _View_ResultsAuthorComponent8 extends import1.AppView<any> {
+class _View_ResultsAuthorComponent9 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
   _text_3:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ResultsAuthorComponent8,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_ResultsAuthorComponent9,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'button',(null as any));
@@ -1304,16 +1435,51 @@ class _View_ResultsAuthorComponent8 extends import1.AppView<any> {
     return (true && pd_0);
   }
 }
-function viewFactory_ResultsAuthorComponent8(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ResultsAuthorComponent8(viewUtils,parentInjector,declarationEl);
+function viewFactory_ResultsAuthorComponent9(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ResultsAuthorComponent9(viewUtils,parentInjector,declarationEl);
 }
-class _View_ResultsAuthorComponent9 extends import1.AppView<any> {
+class _View_ResultsAuthorComponent10 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
   _text_3:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ResultsAuthorComponent9,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_ResultsAuthorComponent10,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'button',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','btn btn-primary btn-xs');
+    this.renderer.setElementAttribute(this._el_0,'title','Edit technique');
+    this._text_1 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'i',(null as any));
+    this.renderer.setElementAttribute(this._el_2,'class','glyphicon glyphicon-pencil');
+    this._text_3 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
+    var disposable_0:Function = this.renderer.listen(this._el_0,'click',this.eventHandler(this._handle_click_0_0.bind(this)));
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1,
+      this._el_2,
+      this._text_3
+    ]
+    ,[disposable_0],[]);
+    return (null as any);
+  }
+  private _handle_click_0_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this.parent.parent.parent.context.onEditTechnique(this.parent.context.$implicit)) !== false);
+    return (true && pd_0);
+  }
+}
+function viewFactory_ResultsAuthorComponent10(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ResultsAuthorComponent10(viewUtils,parentInjector,declarationEl);
+}
+class _View_ResultsAuthorComponent11 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  _el_2:any;
+  _text_3:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_ResultsAuthorComponent11,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'button',(null as any));
@@ -1339,10 +1505,10 @@ class _View_ResultsAuthorComponent9 extends import1.AppView<any> {
     return (true && pd_0);
   }
 }
-function viewFactory_ResultsAuthorComponent9(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ResultsAuthorComponent9(viewUtils,parentInjector,declarationEl);
+function viewFactory_ResultsAuthorComponent11(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ResultsAuthorComponent11(viewUtils,parentInjector,declarationEl);
 }
-class _View_ResultsAuthorComponent10 extends import1.AppView<any> {
+class _View_ResultsAuthorComponent12 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
@@ -1361,7 +1527,7 @@ class _View_ResultsAuthorComponent10 extends import1.AppView<any> {
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ResultsAuthorComponent10,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_ResultsAuthorComponent12,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'tr',(null as any));
@@ -1380,7 +1546,7 @@ class _View_ResultsAuthorComponent10 extends import1.AppView<any> {
     this._text_8 = this.renderer.createText(this._el_4,'',(null as any));
     this._anchor_9 = this.renderer.createTemplateAnchor(this._el_4,(null as any));
     this._appEl_9 = new import2.AppElement(9,4,this,this._anchor_9);
-    this._TemplateRef_9_5 = new import14.TemplateRef_(this._appEl_9,viewFactory_ResultsAuthorComponent11);
+    this._TemplateRef_9_5 = new import14.TemplateRef_(this._appEl_9,viewFactory_ResultsAuthorComponent13);
     this._NgIf_9_6 = new import13.NgIf(this._appEl_9.vcRef,this._TemplateRef_9_5);
     this._text_10 = this.renderer.createText(this._el_4,'\n                ',(null as any));
     this._text_11 = this.renderer.createText(this._el_0,'\n            ',(null as any));
@@ -1423,15 +1589,15 @@ class _View_ResultsAuthorComponent10 extends import1.AppView<any> {
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-function viewFactory_ResultsAuthorComponent10(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ResultsAuthorComponent10(viewUtils,parentInjector,declarationEl);
+function viewFactory_ResultsAuthorComponent12(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ResultsAuthorComponent12(viewUtils,parentInjector,declarationEl);
 }
-class _View_ResultsAuthorComponent11 extends import1.AppView<any> {
+class _View_ResultsAuthorComponent13 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_ResultsAuthorComponent11,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_ResultsAuthorComponent13,renderType_ResultsAuthorComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'a',(null as any));
@@ -1455,6 +1621,6 @@ class _View_ResultsAuthorComponent11 extends import1.AppView<any> {
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-function viewFactory_ResultsAuthorComponent11(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_ResultsAuthorComponent11(viewUtils,parentInjector,declarationEl);
+function viewFactory_ResultsAuthorComponent13(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ResultsAuthorComponent13(viewUtils,parentInjector,declarationEl);
 }

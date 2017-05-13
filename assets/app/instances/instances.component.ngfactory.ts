@@ -27,6 +27,7 @@ import * as import19 from '@angular/common/src/directives/ng_for';
 import * as import20 from '../shared/pipes/order-by.pipe';
 import * as import21 from '@angular/core/src/change_detection/differs/iterable_differs';
 import * as import22 from '../shared/pipes/date-format.pipe';
+import * as import23 from '@angular/core/src/security';
 var renderType_InstancesComponent_Host:import0.RenderComponentType = (null as any);
 class _View_InstancesComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -675,7 +676,7 @@ class _View_InstancesComponent5 extends import1.AppView<any> {
   _text_10:any;
   _el_11:any;
   _el_12:any;
-  _RouterLink_12_3:import13.RouterLink;
+  _RouterLinkWithHref_12_3:import13.RouterLinkWithHref;
   _text_13:any;
   _el_14:any;
   _text_15:any;
@@ -708,12 +709,14 @@ class _View_InstancesComponent5 extends import1.AppView<any> {
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   /*private*/ _expr_2:any;
-  _arr_0:any;
   /*private*/ _expr_4:any;
-  _pipe_dateFormat_0:import22.DateFormatPipe;
+  _arr_0:any;
   /*private*/ _expr_5:any;
+  /*private*/ _expr_6:any;
+  _pipe_dateFormat_0:import22.DateFormatPipe;
   /*private*/ _expr_7:any;
-  /*private*/ _expr_8:any;
+  /*private*/ _expr_9:any;
+  /*private*/ _expr_10:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_InstancesComponent5,renderType_InstancesComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -733,11 +736,12 @@ class _View_InstancesComponent5 extends import1.AppView<any> {
     this._text_9 = this.renderer.createText(this._el_8,'',(null as any));
     this._text_10 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
     this._el_11 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this._el_12 = this.renderer.createElement(this._el_11,'button',(null as any));
+    this._el_12 = this.renderer.createElement(this._el_11,'a',(null as any));
     this.renderer.setElementAttribute(this._el_12,'class','btn btn-primary btn-xs');
+    this.renderer.setElementAttribute(this._el_12,'target','_blank');
     this.renderer.setElementAttribute(this._el_12,'title','View');
     this.renderer.setElementAttribute(this._el_12,'type','button');
-    this._RouterLink_12_3 = new import13.RouterLink(this.parent.parent.parent.parentInjector.get(import15.Router),this.parent.parent.parent.parentInjector.get(import16.ActivatedRoute),this.parent.parent.parent.parentInjector.get(import17.LocationStrategy));
+    this._RouterLinkWithHref_12_3 = new import13.RouterLinkWithHref(this.parent.parent.parent.parentInjector.get(import15.Router),this.parent.parent.parent.parentInjector.get(import16.ActivatedRoute),this.parent.parent.parent.parentInjector.get(import17.LocationStrategy));
     this._text_13 = this.renderer.createText(this._el_12,'\n                            ',(null as any));
     this._el_14 = this.renderer.createElement(this._el_12,'i',(null as any));
     this.renderer.setElementAttribute(this._el_14,'class','glyphicon glyphicon-info-sign');
@@ -778,6 +782,7 @@ class _View_InstancesComponent5 extends import1.AppView<any> {
     this._expr_1 = import7.UNINITIALIZED;
     this._expr_2 = import7.UNINITIALIZED;
     var disposable_0:Function = this.renderer.listen(this._el_12,'click',this.eventHandler(this._handle_click_12_0.bind(this)));
+    this._expr_4 = import7.UNINITIALIZED;
     this._arr_0 = import4.pureProxy2((p0:any,p1:any):any[] => {
       return [
         p0,
@@ -785,12 +790,13 @@ class _View_InstancesComponent5 extends import1.AppView<any> {
       ]
       ;
     });
-    this._expr_4 = import7.UNINITIALIZED;
-    this._pipe_dateFormat_0 = new import22.DateFormatPipe();
     this._expr_5 = import7.UNINITIALIZED;
-    var disposable_1:Function = this.renderer.listen(this._el_23,'click',this.eventHandler(this._handle_click_23_0.bind(this)));
+    this._expr_6 = import7.UNINITIALIZED;
+    this._pipe_dateFormat_0 = new import22.DateFormatPipe();
     this._expr_7 = import7.UNINITIALIZED;
-    this._expr_8 = import7.UNINITIALIZED;
+    var disposable_1:Function = this.renderer.listen(this._el_23,'click',this.eventHandler(this._handle_click_23_0.bind(this)));
+    this._expr_9 = import7.UNINITIALIZED;
+    this._expr_10 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -839,7 +845,7 @@ class _View_InstancesComponent5 extends import1.AppView<any> {
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
     if (((token === import18.TemplateRef) && (3 === requestNodeIndex))) { return this._TemplateRef_3_5; }
     if (((token === import14.NgIf) && (3 === requestNodeIndex))) { return this._NgIf_3_6; }
-    if (((token === import13.RouterLink) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 15)))) { return this._RouterLink_12_3; }
+    if (((token === import13.RouterLinkWithHref) && ((12 <= requestNodeIndex) && (requestNodeIndex <= 15)))) { return this._RouterLinkWithHref_12_3; }
     if (((token === import18.TemplateRef) && (31 === requestNodeIndex))) { return this._TemplateRef_31_5; }
     if (((token === import14.NgIf) && (31 === requestNodeIndex))) { return this._NgIf_31_6; }
     if (((token === import18.TemplateRef) && (33 === requestNodeIndex))) { return this._TemplateRef_33_5; }
@@ -847,26 +853,38 @@ class _View_InstancesComponent5 extends import1.AppView<any> {
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
+    var changes:{[key: string]:import7.SimpleChange} = (null as any);
     const valUnwrapper:any = new import7.ValueUnwrapper();
     const currVal_0:any = this.parent.parent.parent.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
       this._NgIf_3_6.ngIf = currVal_0;
       this._expr_0 = currVal_0;
     }
-    const currVal_4:any = this._arr_0('/instances/status',this.context.$implicit.instanceId);
+    changes = (null as any);
+    const currVal_4:any = '_blank';
     if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
-      this._RouterLink_12_3.routerLink = currVal_4;
+      this._RouterLinkWithHref_12_3.target = currVal_4;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['target'] = new import7.SimpleChange(this._expr_4,currVal_4);
       this._expr_4 = currVal_4;
     }
-    const currVal_7:any = this.parent.parent.parent.context.isAdmin();
-    if (import4.checkBinding(throwOnChange,this._expr_7,currVal_7)) {
-      this._NgIf_31_6.ngIf = currVal_7;
-      this._expr_7 = currVal_7;
+    const currVal_5:any = this._arr_0('/instances/status',this.context.$implicit.instanceId);
+    if (import4.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
+      this._RouterLinkWithHref_12_3.routerLink = currVal_5;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['routerLink'] = new import7.SimpleChange(this._expr_5,currVal_5);
+      this._expr_5 = currVal_5;
     }
-    const currVal_8:any = this.parent.parent.parent.context.isAdmin();
-    if (import4.checkBinding(throwOnChange,this._expr_8,currVal_8)) {
-      this._NgIf_33_6.ngIf = currVal_8;
-      this._expr_8 = currVal_8;
+    if ((changes !== (null as any))) { this._RouterLinkWithHref_12_3.ngOnChanges(changes); }
+    const currVal_9:any = this.parent.parent.parent.context.isAdmin();
+    if (import4.checkBinding(throwOnChange,this._expr_9,currVal_9)) {
+      this._NgIf_31_6.ngIf = currVal_9;
+      this._expr_9 = currVal_9;
+    }
+    const currVal_10:any = this.parent.parent.parent.context.isAdmin();
+    if (import4.checkBinding(throwOnChange,this._expr_10,currVal_10)) {
+      this._NgIf_33_6.ngIf = currVal_10;
+      this._expr_10 = currVal_10;
     }
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_1:any = import4.interpolate(1,'',this.context.$implicit.name,'');
@@ -879,17 +897,25 @@ class _View_InstancesComponent5 extends import1.AppView<any> {
       this.renderer.setText(this._text_9,currVal_2);
       this._expr_2 = currVal_2;
     }
+    const currVal_6:any = this._RouterLinkWithHref_12_3.href;
+    if (import4.checkBinding(throwOnChange,this._expr_6,currVal_6)) {
+      this.renderer.setElementProperty(this._el_12,'href',this.viewUtils.sanitizer.sanitize(import23.SecurityContext.URL,currVal_6));
+      this._expr_6 = currVal_6;
+    }
     valUnwrapper.reset();
-    const currVal_5:any = import4.interpolate(1,'',valUnwrapper.unwrap(this._pipe_dateFormat_0.transform(this.context.$implicit.submissionTime)),'');
-    if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange,this._expr_5,currVal_5))) {
-      this.renderer.setText(this._text_19,currVal_5);
-      this._expr_5 = currVal_5;
+    const currVal_7:any = import4.interpolate(1,'',valUnwrapper.unwrap(this._pipe_dateFormat_0.transform(this.context.$implicit.submissionTime)),'');
+    if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange,this._expr_7,currVal_7))) {
+      this.renderer.setText(this._text_19,currVal_7);
+      this._expr_7 = currVal_7;
     }
     this.detectViewChildrenChanges(throwOnChange);
   }
+  destroyInternal():void {
+    this._RouterLinkWithHref_12_3.ngOnDestroy();
+  }
   private _handle_click_12_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this._RouterLink_12_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    const pd_0:any = ((<any>this._RouterLinkWithHref_12_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
     return (true && pd_0);
   }
   private _handle_click_23_0($event:any):boolean {

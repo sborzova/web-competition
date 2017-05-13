@@ -27,9 +27,9 @@ router.post('/server/user', function (req, res, next) {
 
     user.save(function(err, result) {
         if (err) {
-            return res.status(422).json({
+            return res.status(500).json({
                 title: 'An error occurred',
-                error: {message: 'Email address is already taken'}
+                error: err
             });
         }
         res.status(201).json({
@@ -149,9 +149,9 @@ router.patch('/server/user', function (req, res, next) {
 
         user.save(function (err, result) {
             if (err) {
-                return res.status(422).json({
+                return res.status(500).json({
                     title: 'An error occurred',
-                    error: {message: 'Email address is already taken'}
+                    error: err
                 });
             }
             signin(req, res, user);
@@ -393,9 +393,9 @@ function checkAdminSaveUser(req, res, user) {
         user.role = req.body.role;
         user.save(function (err, user) {
             if (err) {
-                return res.status(422).json({
+                return res.status(500).json({
                     title: 'An error occurred',
-                    error: {message: 'Email address is already taken'}
+                    error: err
                 });
             }
             res.status(200).json({
@@ -416,9 +416,9 @@ function checkAdminSaveUser(req, res, user) {
 function saveUser(req, res, user) {
     user.save(function (err, user) {
         if (err) {
-            return res.status(422).json({
+            return res.status(500).json({
                 title: 'An error occurred',
-                error: {message: 'Email address is already taken'}
+                error: err
             });
         }
         res.status(200).json({

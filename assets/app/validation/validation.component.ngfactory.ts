@@ -27,6 +27,8 @@ import * as import19 from '@angular/core/src/linker/template_ref';
 import * as import20 from '@angular/core/src/linker/element_ref';
 import * as import21 from './success-validation/success-validation.component';
 import * as import22 from './success-validation/success-validation.component.ngfactory';
+import * as import23 from '../shared/pipes/escape-html.pipe';
+import * as import24 from '@angular/core/src/security';
 var renderType_ValidationComponent_Host:import0.RenderComponentType = (null as any);
 class _View_ValidationComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -261,14 +263,20 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
   _text_21:any;
   _text_22:any;
   _text_23:any;
-  _text_24:any;
-  _el_25:any;
+  _anchor_24:any;
+  /*private*/ _appEl_24:import2.AppElement;
+  _TemplateRef_24_5:any;
+  _NgIf_24_6:import15.NgIf;
+  _text_25:any;
   _text_26:any;
   _el_27:any;
-  /*private*/ _appEl_27:import2.AppElement;
-  _SuccessValidationComponent_27_4:import21.SuccessValidationComponent;
   _text_28:any;
-  _text_29:any;
+  _el_29:any;
+  /*private*/ _appEl_29:import2.AppElement;
+  _SuccessValidationComponent_29_4:import21.SuccessValidationComponent;
+  _text_30:any;
+  _text_31:any;
+  /*private*/ _expr_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_ValidationComponent1,renderType_ValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -302,19 +310,25 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
     this._text_20 = this.renderer.createText(this._el_19,'Validate',(null as any));
     this._text_21 = this.renderer.createText(this._el_17,'\n                    ',(null as any));
     this._text_22 = this.renderer.createText(this._el_4,'\n                ',(null as any));
-    this._text_23 = this.renderer.createText(this._el_2,'\n            ',(null as any));
-    this._text_24 = this.renderer.createText(this._el_0,'\n            ',(null as any));
-    this._el_25 = this.renderer.createElement(this._el_0,'div',(null as any));
-    this._text_26 = this.renderer.createText(this._el_25,'\n                ',(null as any));
-    this._el_27 = this.renderer.createElement(this._el_25,'app-success-validation',(null as any));
-    this._appEl_27 = new import2.AppElement(27,25,this,this._el_27);
-    var compView_27:any = import22.viewFactory_SuccessValidationComponent0(this.viewUtils,this.injector(27),this._appEl_27);
-    this._SuccessValidationComponent_27_4 = new import21.SuccessValidationComponent(this.parent.parentInjector.get(import8.SolutionService),this.parent.parentInjector.get(import9.SessionStorageService),this.parent.parentInjector.get(import10.FlashMessageService));
-    this._appEl_27.initComponent(this._SuccessValidationComponent_27_4,[],compView_27);
-    compView_27.create(this._SuccessValidationComponent_27_4,[],(null as any));
-    this._text_28 = this.renderer.createText(this._el_25,'\n            ',(null as any));
-    this._text_29 = this.renderer.createText(this._el_0,'\n        ',(null as any));
+    this._text_23 = this.renderer.createText(this._el_2,'\n                ',(null as any));
+    this._anchor_24 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
+    this._appEl_24 = new import2.AppElement(24,2,this,this._anchor_24);
+    this._TemplateRef_24_5 = new import19.TemplateRef_(this._appEl_24,viewFactory_ValidationComponent2);
+    this._NgIf_24_6 = new import15.NgIf(this._appEl_24.vcRef,this._TemplateRef_24_5);
+    this._text_25 = this.renderer.createText(this._el_2,'\n            ',(null as any));
+    this._text_26 = this.renderer.createText(this._el_0,'\n            ',(null as any));
+    this._el_27 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this._text_28 = this.renderer.createText(this._el_27,'\n                ',(null as any));
+    this._el_29 = this.renderer.createElement(this._el_27,'app-success-validation',(null as any));
+    this._appEl_29 = new import2.AppElement(29,27,this,this._el_29);
+    var compView_29:any = import22.viewFactory_SuccessValidationComponent0(this.viewUtils,this.injector(29),this._appEl_29);
+    this._SuccessValidationComponent_29_4 = new import21.SuccessValidationComponent(this.parent.parentInjector.get(import8.SolutionService),this.parent.parentInjector.get(import9.SessionStorageService),this.parent.parentInjector.get(import10.FlashMessageService));
+    this._appEl_29.initComponent(this._SuccessValidationComponent_29_4,[],compView_29);
+    compView_29.create(this._SuccessValidationComponent_29_4,[],(null as any));
+    this._text_30 = this.renderer.createText(this._el_27,'\n            ',(null as any));
+    this._text_31 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_19,'click',this.eventHandler(this._handle_click_19_0.bind(this)));
+    this._expr_1 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -340,22 +354,31 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
       this._text_21,
       this._text_22,
       this._text_23,
-      this._text_24,
-      this._el_25,
+      this._anchor_24,
+      this._text_25,
       this._text_26,
       this._el_27,
       this._text_28,
-      this._text_29
+      this._el_29,
+      this._text_30,
+      this._text_31
     ]
     ,[disposable_0],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import21.SuccessValidationComponent) && (27 === requestNodeIndex))) { return this._SuccessValidationComponent_27_4; }
+    if (((token === import19.TemplateRef) && (24 === requestNodeIndex))) { return this._TemplateRef_24_5; }
+    if (((token === import15.NgIf) && (24 === requestNodeIndex))) { return this._NgIf_24_6; }
+    if (((token === import21.SuccessValidationComponent) && (29 === requestNodeIndex))) { return this._SuccessValidationComponent_29_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._SuccessValidationComponent_27_4.ngOnInit(); }
+    const currVal_1:any = this.parent.context.logMessage;
+    if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
+      this._NgIf_24_6.ngIf = currVal_1;
+      this._expr_1 = currVal_1;
+    }
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._SuccessValidationComponent_29_4.ngOnInit(); }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
@@ -363,7 +386,7 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
     (<_View_ValidationComponent0>this.parent)._viewQuery_solution_0.setDirty();
   }
   destroyInternal():void {
-    this._SuccessValidationComponent_27_4.ngOnDestroy();
+    this._SuccessValidationComponent_29_4.ngOnDestroy();
   }
   private _handle_click_19_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
@@ -373,4 +396,45 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
 }
 function viewFactory_ValidationComponent1(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
   return new _View_ValidationComponent1(viewUtils,parentInjector,declarationEl);
+}
+class _View_ValidationComponent2 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  _el_2:any;
+  _text_3:any;
+  _pipe_escapeHtml_0:import23.EscapeHtmlPipe;
+  /*private*/ _expr_0:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_ValidationComponent2,renderType_ValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'p',(null as any));
+    this._text_3 = this.renderer.createText(this._el_0,'\n                ',(null as any));
+    this._pipe_escapeHtml_0 = new import23.EscapeHtmlPipe();
+    this._expr_0 = import7.UNINITIALIZED;
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1,
+      this._el_2,
+      this._text_3
+    ]
+    ,[],[]);
+    return (null as any);
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    const valUnwrapper:any = new import7.ValueUnwrapper();
+    this.detectContentChildrenChanges(throwOnChange);
+    valUnwrapper.reset();
+    const currVal_0:any = valUnwrapper.unwrap(this._pipe_escapeHtml_0.transform(this.parent.parent.context.logMessage));
+    if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange,this._expr_0,currVal_0))) {
+      this.renderer.setElementProperty(this._el_2,'innerHTML',this.viewUtils.sanitizer.sanitize(import24.SecurityContext.HTML,currVal_0));
+      this._expr_0 = currVal_0;
+    }
+    this.detectViewChildrenChanges(throwOnChange);
+  }
+}
+function viewFactory_ValidationComponent2(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_ValidationComponent2(viewUtils,parentInjector,declarationEl);
 }
