@@ -55,13 +55,14 @@
                         <td><div *ngIf="isAdmin()">{{ instance.order }}</div></td>
                         <td>{{ instance.name }}</td>
                         <td>{{ instance.description }}</td>
-                        <td><button
+                        <td><a
                                 type="button"
                                 class="btn btn-primary btn-xs"
                                 title="View"
+                                target="_blank"
                                 [routerLink]="['/instances/status', instance.instanceId]">
                             <i class="glyphicon glyphicon-info-sign"></i>
-                        </button>
+                        </a>
                         </td>
                         <td>{{ instance.submissionTime | dateFormat }}</td>
                         <td>

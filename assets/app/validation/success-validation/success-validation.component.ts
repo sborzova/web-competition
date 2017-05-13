@@ -18,6 +18,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     private display = 'none';
     private subscription: Subscription;
     private submitted: boolean = false;
+    private fileName: string;
     private citationMissing: boolean = false;
     validation: Validation;
     solutionForm: FormGroup;
@@ -51,6 +52,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
         this.solutionService.successValidation
             .subscribe(
                 (validation: Validation) => {
+                    this.fileName = this.solutionService.getSolutionFile().fileName;
                     this.validation = validation;
                     this.display = 'block';
                 }

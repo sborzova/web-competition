@@ -71,13 +71,14 @@
                     <span class="glyphicon glyphicon-download-alt"></span>
                 </button>
             </td>
-            <td><button
-                        type="button"
-                        class="btn btn-primary btn-xs"
-                        title="View validator info"
-                        [routerLink]="['/solution/validatorinfo', solution.solutionId]">
-                        <i class="glyphicon glyphicon-info-sign"></i>
-                </button>
+            <td><a
+                    type="button"
+                    class="btn btn-primary btn-xs"
+                    title="View validator info"
+                    target="_blank"
+                    [routerLink]="['/solution/validatorinfo', solution.solutionId]">
+                    <i class="glyphicon glyphicon-info-sign"></i>
+                </a>
             </td>
             <td>
                 <button

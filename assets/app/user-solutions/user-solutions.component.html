@@ -165,13 +165,14 @@
                             </button>
                         </td>
                         <td>
-                            <button
-                                    type="button"
-                                    class="btn btn-primary btn-xs"
-                                    title="View"
-                                    [routerLink]="['/solution/validatorinfo',solution.solutionId]">
-                                    <i class="glyphicon glyphicon-info-sign"></i>
-                            </button>
+                            <a
+                                type="button"
+                                class="btn btn-primary btn-xs"
+                                title="View"
+                                target="_blank"
+                                [routerLink]="['/solution/validatorinfo',solution.solutionId]">
+                                <i class="glyphicon glyphicon-info-sign"></i>
+                            </a>
                         </td>
                         <td>
                             <button

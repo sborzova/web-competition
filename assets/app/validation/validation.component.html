@@ -28,6 +28,9 @@
                         <button class="btn btn-primary btn-s" (click)="onValidate()" >Validate</button>
                     </div>
                 </div>
+                <div *ngIf="logMessage">
+                    <p [innerHTML]=" logMessage  | escapeHtml"></p>
+                </div>
             </div>
             <div>
                 <app-success-validation></app-success-validation>

@@ -443,4 +443,8 @@ export class SolutionService {
     setSolutionFile(file: any){
         this.solutionFile = file;
     }
+
+    getSolutionFile(){
+        return this.solutionFile;
+    }
 }

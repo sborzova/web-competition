@@ -11,6 +11,7 @@ import {SessionStorageService} from "../shared/services/session-storage.service"
 })
 export class ValidationComponent implements OnInit {
     @ViewChild('solution') solutionElem;
+    logMessage: string;
 
     constructor(private validationService: SolutionService,
                 private sessionStorageService: SessionStorageService,
@@ -64,12 +65,22 @@ export class ValidationComponent implements OnInit {
         this.validationService.validate(fd)
             .subscribe(
                 data => {
+                    this.logMessage = null;
                     let result = JSON.parse(data);
                     if (result.status == 400){
                         this.flashMessageService.showMessage('Invalid XML format.', 'danger' );
+                    }
+                    if (result.obj.result != 'OK'){
+                        let info = "";
+                        let logs : string[] = result.obj.log;
+                        for (let log of logs){
+                            info += log + "\n";
+                        }
+                        this.logMessage = info;
                     }else {
                         let validation = this.createValidationWithProperties(result);
                         this.validationService.successValidationShowResult(validation, file);
+                        this.solutionElem.nativeElement.value = '';
                     }
                 },
                 error => console.error(error)
@@ -83,6 +94,7 @@ export class ValidationComponent implements OnInit {
      * @returns {Validation} validation model
      */
     createValidationWithProperties(result){
+
         let info = "";
         let logs : string[] = result.obj.log;
         for (let log of logs){
