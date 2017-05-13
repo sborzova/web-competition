@@ -73,13 +73,17 @@ export class UsersService {
      */
     updateUser(user: User){
         return this.http.patch(
-            this.hostUrl.concat('server/admin/user/') + user.userId + this.getToken(), this.stringifyObject(user), {headers: this.getHeaders()})
+            this.hostUrl.concat('server/admin/user/') + user.userId + this.getToken(),
+            this.stringifyObject(user), {headers: this.getHeaders()})
             .map((response: Response) => {
                 return response.json();
             })
             .catch((error: Response) => {
                 if (error.status === 422){
                     this.flashMessageService.showMessage('Email address is already in use.', 'danger' );
+                }
+                if (error.status === 412){
+                    this.flashMessageService.showMessage('Password is incorrect.', 'danger' );
                 }
                 return Observable.throw(error);
             });

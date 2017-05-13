@@ -84,6 +84,26 @@
                                     value={{role}}>{{role}}
                         </div>
                     </div>
+                    <form *ngIf="passwordForm" [formGroup]="passwordForm" >
+                        <div class="form-group"
+                             [ngClass]="{'has-error':
+                            (!passwordForm.controls['password'].valid ) &&
+                            (passwordForm.controls['password'].touched || submitted)}">
+                            <label for="password">
+                                Confirm your password
+                            </label>
+                            <input
+                                    type="password"
+                                    id="password"
+                                    class="form-control"
+                                    [formControl]="passwordForm.controls['password']">
+                            <div class="field-error"
+                                 *ngIf="(passwordForm.controls['password'].hasError('required')) &&
+                                (passwordForm.controls['password'].touched || submitted)">
+                                Field is required.
+                            </div>
+                        </div>
+                    </form>
                     <div align="right">
                         <button
                                 class="btn btn-primary"

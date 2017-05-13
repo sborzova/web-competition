@@ -10,9 +10,11 @@ import {FlashMessageService} from "../../flash-message/flash-messages.service";
     selector: 'app-user-edit',
     templateUrl: './user-edit.component.html'
 })
-export class UserEditComponent implements OnInit {
+export class UserEditComponent implements OnInit{
     userForm: FormGroup;
+    passwordForm: FormGroup;
     private user: User;
+    private savedRole: string;
     private roles: string[] = [];
     private selectedRole: string;
     private submitted: boolean = false;
@@ -35,6 +37,7 @@ export class UserEditComponent implements OnInit {
                 (user: User) => {
                     this.user = user;
                     this.roles.push('admin', 'user');
+                    this.savedRole = this.user.role;
                     this.selectedRole = this.user.role;
                     this.userForm = new FormGroup({
                         firstName: new FormControl(this.user.firstName, Validators.required),
@@ -49,21 +52,39 @@ export class UserEditComponent implements OnInit {
      */
     onSubmit(){
         this.submitted = true;
-        if (this.userForm.valid){
+        if (this.userForm.valid && !this.passwordForm){
+            this.user.firstName = this.userForm.value.firstName;
+            this.user.lastName = this.userForm.value.lastName;
+            this.user.email = this.userForm.value.email;
+            this.user.role = this.savedRole;
+            this.user.confirmPassword = null;
+            this.updateUser(this.user);
+            return;
+        }
+        if (this.userForm.valid && this.passwordForm && this.passwordForm.valid){
             this.user.firstName = this.userForm.value.firstName;
             this.user.lastName = this.userForm.value.lastName;
             this.user.email = this.userForm.value.email;
             this.user.role = this.selectedRole;
-
-            this.usersService.updateUser(this.user)
-                .subscribe(
-                    (data) => {
-                        this.flashMessageService.showMessage('User was updated.', 'success' );
-                        this.navigateBack();
-                    },
-                    error => console.error(error)
-                );
+            this.user.confirmPassword = this.passwordForm.value.password;
+            this.updateUser(this.user);
         }
+    }
+
+    /**
+     * Call function to update user.
+     *
+     * @param user
+     */
+    updateUser(user: User){
+        this.usersService.updateUser(user)
+            .subscribe(
+                (data) => {
+                    this.flashMessageService.showMessage('User was updated.', 'success' );
+                    this.navigateBack();
+                },
+                error => console.error(error)
+            );
     }
 
     onCancel(){
@@ -84,5 +105,11 @@ export class UserEditComponent implements OnInit {
      */
     getValue(role: string) {
         this.selectedRole = this.roles.filter( r => r == role)[0];
+        this.passwordForm = null;
+        if (this.savedRole != this.selectedRole){
+            this.passwordForm = new FormGroup({
+                password: new FormControl(null, Validators.required)
+            })
+        }
     }
 }

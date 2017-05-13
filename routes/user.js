@@ -122,7 +122,7 @@ router.get('/server/admin/user/:id', function(req, res, next) {
 });
 
 /**
- * Update user in database.
+ * Handle request for update user in database.
  *
  * Request body contains updated user.
  * Token contains coded logged in user.
@@ -248,25 +248,15 @@ router.patch('/server/admin/user/:id', function (req, res, next) {
                 error: {message: 'User not found'}
             });
         }
-
         user.firstName = req.body.firstName;
         user.lastName = req.body.lastName;
         user.email = req.body.email;
-        user.role = req.body.role;
 
-        user.save(function (err, user) {
-            if (err) {
-                return res.status(422).json({
-                    title: 'An error occurred',
-                    error: {message: 'Email address is already taken'}
-                });
-            }
-
-            res.status(200).json({
-                message: 'Updated user',
-                obj: user
-            });
-        });
+        if (user.role !== req.body.role){
+            checkAdminSaveUser(req, res, user)
+        }else {
+            saveUser(req, res, user);
+        }
     });
 });
 
@@ -370,6 +360,72 @@ function signin(req, res, user) {
             email: req.body.email
         });
     }
+}
+
+/**
+ * Check admin password and update user in database.
+ *
+ * @param req - request
+ * @param res - response
+ * @param user
+ */
+function checkAdminSaveUser(req, res, user) {
+    var decoded = jwt.decode(req.query.token);
+    User.findOne({email: decoded.user.email}, function(err, admin) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!admin) {
+            return res.status(500).json({
+                title: 'No User Found!',
+                error: {message: 'User not found'}
+            });
+        }
+        if (!bcrypt.compareSync(req.body.confirmPassword, admin.password)) {
+            return res.status(412).json({
+                title: 'An error occured!',
+                error: {message: 'Password is incorrect'}
+            });
+        }
+        user.role = req.body.role;
+        user.save(function (err, user) {
+            if (err) {
+                return res.status(422).json({
+                    title: 'An error occurred',
+                    error: {message: 'Email address is already taken'}
+                });
+            }
+            res.status(200).json({
+                message: 'Updated user',
+                obj: user
+            });
+        });
+    });
+}
+
+/**
+ * Update user in database.
+ *
+ * @param req - request
+ * @param res - response
+ * @param user
+ */
+function saveUser(req, res, user) {
+    user.save(function (err, user) {
+        if (err) {
+            return res.status(422).json({
+                title: 'An error occurred',
+                error: {message: 'Email address is already taken'}
+            });
+        }
+        res.status(200).json({
+            message: 'Updated user',
+            obj: user
+        });
+    });
 }
 
 module.exports = router;
