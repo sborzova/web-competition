@@ -138,8 +138,9 @@
                             <span (click)="onSubmissionTimeAsc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-top"></span>
                             <span (click)="onSubmissionTimeDesc()" style="font-size: 18px; float: right;" class="glyphicon glyphicon-triangle-bottom"></span>
                         </th>
-                        <th rowspan="2">Download</th>
-                        <th rowspan="2">Validator info</th>
+                        <th rowspan="2"></th>
+                        <th rowspan="2"></th>
+                        <th rowspan="2"></th>
                         <th rowspan="2" *ngIf="competitionIsOn()"></th>
                     </tr>
                     <tr>
@@ -182,6 +183,18 @@
                                     (click)="onDelete(solution)">
                                 <i class="glyphicon glyphicon-trash"></i>
                             </button>
+                        </td>
+                        <td>
+                            <span
+                                    *ngIf="solution.visible"
+                                    class="glyphicon glyphicon-eye-open"
+                                    title="Solution is visible">
+                            </span>
+                            <span
+                                    *ngIf="!solution.visible"
+                                    class="glyphicon glyphicon-eye-close"
+                                    title="Solution was hidden by admin">
+                            </span>
                         </td>
                     </tr>
                     <tr *ngIf="showPapers">

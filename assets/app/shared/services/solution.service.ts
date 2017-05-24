@@ -137,7 +137,7 @@ export class SolutionService {
      */
     findDuplicateSolution(solution: Solution){
         return this.http.post(
-            this.hostUrl.concat('server/duplicateSolution'), this.stringifyObject(solution), {headers: this.getHeaders()})
+            this.hostUrl.concat('server/duplicateSolution') + this.getToken(), this.stringifyObject(solution), {headers: this.getHeaders()})
             .map((response: Response) => {
                 if (response.json().obj){
                     const solution = response.json().obj;
@@ -248,7 +248,7 @@ export class SolutionService {
                         solution.submissionTime,
                         solution.visible,
                         null,
-                        solution.instance,
+                        new Instance(solution.instance.name),
                         solution.paper ? new Paper(
                                 solution.paper.citation,
                                 solution.paper.url,

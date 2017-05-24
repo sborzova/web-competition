@@ -18,6 +18,12 @@ export var ValidationComponent = (function () {
         }
     };
     /**
+     *  When different file is inserted, hide result of the previous one.
+     */
+    ValidationComponent.prototype.onChange = function () {
+        this.validationService.successValidationHideResult();
+    };
+    /**
      * Return true if validation component can be shown, other way false.
      *
      * @returns {boolean} true if logged in user is admin or competition state is off
@@ -70,7 +76,6 @@ export var ValidationComponent = (function () {
             else {
                 var validation = _this.createValidationWithProperties(result);
                 _this.validationService.successValidationShowResult(validation, file);
-                _this.solutionElem.nativeElement.value = '';
             }
         }, function (error) { return console.error(error); });
     };

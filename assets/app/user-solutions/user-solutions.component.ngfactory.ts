@@ -1177,9 +1177,9 @@ class _View_UserSolutionsComponent6 extends import1.AppView<any> {
   _text_91:any;
   _el_92:any;
   _text_93:any;
-  _text_94:any;
-  _el_95:any;
-  _text_96:any;
+  _el_94:any;
+  _text_95:any;
+  _el_96:any;
   _text_97:any;
   _anchor_98:any;
   /*private*/ _appEl_98:import2.AppElement;
@@ -1356,11 +1356,12 @@ class _View_UserSolutionsComponent6 extends import1.AppView<any> {
     this._text_91 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
     this._el_92 = this.renderer.createElement(this._el_8,'th',(null as any));
     this.renderer.setElementAttribute(this._el_92,'rowspan','2');
-    this._text_93 = this.renderer.createText(this._el_92,'Download',(null as any));
-    this._text_94 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
-    this._el_95 = this.renderer.createElement(this._el_8,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_95,'rowspan','2');
-    this._text_96 = this.renderer.createText(this._el_95,'Validator info',(null as any));
+    this._text_93 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
+    this._el_94 = this.renderer.createElement(this._el_8,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_94,'rowspan','2');
+    this._text_95 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
+    this._el_96 = this.renderer.createElement(this._el_8,'th',(null as any));
+    this.renderer.setElementAttribute(this._el_96,'rowspan','2');
     this._text_97 = this.renderer.createText(this._el_8,'\n                        ',(null as any));
     this._anchor_98 = this.renderer.createTemplateAnchor(this._el_8,(null as any));
     this._appEl_98 = new import2.AppElement(98,8,this,this._anchor_98);
@@ -1498,9 +1499,9 @@ class _View_UserSolutionsComponent6 extends import1.AppView<any> {
       this._text_91,
       this._el_92,
       this._text_93,
-      this._text_94,
-      this._el_95,
-      this._text_96,
+      this._el_94,
+      this._text_95,
+      this._el_96,
       this._text_97,
       this._anchor_98,
       this._text_99,
@@ -1732,17 +1733,30 @@ class _View_UserSolutionsComponent8 extends import1.AppView<any> {
   _NgIf_52_6:import16.NgIf;
   _text_53:any;
   _text_54:any;
-  _text_55:any;
-  _anchor_56:any;
-  /*private*/ _appEl_56:import2.AppElement;
-  _TemplateRef_56_5:any;
-  _NgIf_56_6:import16.NgIf;
-  _text_57:any;
-  _anchor_58:any;
-  /*private*/ _appEl_58:import2.AppElement;
-  _TemplateRef_58_5:any;
-  _NgIf_58_6:import16.NgIf;
-  _text_59:any;
+  _el_55:any;
+  _text_56:any;
+  _anchor_57:any;
+  /*private*/ _appEl_57:import2.AppElement;
+  _TemplateRef_57_5:any;
+  _NgIf_57_6:import16.NgIf;
+  _text_58:any;
+  _anchor_59:any;
+  /*private*/ _appEl_59:import2.AppElement;
+  _TemplateRef_59_5:any;
+  _NgIf_59_6:import16.NgIf;
+  _text_60:any;
+  _text_61:any;
+  _text_62:any;
+  _anchor_63:any;
+  /*private*/ _appEl_63:import2.AppElement;
+  _TemplateRef_63_5:any;
+  _NgIf_63_6:import16.NgIf;
+  _text_64:any;
+  _anchor_65:any;
+  /*private*/ _appEl_65:import2.AppElement;
+  _TemplateRef_65_5:any;
+  _NgIf_65_6:import16.NgIf;
+  _text_66:any;
   /*private*/ _expr_3:any;
   /*private*/ _expr_4:any;
   /*private*/ _expr_5:any;
@@ -1768,6 +1782,8 @@ class _View_UserSolutionsComponent8 extends import1.AppView<any> {
   /*private*/ _expr_25:any;
   /*private*/ _expr_26:any;
   /*private*/ _expr_27:any;
+  /*private*/ _expr_28:any;
+  /*private*/ _expr_29:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_UserSolutionsComponent8,renderType_UserSolutionsComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -1845,18 +1861,31 @@ class _View_UserSolutionsComponent8 extends import1.AppView<any> {
     this._TemplateRef_52_5 = new import17.TemplateRef_(this._appEl_52,viewFactory_UserSolutionsComponent9);
     this._NgIf_52_6 = new import16.NgIf(this._appEl_52.vcRef,this._TemplateRef_52_5);
     this._text_53 = this.renderer.createText(this._el_50,'\n                        ',(null as any));
-    this._text_54 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
-    this._text_55 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
-    this._anchor_56 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
-    this._appEl_56 = new import2.AppElement(56,0,this,this._anchor_56);
-    this._TemplateRef_56_5 = new import17.TemplateRef_(this._appEl_56,viewFactory_UserSolutionsComponent10);
-    this._NgIf_56_6 = new import16.NgIf(this._appEl_56.vcRef,this._TemplateRef_56_5);
-    this._text_57 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
-    this._anchor_58 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
-    this._appEl_58 = new import2.AppElement(58,0,this,this._anchor_58);
-    this._TemplateRef_58_5 = new import17.TemplateRef_(this._appEl_58,viewFactory_UserSolutionsComponent11);
-    this._NgIf_58_6 = new import16.NgIf(this._appEl_58.vcRef,this._TemplateRef_58_5);
-    this._text_59 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
+    this._text_54 = this.renderer.createText(this._el_2,'\n                        ',(null as any));
+    this._el_55 = this.renderer.createElement(this._el_2,'td',(null as any));
+    this._text_56 = this.renderer.createText(this._el_55,'\n                            ',(null as any));
+    this._anchor_57 = this.renderer.createTemplateAnchor(this._el_55,(null as any));
+    this._appEl_57 = new import2.AppElement(57,55,this,this._anchor_57);
+    this._TemplateRef_57_5 = new import17.TemplateRef_(this._appEl_57,viewFactory_UserSolutionsComponent10);
+    this._NgIf_57_6 = new import16.NgIf(this._appEl_57.vcRef,this._TemplateRef_57_5);
+    this._text_58 = this.renderer.createText(this._el_55,'\n                            ',(null as any));
+    this._anchor_59 = this.renderer.createTemplateAnchor(this._el_55,(null as any));
+    this._appEl_59 = new import2.AppElement(59,55,this,this._anchor_59);
+    this._TemplateRef_59_5 = new import17.TemplateRef_(this._appEl_59,viewFactory_UserSolutionsComponent11);
+    this._NgIf_59_6 = new import16.NgIf(this._appEl_59.vcRef,this._TemplateRef_59_5);
+    this._text_60 = this.renderer.createText(this._el_55,'\n                        ',(null as any));
+    this._text_61 = this.renderer.createText(this._el_2,'\n                    ',(null as any));
+    this._text_62 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
+    this._anchor_63 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
+    this._appEl_63 = new import2.AppElement(63,0,this,this._anchor_63);
+    this._TemplateRef_63_5 = new import17.TemplateRef_(this._appEl_63,viewFactory_UserSolutionsComponent12);
+    this._NgIf_63_6 = new import16.NgIf(this._appEl_63.vcRef,this._TemplateRef_63_5);
+    this._text_64 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
+    this._anchor_65 = this.renderer.createTemplateAnchor(this._el_0,(null as any));
+    this._appEl_65 = new import2.AppElement(65,0,this,this._anchor_65);
+    this._TemplateRef_65_5 = new import17.TemplateRef_(this._appEl_65,viewFactory_UserSolutionsComponent13);
+    this._NgIf_65_6 = new import16.NgIf(this._appEl_65.vcRef,this._TemplateRef_65_5);
+    this._text_66 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_5,'ngModelChange',this.eventHandler(this._handle_ngModelChange_5_0.bind(this)));
     var disposable_1:Function = this.renderer.listen(this._el_5,'change',this.eventHandler(this._handle_change_5_1.bind(this)));
     var disposable_2:Function = this.renderer.listen(this._el_5,'blur',this.eventHandler(this._handle_blur_5_2.bind(this)));
@@ -1894,6 +1923,8 @@ class _View_UserSolutionsComponent8 extends import1.AppView<any> {
     this._expr_25 = import7.UNINITIALIZED;
     this._expr_26 = import7.UNINITIALIZED;
     this._expr_27 = import7.UNINITIALIZED;
+    this._expr_28 = import7.UNINITIALIZED;
+    this._expr_29 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -1950,11 +1981,18 @@ class _View_UserSolutionsComponent8 extends import1.AppView<any> {
       this._anchor_52,
       this._text_53,
       this._text_54,
-      this._text_55,
-      this._anchor_56,
-      this._text_57,
-      this._anchor_58,
-      this._text_59
+      this._el_55,
+      this._text_56,
+      this._anchor_57,
+      this._text_58,
+      this._anchor_59,
+      this._text_60,
+      this._text_61,
+      this._text_62,
+      this._anchor_63,
+      this._text_64,
+      this._anchor_65,
+      this._text_66
     ]
     ,[
       disposable_0,
@@ -1975,10 +2013,14 @@ class _View_UserSolutionsComponent8 extends import1.AppView<any> {
     if (((token === import32.RouterLinkWithHref) && ((44 <= requestNodeIndex) && (requestNodeIndex <= 47)))) { return this._RouterLinkWithHref_44_3; }
     if (((token === import17.TemplateRef) && (52 === requestNodeIndex))) { return this._TemplateRef_52_5; }
     if (((token === import16.NgIf) && (52 === requestNodeIndex))) { return this._NgIf_52_6; }
-    if (((token === import17.TemplateRef) && (56 === requestNodeIndex))) { return this._TemplateRef_56_5; }
-    if (((token === import16.NgIf) && (56 === requestNodeIndex))) { return this._NgIf_56_6; }
-    if (((token === import17.TemplateRef) && (58 === requestNodeIndex))) { return this._TemplateRef_58_5; }
-    if (((token === import16.NgIf) && (58 === requestNodeIndex))) { return this._NgIf_58_6; }
+    if (((token === import17.TemplateRef) && (57 === requestNodeIndex))) { return this._TemplateRef_57_5; }
+    if (((token === import16.NgIf) && (57 === requestNodeIndex))) { return this._NgIf_57_6; }
+    if (((token === import17.TemplateRef) && (59 === requestNodeIndex))) { return this._TemplateRef_59_5; }
+    if (((token === import16.NgIf) && (59 === requestNodeIndex))) { return this._NgIf_59_6; }
+    if (((token === import17.TemplateRef) && (63 === requestNodeIndex))) { return this._TemplateRef_63_5; }
+    if (((token === import16.NgIf) && (63 === requestNodeIndex))) { return this._NgIf_63_6; }
+    if (((token === import17.TemplateRef) && (65 === requestNodeIndex))) { return this._TemplateRef_65_5; }
+    if (((token === import16.NgIf) && (65 === requestNodeIndex))) { return this._NgIf_65_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -2021,15 +2063,25 @@ class _View_UserSolutionsComponent8 extends import1.AppView<any> {
       this._NgIf_52_6.ngIf = currVal_25;
       this._expr_25 = currVal_25;
     }
-    const currVal_26:any = this.parent.parent.context.showPapers;
+    const currVal_26:any = this.context.$implicit.visible;
     if (import4.checkBinding(throwOnChange,this._expr_26,currVal_26)) {
-      this._NgIf_56_6.ngIf = currVal_26;
+      this._NgIf_57_6.ngIf = currVal_26;
       this._expr_26 = currVal_26;
     }
-    const currVal_27:any = this.parent.parent.context.showPapers;
+    const currVal_27:boolean = !this.context.$implicit.visible;
     if (import4.checkBinding(throwOnChange,this._expr_27,currVal_27)) {
-      this._NgIf_58_6.ngIf = currVal_27;
+      this._NgIf_59_6.ngIf = currVal_27;
       this._expr_27 = currVal_27;
+    }
+    const currVal_28:any = this.parent.parent.context.showPapers;
+    if (import4.checkBinding(throwOnChange,this._expr_28,currVal_28)) {
+      this._NgIf_63_6.ngIf = currVal_28;
+      this._expr_28 = currVal_28;
+    }
+    const currVal_29:any = this.parent.parent.context.showPapers;
+    if (import4.checkBinding(throwOnChange,this._expr_29,currVal_29)) {
+      this._NgIf_65_6.ngIf = currVal_29;
+      this._expr_29 = currVal_29;
     }
     this.detectContentChildrenChanges(throwOnChange);
     const currVal_5:any = this._NgControlStatus_5_7.ngClassUntouched;
@@ -2186,6 +2238,50 @@ function viewFactory_UserSolutionsComponent9(viewUtils:import4.ViewUtils,parentI
 class _View_UserSolutionsComponent10 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_UserSolutionsComponent10,renderType_UserSolutionsComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'span',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','glyphicon glyphicon-eye-open');
+    this.renderer.setElementAttribute(this._el_0,'title','Solution is visible');
+    this._text_1 = this.renderer.createText(this._el_0,'\n                            ',(null as any));
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1
+    ]
+    ,[],[]);
+    return (null as any);
+  }
+}
+function viewFactory_UserSolutionsComponent10(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserSolutionsComponent10(viewUtils,parentInjector,declarationEl);
+}
+class _View_UserSolutionsComponent11 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_UserSolutionsComponent11,renderType_UserSolutionsComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'span',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','glyphicon glyphicon-eye-close');
+    this.renderer.setElementAttribute(this._el_0,'title','Solution was hidden by admin');
+    this._text_1 = this.renderer.createText(this._el_0,'\n                            ',(null as any));
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1
+    ]
+    ,[],[]);
+    return (null as any);
+  }
+}
+function viewFactory_UserSolutionsComponent11(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserSolutionsComponent11(viewUtils,parentInjector,declarationEl);
+}
+class _View_UserSolutionsComponent12 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
   _el_2:any;
   _text_3:any;
   _el_4:any;
@@ -2197,7 +2293,7 @@ class _View_UserSolutionsComponent10 extends import1.AppView<any> {
   _text_10:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_UserSolutionsComponent10,renderType_UserSolutionsComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserSolutionsComponent12,renderType_UserSolutionsComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'tr',(null as any));
@@ -2240,10 +2336,10 @@ class _View_UserSolutionsComponent10 extends import1.AppView<any> {
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-function viewFactory_UserSolutionsComponent10(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_UserSolutionsComponent10(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserSolutionsComponent12(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserSolutionsComponent12(viewUtils,parentInjector,declarationEl);
 }
-class _View_UserSolutionsComponent11 extends import1.AppView<any> {
+class _View_UserSolutionsComponent13 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
@@ -2259,7 +2355,7 @@ class _View_UserSolutionsComponent11 extends import1.AppView<any> {
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_UserSolutionsComponent11,renderType_UserSolutionsComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+    super(_View_UserSolutionsComponent13,renderType_UserSolutionsComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'tr',(null as any));
@@ -2311,6 +2407,6 @@ class _View_UserSolutionsComponent11 extends import1.AppView<any> {
     this.detectViewChildrenChanges(throwOnChange);
   }
 }
-function viewFactory_UserSolutionsComponent11(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_UserSolutionsComponent11(viewUtils,parentInjector,declarationEl);
+function viewFactory_UserSolutionsComponent13(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_UserSolutionsComponent13(viewUtils,parentInjector,declarationEl);
 }

@@ -26,6 +26,13 @@ export class ValidationComponent implements OnInit {
         }
     }
 
+
+    /**
+     *  When different file is inserted, hide result of the previous one.
+     */
+    onChange(){
+        this.validationService.successValidationHideResult();
+    }
     /**
      * Return true if validation component can be shown, other way false.
      *
@@ -80,7 +87,6 @@ export class ValidationComponent implements OnInit {
                     }else {
                         let validation = this.createValidationWithProperties(result);
                         this.validationService.successValidationShowResult(validation, file);
-                        this.solutionElem.nativeElement.value = '';
                     }
                 },
                 error => console.error(error)

@@ -115,7 +115,7 @@ export var SolutionService = (function () {
      */
     SolutionService.prototype.findDuplicateSolution = function (solution) {
         var _this = this;
-        return this.http.post(this.hostUrl.concat('server/duplicateSolution'), this.stringifyObject(solution), { headers: this.getHeaders() })
+        return this.http.post(this.hostUrl.concat('server/duplicateSolution') + this.getToken(), this.stringifyObject(solution), { headers: this.getHeaders() })
             .map(function (response) {
             if (response.json().obj) {
                 var solution_1 = response.json().obj;
@@ -173,7 +173,7 @@ export var SolutionService = (function () {
             var transformedSolutions = [];
             for (var _i = 0, solutions_1 = solutions; _i < solutions_1.length; _i++) {
                 var solution = solutions_1[_i];
-                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, solution.visible, null, solution.instance, solution.paper ? new Paper(solution.paper.citation, solution.paper.url, solution.paper._id) : null, null, solution._id, false));
+                transformedSolutions.push(new Solution(solution.unassigned, solution.total, solution.sc, solution.time, solution.room, solution.distr, solution.technique, solution.info, solution.submissionTime, solution.visible, null, new Instance(solution.instance.name), solution.paper ? new Paper(solution.paper.citation, solution.paper.url, solution.paper._id) : null, null, solution._id, false));
             }
             return transformedSolutions;
         })

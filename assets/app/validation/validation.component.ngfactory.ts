@@ -276,7 +276,7 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
   _SuccessValidationComponent_29_4:import21.SuccessValidationComponent;
   _text_30:any;
   _text_31:any;
-  /*private*/ _expr_1:any;
+  /*private*/ _expr_2:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_ValidationComponent1,renderType_ValidationComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -327,8 +327,9 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
     compView_29.create(this._SuccessValidationComponent_29_4,[],(null as any));
     this._text_30 = this.renderer.createText(this._el_27,'\n            ',(null as any));
     this._text_31 = this.renderer.createText(this._el_0,'\n        ',(null as any));
-    var disposable_0:Function = this.renderer.listen(this._el_19,'click',this.eventHandler(this._handle_click_19_0.bind(this)));
-    this._expr_1 = import7.UNINITIALIZED;
+    var disposable_0:Function = this.renderer.listen(this._el_14,'change',this.eventHandler(this._handle_change_14_0.bind(this)));
+    var disposable_1:Function = this.renderer.listen(this._el_19,'click',this.eventHandler(this._handle_click_19_0.bind(this)));
+    this._expr_2 = import7.UNINITIALIZED;
     this.init([].concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -363,7 +364,11 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
       this._text_30,
       this._text_31
     ]
-    ,[disposable_0],[]);
+    ,[
+      disposable_0,
+      disposable_1
+    ]
+    ,[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
@@ -373,10 +378,10 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_1:any = this.parent.context.logMessage;
-    if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
-      this._NgIf_24_6.ngIf = currVal_1;
-      this._expr_1 = currVal_1;
+    const currVal_2:any = this.parent.context.logMessage;
+    if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
+      this._NgIf_24_6.ngIf = currVal_2;
+      this._expr_2 = currVal_2;
     }
     if (((this.numberOfChecks === 0) && !throwOnChange)) { this._SuccessValidationComponent_29_4.ngOnInit(); }
     this.detectContentChildrenChanges(throwOnChange);
@@ -387,6 +392,11 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
   }
   destroyInternal():void {
     this._SuccessValidationComponent_29_4.ngOnDestroy();
+  }
+  private _handle_change_14_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this.parent.context.onChange()) !== false);
+    return (true && pd_0);
   }
   private _handle_click_19_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();

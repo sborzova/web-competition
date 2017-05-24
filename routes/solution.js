@@ -409,7 +409,7 @@ router.get('/server/solutionsByLoggedUser', function (req, res, next) {
 });
 
 /**
- *  Get solution from database by user, instance, technique, unassigned variables, total cost,
+ *  Get solution from database by user, instance, unassigned variables, total cost,
  *  time, room, distribution preferences and student conflicts from database.
  *
  *  Token contains coded logged in user.
