@@ -85,12 +85,12 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
             this.solutionService.deletePaperFromSolution(solution)
                 .subscribe(
                     solution => {
-                        this.flashMessageService.showMessage('Papers were deleted.', 'success' );
                         this.uncheckSelected();
                     },
                     error => console.error(error)
                 )
         }
+        this.flashMessageService.showMessage('Papers were deleted.', 'success' );
         this.removePaperFromDatabase(paperIds);
     }
 

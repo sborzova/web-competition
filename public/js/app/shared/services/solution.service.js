@@ -232,7 +232,7 @@ export var SolutionService = (function () {
      */
     SolutionService.prototype.updateSolutionVisibility = function (solution) {
         var visibility = new Visibility(solution.visible);
-        return this.http.patch(this.hostUrl.concat('server/admin/solutionVisibility/') + solution.solutionId, this.stringifyObject(visibility), { headers: this.getHeaders() })
+        return this.http.patch(this.hostUrl.concat('server/admin/solutionVisibility/') + solution.solutionId + this.getToken(), this.stringifyObject(visibility), { headers: this.getHeaders() })
             .map(function (response) {
             return response.json();
         })

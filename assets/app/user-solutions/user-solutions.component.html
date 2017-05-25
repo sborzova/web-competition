@@ -92,7 +92,7 @@
                     </form>
                 </div>
             </div>
-            <div *ngIf="solutions" class="solutions">
+            <div *ngIf="solutions" class="col-xs-12 solutions">
                 <div class="table-responsive">
                     <table class="table">
                     <thead>
@@ -200,12 +200,12 @@
                     <tr *ngIf="showPapers">
                         <td></td>
                         <td><strong>Citation: </strong></td>
-                        <td colspan="10" id="paper">{{ solution.paper?.citation}}</td>
+                        <td colspan="12" id="paper">{{ solution.paper?.citation}}</td>
                     </tr>
                     <tr *ngIf="showPapers">
                         <td></td>
                         <td><strong>Url: </strong></td>
-                        <td colspan="10" id="paper"><a href="{{solution.paper?.url}}" target="_blank">{{ solution.paper?.url}}</a></td>
+                        <td colspan="12" id="paper"><a href="{{solution.paper?.url}}" target="_blank">{{ solution.paper?.url}}</a></td>
                     </tr>
                     </tbody>
                 </table>

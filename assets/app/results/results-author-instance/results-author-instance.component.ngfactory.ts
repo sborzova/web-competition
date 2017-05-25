@@ -1440,7 +1440,7 @@ class _View_ResultsAuthorInstanceComponent12 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_2,'style','border: none; background-color: white');
     this._text_3 = this.renderer.createText(this._el_0,'\n            ',(null as any));
     this._el_4 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this.renderer.setElementAttribute(this._el_4,'colspan','11');
+    this.renderer.setElementAttribute(this._el_4,'colspan','12');
     this.renderer.setElementAttribute(this._el_4,'id','paper');
     this.renderer.setElementAttribute(this._el_4,'style','border: none');
     this._text_5 = this.renderer.createText(this._el_4,'\n                ',(null as any));

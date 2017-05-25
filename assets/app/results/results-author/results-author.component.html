@@ -124,7 +124,7 @@
             </tr>
             <tr *ngIf="showPapers && solution.paper" class="paper">
                 <td style="border: none; background-color: white"></td>
-                <td style="border: none" colspan="12" id="paper">
+                <td style="border: none" colspan="13" id="paper">
                     <strong>Citation: </strong>{{ solution.paper?.citation}}
                     <a *ngIf="solution.paper?.url" href="{{solution.paper?.url}}" target="_blank">URL</a>
                 </td>

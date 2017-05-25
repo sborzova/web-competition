@@ -68,10 +68,10 @@ export var UserSolutionsComponent = (function () {
             }
             this.solutionService.deletePaperFromSolution(solution)
                 .subscribe(function (solution) {
-                _this.flashMessageService.showMessage('Papers were deleted.', 'success');
                 _this.uncheckSelected();
             }, function (error) { return console.error(error); });
         }
+        this.flashMessageService.showMessage('Papers were deleted.', 'success');
         this.removePaperFromDatabase(paperIds);
     };
     /**

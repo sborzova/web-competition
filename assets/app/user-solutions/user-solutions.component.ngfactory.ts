@@ -1211,7 +1211,7 @@ class _View_UserSolutionsComponent6 extends import1.AppView<any> {
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
-    this.renderer.setElementAttribute(this._el_0,'class','solutions');
+    this.renderer.setElementAttribute(this._el_0,'class','col-xs-12 solutions');
     this._text_1 = this.renderer.createText(this._el_0,'\n                ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
     this.renderer.setElementAttribute(this._el_2,'class','table-responsive');
@@ -2305,7 +2305,7 @@ class _View_UserSolutionsComponent12 extends import1.AppView<any> {
     this._text_6 = this.renderer.createText(this._el_5,'Citation: ',(null as any));
     this._text_7 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
     this._el_8 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this.renderer.setElementAttribute(this._el_8,'colspan','10');
+    this.renderer.setElementAttribute(this._el_8,'colspan','12');
     this.renderer.setElementAttribute(this._el_8,'id','paper');
     this._text_9 = this.renderer.createText(this._el_8,'',(null as any));
     this._text_10 = this.renderer.createText(this._el_0,'\n                    ',(null as any));
@@ -2367,7 +2367,7 @@ class _View_UserSolutionsComponent13 extends import1.AppView<any> {
     this._text_6 = this.renderer.createText(this._el_5,'Url: ',(null as any));
     this._text_7 = this.renderer.createText(this._el_0,'\n                        ',(null as any));
     this._el_8 = this.renderer.createElement(this._el_0,'td',(null as any));
-    this.renderer.setElementAttribute(this._el_8,'colspan','10');
+    this.renderer.setElementAttribute(this._el_8,'colspan','12');
     this.renderer.setElementAttribute(this._el_8,'id','paper');
     this._el_9 = this.renderer.createElement(this._el_8,'a',(null as any));
     this.renderer.setElementAttribute(this._el_9,'target','_blank');

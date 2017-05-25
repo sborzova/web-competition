@@ -344,7 +344,7 @@ export class SolutionService {
     updateSolutionVisibility(solution: Solution){
         let visibility = new Visibility(solution.visible);
         return this.http.patch(
-            this.hostUrl.concat('server/admin/solutionVisibility/') +  solution.solutionId, this.stringifyObject(visibility), {headers: this.getHeaders()})
+            this.hostUrl.concat('server/admin/solutionVisibility/') +  solution.solutionId + this.getToken(), this.stringifyObject(visibility), {headers: this.getHeaders()})
             .map((response: Response) => {
                 return response.json();
             })

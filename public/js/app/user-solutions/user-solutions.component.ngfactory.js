@@ -973,7 +973,7 @@ var _View_UserSolutionsComponent6 = (function (_super) {
     }
     _View_UserSolutionsComponent6.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'div', null);
-        this.renderer.setElementAttribute(this._el_0, 'class', 'solutions');
+        this.renderer.setElementAttribute(this._el_0, 'class', 'col-xs-12 solutions');
         this._text_1 = this.renderer.createText(this._el_0, '\n                ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'table-responsive');
@@ -1993,7 +1993,7 @@ var _View_UserSolutionsComponent12 = (function (_super) {
         this._text_6 = this.renderer.createText(this._el_5, 'Citation: ', null);
         this._text_7 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_8 = this.renderer.createElement(this._el_0, 'td', null);
-        this.renderer.setElementAttribute(this._el_8, 'colspan', '10');
+        this.renderer.setElementAttribute(this._el_8, 'colspan', '12');
         this.renderer.setElementAttribute(this._el_8, 'id', 'paper');
         this._text_9 = this.renderer.createText(this._el_8, '', null);
         this._text_10 = this.renderer.createText(this._el_0, '\n                    ', null);
@@ -2042,7 +2042,7 @@ var _View_UserSolutionsComponent13 = (function (_super) {
         this._text_6 = this.renderer.createText(this._el_5, 'Url: ', null);
         this._text_7 = this.renderer.createText(this._el_0, '\n                        ', null);
         this._el_8 = this.renderer.createElement(this._el_0, 'td', null);
-        this.renderer.setElementAttribute(this._el_8, 'colspan', '10');
+        this.renderer.setElementAttribute(this._el_8, 'colspan', '12');
         this.renderer.setElementAttribute(this._el_8, 'id', 'paper');
         this._el_9 = this.renderer.createElement(this._el_8, 'a', null);
         this.renderer.setElementAttribute(this._el_9, 'target', '_blank');
