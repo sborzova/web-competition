@@ -18,6 +18,6 @@ const APP_ROUTES: Routes = [
 ];
 
 // export const hostUrl = 'http://localhost:3000/';
-export const hostUrl = 'https://testcttcompetition.herokuapp.com/';
+export const hostUrl = 'https://cttcompetition.herokuapp.com/';
 
 export const routing = RouterModule.forRoot(APP_ROUTES);
