@@ -57,7 +57,7 @@ export class SessionStorageService {
      *
      * @param data - data contains token, user's id, user's email
      */
-    setSessionStorageAuth(data : any){
+    setSessionStorageAuth(data){
         sessionStorage.setItem('token', data.token);
         sessionStorage.setItem('userId', data.userId);
         sessionStorage.setItem('email', data.email);

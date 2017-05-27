@@ -272,7 +272,7 @@ var _View_ValidationComponent1 = (function (_super) {
         compView_29.create(this._SuccessValidationComponent_29_4, [], null);
         this._text_30 = this.renderer.createText(this._el_27, '\n            ', null);
         this._text_31 = this.renderer.createText(this._el_0, '\n        ', null);
-        var disposable_0 = this.renderer.listen(this._el_14, 'change', this.eventHandler(this._handle_change_14_0.bind(this)));
+        var disposable_0 = this.renderer.listen(this._el_14, 'blur', this.eventHandler(this._handle_blur_14_0.bind(this)));
         var disposable_1 = this.renderer.listen(this._el_19, 'click', this.eventHandler(this._handle_click_19_0.bind(this)));
         this._expr_2 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [
@@ -344,7 +344,7 @@ var _View_ValidationComponent1 = (function (_super) {
     _View_ValidationComponent1.prototype.destroyInternal = function () {
         this._SuccessValidationComponent_29_4.ngOnDestroy();
     };
-    _View_ValidationComponent1.prototype._handle_change_14_0 = function ($event) {
+    _View_ValidationComponent1.prototype._handle_blur_14_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this.parent.context.onChange() !== false);
         return (true && pd_0);

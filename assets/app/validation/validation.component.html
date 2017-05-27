@@ -22,7 +22,7 @@
                         <h2>Validate solution</h2>
                     </div>
                     <div>
-                        <input #solution type="file" (change)="onChange()">
+                        <input #solution type="file" (blur)="onChange()">
                     </div>
                     <div align="right">
                         <button class="btn btn-primary btn-s" (click)="onValidate()">Validate</button>

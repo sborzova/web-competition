@@ -11,7 +11,15 @@ import {SessionStorageService} from "../shared/services/session-storage.service"
 })
 export class ValidationComponent implements OnInit {
     @ViewChild('solution') solutionElem;
+    bla:string;
     logMessage: string;
+
+    /**
+     *  this.solutionElem.nativeElement.value=''
+     * @param validationService
+     * @param sessionStorageService
+     * @param flashMessageService
+     */
 
     constructor(private validationService: SolutionService,
                 private sessionStorageService: SessionStorageService,

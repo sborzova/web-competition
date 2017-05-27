@@ -4,6 +4,12 @@ import { Validation } from "./validation.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SessionStorageService } from "../shared/services/session-storage.service";
 export var ValidationComponent = (function () {
+    /**
+     *  this.solutionElem.nativeElement.value=''
+     * @param validationService
+     * @param sessionStorageService
+     * @param flashMessageService
+     */
     function ValidationComponent(validationService, sessionStorageService, flashMessageService) {
         this.validationService = validationService;
         this.sessionStorageService = sessionStorageService;
