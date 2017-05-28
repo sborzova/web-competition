@@ -1,3 +1,6 @@
+/**
+ * Class represents profile model.
+ */
 export var ProfileUser = (function () {
     function ProfileUser(email, password, firstName, lastName, confirmPassword, newPassword) {
         this.email = email;

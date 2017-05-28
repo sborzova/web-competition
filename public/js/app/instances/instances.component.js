@@ -2,14 +2,25 @@ import { Component } from '@angular/core';
 import { SessionStorageService } from "../shared/services/session-storage.service";
 import { InstanceService } from "../shared/services/instance.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
+/**
+ * Component for showing all instance and managing them.
+ */
 export var InstancesComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param sessionStorageService
+     * @param instanceService
+     * @param flashMessageService
+     */
     function InstancesComponent(sessionStorageService, instanceService, flashMessageService) {
         this.sessionStorageService = sessionStorageService;
         this.instanceService = instanceService;
         this.flashMessageService = flashMessageService;
     }
     /**
-     * Set to variable instances all instances. Check if instance component can be shown.
+     * When creating component, check if instance component can be shown.
+     * If component can be shown, call function to get all instances.
      */
     InstancesComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -45,7 +56,7 @@ export var InstancesComponent = (function () {
         document.getElementById('openModalDelete').click();
     };
     /**
-     * Get instance with all data and download instance's data.
+     * Call function to get instance populated with all properties and then download instance's data.
      *
      * @param instance
      */
@@ -57,7 +68,7 @@ export var InstancesComponent = (function () {
         }, function (error) { return console.log("Error downloading the file."); });
     };
     /**
-     * Delete instance in variable instance.
+     * Call function to delete instance which is stored in variable instance.
      */
     InstancesComponent.prototype.onOk = function () {
         var _this = this;

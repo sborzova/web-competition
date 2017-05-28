@@ -1,3 +1,6 @@
+/**
+ *  Class represents validation model.
+ */
 export class Validation {
     constructor(public unassigned: number,
                 public total: number,

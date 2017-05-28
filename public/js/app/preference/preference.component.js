@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
 import { PreferenceService } from "./preference.service";
 import { SessionStorageService } from "../shared/services/session-storage.service";
+/**
+ * Component to manage preference.
+ */
 export var PreferenceComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param preferenceService
+     * @param sessionStorageService
+     */
     function PreferenceComponent(preferenceService, sessionStorageService) {
         this.preferenceService = preferenceService;
         this.sessionStorageService = sessionStorageService;
     }
     /**
-     * Set to variable compeitionOn competition state.
+     * When creating component, call function to get state of competition.
      */
     PreferenceComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -42,7 +51,6 @@ export var PreferenceComponent = (function () {
         { type: Component, args: [{
                     selector: 'app-preference',
                     templateUrl: './preference.component.html',
-                    styleUrls: ['preference.component.css']
                 },] },
     ];
     /** @nocollapse */

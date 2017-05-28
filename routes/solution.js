@@ -14,11 +14,20 @@ var Paper = require('../models/paper');
 var File = require('../models/file');
 
 var validatedFile;
-
+var options = {
+    hostname: 'demo.unitime.org',
+    path: '/SolverValidatorMockup/test',
+    method: 'POST',
+    auth: 'validator:solver',
+    headers: {
+        'Content-Type': 'application/xml;charset=UTF-8',
+    }
+};
 /**
- *  Validate solution and return validation result.
+ *  Validate solution and return validation results.
  *
- *  Request contains solution.
+ *  Request - contains solution.
+ *  Response - contains validation results or error.
  */
 router.post('/server/validator', function (req, res, next) {
     fileUpload(req, res, function (err) {
@@ -28,15 +37,7 @@ router.post('/server/validator', function (req, res, next) {
                 error: err
             });
         }
-        var options = {
-            hostname: 'demo.unitime.org',
-            path: '/SolverValidatorMockup/test',
-            method: 'POST',
-            auth: 'validator:solver',
-            headers: {
-                'Content-Type': 'application/xml;charset=UTF-8',
-            }
-        };
+
         var request = https.request(options, (response) => {
             var body = "";
             response.on('data', (chunk) => {
@@ -71,9 +72,10 @@ router.post('/server/validator', function (req, res, next) {
 });
 
 /**
- * Save new solution to database.
+ * Prepare properties for saving solution and call function to save new solution to database.
  *
- * Request contains solution.
+ * Request - contains solution.
+ * Response - contains saved solution or error.
  */
 router.post('/server/solution', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
@@ -134,7 +136,7 @@ router.post('/server/solution', function (req, res, next) {
  * Delete paper from solution in database by id.
  *
  * Parameter id - solution's id.
- * Request contains paper.
+ * Request - contains solution or error.
  */
 router.patch('/server/solutionRemovePaper/:id', function (req, res, next) {
     Solution.findById(req.params.id, function (err, solution) {
@@ -169,10 +171,11 @@ router.patch('/server/solutionRemovePaper/:id', function (req, res, next) {
 });
 
 /**
- * Add paper to solution in database by id.
+ * Add paper to solution in database.
  *
  * Parameter id - solution's id.
- * Request contains paper id.
+ * Request - contains paper id.
+ * Results - contains solution or error.
  */
 router.patch('/server/solutionAddPaper/:id', function (req, res, next) {
     Solution.findById(req.params.id, function (err, solution) {
@@ -216,10 +219,11 @@ router.patch('/server/solutionAddPaper/:id', function (req, res, next) {
 });
 
 /**
- * Update solutions's visibility in database by id.
+ * Update solutions's visibility in database.
  *
  * Parameter id - solution's id.
- * Request contains updated visibility.
+ * Request - contains updated visibility.
+ * Response - contains updated solution or error.
  */
 router.patch('/server/admin/solutionVisibility/:id', function (req, res, next) {
     Solution.findById(req.params.id, function (err, solution) {
@@ -257,7 +261,8 @@ router.patch('/server/admin/solutionVisibility/:id', function (req, res, next) {
  * Update solutions's technique in database by id.
  *
  * Parameter id - solution's id.
- * Request contains updated technique.
+ * Request - contains updated technique.
+ * Response - contains updated solution or error.
  */
 router.patch('/server/admin/solutionTechnique/:id', function (req, res, next) {
     Solution.findById(req.params.id, function (err, solution) {
@@ -292,7 +297,9 @@ router.patch('/server/admin/solutionTechnique/:id', function (req, res, next) {
 });
 
 /**
- * Get all solutions from database.
+ * Get all solutions from database. Populate user, instance and paper.
+ *
+ * Response - contains solutions or error.
  */
 router.get('/server/solutions', function (req, res, next) {
     Solution.find()
@@ -320,9 +327,10 @@ router.get('/server/solutions', function (req, res, next) {
 });
 
 /**
- * Get solution from database by id. Populate instance, paper, user and technique.
+ * Get solution from database by id. Populate instance, paper, user and data.
  *
  * Parameter id - solution's id.
+ * Response - contains solution or error.
  */
 router.get('/server/solution/:id', function (req, res, next) {
     Solution.findById(req.params.id)
@@ -351,9 +359,10 @@ router.get('/server/solution/:id', function (req, res, next) {
 });
 
 /**
- * Get all solutions from database by instance's id. Populate instance, paper, user and technique.
+ * Get all solutions from database by instance's id. Populate instance, paper, user.
  *
  * Parameter id - instance's id.
+ * Response - contains solutions or error.
  */
 router.get('/server/solutionsByInstance/:id', function (req, res, next) {
     Solution.find()
@@ -382,9 +391,10 @@ router.get('/server/solutionsByInstance/:id', function (req, res, next) {
 });
 
 /**
- *  Get all logged in user's solutions from database.
+ *  Get all logged in user's solutions from database. Populate instance and paper.
  *
- *  Token contains coded user.
+ *  Token - contains coded user.
+ *  Response - contains solutions or error.
  */
 router.get('/server/solutionsByLoggedUser', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
@@ -416,8 +426,9 @@ router.get('/server/solutionsByLoggedUser', function (req, res, next) {
  *  Get solution from database by user, instance, unassigned variables, total cost,
  *  time, room, distribution preferences and student conflicts from database.
  *
- *  Token contains coded logged in user.
- *  Request body contains solution and instance.
+ *  Token - contains logged in user.
+ *  Request - contains solution and instance.
+ *  Response - contains solution, empty body if no solution was found, other way error.
  */
 router.post('/server/duplicateSolution', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
@@ -467,6 +478,7 @@ router.post('/server/duplicateSolution', function (req, res, next) {
  * Delete solution from database by id.
  *
  * Parameter id - solution's id.
+ * Response - contains deleted solution or error.
  */
 router.delete('/server/solution/:id', function (req, res, next) {
     Solution.findById(req.params.id, function (err, solution) {
@@ -502,11 +514,13 @@ router.delete('/server/solution/:id', function (req, res, next) {
  * Save solution with parameters.
  *
  * @param req - request
- * @param res - response
+ * @param res - response to send back
  * @param instance
  * @param user
  * @param paper
  * @param data
+ *
+ * Response - contains saved solution or error.
  */
 function saveSolution(req, res, instance, user, paper, data) {
     try {

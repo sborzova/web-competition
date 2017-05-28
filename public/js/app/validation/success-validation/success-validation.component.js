@@ -6,7 +6,18 @@ import { SessionStorageService } from "../../shared/services/session-storage.ser
 import { Solution } from "../../shared/models/solution.model";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { Instance } from "../../shared/models/instance.model";
+/**
+ * Component for showing success validation result and uploading solution.
+ */
 export var SuccessValidationComponent = (function () {
+    /**
+     *  When creating component, create subscription for showing validation result
+     *  and inject dependencies
+     *
+     * @param solutionService
+     * @param sessionStorageService
+     * @param flashMessageService
+     */
     function SuccessValidationComponent(solutionService, sessionStorageService, flashMessageService) {
         var _this = this;
         this.solutionService = solutionService;
@@ -25,7 +36,8 @@ export var SuccessValidationComponent = (function () {
         });
     }
     /**
-     * Show result of validation. Create upload solution form.
+     * When creating component, create upload solution form, set received validation to
+     * variable validation and show it.
      */
     SuccessValidationComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -36,20 +48,19 @@ export var SuccessValidationComponent = (function () {
         });
         this.solutionService.successValidation
             .subscribe(function (validation) {
-            _this.fileName = _this.solutionService.getSolutionFile().fileName;
             _this.validation = validation;
             _this.display = 'block';
         });
     };
     /**
-     *  When component destroy, unsubscribe subscription.
+     *  When destroying component, unsubscribe subscription.
      */
     SuccessValidationComponent.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();
         this.solutionService.setSolutionFile(null);
     };
     /**
-     * Submit upload solution form.
+     * If form is valid, call function for finding duplicate solution.
      */
     SuccessValidationComponent.prototype.onSubmit = function () {
         var _this = this;
@@ -65,8 +76,8 @@ export var SuccessValidationComponent = (function () {
         }
     };
     /**
-     *  If solution is not null show flash message with its properties, other way upload solution from
-     *  variable validation.
+     *  If solution is not null show flash message with its properties, other way call function for uploading
+     *  solution from variable validation.
      *
      * @param solution - duplicate solution
      */
@@ -84,7 +95,7 @@ export var SuccessValidationComponent = (function () {
         }
     };
     /**
-     *  Set variable showUploadForm.
+     *  Set variable showUploadForm as true if user is logged in.
      */
     SuccessValidationComponent.prototype.setShowUploadForm = function () {
         this.showUploadForm = this.sessionStorageService.isLoggedIn();

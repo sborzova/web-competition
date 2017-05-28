@@ -6,7 +6,18 @@ import { minValue } from "../min-value.validator";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { FileService } from "../../shared/services/file.service";
 import { InstanceCreate } from "../instance-create.model";
+/**
+ * Component to create new instance.
+ */
 export var InstanceCreateComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param router
+     * @param fileService
+     * @param flashMessageService
+     * @param instancesService
+     */
     function InstanceCreateComponent(router, fileService, flashMessageService, instancesService) {
         this.router = router;
         this.fileService = fileService;
@@ -17,7 +28,7 @@ export var InstanceCreateComponent = (function () {
         this.dataInvalid = false;
     }
     /**
-     * Set variable defaultOrder for new instance.
+     * When creating component, set defaultOrder for new instance.
      */
     InstanceCreateComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -36,7 +47,7 @@ export var InstanceCreateComponent = (function () {
         this.setForm();
     };
     /**
-     * Check if submitted form is valid.
+     * If submitted form is valid, call function saveInstanceFiles of this component
      */
     InstanceCreateComponent.prototype.onSubmit = function () {
         this.submitted = true;
@@ -59,7 +70,7 @@ export var InstanceCreateComponent = (function () {
         }
     };
     /**
-     * Save instance status file and instance status data.
+     * Call function to save instance status file and instance status data.
      *
      * @param status
      * @param data
@@ -90,7 +101,7 @@ export var InstanceCreateComponent = (function () {
         });
     };
     /**
-     * Save instance with status's id and data's id
+     * Call function to save instance with all properties, including status's id and data's id
      *
      * @param data
      * @param idStatus

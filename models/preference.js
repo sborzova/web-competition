@@ -5,6 +5,9 @@ var Schema = mongoose.Schema;
 var Promise = require('bluebird');
 Promise.promisifyAll(mongoose);
 
+/**
+ * Database model schema for Preference.
+ */
 var schema = new Schema({
     name: {type: String, unique: true, required: true},
     state: {type: Boolean, required: true}

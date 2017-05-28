@@ -4,7 +4,18 @@ import { Router } from "@angular/router";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { ProfileService } from "../profile.service";
 import { SessionStorageService } from "../../shared/services/session-storage.service";
+/**
+ * Component to edit profile of logged in user.
+ */
 export var ProfileEditComponent = (function () {
+    /**
+     * When create component, inject dependencies.
+     *
+     * @param userService
+     * @param sessionStorageService
+     * @param flashMessageService
+     * @param router
+     */
     function ProfileEditComponent(userService, sessionStorageService, flashMessageService, router) {
         this.userService = userService;
         this.sessionStorageService = sessionStorageService;
@@ -13,8 +24,8 @@ export var ProfileEditComponent = (function () {
         this.submitted = false;
     }
     /**
-     * Set to variable user logged in user.
-     * Create edit user form.
+     * When create component, call function to get logged in user and
+     * create edit user form.
      */
     ProfileEditComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -29,7 +40,8 @@ export var ProfileEditComponent = (function () {
         });
     };
     /**
-     * Submit update user form.
+     * If edit user form is valid, call function to update profile of logged in user
+     * and set session storage with new properties
      */
     ProfileEditComponent.prototype.onSubmit = function () {
         var _this = this;

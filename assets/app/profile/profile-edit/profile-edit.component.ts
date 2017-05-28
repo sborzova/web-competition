@@ -7,6 +7,9 @@ import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {ProfileService} from "../profile.service";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
 
+/**
+ * Component to edit profile of logged in user.
+ */
 @Component({
     selector: 'app-profile-edit',
     templateUrl: './profile-edit.component.html'
@@ -16,14 +19,22 @@ export class ProfileEditComponent implements OnInit {
     private user : ProfileUser;
     private submitted: boolean = false;
 
+    /**
+     * When create component, inject dependencies.
+     *
+     * @param userService
+     * @param sessionStorageService
+     * @param flashMessageService
+     * @param router
+     */
     constructor(private userService: ProfileService,
                 private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService,
                 private router: Router) {}
 
     /**
-     * Set to variable user logged in user.
-     * Create edit user form.
+     * When create component, call function to get logged in user and
+     * create edit user form.
      */
     ngOnInit(){
         this.userService.getLoggedInUser()
@@ -40,7 +51,8 @@ export class ProfileEditComponent implements OnInit {
     }
 
     /**
-     * Submit update user form.
+     * If edit user form is valid, call function to update profile of logged in user
+     * and set session storage with new properties
      */
     onSubmit(){
         this.submitted = true;

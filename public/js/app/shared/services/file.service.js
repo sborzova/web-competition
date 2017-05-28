@@ -1,7 +1,15 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
 import { Observable } from "rxjs/Observable";
+/**
+ *  Service for file to communicate with database.
+ */
 export var FileService = (function () {
+    /**
+     * When creating service, inject dependency and set url for communication with database.
+     *
+     * @param http
+     */
     function FileService(http) {
         this.http = http;
         var routeModule = require("../../app.routing");

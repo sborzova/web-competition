@@ -3,6 +3,9 @@ import {Author} from "./author.model";
 import {FileModel} from "../../instances/file.model";
 import {Instance} from "./instance.model";
 
+/**
+ * Class represents solution model.
+ */
 export class Solution {
     constructor(public unassigned: number,
                 public total: number,

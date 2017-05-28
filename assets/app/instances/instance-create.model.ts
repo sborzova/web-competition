@@ -1,3 +1,6 @@
+/**
+ * Class represents create instance model.
+ */
 export class InstanceCreate {
     constructor(public order: number,
                 public name: string,

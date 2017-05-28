@@ -7,7 +7,8 @@ var Preference = require('../models/preference');
 /**
  * Save new preference to database.
  *
- * Request body contains preference.
+ * Request - contains preference.
+ * Response - contains saved preference or error.
  */
 router.post('/server/preference', function (req, res) {
     try{
@@ -38,7 +39,8 @@ router.post('/server/preference', function (req, res) {
 /**
  * Update preference with name competitionIsOn in database.
  *
- * Request body contains preference.
+ * Request - contains preference.
+ * Response - contains updated preference or error.
  */
 router.patch('/server/admin/preferenceUpdate', function (req, res, next) {
     Preference.findOne({name: 'competitionIsOn'}, function (err, preference) {
@@ -73,6 +75,8 @@ router.patch('/server/admin/preferenceUpdate', function (req, res, next) {
 
 /**
  *  Get preference with name competitionIsOn from database.
+ *
+ *  Response - contains preference or error.
  */
 router.get('/server/preference', function(req, res, next) {
     Preference.findOne({name: 'competitionIsOn'}, function(err, preference) {

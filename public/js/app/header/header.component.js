@@ -1,11 +1,23 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { SessionStorageService } from "../shared/services/session-storage.service";
+/**
+ * Component to show menu.
+ */
 export var HeaderComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param sessionStorageService
+     * @param router
+     */
     function HeaderComponent(sessionStorageService, router) {
         this.sessionStorageService = sessionStorageService;
         this.router = router;
     }
+    /**
+     * When creating component, get state of competition.
+     */
     HeaderComponent.prototype.ngOnInit = function () {
         this.sessionStorageService.setSessionStorageCompetition();
     };
@@ -24,12 +36,6 @@ export var HeaderComponent = (function () {
     };
     HeaderComponent.prototype.competitionIsOn = function () {
         return this.sessionStorageService.getCompetitionIsOn();
-    };
-    HeaderComponent.prototype.showAlsoInsert = function () {
-        var isLoggedIn = this.sessionStorageService.isLoggedIn();
-        var competitionIsOn = this.sessionStorageService.getCompetitionIsOn();
-        var isAdmin = this.sessionStorageService.isAdmin();
-        return !competitionIsOn || isAdmin || (competitionIsOn && isLoggedIn);
     };
     HeaderComponent.decorators = [
         { type: Component, args: [{

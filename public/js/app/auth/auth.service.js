@@ -3,7 +3,16 @@ import { Http, Headers } from "@angular/http";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
+/**
+ * Service for managing authentication.
+ */
 export var AuthService = (function () {
+    /**
+     * When creating service, inject dependencies and set url for communication with database.
+     *
+     * @param http
+     * @param flashMessageService
+     */
     function AuthService(http, flashMessageService) {
         this.http = http;
         this.flashMessageService = flashMessageService;
@@ -11,7 +20,7 @@ export var AuthService = (function () {
         this.hostUrl = routeModule.hostUrl;
     }
     /**
-     * Send request to server with new user to save
+     * Send request to server with new user to save.
      *
      * @param user
      * @returns {Observable<Response>} response contains user if success, other way error
@@ -43,7 +52,7 @@ export var AuthService = (function () {
         });
     };
     /**
-     * Return headers with set content-type.
+     * Return headers with set content-type to application/json.
      *
      * @returns {Headers} headers
      */
@@ -51,7 +60,7 @@ export var AuthService = (function () {
         return new Headers({ 'Content-Type': 'application/json' });
     };
     /**
-     * Stringify object.
+     * Stringify JSON object.
      *
      * @param object
      * @returns {string} stringified object

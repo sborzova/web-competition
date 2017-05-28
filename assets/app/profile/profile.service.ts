@@ -6,10 +6,19 @@ import {Observable} from "rxjs";
 import {FlashMessageService} from "../flash-message/flash-messages.service";
 import {ProfileUser} from "./profile.model";
 
+/**
+ * Service for user to communicate with database.
+ */
 @Injectable()
 export class ProfileService{
     private hostUrl: string;
 
+    /**
+     * When creating service, inject dependencies and set url for communication with database.
+     *
+     * @param http
+     * @param flashMessageService
+     */
     constructor(private http: Http,
                 private flashMessageService: FlashMessageService) {
 
@@ -18,7 +27,7 @@ export class ProfileService{
     }
 
     /**
-     * Get logged in user.
+     * Send request to server to get logged in user.
      *
      * @returns {Observable<Response>} response contains logged in user if success, other way error
      */
@@ -32,7 +41,7 @@ export class ProfileService{
     }
 
     /**
-     * Update logged in user.
+     * Send request to server to update logged in user.
      *
      * @param user - updated user
      * @returns {Observable<Response>} response contains user if success, other way error
@@ -53,7 +62,7 @@ export class ProfileService{
     }
 
     /**
-     * Update logged in user's password.
+     * Send request to server to update logged in user's password.
      *
      * @param user - updated user
      * @returns {Observable<Response>} response contains user if success, other way error
@@ -84,7 +93,7 @@ export class ProfileService{
     }
 
     /**
-     * Return headers with set content-type
+     * Return headers with set content-type to apllication/json
      * @returns {Headers} headers
      */
     getHeaders (){
@@ -92,7 +101,7 @@ export class ProfileService{
     }
 
     /**
-     * Stringify object
+     * Stringify JSON object
      * @param object
      * @returns {string} stringified object
      */

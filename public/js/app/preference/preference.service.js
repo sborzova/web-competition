@@ -2,7 +2,15 @@ import { Injectable } from "@angular/core";
 import { Http, Headers } from "@angular/http";
 import { Observable } from "rxjs";
 import { Preference } from "./preference.model";
+/**
+ * Service for preference to communicate with database.
+ */
 export var PreferenceService = (function () {
+    /**
+     * When creating service, inject dependency and set url for communication with database.
+     *
+     * @param http
+     */
     function PreferenceService(http) {
         this.http = http;
         var routeModule = require("../app.routing");

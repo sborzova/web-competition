@@ -3,6 +3,7 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 var compression = require('compression');
 
 var appRoutes = require('./routes/app');
@@ -16,13 +17,14 @@ var fileRoutes = require('./routes/file');
 
 var app = express();
 
-mongoose.Promise = require('bluebird');
-
+/**
+ * Create connection to cloud database on mlab
+ */
 var uri = 'mongodb://user:' + process.env.MLAB_USER + '.mlab.com:' + process.env.MLAB_DATABASE;
 mongoose.connect(uri);
 
 /*
- *  Uncomment on first deploy on server
+ *  Uncomment to create admin in database
  */
 
 // var ProfileUser = require('./models/user');
@@ -36,7 +38,7 @@ mongoose.connect(uri);
 //         var user = new ProfileUser({
 //             firstName: 'Hana',
 //             lastName: 'Rudová',
-//             password: bcrypt.hashSync('1234', 10),
+//             password: bcrypt.hashSync('123456', 10),
 //             email: emailAdmin,
 //             role: 'admin'
 //         });
@@ -48,6 +50,10 @@ mongoose.connect(uri);
 //         });
 //     }
 // });
+
+/**
+ * Uncomment to insert preference of competition to database
+ */
 
 // var Preference = require('./models/preference');
 // var preferenceName = 'competitionIsOn';
@@ -80,9 +86,11 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/**
+ *  Set headers of responds.
+ */
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');

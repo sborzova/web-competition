@@ -3,8 +3,12 @@ import { SolutionService } from "../shared/services/solution.service";
 import { Validation } from "./validation.model";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SessionStorageService } from "../shared/services/session-storage.service";
+/**
+ * Component for validation solution.
+ */
 export var ValidationComponent = (function () {
     /**
+     * When creating component, inject dependencies
      *
      * @param validationService
      * @param sessionStorageService
@@ -16,7 +20,7 @@ export var ValidationComponent = (function () {
         this.flashMessageService = flashMessageService;
     }
     /**
-     * Check if validation component can be shown.
+     * When creating component, check if validation component can be shown.
      */
     ValidationComponent.prototype.ngOnInit = function () {
         if (!this.showValidator()) {
@@ -42,7 +46,8 @@ export var ValidationComponent = (function () {
         return !competitionIsOn || isAdmin || (competitionIsOn && isLoggedIn);
     };
     /**
-     * Check if input for solution is empty.
+     * Call function to hide validation result.
+     * If input for solution is empty, show message.
      */
     ValidationComponent.prototype.onValidate = function () {
         this.validationService.successValidationHideResult();
@@ -55,9 +60,9 @@ export var ValidationComponent = (function () {
         }
     };
     /**
-     *  Validate solution and show result.
+     *  Call function to validate solution and show result.
      *
-     * @param file - solution's file to save
+     * @param file - solution's file to validate
      */
     ValidationComponent.prototype.validateSolution = function (file) {
         var _this = this;

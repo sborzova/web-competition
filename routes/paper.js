@@ -6,7 +6,8 @@ var Paper = require('../models/paper');
 /**
  * Save new paper to database.
  *
- * Request body contains paper.
+ * Request - contains paper.
+ * Response - contains saved paper or error.
  */
 router.post('/server/paper', function (req, res) {
     try{
@@ -38,7 +39,8 @@ router.post('/server/paper', function (req, res) {
  * Update paper in database by id.
  *
  * Parameter id - paper's id.
- * Request body contains updated paper.
+ * Request - contains updated paper.
+ * Response - contains updated paper or error.
  */
 router.patch('/server/paper/:id', function (req, res, next) {
     Paper.findById(req.params.id, function (err, paper) {
@@ -77,6 +79,7 @@ router.patch('/server/paper/:id', function (req, res, next) {
  * Get paper from database by id.
  *
  * Parameter id - paper's id.
+ * Response - contains paper or error.
  */
 router.get('/server/paper/:id', function(req, res, next) {
     Paper.findById(req.params.id, function(err, paper) {
@@ -101,6 +104,8 @@ router.get('/server/paper/:id', function(req, res, next) {
 
 /**
  * Get all papers from database.
+ *
+ * Response - contains papers or error.
  */
 router.get('/server/papers', function(req, res, next) {
     Paper.find(function(err, papers) {
@@ -127,6 +132,7 @@ router.get('/server/papers', function(req, res, next) {
  * Delete paper from database by id.
  *
  * Parameter id - paper's id.
+ * Response - contains deleted paper or error.
  */
 router.delete('/server/paper/:id', function (req, res, next) {
     Paper.findById(req.params.id, function (err, paper) {

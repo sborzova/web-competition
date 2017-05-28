@@ -7,6 +7,9 @@ import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {Password} from "./password.model";
 import {ProfileService} from "../profile.service";
 
+/**
+ * Component for editing password of logged in user.
+ */
 @Component({
     selector: 'app-profile-edit-password',
     templateUrl: './profile-edit-password.component.html'
@@ -17,13 +20,20 @@ export class ProfileEditPasswordComponent implements OnInit{
     private user: ProfileUser;
     private submitted: boolean = false;
 
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param userService
+     * @param flashMessageService
+     * @param router
+     */
     constructor(private userService: ProfileService,
                 private flashMessageService: FlashMessageService,
                 private router: Router) {}
 
     /**
-     * Set to variable user logged in user.
-     * Create new password form.
+     * When creating component, call function to get logged in user and
+     * create edit password form.
      */
     ngOnInit(){
         this.userService.getLoggedInUser()
@@ -40,7 +50,7 @@ export class ProfileEditPasswordComponent implements OnInit{
     }
 
     /**
-     * Submit new password form.
+     * If edit password form is valid, call function to update user with new password.
      */
     onSubmit(){
         this.submitted = true;

@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from "@angular/http";
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpModule} from "@angular/http";
 
-import { AppComponent } from "./app.component";
-import { HeaderComponent } from "./header/header.component";
-import { routing } from "./app.routing";
-import { HomeComponent } from "./home/home.component";
+import {AppComponent} from "./app.component";
+import {HeaderComponent} from "./header/header.component";
+import {routing} from "./app.routing";
+import {HomeComponent} from "./home/home.component";
 import {PreferenceService} from "./preference/preference.service";
 import {SessionStorageService} from "./shared/services/session-storage.service";
 import {FlashMessageComponent} from "./flash-message/flash-message.component";

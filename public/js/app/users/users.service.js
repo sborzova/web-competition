@@ -109,7 +109,7 @@ export var UsersService = (function () {
             : '';
     };
     /**
-     * Return headers with set content-type.
+     * Return headers with set content-type to application/json.
      *
      * @returns {Headers} headers
      */
@@ -117,7 +117,7 @@ export var UsersService = (function () {
         return new Headers({ 'Content-Type': 'application/json' });
     };
     /**
-     * Stringify object.
+     * Stringify JSON object.
      *
      * @param object
      * @returns {string} stringified object

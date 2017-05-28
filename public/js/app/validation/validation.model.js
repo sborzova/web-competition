@@ -1,3 +1,6 @@
+/**
+ *  Class represents validation model.
+ */
 export var Validation = (function () {
     function Validation(unassigned, total, sc, time, room, distr, info, instanceName) {
         this.unassigned = unassigned;

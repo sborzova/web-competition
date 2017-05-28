@@ -3,11 +3,19 @@ import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import {FileModel} from "../../instances/file.model";
 
+/**
+ *  Service for file to communicate with database.
+ */
 @Injectable()
 export class FileService {
     private hostUrl: string;
     private xmlHttp;
 
+    /**
+     * When creating service, inject dependency and set url for communication with database.
+     *
+     * @param http
+     */
     constructor(private http: Http) {
 
         const routeModule = require("../../app.routing");

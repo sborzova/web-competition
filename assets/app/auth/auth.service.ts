@@ -7,10 +7,19 @@ import {FlashMessageService} from "../flash-message/flash-messages.service";
 import {SigninUser} from "./signin/signin.model";
 import {SignupUser} from "./signup/signup.model";
 
+/**
+ * Service for managing authentication.
+ */
 @Injectable()
 export class AuthService{
     private hostUrl: string;
 
+    /**
+     * When creating service, inject dependencies and set url for communication with database.
+     *
+     * @param http
+     * @param flashMessageService
+     */
     constructor(private http: Http,
                 private flashMessageService: FlashMessageService) {
 
@@ -19,7 +28,7 @@ export class AuthService{
     }
 
     /**
-     * Send request to server with new user to save
+     * Send request to server with new user to save.
      *
      * @param user
      * @returns {Observable<Response>} response contains user if success, other way error
@@ -53,7 +62,7 @@ export class AuthService{
     }
 
     /**
-     * Return headers with set content-type.
+     * Return headers with set content-type to application/json.
      *
      * @returns {Headers} headers
      */
@@ -62,7 +71,7 @@ export class AuthService{
     }
 
     /**
-     * Stringify object.
+     * Stringify JSON object.
      *
      * @param object
      * @returns {string} stringified object

@@ -3,6 +3,9 @@ import {Component, OnInit} from '@angular/core';
 import {ProfileUser} from "../profile.model";
 import {ProfileService} from "../profile.service";
 
+/**
+ * Component for showing profile of logged in user.
+ */
 @Component({
     selector: 'app-profile-info',
     templateUrl: './profile-info.component.html'
@@ -10,11 +13,16 @@ import {ProfileService} from "../profile.service";
 export class ProfileInfoComponent implements OnInit {
     user: ProfileUser;
 
+    /**
+     * When creating component, inject dependency.
+     *
+     * @param userService
+     */
     constructor(private userService: ProfileService) {
     }
 
     /**
-     *  Set to variable user logged in user.
+     *  When creating component, call function to get logged in user.
      */
     ngOnInit(){
         this.userService.getLoggedInUser()

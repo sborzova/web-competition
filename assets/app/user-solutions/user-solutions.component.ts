@@ -10,6 +10,9 @@ import {SortDownloadService} from "../shared/services/sort-download.service";
 import {Solution} from "../shared/models/solution.model";
 import {SessionStorageService} from "../shared/services/session-storage.service";
 
+/**
+ * Component for showing and managing user's solutions.
+ */
 @Component({
     selector: 'app-user-solutions',
     templateUrl: './user-solutions.component.html',
@@ -27,6 +30,15 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     private isEdited: boolean = false;
     private disabled: boolean = false;
 
+    /**
+     *  When creating component, inject dependencies.
+     *
+     * @param solutionService
+     * @param paperService
+     * @param flashMessageService
+     * @param sortDownloadService
+     * @param sessionStorageService
+     */
     constructor(private solutionService: SolutionService,
                 private paperService: PaperService,
                 private flashMessageService: FlashMessageService,
@@ -34,7 +46,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
                 private sessionStorageService: SessionStorageService){}
 
     /**
-     * Set to variable solutions all solutions by logged in user.
+     * When creating component, call function to get all solutions by logged in user and sort them.
       */
     ngOnInit(){
         this.solutionService.getSolutionsByLoggedUser()
@@ -73,7 +85,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Delete papers from selected solutions.
+     * Call function to delete papers from selected solutions.
      */
     onConfirmDeletePaper(){
         let paperIds = new Set<string>();
@@ -95,7 +107,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     /**
-     *  Delete solution.
+     *  Call function to delete solution.
      */
     onConfirmDeleteSolution(){
         this.solutionService.deleteSolution(this.solution)
@@ -110,7 +122,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Check if can be edit paper.
+     * Check if paper can be edit.
      */
     onEditPaper(){
         if (this.checkIfSelected()){
@@ -137,7 +149,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
      * Check if not selected solutions contain selected paper to edit.
      * Create edit paper form.
      *
-     * @param paperIds
+     * @param paperIds - ids of papers for editing
      */
     prepareToEditPaper(paperIds){
         let paperId = Array.from(paperIds)[0];
@@ -165,7 +177,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Submit edit paper form or add paper form.
+     * Check if submitted form is for adding or editing paper.
      */
     onSubmit(){
         this.submitted = true;
@@ -179,7 +191,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Submit edit paper form.
+     * Call function to update paper.
      */
     submittedEditPaperForm(){
         this.editedPaper.citation = this.paperForm.value.citation;
@@ -200,7 +212,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Submit add paper form.
+     * Call function to save paper and then call function to set paper to solutions.
      */
     submittedAddPaperForm(){
         const paper = new Paper(
@@ -217,7 +229,7 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Set paper to selected solutions.
+     * Call function to set paper to selected solutions.
      *
      * @param paper
      */
@@ -296,27 +308,40 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
         }
     }
 
+    /**
+     * Returns selected solutions.
+     *
+     * @returns {Solution[]} selected solutions
+     */
     get selectedSolutions() {
         return this.solutions.filter(s => s.isChecked);
     }
 
-    competitionIsOn(){
-        return this.sessionStorageService.getCompetitionIsOn();
+    /**
+     * Open modal dialog with ensure delete question.
+     *
+     * @param solution to delete
+     */
+    onDelete(solution: Solution) {
+        this.solution = solution;
+        document.getElementById('openModalDeleteSolution').click();
     }
 
+    /**
+     *  Uncheck selected solutions and hide paper form.
+     */
     onHidePaperForm(){
         this.uncheckSelected();
         this.disabled = false;
         this.showPaperForm = false;
     }
 
-    onDownload(solution: Solution){
-        this.sortDownloadService.download(solution);
+    competitionIsOn(){
+        return this.sessionStorageService.getCompetitionIsOn();
     }
 
-    onDelete(solution: Solution) {
-        this.solution = solution;
-        document.getElementById('openModalDeleteSolution').click();
+    onDownload(solution: Solution){
+        this.sortDownloadService.download(solution);
     }
 
     onShowPapers(){
@@ -391,6 +416,9 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
         this.solutions = this.sortDownloadService.sortInstanceDesc(this.solutions);
     }
 
+    /**
+     * When destroying component, set variables.
+     */
     ngOnDestroy(){
         this.showPaperForm = false;
         this.submitted = false;

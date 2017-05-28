@@ -16,6 +16,9 @@ import {FileModel} from "../../instances/file.model";
 import {Visibility} from "../../results/visibility.model";
 import {Technique} from "../../results/technique.model";
 
+/**
+ *  Service for managing solution and communication with database.
+ */
 @Injectable()
 export class SolutionService {
     private hostUrl : string;
@@ -33,6 +36,14 @@ export class SolutionService {
     solutionSetVisible$ = this.solutionSetVisibleSource.asObservable();
     solutionSetNotVisible$ = this.solutionSetNotVisibleSource.asObservable();
 
+    /**
+     * When creating service, inject dependencies and set url for communication with database.
+     *
+     * @param http
+     * @param paperService
+     * @param flashMessageService
+     * @param fileService
+     */
     constructor(private http: Http,
                 private paperService: PaperService,
                 private flashMessageService: FlashMessageService,
@@ -70,7 +81,7 @@ export class SolutionService {
     }
 
     /**
-     * Save paper when paper citation is not null.
+     * Call function to save paper when paper citation is not null.
      * Call function to save solution with validation info and solution file.
      *
      * @param solution
@@ -98,16 +109,16 @@ export class SolutionService {
     }
 
     /**
-     * Save solution's file and solution with validation info.
+     * Call function to save solution's file and then call function to save solution with
+     * validation info and id of saved solution's file.
      *
      * @param solution
      */
     saveSolutionAndFile(solution: SolutionCreate){
         let idFile;
-        this.fileService.saveFile(this.solutionFile)
+        this.saveValidatedFile()
             .subscribe(
-                file => {
-                    idFile = JSON.parse(file).id;
+                idFile => {
                     solution.fileId = idFile;
                     this.saveSolution(solution)
                         .subscribe(
@@ -130,10 +141,27 @@ export class SolutionService {
     }
 
     /**
+     * Send request to server to save validated file, which is storaged on the server.
+     *
+     * @returns {Observable<Response>} if success, response contains file's id, other way error
+     */
+    saveValidatedFile(){
+        return this.http.post(
+            this.hostUrl.concat('server/saveValidatedFile'), {headers: this.getHeaders()})
+            .map((response: Response) => {
+                return response.json().id;
+            })
+            .catch((error: Response) => {
+                return Observable.throw(error)
+            });
+    }
+
+    /**
      * Send request to server to find duplicate solution.
      *
      * @param solution
-     * @returns {Observable<Response>} if success, response contains or does not contain duplicate solution, other way response contains error
+     * @returns {Observable<Response>} if success, response contains or does not contain duplicate solution,
+     *          other way response contains error
      */
     findDuplicateSolution(solution: Solution){
         return this.http.post(
@@ -406,7 +434,7 @@ export class SolutionService {
     }
 
     /**
-     * Stringify object.
+     * Stringify JSON object.
      *
      * @param object
      * @returns {string} stringified object
@@ -415,6 +443,12 @@ export class SolutionService {
         return JSON.stringify(object);
     }
 
+    /**
+     * Emit event, which SuccessValidationComponent subscribe to and send validation model.
+     *
+     * @param validation
+     * @param file
+     */
     successValidationShowResult(validation: Validation, file: any){
         this.setSolutionFile(file);
         this.successValidation.emit(validation);
@@ -441,10 +475,7 @@ export class SolutionService {
     }
 
     setSolutionFile(file: any){
-        console.log(file);
         this.solutionFile = file;
-        console.log('aaa');
-        console.log(this.solutionFile);
     }
 
     getSolutionFile(){

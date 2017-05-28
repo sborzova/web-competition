@@ -1,3 +1,6 @@
+/**
+ * Class represents instance model.
+ */
 export var Instance = (function () {
     function Instance(order, name, description, status, data, submissionTime, instanceId) {
         this.order = order;

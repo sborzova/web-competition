@@ -3,7 +3,16 @@ import { Http, Headers } from "@angular/http";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
+/**
+ * Service for user to communicate with database.
+ */
 export var ProfileService = (function () {
+    /**
+     * When creating service, inject dependencies and set url for communication with database.
+     *
+     * @param http
+     * @param flashMessageService
+     */
     function ProfileService(http, flashMessageService) {
         this.http = http;
         this.flashMessageService = flashMessageService;
@@ -11,7 +20,7 @@ export var ProfileService = (function () {
         this.hostUrl = routeModule.hostUrl;
     }
     /**
-     * Get logged in user.
+     * Send request to server to get logged in user.
      *
      * @returns {Observable<Response>} response contains logged in user if success, other way error
      */
@@ -23,7 +32,7 @@ export var ProfileService = (function () {
             .catch(function (error) { return Observable.throw(error); });
     };
     /**
-     * Update logged in user.
+     * Send request to server to update logged in user.
      *
      * @param user - updated user
      * @returns {Observable<Response>} response contains user if success, other way error
@@ -42,7 +51,7 @@ export var ProfileService = (function () {
         });
     };
     /**
-     * Update logged in user's password.
+     * Send request to server to update logged in user's password.
      *
      * @param user - updated user
      * @returns {Observable<Response>} response contains user if success, other way error
@@ -70,14 +79,14 @@ export var ProfileService = (function () {
             : '';
     };
     /**
-     * Return headers with set content-type
+     * Return headers with set content-type to apllication/json
      * @returns {Headers} headers
      */
     ProfileService.prototype.getHeaders = function () {
         return new Headers({ 'Content-Type': 'application/json' });
     };
     /**
-     * Stringify object
+     * Stringify JSON object
      * @param object
      * @returns {string} stringified object
      */

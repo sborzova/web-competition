@@ -5,7 +5,20 @@ import { InstanceService } from "../../shared/services/instance.service";
 import { SortDownloadService } from "../../shared/services/sort-download.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { SessionStorageService } from "../../shared/services/session-storage.service";
+/**
+ * Component for showing best results.
+ */
 export var ResultsBestComponent = (function () {
+    /**
+     *  When creating component, inject dependencies and create subscription for deleting solution,
+     *  editing technique, setting solutions to visible, setting solution to invisible.
+     *
+     * @param solutionService
+     * @param instanceService
+     * @param sortDownloadService
+     * @param sessionStorageService
+     * @param flashMessageService
+     */
     function ResultsBestComponent(solutionService, instanceService, sortDownloadService, sessionStorageService, flashMessageService) {
         var _this = this;
         this.solutionService = solutionService;
@@ -30,8 +43,9 @@ export var ResultsBestComponent = (function () {
         });
     }
     /**
-     * Set to variable solutionsAll all solutions.
-     * Set to variable result best solutions.
+     * When creating component, call function to get all instances, then call function to get
+     * all solutions by every instance. Sort solutions for every instance ascending by quality
+     * and pick the best for every instance.
      */
     ResultsBestComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -86,7 +100,7 @@ export var ResultsBestComponent = (function () {
         }
     };
     /**
-     * When destroy component, unsubscribe all subscriptions.
+     * When destroying component, unsubscribe all subscriptions.
      */
     ResultsBestComponent.prototype.ngOnDestroy = function () {
         this.subscriptionDelete.unsubscribe();
@@ -103,7 +117,7 @@ export var ResultsBestComponent = (function () {
         document.getElementById('openModalDelete').click();
     };
     /**
-     * Create and show form for edit technique
+     * Create and show edit technique form.
      */
     ResultsBestComponent.prototype.onEditTechnique = function (solution) {
         this.solution = solution;
@@ -113,7 +127,7 @@ export var ResultsBestComponent = (function () {
         document.getElementById('openTechniqueForm').click();
     };
     /**
-     * Submit edit technique form
+     * If edit technique form is valid, hide form and call function to update solution.
      */
     ResultsBestComponent.prototype.onSubmitTechnique = function () {
         var _this = this;
@@ -121,11 +135,11 @@ export var ResultsBestComponent = (function () {
         if (this.techniqueForm.valid) {
             document.getElementById('hideTechniqueForm').click();
             this.submittedTechniqueForm = false;
+            this.solutionsInstance = null;
+            this.solutionsAuthor = null;
             this.solution.technique = this.techniqueForm.value.technique;
             this.solutionService.updateSolutionTechnique(this.solution)
                 .subscribe(function () {
-                _this.solutionsInstance = null;
-                _this.solutionsAuthor = null;
                 _this.solution = null;
                 _this.flashMessageService.showMessage('Solution was updated.', 'success');
             }, function (error) { return console.error(error); });
@@ -154,7 +168,7 @@ export var ResultsBestComponent = (function () {
             .subscribe(function (data) { return _this.flashMessageService.showMessage('Solution was updated to not visible', 'success'); }, function (error) { return console.error(error); });
     };
     /**
-     *  Filter by author.
+     *  Filter solutions by author.
      *
      * @param authorId
      */
@@ -163,7 +177,7 @@ export var ResultsBestComponent = (function () {
         this.solutionsAuthor = this.solutionsAll.filter(function (s) { return s.author.authorId == authorId; });
     };
     /**
-     * Filter by instance.
+     * Filter solutions by instance.
      *
      * @param instanceId
      */
@@ -172,7 +186,7 @@ export var ResultsBestComponent = (function () {
         this.solutionsInstance = this.solutionsAll.filter(function (s) { return s.instance.instanceId == instanceId; });
     };
     /**
-     *  Delete solution and refresh best solutions.
+     *  Call function to delete solution and refresh best solutions.
      */
     ResultsBestComponent.prototype.onConfirmDelete = function () {
         var _this = this;

@@ -7,7 +7,19 @@ import { EmailService } from "./email.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { SigninUser } from "./signin.model";
 import { Email } from "./email.model";
+/**
+ * Component for signing in.
+ */
 export var SigninComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param authService
+     * @param sessionStorageService
+     * @param emailService
+     * @param flashMessageService
+     * @param router
+     */
     function SigninComponent(authService, sessionStorageService, emailService, flashMessageService, router) {
         this.authService = authService;
         this.sessionStorageService = sessionStorageService;
@@ -29,7 +41,7 @@ export var SigninComponent = (function () {
         });
     };
     /**
-     * Submit sign in form
+     * If sign in form is valid, call function to sign in user,
      */
     SigninComponent.prototype.onSubmit = function () {
         var _this = this;
@@ -46,7 +58,7 @@ export var SigninComponent = (function () {
         }
     };
     /**
-     * Create new password form
+     * Create email form
      */
     SigninComponent.prototype.onShowForm = function () {
         this.emailForm = new FormGroup({
@@ -55,7 +67,7 @@ export var SigninComponent = (function () {
         document.getElementById('openEmailForm').click();
     };
     /**
-     * Submit new password form
+     * If email form is valid, call function to send email with new password.
      */
     SigninComponent.prototype.onSubmitEmail = function () {
         var _this = this;

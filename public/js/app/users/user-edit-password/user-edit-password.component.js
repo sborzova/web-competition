@@ -3,7 +3,18 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { UsersService } from "../users.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+/**
+ *  Component to edit user's password as admin.
+ */
 export var UserEditPasswordComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param router
+     * @param usersService
+     * @param activatedRoute
+     * @param flashMessageService
+     */
     function UserEditPasswordComponent(router, usersService, activatedRoute, flashMessageService) {
         this.router = router;
         this.usersService = usersService;
@@ -12,8 +23,8 @@ export var UserEditPasswordComponent = (function () {
         this.submitted = false;
     }
     /**
-     *  Set to variable user user by id.
-     *  Create edit user's password form.
+     *  When creating component, call function to get user by route parameter's id
+     *  and create edit user's password form.
      */
     UserEditPasswordComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -28,7 +39,7 @@ export var UserEditPasswordComponent = (function () {
         });
     };
     /**
-     * Submit edit user's password form.
+     * If edit user's password form is valid, call function to update user.
      */
     UserEditPasswordComponent.prototype.onSubmit = function () {
         var _this = this;
@@ -42,14 +53,14 @@ export var UserEditPasswordComponent = (function () {
             }, function (error) { return console.error(error); });
         }
     };
-    UserEditPasswordComponent.prototype.onCancel = function () {
-        this.navigateBack();
-    };
     /**
      * Navigate to route Users Management.
      */
     UserEditPasswordComponent.prototype.navigateBack = function () {
         this.router.navigate(['/users']);
+    };
+    UserEditPasswordComponent.prototype.onCancel = function () {
+        this.navigateBack();
     };
     UserEditPasswordComponent.decorators = [
         { type: Component, args: [{

@@ -9,6 +9,9 @@ import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {FileService} from "../../shared/services/file.service";
 import {InstanceCreate} from "../instance-create.model";
 
+/**
+ * Component to create new instance.
+ */
 @Component({
     selector: 'app-instance-new',
     templateUrl: './instance-new.component.html'
@@ -22,13 +25,21 @@ export class InstanceCreateComponent implements OnInit {
     @ViewChild('status') statusElem;
     @ViewChild('data') dataElem;
 
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param router
+     * @param fileService
+     * @param flashMessageService
+     * @param instancesService
+     */
     constructor(private router: Router,
                 private fileService: FileService,
                 private flashMessageService: FlashMessageService,
                 private instancesService: InstanceService) {}
 
     /**
-     * Set variable defaultOrder for new instance.
+     * When creating component, set defaultOrder for new instance.
      */
     ngOnInit(){
         this.instancesService.getInstances()
@@ -49,7 +60,7 @@ export class InstanceCreateComponent implements OnInit {
     }
 
     /**
-     * Check if submitted form is valid.
+     * If submitted form is valid, call function saveInstanceFiles of this component
      */
     onSubmit(){
         this.submitted = true;
@@ -72,7 +83,7 @@ export class InstanceCreateComponent implements OnInit {
     }
 
     /**
-     * Save instance status file and instance status data.
+     * Call function to save instance status file and instance status data.
      *
      * @param status
      * @param data
@@ -110,7 +121,7 @@ export class InstanceCreateComponent implements OnInit {
     }
 
     /**
-     * Save instance with status's id and data's id
+     * Call function to save instance with all properties, including status's id and data's id
      *
      * @param data
      * @param idStatus

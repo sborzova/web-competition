@@ -5,6 +5,9 @@ import {SortDownloadService} from "../../shared/services/sort-download.service";
 import {Solution} from "../../shared/models/solution.model";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
 
+/**
+ * Component for showing results for author and instance.
+ */
 @Component({
     selector: 'app-results-author-instance',
     templateUrl: './results-author-instance.component.html'
@@ -15,6 +18,13 @@ export class ResultsAuthorInstanceComponent implements OnChanges{
     solution: Solution;
     private showPapers: boolean = false;
 
+    /**
+     *  When creating component, inject dependencies.
+     *
+     * @param solutionService
+     * @param sessionStorageService
+     * @param sortDownloadService
+     */
     constructor(private solutionService: SolutionService,
                 private sessionStorageService: SessionStorageService,
                 private sortDownloadService: SortDownloadService){

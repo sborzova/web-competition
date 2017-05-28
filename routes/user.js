@@ -8,7 +8,8 @@ var User = require('../models/user');
 /**
  * Save new user to database.
  *
- * Request body contains user.
+ * Request - contains user's properties.
+ * Response - contains saved user or error.
  */
 router.post('/server/user', function (req, res, next) {
     try{
@@ -40,9 +41,10 @@ router.post('/server/user', function (req, res, next) {
 });
 
 /**
- *  Valid login credentials.
+ *  Valid login credentials. In case of success call function to log user in app.
  *
- *  Request body contains login credentials.
+ *  Request - contains login credentials.
+ *  Response - contains logged in user or error.
  */
 router.post('/server/signin', function(req, res, next) {
     User.findOne({email: req.body.email}, function(err, user) {
@@ -71,7 +73,8 @@ router.post('/server/signin', function(req, res, next) {
 /**
  *  Get logged in user from database.
  *
- *  Token contains coded logged in user.
+ *  Token - contains logged in user.
+ *  Response - contains user or error.
  */
 router.get('/server/user', function(req, res, next) {
     var decoded = jwt.decode(req.query.token);
@@ -99,6 +102,7 @@ router.get('/server/user', function(req, res, next) {
  *  Get user from database by id.
  *
  *  Parameter id - user's id.
+ *  Response - contains user or error.
  */
 router.get('/server/admin/user/:id', function(req, res, next) {
     User.findById(req.params.id, function(err, user) {
@@ -124,8 +128,8 @@ router.get('/server/admin/user/:id', function(req, res, next) {
 /**
  * Handle request for update user in database.
  *
- * Request body contains updated user.
- * Token contains coded logged in user.
+ * Request - contains updated user.
+ * Token - contains logged in user.
  */
 router.patch('/server/user', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
@@ -162,8 +166,9 @@ router.patch('/server/user', function (req, res, next) {
 /**
  * Update user's password in database.
  *
- * Request body contains old and new password.
- * Token contains coded logged in user.
+ * Request - contains old and new password.
+ * Token - logged in user.
+ * Response - contains updated user or error.
  */
 router.patch('/server/password', function (req, res, next) {
     var decoded = jwt.decode(req.query.token);
@@ -206,6 +211,8 @@ router.patch('/server/password', function (req, res, next) {
 
 /**
  * Get all users from database.
+ *
+ * Response - contains users or error.
  */
 router.get('/server/admin/users', function(req, res, next) {
     User.find(function(err, users) {
@@ -229,10 +236,12 @@ router.get('/server/admin/users', function(req, res, next) {
 });
 
 /**
- * Admin update user in database by id.
+ * Admin updates user in database. In case of change of user's role,
+ * check admin's password
  *
  * Parameter id - user's id.
- * Request body contains updated user.
+ * Request - contains user's updated properties and admin's password.
+ * Response - contains updated user or error.
  */
 router.patch('/server/admin/user/:id', function (req, res, next) {
     User.findById(req.params.id, function(err, user) {
@@ -261,10 +270,11 @@ router.patch('/server/admin/user/:id', function (req, res, next) {
 });
 
 /**
- *  Admin update user's password in database by id.
+ *  Admin update user's password in database.
  *
  *  Parameter id - user's id.
- *  Request body contains new password.
+ *  Request - contains new password.
+ *  Response - contains updated user or error.
  */
 router.patch('/server/admin/password/:id', function (req, res, next) {
     User.findById(req.params.id, function(err, user) {
@@ -302,6 +312,7 @@ router.patch('/server/admin/password/:id', function (req, res, next) {
  *  Delete user from database by id.
  *
  *  Parameter id - user's id.
+ *  Response - contains deleted user or error.
  */
 router.delete('/server/admin/user/:id', function (req, res, next) {
     User.findById(req.params.id, function (err, user) {
@@ -333,16 +344,16 @@ router.delete('/server/admin/user/:id', function (req, res, next) {
 });
 
 /**
- * Sign user in JWT according to user'role as admin or user.
+ * Sign user in JWT according to user's role as admin or user.
  *
  * @param req - request
  * @param res - response
  * @param user - user to sign in
- * @returns {response} response
+ * @returns response - contains token, user's id, user's e-mail, isAdmin:true or false
  */
 function signin(req, res, user) {
     if (user.role === 'admin'){
-        var token = jwt.sign({user: user}, 'admin', {expiresIn: '24h'});
+        var token = jwt.sign({user: user}, process.env.SECRET_ADMIN, {expiresIn: '24h'});
         return res.status(200).json({
             message: 'Successfully logged in',
             token: token,
@@ -351,7 +362,7 @@ function signin(req, res, user) {
             email: req.body.email
         });
     }else {
-        var token = jwt.sign({user: user}, 'user', {expiresIn: '24h'});
+        var token = jwt.sign({user: user}, process.env.SECRET, {expiresIn: '24h'});
         return res.status(200).json({
             message: 'Successfully logged in',
             token: token,
@@ -363,11 +374,13 @@ function signin(req, res, user) {
 }
 
 /**
- * Check admin password and update user in database.
+ * Check admin's password and update user in database.
  *
- * @param req - request
- * @param res - response
- * @param user
+ * @param req - request contains token with user
+ * @param res - response to send back
+ * @param user - updated user
+ *
+ * Response contains updated user or error.
  */
 function checkAdminSaveUser(req, res, user) {
     var decoded = jwt.decode(req.query.token);
@@ -410,8 +423,10 @@ function checkAdminSaveUser(req, res, user) {
  * Update user in database.
  *
  * @param req - request
- * @param res - response
- * @param user
+ * @param res - response to send back
+ * @param user - updated user
+ *
+ * Response contains updated user or error.
  */
 function saveUser(req, res, user) {
     user.save(function (err, user) {

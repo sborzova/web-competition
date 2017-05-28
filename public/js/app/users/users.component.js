@@ -2,7 +2,17 @@ import { Component } from '@angular/core';
 import { UsersService } from "./users.service";
 import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SessionStorageService } from "../shared/services/session-storage.service";
+/**
+ *  Component for showing and managing all users.
+ */
 export var UsersComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param usersService
+     * @param sessionStorageService
+     * @param flashMessageService
+     */
     function UsersComponent(usersService, sessionStorageService, flashMessageService) {
         this.usersService = usersService;
         this.sessionStorageService = sessionStorageService;
@@ -10,7 +20,7 @@ export var UsersComponent = (function () {
         this.fileSaver = require('file-saver');
     }
     /**
-     *  Set to variable users all users.
+     *  When creating component, call function to get all users.
      */
     UsersComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -69,7 +79,7 @@ export var UsersComponent = (function () {
         });
     };
     /**
-     *  Delete user.
+     *  Call funtion to delete user.
      */
     UsersComponent.prototype.onOk = function () {
         var _this = this;

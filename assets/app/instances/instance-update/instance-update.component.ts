@@ -10,6 +10,9 @@ import {FileService} from "../../shared/services/file.service";
 import {FileModel} from "../file.model";
 import {InstanceUpdate} from "../instance-update.model";
 
+/**
+ * Component for editing instance.
+ */
 @Component({
     selector: 'app-instance-edit',
     templateUrl: './instance-update.component.html'
@@ -21,6 +24,15 @@ export class InstanceEditComponent implements OnInit {
     @ViewChild('status') statusElem;
     @ViewChild('data') dataElem;
 
+    /**
+     * When editing instance, inject dependencies.
+     *
+     * @param router
+     * @param instanceService
+     * @param fileService
+     * @param route
+     * @param flashMessageService
+     */
     constructor(private router: Router,
                 private instanceService: InstanceService,
                 private fileService: FileService,
@@ -28,8 +40,8 @@ export class InstanceEditComponent implements OnInit {
                 private flashMessageService: FlashMessageService){}
 
     /**
-     * Set to variable instance instance by id.
-     * Create instance edit form.
+     * When creating component, call function to get instance by router parameter's id
+     * and create instance edit form.
      */
     ngOnInit(){
         let id = this.route.snapshot.params['id'];
@@ -38,7 +50,7 @@ export class InstanceEditComponent implements OnInit {
                 (instance: Instance) => {
                     this.instance = instance;
                     this.instanceForm = new FormGroup({
-                        order: new FormControl(this.instance.order, [Validators.required, minValue(0)]),
+                        order: new FormControl(this.instance.order, [Validators.required, minValue(1)]),
                         name: new FormControl(this.instance.name, Validators.required),
                         description: new FormControl(this.instance.description, Validators.required)
                     });
@@ -46,7 +58,7 @@ export class InstanceEditComponent implements OnInit {
     }
 
     /**
-     * Submit instance edit form.
+     * If edit instance form is valid, call function to update instance.
      */
     onSubmit(){
         this.submitted = true;
@@ -70,7 +82,7 @@ export class InstanceEditComponent implements OnInit {
     }
 
     /**
-     * Update instance status file and instance data file.
+     * Call functions to update instance status file and instance data file.
      */
     saveFiles(){
         let statusInput = this.statusElem.nativeElement;

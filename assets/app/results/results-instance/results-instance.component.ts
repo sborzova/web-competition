@@ -5,6 +5,9 @@ import {Solution} from "../../shared/models/solution.model";
 import {SolutionService} from "../../shared/services/solution.service";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
 
+/**
+ * Component for showing results for instance
+ */
 @Component({
     selector: 'app-results-instance',
     templateUrl: './results-instance.component.html'
@@ -15,6 +18,13 @@ export class ResultsInstanceComponent implements OnChanges {
     solution: Solution;
     private showPapers: boolean = false;
 
+    /**
+     *  When creating component, inject dependencies.
+     *
+     * @param sortDownloadService
+     * @param solutionService
+     * @param sessionStorageService
+     */
     constructor(private sortDownloadService: SortDownloadService,
                 private solutionService: SolutionService,
                 private sessionStorageService: SessionStorageService){}

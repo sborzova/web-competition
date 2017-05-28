@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+/**
+ * Component to show initial Home page.
+ */
 export var HomeComponent = (function () {
     function HomeComponent() {
     }

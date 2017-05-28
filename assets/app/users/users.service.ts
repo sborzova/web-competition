@@ -136,7 +136,7 @@ export class UsersService {
     }
 
     /**
-     * Return headers with set content-type.
+     * Return headers with set content-type to application/json.
      *
      * @returns {Headers} headers
      */
@@ -145,7 +145,7 @@ export class UsersService {
     }
 
     /**
-     * Stringify object.
+     * Stringify JSON object.
      *
      * @param object
      * @returns {string} stringified object

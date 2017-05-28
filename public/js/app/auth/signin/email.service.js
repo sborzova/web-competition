@@ -2,7 +2,16 @@ import { Injectable } from "@angular/core";
 import { Http, Headers } from "@angular/http";
 import { Observable } from "rxjs";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+/**
+ * Service for sending email.
+ */
 export var EmailService = (function () {
+    /**
+     * When creating service, inject dependencies and set url for communication with database.
+     *
+     * @param http
+     * @param flashMessageService
+     */
     function EmailService(http, flashMessageService) {
         this.http = http;
         this.flashMessageService = flashMessageService;
@@ -10,7 +19,8 @@ export var EmailService = (function () {
         this.hostUrl = routeModule.hostUrl;
     }
     /**
-     * Send email to server to reset password.
+     * Send request to server to send email with new password.
+     *
      * @param email - Email model
      * @returns {Observable<Response>} response contains user if success, other way error
      */
@@ -28,14 +38,14 @@ export var EmailService = (function () {
         });
     };
     /**
-     * Return headers with set content-type
+     * Return headers with set content-type to application/json
      * @returns {Headers} headers
      */
     EmailService.prototype.getHeaders = function () {
         return new Headers({ 'Content-Type': 'application/json' });
     };
     /**
-     * Stringify object
+     * Stringify JSON object
      * @param object
      * @returns {string} stringified object
      */

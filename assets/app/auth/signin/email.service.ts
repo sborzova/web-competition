@@ -5,10 +5,19 @@ import {Observable} from "rxjs";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {Email} from "./email.model";
 
+/**
+ * Service for sending email.
+ */
 @Injectable()
 export class EmailService {
     private hostUrl: string;
 
+    /**
+     * When creating service, inject dependencies and set url for communication with database.
+     *
+     * @param http
+     * @param flashMessageService
+     */
     constructor(private http: Http,
                 private flashMessageService: FlashMessageService) {
 
@@ -17,7 +26,8 @@ export class EmailService {
     }
 
     /**
-     * Send email to server to reset password.
+     * Send request to server to send email with new password.
+     *
      * @param email - Email model
      * @returns {Observable<Response>} response contains user if success, other way error
      */
@@ -36,7 +46,7 @@ export class EmailService {
     }
 
     /**
-     * Return headers with set content-type
+     * Return headers with set content-type to application/json
      * @returns {Headers} headers
      */
     getHeaders (){
@@ -44,7 +54,7 @@ export class EmailService {
     }
 
     /**
-     * Stringify object
+     * Stringify JSON object
      * @param object
      * @returns {string} stringified object
      */

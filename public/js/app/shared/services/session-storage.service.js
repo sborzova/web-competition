@@ -1,6 +1,14 @@
 import { Injectable } from "@angular/core";
 import { PreferenceService } from "../../preference/preference.service";
+/**
+ * Service to manage session storage.
+ */
 export var SessionStorageService = (function () {
+    /**
+     * When creating service, inject dependency.
+     *
+     * @param preferenceService
+     */
     function SessionStorageService(preferenceService) {
         this.preferenceService = preferenceService;
     }
@@ -59,7 +67,7 @@ export var SessionStorageService = (function () {
         }
     };
     /**
-     * Set to session storage competition state
+     * Set to session storage competition state.
      */
     SessionStorageService.prototype.setSessionStorageCompetition = function () {
         var _this = this;

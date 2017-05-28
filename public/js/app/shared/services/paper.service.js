@@ -2,7 +2,15 @@ import { Injectable } from "@angular/core";
 import { Http, Headers } from "@angular/http";
 import { Observable } from "rxjs";
 import { Paper } from "../models/paper.model";
+/**
+ *  Service for paper to communicate with database.
+ */
 export var PaperService = (function () {
+    /**
+     * When creating service, inject dependency and set url for communication with database.
+     *
+     * @param http
+     */
     function PaperService(http) {
         this.http = http;
         var routeModule = require("../../app.routing");

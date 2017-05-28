@@ -5,6 +5,9 @@ import {Instance} from "./instance.model";
 import {InstanceService} from "../shared/services/instance.service";
 import {FlashMessageService} from "../flash-message/flash-messages.service";
 
+/**
+ * Component for showing all instance and managing them.
+ */
 @Component({
     selector: 'app-instances',
     templateUrl: './instances.component.html'
@@ -13,12 +16,20 @@ export class InstancesComponent implements OnInit{
     instances: Instance[];
     private instance: Instance;
 
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param sessionStorageService
+     * @param instanceService
+     * @param flashMessageService
+     */
     constructor(private sessionStorageService: SessionStorageService,
                 private instanceService: InstanceService,
                 private flashMessageService: FlashMessageService){}
 
     /**
-     * Set to variable instances all instances. Check if instance component can be shown.
+     * When creating component, check if instance component can be shown.
+     * If component can be shown, call function to get all instances.
      */
     ngOnInit(){
         if (!this.showInstances()){
@@ -58,7 +69,7 @@ export class InstancesComponent implements OnInit{
     }
 
     /**
-     * Get instance with all data and download instance's data.
+     * Call function to get instance populated with all properties and then download instance's data.
      *
      * @param instance
      */
@@ -72,7 +83,7 @@ export class InstancesComponent implements OnInit{
     }
 
     /**
-     * Delete instance in variable instance.
+     * Call function to delete instance which is stored in variable instance.
      */
     onOk(){
         this.instanceService.deleteInstance(this.instance)

@@ -7,6 +7,9 @@ Promise.promisifyAll(mongoose);
 
 var Solution = require('./solution');
 
+/**
+ * Database model schema for User.
+ */
 var schema = new Schema({
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
@@ -18,7 +21,7 @@ var schema = new Schema({
 schema.plugin(mongooseUniqueValidator);
 
 /**
- * When deleting user, remove all solutions which contain user's id
+ * When deleting user, delete all solutions which contain user's id
  */
 schema.post('remove', function (user) {
    Solution.find()

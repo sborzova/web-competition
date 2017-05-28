@@ -3,6 +3,9 @@ import { InstancesComponent } from "./instances.component";
 import { InstanceCreateComponent } from "./instance-new/instance-new.component";
 import { InstanceEditComponent } from "./instance-update/instance-update.component";
 import { InstanceStatusComponent } from "./instance-status/instance-status.component";
+/**
+ * Routes for component Instances.
+ */
 var INSTANCE_ROUTES = [
     { path: '', children: [
             { path: '', redirectTo: 'all', pathMatch: 'full' },

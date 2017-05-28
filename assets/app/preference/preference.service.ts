@@ -3,10 +3,18 @@ import {Http, Response, Headers} from "@angular/http";
 import {Observable} from "rxjs";
 import {Preference} from "./preference.model";
 
+/**
+ * Service for preference to communicate with database.
+ */
 @Injectable()
 export class PreferenceService {
     private hostUrl: string;
 
+    /**
+     * When creating service, inject dependency and set url for communication with database.
+     *
+     * @param http
+     */
     constructor(private http: Http) {
         const routeModule = require("../app.routing");
         this.hostUrl = routeModule.hostUrl;

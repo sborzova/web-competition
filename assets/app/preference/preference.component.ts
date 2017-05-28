@@ -3,19 +3,27 @@ import {Component, OnInit} from '@angular/core';
 import {PreferenceService} from "./preference.service";
 import {SessionStorageService} from "../shared/services/session-storage.service";
 
+/**
+ * Component to manage preference.
+ */
 @Component({
     selector: 'app-preference',
     templateUrl: './preference.component.html',
-    styleUrls: ['preference.component.css']
 })
 export class PreferenceComponent implements OnInit {
     competitionOn: boolean;
 
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param preferenceService
+     * @param sessionStorageService
+     */
     constructor(private preferenceService: PreferenceService,
                 private sessionStorageService: SessionStorageService){}
 
     /**
-     * Set to variable compeitionOn competition state.
+     * When creating component, call function to get state of competition.
      */
     ngOnInit(){
         this.preferenceService.getValueCompetitionIsOn()

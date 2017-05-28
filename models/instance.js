@@ -8,6 +8,9 @@ Promise.promisifyAll(mongoose);
 var Solution = require('./solution');
 var File = require('./file');
 
+/**
+ * Database model schema for Instance.
+ */
 var schema = new Schema({
     order: {type: Number, min: 1, required: true},
     name: {type: String, unique: true, required: true},

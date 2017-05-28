@@ -1,3 +1,6 @@
+/**
+ * Class represents author model.
+ */
 export var Author = (function () {
     function Author(firstName, lastName, authorId) {
         this.firstName = firstName;

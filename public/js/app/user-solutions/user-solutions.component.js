@@ -7,7 +7,19 @@ import { FlashMessageService } from "../flash-message/flash-messages.service";
 import { SolutionPaper } from "./solution-paper.model";
 import { SortDownloadService } from "../shared/services/sort-download.service";
 import { SessionStorageService } from "../shared/services/session-storage.service";
+/**
+ * Component for showing and managing user's solutions.
+ */
 export var UserSolutionsComponent = (function () {
+    /**
+     *  When creating component, inject dependencies.
+     *
+     * @param solutionService
+     * @param paperService
+     * @param flashMessageService
+     * @param sortDownloadService
+     * @param sessionStorageService
+     */
     function UserSolutionsComponent(solutionService, paperService, flashMessageService, sortDownloadService, sessionStorageService) {
         this.solutionService = solutionService;
         this.paperService = paperService;
@@ -21,7 +33,7 @@ export var UserSolutionsComponent = (function () {
         this.disabled = false;
     }
     /**
-     * Set to variable solutions all solutions by logged in user.
+     * When creating component, call function to get all solutions by logged in user and sort them.
       */
     UserSolutionsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -55,7 +67,7 @@ export var UserSolutionsComponent = (function () {
         }
     };
     /**
-     * Delete papers from selected solutions.
+     * Call function to delete papers from selected solutions.
      */
     UserSolutionsComponent.prototype.onConfirmDeletePaper = function () {
         var _this = this;
@@ -75,7 +87,7 @@ export var UserSolutionsComponent = (function () {
         this.removePaperFromDatabase(paperIds);
     };
     /**
-     *  Delete solution.
+     *  Call function to delete solution.
      */
     UserSolutionsComponent.prototype.onConfirmDeleteSolution = function () {
         var _this = this;
@@ -87,7 +99,7 @@ export var UserSolutionsComponent = (function () {
         }, function (error) { return console.error(error); });
     };
     /**
-     * Check if can be edit paper.
+     * Check if paper can be edit.
      */
     UserSolutionsComponent.prototype.onEditPaper = function () {
         if (this.checkIfSelected()) {
@@ -115,7 +127,7 @@ export var UserSolutionsComponent = (function () {
      * Check if not selected solutions contain selected paper to edit.
      * Create edit paper form.
      *
-     * @param paperIds
+     * @param paperIds - ids of papers for editing
      */
     UserSolutionsComponent.prototype.prepareToEditPaper = function (paperIds) {
         var paperId = Array.from(paperIds)[0];
@@ -143,7 +155,7 @@ export var UserSolutionsComponent = (function () {
         this.showPaperForm = true;
     };
     /**
-     * Submit edit paper form or add paper form.
+     * Check if submitted form is for adding or editing paper.
      */
     UserSolutionsComponent.prototype.onSubmit = function () {
         this.submitted = true;
@@ -157,7 +169,7 @@ export var UserSolutionsComponent = (function () {
         }
     };
     /**
-     * Submit edit paper form.
+     * Call function to update paper.
      */
     UserSolutionsComponent.prototype.submittedEditPaperForm = function () {
         var _this = this;
@@ -175,7 +187,7 @@ export var UserSolutionsComponent = (function () {
         }, function (error) { return console.error(error); });
     };
     /**
-     * Submit add paper form.
+     * Call function to save paper and then call function to set paper to solutions.
      */
     UserSolutionsComponent.prototype.submittedAddPaperForm = function () {
         var _this = this;
@@ -186,7 +198,7 @@ export var UserSolutionsComponent = (function () {
         }, function (error) { return console.error(error); });
     };
     /**
-     * Set paper to selected solutions.
+     * Call function to set paper to selected solutions.
      *
      * @param paper
      */
@@ -260,26 +272,39 @@ export var UserSolutionsComponent = (function () {
         }
     };
     Object.defineProperty(UserSolutionsComponent.prototype, "selectedSolutions", {
+        /**
+         * Returns selected solutions.
+         *
+         * @returns {Solution[]} selected solutions
+         */
         get: function () {
             return this.solutions.filter(function (s) { return s.isChecked; });
         },
         enumerable: true,
         configurable: true
     });
-    UserSolutionsComponent.prototype.competitionIsOn = function () {
-        return this.sessionStorageService.getCompetitionIsOn();
+    /**
+     * Open modal dialog with ensure delete question.
+     *
+     * @param solution to delete
+     */
+    UserSolutionsComponent.prototype.onDelete = function (solution) {
+        this.solution = solution;
+        document.getElementById('openModalDeleteSolution').click();
     };
+    /**
+     *  Uncheck selected solutions and hide paper form.
+     */
     UserSolutionsComponent.prototype.onHidePaperForm = function () {
         this.uncheckSelected();
         this.disabled = false;
         this.showPaperForm = false;
     };
+    UserSolutionsComponent.prototype.competitionIsOn = function () {
+        return this.sessionStorageService.getCompetitionIsOn();
+    };
     UserSolutionsComponent.prototype.onDownload = function (solution) {
         this.sortDownloadService.download(solution);
-    };
-    UserSolutionsComponent.prototype.onDelete = function (solution) {
-        this.solution = solution;
-        document.getElementById('openModalDeleteSolution').click();
     };
     UserSolutionsComponent.prototype.onShowPapers = function () {
         this.showPapers = true;
@@ -335,6 +360,9 @@ export var UserSolutionsComponent = (function () {
     UserSolutionsComponent.prototype.onInstanceDesc = function () {
         this.solutions = this.sortDownloadService.sortInstanceDesc(this.solutions);
     };
+    /**
+     * When destroying component, set variables.
+     */
     UserSolutionsComponent.prototype.ngOnDestroy = function () {
         this.showPaperForm = false;
         this.submitted = false;

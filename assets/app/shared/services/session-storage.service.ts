@@ -1,9 +1,17 @@
 import {Injectable} from "@angular/core";
 import {PreferenceService} from "../../preference/preference.service";
 
+/**
+ * Service to manage session storage.
+ */
 @Injectable()
 export class SessionStorageService {
 
+    /**
+     * When creating service, inject dependency.
+     *
+     * @param preferenceService
+     */
     constructor(private preferenceService: PreferenceService){}
 
     /**
@@ -68,7 +76,7 @@ export class SessionStorageService {
     }
 
     /**
-     * Set to session storage competition state
+     * Set to session storage competition state.
      */
     setSessionStorageCompetition(){
         this.preferenceService.getValueCompetitionIsOn()

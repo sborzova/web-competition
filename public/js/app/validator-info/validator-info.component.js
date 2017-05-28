@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { SolutionService } from "../shared/services/solution.service";
+/**
+ *  Component for showing validator info.
+ */
 export var ValidatorInfoComponent = (function () {
+    /**
+     *  When creating component, inject dependencies.
+     *
+     * @param solutionService
+     * @param route
+     */
     function ValidatorInfoComponent(solutionService, route) {
         this.solutionService = solutionService;
         this.route = route;
     }
     /**
-     * Set to variable solution solution by route parameter's id.
+     *  When creating component, call function to get solution by route parameter's id
+     *  and show validation info
      */
     ValidatorInfoComponent.prototype.ngOnInit = function () {
         var _this = this;

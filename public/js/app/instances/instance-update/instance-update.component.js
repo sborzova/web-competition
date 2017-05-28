@@ -7,7 +7,19 @@ import { FlashMessageService } from "../../flash-message/flash-messages.service"
 import { FileService } from "../../shared/services/file.service";
 import { FileModel } from "../file.model";
 import { InstanceUpdate } from "../instance-update.model";
+/**
+ * Component for editing instance.
+ */
 export var InstanceEditComponent = (function () {
+    /**
+     * When editing instance, inject dependencies.
+     *
+     * @param router
+     * @param instanceService
+     * @param fileService
+     * @param route
+     * @param flashMessageService
+     */
     function InstanceEditComponent(router, instanceService, fileService, route, flashMessageService) {
         this.router = router;
         this.instanceService = instanceService;
@@ -17,8 +29,8 @@ export var InstanceEditComponent = (function () {
         this.submitted = false;
     }
     /**
-     * Set to variable instance instance by id.
-     * Create instance edit form.
+     * When creating component, call function to get instance by router parameter's id
+     * and create instance edit form.
      */
     InstanceEditComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -27,14 +39,14 @@ export var InstanceEditComponent = (function () {
             .subscribe(function (instance) {
             _this.instance = instance;
             _this.instanceForm = new FormGroup({
-                order: new FormControl(_this.instance.order, [Validators.required, minValue(0)]),
+                order: new FormControl(_this.instance.order, [Validators.required, minValue(1)]),
                 name: new FormControl(_this.instance.name, Validators.required),
                 description: new FormControl(_this.instance.description, Validators.required)
             });
         });
     };
     /**
-     * Submit instance edit form.
+     * If edit instance form is valid, call function to update instance.
      */
     InstanceEditComponent.prototype.onSubmit = function () {
         var _this = this;
@@ -50,7 +62,7 @@ export var InstanceEditComponent = (function () {
         }
     };
     /**
-     * Update instance status file and instance data file.
+     * Call functions to update instance status file and instance data file.
      */
     InstanceEditComponent.prototype.saveFiles = function () {
         var _this = this;

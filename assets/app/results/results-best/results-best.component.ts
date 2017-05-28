@@ -9,6 +9,9 @@ import {Solution} from "../../shared/models/solution.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
 
+/**
+ * Component for showing best results.
+ */
 @Component({
     selector: 'app-results-best',
     templateUrl: './results-best.component.html'
@@ -27,6 +30,16 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     private subscriptionSetNotVisible: Subscription;
     private submittedTechniqueForm: boolean = false;
 
+    /**
+     *  When creating component, inject dependencies and create subscription for deleting solution,
+     *  editing technique, setting solutions to visible, setting solution to invisible.
+     *
+     * @param solutionService
+     * @param instanceService
+     * @param sortDownloadService
+     * @param sessionStorageService
+     * @param flashMessageService
+     */
     constructor(private solutionService: SolutionService,
                 private instanceService: InstanceService,
                 private sortDownloadService: SortDownloadService,
@@ -52,8 +65,9 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Set to variable solutionsAll all solutions.
-     * Set to variable result best solutions.
+     * When creating component, call function to get all instances, then call function to get
+     * all solutions by every instance. Sort solutions for every instance ascending by quality
+     * and pick the best for every instance.
      */
     ngOnInit(){
         this.instanceService.getInstances()
@@ -113,7 +127,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * When destroy component, unsubscribe all subscriptions.
+     * When destroying component, unsubscribe all subscriptions.
      */
     ngOnDestroy(){
         this.subscriptionDelete.unsubscribe();
@@ -132,7 +146,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Create and show form for edit technique
+     * Create and show edit technique form.
      */
     onEditTechnique(solution: Solution){
         this.solution = solution;
@@ -143,19 +157,19 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Submit edit technique form
+     * If edit technique form is valid, hide form and call function to update solution.
      */
     onSubmitTechnique(){
         this.submittedTechniqueForm = true;
         if (this.techniqueForm.valid){
             document.getElementById('hideTechniqueForm').click();
             this.submittedTechniqueForm = false;
+            this.solutionsInstance = null;
+            this.solutionsAuthor= null;
             this.solution.technique = this.techniqueForm.value.technique;
             this.solutionService.updateSolutionTechnique(this.solution)
                 .subscribe(
                     () => {
-                        this.solutionsInstance = null;
-                        this.solutionsAuthor= null;
                         this.solution = null;
                         this.flashMessageService.showMessage('Solution was updated.', 'success')
                     },
@@ -193,7 +207,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     }
 
     /**
-     *  Filter by author.
+     *  Filter solutions by author.
      *
      * @param authorId
      */
@@ -203,7 +217,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Filter by instance.
+     * Filter solutions by instance.
      *
      * @param instanceId
      */
@@ -213,7 +227,7 @@ export class ResultsBestComponent implements OnInit, OnDestroy {
     }
 
     /**
-     *  Delete solution and refresh best solutions.
+     *  Call function to delete solution and refresh best solutions.
      */
     onConfirmDelete(){
         this.solutionService.deleteSolution(this.solution)

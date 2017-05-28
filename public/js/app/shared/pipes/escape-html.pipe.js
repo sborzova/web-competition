@@ -1,6 +1,6 @@
 import { Pipe } from "@angular/core";
 /**
- * Pipe to replace enter and tab space.
+ * Pipe to replace enter and tab space with HTML tags.
  */
 export var EscapeHtmlPipe = (function () {
     function EscapeHtmlPipe() {

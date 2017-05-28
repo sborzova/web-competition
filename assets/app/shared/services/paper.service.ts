@@ -4,10 +4,18 @@ import {Observable} from "rxjs";
 
 import {Paper} from "../models/paper.model";
 
+/**
+ *  Service for paper to communicate with database.
+ */
 @Injectable()
 export class PaperService {
     private hostUrl: string;
 
+    /**
+     * When creating service, inject dependency and set url for communication with database.
+     *
+     * @param http
+     */
     constructor(private http: Http) {
         const routeModule = require("../../app.routing");
         this.hostUrl = routeModule.hostUrl;

@@ -5,6 +5,9 @@ import {Validation} from "./validation.model";
 import {FlashMessageService} from "../flash-message/flash-messages.service";
 import {SessionStorageService} from "../shared/services/session-storage.service";
 
+/**
+ * Component for validation solution.
+ */
 @Component({
     selector: 'app-validation',
     templateUrl: './validation.component.html'
@@ -14,18 +17,18 @@ export class ValidationComponent implements OnInit {
     logMessage: string;
 
     /**
+     * When creating component, inject dependencies
      *
      * @param validationService
      * @param sessionStorageService
      * @param flashMessageService
      */
-
     constructor(private validationService: SolutionService,
                 private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService){}
 
     /**
-     * Check if validation component can be shown.
+     * When creating component, check if validation component can be shown.
      */
     ngOnInit(){
         if (!this.showValidator()){
@@ -40,6 +43,7 @@ export class ValidationComponent implements OnInit {
     onChange(){
         this.validationService.successValidationHideResult();
     }
+
     /**
      * Return true if validation component can be shown, other way false.
      *
@@ -55,7 +59,8 @@ export class ValidationComponent implements OnInit {
     }
 
     /**
-     * Check if input for solution is empty.
+     * Call function to hide validation result.
+     * If input for solution is empty, show message.
      */
     onValidate(){
         this.validationService.successValidationHideResult();
@@ -69,9 +74,9 @@ export class ValidationComponent implements OnInit {
     }
 
     /**
-     *  Validate solution and show result.
+     *  Call function to validate solution and show result.
      *
-     * @param file - solution's file to save
+     * @param file - solution's file to validate
      */
     validateSolution(file: any){
         let fd = new FormData();
@@ -107,7 +112,6 @@ export class ValidationComponent implements OnInit {
      * @returns {Validation} validation model
      */
     createValidationWithProperties(result){
-
         let info = "";
         let logs : string[] = result.obj.log;
         for (let log of logs){

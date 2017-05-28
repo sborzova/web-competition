@@ -1,7 +1,7 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import {NgModule} from "@angular/core";
+import {CommonModule} from "@angular/common";
 
-import { SolutionService } from "../shared/services/solution.service";
+import {SolutionService} from "../shared/services/solution.service";
 import {FileService} from "../shared/services/file.service";
 
 @NgModule({

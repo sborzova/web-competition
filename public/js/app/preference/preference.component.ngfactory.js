@@ -18,9 +18,8 @@ import * as import8 from './preference.service';
 import * as import9 from '../shared/services/session-storage.service';
 import * as import10 from '@angular/core/src/metadata/view';
 import * as import11 from '@angular/core/src/linker/component_factory';
-import * as import12 from './preference.component.css.shim';
-import * as import13 from '@angular/common/src/directives/ng_if';
-import * as import14 from '@angular/core/src/linker/template_ref';
+import * as import12 from '@angular/common/src/directives/ng_if';
+import * as import13 from '@angular/core/src/linker/template_ref';
 var renderType_PreferenceComponent_Host = null;
 var _View_PreferenceComponent_Host0 = (function (_super) {
     __extends(_View_PreferenceComponent_Host0, _super);
@@ -59,7 +58,7 @@ function viewFactory_PreferenceComponent_Host0(viewUtils, parentInjector, declar
     return new _View_PreferenceComponent_Host0(viewUtils, parentInjector, declarationEl);
 }
 export var PreferenceComponentNgFactory = new import11.ComponentFactory('app-preference', viewFactory_PreferenceComponent_Host0, import3.PreferenceComponent);
-var styles_PreferenceComponent = [import12.styles];
+var styles_PreferenceComponent = [];
 var renderType_PreferenceComponent = null;
 var _View_PreferenceComponent0 = (function (_super) {
     __extends(_View_PreferenceComponent0, _super);
@@ -88,13 +87,13 @@ var _View_PreferenceComponent0 = (function (_super) {
         this._text_11 = this.renderer.createText(this._el_10, '\n            ', null);
         this._anchor_12 = this.renderer.createTemplateAnchor(this._el_10, null);
         this._appEl_12 = new import2.AppElement(12, 10, this, this._anchor_12);
-        this._TemplateRef_12_5 = new import14.TemplateRef_(this._appEl_12, viewFactory_PreferenceComponent1);
-        this._NgIf_12_6 = new import13.NgIf(this._appEl_12.vcRef, this._TemplateRef_12_5);
+        this._TemplateRef_12_5 = new import13.TemplateRef_(this._appEl_12, viewFactory_PreferenceComponent1);
+        this._NgIf_12_6 = new import12.NgIf(this._appEl_12.vcRef, this._TemplateRef_12_5);
         this._text_13 = this.renderer.createText(this._el_10, '\n            ', null);
         this._anchor_14 = this.renderer.createTemplateAnchor(this._el_10, null);
         this._appEl_14 = new import2.AppElement(14, 10, this, this._anchor_14);
-        this._TemplateRef_14_5 = new import14.TemplateRef_(this._appEl_14, viewFactory_PreferenceComponent2);
-        this._NgIf_14_6 = new import13.NgIf(this._appEl_14.vcRef, this._TemplateRef_14_5);
+        this._TemplateRef_14_5 = new import13.TemplateRef_(this._appEl_14, viewFactory_PreferenceComponent2);
+        this._NgIf_14_6 = new import12.NgIf(this._appEl_14.vcRef, this._TemplateRef_14_5);
         this._text_15 = this.renderer.createText(this._el_10, '\n        ', null);
         this._text_16 = this.renderer.createText(this._el_2, '\n        ', null);
         this._el_17 = this.renderer.createElement(this._el_2, 'div', null);
@@ -102,13 +101,13 @@ var _View_PreferenceComponent0 = (function (_super) {
         this._text_18 = this.renderer.createText(this._el_17, '\n            ', null);
         this._anchor_19 = this.renderer.createTemplateAnchor(this._el_17, null);
         this._appEl_19 = new import2.AppElement(19, 17, this, this._anchor_19);
-        this._TemplateRef_19_5 = new import14.TemplateRef_(this._appEl_19, viewFactory_PreferenceComponent3);
-        this._NgIf_19_6 = new import13.NgIf(this._appEl_19.vcRef, this._TemplateRef_19_5);
+        this._TemplateRef_19_5 = new import13.TemplateRef_(this._appEl_19, viewFactory_PreferenceComponent3);
+        this._NgIf_19_6 = new import12.NgIf(this._appEl_19.vcRef, this._TemplateRef_19_5);
         this._text_20 = this.renderer.createText(this._el_17, '\n            ', null);
         this._anchor_21 = this.renderer.createTemplateAnchor(this._el_17, null);
         this._appEl_21 = new import2.AppElement(21, 17, this, this._anchor_21);
-        this._TemplateRef_21_5 = new import14.TemplateRef_(this._appEl_21, viewFactory_PreferenceComponent4);
-        this._NgIf_21_6 = new import13.NgIf(this._appEl_21.vcRef, this._TemplateRef_21_5);
+        this._TemplateRef_21_5 = new import13.TemplateRef_(this._appEl_21, viewFactory_PreferenceComponent4);
+        this._NgIf_21_6 = new import12.NgIf(this._appEl_21.vcRef, this._TemplateRef_21_5);
         this._text_22 = this.renderer.createText(this._el_17, '\n        ', null);
         this._text_23 = this.renderer.createText(this._el_2, '\n    ', null);
         this._text_24 = this.renderer.createText(this._el_0, '\n', null);
@@ -146,28 +145,28 @@ var _View_PreferenceComponent0 = (function (_super) {
         return null;
     };
     _View_PreferenceComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import14.TemplateRef) && (12 === requestNodeIndex))) {
+        if (((token === import13.TemplateRef) && (12 === requestNodeIndex))) {
             return this._TemplateRef_12_5;
         }
-        if (((token === import13.NgIf) && (12 === requestNodeIndex))) {
+        if (((token === import12.NgIf) && (12 === requestNodeIndex))) {
             return this._NgIf_12_6;
         }
-        if (((token === import14.TemplateRef) && (14 === requestNodeIndex))) {
+        if (((token === import13.TemplateRef) && (14 === requestNodeIndex))) {
             return this._TemplateRef_14_5;
         }
-        if (((token === import13.NgIf) && (14 === requestNodeIndex))) {
+        if (((token === import12.NgIf) && (14 === requestNodeIndex))) {
             return this._NgIf_14_6;
         }
-        if (((token === import14.TemplateRef) && (19 === requestNodeIndex))) {
+        if (((token === import13.TemplateRef) && (19 === requestNodeIndex))) {
             return this._TemplateRef_19_5;
         }
-        if (((token === import13.NgIf) && (19 === requestNodeIndex))) {
+        if (((token === import12.NgIf) && (19 === requestNodeIndex))) {
             return this._NgIf_19_6;
         }
-        if (((token === import14.TemplateRef) && (21 === requestNodeIndex))) {
+        if (((token === import13.TemplateRef) && (21 === requestNodeIndex))) {
             return this._TemplateRef_21_5;
         }
-        if (((token === import13.NgIf) && (21 === requestNodeIndex))) {
+        if (((token === import12.NgIf) && (21 === requestNodeIndex))) {
             return this._NgIf_21_6;
         }
         return notFoundResult;
@@ -200,7 +199,7 @@ var _View_PreferenceComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_PreferenceComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_PreferenceComponent === null)) {
-        (renderType_PreferenceComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/preference/preference.component.html', 0, import10.ViewEncapsulation.Emulated, styles_PreferenceComponent, {}));
+        (renderType_PreferenceComponent = viewUtils.createRenderComponentType('C:/Users/Silvia/OneDrive/Bc/web-competition/assets/app/preference/preference.component.html', 0, import10.ViewEncapsulation.None, styles_PreferenceComponent, {}));
     }
     return new _View_PreferenceComponent0(viewUtils, parentInjector, declarationEl);
 }

@@ -1,9 +1,21 @@
 import { Component } from "@angular/core";
 import { FlashMessageService } from "./flash-messages.service";
+/**
+ * Component for showing flash message.
+ */
 export var FlashMessageComponent = (function () {
+    /**
+     * When creating component, inject dependency.
+     *
+     * @param flashMessageService
+     */
     function FlashMessageComponent(flashMessageService) {
         this.flashMessageService = flashMessageService;
     }
+    /**
+     * When creating component, create subscription for occurring message.
+     * When message occurs, show it.
+     */
     FlashMessageComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.flashMessageService.messageOccurred

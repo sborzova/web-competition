@@ -10,6 +10,9 @@ import {Solution} from "../../shared/models/solution.model";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {Instance} from "../../shared/models/instance.model";
 
+/**
+ * Component for showing success validation result and uploading solution.
+ */
 @Component({
     selector: 'app-success-validation',
     templateUrl: './success-validation.component.html'
@@ -18,12 +21,19 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     private display = 'none';
     private subscription: Subscription;
     private submitted: boolean = false;
-    private fileName: string;
     private citationMissing: boolean = false;
     validation: Validation;
     solutionForm: FormGroup;
     showUploadForm: boolean;
 
+    /**
+     *  When creating component, create subscription for showing validation result
+     *  and inject dependencies
+     *
+     * @param solutionService
+     * @param sessionStorageService
+     * @param flashMessageService
+     */
     constructor(private solutionService: SolutionService,
                 private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService) {
@@ -41,7 +51,8 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Show result of validation. Create upload solution form.
+     * When creating component, create upload solution form, set received validation to
+     * variable validation and show it.
      */
     ngOnInit(){
         this.solutionForm = new FormGroup({
@@ -52,7 +63,6 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
         this.solutionService.successValidation
             .subscribe(
                 (validation: Validation) => {
-                    this.fileName = this.solutionService.getSolutionFile().fileName;
                     this.validation = validation;
                     this.display = 'block';
                 }
@@ -60,7 +70,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     }
 
     /**
-     *  When component destroy, unsubscribe subscription.
+     *  When destroying component, unsubscribe subscription.
      */
     ngOnDestroy(){
         this.subscription.unsubscribe();
@@ -68,7 +78,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Submit upload solution form.
+     * If form is valid, call function for finding duplicate solution.
      */
     onSubmit(){
         this.submitted = true;
@@ -101,8 +111,8 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     }
 
     /**
-     *  If solution is not null show flash message with its properties, other way upload solution from
-     *  variable validation.
+     *  If solution is not null show flash message with its properties, other way call function for uploading
+     *  solution from variable validation.
      *
      * @param solution - duplicate solution
      */
@@ -134,7 +144,7 @@ export class SuccessValidationComponent implements OnInit, OnDestroy {
     }
 
     /**
-     *  Set variable showUploadForm.
+     *  Set variable showUploadForm as true if user is logged in.
      */
     setShowUploadForm(){
         this.showUploadForm = this.sessionStorageService.isLoggedIn();

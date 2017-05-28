@@ -8,12 +8,21 @@ import {InstanceCreate} from "../../instances/instance-create.model";
 import {FileModel} from "../../instances/file.model";
 import {InstanceUpdate} from "../../instances/instance-update.model";
 
+/**
+ *  Service for instances to communicate with database.
+ */
 @Injectable()
 export class InstanceService {
     private instances: Instance[] = [];
     private hostUrl: string;
     private fileSaver = require('file-saver');
 
+    /**
+     * When creating service, inject dependencies and set url for communication with database.
+     *
+     * @param http
+     * @param flashMessageService
+     */
     constructor(private http: Http,
                 private flashMessageService: FlashMessageService) {
 
@@ -174,7 +183,7 @@ export class InstanceService {
     }
 
     /**
-     * Stringify object.
+     * Stringify JSON object.
      *
      * @param object
      * @returns {string} stringified object

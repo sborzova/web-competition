@@ -7,6 +7,9 @@ Promise.promisifyAll(mongoose);
 var Paper = require('./paper');
 var File = require('./file');
 
+/**
+ * Database model schema for Solution.
+ */
 var schema = new Schema({
     unassigned: {type: Number, required: true},
     total: {type: Number, required: true},
@@ -25,8 +28,8 @@ var schema = new Schema({
 });
 
 /**
- * When deleting solution, remove file which contains solution's id.
- * Removes also paper which contains solution's id if no other solution contains the paper id's.
+ * When deleting solution, delete file which contains solution's id.
+ * Delete also paper which contains solution's id if no other solution contains the paper id's.
  */
 schema.post('remove', function (solution) {
     if (solution.paper){

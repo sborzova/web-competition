@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+/**
+ * Basic component creating when bootstraping
+ */
 export var AppComponent = (function () {
     function AppComponent() {
     }

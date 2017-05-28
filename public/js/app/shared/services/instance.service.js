@@ -4,7 +4,16 @@ import { Observable } from "rxjs";
 import { Instance } from "../../instances/instance.model";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { FileModel } from "../../instances/file.model";
+/**
+ *  Service for instances to communicate with database.
+ */
 export var InstanceService = (function () {
+    /**
+     * When creating service, inject dependencies and set url for communication with database.
+     *
+     * @param http
+     * @param flashMessageService
+     */
     function InstanceService(http, flashMessageService) {
         this.http = http;
         this.flashMessageService = flashMessageService;
@@ -136,7 +145,7 @@ export var InstanceService = (function () {
         return new Headers({ 'Content-Type': 'application/json' });
     };
     /**
-     * Stringify object.
+     * Stringify JSON object.
      *
      * @param object
      * @returns {string} stringified object

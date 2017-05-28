@@ -5,6 +5,9 @@ import {Router, ActivatedRoute} from "@angular/router";
 import {UsersService} from "../users.service";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
+/**
+ *  Component to edit user's password as admin.
+ */
 @Component({
     selector: 'app-user-edit-password',
     templateUrl: './user-edit-password.component.html'
@@ -14,6 +17,14 @@ export class UserEditPasswordComponent implements OnInit{
     private user: User;
     private submitted: boolean = false;
 
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param router
+     * @param usersService
+     * @param activatedRoute
+     * @param flashMessageService
+     */
     constructor(private router: Router,
                 private usersService: UsersService,
                 private activatedRoute: ActivatedRoute,
@@ -22,8 +33,8 @@ export class UserEditPasswordComponent implements OnInit{
     }
 
     /**
-     *  Set to variable user user by id.
-     *  Create edit user's password form.
+     *  When creating component, call function to get user by route parameter's id
+     *  and create edit user's password form.
      */
     ngOnInit(){
         let id = this.activatedRoute.snapshot.params['id'];
@@ -39,7 +50,7 @@ export class UserEditPasswordComponent implements OnInit{
     }
 
     /**
-     * Submit edit user's password form.
+     * If edit user's password form is valid, call function to update user.
      */
     onSubmit(){
         this.submitted = true;
@@ -57,14 +68,15 @@ export class UserEditPasswordComponent implements OnInit{
         }
     }
 
-    onCancel(){
-        this.navigateBack();
-    }
-
     /**
      * Navigate to route Users Management.
      */
     navigateBack(){
         this.router.navigate(['/users']);
     }
+
+    onCancel(){
+        this.navigateBack();
+    }
+
 }

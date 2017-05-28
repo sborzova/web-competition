@@ -162,7 +162,7 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
     this._text_28 = this.renderer.createText(this._el_27,'\n        ',(null as any));
     this._el_29 = this.renderer.createElement(this._el_27,'span',(null as any));
     this.renderer.setElementAttribute(this._el_29,'class','glyphicon glyphicon-file');
-    this._text_30 = this.renderer.createText(this._el_27,' Import into csv file\n        ',(null as any));
+    this._text_30 = this.renderer.createText(this._el_27,' Download as CSV\n        ',(null as any));
     this._text_31 = this.renderer.createText(this._el_25,'\n    ',(null as any));
     this._text_32 = this.renderer.createText(this._el_23,'\n    ',(null as any));
     this._anchor_33 = this.renderer.createTemplateAnchor(this._el_23,(null as any));

@@ -11,7 +11,18 @@ import { PaperService } from "./paper.service";
 import { FileModel } from "../../instances/file.model";
 import { Visibility } from "../../results/visibility.model";
 import { Technique } from "../../results/technique.model";
+/**
+ *  Service for managing solution and communication with database.
+ */
 export var SolutionService = (function () {
+    /**
+     * When creating service, inject dependencies and set url for communication with database.
+     *
+     * @param http
+     * @param paperService
+     * @param flashMessageService
+     * @param fileService
+     */
     function SolutionService(http, paperService, flashMessageService, fileService) {
         this.http = http;
         this.paperService = paperService;
@@ -59,7 +70,7 @@ export var SolutionService = (function () {
         });
     };
     /**
-     * Save paper when paper citation is not null.
+     * Call function to save paper when paper citation is not null.
      * Call function to save solution with validation info and solution file.
      *
      * @param solution
@@ -82,16 +93,16 @@ export var SolutionService = (function () {
         }
     };
     /**
-     * Save solution's file and solution with validation info.
+     * Call function to save solution's file and then call function to save solution with
+     * validation info and id of saved solution's file.
      *
      * @param solution
      */
     SolutionService.prototype.saveSolutionAndFile = function (solution) {
         var _this = this;
         var idFile;
-        this.fileService.saveFile(this.solutionFile)
-            .subscribe(function (file) {
-            idFile = JSON.parse(file).id;
+        this.saveValidatedFile()
+            .subscribe(function (idFile) {
             solution.fileId = idFile;
             _this.saveSolution(solution)
                 .subscribe(function (data) {
@@ -108,10 +119,25 @@ export var SolutionService = (function () {
         });
     };
     /**
+     * Send request to server to save validated file, which is storaged on the server.
+     *
+     * @returns {Observable<Response>} if success, response contains file's id, other way error
+     */
+    SolutionService.prototype.saveValidatedFile = function () {
+        return this.http.post(this.hostUrl.concat('server/saveValidatedFile'), { headers: this.getHeaders() })
+            .map(function (response) {
+            return response.json().id;
+        })
+            .catch(function (error) {
+            return Observable.throw(error);
+        });
+    };
+    /**
      * Send request to server to find duplicate solution.
      *
      * @param solution
-     * @returns {Observable<Response>} if success, response contains or does not contain duplicate solution, other way response contains error
+     * @returns {Observable<Response>} if success, response contains or does not contain duplicate solution,
+     *          other way response contains error
      */
     SolutionService.prototype.findDuplicateSolution = function (solution) {
         var _this = this;
@@ -286,7 +312,7 @@ export var SolutionService = (function () {
         return new Headers({ 'Content-Type': 'application/json' });
     };
     /**
-     * Stringify object.
+     * Stringify JSON object.
      *
      * @param object
      * @returns {string} stringified object
@@ -294,6 +320,12 @@ export var SolutionService = (function () {
     SolutionService.prototype.stringifyObject = function (object) {
         return JSON.stringify(object);
     };
+    /**
+     * Emit event, which SuccessValidationComponent subscribe to and send validation model.
+     *
+     * @param validation
+     * @param file
+     */
     SolutionService.prototype.successValidationShowResult = function (validation, file) {
         this.setSolutionFile(file);
         this.successValidation.emit(validation);
@@ -314,10 +346,7 @@ export var SolutionService = (function () {
         this.solutionSetNotVisibleSource.next(solution);
     };
     SolutionService.prototype.setSolutionFile = function (file) {
-        console.log(file);
         this.solutionFile = file;
-        console.log('aaa');
-        console.log(this.solutionFile);
     };
     SolutionService.prototype.getSolutionFile = function () {
         return this.solutionFile;

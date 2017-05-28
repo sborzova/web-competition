@@ -1,6 +1,9 @@
 import { Directive, forwardRef, Attribute } from '@angular/core';
 import { Validator, NG_VALIDATORS, FormControl } from '@angular/forms';
 
+/**
+ * Directive for controlling equalization of two input text fields.
+ **/
 @Directive({
     selector: '[validateEqual][formControlName],[validateEqual][formGroup],[validateEqual][formControl],[validateEqual][ngModel]',
     providers: [

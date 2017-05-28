@@ -1,3 +1,6 @@
+/**
+ * Class represents paper model.
+ */
 export var Paper = (function () {
     function Paper(citation, url, paperId) {
         this.citation = citation;

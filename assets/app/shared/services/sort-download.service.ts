@@ -2,10 +2,18 @@ import {Injectable} from "@angular/core";
 import {Solution} from "../models/solution.model";
 import {SolutionService} from "./solution.service";
 
+/**
+ * Service to sort and download solutions.
+ */
 @Injectable()
 export class SortDownloadService {
     private fileSaver = require('file-saver');
 
+    /**
+     * When creating service, inject dependency.
+     *
+     * @param solutionService
+     */
     constructor(private solutionService: SolutionService){}
 
     /**

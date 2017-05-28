@@ -1,13 +1,22 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { InstanceService } from "../../shared/services/instance.service";
+/**
+ * Component to show status of instance.
+ */
 export var InstanceStatusComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param instanceService
+     * @param route
+     */
     function InstanceStatusComponent(instanceService, route) {
         this.instanceService = instanceService;
         this.route = route;
     }
     /**
-     * Set to variable instance instance by id.
+     * When creating component, call function to get instance by router parameter's id.
      */
     InstanceStatusComponent.prototype.ngOnInit = function () {
         var _this = this;

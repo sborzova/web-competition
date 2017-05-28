@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
 import { ProfileService } from "../profile.service";
+/**
+ * Component for showing profile of logged in user.
+ */
 export var ProfileInfoComponent = (function () {
+    /**
+     * When creating component, inject dependency.
+     *
+     * @param userService
+     */
     function ProfileInfoComponent(userService) {
         this.userService = userService;
     }
     /**
-     *  Set to variable user logged in user.
+     *  When creating component, call function to get logged in user.
      */
     ProfileInfoComponent.prototype.ngOnInit = function () {
         var _this = this;

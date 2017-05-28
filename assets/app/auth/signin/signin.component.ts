@@ -9,6 +9,9 @@ import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {SigninUser} from "./signin.model";
 import {Email} from "./email.model";
 
+/**
+ * Component for signing in.
+ */
 @Component({
     selector: 'app-signin',
     templateUrl: './signin.component.html'
@@ -21,6 +24,15 @@ export class SigninComponent {
     private emailRegex: string = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@" +
                             "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
 
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param authService
+     * @param sessionStorageService
+     * @param emailService
+     * @param flashMessageService
+     * @param router
+     */
     constructor(private authService: AuthService,
                 private sessionStorageService: SessionStorageService,
                 private emailService: EmailService,
@@ -38,7 +50,7 @@ export class SigninComponent {
     }
 
     /**
-     * Submit sign in form
+     * If sign in form is valid, call function to sign in user,
      */
     onSubmit() {
         this.submittedForm = true;
@@ -60,7 +72,7 @@ export class SigninComponent {
     }
 
     /**
-     * Create new password form
+     * Create email form
      */
     onShowForm(){
         this.emailForm = new FormGroup({
@@ -70,7 +82,7 @@ export class SigninComponent {
     }
 
     /**
-     * Submit new password form
+     * If email form is valid, call function to send email with new password.
      */
     onSubmitEmail(){
         this.submittedEmailForm = true;
@@ -83,7 +95,6 @@ export class SigninComponent {
                     () => this.flashMessageService.showMessage('Email with the new password was sent.', 'success'),
                     error => console.error(error)
                 );
-
         }
     }
 }

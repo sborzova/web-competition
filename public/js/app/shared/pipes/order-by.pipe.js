@@ -1,4 +1,7 @@
 import { Pipe } from "@angular/core";
+/**
+ * Pipe for ascending ordering object.
+ */
 export var OrderByPipe = (function () {
     function OrderByPipe() {
         this.value = [];
@@ -9,14 +12,12 @@ export var OrderByPipe = (function () {
         if (b === null || typeof b === 'undefined')
             b = 0;
         if ((isNaN(parseFloat(a)) || !isFinite(a)) || (isNaN(parseFloat(b)) || !isFinite(b))) {
-            //Isn't a number so lowercase the string to properly compare
             if (a.toLowerCase() < b.toLowerCase())
                 return -1;
             if (a.toLowerCase() > b.toLowerCase())
                 return 1;
         }
         else {
-            //Parse strings as numbers to compare properly
             if (parseFloat(a) < parseFloat(b))
                 return -1;
             if (parseFloat(a) > parseFloat(b))
@@ -26,7 +27,6 @@ export var OrderByPipe = (function () {
     };
     OrderByPipe.prototype.transform = function (input, config) {
         if (config === void 0) { config = '+'; }
-        //invalid input given
         if (!input)
             return input;
         this.value = input.slice();
@@ -82,7 +82,6 @@ export var OrderByPipe = (function () {
                     var comparison = !desc
                         ? OrderByPipe._orderByComparator(aValue, bValue)
                         : -OrderByPipe._orderByComparator(aValue, bValue);
-                    //Don't return 0 yet in case of needing to sort by next property
                     if (comparison != 0)
                         return comparison;
                 }

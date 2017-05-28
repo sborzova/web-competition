@@ -6,6 +6,9 @@ import {User} from "../user.model";
 import {UsersService} from "../users.service";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 
+/**
+ * Component to edit user as admin.
+ */
 @Component({
     selector: 'app-user-edit',
     templateUrl: './user-edit.component.html'
@@ -19,6 +22,14 @@ export class UserEditComponent implements OnInit{
     private selectedRole: string;
     private submitted: boolean = false;
 
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param router
+     * @param usersService
+     * @param activatedRoute
+     * @param flashMessageService
+     */
     constructor(private router: Router,
                 private usersService: UsersService,
                 private activatedRoute: ActivatedRoute,
@@ -27,8 +38,8 @@ export class UserEditComponent implements OnInit{
     }
 
     /**
-     *  Set to variable user user by id.
-     *  Create edit user form.
+     *  When creating component, call function to get user by route parameter's id
+     *  and create edit user form.
      */
     ngOnInit(){
         let userId = this.activatedRoute.snapshot.params['id'];
@@ -48,7 +59,7 @@ export class UserEditComponent implements OnInit{
     }
 
     /**
-     * Submit user edit form.
+     * If edit user's password form is valid, call function to update user.
      */
     onSubmit(){
         this.submitted = true;
@@ -87,9 +98,6 @@ export class UserEditComponent implements OnInit{
             );
     }
 
-    onCancel(){
-        this.navigateBack();
-    }
 
     /**
      * Navigate to route Users Management.
@@ -111,5 +119,9 @@ export class UserEditComponent implements OnInit{
                 password: new FormControl(null, Validators.required)
             })
         }
+    }
+
+    onCancel(){
+        this.navigateBack();
     }
 }

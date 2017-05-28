@@ -2,7 +2,17 @@ import { Component, Input } from "@angular/core";
 import { SortDownloadService } from "../../shared/services/sort-download.service";
 import { SolutionService } from "../../shared/services/solution.service";
 import { SessionStorageService } from "../../shared/services/session-storage.service";
+/**
+ * Component for showing results for author.
+ */
 export var ResultsAuthorComponent = (function () {
+    /**
+     *  When creating component, inject dependencies.
+     *
+     * @param sortDownloadService
+     * @param solutionService
+     * @param sessionStorageService
+     */
     function ResultsAuthorComponent(sortDownloadService, solutionService, sessionStorageService) {
         this.sortDownloadService = sortDownloadService;
         this.solutionService = solutionService;

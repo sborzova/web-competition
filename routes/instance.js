@@ -8,7 +8,8 @@ var File = require('../models/file');
 /**
  * Save new instance to database.
  *
- * Request body contains instance.
+ * Request - contains instance.
+ * Response - contains saved instance or error.
  */
 router.post('/server/admin/instance', function (req, res) {
     File.findById(req.body.dataId, function (err, data) {
@@ -59,7 +60,8 @@ router.post('/server/admin/instance', function (req, res) {
 /**
  * Update instance in database.
  *
- * Request body contains updated instance.
+ * Request - contains updated instance.
+ * Response - contains updated instance or error.
  */
 router.patch('/server/admin/instance/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {
@@ -100,6 +102,7 @@ router.patch('/server/admin/instance/:id', function (req, res, next) {
  *  Get instance from database by id. Populate status and data.
  *
  *  Parameter id - instance's id.
+ *  Response - contains instance or error.
  */
 router.get('/server/instance/:id', function(req, res, next) {
     Instance.findById(req.params.id)
@@ -127,6 +130,8 @@ router.get('/server/instance/:id', function(req, res, next) {
 
 /**
  * Get all instances from database.
+ *
+ * Response - contains instances or error.
  */
 router.get('/server/instances', function(req, res, next) {
     Instance.find(function(err, instances) {
@@ -153,6 +158,7 @@ router.get('/server/instances', function(req, res, next) {
  *  Delete instance from database by id.
  *
  *  Parameter id - instance's id.
+ *  Response - contains deleted instance or error.
  */
 router.delete('/server/admin/instance/:id', function (req, res, next) {
     Instance.findById(req.params.id, function (err, instance) {

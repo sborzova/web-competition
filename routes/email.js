@@ -8,7 +8,8 @@ var User = require('../models/user');
 /**
  *  Reset password for user.
  *
- *  Request body contains email of user.
+ *  Request - contains email of user.
+ *  Response - contains user or error.
  */
 router.post('/server/resetpassword', function (req, res, next) {
      User.findOne({email: req.body.receiver}, function(err, user) {

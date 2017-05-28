@@ -5,6 +5,9 @@ import {User} from "./user.model";
 import {FlashMessageService} from "../flash-message/flash-messages.service";
 import {SessionStorageService} from "../shared/services/session-storage.service";
 
+/**
+ *  Component for showing and managing all users.
+ */
 @Component({
     selector: 'app-users',
     templateUrl: './users.component.html'
@@ -14,13 +17,20 @@ export class UsersComponent implements OnInit {
     private user: User;
     private fileSaver = require('file-saver');
 
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param usersService
+     * @param sessionStorageService
+     * @param flashMessageService
+     */
     constructor(private usersService: UsersService,
                 private sessionStorageService: SessionStorageService,
                 private flashMessageService: FlashMessageService){
     }
 
     /**
-     *  Set to variable users all users.
+     *  When creating component, call function to get all users.
      */
     ngOnInit() {
         this.usersService.getUsers()
@@ -84,7 +94,7 @@ export class UsersComponent implements OnInit {
     }
 
     /**
-     *  Delete user.
+     *  Call funtion to delete user.
      */
     onOk(){
         this.usersService.deleteUser(this.user)

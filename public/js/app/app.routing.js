@@ -1,5 +1,8 @@
 import { RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
+/**
+ *  Main routes for application.
+ */
 var APP_ROUTES = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
@@ -14,6 +17,9 @@ var APP_ROUTES = [
     { path: 'preferences', loadChildren: '../app/preference/preference.module#PreferenceModule' },
     { path: 'solution/validatorinfo/:id', loadChildren: '../app/validator-info/validator-info.module#ValidatorInfoModule' },
 ];
+/**
+ *  Uncomment on local host
+ */
 // export const hostUrl = 'http://localhost:3000/';
 export var hostUrl = 'https://cttcompetition.herokuapp.com/';
 export var routing = RouterModule.forRoot(APP_ROUTES);

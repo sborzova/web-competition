@@ -5,6 +5,9 @@ import {Solution} from "../../shared/models/solution.model";
 import {SolutionService} from "../../shared/services/solution.service";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
 
+/**
+ * Component for showing results for author and technique.
+ */
 @Component({
     selector: 'app-results-author-technique',
     templateUrl: './results-author-technique.component.html'
@@ -15,6 +18,13 @@ export class ResultsAuthorTechniqueComponent implements OnChanges{
     solution: Solution;
     private showPapers: boolean = false;
 
+    /**
+     *  When creating component, inject dependencies.
+     *
+     * @param sortDownloadService
+     * @param sessionStorageService
+     * @param solutionService
+     */
     constructor(private sortDownloadService: SortDownloadService,
                 private sessionStorageService: SessionStorageService,
                 private solutionService: SolutionService){}

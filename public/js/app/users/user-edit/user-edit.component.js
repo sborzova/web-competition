@@ -3,7 +3,18 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { UsersService } from "../users.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
+/**
+ * Component to edit user as admin.
+ */
 export var UserEditComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param router
+     * @param usersService
+     * @param activatedRoute
+     * @param flashMessageService
+     */
     function UserEditComponent(router, usersService, activatedRoute, flashMessageService) {
         this.router = router;
         this.usersService = usersService;
@@ -13,8 +24,8 @@ export var UserEditComponent = (function () {
         this.submitted = false;
     }
     /**
-     *  Set to variable user user by id.
-     *  Create edit user form.
+     *  When creating component, call function to get user by route parameter's id
+     *  and create edit user form.
      */
     UserEditComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -33,7 +44,7 @@ export var UserEditComponent = (function () {
         });
     };
     /**
-     * Submit user edit form.
+     * If edit user's password form is valid, call function to update user.
      */
     UserEditComponent.prototype.onSubmit = function () {
         this.submitted = true;
@@ -68,9 +79,6 @@ export var UserEditComponent = (function () {
             _this.navigateBack();
         }, function (error) { return console.error(error); });
     };
-    UserEditComponent.prototype.onCancel = function () {
-        this.navigateBack();
-    };
     /**
      * Navigate to route Users Management.
      */
@@ -90,6 +98,9 @@ export var UserEditComponent = (function () {
                 password: new FormControl(null, Validators.required)
             });
         }
+    };
+    UserEditComponent.prototype.onCancel = function () {
+        this.navigateBack();
     };
     UserEditComponent.decorators = [
         { type: Component, args: [{

@@ -1,3 +1,6 @@
+/**
+ * Class represents profile model.
+ */
 export class ProfileUser {
     constructor(public email: string,
                 public password: string,

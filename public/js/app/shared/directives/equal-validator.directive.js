@@ -1,5 +1,8 @@
 import { Directive, forwardRef, Attribute } from '@angular/core';
 import { NG_VALIDATORS } from '@angular/forms';
+/**
+ * Directive for controlling equalization of two input text fields.
+ **/
 export var EqualValidator = (function () {
     function EqualValidator(validateEqual, reverse) {
         this.validateEqual = validateEqual;

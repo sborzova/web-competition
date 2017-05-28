@@ -1,5 +1,5 @@
 /**
- * Check if validated number is less than min.
+ * Validator for min value of number.
  *
  * @param min number
  * @returns {(control:AbstractControl)=>{[p: string]: any}} { 'minValue': {min} } if validated number is less then min,

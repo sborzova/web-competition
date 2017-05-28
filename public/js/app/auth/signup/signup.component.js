@@ -4,7 +4,17 @@ import { Router } from "@angular/router";
 import { AuthService } from "../auth.service";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { SignupUser } from "./signup.model";
+/**
+ * Component for signing up.
+ */
 export var SignupComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param authService
+     * @param router
+     * @param flashMessageService
+     */
     function SignupComponent(authService, router, flashMessageService) {
         this.authService = authService;
         this.router = router;
@@ -29,7 +39,7 @@ export var SignupComponent = (function () {
         });
     };
     /**
-     * Submit signup form
+     * If signup form is valid, call function to sign up user.
      */
     SignupComponent.prototype.onSubmit = function () {
         var _this = this;

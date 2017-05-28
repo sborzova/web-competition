@@ -1,5 +1,8 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
+/**
+ * Pipe for ascending ordering object.
+ */
 @Pipe({ name: "orderBy", pure: false })
 export class OrderByPipe implements PipeTransform {
 
@@ -10,12 +13,10 @@ export class OrderByPipe implements PipeTransform {
         if(b === null || typeof b === 'undefined') b = 0;
 
         if((isNaN(parseFloat(a)) || !isFinite(a)) || (isNaN(parseFloat(b)) || !isFinite(b))){
-            //Isn't a number so lowercase the string to properly compare
             if(a.toLowerCase() < b.toLowerCase()) return -1;
             if(a.toLowerCase() > b.toLowerCase()) return 1;
         }
         else{
-            //Parse strings as numbers to compare properly
             if(parseFloat(a) < parseFloat(b)) return -1;
             if(parseFloat(a) > parseFloat(b)) return 1;
         }
@@ -24,7 +25,6 @@ export class OrderByPipe implements PipeTransform {
     }
 
     transform(input:any, config:string = '+'): any {
-        //invalid input given
         if(!input) return input;
 
         this.value = [...input];
@@ -86,12 +86,9 @@ export class OrderByPipe implements PipeTransform {
                             bValue = bValue[propertySplit[j]];
                         }
                     }
-
                     let comparison = !desc
                         ? OrderByPipe._orderByComparator(aValue, bValue)
                         : -OrderByPipe._orderByComparator(aValue, bValue);
-
-                    //Don't return 0 yet in case of needing to sort by next property
                     if(comparison != 0) return comparison;
                 }
                 return 0; //equal each other

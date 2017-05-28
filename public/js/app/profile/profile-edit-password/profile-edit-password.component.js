@@ -3,7 +3,17 @@ import { FormGroup, Validators, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import { FlashMessageService } from "../../flash-message/flash-messages.service";
 import { ProfileService } from "../profile.service";
+/**
+ * Component for editing password of logged in user.
+ */
 export var ProfileEditPasswordComponent = (function () {
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param userService
+     * @param flashMessageService
+     * @param router
+     */
     function ProfileEditPasswordComponent(userService, flashMessageService, router) {
         this.userService = userService;
         this.flashMessageService = flashMessageService;
@@ -11,8 +21,8 @@ export var ProfileEditPasswordComponent = (function () {
         this.submitted = false;
     }
     /**
-     * Set to variable user logged in user.
-     * Create new password form.
+     * When creating component, call function to get logged in user and
+     * create edit password form.
      */
     ProfileEditPasswordComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -27,7 +37,7 @@ export var ProfileEditPasswordComponent = (function () {
         });
     };
     /**
-     * Submit new password form.
+     * If edit password form is valid, call function to update user with new password.
      */
     ProfileEditPasswordComponent.prototype.onSubmit = function () {
         var _this = this;

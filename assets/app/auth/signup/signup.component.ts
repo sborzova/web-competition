@@ -6,6 +6,9 @@ import {AuthService} from "../auth.service";
 import {FlashMessageService} from "../../flash-message/flash-messages.service";
 import {SignupUser} from "./signup.model";
 
+/**
+ * Component for signing up.
+ */
 @Component({
     selector: 'app-signup',
     templateUrl: './signup.component.html'
@@ -16,6 +19,13 @@ export class SignupComponent implements OnInit {
     private emailRegex: string = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@" +
                                     "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
 
+    /**
+     * When creating component, inject dependencies.
+     *
+     * @param authService
+     * @param router
+     * @param flashMessageService
+     */
     constructor(private authService: AuthService,
                 private router: Router,
                 private flashMessageService: FlashMessageService) {
@@ -38,7 +48,7 @@ export class SignupComponent implements OnInit {
     }
 
     /**
-     * Submit signup form
+     * If signup form is valid, call function to sign up user.
      */
     onSubmit() {
             this.submitted = true;
