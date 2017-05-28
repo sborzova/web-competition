@@ -2,270 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/0.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/0.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/1.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/1.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/10.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/10.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/11.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/11.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/12.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/12.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/13.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/13.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/14.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/14.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/15.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/15.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/16.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/16.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/17.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/17.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/18.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/18.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/19.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/19.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/2.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/2.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/3.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/3.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/4.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/4.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/5.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/5.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/6.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/6.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/7.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/7.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/8.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/8.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/9.65ec94c43732cbda4128.chunk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/9.65ec94c43732cbda4128.chunk.js.gz" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/preference/preference.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/app/preference/preference.component.css.shim.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/0.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/0.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/1.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/1.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/10.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/10.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/11.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/11.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/12.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/12.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/13.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/13.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/14.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/14.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/15.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/15.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/16.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/16.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/17.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/17.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/18.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/18.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/19.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/19.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/2.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/2.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/3.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/3.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/4.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/4.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/5.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/5.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/6.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/6.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/7.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/7.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/8.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/8.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/9.3ad21b36260be3369e99.chunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/9.3ad21b36260be3369e99.chunk.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/preference/preference.component.css.shim.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.component.ts" afterPath="$PROJECT_DIR$/assets/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.routing.ts" afterPath="$PROJECT_DIR$/assets/app/app.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/auth.service.ts" afterPath="$PROJECT_DIR$/assets/app/auth/auth.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signin/email.model.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signin/email.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signin/email.service.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signin/email.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signin/signin.component.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signin/signin.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signin/signin.model.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signin/signin.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signin/signin.routing.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signin/signin.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signup/signup.component.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signup/signup.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signup/signup.model.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signup/signup.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/signup/signup.routing.ts" afterPath="$PROJECT_DIR$/assets/app/auth/signup/signup.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/flash-message/flash-message.component.ts" afterPath="$PROJECT_DIR$/assets/app/flash-message/flash-message.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/flash-message/flash-message.model.ts" afterPath="$PROJECT_DIR$/assets/app/flash-message/flash-message.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/flash-message/flash-messages.service.ts" afterPath="$PROJECT_DIR$/assets/app/flash-message/flash-messages.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/header/header.component.ts" afterPath="$PROJECT_DIR$/assets/app/header/header.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/home/home.component.ts" afterPath="$PROJECT_DIR$/assets/app/home/home.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/file.model.ts" afterPath="$PROJECT_DIR$/assets/app/instances/file.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-create.model.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-create.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-new/instance-new.component.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-new/instance-new.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-status/instance-status.component.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-status/instance-status.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-update.model.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-update.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance-update/instance-update.component.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance-update/instance-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance.model.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instance.routing.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instance.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/instances.component.ts" afterPath="$PROJECT_DIR$/assets/app/instances/instances.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/instances/min-value.validator.ts" afterPath="$PROJECT_DIR$/assets/app/instances/min-value.validator.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/preference/preference.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/preference/preference.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/preference/preference.component.ts" afterPath="$PROJECT_DIR$/assets/app/preference/preference.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/preference/preference.model.ts" afterPath="$PROJECT_DIR$/assets/app/preference/preference.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/preference/preference.routing.ts" afterPath="$PROJECT_DIR$/assets/app/preference/preference.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/preference/preference.service.ts" afterPath="$PROJECT_DIR$/assets/app/preference/preference.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/password.model.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/password.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile.model.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile.routing.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/profile/profile.service.ts" afterPath="$PROJECT_DIR$/assets/app/profile/profile.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author-instance-technique/results-author-instance-technique.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author-instance/results-author-instance.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author-instance/results-author-instance.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author-technique/results-author-technique.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-author/results-author.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-best/results-best.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts" afterPath="$PROJECT_DIR$/assets/app/results/results-instance/results-instance.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/results.routing.ts" afterPath="$PROJECT_DIR$/assets/app/results/results.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/technique.model.ts" afterPath="$PROJECT_DIR$/assets/app/results/technique.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/results/visibility.model.ts" afterPath="$PROJECT_DIR$/assets/app/results/visibility.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/directives/equal-validator.directive.ts" afterPath="$PROJECT_DIR$/assets/app/shared/directives/equal-validator.directive.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/models/author.model.ts" afterPath="$PROJECT_DIR$/assets/app/shared/models/author.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/models/instance.model.ts" afterPath="$PROJECT_DIR$/assets/app/shared/models/instance.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/models/paper.model.ts" afterPath="$PROJECT_DIR$/assets/app/shared/models/paper.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/models/solution.model.ts" afterPath="$PROJECT_DIR$/assets/app/shared/models/solution.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/pipes/escape-html.pipe.ts" afterPath="$PROJECT_DIR$/assets/app/shared/pipes/escape-html.pipe.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/pipes/order-by.pipe.ts" afterPath="$PROJECT_DIR$/assets/app/shared/pipes/order-by.pipe.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/services/file.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/file.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/services/instance.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/instance.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/services/paper.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/paper.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/services/session-storage.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/session-storage.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/services/solution.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/solution.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/services/sort-download.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/services/sort-download.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/solution-paper.model.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/solution-paper.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.css" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.routing.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.ts" afterPath="$PROJECT_DIR$/assets/app/users/user-edit-password/user-edit-password.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.ts" afterPath="$PROJECT_DIR$/assets/app/users/user-edit/user-edit.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/user.model.ts" afterPath="$PROJECT_DIR$/assets/app/users/user.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.component.html" afterPath="$PROJECT_DIR$/assets/app/users/users.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.component.ngfactory.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.component.ngfactory.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.component.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.module.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.routing.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/users/users.service.ts" afterPath="$PROJECT_DIR$/assets/app/users/users.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/solution.module.ts" afterPath="$PROJECT_DIR$/assets/app/validation/solution.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ts" afterPath="$PROJECT_DIR$/assets/app/validation/success-validation/success-validation.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.component.ts" afterPath="$PROJECT_DIR$/assets/app/validation/validation.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.model.ts" afterPath="$PROJECT_DIR$/assets/app/validation/validation.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.module.ts" afterPath="$PROJECT_DIR$/assets/app/validation/validation.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validation/validation.routing.ts" afterPath="$PROJECT_DIR$/assets/app/validation/validation.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validator-info/validator-info.component.ts" afterPath="$PROJECT_DIR$/assets/app/validator-info/validator-info.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/validator-info/validator-info.routing.ts" afterPath="$PROJECT_DIR$/assets/app/validator-info/validator-info.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/file.js" afterPath="$PROJECT_DIR$/models/file.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/instance.js" afterPath="$PROJECT_DIR$/models/instance.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/paper.js" afterPath="$PROJECT_DIR$/models/paper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/preference.js" afterPath="$PROJECT_DIR$/models/preference.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/solution.js" afterPath="$PROJECT_DIR$/models/solution.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/user.js" afterPath="$PROJECT_DIR$/models/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.component.js" afterPath="$PROJECT_DIR$/public/js/app/app.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.routing.js" afterPath="$PROJECT_DIR$/public/js/app/app.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/auth.service.js" afterPath="$PROJECT_DIR$/public/js/app/auth/auth.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signin/email.model.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/email.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signin/email.service.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/email.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signin/signin.component.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/signin.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signin/signin.model.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/signin.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signin/signin.routing.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signin/signin.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signup/signup.component.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signup/signup.model.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/signup/signup.routing.js" afterPath="$PROJECT_DIR$/public/js/app/auth/signup/signup.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js" afterPath="$PROJECT_DIR$/public/js/app/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js.gz" afterPath="$PROJECT_DIR$/public/js/app/bundle.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/flash-message/flash-message.component.js" afterPath="$PROJECT_DIR$/public/js/app/flash-message/flash-message.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/flash-message/flash-message.model.js" afterPath="$PROJECT_DIR$/public/js/app/flash-message/flash-message.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/flash-message/flash-messages.service.js" afterPath="$PROJECT_DIR$/public/js/app/flash-message/flash-messages.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/header/header.component.js" afterPath="$PROJECT_DIR$/public/js/app/header/header.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/home/home.component.js" afterPath="$PROJECT_DIR$/public/js/app/home/home.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/file.model.js" afterPath="$PROJECT_DIR$/public/js/app/instances/file.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-create.model.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-create.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-new/instance-new.component.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-new/instance-new.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-status/instance-status.component.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-status/instance-status.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-update.model.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-update.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance-update/instance-update.component.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance-update/instance-update.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance.model.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instance.routing.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instance.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/instances.component.js" afterPath="$PROJECT_DIR$/public/js/app/instances/instances.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/instances/min-value.validator.js" afterPath="$PROJECT_DIR$/public/js/app/instances/min-value.validator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/preference/preference.component.js" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/preference/preference.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/preference/preference.model.js" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/preference/preference.routing.js" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/preference/preference.service.js" afterPath="$PROJECT_DIR$/public/js/app/preference/preference.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile-edit-password/password.model.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit-password/password.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile-edit-password/profile-edit-password.component.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit-password/profile-edit-password.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile-edit/profile-edit.component.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-edit/profile-edit.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile-info/profile-info.component.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile-info/profile-info.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile.model.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile.routing.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/profile/profile.service.js" afterPath="$PROJECT_DIR$/public/js/app/profile/profile.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author-instance-technique/results-author-instance-technique.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-instance-technique/results-author-instance-technique.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author-instance/results-author-instance.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-instance/results-author-instance.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author-technique/results-author-technique.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author-technique/results-author-technique.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-author/results-author.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-author/results-author.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-best/results-best.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-best/results-best.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results-instance/results-instance.component.js" afterPath="$PROJECT_DIR$/public/js/app/results/results-instance/results-instance.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/results.routing.js" afterPath="$PROJECT_DIR$/public/js/app/results/results.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/technique.model.js" afterPath="$PROJECT_DIR$/public/js/app/results/technique.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/results/visibility.model.js" afterPath="$PROJECT_DIR$/public/js/app/results/visibility.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/directives/equal-validator.directive.js" afterPath="$PROJECT_DIR$/public/js/app/shared/directives/equal-validator.directive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/models/author.model.js" afterPath="$PROJECT_DIR$/public/js/app/shared/models/author.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/models/instance.model.js" afterPath="$PROJECT_DIR$/public/js/app/shared/models/instance.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/models/paper.model.js" afterPath="$PROJECT_DIR$/public/js/app/shared/models/paper.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/models/solution.model.js" afterPath="$PROJECT_DIR$/public/js/app/shared/models/solution.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/pipes/escape-html.pipe.js" afterPath="$PROJECT_DIR$/public/js/app/shared/pipes/escape-html.pipe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/pipes/order-by.pipe.js" afterPath="$PROJECT_DIR$/public/js/app/shared/pipes/order-by.pipe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/services/file.service.js" afterPath="$PROJECT_DIR$/public/js/app/shared/services/file.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/services/instance.service.js" afterPath="$PROJECT_DIR$/public/js/app/shared/services/instance.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/services/paper.service.js" afterPath="$PROJECT_DIR$/public/js/app/shared/services/paper.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/services/session-storage.service.js" afterPath="$PROJECT_DIR$/public/js/app/shared/services/session-storage.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/services/solution.service.js" afterPath="$PROJECT_DIR$/public/js/app/shared/services/solution.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/services/sort-download.service.js" afterPath="$PROJECT_DIR$/public/js/app/shared/services/sort-download.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/user-solutions/solution-paper.model.js" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/solution-paper.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.js" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.routing.js" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/user-edit-password/user-edit-password.component.js" afterPath="$PROJECT_DIR$/public/js/app/users/user-edit-password/user-edit-password.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/user-edit/user-edit.component.js" afterPath="$PROJECT_DIR$/public/js/app/users/user-edit/user-edit.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/user.model.js" afterPath="$PROJECT_DIR$/public/js/app/users/user.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/users.component.js" afterPath="$PROJECT_DIR$/public/js/app/users/users.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/users.component.ngfactory.js" afterPath="$PROJECT_DIR$/public/js/app/users/users.component.ngfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/users.routing.js" afterPath="$PROJECT_DIR$/public/js/app/users/users.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/users/users.service.js" afterPath="$PROJECT_DIR$/public/js/app/users/users.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/success-validation/success-validation.component.js" afterPath="$PROJECT_DIR$/public/js/app/validation/success-validation/success-validation.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/validation.component.js" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/validation.model.js" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validation/validation.routing.js" afterPath="$PROJECT_DIR$/public/js/app/validation/validation.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.component.js" afterPath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.routing.js" afterPath="$PROJECT_DIR$/public/js/app/validator-info/validator-info.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/app.js" afterPath="$PROJECT_DIR$/routes/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/email.js" afterPath="$PROJECT_DIR$/routes/email.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/file.js" afterPath="$PROJECT_DIR$/routes/file.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/instance.js" afterPath="$PROJECT_DIR$/routes/instance.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/paper.js" afterPath="$PROJECT_DIR$/routes/paper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/preference.js" afterPath="$PROJECT_DIR$/routes/preference.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/solution.js" afterPath="$PROJECT_DIR$/routes/solution.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/user.js" afterPath="$PROJECT_DIR$/routes/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -283,7 +21,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
@@ -359,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+            <state relative-caret-position="153">
+              <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -510,8 +248,8 @@
         <option value="$PROJECT_DIR$/assets/app/auth/signin/email.model.ts" />
         <option value="$PROJECT_DIR$/routes/user.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/routes/app.js" />
         <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
+        <option value="$PROJECT_DIR$/routes/app.js" />
       </list>
     </option>
   </component>
@@ -559,6 +297,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web-competition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web-competition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web-competition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -818,14 +574,7 @@
       <workItem from="1495957486542" duration="22901000" />
       <workItem from="1495985719505" duration="593000" />
       <workItem from="1495987694221" duration="3848000" />
-      <workItem from="1495991796732" duration="19591000" />
-    </task>
-    <task id="LOCAL-00104" summary="delete solution, refactoring, duplicate solution - added time in message, routing change, little refactoring">
-      <created>1492430964017</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1492430964018</updated>
+      <workItem from="1495991796732" duration="20480000" />
     </task>
     <task id="LOCAL-00105" summary="email route delete method">
       <created>1492433668531</created>
@@ -1163,11 +912,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495962954292</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="readme added, documentation complete">
+      <created>1496012623726</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1496012623729</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1674338000" />
+    <option name="totallyTimeSpent" value="1675227000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1250,7 +1006,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="heroku env for connect db" />
     <MESSAGE value="email fixed" />
     <MESSAGE value="verify routes, mongodb promises" />
     <MESSAGE value="refactoring" />
@@ -1275,7 +1030,8 @@
     <MESSAGE value="url updated" />
     <MESSAGE value="(change) to (blur)" />
     <MESSAGE value="upload bad solution - fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload bad solution - fixed" />
+    <MESSAGE value="readme added, documentation complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme added, documentation complete" />
   </component>
   <component name="WindowStateProjectService">
     <state width="264" height="278" key="Git.Branch.Popup" />
@@ -1733,11 +1489,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/app.js">
+    <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="162">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1749,13 +1507,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
+    <entry file="file://$PROJECT_DIR$/routes/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>

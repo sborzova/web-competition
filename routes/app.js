@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
  * Verify route if logged user is admin
  */
 router.use('/server/admin/', function (req, res, next) {
-    jwt.verify(req.query.token, process.env.SECRET, function (err) {
+    jwt.verify(req.query.token, process.env.SECRET_ADMIN, function (err) {
         if (err) {
             return res.status(401).json({
                 title: 'Not Authenticated Admin',
