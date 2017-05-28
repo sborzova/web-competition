@@ -441,7 +441,10 @@ export class SolutionService {
     }
 
     setSolutionFile(file: any){
+        console.log(file);
         this.solutionFile = file;
+        console.log('aaa');
+        console.log(this.solutionFile);
     }
 
     getSolutionFile(){

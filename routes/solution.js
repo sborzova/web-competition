@@ -13,6 +13,8 @@ var User = require('../models/user');
 var Paper = require('../models/paper');
 var File = require('../models/file');
 
+var validatedFile;
+
 /**
  *  Validate solution and return validation result.
  *
@@ -61,6 +63,8 @@ router.post('/server/validator', function (req, res, next) {
             });
         });
         let notBom = iconv.decode(req.file.buffer, 'utf-8', {addBom : false});
+        validatedFile = notBom;
+        module.exports = validatedFile;
         request.write(notBom);
         request.end();
     });

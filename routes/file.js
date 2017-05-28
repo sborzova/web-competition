@@ -21,8 +21,10 @@ router.post('/server/file', function (req, res) {
             });
         }
         try{
+            var validatedFile = require('./solution');
             var file = new File({
-                content: iconv.decode(req.file.buffer, 'utf-8', {addBom : false}),
+                content: validatedFile,
+                // content: iconv.decode(req.file.buffer, 'utf-8', {addBom : false}),
             });
         } catch (err){
             return res.status(500).json({

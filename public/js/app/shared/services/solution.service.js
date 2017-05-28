@@ -314,7 +314,10 @@ export var SolutionService = (function () {
         this.solutionSetNotVisibleSource.next(solution);
     };
     SolutionService.prototype.setSolutionFile = function (file) {
+        console.log(file);
         this.solutionFile = file;
+        console.log('aaa');
+        console.log(this.solutionFile);
     };
     SolutionService.prototype.getSolutionFile = function () {
         return this.solutionFile;
