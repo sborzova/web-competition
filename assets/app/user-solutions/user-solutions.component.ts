@@ -140,8 +140,9 @@ export class UserSolutionsComponent implements OnInit, OnDestroy {
             if (paperIds.size != 1){
                 this.flashMessageService.showMessage('It is not possible to modify two different citations at a time. ' +
                     'Please select the same citations only.', 'danger');
+            }else{
+                this.prepareToEditPaper(paperIds);
             }
-            this.prepareToEditPaper(paperIds);
         }
     }
 

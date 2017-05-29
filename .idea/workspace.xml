@@ -2,8 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7ece63c-8500-464d-8dd7-0b4fb11c55ee" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/0.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/0.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/1.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/1.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/10.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/10.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/11.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/11.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/12.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/12.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/13.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/13.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/14.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/14.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/15.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/15.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/16.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/16.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/17.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/17.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/18.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/18.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/19.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/19.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/2.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/2.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/3.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/3.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/4.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/4.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/5.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/5.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/6.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/6.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/7.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/7.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/8.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/8.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/9.0cd70154595fa64b38fd.chunk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/9.0cd70154595fa64b38fd.chunk.js.gz" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/0.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/0.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/1.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/1.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/10.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/10.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/11.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/11.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/12.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/12.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/13.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/13.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/14.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/14.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/15.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/15.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/16.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/16.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/17.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/17.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/18.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/18.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/19.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/19.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/2.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/2.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/3.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/3.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/4.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/4.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/5.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/5.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/6.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/6.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/7.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/7.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/8.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/8.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/9.65ec94c43732cbda4128.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/9.65ec94c43732cbda4128.chunk.js.gz" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/app.js" afterPath="$PROJECT_DIR$/routes/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.css" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.css.shim.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.css.shim.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" afterPath="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js" afterPath="$PROJECT_DIR$/public/js/app/bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js.gz" afterPath="$PROJECT_DIR$/public/js/app/bundle.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.css.shim.js" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.css.shim.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.js" afterPath="$PROJECT_DIR$/public/js/app/user-solutions/user-solutions.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,28 +120,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signin.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/auth/signin/signin.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signin.model.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/auth/signin/signin.model.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="README.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.txt">
           <provider selected="true" editor-type-id="text-editor">
@@ -78,30 +143,62 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="340">
               <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="email.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/auth/signin/email.service.ts">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="48" column="63" lean-forward="false" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="63" />
+            <state relative-caret-position="153">
+              <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user-solutions.component.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user-solutions.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="35" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <marker date="1495731716950" expanded="true" signature="2743:2903" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/app.js">
+      <file leaf-file-name="user-solutions.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+            <state relative-caret-position="255">
+              <caret line="143" column="50" lean-forward="false" selection-start-line="143" selection-start-column="50" selection-end-line="143" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -112,16 +209,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paper.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/shared/services/paper.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,7 +225,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>server/duplicat</find>
       <find>server/duplicate</find>
       <find>duplica</find>
       <find>signin</find>
@@ -168,6 +254,7 @@
       <find>conserve</find>
       <find>admin</find>
       <find>'admin'</find>
+      <find>solution</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Silvia\OneDrive\Bakalárka\Project\assets\app\instances</dir>
@@ -199,9 +286,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/app/shared/models/instance.model.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/models/author.model.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/directives/equal-validator.directive.ts" />
         <option value="$PROJECT_DIR$/assets/app/results/visibility.model.ts" />
         <option value="$PROJECT_DIR$/assets/app/results/technique.model.ts" />
         <option value="$PROJECT_DIR$/assets/app/results/results.routing.ts" />
@@ -250,6 +334,9 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/routes/app.js" />
+        <option value="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.css" />
       </list>
     </option>
   </component>
@@ -574,14 +661,7 @@
       <workItem from="1495957486542" duration="22901000" />
       <workItem from="1495985719505" duration="593000" />
       <workItem from="1495987694221" duration="3848000" />
-      <workItem from="1495991796732" duration="20480000" />
-    </task>
-    <task id="LOCAL-00105" summary="email route delete method">
-      <created>1492433668531</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1492433668531</updated>
+      <workItem from="1495991796732" duration="22714000" />
     </task>
     <task id="LOCAL-00106" summary="email route delete method">
       <created>1492434188757</created>
@@ -919,11 +999,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496012623729</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="fixed process.env.SECRET_ADMIN">
+      <created>1496013424615</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1496013424615</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1675227000" />
+    <option name="totallyTimeSpent" value="1677461000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -946,7 +1033,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5714286" sideWeight="0.4940476" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22985074" sideWeight="0.28169015" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24851191" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3088737" sideWeight="0.48214287" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37883958" sideWeight="0.48214287" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1006,7 +1093,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="email fixed" />
     <MESSAGE value="verify routes, mongodb promises" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="verification router" />
@@ -1031,7 +1117,8 @@
     <MESSAGE value="(change) to (blur)" />
     <MESSAGE value="upload bad solution - fixed" />
     <MESSAGE value="readme added, documentation complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme added, documentation complete" />
+    <MESSAGE value="fixed process.env.SECRET_ADMIN" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed process.env.SECRET_ADMIN" />
   </component>
   <component name="WindowStateProjectService">
     <state width="264" height="278" key="Git.Branch.Popup" />
@@ -1044,45 +1131,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/app/profile/profile-info/profile-info.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="31" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/profile/profile-edit-password/profile-edit-password.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="52" column="86" lean-forward="false" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/profile/profile-edit/profile-edit.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="54" column="50" lean-forward="false" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/preference/preference.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/preference/preference.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1411,7 +1459,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1460,7 +1508,7 @@
         <state relative-caret-position="0">
           <caret line="48" column="63" lean-forward="false" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="63" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1499,19 +1547,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="35" />
+          <folding>
+            <marker date="1495731716950" expanded="true" signature="2743:2903" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/user-solutions/user-solutions.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="143" column="50" lean-forward="false" selection-start-line="143" selection-start-column="50" selection-end-line="143" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

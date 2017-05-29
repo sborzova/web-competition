@@ -120,7 +120,9 @@ export var UserSolutionsComponent = (function () {
                 this.flashMessageService.showMessage('It is not possible to modify two different citations at a time. ' +
                     'Please select the same citations only.', 'danger');
             }
-            this.prepareToEditPaper(paperIds);
+            else {
+                this.prepareToEditPaper(paperIds);
+            }
         }
     };
     /**
