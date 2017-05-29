@@ -20,6 +20,6 @@ var APP_ROUTES = [
 /**
  *  Uncomment on local host
  */
-export var hostUrl = 'http://localhost:3000/';
-// export const hostUrl = 'https://cttcompetition.herokuapp.com/';
+// export const hostUrl = 'http://localhost:3000/';
+export var hostUrl = 'https://cttcompetition.herokuapp.com/';
 export var routing = RouterModule.forRoot(APP_ROUTES);
