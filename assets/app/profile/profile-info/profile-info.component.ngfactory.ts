@@ -74,26 +74,22 @@ class _View_ProfileInfoComponent0 extends import1.AppView<import3.ProfileInfoCom
   _el_14:any;
   _RouterLink_14_3:import11.RouterLink;
   _text_15:any;
-  _el_16:any;
-  _text_17:any;
+  _text_16:any;
+  _el_17:any;
+  _RouterLink_17_3:import11.RouterLink;
   _text_18:any;
-  _el_19:any;
-  _RouterLink_19_3:import11.RouterLink;
+  _text_19:any;
   _text_20:any;
   _el_21:any;
   _text_22:any;
-  _text_23:any;
+  _anchor_23:any;
+  /*private*/ _appEl_23:import2.AppElement;
+  _TemplateRef_23_5:any;
+  _NgIf_23_6:import12.NgIf;
   _text_24:any;
-  _el_25:any;
+  _text_25:any;
   _text_26:any;
-  _anchor_27:any;
-  /*private*/ _appEl_27:import2.AppElement;
-  _TemplateRef_27_5:any;
-  _NgIf_27_6:import12.NgIf;
-  _text_28:any;
-  _text_29:any;
-  _text_30:any;
-  _text_31:any;
+  _text_27:any;
   _arr_0:any;
   /*private*/ _expr_1:any;
   _arr_1:any;
@@ -127,38 +123,32 @@ class _View_ProfileInfoComponent0 extends import1.AppView<import3.ProfileInfoCom
     this.renderer.setElementAttribute(this._el_14,'class','btn btn-info btn-xs');
     this.renderer.setElementAttribute(this._el_14,'title','Edit profile');
     this._RouterLink_14_3 = new import11.RouterLink(this.parentInjector.get(import13.Router),this.parentInjector.get(import14.ActivatedRoute),this.parentInjector.get(import15.LocationStrategy));
-    this._text_15 = this.renderer.createText(this._el_14,'\n                        ',(null as any));
-    this._el_16 = this.renderer.createElement(this._el_14,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_16,'class','glyphicon glyphicon-pencil');
-    this._text_17 = this.renderer.createText(this._el_14,'\n                         Profile\n                ',(null as any));
-    this._text_18 = this.renderer.createText(this._el_12,'\n                ',(null as any));
-    this._el_19 = this.renderer.createElement(this._el_12,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_19,'class','btn btn-primary btn-xs');
-    this.renderer.setElementAttribute(this._el_19,'title','Change password');
-    this._RouterLink_19_3 = new import11.RouterLink(this.parentInjector.get(import13.Router),this.parentInjector.get(import14.ActivatedRoute),this.parentInjector.get(import15.LocationStrategy));
-    this._text_20 = this.renderer.createText(this._el_19,'\n                        ',(null as any));
-    this._el_21 = this.renderer.createElement(this._el_19,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_21,'class','glyphicon glyphicon-pencil');
-    this._text_22 = this.renderer.createText(this._el_19,'\n                         Password\n                ',(null as any));
-    this._text_23 = this.renderer.createText(this._el_12,'\n            ',(null as any));
-    this._text_24 = this.renderer.createText(this._el_4,'\n            ',(null as any));
-    this._el_25 = this.renderer.createElement(this._el_4,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_25,'class','col-xs-6');
-    this._text_26 = this.renderer.createText(this._el_25,'\n                ',(null as any));
-    this._anchor_27 = this.renderer.createTemplateAnchor(this._el_25,(null as any));
-    this._appEl_27 = new import2.AppElement(27,25,this,this._anchor_27);
-    this._TemplateRef_27_5 = new import16.TemplateRef_(this._appEl_27,viewFactory_ProfileInfoComponent1);
-    this._NgIf_27_6 = new import12.NgIf(this._appEl_27.vcRef,this._TemplateRef_27_5);
-    this._text_28 = this.renderer.createText(this._el_25,'\n            ',(null as any));
-    this._text_29 = this.renderer.createText(this._el_4,'\n        ',(null as any));
-    this._text_30 = this.renderer.createText(this._el_2,'\n    ',(null as any));
-    this._text_31 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_15 = this.renderer.createText(this._el_14,'\n                         Edit profile\n                ',(null as any));
+    this._text_16 = this.renderer.createText(this._el_12,'\n                ',(null as any));
+    this._el_17 = this.renderer.createElement(this._el_12,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_17,'class','btn btn-primary btn-xs');
+    this.renderer.setElementAttribute(this._el_17,'title','Change password');
+    this._RouterLink_17_3 = new import11.RouterLink(this.parentInjector.get(import13.Router),this.parentInjector.get(import14.ActivatedRoute),this.parentInjector.get(import15.LocationStrategy));
+    this._text_18 = this.renderer.createText(this._el_17,'\n                         Edit password\n                ',(null as any));
+    this._text_19 = this.renderer.createText(this._el_12,'\n            ',(null as any));
+    this._text_20 = this.renderer.createText(this._el_4,'\n            ',(null as any));
+    this._el_21 = this.renderer.createElement(this._el_4,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_21,'class','col-xs-6');
+    this._text_22 = this.renderer.createText(this._el_21,'\n                ',(null as any));
+    this._anchor_23 = this.renderer.createTemplateAnchor(this._el_21,(null as any));
+    this._appEl_23 = new import2.AppElement(23,21,this,this._anchor_23);
+    this._TemplateRef_23_5 = new import16.TemplateRef_(this._appEl_23,viewFactory_ProfileInfoComponent1);
+    this._NgIf_23_6 = new import12.NgIf(this._appEl_23.vcRef,this._TemplateRef_23_5);
+    this._text_24 = this.renderer.createText(this._el_21,'\n            ',(null as any));
+    this._text_25 = this.renderer.createText(this._el_4,'\n        ',(null as any));
+    this._text_26 = this.renderer.createText(this._el_2,'\n    ',(null as any));
+    this._text_27 = this.renderer.createText(this._el_0,'\n',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_14,'click',this.eventHandler(this._handle_click_14_0.bind(this)));
     this._arr_0 = import4.pureProxy1((p0:any):any[] => {
       return [p0];
     });
     this._expr_1 = import7.UNINITIALIZED;
-    var disposable_1:Function = this.renderer.listen(this._el_19,'click',this.eventHandler(this._handle_click_19_0.bind(this)));
+    var disposable_1:Function = this.renderer.listen(this._el_17,'click',this.eventHandler(this._handle_click_17_0.bind(this)));
     this._arr_1 = import4.pureProxy1((p0:any):any[] => {
       return [p0];
     });
@@ -181,22 +171,18 @@ class _View_ProfileInfoComponent0 extends import1.AppView<import3.ProfileInfoCom
       this._text_13,
       this._el_14,
       this._text_15,
-      this._el_16,
-      this._text_17,
+      this._text_16,
+      this._el_17,
       this._text_18,
-      this._el_19,
+      this._text_19,
       this._text_20,
       this._el_21,
       this._text_22,
-      this._text_23,
+      this._anchor_23,
       this._text_24,
-      this._el_25,
+      this._text_25,
       this._text_26,
-      this._anchor_27,
-      this._text_28,
-      this._text_29,
-      this._text_30,
-      this._text_31
+      this._text_27
     ]
     ,[
       disposable_0,
@@ -206,10 +192,10 @@ class _View_ProfileInfoComponent0 extends import1.AppView<import3.ProfileInfoCom
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import11.RouterLink) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 17)))) { return this._RouterLink_14_3; }
-    if (((token === import11.RouterLink) && ((19 <= requestNodeIndex) && (requestNodeIndex <= 22)))) { return this._RouterLink_19_3; }
-    if (((token === import16.TemplateRef) && (27 === requestNodeIndex))) { return this._TemplateRef_27_5; }
-    if (((token === import12.NgIf) && (27 === requestNodeIndex))) { return this._NgIf_27_6; }
+    if (((token === import11.RouterLink) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 15)))) { return this._RouterLink_14_3; }
+    if (((token === import11.RouterLink) && ((17 <= requestNodeIndex) && (requestNodeIndex <= 18)))) { return this._RouterLink_17_3; }
+    if (((token === import16.TemplateRef) && (23 === requestNodeIndex))) { return this._TemplateRef_23_5; }
+    if (((token === import12.NgIf) && (23 === requestNodeIndex))) { return this._NgIf_23_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -220,12 +206,12 @@ class _View_ProfileInfoComponent0 extends import1.AppView<import3.ProfileInfoCom
     }
     const currVal_3:any = this._arr_1('/profile/editpass');
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
-      this._RouterLink_19_3.routerLink = currVal_3;
+      this._RouterLink_17_3.routerLink = currVal_3;
       this._expr_3 = currVal_3;
     }
     const currVal_4:any = this.context.user;
     if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
-      this._NgIf_27_6.ngIf = currVal_4;
+      this._NgIf_23_6.ngIf = currVal_4;
       this._expr_4 = currVal_4;
     }
     this.detectContentChildrenChanges(throwOnChange);
@@ -236,9 +222,9 @@ class _View_ProfileInfoComponent0 extends import1.AppView<import3.ProfileInfoCom
     const pd_0:any = ((<any>this._RouterLink_14_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
     return (true && pd_0);
   }
-  private _handle_click_19_0($event:any):boolean {
+  private _handle_click_17_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this._RouterLink_19_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    const pd_0:any = ((<any>this._RouterLink_17_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
     return (true && pd_0);
   }
 }

@@ -57,7 +57,7 @@ class _View_HomeComponent0 extends import1.AppView<import3.HomeComponent> {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
     this._el_0 = this.renderer.createElement(parentRenderNode,'div',(null as any));
     this.renderer.setElementAttribute(this._el_0,'class','container');
-    this.renderer.setElementAttribute(this._el_0,'style','margin-top: 3%');
+    this.renderer.setElementAttribute(this._el_0,'style','margin-top: 3%; text-align: center');
     this._text_1 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'h1',(null as any));
     this._text_3 = this.renderer.createText(this._el_2,'Course timetabling competition',(null as any));

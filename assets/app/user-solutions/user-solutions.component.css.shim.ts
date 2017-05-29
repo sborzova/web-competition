@@ -4,4 +4,4 @@
  */
  /* tslint:disable */
 
-export const styles:any[] = ['#paper[_ngcontent-%COMP%] {\r\n    background-color: whitesmoke;\r\n    text-align: left;\r\n}'];
+export const styles:any[] = ['#paper[_ngcontent-%COMP%] {\r\n    background-color:  #FFF9C4;\r\n    text-align: left;\r\n}'];

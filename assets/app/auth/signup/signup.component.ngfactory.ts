@@ -463,7 +463,7 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
     this.renderer.setElementAttribute(this._el_74,'align','right');
     this._text_75 = this.renderer.createText(this._el_74,'\n                        ',(null as any));
     this._el_76 = this.renderer.createElement(this._el_74,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_76,'class','btn btn-primary align-right');
+    this.renderer.setElementAttribute(this._el_76,'class','btn btn-primary align-right style-1');
     this.renderer.setElementAttribute(this._el_76,'type','submit');
     this._text_77 = this.renderer.createText(this._el_76,'\n                            Sign up\n                        ',(null as any));
     this._text_78 = this.renderer.createText(this._el_74,'\n                    ',(null as any));

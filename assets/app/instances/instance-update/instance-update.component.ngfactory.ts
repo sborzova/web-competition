@@ -437,12 +437,12 @@ class _View_InstanceEditComponent1 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_51,'align','right');
     this._text_52 = this.renderer.createText(this._el_51,'\n                        ',(null as any));
     this._el_53 = this.renderer.createElement(this._el_51,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_53,'class','btn btn-primary align-right');
+    this.renderer.setElementAttribute(this._el_53,'class','btn btn-primary align-right style-1');
     this.renderer.setElementAttribute(this._el_53,'type','submit');
     this._text_54 = this.renderer.createText(this._el_53,'\n                            Save\n                        ',(null as any));
     this._text_55 = this.renderer.createText(this._el_51,'\n                        ',(null as any));
     this._el_56 = this.renderer.createElement(this._el_51,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_56,'class','btn btn-default align-right');
+    this.renderer.setElementAttribute(this._el_56,'class','btn btn-primary align-right style-2');
     this._text_57 = this.renderer.createText(this._el_56,'\n                            Cancel\n                        ',(null as any));
     this._text_58 = this.renderer.createText(this._el_51,'\n                    ',(null as any));
     this._text_59 = this.renderer.createText(this._el_0,'\n                ',(null as any));

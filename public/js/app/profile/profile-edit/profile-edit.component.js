@@ -54,9 +54,15 @@ export var ProfileEditComponent = (function () {
                 .subscribe(function (data) {
                 _this.sessionStorageService.setSessionStorageAuth(data);
                 _this.flashMessageService.showMessage('Profile was updated.', 'success');
-                _this.router.navigate(['/profile/info']);
+                _this.navigateBack();
             }, function (error) { return console.error(error); });
         }
+    };
+    ProfileEditComponent.prototype.navigateBack = function () {
+        this.router.navigate(['/profile/info']);
+    };
+    ProfileEditComponent.prototype.onCancel = function () {
+        this.navigateBack();
     };
     ProfileEditComponent.decorators = [
         { type: Component, args: [{

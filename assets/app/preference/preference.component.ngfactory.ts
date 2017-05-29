@@ -108,7 +108,7 @@ class _View_PreferenceComponent0 extends import1.AppView<import3.PreferenceCompo
     this.renderer.setElementAttribute(this._el_2,'class','row');
     this._text_3 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._el_4 = this.renderer.createElement(this._el_2,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_4,'style','margin-bottom: 3%');
+    this.renderer.setElementAttribute(this._el_4,'style','margin-bottom: 3% ');
     this._text_5 = this.renderer.createText(this._el_4,'\n            ',(null as any));
     this._el_6 = this.renderer.createElement(this._el_4,'h2',(null as any));
     this._text_7 = this.renderer.createText(this._el_6,'Preferences',(null as any));

@@ -48,9 +48,15 @@ export var ProfileEditPasswordComponent = (function () {
             this.userService.updatePassword(this.user)
                 .subscribe(function () {
                 _this.flashMessageService.showMessage('Password was updated.', 'success');
-                _this.router.navigate(['/profile/info']);
+                _this.navigateBack();
             }, function (error) { return console.error(error); });
         }
+    };
+    ProfileEditPasswordComponent.prototype.navigateBack = function () {
+        this.router.navigate(['/profile/info']);
+    };
+    ProfileEditPasswordComponent.prototype.onCancel = function () {
+        this.navigateBack();
     };
     ProfileEditPasswordComponent.decorators = [
         { type: Component, args: [{

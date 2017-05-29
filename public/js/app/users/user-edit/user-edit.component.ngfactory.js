@@ -274,12 +274,12 @@ var _View_UserEditComponent1 = (function (_super) {
         this.renderer.setElementAttribute(this._el_46, 'align', 'right');
         this._text_47 = this.renderer.createText(this._el_46, '\n                        ', null);
         this._el_48 = this.renderer.createElement(this._el_46, 'button', null);
-        this.renderer.setElementAttribute(this._el_48, 'class', 'btn btn-primary');
+        this.renderer.setElementAttribute(this._el_48, 'class', 'btn btn-primary style-1');
         this.renderer.setElementAttribute(this._el_48, 'type', 'submit');
         this._text_49 = this.renderer.createText(this._el_48, '\n                            Save\n                        ', null);
         this._text_50 = this.renderer.createText(this._el_46, '\n                        ', null);
         this._el_51 = this.renderer.createElement(this._el_46, 'button', null);
-        this.renderer.setElementAttribute(this._el_51, 'class', 'btn btn-default');
+        this.renderer.setElementAttribute(this._el_51, 'class', 'btn btn-primary style-2');
         this._text_52 = this.renderer.createText(this._el_51, '\n                            Cancel\n                        ', null);
         this._text_53 = this.renderer.createText(this._el_46, '\n                    ', null);
         this._text_54 = this.renderer.createText(this._el_0, '\n                ', null);

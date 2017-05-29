@@ -257,11 +257,15 @@ var _View_ProfileEditComponent1 = (function (_super) {
         this.renderer.setElementAttribute(this._el_36, 'align', 'right');
         this._text_37 = this.renderer.createText(this._el_36, '\n                        ', null);
         this._el_38 = this.renderer.createElement(this._el_36, 'button', null);
-        this.renderer.setElementAttribute(this._el_38, 'class', 'btn btn-primary');
+        this.renderer.setElementAttribute(this._el_38, 'class', 'btn btn-primary style-1');
         this.renderer.setElementAttribute(this._el_38, 'type', 'submit');
         this._text_39 = this.renderer.createText(this._el_38, '\n                            Save\n                        ', null);
-        this._text_40 = this.renderer.createText(this._el_36, '\n                    ', null);
-        this._text_41 = this.renderer.createText(this._el_0, '\n                ', null);
+        this._text_40 = this.renderer.createText(this._el_36, '\n                        ', null);
+        this._el_41 = this.renderer.createElement(this._el_36, 'button', null);
+        this.renderer.setElementAttribute(this._el_41, 'class', 'btn btn-primary align-right style-2');
+        this._text_42 = this.renderer.createText(this._el_41, '\n                            Cancel\n                        ', null);
+        this._text_43 = this.renderer.createText(this._el_36, '\n                    ', null);
+        this._text_44 = this.renderer.createText(this._el_0, '\n                ', null);
         var disposable_0 = this.renderer.listen(this._el_0, 'ngSubmit', this.eventHandler(this._handle_ngSubmit_0_0.bind(this)));
         var disposable_1 = this.renderer.listen(this._el_0, 'submit', this.eventHandler(this._handle_submit_0_1.bind(this)));
         var disposable_2 = this.renderer.listen(this._el_0, 'reset', this.eventHandler(this._handle_reset_0_2.bind(this)));
@@ -320,6 +324,7 @@ var _View_ProfileEditComponent1 = (function (_super) {
         this._expr_45 = import7.UNINITIALIZED;
         this._expr_46 = import7.UNINITIALIZED;
         this._expr_47 = import7.UNINITIALIZED;
+        var disposable_9 = this.renderer.listen(this._el_41, 'click', this.eventHandler(this._handle_click_41_0.bind(this)));
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1,
@@ -362,7 +367,10 @@ var _View_ProfileEditComponent1 = (function (_super) {
             this._el_38,
             this._text_39,
             this._text_40,
-            this._text_41
+            this._el_41,
+            this._text_42,
+            this._text_43,
+            this._text_44
         ], [
             disposable_0,
             disposable_1,
@@ -372,7 +380,8 @@ var _View_ProfileEditComponent1 = (function (_super) {
             disposable_5,
             disposable_6,
             disposable_7,
-            disposable_8
+            disposable_8,
+            disposable_9
         ], [subscription_0]);
         return null;
     };
@@ -461,13 +470,13 @@ var _View_ProfileEditComponent1 = (function (_super) {
         if (((token === import18.NgClass) && ((26 <= requestNodeIndex) && (requestNodeIndex <= 34)))) {
             return this._NgClass_26_3;
         }
-        if (((token === import16.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) {
+        if (((token === import16.FormGroupDirective) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) {
             return this._FormGroupDirective_0_3;
         }
-        if (((token === import26.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) {
+        if (((token === import26.ControlContainer) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) {
             return this._ControlContainer_0_4;
         }
-        if (((token === import17.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 41)))) {
+        if (((token === import17.NgControlStatusGroup) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 44)))) {
             return this._NgControlStatusGroup_0_5;
         }
         return notFoundResult;
@@ -756,6 +765,11 @@ var _View_ProfileEditComponent1 = (function (_super) {
     _View_ProfileEditComponent1.prototype._handle_blur_31_1 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this._DefaultValueAccessor_31_3.onTouched() !== false);
+        return (true && pd_0);
+    };
+    _View_ProfileEditComponent1.prototype._handle_click_41_0 = function ($event) {
+        this.markPathToRootAsCheckOnce();
+        var pd_0 = (this.parent.context.onCancel() !== false);
         return (true && pd_0);
     };
     return _View_ProfileEditComponent1;

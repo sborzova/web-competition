@@ -767,12 +767,12 @@ class _View_UserSolutionsComponent4 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_22,'align','right');
     this._text_23 = this.renderer.createText(this._el_22,'\n                                ',(null as any));
     this._el_24 = this.renderer.createElement(this._el_22,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_24,'class','btn btn-primary align-right');
+    this.renderer.setElementAttribute(this._el_24,'class','btn btn-primary align-right style-1');
     this.renderer.setElementAttribute(this._el_24,'type','submit');
     this._text_25 = this.renderer.createText(this._el_24,'\n                                    Save\n                                ',(null as any));
     this._text_26 = this.renderer.createText(this._el_22,'\n                                ',(null as any));
     this._el_27 = this.renderer.createElement(this._el_22,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_27,'class','btn btn-default align-right');
+    this.renderer.setElementAttribute(this._el_27,'class','btn btn-primary align-right style-2');
     this._text_28 = this.renderer.createText(this._el_27,'\n                                    Cancel\n                                ',(null as any));
     this._text_29 = this.renderer.createText(this._el_22,'\n                            ',(null as any));
     this._text_30 = this.renderer.createText(this._el_20,'\n                        ',(null as any));
@@ -1845,7 +1845,7 @@ class _View_UserSolutionsComponent8 extends import1.AppView<any> {
     this._el_44 = this.renderer.createElement(this._el_42,'a',(null as any));
     this.renderer.setElementAttribute(this._el_44,'class','btn btn-primary btn-xs');
     this.renderer.setElementAttribute(this._el_44,'target','_blank');
-    this.renderer.setElementAttribute(this._el_44,'title','View');
+    this.renderer.setElementAttribute(this._el_44,'title','View validator info');
     this.renderer.setElementAttribute(this._el_44,'type','button');
     this._RouterLinkWithHref_44_3 = new import32.RouterLinkWithHref(this.parent.parent.parentInjector.get(import34.Router),this.parent.parent.parentInjector.get(import35.ActivatedRoute),this.parent.parent.parentInjector.get(import36.LocationStrategy));
     this._text_45 = this.renderer.createText(this._el_44,'\n                                ',(null as any));

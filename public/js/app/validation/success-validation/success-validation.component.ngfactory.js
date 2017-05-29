@@ -512,7 +512,7 @@ var _View_SuccessValidationComponent3 = (function (_super) {
         this.renderer.setElementAttribute(this._el_36, 'align', 'right');
         this._text_37 = this.renderer.createText(this._el_36, '\n                ', null);
         this._el_38 = this.renderer.createElement(this._el_36, 'button', null);
-        this.renderer.setElementAttribute(this._el_38, 'class', 'btn btn-primary align-right');
+        this.renderer.setElementAttribute(this._el_38, 'class', 'btn btn-primary align-right style-1');
         this.renderer.setElementAttribute(this._el_38, 'type', 'submit');
         this._text_39 = this.renderer.createText(this._el_38, '\n                    Upload\n                ', null);
         this._text_40 = this.renderer.createText(this._el_36, '\n            ', null);

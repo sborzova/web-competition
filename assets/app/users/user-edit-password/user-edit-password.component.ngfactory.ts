@@ -345,12 +345,12 @@ class _View_UserEditPasswordComponent1 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_26,'align','right');
     this._text_27 = this.renderer.createText(this._el_26,'\n                        ',(null as any));
     this._el_28 = this.renderer.createElement(this._el_26,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_28,'class','btn btn-primary');
+    this.renderer.setElementAttribute(this._el_28,'class','btn btn-primary style-1');
     this.renderer.setElementAttribute(this._el_28,'type','submit');
     this._text_29 = this.renderer.createText(this._el_28,'\n                            Save\n                        ',(null as any));
     this._text_30 = this.renderer.createText(this._el_26,'\n                        ',(null as any));
     this._el_31 = this.renderer.createElement(this._el_26,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_31,'class','btn btn-default');
+    this.renderer.setElementAttribute(this._el_31,'class','btn btn-primary style-2');
     this._text_32 = this.renderer.createText(this._el_31,'\n                            Cancel\n                        ',(null as any));
     this._text_33 = this.renderer.createText(this._el_26,'\n                    ',(null as any));
     this._text_34 = this.renderer.createText(this._el_0,'\n                ',(null as any));

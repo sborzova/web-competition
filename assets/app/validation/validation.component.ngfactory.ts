@@ -306,7 +306,7 @@ class _View_ValidationComponent1 extends import1.AppView<any> {
     this.renderer.setElementAttribute(this._el_17,'align','right');
     this._text_18 = this.renderer.createText(this._el_17,'\n                        ',(null as any));
     this._el_19 = this.renderer.createElement(this._el_17,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_19,'class','btn btn-primary btn-s');
+    this.renderer.setElementAttribute(this._el_19,'class','btn btn-primary style-1');
     this._text_20 = this.renderer.createText(this._el_19,'Validate',(null as any));
     this._text_21 = this.renderer.createText(this._el_17,'\n                    ',(null as any));
     this._text_22 = this.renderer.createText(this._el_4,'\n                ',(null as any));

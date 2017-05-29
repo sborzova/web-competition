@@ -57,7 +57,7 @@ var _View_HomeComponent0 = (function (_super) {
         var parentRenderNode = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
         this._el_0 = this.renderer.createElement(parentRenderNode, 'div', null);
         this.renderer.setElementAttribute(this._el_0, 'class', 'container');
-        this.renderer.setElementAttribute(this._el_0, 'style', 'margin-top: 3%');
+        this.renderer.setElementAttribute(this._el_0, 'style', 'margin-top: 3%; text-align: center');
         this._text_1 = this.renderer.createText(this._el_0, '\n    ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'h1', null);
         this._text_3 = this.renderer.createText(this._el_2, 'Course timetabling competition', null);

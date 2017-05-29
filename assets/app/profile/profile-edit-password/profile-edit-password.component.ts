@@ -61,10 +61,18 @@ export class ProfileEditPasswordComponent implements OnInit{
                 .subscribe(
                     () => {
                         this.flashMessageService.showMessage('Password was updated.', 'success' );
-                        this.router.navigate(['/profile/info']);
+                        this.navigateBack();
                     },
                     error => console.error(error)
                 );
         }
+    }
+
+    navigateBack(){
+        this.router.navigate(['/profile/info']);
+    }
+
+    onCancel(){
+        this.navigateBack();
     }
 }

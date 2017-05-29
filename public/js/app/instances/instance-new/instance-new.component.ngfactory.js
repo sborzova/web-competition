@@ -225,12 +225,12 @@ var _View_InstanceCreateComponent0 = (function (_super) {
         this.renderer.setElementAttribute(this._el_66, 'align', 'right');
         this._text_67 = this.renderer.createText(this._el_66, '\n                        ', null);
         this._el_68 = this.renderer.createElement(this._el_66, 'button', null);
-        this.renderer.setElementAttribute(this._el_68, 'class', 'btn btn-primary align-right');
+        this.renderer.setElementAttribute(this._el_68, 'class', 'btn btn-primary align-right style-1');
         this.renderer.setElementAttribute(this._el_68, 'type', 'submit');
         this._text_69 = this.renderer.createText(this._el_68, '\n                            Save\n                        ', null);
         this._text_70 = this.renderer.createText(this._el_66, '\n                        ', null);
         this._el_71 = this.renderer.createElement(this._el_66, 'button', null);
-        this.renderer.setElementAttribute(this._el_71, 'class', 'btn btn-default align-right');
+        this.renderer.setElementAttribute(this._el_71, 'class', 'btn btn-primary align-right style-2');
         this._text_72 = this.renderer.createText(this._el_71, '\n                            Cancel\n                        ', null);
         this._text_73 = this.renderer.createText(this._el_66, '\n                    ', null);
         this._text_74 = this.renderer.createText(this._el_14, '\n                ', null);

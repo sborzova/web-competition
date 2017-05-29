@@ -66,10 +66,18 @@ export class ProfileEditComponent implements OnInit {
                     (data) => {
                         this.sessionStorageService.setSessionStorageAuth(data);
                         this.flashMessageService.showMessage('Profile was updated.', 'success' );
-                        this.router.navigate(['/profile/info']);
+                        this.navigateBack();
                     },
                     error => console.error(error)
                 );
         }
+    }
+
+    navigateBack(){
+        this.router.navigate(['/profile/info']);
+    }
+
+    onCancel(){
+        this.navigateBack();
     }
 }

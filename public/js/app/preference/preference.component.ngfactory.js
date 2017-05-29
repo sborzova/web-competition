@@ -75,7 +75,7 @@ var _View_PreferenceComponent0 = (function (_super) {
         this.renderer.setElementAttribute(this._el_2, 'class', 'row');
         this._text_3 = this.renderer.createText(this._el_2, '\n        ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'div', null);
-        this.renderer.setElementAttribute(this._el_4, 'style', 'margin-bottom: 3%');
+        this.renderer.setElementAttribute(this._el_4, 'style', 'margin-bottom: 3% ');
         this._text_5 = this.renderer.createText(this._el_4, '\n            ', null);
         this._el_6 = this.renderer.createElement(this._el_4, 'h2', null);
         this._text_7 = this.renderer.createText(this._el_6, 'Preferences', null);

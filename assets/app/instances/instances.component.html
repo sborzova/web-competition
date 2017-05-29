@@ -45,9 +45,9 @@
                         <th><div *ngIf="isAdmin()">Order</div></th>
                         <th>Name</th>
                         <th>Description</th>
-                        <th>Status</th>
                         <th>Post date</th>
-                        <th>Download</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -55,16 +55,16 @@
                         <td><div *ngIf="isAdmin()">{{ instance.order }}</div></td>
                         <td>{{ instance.name }}</td>
                         <td>{{ instance.description }}</td>
+                        <td>{{ instance.submissionTime | dateFormat }}</td>
                         <td><a
                                 type="button"
                                 class="btn btn-primary btn-xs"
-                                title="View"
+                                title="View status"
                                 target="_blank"
                                 [routerLink]="['/instances/status', instance.instanceId]">
                             <i class="glyphicon glyphicon-info-sign"></i>
                         </a>
                         </td>
-                        <td>{{ instance.submissionTime | dateFormat }}</td>
                         <td>
                             <button type="button" class="btn btn-success btn-xs" (click)="onDownload(instance)" title="Download">
                                 <i class="glyphicon glyphicon-download-alt"></i>
