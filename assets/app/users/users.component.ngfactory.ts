@@ -72,20 +72,20 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
   _text_7:any;
   _el_8:any;
   _text_9:any;
-  _text_10:any;
-  _el_11:any;
+  _el_10:any;
+  _text_11:any;
   _text_12:any;
   _el_13:any;
   _text_14:any;
-  _text_15:any;
-  _el_16:any;
+  _el_15:any;
+  _text_16:any;
   _text_17:any;
-  _text_18:any;
+  _el_18:any;
   _text_19:any;
   _text_20:any;
   _text_21:any;
   _text_22:any;
-  _el_23:any;
+  _text_23:any;
   _text_24:any;
   _el_25:any;
   _text_26:any;
@@ -93,13 +93,15 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
   _text_28:any;
   _el_29:any;
   _text_30:any;
-  _text_31:any;
+  _el_31:any;
   _text_32:any;
-  _anchor_33:any;
-  /*private*/ _appEl_33:import2.AppElement;
-  _TemplateRef_33_5:any;
-  _NgIf_33_6:import13.NgIf;
+  _text_33:any;
   _text_34:any;
+  _anchor_35:any;
+  /*private*/ _appEl_35:import2.AppElement;
+  _TemplateRef_35_5:any;
+  _NgIf_35_6:import13.NgIf;
+  _text_36:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_3:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
@@ -129,50 +131,52 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
     this._el_8 = this.renderer.createElement(this._el_6,'div',(null as any));
     this.renderer.setElementAttribute(this._el_8,'class','modal-body');
     this.renderer.setElementAttribute(this._el_8,'style','text-align: center; padding: 5% 0 5% 0');
-    this._text_9 = this.renderer.createText(this._el_8,'\n                Are you sure you want to delete this user?\n            ',(null as any));
-    this._text_10 = this.renderer.createText(this._el_6,'\n            ',(null as any));
-    this._el_11 = this.renderer.createElement(this._el_6,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_11,'class','modal-footer');
-    this._text_12 = this.renderer.createText(this._el_11,'\n                ',(null as any));
-    this._el_13 = this.renderer.createElement(this._el_11,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_13,'class','btn btn-primary');
-    this.renderer.setElementAttribute(this._el_13,'data-dismiss','modal');
-    this.renderer.setElementAttribute(this._el_13,'type','button');
-    this._text_14 = this.renderer.createText(this._el_13,'OK',(null as any));
-    this._text_15 = this.renderer.createText(this._el_11,'\n                ',(null as any));
-    this._el_16 = this.renderer.createElement(this._el_11,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_16,'class','btn btn-default');
-    this.renderer.setElementAttribute(this._el_16,'data-dismiss','modal');
-    this.renderer.setElementAttribute(this._el_16,'type','button');
-    this._text_17 = this.renderer.createText(this._el_16,'Close',(null as any));
-    this._text_18 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._text_19 = this.renderer.createText(this._el_6,'\n        ',(null as any));
-    this._text_20 = this.renderer.createText(this._el_4,'\n    ',(null as any));
-    this._text_21 = this.renderer.createText(this._el_2,'\n',(null as any));
-    this._text_22 = this.renderer.createText(parentRenderNode,'\n\n',(null as any));
-    this._el_23 = this.renderer.createElement(parentRenderNode,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_23,'class','col-xs-12');
-    this.renderer.setElementAttribute(this._el_23,'style','margin-top: 3%');
-    this._text_24 = this.renderer.createText(this._el_23,'\n    ',(null as any));
-    this._el_25 = this.renderer.createElement(this._el_23,'div',(null as any));
-    this._text_26 = this.renderer.createText(this._el_25,'\n        ',(null as any));
-    this._el_27 = this.renderer.createElement(this._el_25,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_27,'class','btn btn-primary btn-xs');
-    this.renderer.setElementAttribute(this._el_27,'type','button');
+    this._text_9 = this.renderer.createText(this._el_8,'\n                Are you sure you want to delete this user?\n                ',(null as any));
+    this._el_10 = this.renderer.createElement(this._el_8,'br',(null as any));
+    this._text_11 = this.renderer.createText(this._el_8,'\n                All user\'s solutions will be deleted, too.\n            ',(null as any));
+    this._text_12 = this.renderer.createText(this._el_6,'\n            ',(null as any));
+    this._el_13 = this.renderer.createElement(this._el_6,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_13,'class','modal-footer');
+    this._text_14 = this.renderer.createText(this._el_13,'\n                ',(null as any));
+    this._el_15 = this.renderer.createElement(this._el_13,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_15,'class','btn btn-primary');
+    this.renderer.setElementAttribute(this._el_15,'data-dismiss','modal');
+    this.renderer.setElementAttribute(this._el_15,'type','button');
+    this._text_16 = this.renderer.createText(this._el_15,'OK',(null as any));
+    this._text_17 = this.renderer.createText(this._el_13,'\n                ',(null as any));
+    this._el_18 = this.renderer.createElement(this._el_13,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_18,'class','btn btn-default');
+    this.renderer.setElementAttribute(this._el_18,'data-dismiss','modal');
+    this.renderer.setElementAttribute(this._el_18,'type','button');
+    this._text_19 = this.renderer.createText(this._el_18,'Close',(null as any));
+    this._text_20 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._text_21 = this.renderer.createText(this._el_6,'\n        ',(null as any));
+    this._text_22 = this.renderer.createText(this._el_4,'\n    ',(null as any));
+    this._text_23 = this.renderer.createText(this._el_2,'\n',(null as any));
+    this._text_24 = this.renderer.createText(parentRenderNode,'\n\n',(null as any));
+    this._el_25 = this.renderer.createElement(parentRenderNode,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_25,'class','col-xs-12');
+    this.renderer.setElementAttribute(this._el_25,'style','margin-top: 3%');
+    this._text_26 = this.renderer.createText(this._el_25,'\n    ',(null as any));
+    this._el_27 = this.renderer.createElement(this._el_25,'div',(null as any));
     this._text_28 = this.renderer.createText(this._el_27,'\n        ',(null as any));
-    this._el_29 = this.renderer.createElement(this._el_27,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_29,'class','glyphicon glyphicon-file');
-    this._text_30 = this.renderer.createText(this._el_27,' Download as CSV\n        ',(null as any));
-    this._text_31 = this.renderer.createText(this._el_25,'\n    ',(null as any));
-    this._text_32 = this.renderer.createText(this._el_23,'\n    ',(null as any));
-    this._anchor_33 = this.renderer.createTemplateAnchor(this._el_23,(null as any));
-    this._appEl_33 = new import2.AppElement(33,23,this,this._anchor_33);
-    this._TemplateRef_33_5 = new import14.TemplateRef_(this._appEl_33,viewFactory_UsersComponent1);
-    this._NgIf_33_6 = new import13.NgIf(this._appEl_33.vcRef,this._TemplateRef_33_5);
-    this._text_34 = this.renderer.createText(this._el_23,'\n',(null as any));
+    this._el_29 = this.renderer.createElement(this._el_27,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_29,'class','btn btn-primary btn-xs');
+    this.renderer.setElementAttribute(this._el_29,'type','button');
+    this._text_30 = this.renderer.createText(this._el_29,'\n        ',(null as any));
+    this._el_31 = this.renderer.createElement(this._el_29,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_31,'class','glyphicon glyphicon-file');
+    this._text_32 = this.renderer.createText(this._el_29,' Download as CSV\n        ',(null as any));
+    this._text_33 = this.renderer.createText(this._el_27,'\n    ',(null as any));
+    this._text_34 = this.renderer.createText(this._el_25,'\n    ',(null as any));
+    this._anchor_35 = this.renderer.createTemplateAnchor(this._el_25,(null as any));
+    this._appEl_35 = new import2.AppElement(35,25,this,this._anchor_35);
+    this._TemplateRef_35_5 = new import14.TemplateRef_(this._appEl_35,viewFactory_UsersComponent1);
+    this._NgIf_35_6 = new import13.NgIf(this._appEl_35.vcRef,this._TemplateRef_35_5);
+    this._text_36 = this.renderer.createText(this._el_25,'\n',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
-    var disposable_0:Function = this.renderer.listen(this._el_13,'click',this.eventHandler(this._handle_click_13_0.bind(this)));
-    var disposable_1:Function = this.renderer.listen(this._el_27,'click',this.eventHandler(this._handle_click_27_0.bind(this)));
+    var disposable_0:Function = this.renderer.listen(this._el_15,'click',this.eventHandler(this._handle_click_15_0.bind(this)));
+    var disposable_1:Function = this.renderer.listen(this._el_29,'click',this.eventHandler(this._handle_click_29_0.bind(this)));
     this._expr_3 = import7.UNINITIALIZED;
     this.init([],[
       this._el_0,
@@ -185,20 +189,20 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
       this._text_7,
       this._el_8,
       this._text_9,
-      this._text_10,
-      this._el_11,
+      this._el_10,
+      this._text_11,
       this._text_12,
       this._el_13,
       this._text_14,
-      this._text_15,
-      this._el_16,
+      this._el_15,
+      this._text_16,
       this._text_17,
-      this._text_18,
+      this._el_18,
       this._text_19,
       this._text_20,
       this._text_21,
       this._text_22,
-      this._el_23,
+      this._text_23,
       this._text_24,
       this._el_25,
       this._text_26,
@@ -206,10 +210,12 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
       this._text_28,
       this._el_29,
       this._text_30,
-      this._text_31,
+      this._el_31,
       this._text_32,
-      this._anchor_33,
-      this._text_34
+      this._text_33,
+      this._text_34,
+      this._anchor_35,
+      this._text_36
     ]
     ,[
       disposable_0,
@@ -219,14 +225,14 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import14.TemplateRef) && (33 === requestNodeIndex))) { return this._TemplateRef_33_5; }
-    if (((token === import13.NgIf) && (33 === requestNodeIndex))) { return this._NgIf_33_6; }
+    if (((token === import14.TemplateRef) && (35 === requestNodeIndex))) { return this._TemplateRef_35_5; }
+    if (((token === import13.NgIf) && (35 === requestNodeIndex))) { return this._NgIf_35_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
     const currVal_3:any = this.context.users;
     if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
-      this._NgIf_33_6.ngIf = currVal_3;
+      this._NgIf_35_6.ngIf = currVal_3;
       this._expr_3 = currVal_3;
     }
     this.detectContentChildrenChanges(throwOnChange);
@@ -237,12 +243,12 @@ class _View_UsersComponent0 extends import1.AppView<import3.UsersComponent> {
     }
     this.detectViewChildrenChanges(throwOnChange);
   }
-  private _handle_click_13_0($event:any):boolean {
+  private _handle_click_15_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.context.onOk()) !== false);
     return (true && pd_0);
   }
-  private _handle_click_27_0($event:any):boolean {
+  private _handle_click_29_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.context.onImportIntoCsvFile()) !== false);
     return (true && pd_0);
@@ -300,6 +306,7 @@ class _View_UsersComponent1 extends import1.AppView<any> {
     this._text_1 = this.renderer.createText(this._el_0,'\n        ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
     this.renderer.setElementAttribute(this._el_2,'class','table-responsive');
+    this.renderer.setElementAttribute(this._el_2,'style','margin:0px auto; width:100%');
     this._text_3 = this.renderer.createText(this._el_2,'\n            ',(null as any));
     this._el_4 = this.renderer.createElement(this._el_2,'table',(null as any));
     this.renderer.setElementAttribute(this._el_4,'class','table');

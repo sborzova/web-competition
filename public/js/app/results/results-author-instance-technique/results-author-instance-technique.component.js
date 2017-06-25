@@ -28,6 +28,9 @@ export var ResultsAuthorInstanceTechniqueComponent = (function () {
     ResultsAuthorInstanceTechniqueComponent.prototype.onDelete = function (solution) {
         this.solutionService.deleteSolutionObservable(solution);
     };
+    ResultsAuthorInstanceTechniqueComponent.prototype.onEditTechnique = function (solution) {
+        this.solutionService.editSolutionTechniqueObservable(solution);
+    };
     ResultsAuthorInstanceTechniqueComponent.prototype.onSetVisible = function (solution) {
         this.solutionService.setVisibleObservable(solution);
     };

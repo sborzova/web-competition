@@ -10,7 +10,9 @@ router.get('/', function(req, res, next) {
 });
 
 /*
- * Verify route if logged user is admin
+ * Verify route if logged user is admin.
+ *
+ * process.env.SECRET_ADMIN is auth token for admin
  */
 router.use('/server/admin/', function (req, res, next) {
     jwt.verify(req.query.token, process.env.SECRET_ADMIN, function (err) {

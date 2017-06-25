@@ -1776,12 +1776,12 @@ var _View_UserSolutionsComponent8 = (function (_super) {
             this._NgIf_59_6.ngIf = currVal_27;
             this._expr_27 = currVal_27;
         }
-        var currVal_28 = this.parent.parent.context.showPapers;
+        var currVal_28 = (this.parent.parent.context.showPapers && this.context.$implicit.paper);
         if (import4.checkBinding(throwOnChange, this._expr_28, currVal_28)) {
             this._NgIf_63_6.ngIf = currVal_28;
             this._expr_28 = currVal_28;
         }
-        var currVal_29 = this.parent.parent.context.showPapers;
+        var currVal_29 = (this.parent.parent.context.showPapers && this.context.$implicit.paper);
         if (import4.checkBinding(throwOnChange, this._expr_29, currVal_29)) {
             this._NgIf_65_6.ngIf = currVal_29;
             this._expr_29 = currVal_29;

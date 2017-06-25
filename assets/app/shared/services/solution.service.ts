@@ -276,7 +276,10 @@ export class SolutionService {
                         solution.submissionTime,
                         solution.visible,
                         null,
-                        new Instance(solution.instance.name),
+                        new Instance(
+                            solution.instance.name,
+                            solution.instance.id,
+                            solution.instance.order),
                         solution.paper ? new Paper(
                                 solution.paper.citation,
                                 solution.paper.url,

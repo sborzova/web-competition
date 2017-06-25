@@ -95,35 +95,37 @@ class _View_InstancesComponent0 extends import1.AppView<import3.InstancesCompone
   _text_27:any;
   _el_28:any;
   _text_29:any;
-  _text_30:any;
-  _el_31:any;
+  _el_30:any;
+  _text_31:any;
   _text_32:any;
   _el_33:any;
   _text_34:any;
-  _text_35:any;
-  _el_36:any;
+  _el_35:any;
+  _text_36:any;
   _text_37:any;
-  _text_38:any;
+  _el_38:any;
   _text_39:any;
   _text_40:any;
   _text_41:any;
   _text_42:any;
-  _el_43:any;
+  _text_43:any;
   _text_44:any;
   _el_45:any;
   _text_46:any;
-  _anchor_47:any;
-  /*private*/ _appEl_47:import2.AppElement;
-  _TemplateRef_47_5:any;
-  _NgIf_47_6:import14.NgIf;
+  _el_47:any;
   _text_48:any;
   _anchor_49:any;
   /*private*/ _appEl_49:import2.AppElement;
   _TemplateRef_49_5:any;
   _NgIf_49_6:import14.NgIf;
   _text_50:any;
-  _text_51:any;
+  _anchor_51:any;
+  /*private*/ _appEl_51:import2.AppElement;
+  _TemplateRef_51_5:any;
+  _NgIf_51_6:import14.NgIf;
   _text_52:any;
+  _text_53:any;
+  _text_54:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   _arr_0:any;
@@ -195,46 +197,48 @@ class _View_InstancesComponent0 extends import1.AppView<import3.InstancesCompone
     this._el_28 = this.renderer.createElement(this._el_26,'div',(null as any));
     this.renderer.setElementAttribute(this._el_28,'class','modal-body');
     this.renderer.setElementAttribute(this._el_28,'style','text-align: center; padding: 5% 0 5% 0');
-    this._text_29 = this.renderer.createText(this._el_28,'\n                Are you sure you want to delete this instance?\n            ',(null as any));
-    this._text_30 = this.renderer.createText(this._el_26,'\n            ',(null as any));
-    this._el_31 = this.renderer.createElement(this._el_26,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_31,'class','modal-footer');
-    this._text_32 = this.renderer.createText(this._el_31,'\n                ',(null as any));
-    this._el_33 = this.renderer.createElement(this._el_31,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_33,'class','btn btn-primary');
-    this.renderer.setElementAttribute(this._el_33,'data-dismiss','modal');
-    this.renderer.setElementAttribute(this._el_33,'type','button');
-    this._text_34 = this.renderer.createText(this._el_33,'OK',(null as any));
-    this._text_35 = this.renderer.createText(this._el_31,'\n                ',(null as any));
-    this._el_36 = this.renderer.createElement(this._el_31,'button',(null as any));
-    this.renderer.setElementAttribute(this._el_36,'class','btn btn-default');
-    this.renderer.setElementAttribute(this._el_36,'data-dismiss','modal');
-    this.renderer.setElementAttribute(this._el_36,'type','button');
-    this._text_37 = this.renderer.createText(this._el_36,'Close',(null as any));
-    this._text_38 = this.renderer.createText(this._el_31,'\n            ',(null as any));
-    this._text_39 = this.renderer.createText(this._el_26,'\n        ',(null as any));
-    this._text_40 = this.renderer.createText(this._el_24,'\n    ',(null as any));
-    this._text_41 = this.renderer.createText(this._el_22,'\n',(null as any));
-    this._text_42 = this.renderer.createText(parentRenderNode,'\n\n\n',(null as any));
-    this._el_43 = this.renderer.createElement(parentRenderNode,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_43,'class','container');
-    this.renderer.setElementAttribute(this._el_43,'style','margin-top: 3%');
-    this._text_44 = this.renderer.createText(this._el_43,'\n    ',(null as any));
-    this._el_45 = this.renderer.createElement(this._el_43,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_45,'class','row');
-    this._text_46 = this.renderer.createText(this._el_45,'\n        ',(null as any));
-    this._anchor_47 = this.renderer.createTemplateAnchor(this._el_45,(null as any));
-    this._appEl_47 = new import2.AppElement(47,45,this,this._anchor_47);
-    this._TemplateRef_47_5 = new import18.TemplateRef_(this._appEl_47,viewFactory_InstancesComponent1);
-    this._NgIf_47_6 = new import14.NgIf(this._appEl_47.vcRef,this._TemplateRef_47_5);
-    this._text_48 = this.renderer.createText(this._el_45,'\n        ',(null as any));
-    this._anchor_49 = this.renderer.createTemplateAnchor(this._el_45,(null as any));
-    this._appEl_49 = new import2.AppElement(49,45,this,this._anchor_49);
-    this._TemplateRef_49_5 = new import18.TemplateRef_(this._appEl_49,viewFactory_InstancesComponent2);
+    this._text_29 = this.renderer.createText(this._el_28,'\n                Are you sure you want to delete this instance?\n                ',(null as any));
+    this._el_30 = this.renderer.createElement(this._el_28,'br',(null as any));
+    this._text_31 = this.renderer.createText(this._el_28,'\n                All solutions related to this instance will be deleted, too.\n            ',(null as any));
+    this._text_32 = this.renderer.createText(this._el_26,'\n            ',(null as any));
+    this._el_33 = this.renderer.createElement(this._el_26,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_33,'class','modal-footer');
+    this._text_34 = this.renderer.createText(this._el_33,'\n                ',(null as any));
+    this._el_35 = this.renderer.createElement(this._el_33,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_35,'class','btn btn-primary');
+    this.renderer.setElementAttribute(this._el_35,'data-dismiss','modal');
+    this.renderer.setElementAttribute(this._el_35,'type','button');
+    this._text_36 = this.renderer.createText(this._el_35,'OK',(null as any));
+    this._text_37 = this.renderer.createText(this._el_33,'\n                ',(null as any));
+    this._el_38 = this.renderer.createElement(this._el_33,'button',(null as any));
+    this.renderer.setElementAttribute(this._el_38,'class','btn btn-default');
+    this.renderer.setElementAttribute(this._el_38,'data-dismiss','modal');
+    this.renderer.setElementAttribute(this._el_38,'type','button');
+    this._text_39 = this.renderer.createText(this._el_38,'Close',(null as any));
+    this._text_40 = this.renderer.createText(this._el_33,'\n            ',(null as any));
+    this._text_41 = this.renderer.createText(this._el_26,'\n        ',(null as any));
+    this._text_42 = this.renderer.createText(this._el_24,'\n    ',(null as any));
+    this._text_43 = this.renderer.createText(this._el_22,'\n',(null as any));
+    this._text_44 = this.renderer.createText(parentRenderNode,'\n\n\n',(null as any));
+    this._el_45 = this.renderer.createElement(parentRenderNode,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_45,'class','container');
+    this.renderer.setElementAttribute(this._el_45,'style','margin-top: 3%');
+    this._text_46 = this.renderer.createText(this._el_45,'\n    ',(null as any));
+    this._el_47 = this.renderer.createElement(this._el_45,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_47,'class','row');
+    this._text_48 = this.renderer.createText(this._el_47,'\n        ',(null as any));
+    this._anchor_49 = this.renderer.createTemplateAnchor(this._el_47,(null as any));
+    this._appEl_49 = new import2.AppElement(49,47,this,this._anchor_49);
+    this._TemplateRef_49_5 = new import18.TemplateRef_(this._appEl_49,viewFactory_InstancesComponent1);
     this._NgIf_49_6 = new import14.NgIf(this._appEl_49.vcRef,this._TemplateRef_49_5);
-    this._text_50 = this.renderer.createText(this._el_45,'\n    ',(null as any));
-    this._text_51 = this.renderer.createText(this._el_43,'\n',(null as any));
-    this._text_52 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._text_50 = this.renderer.createText(this._el_47,'\n        ',(null as any));
+    this._anchor_51 = this.renderer.createTemplateAnchor(this._el_47,(null as any));
+    this._appEl_51 = new import2.AppElement(51,47,this,this._anchor_51);
+    this._TemplateRef_51_5 = new import18.TemplateRef_(this._appEl_51,viewFactory_InstancesComponent2);
+    this._NgIf_51_6 = new import14.NgIf(this._appEl_51.vcRef,this._TemplateRef_51_5);
+    this._text_52 = this.renderer.createText(this._el_47,'\n    ',(null as any));
+    this._text_53 = this.renderer.createText(this._el_45,'\n',(null as any));
+    this._text_54 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this._expr_1 = import7.UNINITIALIZED;
     var disposable_0:Function = this.renderer.listen(this._el_15,'click',this.eventHandler(this._handle_click_15_0.bind(this)));
@@ -242,7 +246,7 @@ class _View_InstancesComponent0 extends import1.AppView<import3.InstancesCompone
       return [p0];
     });
     this._expr_3 = import7.UNINITIALIZED;
-    var disposable_1:Function = this.renderer.listen(this._el_33,'click',this.eventHandler(this._handle_click_33_0.bind(this)));
+    var disposable_1:Function = this.renderer.listen(this._el_35,'click',this.eventHandler(this._handle_click_35_0.bind(this)));
     this._expr_5 = import7.UNINITIALIZED;
     this._expr_6 = import7.UNINITIALIZED;
     this.init([],[
@@ -276,29 +280,31 @@ class _View_InstancesComponent0 extends import1.AppView<import3.InstancesCompone
       this._text_27,
       this._el_28,
       this._text_29,
-      this._text_30,
-      this._el_31,
+      this._el_30,
+      this._text_31,
       this._text_32,
       this._el_33,
       this._text_34,
-      this._text_35,
-      this._el_36,
+      this._el_35,
+      this._text_36,
       this._text_37,
-      this._text_38,
+      this._el_38,
       this._text_39,
       this._text_40,
       this._text_41,
       this._text_42,
-      this._el_43,
+      this._text_43,
       this._text_44,
       this._el_45,
       this._text_46,
-      this._anchor_47,
+      this._el_47,
       this._text_48,
       this._anchor_49,
       this._text_50,
-      this._text_51,
-      this._text_52
+      this._anchor_51,
+      this._text_52,
+      this._text_53,
+      this._text_54
     ]
     ,[
       disposable_0,
@@ -309,10 +315,10 @@ class _View_InstancesComponent0 extends import1.AppView<import3.InstancesCompone
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
     if (((token === import13.RouterLink) && ((15 <= requestNodeIndex) && (requestNodeIndex <= 16)))) { return this._RouterLink_15_3; }
-    if (((token === import18.TemplateRef) && (47 === requestNodeIndex))) { return this._TemplateRef_47_5; }
-    if (((token === import14.NgIf) && (47 === requestNodeIndex))) { return this._NgIf_47_6; }
     if (((token === import18.TemplateRef) && (49 === requestNodeIndex))) { return this._TemplateRef_49_5; }
     if (((token === import14.NgIf) && (49 === requestNodeIndex))) { return this._NgIf_49_6; }
+    if (((token === import18.TemplateRef) && (51 === requestNodeIndex))) { return this._TemplateRef_51_5; }
+    if (((token === import14.NgIf) && (51 === requestNodeIndex))) { return this._NgIf_51_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -323,12 +329,12 @@ class _View_InstancesComponent0 extends import1.AppView<import3.InstancesCompone
     }
     const currVal_5:any = this.context.isAdmin();
     if (import4.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
-      this._NgIf_47_6.ngIf = currVal_5;
+      this._NgIf_49_6.ngIf = currVal_5;
       this._expr_5 = currVal_5;
     }
     const currVal_6:any = this.context.showInstances();
     if (import4.checkBinding(throwOnChange,this._expr_6,currVal_6)) {
-      this._NgIf_49_6.ngIf = currVal_6;
+      this._NgIf_51_6.ngIf = currVal_6;
       this._expr_6 = currVal_6;
     }
     this.detectContentChildrenChanges(throwOnChange);
@@ -349,7 +355,7 @@ class _View_InstancesComponent0 extends import1.AppView<import3.InstancesCompone
     const pd_0:any = ((<any>this._RouterLink_15_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
     return (true && pd_0);
   }
-  private _handle_click_33_0($event:any):boolean {
+  private _handle_click_35_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this.context.onOk()) !== false);
     return (true && pd_0);

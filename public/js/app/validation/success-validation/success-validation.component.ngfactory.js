@@ -139,7 +139,7 @@ var _View_SuccessValidationComponent1 = (function (_super) {
         this._el_7 = this.renderer.createElement(this._el_6, 'tr', null);
         this._text_8 = this.renderer.createText(this._el_7, '\n                ', null);
         this._el_9 = this.renderer.createElement(this._el_7, 'th', null);
-        this._text_10 = this.renderer.createText(this._el_9, 'Unassigned variables', null);
+        this._text_10 = this.renderer.createText(this._el_9, 'Instance', null);
         this._text_11 = this.renderer.createText(this._el_7, '\n                ', null);
         this._el_12 = this.renderer.createElement(this._el_7, 'td', null);
         this._text_13 = this.renderer.createText(this._el_12, '', null);
@@ -148,7 +148,7 @@ var _View_SuccessValidationComponent1 = (function (_super) {
         this._el_16 = this.renderer.createElement(this._el_6, 'tr', null);
         this._text_17 = this.renderer.createText(this._el_16, '\n                ', null);
         this._el_18 = this.renderer.createElement(this._el_16, 'th', null);
-        this._text_19 = this.renderer.createText(this._el_18, 'Total cost', null);
+        this._text_19 = this.renderer.createText(this._el_18, 'Unassigned variables', null);
         this._text_20 = this.renderer.createText(this._el_16, '\n                ', null);
         this._el_21 = this.renderer.createElement(this._el_16, 'td', null);
         this._text_22 = this.renderer.createText(this._el_21, '', null);
@@ -157,7 +157,7 @@ var _View_SuccessValidationComponent1 = (function (_super) {
         this._el_25 = this.renderer.createElement(this._el_6, 'tr', null);
         this._text_26 = this.renderer.createText(this._el_25, '\n                ', null);
         this._el_27 = this.renderer.createElement(this._el_25, 'th', null);
-        this._text_28 = this.renderer.createText(this._el_27, 'Student conflicts', null);
+        this._text_28 = this.renderer.createText(this._el_27, 'Total cost', null);
         this._text_29 = this.renderer.createText(this._el_25, '\n                ', null);
         this._el_30 = this.renderer.createElement(this._el_25, 'td', null);
         this._text_31 = this.renderer.createText(this._el_30, '', null);
@@ -166,7 +166,7 @@ var _View_SuccessValidationComponent1 = (function (_super) {
         this._el_34 = this.renderer.createElement(this._el_6, 'tr', null);
         this._text_35 = this.renderer.createText(this._el_34, '\n                ', null);
         this._el_36 = this.renderer.createElement(this._el_34, 'th', null);
-        this._text_37 = this.renderer.createText(this._el_36, 'Time preferences', null);
+        this._text_37 = this.renderer.createText(this._el_36, 'Student conflicts', null);
         this._text_38 = this.renderer.createText(this._el_34, '\n                ', null);
         this._el_39 = this.renderer.createElement(this._el_34, 'td', null);
         this._text_40 = this.renderer.createText(this._el_39, '', null);
@@ -175,7 +175,7 @@ var _View_SuccessValidationComponent1 = (function (_super) {
         this._el_43 = this.renderer.createElement(this._el_6, 'tr', null);
         this._text_44 = this.renderer.createText(this._el_43, '\n                ', null);
         this._el_45 = this.renderer.createElement(this._el_43, 'th', null);
-        this._text_46 = this.renderer.createText(this._el_45, 'Room preferences', null);
+        this._text_46 = this.renderer.createText(this._el_45, 'Time preferences', null);
         this._text_47 = this.renderer.createText(this._el_43, '\n                ', null);
         this._el_48 = this.renderer.createElement(this._el_43, 'td', null);
         this._text_49 = this.renderer.createText(this._el_48, '', null);
@@ -184,7 +184,7 @@ var _View_SuccessValidationComponent1 = (function (_super) {
         this._el_52 = this.renderer.createElement(this._el_6, 'tr', null);
         this._text_53 = this.renderer.createText(this._el_52, '\n                ', null);
         this._el_54 = this.renderer.createElement(this._el_52, 'th', null);
-        this._text_55 = this.renderer.createText(this._el_54, 'Distribution preferences', null);
+        this._text_55 = this.renderer.createText(this._el_54, 'Room preferences', null);
         this._text_56 = this.renderer.createText(this._el_52, '\n                ', null);
         this._el_57 = this.renderer.createElement(this._el_52, 'td', null);
         this._text_58 = this.renderer.createText(this._el_57, '', null);
@@ -193,18 +193,27 @@ var _View_SuccessValidationComponent1 = (function (_super) {
         this._el_61 = this.renderer.createElement(this._el_6, 'tr', null);
         this._text_62 = this.renderer.createText(this._el_61, '\n                ', null);
         this._el_63 = this.renderer.createElement(this._el_61, 'th', null);
-        this._text_64 = this.renderer.createText(this._el_63, 'Validator info', null);
+        this._text_64 = this.renderer.createText(this._el_63, 'Distribution preferences', null);
         this._text_65 = this.renderer.createText(this._el_61, '\n                ', null);
         this._el_66 = this.renderer.createElement(this._el_61, 'td', null);
-        this._text_67 = this.renderer.createText(this._el_61, '\n            ', null);
-        this._text_68 = this.renderer.createText(this._el_6, '\n        ', null);
-        this._text_69 = this.renderer.createText(this._el_2, '\n    ', null);
-        this._text_70 = this.renderer.createText(this._el_0, '\n\n    ', null);
-        this._anchor_71 = this.renderer.createTemplateAnchor(this._el_0, null);
-        this._appEl_71 = new import2.AppElement(71, 0, this, this._anchor_71);
-        this._TemplateRef_71_5 = new import14.TemplateRef_(this._appEl_71, viewFactory_SuccessValidationComponent2);
-        this._NgIf_71_6 = new import13.NgIf(this._appEl_71.vcRef, this._TemplateRef_71_5);
-        this._text_72 = this.renderer.createText(this._el_0, '\n', null);
+        this._text_67 = this.renderer.createText(this._el_66, '', null);
+        this._text_68 = this.renderer.createText(this._el_61, '\n            ', null);
+        this._text_69 = this.renderer.createText(this._el_6, '\n            ', null);
+        this._el_70 = this.renderer.createElement(this._el_6, 'tr', null);
+        this._text_71 = this.renderer.createText(this._el_70, '\n                ', null);
+        this._el_72 = this.renderer.createElement(this._el_70, 'th', null);
+        this._text_73 = this.renderer.createText(this._el_72, 'Validator info', null);
+        this._text_74 = this.renderer.createText(this._el_70, '\n                ', null);
+        this._el_75 = this.renderer.createElement(this._el_70, 'td', null);
+        this._text_76 = this.renderer.createText(this._el_70, '\n            ', null);
+        this._text_77 = this.renderer.createText(this._el_6, '\n        ', null);
+        this._text_78 = this.renderer.createText(this._el_2, '\n    ', null);
+        this._text_79 = this.renderer.createText(this._el_0, '\n\n    ', null);
+        this._anchor_80 = this.renderer.createTemplateAnchor(this._el_0, null);
+        this._appEl_80 = new import2.AppElement(80, 0, this, this._anchor_80);
+        this._TemplateRef_80_5 = new import14.TemplateRef_(this._appEl_80, viewFactory_SuccessValidationComponent2);
+        this._NgIf_80_6 = new import13.NgIf(this._appEl_80.vcRef, this._TemplateRef_80_5);
+        this._text_81 = this.renderer.createText(this._el_0, '\n', null);
         this._map_0 = import4.pureProxy1(function (p0) {
             return { display: p0 };
         });
@@ -215,9 +224,10 @@ var _View_SuccessValidationComponent1 = (function (_super) {
         this._expr_4 = import7.UNINITIALIZED;
         this._expr_5 = import7.UNINITIALIZED;
         this._expr_6 = import7.UNINITIALIZED;
-        this._pipe_escapeHtml_0 = new import16.EscapeHtmlPipe();
         this._expr_7 = import7.UNINITIALIZED;
+        this._pipe_escapeHtml_0 = new import16.EscapeHtmlPipe();
         this._expr_8 = import7.UNINITIALIZED;
+        this._expr_9 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1,
@@ -289,20 +299,29 @@ var _View_SuccessValidationComponent1 = (function (_super) {
             this._text_67,
             this._text_68,
             this._text_69,
-            this._text_70,
-            this._anchor_71,
-            this._text_72
+            this._el_70,
+            this._text_71,
+            this._el_72,
+            this._text_73,
+            this._text_74,
+            this._el_75,
+            this._text_76,
+            this._text_77,
+            this._text_78,
+            this._text_79,
+            this._anchor_80,
+            this._text_81
         ], [], []);
         return null;
     };
     _View_SuccessValidationComponent1.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import14.TemplateRef) && (71 === requestNodeIndex))) {
-            return this._TemplateRef_71_5;
+        if (((token === import14.TemplateRef) && (80 === requestNodeIndex))) {
+            return this._TemplateRef_80_5;
         }
-        if (((token === import13.NgIf) && (71 === requestNodeIndex))) {
-            return this._NgIf_71_6;
+        if (((token === import13.NgIf) && (80 === requestNodeIndex))) {
+            return this._NgIf_80_6;
         }
-        if (((token === import15.NgStyle) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 72)))) {
+        if (((token === import15.NgStyle) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 81)))) {
             return this._NgStyle_0_3;
         }
         return notFoundResult;
@@ -317,47 +336,52 @@ var _View_SuccessValidationComponent1 = (function (_super) {
         if (!throwOnChange) {
             this._NgStyle_0_3.ngDoCheck();
         }
-        var currVal_8 = this.parent.context.showUploadForm;
-        if (import4.checkBinding(throwOnChange, this._expr_8, currVal_8)) {
-            this._NgIf_71_6.ngIf = currVal_8;
-            this._expr_8 = currVal_8;
+        var currVal_9 = this.parent.context.showUploadForm;
+        if (import4.checkBinding(throwOnChange, this._expr_9, currVal_9)) {
+            this._NgIf_80_6.ngIf = currVal_9;
+            this._expr_9 = currVal_9;
         }
         this.detectContentChildrenChanges(throwOnChange);
-        var currVal_1 = import4.interpolate(1, '', this.parent.context.validation.unassigned, ' %');
+        var currVal_1 = import4.interpolate(1, '', this.parent.context.validation.instanceName, '');
         if (import4.checkBinding(throwOnChange, this._expr_1, currVal_1)) {
             this.renderer.setText(this._text_13, currVal_1);
             this._expr_1 = currVal_1;
         }
-        var currVal_2 = import4.interpolate(1, '', this.parent.context.validation.total, '');
+        var currVal_2 = import4.interpolate(1, '', this.parent.context.validation.unassigned, ' %');
         if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
             this.renderer.setText(this._text_22, currVal_2);
             this._expr_2 = currVal_2;
         }
-        var currVal_3 = import4.interpolate(1, '', this.parent.context.validation.sc, ' %');
+        var currVal_3 = import4.interpolate(1, '', this.parent.context.validation.total, '');
         if (import4.checkBinding(throwOnChange, this._expr_3, currVal_3)) {
             this.renderer.setText(this._text_31, currVal_3);
             this._expr_3 = currVal_3;
         }
-        var currVal_4 = import4.interpolate(1, '', this.parent.context.validation.time, ' %');
+        var currVal_4 = import4.interpolate(1, '', this.parent.context.validation.sc, ' %');
         if (import4.checkBinding(throwOnChange, this._expr_4, currVal_4)) {
             this.renderer.setText(this._text_40, currVal_4);
             this._expr_4 = currVal_4;
         }
-        var currVal_5 = import4.interpolate(1, '', this.parent.context.validation.room, ' %');
+        var currVal_5 = import4.interpolate(1, '', this.parent.context.validation.time, ' %');
         if (import4.checkBinding(throwOnChange, this._expr_5, currVal_5)) {
             this.renderer.setText(this._text_49, currVal_5);
             this._expr_5 = currVal_5;
         }
-        var currVal_6 = import4.interpolate(1, '', this.parent.context.validation.distr, ' %');
+        var currVal_6 = import4.interpolate(1, '', this.parent.context.validation.room, ' %');
         if (import4.checkBinding(throwOnChange, this._expr_6, currVal_6)) {
             this.renderer.setText(this._text_58, currVal_6);
             this._expr_6 = currVal_6;
         }
-        valUnwrapper.reset();
-        var currVal_7 = valUnwrapper.unwrap(this._pipe_escapeHtml_0.transform(this.parent.context.validation.info));
-        if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange, this._expr_7, currVal_7))) {
-            this.renderer.setElementProperty(this._el_66, 'innerHTML', this.viewUtils.sanitizer.sanitize(import19.SecurityContext.HTML, currVal_7));
+        var currVal_7 = import4.interpolate(1, '', this.parent.context.validation.distr, ' %');
+        if (import4.checkBinding(throwOnChange, this._expr_7, currVal_7)) {
+            this.renderer.setText(this._text_67, currVal_7);
             this._expr_7 = currVal_7;
+        }
+        valUnwrapper.reset();
+        var currVal_8 = valUnwrapper.unwrap(this._pipe_escapeHtml_0.transform(this.parent.context.validation.info));
+        if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange, this._expr_8, currVal_8))) {
+            this.renderer.setElementProperty(this._el_75, 'innerHTML', this.viewUtils.sanitizer.sanitize(import19.SecurityContext.HTML, currVal_8));
+            this._expr_8 = currVal_8;
         }
         this.detectViewChildrenChanges(throwOnChange);
     };

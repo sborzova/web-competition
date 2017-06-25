@@ -346,6 +346,9 @@ router.delete('/server/admin/user/:id', function (req, res, next) {
 /**
  * Sign user in JWT according to user's role as admin or user.
  *
+ * process.env.SECRET_ADMIN - auth token for admin
+ * process.env.SECRET - auth token for non admin
+ *
  * @param req - request
  * @param res - response
  * @param user - user to sign in

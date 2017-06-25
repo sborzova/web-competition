@@ -197,12 +197,12 @@
                             </span>
                         </td>
                     </tr>
-                    <tr *ngIf="showPapers">
+                    <tr *ngIf="showPapers && solution.paper">
                         <td></td>
                         <td><strong>Citation: </strong></td>
                         <td colspan="12" id="paper">{{ solution.paper?.citation}}</td>
                     </tr>
-                    <tr *ngIf="showPapers">
+                    <tr *ngIf="showPapers && solution.paper">
                         <td></td>
                         <td><strong>Url: </strong></td>
                         <td colspan="12" id="paper"><a href="{{solution.paper?.url}}" target="_blank">{{ solution.paper?.url}}</a></td>

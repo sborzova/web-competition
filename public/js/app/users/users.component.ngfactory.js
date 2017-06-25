@@ -97,50 +97,52 @@ var _View_UsersComponent0 = (function (_super) {
         this._el_8 = this.renderer.createElement(this._el_6, 'div', null);
         this.renderer.setElementAttribute(this._el_8, 'class', 'modal-body');
         this.renderer.setElementAttribute(this._el_8, 'style', 'text-align: center; padding: 5% 0 5% 0');
-        this._text_9 = this.renderer.createText(this._el_8, '\n                Are you sure you want to delete this user?\n            ', null);
-        this._text_10 = this.renderer.createText(this._el_6, '\n            ', null);
-        this._el_11 = this.renderer.createElement(this._el_6, 'div', null);
-        this.renderer.setElementAttribute(this._el_11, 'class', 'modal-footer');
-        this._text_12 = this.renderer.createText(this._el_11, '\n                ', null);
-        this._el_13 = this.renderer.createElement(this._el_11, 'button', null);
-        this.renderer.setElementAttribute(this._el_13, 'class', 'btn btn-primary');
-        this.renderer.setElementAttribute(this._el_13, 'data-dismiss', 'modal');
-        this.renderer.setElementAttribute(this._el_13, 'type', 'button');
-        this._text_14 = this.renderer.createText(this._el_13, 'OK', null);
-        this._text_15 = this.renderer.createText(this._el_11, '\n                ', null);
-        this._el_16 = this.renderer.createElement(this._el_11, 'button', null);
-        this.renderer.setElementAttribute(this._el_16, 'class', 'btn btn-default');
-        this.renderer.setElementAttribute(this._el_16, 'data-dismiss', 'modal');
-        this.renderer.setElementAttribute(this._el_16, 'type', 'button');
-        this._text_17 = this.renderer.createText(this._el_16, 'Close', null);
-        this._text_18 = this.renderer.createText(this._el_11, '\n            ', null);
-        this._text_19 = this.renderer.createText(this._el_6, '\n        ', null);
-        this._text_20 = this.renderer.createText(this._el_4, '\n    ', null);
-        this._text_21 = this.renderer.createText(this._el_2, '\n', null);
-        this._text_22 = this.renderer.createText(parentRenderNode, '\n\n', null);
-        this._el_23 = this.renderer.createElement(parentRenderNode, 'div', null);
-        this.renderer.setElementAttribute(this._el_23, 'class', 'col-xs-12');
-        this.renderer.setElementAttribute(this._el_23, 'style', 'margin-top: 3%');
-        this._text_24 = this.renderer.createText(this._el_23, '\n    ', null);
-        this._el_25 = this.renderer.createElement(this._el_23, 'div', null);
-        this._text_26 = this.renderer.createText(this._el_25, '\n        ', null);
-        this._el_27 = this.renderer.createElement(this._el_25, 'button', null);
-        this.renderer.setElementAttribute(this._el_27, 'class', 'btn btn-primary btn-xs');
-        this.renderer.setElementAttribute(this._el_27, 'type', 'button');
+        this._text_9 = this.renderer.createText(this._el_8, '\n                Are you sure you want to delete this user?\n                ', null);
+        this._el_10 = this.renderer.createElement(this._el_8, 'br', null);
+        this._text_11 = this.renderer.createText(this._el_8, '\n                All user\'s solutions will be deleted, too.\n            ', null);
+        this._text_12 = this.renderer.createText(this._el_6, '\n            ', null);
+        this._el_13 = this.renderer.createElement(this._el_6, 'div', null);
+        this.renderer.setElementAttribute(this._el_13, 'class', 'modal-footer');
+        this._text_14 = this.renderer.createText(this._el_13, '\n                ', null);
+        this._el_15 = this.renderer.createElement(this._el_13, 'button', null);
+        this.renderer.setElementAttribute(this._el_15, 'class', 'btn btn-primary');
+        this.renderer.setElementAttribute(this._el_15, 'data-dismiss', 'modal');
+        this.renderer.setElementAttribute(this._el_15, 'type', 'button');
+        this._text_16 = this.renderer.createText(this._el_15, 'OK', null);
+        this._text_17 = this.renderer.createText(this._el_13, '\n                ', null);
+        this._el_18 = this.renderer.createElement(this._el_13, 'button', null);
+        this.renderer.setElementAttribute(this._el_18, 'class', 'btn btn-default');
+        this.renderer.setElementAttribute(this._el_18, 'data-dismiss', 'modal');
+        this.renderer.setElementAttribute(this._el_18, 'type', 'button');
+        this._text_19 = this.renderer.createText(this._el_18, 'Close', null);
+        this._text_20 = this.renderer.createText(this._el_13, '\n            ', null);
+        this._text_21 = this.renderer.createText(this._el_6, '\n        ', null);
+        this._text_22 = this.renderer.createText(this._el_4, '\n    ', null);
+        this._text_23 = this.renderer.createText(this._el_2, '\n', null);
+        this._text_24 = this.renderer.createText(parentRenderNode, '\n\n', null);
+        this._el_25 = this.renderer.createElement(parentRenderNode, 'div', null);
+        this.renderer.setElementAttribute(this._el_25, 'class', 'col-xs-12');
+        this.renderer.setElementAttribute(this._el_25, 'style', 'margin-top: 3%');
+        this._text_26 = this.renderer.createText(this._el_25, '\n    ', null);
+        this._el_27 = this.renderer.createElement(this._el_25, 'div', null);
         this._text_28 = this.renderer.createText(this._el_27, '\n        ', null);
-        this._el_29 = this.renderer.createElement(this._el_27, 'span', null);
-        this.renderer.setElementAttribute(this._el_29, 'class', 'glyphicon glyphicon-file');
-        this._text_30 = this.renderer.createText(this._el_27, ' Download as CSV\n        ', null);
-        this._text_31 = this.renderer.createText(this._el_25, '\n    ', null);
-        this._text_32 = this.renderer.createText(this._el_23, '\n    ', null);
-        this._anchor_33 = this.renderer.createTemplateAnchor(this._el_23, null);
-        this._appEl_33 = new import2.AppElement(33, 23, this, this._anchor_33);
-        this._TemplateRef_33_5 = new import14.TemplateRef_(this._appEl_33, viewFactory_UsersComponent1);
-        this._NgIf_33_6 = new import13.NgIf(this._appEl_33.vcRef, this._TemplateRef_33_5);
-        this._text_34 = this.renderer.createText(this._el_23, '\n', null);
+        this._el_29 = this.renderer.createElement(this._el_27, 'button', null);
+        this.renderer.setElementAttribute(this._el_29, 'class', 'btn btn-primary btn-xs');
+        this.renderer.setElementAttribute(this._el_29, 'type', 'button');
+        this._text_30 = this.renderer.createText(this._el_29, '\n        ', null);
+        this._el_31 = this.renderer.createElement(this._el_29, 'span', null);
+        this.renderer.setElementAttribute(this._el_31, 'class', 'glyphicon glyphicon-file');
+        this._text_32 = this.renderer.createText(this._el_29, ' Download as CSV\n        ', null);
+        this._text_33 = this.renderer.createText(this._el_27, '\n    ', null);
+        this._text_34 = this.renderer.createText(this._el_25, '\n    ', null);
+        this._anchor_35 = this.renderer.createTemplateAnchor(this._el_25, null);
+        this._appEl_35 = new import2.AppElement(35, 25, this, this._anchor_35);
+        this._TemplateRef_35_5 = new import14.TemplateRef_(this._appEl_35, viewFactory_UsersComponent1);
+        this._NgIf_35_6 = new import13.NgIf(this._appEl_35.vcRef, this._TemplateRef_35_5);
+        this._text_36 = this.renderer.createText(this._el_25, '\n', null);
         this._expr_0 = import7.UNINITIALIZED;
-        var disposable_0 = this.renderer.listen(this._el_13, 'click', this.eventHandler(this._handle_click_13_0.bind(this)));
-        var disposable_1 = this.renderer.listen(this._el_27, 'click', this.eventHandler(this._handle_click_27_0.bind(this)));
+        var disposable_0 = this.renderer.listen(this._el_15, 'click', this.eventHandler(this._handle_click_15_0.bind(this)));
+        var disposable_1 = this.renderer.listen(this._el_29, 'click', this.eventHandler(this._handle_click_29_0.bind(this)));
         this._expr_3 = import7.UNINITIALIZED;
         this.init([], [
             this._el_0,
@@ -153,20 +155,20 @@ var _View_UsersComponent0 = (function (_super) {
             this._text_7,
             this._el_8,
             this._text_9,
-            this._text_10,
-            this._el_11,
+            this._el_10,
+            this._text_11,
             this._text_12,
             this._el_13,
             this._text_14,
-            this._text_15,
-            this._el_16,
+            this._el_15,
+            this._text_16,
             this._text_17,
-            this._text_18,
+            this._el_18,
             this._text_19,
             this._text_20,
             this._text_21,
             this._text_22,
-            this._el_23,
+            this._text_23,
             this._text_24,
             this._el_25,
             this._text_26,
@@ -174,10 +176,12 @@ var _View_UsersComponent0 = (function (_super) {
             this._text_28,
             this._el_29,
             this._text_30,
-            this._text_31,
+            this._el_31,
             this._text_32,
-            this._anchor_33,
-            this._text_34
+            this._text_33,
+            this._text_34,
+            this._anchor_35,
+            this._text_36
         ], [
             disposable_0,
             disposable_1
@@ -185,18 +189,18 @@ var _View_UsersComponent0 = (function (_super) {
         return null;
     };
     _View_UsersComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import14.TemplateRef) && (33 === requestNodeIndex))) {
-            return this._TemplateRef_33_5;
+        if (((token === import14.TemplateRef) && (35 === requestNodeIndex))) {
+            return this._TemplateRef_35_5;
         }
-        if (((token === import13.NgIf) && (33 === requestNodeIndex))) {
-            return this._NgIf_33_6;
+        if (((token === import13.NgIf) && (35 === requestNodeIndex))) {
+            return this._NgIf_35_6;
         }
         return notFoundResult;
     };
     _View_UsersComponent0.prototype.detectChangesInternal = function (throwOnChange) {
         var currVal_3 = this.context.users;
         if (import4.checkBinding(throwOnChange, this._expr_3, currVal_3)) {
-            this._NgIf_33_6.ngIf = currVal_3;
+            this._NgIf_35_6.ngIf = currVal_3;
             this._expr_3 = currVal_3;
         }
         this.detectContentChildrenChanges(throwOnChange);
@@ -207,12 +211,12 @@ var _View_UsersComponent0 = (function (_super) {
         }
         this.detectViewChildrenChanges(throwOnChange);
     };
-    _View_UsersComponent0.prototype._handle_click_13_0 = function ($event) {
+    _View_UsersComponent0.prototype._handle_click_15_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this.context.onOk() !== false);
         return (true && pd_0);
     };
-    _View_UsersComponent0.prototype._handle_click_27_0 = function ($event) {
+    _View_UsersComponent0.prototype._handle_click_29_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this.context.onImportIntoCsvFile() !== false);
         return (true && pd_0);
@@ -235,6 +239,7 @@ var _View_UsersComponent1 = (function (_super) {
         this._text_1 = this.renderer.createText(this._el_0, '\n        ', null);
         this._el_2 = this.renderer.createElement(this._el_0, 'div', null);
         this.renderer.setElementAttribute(this._el_2, 'class', 'table-responsive');
+        this.renderer.setElementAttribute(this._el_2, 'style', 'margin:0px auto; width:100%');
         this._text_3 = this.renderer.createText(this._el_2, '\n            ', null);
         this._el_4 = this.renderer.createElement(this._el_2, 'table', null);
         this.renderer.setElementAttribute(this._el_4, 'class', 'table');

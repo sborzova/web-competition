@@ -48,8 +48,8 @@ export var SignupComponent = (function () {
             var user = new SignupUser(this.signupForm.value.email, this.signupForm.value.password, this.signupForm.value.firstName, this.signupForm.value.lastName);
             this.authService.signup(user)
                 .subscribe(function (user) {
-                _this.flashMessageService.showMessage('Account created.', 'success');
-                _this.router.navigateByUrl('home');
+                _this.flashMessageService.showMessage('Account created. Log in to continue.', 'success');
+                _this.router.navigateByUrl('signin');
             }, function (error) { return console.error(error); });
         }
     };

@@ -137,46 +137,48 @@ var _View_InstancesComponent0 = (function (_super) {
         this._el_28 = this.renderer.createElement(this._el_26, 'div', null);
         this.renderer.setElementAttribute(this._el_28, 'class', 'modal-body');
         this.renderer.setElementAttribute(this._el_28, 'style', 'text-align: center; padding: 5% 0 5% 0');
-        this._text_29 = this.renderer.createText(this._el_28, '\n                Are you sure you want to delete this instance?\n            ', null);
-        this._text_30 = this.renderer.createText(this._el_26, '\n            ', null);
-        this._el_31 = this.renderer.createElement(this._el_26, 'div', null);
-        this.renderer.setElementAttribute(this._el_31, 'class', 'modal-footer');
-        this._text_32 = this.renderer.createText(this._el_31, '\n                ', null);
-        this._el_33 = this.renderer.createElement(this._el_31, 'button', null);
-        this.renderer.setElementAttribute(this._el_33, 'class', 'btn btn-primary');
-        this.renderer.setElementAttribute(this._el_33, 'data-dismiss', 'modal');
-        this.renderer.setElementAttribute(this._el_33, 'type', 'button');
-        this._text_34 = this.renderer.createText(this._el_33, 'OK', null);
-        this._text_35 = this.renderer.createText(this._el_31, '\n                ', null);
-        this._el_36 = this.renderer.createElement(this._el_31, 'button', null);
-        this.renderer.setElementAttribute(this._el_36, 'class', 'btn btn-default');
-        this.renderer.setElementAttribute(this._el_36, 'data-dismiss', 'modal');
-        this.renderer.setElementAttribute(this._el_36, 'type', 'button');
-        this._text_37 = this.renderer.createText(this._el_36, 'Close', null);
-        this._text_38 = this.renderer.createText(this._el_31, '\n            ', null);
-        this._text_39 = this.renderer.createText(this._el_26, '\n        ', null);
-        this._text_40 = this.renderer.createText(this._el_24, '\n    ', null);
-        this._text_41 = this.renderer.createText(this._el_22, '\n', null);
-        this._text_42 = this.renderer.createText(parentRenderNode, '\n\n\n', null);
-        this._el_43 = this.renderer.createElement(parentRenderNode, 'div', null);
-        this.renderer.setElementAttribute(this._el_43, 'class', 'container');
-        this.renderer.setElementAttribute(this._el_43, 'style', 'margin-top: 3%');
-        this._text_44 = this.renderer.createText(this._el_43, '\n    ', null);
-        this._el_45 = this.renderer.createElement(this._el_43, 'div', null);
-        this.renderer.setElementAttribute(this._el_45, 'class', 'row');
-        this._text_46 = this.renderer.createText(this._el_45, '\n        ', null);
-        this._anchor_47 = this.renderer.createTemplateAnchor(this._el_45, null);
-        this._appEl_47 = new import2.AppElement(47, 45, this, this._anchor_47);
-        this._TemplateRef_47_5 = new import18.TemplateRef_(this._appEl_47, viewFactory_InstancesComponent1);
-        this._NgIf_47_6 = new import14.NgIf(this._appEl_47.vcRef, this._TemplateRef_47_5);
-        this._text_48 = this.renderer.createText(this._el_45, '\n        ', null);
-        this._anchor_49 = this.renderer.createTemplateAnchor(this._el_45, null);
-        this._appEl_49 = new import2.AppElement(49, 45, this, this._anchor_49);
-        this._TemplateRef_49_5 = new import18.TemplateRef_(this._appEl_49, viewFactory_InstancesComponent2);
+        this._text_29 = this.renderer.createText(this._el_28, '\n                Are you sure you want to delete this instance?\n                ', null);
+        this._el_30 = this.renderer.createElement(this._el_28, 'br', null);
+        this._text_31 = this.renderer.createText(this._el_28, '\n                All solutions related to this instance will be deleted, too.\n            ', null);
+        this._text_32 = this.renderer.createText(this._el_26, '\n            ', null);
+        this._el_33 = this.renderer.createElement(this._el_26, 'div', null);
+        this.renderer.setElementAttribute(this._el_33, 'class', 'modal-footer');
+        this._text_34 = this.renderer.createText(this._el_33, '\n                ', null);
+        this._el_35 = this.renderer.createElement(this._el_33, 'button', null);
+        this.renderer.setElementAttribute(this._el_35, 'class', 'btn btn-primary');
+        this.renderer.setElementAttribute(this._el_35, 'data-dismiss', 'modal');
+        this.renderer.setElementAttribute(this._el_35, 'type', 'button');
+        this._text_36 = this.renderer.createText(this._el_35, 'OK', null);
+        this._text_37 = this.renderer.createText(this._el_33, '\n                ', null);
+        this._el_38 = this.renderer.createElement(this._el_33, 'button', null);
+        this.renderer.setElementAttribute(this._el_38, 'class', 'btn btn-default');
+        this.renderer.setElementAttribute(this._el_38, 'data-dismiss', 'modal');
+        this.renderer.setElementAttribute(this._el_38, 'type', 'button');
+        this._text_39 = this.renderer.createText(this._el_38, 'Close', null);
+        this._text_40 = this.renderer.createText(this._el_33, '\n            ', null);
+        this._text_41 = this.renderer.createText(this._el_26, '\n        ', null);
+        this._text_42 = this.renderer.createText(this._el_24, '\n    ', null);
+        this._text_43 = this.renderer.createText(this._el_22, '\n', null);
+        this._text_44 = this.renderer.createText(parentRenderNode, '\n\n\n', null);
+        this._el_45 = this.renderer.createElement(parentRenderNode, 'div', null);
+        this.renderer.setElementAttribute(this._el_45, 'class', 'container');
+        this.renderer.setElementAttribute(this._el_45, 'style', 'margin-top: 3%');
+        this._text_46 = this.renderer.createText(this._el_45, '\n    ', null);
+        this._el_47 = this.renderer.createElement(this._el_45, 'div', null);
+        this.renderer.setElementAttribute(this._el_47, 'class', 'row');
+        this._text_48 = this.renderer.createText(this._el_47, '\n        ', null);
+        this._anchor_49 = this.renderer.createTemplateAnchor(this._el_47, null);
+        this._appEl_49 = new import2.AppElement(49, 47, this, this._anchor_49);
+        this._TemplateRef_49_5 = new import18.TemplateRef_(this._appEl_49, viewFactory_InstancesComponent1);
         this._NgIf_49_6 = new import14.NgIf(this._appEl_49.vcRef, this._TemplateRef_49_5);
-        this._text_50 = this.renderer.createText(this._el_45, '\n    ', null);
-        this._text_51 = this.renderer.createText(this._el_43, '\n', null);
-        this._text_52 = this.renderer.createText(parentRenderNode, '\n', null);
+        this._text_50 = this.renderer.createText(this._el_47, '\n        ', null);
+        this._anchor_51 = this.renderer.createTemplateAnchor(this._el_47, null);
+        this._appEl_51 = new import2.AppElement(51, 47, this, this._anchor_51);
+        this._TemplateRef_51_5 = new import18.TemplateRef_(this._appEl_51, viewFactory_InstancesComponent2);
+        this._NgIf_51_6 = new import14.NgIf(this._appEl_51.vcRef, this._TemplateRef_51_5);
+        this._text_52 = this.renderer.createText(this._el_47, '\n    ', null);
+        this._text_53 = this.renderer.createText(this._el_45, '\n', null);
+        this._text_54 = this.renderer.createText(parentRenderNode, '\n', null);
         this._expr_0 = import7.UNINITIALIZED;
         this._expr_1 = import7.UNINITIALIZED;
         var disposable_0 = this.renderer.listen(this._el_15, 'click', this.eventHandler(this._handle_click_15_0.bind(this)));
@@ -184,7 +186,7 @@ var _View_InstancesComponent0 = (function (_super) {
             return [p0];
         });
         this._expr_3 = import7.UNINITIALIZED;
-        var disposable_1 = this.renderer.listen(this._el_33, 'click', this.eventHandler(this._handle_click_33_0.bind(this)));
+        var disposable_1 = this.renderer.listen(this._el_35, 'click', this.eventHandler(this._handle_click_35_0.bind(this)));
         this._expr_5 = import7.UNINITIALIZED;
         this._expr_6 = import7.UNINITIALIZED;
         this.init([], [
@@ -218,29 +220,31 @@ var _View_InstancesComponent0 = (function (_super) {
             this._text_27,
             this._el_28,
             this._text_29,
-            this._text_30,
-            this._el_31,
+            this._el_30,
+            this._text_31,
             this._text_32,
             this._el_33,
             this._text_34,
-            this._text_35,
-            this._el_36,
+            this._el_35,
+            this._text_36,
             this._text_37,
-            this._text_38,
+            this._el_38,
             this._text_39,
             this._text_40,
             this._text_41,
             this._text_42,
-            this._el_43,
+            this._text_43,
             this._text_44,
             this._el_45,
             this._text_46,
-            this._anchor_47,
+            this._el_47,
             this._text_48,
             this._anchor_49,
             this._text_50,
-            this._text_51,
-            this._text_52
+            this._anchor_51,
+            this._text_52,
+            this._text_53,
+            this._text_54
         ], [
             disposable_0,
             disposable_1
@@ -251,17 +255,17 @@ var _View_InstancesComponent0 = (function (_super) {
         if (((token === import13.RouterLink) && ((15 <= requestNodeIndex) && (requestNodeIndex <= 16)))) {
             return this._RouterLink_15_3;
         }
-        if (((token === import18.TemplateRef) && (47 === requestNodeIndex))) {
-            return this._TemplateRef_47_5;
-        }
-        if (((token === import14.NgIf) && (47 === requestNodeIndex))) {
-            return this._NgIf_47_6;
-        }
         if (((token === import18.TemplateRef) && (49 === requestNodeIndex))) {
             return this._TemplateRef_49_5;
         }
         if (((token === import14.NgIf) && (49 === requestNodeIndex))) {
             return this._NgIf_49_6;
+        }
+        if (((token === import18.TemplateRef) && (51 === requestNodeIndex))) {
+            return this._TemplateRef_51_5;
+        }
+        if (((token === import14.NgIf) && (51 === requestNodeIndex))) {
+            return this._NgIf_51_6;
         }
         return notFoundResult;
     };
@@ -273,12 +277,12 @@ var _View_InstancesComponent0 = (function (_super) {
         }
         var currVal_5 = this.context.isAdmin();
         if (import4.checkBinding(throwOnChange, this._expr_5, currVal_5)) {
-            this._NgIf_47_6.ngIf = currVal_5;
+            this._NgIf_49_6.ngIf = currVal_5;
             this._expr_5 = currVal_5;
         }
         var currVal_6 = this.context.showInstances();
         if (import4.checkBinding(throwOnChange, this._expr_6, currVal_6)) {
-            this._NgIf_49_6.ngIf = currVal_6;
+            this._NgIf_51_6.ngIf = currVal_6;
             this._expr_6 = currVal_6;
         }
         this.detectContentChildrenChanges(throwOnChange);
@@ -299,7 +303,7 @@ var _View_InstancesComponent0 = (function (_super) {
         var pd_0 = (this._RouterLink_15_3.onClick($event.button, $event.ctrlKey, $event.metaKey) !== false);
         return (true && pd_0);
     };
-    _View_InstancesComponent0.prototype._handle_click_33_0 = function ($event) {
+    _View_InstancesComponent0.prototype._handle_click_35_0 = function ($event) {
         this.markPathToRootAsCheckOnce();
         var pd_0 = (this.context.onOk() !== false);
         return (true && pd_0);

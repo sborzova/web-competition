@@ -44,6 +44,9 @@ export var ResultsAuthorTechniqueComponent = (function () {
     ResultsAuthorTechniqueComponent.prototype.onDelete = function (solution) {
         this.solutionService.deleteSolutionObservable(solution);
     };
+    ResultsAuthorTechniqueComponent.prototype.onEditTechnique = function (solution) {
+        this.solutionService.editSolutionTechniqueObservable(solution);
+    };
     ResultsAuthorTechniqueComponent.prototype.onSetVisible = function (solution) {
         this.solutionService.setVisibleObservable(solution);
     };

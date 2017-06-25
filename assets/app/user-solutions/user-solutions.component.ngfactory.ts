@@ -2073,12 +2073,12 @@ class _View_UserSolutionsComponent8 extends import1.AppView<any> {
       this._NgIf_59_6.ngIf = currVal_27;
       this._expr_27 = currVal_27;
     }
-    const currVal_28:any = this.parent.parent.context.showPapers;
+    const currVal_28:any = (this.parent.parent.context.showPapers && this.context.$implicit.paper);
     if (import4.checkBinding(throwOnChange,this._expr_28,currVal_28)) {
       this._NgIf_63_6.ngIf = currVal_28;
       this._expr_28 = currVal_28;
     }
-    const currVal_29:any = this.parent.parent.context.showPapers;
+    const currVal_29:any = (this.parent.parent.context.showPapers && this.context.$implicit.paper);
     if (import4.checkBinding(throwOnChange,this._expr_29,currVal_29)) {
       this._NgIf_65_6.ngIf = currVal_29;
       this._expr_29 = currVal_29;
